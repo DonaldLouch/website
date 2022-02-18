@@ -28,7 +28,7 @@ import { FormTextArea } from '../../components/Form/FormTextArea'
 import { FormInputReadOnly } from '../../components/Form/FormInputReadOnly'
 
 export default function AboutMePortal({ aboutData }:any) {
-    const about = aboutData
+    const about = aboutData?.[0]
     // console.log(post.body)
 
     const toast = useToast()
@@ -233,13 +233,8 @@ export default function AboutMePortal({ aboutData }:any) {
 
 
 export async function getServerSideProps() {
-    const id = 'ckzp0x6yp00677cvuesefs2nz'
 
-    const aboutData = await prisma.about.findUnique({
-        where: {
-            id
-        } 
-    })
+    const aboutData = await prisma.about.findMany({})
 
     return { 
         props: { 
