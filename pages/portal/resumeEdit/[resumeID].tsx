@@ -43,10 +43,8 @@ import { FormInputReadOnly } from '../../../components/Form/FormInputReadOnly'
 export default function AboutMePortal({ resumeExperienceData }:any) {
   const resumeExperience = resumeExperienceData
 
-  console.log(resumeExperience)
-
   const { isOpen: isHistoryOpen, onOpen: onHistoryOpen, onClose: onHistoryClose } = useDisclosure()
-  const { isOpen: isEducationOpen, onOpen: onEducationOpen, onClose: onEducationClose } = useDisclosure()
+  // const { isOpen: isEducationOpen, onOpen: onEducationOpen, onClose: onEducationClose } = useDisclosure()
 
     const toast = useToast()
 
@@ -181,9 +179,9 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
         <>  
             <PortalLayout pageTitle={`Edit: Resume Experience Page`}>
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: Resume Page`}
-                    keywords={`${process.env.KEYWORDS}`}
-                    description={`${process.env.DESCRIPTION}`}
+                    title={`Edit: Resume Experience | ${process.env.WEBSITE_NAME}`}
+                    keywords={`${process.env.KEYWORDS}, portal, edit, new, admin`}
+                    description={`Edit the resume work experience page.`}
                     />
                     <Box as="main" id="editAbout" color="black">
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -242,45 +240,6 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
                         </ModalFooter>
                       </ModalContent>
                     </Modal>
-
-                    <Button onClick={onEducationOpen}>Add Education</Button>
-                    <Modal isOpen={isEducationOpen} onClose={onEducationClose} id="addEduction" size="3xl">
-                      <ModalContent>
-                        <ModalHeader>Add Education</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>
-                        </ModalBody>
-                          {/* <Formik initialValues={initialValuesEducation} onSubmit={onSubmitEducation} validationSchema={validationSchemaEducation}>
-                          {({ handleSubmit }: any) => (
-                            <Stack as="form" onSubmit={handleSubmit as any} px="1rem">
-                              
-                                <HStack spacing="2rem">
-                                    <FormInput inputID="school" inputLabel="School Name" inputType="text" />
-                                    <FormInput inputID="degree" inputLabel="Degree" inputType="text" />
-                                </HStack>
-                                
-                                <HStack spacing="2rem">
-                                    <FormInput inputID="startDate" inputLabel="Start Date" inputType="number" />
-                                    <FormInput inputID="endDate" inputLabel="End Date" inputType="number" />
-                                </HStack>
-                                
-                                <FormTextArea inputID="description" inputLabel="Description" textRows={4} />
-
-                                <SubmitButton variant="blackFormButton">Add Education</SubmitButton> 
-                            </Stack>
-                            )}
-                        </Formik> */}
-
-                        <ModalFooter>
-                          <Button colorScheme='blue' mr={3} onClick={onEducationClose}>
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                    <Stack>
-                      
-                    </Stack>
                     </Box>
             </PortalLayout>
         </>

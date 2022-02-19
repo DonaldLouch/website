@@ -67,8 +67,8 @@ export default function Blog({ postData, pagination }: any) {
     <>
     <PortalLayout pageTitle="Manage Blog Posts">
     <Metadata
-          title={`${process.env.WEBSITE_NAME} | Blog Posts`}
-          keywords={`${process.env.KEYWORDS}`}
+          title={`${process.env.WEBSITE_NAME} Blog Posts`}
+          keywords={`${process.env.KEYWORDS}, blog, posts, post, content, photography, videography, graphic design, audio, written, general, education, educational`}
           description={`${process.env.DESCRIPTION}`}
         />
         <Box as="main" color={useColorModeValue("black", "white")}>

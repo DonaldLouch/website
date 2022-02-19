@@ -121,8 +121,8 @@ const currentPage = paginationArray?.[1] + 1
   return (
     <>
     <Metadata
-          title={`${process.env.WEBSITE_NAME} | Blog Posts`}
-          keywords={`${process.env.KEYWORDS}`}
+          title={`${process.env.WEBSITE_NAME} Blog Post's`}
+          keywords={`${process.env.KEYWORDS}, blog. post, feed, photography, videography, audio, design, general, education`}
           description={`${process.env.DESCRIPTION}`}
         />
         

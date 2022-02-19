@@ -46,7 +46,7 @@ export default function LinksPortal() {
         <>  
             <PortalLayout pageTitle={`Edit: Links`}>
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: Links`}
+                    title={`Edit: Links | ${process.env.WEBSITE_NAME}`}
                     keywords={`${process.env.KEYWORDS}`}
                     description={`${process.env.DESCRIPTION}`}
                     />

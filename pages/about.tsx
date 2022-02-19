@@ -53,7 +53,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
     <>
     <Metadata
           title={`About ${about.firstName} ${about.lastName}`}
-          keywords={`${process.env.KEYWORDS}, ${about.firstName} ${about.lastName}, ${about.firstName}, ${about.lastName}, ${about.middleName}, about me, ${about.firstName} ${about.middleName} ${about.lastName}`}
+          keywords={`${process.env.KEYWORDS}, ${about.firstName} ${about.lastName}, ${about.firstName}, ${about.lastName}, ${about.middleName}, about me, ${about.firstName} ${about.middleName} ${about.lastName}, canada, Canadian, photographer, videographer, web developer, devop`}
           description={`${about.bioExcerpt}`}
         />
         <Box 

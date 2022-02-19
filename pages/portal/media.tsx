@@ -146,9 +146,9 @@ export default function MediaManager({mediaData, pagination}: any) {
     <>  
       <PortalLayout pageTitle="Media Manger">
         <Metadata
-              title={`${process.env.WEBSITE_NAME} | Media Manger`}
-              keywords={`${process.env.KEYWORDS}`}
-              description={`${process.env.DESCRIPTION}`}
+              title={`${process.env.WEBSITE_NAME} Media Manger`}
+              keywords={`${process.env.KEYWORDS}, portal, media, manager, admin`}
+              description={`Manage the media for Donald Louch.`}
             />
             <Box as="main" id="homeWrapper" color="white">
               <SectionCard styleType="primaryCard" id="mediaUpload">

@@ -90,9 +90,9 @@ export default function NewEmbedPortal() {
         <>  
             <PortalLayout pageTitle="Edit: A New Embed">
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: Add New Embed`}
-                    keywords={`${process.env.KEYWORDS}`}
-                    description={`${process.env.DESCRIPTION}`}
+                    title={`Add New Embed | ${process.env.WEBSITE_NAME}`}
+                    keywords={`${process.env.KEYWORDS}, embed, portal, new, admin`}
+                    description={`Add new embed's to Donald Louch`}
                     />
                     <Box as="main" id="editAbout" color="black">
                     <Link variant="primary" href="pagesLinks">Go Back To Links</Link>

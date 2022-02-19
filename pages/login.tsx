@@ -84,7 +84,7 @@ export default function Login({ csrfToken }: any) {
   return (
     <>
     <Metadata
-        title={`${process.env.WEBSITE_NAME}`}
+        title={`Login | ${process.env.WEBSITE_NAME}`}
         keywords={`${process.env.KEYWORDS}`}
         description={`${process.env.DESCRIPTION}`}
     />

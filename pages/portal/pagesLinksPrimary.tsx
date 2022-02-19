@@ -131,7 +131,7 @@ export default function PrimaryLinksPortal({ linkData }:any) {
         <>  
             <PortalLayout pageTitle={`Edit: Primary Links`}>
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: Primary Links`}
+                    title={`Edit: Primary Links | ${process.env.WEBSITE_NAME}`}
                     keywords={`${process.env.KEYWORDS}`}
                     description={`${process.env.DESCRIPTION}`}
                     />

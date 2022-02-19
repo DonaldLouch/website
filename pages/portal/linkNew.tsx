@@ -92,9 +92,9 @@ export default function NewLinkPortal() {
         <>  
             <PortalLayout pageTitle="Edit: A New Link">
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: Add New Link`}
-                    keywords={`${process.env.KEYWORDS}`}
-                    description={`${process.env.DESCRIPTION}`}
+                    title={`Add New Link | ${process.env.WEBSITE_NAME}`}
+                    keywords={`${process.env.KEYWORDS}, portal, new, admin`}
+                    description={`Add new link's to Donald Louch`}
                     />
                     <Box as="main" id="editAbout" color="black">
                     <Link variant="primary" href="pagesLinks">Go Back To Links</Link>

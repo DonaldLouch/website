@@ -18,8 +18,8 @@ export default function PortfolioVideography() {
   return (
     <>  
         <Metadata
-        title={`${process.env.WEBSITE_NAME}`}
-        keywords={`${process.env.KEYWORDS}`}
+        title={`Videography | Donald Louch Portfolio`}
+        keywords={`${process.env.KEYWORDS}, portfolio, Donald Louch, donald, louch, videography`}
         description={`${process.env.DESCRIPTION}`}
         />
         <Box 

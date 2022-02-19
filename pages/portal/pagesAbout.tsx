@@ -174,9 +174,9 @@ export default function AboutMePortal({ aboutData }:any) {
         <>  
             <PortalLayout pageTitle={`Edit: About Me Page`}>
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: About Me Page`}
-                    keywords={`${process.env.KEYWORDS}`}
-                    description={`${process.env.DESCRIPTION}`}
+                    title={`Edit: About Me Page | ${process.env.WEBSITE_NAME}`}
+                    keywords={`${process.env.KEYWORDS}, portal, edit, admin`}
+                    description={`Edit the About Me page on the ${process.env.WEBSITE_NAME} portal.`}
                     />
                     <Box as="main" id="editAbout" color="black">
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>

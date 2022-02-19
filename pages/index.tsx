@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <>  
       <Metadata
-          title={`${process.env.WEBSITE_NAME}`}
+          title={`COMING SOON!`}
           keywords={`${process.env.KEYWORDS}`}
-          description={`${process.env.DESCRIPTION}`}
+          description={`COMING SOON!`}
         />
         <Hero />
     </>

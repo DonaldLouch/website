@@ -27,6 +27,8 @@ import { FormSelect } from '../../components/Form/FormSelect'
 import { FormTextArea } from '../../components/Form/FormTextArea'
 import { FormSwitch } from '../../components/Form/FormSwitch'
 
+import { FormCheckGroup } from '../../components/Form/FormCheckGroup'
+
 export default function BlogNew() {
 
   // const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
@@ -78,6 +80,8 @@ export default function BlogNew() {
 
     let updatePostedOn = new Date()
     if (values.postedOn) {updatePostedOn = new Date(values.postedOn)}
+    
+    const categoryValue = values.category.toString()
 
     const submitBlogPostData = {
       id: "blog"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
@@ -89,7 +93,7 @@ export default function BlogNew() {
       headingText: values.headingText,
       body: values.body,
       excerpt: values.excerpt,
-      categories: values.category,
+      categories: categoryValue,
       tags: values.tags,
       thumbnail: thumbnail,
       sidebar: sidebar,
@@ -187,9 +191,9 @@ export default function BlogNew() {
     <>  
       <PortalLayout pageTitle="Create New Blog Post">
         <Metadata
-              title={`${process.env.WEBSITE_NAME} | New Blog`}
-              keywords={`${process.env.KEYWORDS}`}
-              description={`${process.env.DESCRIPTION}`}
+              title={`New Blog Post | ${process.env.WEBSITE_NAME}`}
+              keywords={`${process.env.KEYWORDS}, portal, new, admin`}
+              description={`Add a new blog post to Donald Louch`}
             />
             <Box as="main" id="newBlogPost" color="black">
               <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -255,14 +259,18 @@ export default function BlogNew() {
 
                     <HStack spacing="2rem">
                       <VStack w="100%">
-                        <FormSelect selectLabel="Category" selectID="category" selectPlaceholder="Select A Category">
-                          <option value="Photography">Photography</option>
-                          <option value="Videography">Videography</option>
-                          <option value="Audio">Audio</option>
-                          <option value="Graphic Design">Graphic Design</option>
-                          <option value="General">General</option>
-                          <option value="Education">Education</option>
-                        </FormSelect>
+                        <FormCheckGroup
+                            checkGroupID="category" 
+                            checkGroupLabel="Category" 
+                            checkGroupArray={[
+                              {'checkValue':'Photography', 'checkLabel':'Photography'},
+                              {'checkValue':'Videography', 'checkLabel':'Videography'},
+                              {'checkValue':'Audio', 'checkLabel':'Audio'},
+                              {'checkValue':'Graphic Design', 'checkLabel':'Graphic Design'},
+                              {'checkValue':'General', 'checkLabel':'General'},
+                              {'checkValue':'Education', 'checkLabel':'Education'},
+                            ]}
+                          />
                       </VStack>
                       <FormTextArea inputID="tags" inputLabel="Tags" textRows={3} />
                     </HStack>

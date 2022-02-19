@@ -200,9 +200,9 @@ export default function Post({ postData }:any) {
         <>  
             <PortalLayout pageTitle={`Edit: ${post.title}`}>
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: ${post.title}`}
-                    keywords={`${process.env.KEYWORDS}`}
-                    description={`${process.env.DESCRIPTION}`}
+                    title={`Edit: ${post.title} | ${process.env.WEBSITE_NAME}`}
+                    keywords={`${process.env.KEYWORDS}, portal, edit, admin`}
+                    description={`Post Edit: ${post.title}`}
                     />
                     <Box as="main" id="editBlogPost" color="black">
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>

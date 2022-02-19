@@ -8,12 +8,13 @@ export default function PortalHome() {
     <>  
       <PortalLayout pageTitle="Portal Home">
         <Metadata
-              title={`${process.env.WEBSITE_NAME}`}
-              keywords={`${process.env.KEYWORDS}`}
-              description={`${process.env.DESCRIPTION}`}
+              title={`COMING SOON!`}
+              keywords={`${process.env.KEYWORDS}, portal`}
+              description={`COMING SOON!`}
             />
             <Box as="main" id="homeWrapper" color="white">
                 <Heading as="h2" variant="sectionTitle" size="3xl">Portal</Heading>
+                <Heading as="h3" variant="sectionTitle" size="2xl">Coming Soon!</Heading>
             </Box>
       </PortalLayout>
     </>  

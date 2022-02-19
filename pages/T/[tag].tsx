@@ -83,9 +83,9 @@ const currentPage = paginationArray?.[1] + 1
   return (
     <>
     <Metadata
-          title={`${process.env.WEBSITE_NAME} | Blog Posts`}
+          title={`(${posts.length}) ${router.query.tag} | ${process.env.WEBSITE_NAME}`}
           keywords={`${process.env.KEYWORDS}`}
-          description={`${process.env.DESCRIPTION}`}
+          description={`Blog posts by Donald Louch that are flagged with the category ${router.query.tag}`}
         />
 
         <Box as="main" color={useColorModeValue("black", "white")}>

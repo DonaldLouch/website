@@ -294,7 +294,7 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
         <>  
             <PortalLayout pageTitle={`Edit: Resume Page`}>
                 <Metadata
-                    title={`${process.env.WEBSITE_NAME} | Edit: Resume Page`}
+                    title={`Edit: Resume Page | ${process.env.WEBSITE_NAME}`}
                     keywords={`${process.env.KEYWORDS}`}
                     description={`${process.env.DESCRIPTION}`}
                     />

@@ -32,8 +32,8 @@ export default function Portfolio() {
   return (
     <>  
       <Metadata
-          title={`${process.env.WEBSITE_NAME}`}
-          keywords={`${process.env.KEYWORDS}`}
+          title={`Donald Louch Portfolio`}
+          keywords={`${process.env.KEYWORDS}, portfolio, Donald Louch, donald, louch, web production, photography, videography, graphic design, audio, written work`}
           description={`${process.env.DESCRIPTION}`}
         />
         <HeroPage name="Donald Louch" tagLine="and I'm a Canadian Digital Content Creator" links={pageLinks} cta={["Resume", "portfolio/resume"]} />

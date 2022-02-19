@@ -37,7 +37,7 @@ export default function Test({ resumeData, resumeExperienceData, resumeWorkExper
     <>
     <Metadata
           title="Donald Louch's Resume"
-          keywords={`${process.env.KEYWORDS}`}
+          keywords={`${process.env.KEYWORDS}, Donald Louch, donald, louch, resume`}
           description={`${resume.bioExcerpt}`}
         />
         <Box as="main" color={useColorModeValue("black", "white")}>
