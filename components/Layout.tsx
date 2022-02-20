@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Box, useColorModeValue } from '@chakra-ui/react'
 
-import Header from "./Header";
-import Footer from "./Footer";
+// import Header from "./Header";
+// import Footer from "./Footer";
 //import { LayoutProps } from "framer-motion";
 import { Metadata } from "./Metadata";
 
@@ -29,11 +29,11 @@ export const Layout = (props: LayoutProps) => {
           keywords={`${process.env.KEYWORDS}`}
           description={`${process.env.DESCRIPTION}`}
        />
-      <Header />
+      {/* <Header /> */}
       <Box as="main" bg={useColorModeValue('white', 'black')} minH="100vh" pt="6rem" pb="2rem" px={{base: "1rem", lg: 20}}>
         {children}
       </Box>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
