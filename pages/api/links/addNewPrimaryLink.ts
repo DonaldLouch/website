@@ -17,7 +17,7 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
                 title: linkData.title,
                 subTitle: linkData.subTitle,
                 link: linkData.link,
-                // orderNumber: 6
+                orderNumber: 6
             },
         })
 
