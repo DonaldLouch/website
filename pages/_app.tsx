@@ -1,5 +1,9 @@
 import * as React from "react"
 import type { AppProps } from 'next/app'
+
+// import splitbee from '@splitbee/web'
+// import { useEffect } from 'react'
+
 // import { AuthProvider } from '../config/Firebase/FirebaseAuth'
 
 import { 
@@ -18,6 +22,10 @@ import "@fontsource/playfair-display"
 import  { Layout }  from "../components/Layout"
 
 export default function MyApp({ Component, pageProps }: AppProps): any {
+  // useEffect((): void => { splitbee.init({
+  //   token: process.env.SPLITBEE_TOKEN,
+  // }); }, []);
+  
   return (
     <ChakraProvider theme={theme}>
       <ColorModeProvider options={{

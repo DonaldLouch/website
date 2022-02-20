@@ -49,6 +49,8 @@ module.exports = {
     CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
     CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
     CLOUDINARY: process.env.CLOUDINARY,
+    SPLITBEE_TOKEN: process.env.SPLITBEE_TOKEN,
+    SPLITBEE_APIKEY: process.env.SPLITBEE_APIKEY,
   },
 }
 

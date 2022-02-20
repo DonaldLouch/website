@@ -32,6 +32,7 @@
     "@next-auth/prisma-adapter": "^0.5.2-next.19",
     "@next/mdx": "^12.1.0",
     "@prisma/client": "^3.9.2",
+    "@splitbee/web": "^0.3.0",
     "cloudinary": "^1.28.1",
     "formik": "^2.2.9",
     "formik-chakra-ui": "^1.6.0",

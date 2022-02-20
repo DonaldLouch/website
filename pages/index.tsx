@@ -1,19 +1,19 @@
-// import { Box } from '@chakra-ui/react'
-
-import {Metadata} from "../components/Metadata";
-// import AboutUs  from '../components/AboutUs'
-// import Services  from '../components/Services'
-// import Products  from '../components/Products'
-// import Showcase  from '../components/Showcase'
-// import Contact  from '../components/Contact'
+import {Metadata} from "../components/Metadata"
 
 
-import { Box, Flex, Heading, useColorModeValue, Image, Text, Link } from "@chakra-ui/react";
-import GradientBox from "../components/GradientBox";
+import { Box, Flex, Heading, useColorModeValue, Image, Text, Link } from "@chakra-ui/react"
+
+import GradientBox from "../components/GradientBox"
+
+// import splitbee from '@splitbee/web'
 
 // import nookies from "nookies"
 
 export default function Home() {
+  // const action: string = 'action';
+  // const data: any = {};
+  // splitbee.track(action, data);
+
   return (
     <>  
       <Metadata
