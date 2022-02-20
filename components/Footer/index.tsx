@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { 
-    Button, 
+    // Button, 
     Box, 
     Stack, 
     Text, 
@@ -28,7 +28,7 @@ export default function Footer() {
                         />
                         </Link>
                         <Stack direction={{base: 'column', md: "row"}} spacing="4" align="center" justify="space-between" pb={{base: "1rem", lg: "0"}} mx={{base: "4rem", lg: "0"}}>
-                            <Button as="a" href="#" aria-label="TOS" variant="outline" colorScheme="white" size="md" _hover={{ bg: "white", color: "tertiary", border: "none" }}>Terms of Services</Button>
+                            {/* <Button as="a" href="#" aria-label="TOS" variant="outline" colorScheme="white" size="md" _hover={{ bg: "white", color: "tertiary", border: "none" }}>Terms of Services</Button> */}
                             <Stack direction="row">
                                 <FooterIcon linkURL="https://facebook.com/DonaldLouchProductions" socialMedia="Facebook" linkIcon="facebook" />
                                 <FooterIcon linkURL="https://twitter.com/DonaldLouch" socialMedia="Twitter" linkIcon="twitter" />

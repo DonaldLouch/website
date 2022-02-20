@@ -11,21 +11,21 @@ import {
 import {Metadata} from "../components/Metadata"
 
 // import { SectionCard } from "../components/Cards/SectionCard"
-import Contact from "../components/Contact"
+import Hire from "../components/Hire"
 
-export default function Test() {
+export default function HireMe() {
 
   return (
     <>
     <Metadata
-          title={`Contact ${process.env.WEBSITE_NAME}`}
+          title={`Hire Donald Louch`}
           keywords={`${process.env.KEYWORDS}`}
           description={`${process.env.DESCRIPTION}`}
         />
         <Box as="main" color="black">
           {/* <SectionCard id="signup" styleType="primaryCard"> */}
             <Box>
-              <Contact />
+              <Hire />
             </Box>
           {/* </SectionCard> */}
         </Box>

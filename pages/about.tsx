@@ -31,6 +31,8 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { SectionCard } from "../components/Cards/SectionCard"
 import { SectionTitle } from "../components/SectionTitle"
 
+import Contact from "../components/Contact"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import '../config/fontAwesome'
 
@@ -219,10 +221,11 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
                 </TabPanel>
               </TabPanels>
             </Tabs>
-            <Box id="contact" mt="2rem" mb="2rem" p="2rem" borderRadius="0 2rem" boxShadow="bsBoldWhite">
-              <SectionTitle headingTitle="Contact Me" />
-              <Text textAlign="center">🚧 Section Is Currently Under Construction 🚧</Text>
-            </Box>
+            {/* <Box id="contact" mt="2rem" mb="2rem" p="2rem" borderRadius="0 2rem" boxShadow="bsBoldWhite"> */}
+              {/* <SectionTitle headingTitle="Contact Me" /> */}
+              <Contact />
+              {/* <Text textAlign="center">🚧 Section Is Currently Under Construction 🚧</Text> */}
+            {/* </Box> */}
         </Box>
     </>
   )

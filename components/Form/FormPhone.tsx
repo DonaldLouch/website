@@ -1,3 +1,5 @@
+import { useColorModeValue } from '@chakra-ui/react'
+
 import { InputControl } from 'formik-chakra-ui'
 
 interface FormProps {
@@ -18,15 +20,16 @@ export const FormPhone = ( props: FormProps) => {
             my="1.5rem"
             inputProps={{
                 variant: "unstyled",
-                boxShadow: "bsBoldWhite",
+                boxShadow: useColorModeValue('bsBoldBlue', 'bsBoldWhite'),
                 _focus: {boxShadow: "bsBoldOrange"},
                 _invalid: {boxShadow: "bsBoldRed"},
                 p: "1.5rem 2rem",
-                color: "white",
+                color: useColorModeValue('black', 'white'),
                 borderRadius: "0 2rem 0 2rem",
                 type: "tel",
-                //pattern: "\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{4}"
+                pattern: "\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{4}"
             }}
+            labelProps={{color: useColorModeValue('primary', 'white')}}
         />
     )
 }
