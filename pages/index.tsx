@@ -51,7 +51,8 @@ export default function Home() {
               m="0.5rem auto"
             />
             <Heading as="h1" textAlign="center" fontSize="4rem" fontWeight="bold" color={useColorModeValue('primary', 'white')}>Welcome to Donald Louch!</Heading>
-            <Text textAlign="center" color={useColorModeValue('black', 'white')} fontSize="lg">Please note that at this time the website is under construction still. Although, most features and content are available, some features may not or may not be fully developed. If you would like to continue to the beta version <Link href="homePage"  variant="primary">Please Click Here</Link> or you may visit the legacy version at <Link href="https://legacy.donaldlouch.ca" variant="primary">legacy.donaldlouch.ca</Link>.</Text>
+            <Text textAlign="center" color={useColorModeValue('black', 'white')} fontSize="lg">Please note that at this time this website is under construction. Although, most features and content are available, some features may not or may not be fully developed.</Text>
+            <Text textAlign="center" color={useColorModeValue('black', 'white')} fontSize="lg" mt="1rem">You may <Link  href="homePage"  variant="primary">Continue To The Beta Version Here</Link> or you may visit the legacy version at <Link href="https://legacy.donaldlouch.ca" variant="primary">legacy.donaldlouch.ca</Link>.</Text>
           </Box>
         </Flex>
       </Box>
