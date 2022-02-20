@@ -2,6 +2,7 @@ import {
     Box,
     Text,
     Link,
+    // useColorModeValue
   } from '@chakra-ui/react'
   
 
@@ -13,8 +14,8 @@ import {
     const postedOn = postedDay +" at " + postedTime
 
     return (
-        <Box bg="backgroundGradient" p="0.5rem 1rem" my="1.5rem">
-            <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
+        <Box bg="backgroundGradient" p="0.5rem 1rem" my="1.5rem" color="white">
+            <Text fontSize="1rem" color="white">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
         </Box>
     )
 }

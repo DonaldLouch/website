@@ -13,8 +13,6 @@ import {
 import { FooterIcon } from './FooterIcon'
 
 export default function Footer() {
-    // const primaryLinks = primaryLinkData
-
     return (
         <Box bg="black" maxW="100vw" boxShadow={useColorModeValue('bsBoldBlue', 'bsBoldWhite')}>
             <Box as="footer" role="contentinfo" mx="auto" py="10" px={32} color="white">

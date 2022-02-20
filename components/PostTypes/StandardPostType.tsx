@@ -6,6 +6,7 @@ import {
     usePrefersReducedMotion,
     Heading,
     Link,
+    AspectRatio,
     // Stack,
     // Button,
     // Grid
@@ -41,36 +42,39 @@ import {
 
       return (
           <>
-            <Box 
-                as="section" 
-                id="thumbWrap" 
+          <AspectRatio 
+                ratio={16/9}
+                // w={{base: "calc(100% - -6rem);", xl: "95%"}}
+                w="100%"
+                // m={{ base: "0 -4rem", xl: "0"}}
+                overflow="hidden"
+                // zIndex="10000"
+                bg="mainGradient"
+                // borderRadius="0 2rem"
                 pos="absolute"
                 top="0"
                 left="0"
-                //   filter="opacity(80%)" 
-                //   p="2rem" 
-                //   borderRadius="0 3rem 0 3rem" 
-                //   mb="2rem" 
-                //   bg={useColorModeValue(stylesForComp.background.bgLight, stylesForComp.background.bgDark)}
-                //   boxShadow={useColorModeValue(stylesForComp.boxShadow.bsLight, stylesForComp.boxShadow.bsDark)}
-                //   color={useColorModeValue('black', 'white')}
+                p="0"
             >
-                <Image src={post.thumbnail} alt={post.title} w="100vw" maxH="100vh"/>
-                <Box 
+            <Image src={post.thumbnail} alt={post.title} w="100%" />
+            </AspectRatio>
+            <Box 
                     pos="absolute"
-                    top={{ base: "30vw", md:"5vw" }}
+                    top={{ base: "40vw", md:"5vw" }}
                     fontSize="0.8rem" 
                     bg="backgroundGradient"
                     color="white"
-                    p="1rem"
+                    p="1.5rem"
                     animation={metaAnimation}
+                    borderRadius="0 2rem"
+                    ml={{base: "-2rem", md:"-4rem"}}
+                    // zIndex="10000" 
                 >
-                    <Heading as="h1" fontSize="3rem" fontWeight="900" my="0.5rem">{post.title}</Heading>
+                    <Heading as="h1" fontSize="3rem" fontWeight="900" m="0.5rem">{post.title}</Heading>
                     <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
                 </Box>
-            </Box>
 
-            <Box pt={{base: "43vh", md: "55vw", lg: "60vw", xl: "89vh"}}></Box>
+            <Box pt={{base: "43vh", md: "50vw"}}></Box>
 
             <PostCard>
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{post.headingText}</Heading>

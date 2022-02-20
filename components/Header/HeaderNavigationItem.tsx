@@ -42,7 +42,7 @@ export const HeaderNavigationItem = ({ slug, isParent, parentID, children }: Hea
                             <MenuList bg="white">
                                 {HeaderSubNavigationItems.map((subLink: any) => (
                                     subLink?.parentMenu == parentID && (
-                                        <MenuItem key={subLink.index}>{subLink.slug.includes ? (<Link href={subLink.slug} variant="unstyled" isExternal>{subLink.name}</Link>) : (<Link href={`../../${subLink.slug}`} variant="unstyled">{subLink.name}</Link>)}</MenuItem>
+                                        <MenuItem key={subLink.index}>{subLink.slug.includes("https://") ? (<Link href={subLink.slug} variant="unstyled" isExternal>{subLink.name}</Link>) : (<Link href={`../../${subLink.slug}`} variant="unstyled">{subLink.name}</Link>)}</MenuItem>
                                     )
                                 ))}
                             </MenuList>

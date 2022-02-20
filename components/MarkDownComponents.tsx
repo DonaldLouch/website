@@ -210,7 +210,7 @@ const tables = (props: any) => (
             <Thead>
                 <Tr>
                     {props.children?.[0].props.children.props.children?.map((header: any) => (
-                        <Th key={header.index} textTransform="capitalize" fontSize="1rem" fontWeight="900" color="white" textAlign="center">{header.props.children}</Th>
+                        <Th key={header.index} textTransform="capitalize" fontSize="1rem" fontWeight="900" color="secondary" textAlign="center">{header.props.children}</Th>
                     ))}
                 </Tr>
             </Thead>

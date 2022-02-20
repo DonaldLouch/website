@@ -48,6 +48,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
   const embeds = embedData
 
   const primeGrey = useColorModeValue("primary", "grey")
+  const primeWhite = useColorModeValue("primary", "white")
 
   const components = {
     p: paragraph
@@ -148,7 +149,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
                   ))}
                   {links.map((link: any) => (
                   <Link key={link.id} href={link.link} isExternal variant="unstyled" _hover={{textDecoration: "none"}}>
-                    <Grid templateColumns={{base: "20% 80%", md:"10% 90%", lg:"5% 95%" }} color="primary" boxShadow="bsBlue" my="0.8rem" p="1.2rem" borderRadius="0 2rem" overflowX="scroll" alignItems="center" justifyContent="start" letterSpacing=".005rem" fontWeight="900" fontSize={{base: "5vw", md:"2rem", lg:"2vw"}} columnGap="0.5rem" _hover={{boxShadow: "none", bg: "backgroundGradient", color: "white"}}>
+                    <Grid templateColumns={{base: "20% 80%", md:"10% 90%", lg:"5% 95%" }} color={primeWhite} boxShadow="bsBlue" my="0.8rem" p="1.2rem" borderRadius="0 2rem" overflowX="scroll" alignItems="center" justifyContent="start" letterSpacing=".005rem" fontWeight="900" fontSize={{base: "5vw", md:"2rem", lg:"2vw"}} columnGap="0.5rem" _hover={{boxShadow: "none", bg: "backgroundGradient", color: "white"}}>
                       <IconButton
                         aria-label={`${link.title} Link`}
                         w="100%"
@@ -185,7 +186,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
                         // pt="0.5rem"
                         // padding="0.5rem"
                         // borderRadius="0 1em"
-                        // color={primeWhite}
+                        color={primeWhite}
                         // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
                         icon={
                             <FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />
