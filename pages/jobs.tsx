@@ -13,12 +13,12 @@ import {Metadata} from "../components/Metadata"
 // import { SectionCard } from "../components/Cards/SectionCard"
 import Hire from "../components/Hire"
 
-export default function HireMe() {
+export default function Jobs() {
 
   return (
     <>
     <Metadata
-          title={`Hire Donald Louch`}
+          title={`Request Freelance Job From Donald Louch`}
           keywords={`${process.env.KEYWORDS}`}
           description={`${process.env.DESCRIPTION}`}
         />

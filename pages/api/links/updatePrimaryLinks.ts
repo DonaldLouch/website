@@ -61,6 +61,15 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
                 lastUpdatedOn: linkData.lastUpdatedOn,
             }
         }) as any
+        
+        await prisma.primaryLinks.updateMany({
+            where: { title: "GitHub" },
+            data: {
+                subTitle: linkData.GitHubSubTitle,
+                link: linkData.GitHubLink,
+                lastUpdatedOn: linkData.lastUpdatedOn,
+            }
+        }) as any
 
         res.status(200).json({ message: "Successfully updated primary links" })
     } catch (error) {

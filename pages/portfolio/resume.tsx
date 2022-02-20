@@ -58,6 +58,7 @@ export default function Test({ resumeData, resumeExperienceData, resumeWorkExper
 
               <Box as="article">
                 <SectionTitle headingTitle={`${resume.firstName} ${resume.lastName}`} />
+                <Text fontSize="lg" textAlign="center">{resume.pronouns}</Text>
                 <Heading textAlign="center" my="1rem" id="profile">Profile</Heading>
                 <Text fontSize="1.1rem" lineHeight="1.4rem">{resume.profile}</Text>
 

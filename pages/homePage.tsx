@@ -25,8 +25,8 @@ export default function Home() {
             'linkUrl': 'about#links'
         },
         {
-            'linkTitle': 'Hire Me!', 
-            'linkUrl': 'hire'
+            'linkTitle': 'Available For Freelance Jobs!', 
+            'linkUrl': 'jobs'
         },
     ]
   return (

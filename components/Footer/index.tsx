@@ -13,6 +13,8 @@ import {
 import { FooterIcon } from './FooterIcon'
 
 export default function Footer() {
+    // const primaryLinks = primaryLinkData
+
     return (
         <Box bg="black" maxW="100vw" boxShadow={useColorModeValue('bsBoldBlue', 'bsBoldWhite')}>
             <Box as="footer" role="contentinfo" mx="auto" py="10" px={32} color="white">
@@ -29,12 +31,13 @@ export default function Footer() {
                         </Link>
                         <Stack direction={{base: 'column', md: "row"}} spacing="4" align="center" justify="space-between" pb={{base: "1rem", lg: "0"}} mx={{base: "4rem", lg: "0"}}>
                             {/* <Button as="a" href="#" aria-label="TOS" variant="outline" colorScheme="white" size="md" _hover={{ bg: "white", color: "tertiary", border: "none" }}>Terms of Services</Button> */}
+                            <iframe src="https://github.com/sponsors/DonaldLouch/button" title="Sponsor DonaldLouch" height="35" width="116"></iframe>
                             <Stack direction="row">
                                 <FooterIcon linkURL="https://facebook.com/DonaldLouchProductions" socialMedia="Facebook" linkIcon="facebook" />
                                 <FooterIcon linkURL="https://twitter.com/DonaldLouch" socialMedia="Twitter" linkIcon="twitter" />
                                 <FooterIcon linkURL="https://instagram.com/donaldlouch" socialMedia="Instagram" linkIcon="instagram" />
                                 <FooterIcon linkURL="https://youtube.donaldlouch.ca" socialMedia="YouTube" linkIcon="youtube" />
-                                <FooterIcon linkURL="https://github.com/DonaldLouch" socialMedia="GitHub" linkIcon="github" />
+                                <FooterIcon linkURL="https://github.com/DonaldLouch" socialMedia="GitHub" linkIcon="github" /> 
                             </Stack>
                         </Stack>
                     </Stack>

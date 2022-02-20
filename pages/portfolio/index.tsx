@@ -20,14 +20,14 @@ export default function Portfolio() {
             'linkTitle': 'Graphic Design', 
             'linkUrl': 'C/graphic'
         },
-        // {
-        //     'linkTitle': 'Written Work', 
-        //     'linkUrl': 'portfolio/written'
-        // },
-        // {
-        //     'linkTitle': 'All Other Content', 
-        //     'linkUrl': 'blog'
-        // },
+        {
+            'linkTitle': 'All Other Content', 
+            'linkUrl': 'blog'
+        },
+        {
+            'linkTitle': 'Available For Freelance Jobs!', 
+            'linkUrl': 'jobs'
+        },
     ]
   return (
     <>  

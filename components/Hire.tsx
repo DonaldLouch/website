@@ -1,8 +1,8 @@
 import { 
     Stack,
-    // Text, 
+    Text, 
     // Heading,
-    // Link,
+    Link,
     // Button,
     // Input,
     // FormControl,
@@ -10,7 +10,7 @@ import {
     // FormErrorMessage,
     // Textarea,
     useToast,
-    // useColorModeValue
+    useColorModeValue
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -100,9 +100,10 @@ export default function Hire() {
     
     return (
         <SectionCard id="contact" styleType="primaryCard">
-            <SectionTitle headingTitle="Hire Me" />
+            <SectionTitle headingTitle="Request a Freelancing Job" />
             {/* <Heading as="h3" size="xl" my="1rem" textAlign="center" fontWeight="regular">THE CONTACT FORM IS CURRENTLY DISABLED</Heading> */}
-            {/* <Text textAlign="center" fontSize="xl">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <Link href="mailto:contact@donaldlouch.ca" color={useColorModeValue('primary', 'secondary')}>contact@donaldlouch.ca</Link>.</Text> */}
+            <Text textAlign="center" fontSize="xl">Hello, if you would like you may hire me to do web development or digital content production freelancing. You may use the following inquiry form below or you may also email me directly and I&#39;ll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca" color={useColorModeValue('primary', 'secondary')}>hello@donaldlouch.ca</Link>.</Text>
+
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 {({ handleSubmit }: any) => (
                     <Stack as="form" onSubmit={handleSubmit as any}>
@@ -123,7 +124,7 @@ export default function Hire() {
                         </FormSelect>
                         <FormTextArea inputID="description" inputLabel="In As Much Detail Please Describe What You're Looking For" textRows={8} />
                         <FormInput inputID="budget" inputLabel="Estimated Budget" inputType="text" />
-                        <SubmitButton variant="blackFormButton">Submit Request</SubmitButton>
+                        <SubmitButton variant="blackFormButton">Submit Inquiry</SubmitButton>
                     </Stack>
                 )}
             </Formik>

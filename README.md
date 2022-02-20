@@ -18,7 +18,7 @@ With in saying that, I have constructed the website enough to where you'll be ab
 
 If you would like you may proceed to the beta version of the website by going to the link: [donaldlouch.ca](https://donaldlouch.ca) or you may go to the alpha version where features are not as develop at [beta.donaldlouch.ca](https://beta.donaldlouch.ca) or my Vercel link [donaldlouch.vercel.app](https://donaldlouch.vercel.app). Or if you would like you may visit the legacy version at [legacy.donaldlouch.ca](https://legacy.donaldlouch.ca)
 
-If you would you would like you may view the [Public Analytics via. SplitBee](#)!
+If you would you would like you may view the [Public Analytics via. SplitBee](https://app.splitbee.io/public/donaldlouch.ca)!
 
 ## Tech Stack (Beta and Alpha Versions)
 

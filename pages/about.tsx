@@ -47,6 +47,8 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
   const primaryLinks = primaryLinkData
   const embeds = embedData
 
+  const primeGrey = useColorModeValue("primary", "grey")
+
   const components = {
     p: paragraph
   }
@@ -107,11 +109,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
                         variant="unstyled"
                         p="1rem"
                         fontSize="inherit"
-                        // pt="0.5rem"
-                        // padding="0.5rem"
-                        // borderRadius="0 1em"
-                        // color={primeWhite}
-                        // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
+                        _hover={{ color: primeGrey }}
                         icon={
                             <FontAwesomeIcon icon={["fab", pLink.icon]} />
                         }

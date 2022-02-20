@@ -128,7 +128,7 @@ const unorderedList = (props: any) => (
             <>
             <ListItem key={list.index} boxShadow="bsBoldOrange" padding="1rem" borderRadius="0 2rem" my="1rem">
                 {/* <ListIcon as={MinusIcon} color='green.500'/> */}
-                {list.props.children}
+                {list.props?.children}
             </ListItem>
             </>
         ))} 
