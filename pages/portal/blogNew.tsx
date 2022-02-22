@@ -180,7 +180,7 @@ export default function BlogNew() {
     headingText: Yup.string().required('This field is required.'),
     body: Yup.string().required('This field is required.'),
     excerpt: Yup.string().max(300, 'The excerpt must not be more than 300 characters long.').required('This field is required.'),
-    category: Yup.string().required('This field is required.'),
+    // category: Yup.string().required('This field is required.'),
     tags: Yup.string().required('This field is required.'),
     // thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
     // sidebar: Yup.string().required('This field is required.')
