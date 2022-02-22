@@ -1,3 +1,5 @@
+![Alt](https://repobeats.axiom.co/api/embed/d23df52609fbb19c9a58e283a9af3d4a7eba0b05.svg "Repobeats analytics image")
+
 # Donald Louch
 
 Hi, my name is Donald and I’m a twenty-something-year-old Canadian web developer and digital content creator. I was born and raised in Victoria, BC and now reside in Nanaimo, BC.
