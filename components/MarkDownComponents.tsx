@@ -24,6 +24,7 @@ import {
     Td,
     List,
     ListItem,
+    Grid,
     // ListIcon,
     // OrderedList,
     // UnorderedList,
@@ -109,12 +110,12 @@ const image = (props: any) => (
 const songInfo = (props: any) => (
     // console.log(props)
     <>
-    <Box as="section" id="songInfo" display="flex" gap="2rem" mb="1rem">
-        <Image src={props.artworkSrc} alt={props.artworkTitle} w="10%" />
+    <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center">
+        <Image src={props.artworkSrc} alt={props.artworkTitle} w="100%" />
         <Stack>
             {props.children}
         </Stack>
-    </Box>
+    </Grid>
     </>
 )
 
