@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <>  
       <Metadata
-        title={`COMING SOON!`}
+        title={`Welcome to ${process.env.WEBSITE_NAME}`}
         keywords={`${process.env.KEYWORDS}`}
-        description={`COMING SOON!`}
+        description={`${process.env.DESCRIPTION}`}
       />
 
       <Box 
@@ -46,7 +46,7 @@ export default function Home() {
             <Image
               // src="/titleLogo.svg"
               src={useColorModeValue("/titleLogo.svg", "/titleLogoWhite.svg")}
-              alt="DevLexicon"
+              alt="Donald Louch Title Logo"
               width="35vw"
               m="0.5rem auto"
             />
