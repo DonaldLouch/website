@@ -43,7 +43,7 @@ export default function Test({ resumeData, resumeExperienceData, resumeWorkExper
         <Box as="main" color={useColorModeValue("black", "white")}>
           <SectionCard id="signup" styleType="primaryCard">
             <Grid templateColumns={{base: "100%", md: "30% 70%", lg: "20% 60% 20%"}} gap="2rem" pos="relative" pr={{ base: "initial", md: "5rem"}}>
-              <Box as="aside" pos="sticky" top="6rem" h="0" id="bio" display={{ base: "none", md: "initial"}}>
+              <Box as="aside" pos="sticky" top="6rem" h="74vh" id="bio" display={{ base: "none", md: "initial"}}>
                 <AspectRatio ratio={1}>
                   <Image src={resume.avatar} alt="Donald Louch Avatar" width="100%" boxShadow="bsBoldBlue" borderRadius="0 2rem"/>
                 </AspectRatio>
@@ -137,7 +137,7 @@ export default function Test({ resumeData, resumeExperienceData, resumeWorkExper
                 <Text textShadow="3px 2px 4px rgb(193 93 79 / 20%)" fontSize="sm" color="gray.500" mt="2rem">{`${new Date(resume?.lastUpdatedOn).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} at ${new Date(resume?.lastUpdatedOn).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`}</Text>
               </Box>
 
-              <Box as="aside" pos="sticky" top="6rem" h="0" id="menu" display={{ base: "none", lg: "initial"}}>
+              <Box as="aside" pos="sticky" top="6rem" h="74vh" id="menu" display={{ base: "none", lg: "initial"}}>
                 <Stack gap="1.4rem" mx="1rem">
                   <Button as="a" variant="portalButton" href="#profile" w="100%" color={useColorModeValue("black", "white")}>Profile</Button>
                   <Button as="a" variant="portalButton" href="#skills" w="100%" color={useColorModeValue("black", "white")}>Skills</Button>
