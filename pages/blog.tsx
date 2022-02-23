@@ -169,7 +169,7 @@ const currentPage = paginationArray?.[1] + 1
                         overflow="hidden"
                         // zIndex="10000"
                         bg="mainGradient"
-                        borderRadius="0 3rem"
+                        borderRadius="0 3rem 0 0"
                         >
                           <Image src={post.thumbnail} alt={post.title}/>
                         </AspectRatio>

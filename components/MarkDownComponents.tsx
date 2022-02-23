@@ -190,10 +190,12 @@ const inlinePhotoGallery = (props: any) => (
             id={props.id} 
             padding="0.5rem 0.3rem"
             // w={{base: "calc(100% - -6rem)", xl: "100%"}}
-            maxW="calc(100vw + 10rem)"
+            w={{base: "calc(100vw + 4rem)", lg: "100vw"}}
+            sx={{ columnCount: {base:"1", md: "2", lg: "4"}, columnGap: "0.2rem", columnWidth: {base: "100%", md: "50% 50%", lg: "25% 25% 25% 25%"} }}
             m="1rem -7rem"
-            sx={{ columnCount: {base:"2", md: "3", lg: "4", xl: "5"}, columnGap: "0.2rem" }}
             bg="mainGradient"
+            zIndex="tooltip"
+            pos="sticky"
         >
             {props.content.split(" || ")?.map((image: any) => (
                 <Link key={image.index} href={image.split(';;')?.[0]}>

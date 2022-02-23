@@ -35,7 +35,8 @@ import {
             id="photoShowcase" 
             padding="4rem 0.3rem 0.5rem"
             // w={{base: "calc(100% - -6rem)", xl: "100%"}}
-            maxW="calc(100vw + 10rem)"
+            // maxW="calc(100vw + 10rem)"
+            w={{base: "calc(100vw + 4rem)", lg: "100vw"}}
             m="-5rem"
             sx={{ columnCount: "1", columnGap: "0.2rem", columnWidth: "100%" }}
             bg="mainGradient"

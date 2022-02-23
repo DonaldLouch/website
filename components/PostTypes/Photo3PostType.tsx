@@ -35,9 +35,10 @@ import {
             id="photoShowcase" 
             padding="4rem 0.3rem 0.5rem"
             // w={{base: "calc(100% - -6rem)", xl: "100%"}}
-            maxW="calc(100vw + 10rem)"
+            // maxW="calc(100vw + 10rem)"
+            w={{base: "calc(100vw + 4rem)", lg: "100vw"}}
             m="-5rem"
-            sx={{ columnCount: "3", columnGap: "0.2rem", columnWidth: "33.33333333333333%" }}
+            sx={{ columnCount: {base: "1", md: "2", lg: "3"}, columnGap: "0.2rem", columnWidth: {base: "100%", md: "50% 50%", lg: "33% 33% 33%"} }}
             bg="mainGradient"
         >
             {gallerySplit?.map((image: any) => (
