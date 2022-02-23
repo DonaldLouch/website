@@ -36,6 +36,14 @@ export default function Blog({ postData, pagination }: any) {
 
   const router = useRouter()
 
+  const categoryTitle = router?.query?.category as string
+
+  let capitalizedCategoryTitle = categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1) as string
+
+  if (categoryTitle === "graphic") {
+    capitalizedCategoryTitle = "Graphic Design"
+  }
+
   const boxShadow = useColorModeValue("bsBoldOrange", "bsBoldWhite")
   const boxBigShadow = useColorModeValue("bsBigBoldBlue", "bsBigBoldWhite")
   const whiteBlack = useColorModeValue('white', 'black')
@@ -82,14 +90,14 @@ const currentPage = paginationArray?.[1] + 1
   return (
     <>
     <Metadata
-          title={`(${posts.length}) ${router.query.category} | ${process.env.WEBSITE_NAME}`}
+          title={`(${posts.length}) ${capitalizedCategoryTitle} | ${process.env.WEBSITE_NAME}`}
           keywords={`${process.env.KEYWORDS}, blog, category, categories, ${router.query.category}`}
           description={`Blog posts by Donald Louch that are flagged with the category ${router.query.category}`}
         />
 
         <Box as="main" color={useColorModeValue("black", "white")}>
           <SectionCard id="posts" styleType="primaryCard">
-              <SectionTitle headingTitle={posts.length === 0 ? (`It seems that there is no blog posts under the category "${router.query.category}".`) : (`${router.query.category === "design" ? ("Graphic Design") : (`"${router.query.category}"`)} has ${posts.length} ${posts.length === 1 ? ("post") : ("posts")} in it's category`)} />
+              <SectionTitle headingTitle={posts.length === 0 ? (`It seems that there is no blog posts under the category "${router.query.category}".`) : (`"${capitalizedCategoryTitle}" has ${posts.length} ${posts.length === 1 ? ("post") : ("posts")} in it's category`)} />
               <Grid templateColumns={{base: "100%" , md:"50% 50%", lg: "33% 33% 33%"}} gap={{base: 0, md: "1rem", xl:"2rem"}} mt="3rem" pr={{base: "initial", lg: "3rem"}} w="100%">
                 {/* <Grid templateColumns={{base: "100%" , md:"50% 50%"}} gap={{base: 0, md: "1rem", xl:"2rem"}} pr="3rem"> */}
                   {posts?.map((post: any) => ( 
@@ -121,7 +129,7 @@ const currentPage = paginationArray?.[1] + 1
                         >
                           <Image src={post.thumbnail} alt={post.title}/>
                         </AspectRatio>
-                        <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{post.categories}</Heading>
+                        <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{post?.categories.split(",").length >= 1 ? (post.categories.replace(",", ", ")) : (post.categories)}</Heading>
                         <Heading as="h2" size="3xl" fontWeight="bold" mb="1.5rem">{post.title}</Heading>
                         <Text>{post.excerpt}</Text>
                       </Link>

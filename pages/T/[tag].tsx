@@ -122,7 +122,7 @@ const currentPage = paginationArray?.[1] + 1
                         >
                           <Image src={post.thumbnail} alt={post.title}/>
                         </AspectRatio>
-                        <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{post.categories}</Heading>
+                        <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{post?.categories.split(",").length >= 1 ? (post.categories.replace(",", ", ")) : (post.categories)}</Heading>
                         <Heading as="h2" size="3xl" fontWeight="bold" mb="1.5rem">{post.title}</Heading>
                         <Text>{post.excerpt}</Text>
                       </Link>

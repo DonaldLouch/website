@@ -15,6 +15,7 @@ export const SectionTitle = ( props: SectionTitleProps) => {
             textDecorationColor="primary"
             textAlign="center"
             color={useColorModeValue('black', 'white')}
+            // textTransform="capitalize"
         >{headingTitle}</Heading>
     )
 }
