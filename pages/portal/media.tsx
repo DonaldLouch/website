@@ -180,7 +180,7 @@ export default function MediaManager({mediaData, pagination}: any) {
                   ))}
               </Box>
               <Stack direction="row" justify="space-between" align="center" m="1rem" p="2rem" boxShadow="bsBoldBlue" borderRadius="0 2rem" color={blackWhite}>
-              <Link href={`?pg=${currentPage - 1}`} variant="primary" color="black" _hover={{color: "primary"}}>Previous Page</Link>
+              <Link href={`?pg=${currentPage - 1}`} variant="primary" color={blackWhite} _hover={{color: "primary"}}>Previous Page</Link>
               {pages.map((page: any) => (
                 page === "...Prev" && (
                   <>
@@ -212,11 +212,11 @@ export default function MediaManager({mediaData, pagination}: any) {
                 page === currentPage ? (
                     <Link color="primary" fontWeight="900" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
                 ) : (
-                  <Link href={`?pg=${page}`} variant="primary" color="black" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
+                  <Link href={`?pg=${page}`} variant="primary" color={blackWhite} _hover={{color: "primary"}} key={page?.index}>{page}</Link>
                 )
                 )
               ))}
-              <Link href={`?pg=${currentPage + 1}`} variant="primary" color="black" _hover={{color: "primary"}}>Next Page</Link>
+              <Link href={`?pg=${currentPage + 1}`} variant="primary" color={blackWhite} _hover={{color: "primary"}}>Next Page</Link>
             </Stack>
             </Box>
       </PortalLayout>

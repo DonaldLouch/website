@@ -173,7 +173,7 @@ const currentPage = paginationArray?.[1] + 1
                         >
                           <Image src={post.thumbnail} alt={post.title}/>
                         </AspectRatio>
-                        <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{post.categories}</Heading>
+                        <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{post?.categories.split(",").length >= 1 ? (post.categories.replace(",", ", ")) : (post.categories)}</Heading>
                         <Heading as="h2" size="3xl" fontWeight="bold" mb="1.5rem">{post.title}</Heading>
                         <Text>{post.excerpt}</Text>
                       </Link>
@@ -191,7 +191,7 @@ const currentPage = paginationArray?.[1] + 1
                     </Box>*/}
               </Grid>
               <Stack direction="row" justify="space-between" align="center" m="1rem" p="2rem" boxShadow="bsBoldBlue" borderRadius="0 2rem" color={blackWhite}>
-              <Link href={`?pg=${currentPage - 1}`} variant="primary" color="black" _hover={{color: "primary"}}>Previous Page</Link>
+              <Link href={`?pg=${currentPage - 1}`} variant="primary" color={blackWhite} _hover={{color: "primary"}}>Previous Page</Link>
               {pages.map((page: any) => (
                 page === "...Prev" && (
                   <>
@@ -223,11 +223,11 @@ const currentPage = paginationArray?.[1] + 1
                 page === currentPage ? (
                     <Link color="primary" fontWeight="900" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
                 ) : (
-                  <Link href={`?pg=${page}`} variant="primary" color="black" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
+                  <Link href={`?pg=${page}`} variant="primary" color={blackWhite} _hover={{color: "primary"}} key={page?.index}>{page}</Link>
                 )
                 )
               ))}
-              <Link href={`?pg=${currentPage + 1}`} variant="primary" color="black" _hover={{color: "primary"}}>Next Page</Link>
+              <Link href={`?pg=${currentPage + 1}`} variant="primary" color={blackWhite} _hover={{color: "primary"}}>Next Page</Link>
             </Stack>
           </SectionCard>
         </Box>
