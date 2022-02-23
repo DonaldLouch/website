@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { Box, Button, Stack, Link, useToast, Menu, MenuButton, MenuItem, MenuList, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Stack, useToast } from '@chakra-ui/react'
 
 import PortalLayout from '../../components/Portal/PortalLayout'
 import { Metadata } from '../../components/Metadata'
 import { SectionCard } from '../../components/Cards/SectionCard'
 import { SectionTitle } from '../../components/SectionTitle'
 import { MediaCard } from '../../components/Cards/MediaCard'
+
+import { Pagination } from '../../components/Pagination'
 
 import prisma from '../../config/prisma'
 
@@ -21,8 +23,6 @@ export default function MediaManager({mediaData, pagination}: any) {
   const [uploaded, setUploaded] = useState(false)
   const [uploading, setUploading] = useState(false)
 
-  const blackWhite = useColorModeValue('black', 'white')
-
   const paginationArray = pagination
   const currentPage = paginationArray?.[1] + 1
   
@@ -37,7 +37,7 @@ export default function MediaManager({mediaData, pagination}: any) {
     previousPages.push(indexPrev)
   }
 
-  console.log(previousPages)
+  console.log(currentPage)
 
   const pages = new Array as any
  
@@ -179,45 +179,8 @@ export default function MediaManager({mediaData, pagination}: any) {
                     </>
                   ))}
               </Box>
-              <Stack direction="row" justify="space-between" align="center" m="1rem" p="2rem" boxShadow="bsBoldBlue" borderRadius="0 2rem" color={blackWhite}>
-              <Link href={`?pg=${currentPage - 1}`} variant="primary" color={blackWhite} _hover={{color: "primary"}}>Previous Page</Link>
-              {pages.map((page: any) => (
-                page === "...Prev" && (
-                  <>
-                    <Menu key={page.index} placement="top">
-                      <MenuButton>...</MenuButton>
-                      <MenuList>
-                        {previousPages?.map((number: any) => (
-                          <Link href={`?pg=${number}`} key={number}>
-                            <MenuItem>{number}</MenuItem>
-                          </Link>
-                        ))}
-                      </MenuList>
-                    </Menu>
-                  </>
-                ) || page === "...Nex" && (
-                  <>
-                    <Menu key={page.index} placement="top">
-                      <MenuButton>...</MenuButton>
-                      <MenuList>
-                        {nextPages?.map((number: any) => (
-                          <Link href={`?pg=${number}`} key={number}>
-                            <MenuItem>{number}</MenuItem>
-                          </Link>
-                        ))}
-                      </MenuList>
-                    </Menu>
-                  </>
-                ) || (
-                page === currentPage ? (
-                    <Link color="primary" fontWeight="900" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
-                ) : (
-                  <Link href={`?pg=${page}`} variant="primary" color={blackWhite} _hover={{color: "primary"}} key={page?.index}>{page}</Link>
-                )
-                )
-              ))}
-              <Link href={`?pg=${currentPage + 1}`} variant="primary" color={blackWhite} _hover={{color: "primary"}}>Next Page</Link>
-            </Stack>
+
+              <Pagination pages={pages} currentPage={currentPage} nextPages={nextPages} previousPages={previousPages} />
             </Box>
       </PortalLayout>
     </>  

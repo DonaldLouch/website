@@ -54,14 +54,14 @@ export default function PortalLayout(props: PortalLayoutProps) {
         }
         if (!session && status === 'unauthenticated') {
             setUserStatus(false)
-            router.push({
-                pathname: '/login',
-                query: {
-                    refURL: pathName,
-                    errCode: 'Not Logged In',
-                    errMessage: 'You were redirected back to the login screen as it seems that you are not logged in.',
-                }
-            })
+            // router.push({
+            //     pathname: '/login',
+            //     query: {
+            //         refURL: pathName,
+            //         errCode: 'Not Logged In',
+            //         errMessage: 'You were redirected back to the login screen as it seems that you are not logged in.',
+            //     }
+            // })
         } if (status === 'authenticated') {
             setUserStatus(true)
         }
