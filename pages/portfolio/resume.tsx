@@ -71,7 +71,15 @@ export default function Test({ resumeData, resumeExperienceData, resumeWorkExper
                       <AccordionItem border="none">
                           <AccordionButton bg="backgroundGradient" color="white" borderRadius="0 2rem" p="1.5rem 3rem" fontSize="1.2rem" fontWeight="600" fontFamily="Lato" _hover={{bg: "none", color: "primary"}} outline="none" _expanded={{bg: "primary", color: "white"}}>
                               <Box flex='1' textAlign='left'>
-                              {`${new Date(experience?.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })} - ${experience?.endDate ? (new Date(experience?.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })) : "Present"}: ${experience.company}`}
+                              {experience?.startDate === experience?.endDate ? (
+                                 <>
+                                  {`${new Date(experience?.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })}: ${experience.company}`}
+                                 </>
+                              ) : (
+                                <>
+                                  {`${new Date(experience?.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })} - ${experience?.endDate ? (new Date(experience?.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })) : "Present"}: ${experience.company}`}
+                                </>
+                              )}
                               </Box>
                               <Box mr="4" width={{ base: '4%', md: '12%' }} color="white">
                                   <FontAwesomeIcon 
@@ -88,7 +96,15 @@ export default function Test({ resumeData, resumeExperienceData, resumeWorkExper
                               history.resumeID === experience.id ? (
                                 <Box key={history.id} boxShadow="bsBoldBlue" p="2rem" borderRadius="0 2rem" my="1rem">
                                   <Heading as="h3" my="1rem">{history.position}</Heading>
-                                  <Text fontSize="1.1rem">{`${new Date(history?.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })} - ${history?.endDate ? (new Date(history?.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })) : "Present"}`}</Text>
+                                  <Text fontSize="1.1rem">{history?.startDate === history?.endDate ? (
+                                  <>
+                                    {`${new Date(history?.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })}`}
+                                  </> 
+                                  ) : (
+                                  <>
+                                    {`${new Date(history?.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })} - ${history?.endDate ? (new Date(history?.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: undefined })) : "Present"}`}
+                                  </>)}
+                                  </Text>
                                   <Text fontSize="1.1rem">{history.description}</Text>
                                 </Box>
                               ) : null
