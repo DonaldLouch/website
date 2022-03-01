@@ -15,6 +15,7 @@ export const theme = extendTheme({
                 scrollPadding: "5em",
                 overscrollBehaviorInline: "contain",
                 overscrollBehavior: "contain",
+                scrollSnapType: "inline mandatory",
             },
             a: {
                 color: "primary",

@@ -208,39 +208,25 @@ const inlinePhotoGallery = (props: any) => (
 const lineBreak = () => (<Box as="br"></Box>)
 
 const tables = (props: any) => (
-    // console.log(props.children.thead)
     <>
-    {/* {console.log(props.children?.[1].props.children)} */}
-        <Table variant='striped' colorScheme='purple' boxShadow="bsBoldOrange" padding="1rem !Important" sx={{ borderCollapse: 'unset' }} borderRadius="0 2rem" my="1rem">
+        <Table variant='striped' colorScheme='purple' boxShadow="bsBoldOrange" padding="1rem !Important" sx={{ borderCollapse: 'unset' }} borderRadius="0 2rem" my="1rem" overflowX="auto" display="block">
             <Thead>
                 <Tr>
-                    {props.children?.[0].props.children.props.children?.map((header: any) => (
-                        <Th key={header.index} textTransform="capitalize" fontSize="1rem" fontWeight="900" color="secondary" textAlign="center">{header.props.children}</Th>
+                    {props.tableHeader.split(' | ').map((header: any) => (
+                        <Th key={header} textTransform="capitalize" fontSize="1rem" fontWeight="900" color="secondary" textAlign="center">{header}</Th>
                     ))}
                 </Tr>
             </Thead>
             <Tbody>
-                {!props.children?.[1].props.children.length ? (
-                    <Tr>
-                        {props.children?.[1].props.children.props.children.map((cell: any) => (
-                            <Td key={cell.index}>{cell.props.children}</Td>
+               {props.tableData.split(" ;; ").map((row: any) => (
+                   <>
+                   <Tr key={row.index}>
+                        {row.split(' | ').map((cell: any) => (
+                            <Td key={cell}>{cell}</Td>
                         ))}
-                    </Tr>
-                ) : props.children?.[1].props.children.map((row: any) => (
-                    <Tr key={row.index}>
-                        {row.props.children.map((cell: any) => (
-                            <Td key={cell.index}>{cell.props.children}</Td>
-                        ))}
-                    </Tr>
-                ))}
-                
-                {/* {props.children?.[1].props.children.map((row: any) => (
-                    <Tr key={row.index}>
-                        {row.props.children.map((cell: any) => (
-                            <Td key={cell.index}>{cell.props.children}</Td>
-                        ))}
-                    </Tr>
-                ))} */}
+                   </Tr>
+                   </>
+               ))}
             </Tbody>
         </Table>
     </>

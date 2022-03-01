@@ -28,13 +28,14 @@ import { MDXRemote } from 'next-mdx-remote'
         hr: underline,
         a: links,
         InlinePhotoGallery: inlinePhotoGallery,
-        table: tables,
+        Table: tables,
         br: lineBreak,
         Text: text,
         Heading: heading
     }
     
   export const PostContent = ( source: any ) => { 
+    // console.log(source)
       return (
         <>
         <MDXRemote {...source}  components={components}/>
