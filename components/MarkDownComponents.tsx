@@ -209,15 +209,15 @@ const lineBreak = () => (<Box as="br"></Box>)
 
 const tables = (props: any) => (
     <>
-        <Table variant='striped' colorScheme='purple' boxShadow="bsBoldOrange" padding="1rem !Important" sx={{ borderCollapse: 'unset' }} borderRadius="0 2rem" my="1rem" overflowX="auto" display="block">
-            <Thead>
+        <Table variant='striped' colorScheme='purple' boxShadow="bsBoldOrange" padding="1rem !Important" sx={{ borderCollapse: 'unset' }} borderRadius="0 2rem" my="1rem">
+            <Thead w="auto">
                 <Tr>
                     {props.tableHeader.split(' | ').map((header: any) => (
                         <Th key={header} textTransform="capitalize" fontSize="1rem" fontWeight="900" color="secondary" textAlign="center">{header}</Th>
                     ))}
                 </Tr>
             </Thead>
-            <Tbody>
+            <Tbody w="auto">
                {props.tableData.split(" ;; ").map((row: any) => (
                    <>
                    <Tr key={row.index}>
