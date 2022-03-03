@@ -169,7 +169,11 @@ export async function getServerSideProps(router: any) {
   const postLimit = 12 as number
   
   // console.log(currentPage)
-  const postLength = await prisma.blogPost.count() as number
+  const postLength = await prisma.blogPost.count({
+    where: {
+      postStatus: 'Public'
+    }
+  }) as number
   let numberOfPages = postLength / postLimit as number
 
 
@@ -190,6 +194,7 @@ export async function getServerSideProps(router: any) {
   // console.log(category.toUpperCase())
   const postData = await prisma.blogPost.findMany({
     where: {
+      postStatus: 'Public',
       tags: {
         contains: tag,
       }

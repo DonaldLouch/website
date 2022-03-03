@@ -2,10 +2,11 @@ import {
     // Grid,
     // Image,
     // Heading,
-    // Text,
+    Text,
     // Button,
     Box,
     useColorModeValue,
+    useToast,
     // Accordion,
     // AccordionItem,
     // AccordionButton,
@@ -19,6 +20,8 @@ import {
     // TabPanel,
     // VisuallyHidden,
 } from '@chakra-ui/react'
+
+import { useSession } from 'next-auth/react'
 
 import prisma from '../../config/prisma'
 
@@ -39,6 +42,36 @@ import { Photo4PostType } from '../../components/PostTypes/Photo4PostType'
 export default function Post({ source, postData }:any) {
     const post = postData
 
+    const { data: session, status } = useSession()
+    const toast = useToast()
+    const toastID = "toastID"
+
+    if (post.postStatus === "Private" && session && status === 'authenticated') {
+        if (!toast.isActive(toastID)) {
+            toast({
+                id: toastID,
+                title: "Private Blog Post",
+                description: `Note that the blog post "${post.title}" is a private post and is only viewable at an administrator level!`,
+                status: "error",
+                duration: null,
+                isClosable: false,
+            })
+        }
+    }
+    
+    if (post.postStatus === "Draft" && session && status === 'authenticated') {
+        if (!toast.isActive(toastID)) {
+            toast({
+                id: toastID,
+                title: "Blog Post is Drafted",
+                description: `Note that this blog post is drafted! Don't forget to publish the post to the public when you are ready!`,
+                status: "warning",
+                duration: null,
+                isClosable: false,
+            })
+        }
+    }
+
     return (
         <>  
             <Metadata
@@ -48,7 +81,40 @@ export default function Post({ source, postData }:any) {
             />
 
             <Box color={useColorModeValue("black", "white")}>
-                {post.blogType === "Video" && (<VideoPostType {...post} {...source} />)}
+                {post.postStatus === "Public" || post.postStatus === "Unlisted" ? (
+                    <>
+                        {post.blogType === "Video" && (<VideoPostType {...post} {...source} />)}
+                        {post.blogType === "Audio" && (<AudioPostType {...post} {...source} />)}
+                        {post.blogType === "Standard" && (<StandardPostType {...post} {...source} />)}
+                        {post.blogType === "Special" && (<SpecialPostType {...post} {...source} />)}
+                        {post.blogType === "Gallery" && (<GalleryPostType {...post} {...source} />)}
+                        {post.blogType === "Photo 1" && (<Photo1PostType {...post} {...source} />)}
+                        {post.blogType === "Photo 2" && (<Photo2PostType {...post} {...source} />)}
+                        {post.blogType === "Photo 3" && (<Photo3PostType {...post} {...source} />)}
+                        {post.blogType === "Photo 4" && (<Photo4PostType {...post} {...source} />)}
+                    </>
+                ) : (
+                    <>
+                        {session && status === 'authenticated' ? (
+                            <>
+                                {post.blogType === "Video" && (<VideoPostType {...post} {...source} />)}
+                                {post.blogType === "Audio" && (<AudioPostType {...post} {...source} />)}
+                                {post.blogType === "Standard" && (<StandardPostType {...post} {...source} />)}
+                                {post.blogType === "Special" && (<SpecialPostType {...post} {...source} />)}
+                                {post.blogType === "Gallery" && (<GalleryPostType {...post} {...source} />)}
+                                {post.blogType === "Photo 1" && (<Photo1PostType {...post} {...source} />)}
+                                {post.blogType === "Photo 2" && (<Photo2PostType {...post} {...source} />)}
+                                {post.blogType === "Photo 3" && (<Photo3PostType {...post} {...source} />)}
+                                {post.blogType === "Photo 4" && (<Photo4PostType {...post} {...source} />)}
+                            </>
+                        ) : (
+                            <Box boxShadow="bsBoldBlue" borderRadius="0 2rem" p="2rem">
+                                <Text textAlign="center" fontSize="xl">🚨 This post is listed as a private post and is not viewable to the public. 🚨</Text>
+                            </Box>
+                        )}
+                    </>
+                )}
+                {/* {post.blogType === "Video" && (<VideoPostType {...post} {...source} />)}
                 {post.blogType === "Audio" && (<AudioPostType {...post} {...source} />)}
                 {post.blogType === "Standard" && (<StandardPostType {...post} {...source} />)}
                 {post.blogType === "Special" && (<SpecialPostType {...post} {...source} />)}
@@ -56,7 +122,7 @@ export default function Post({ source, postData }:any) {
                 {post.blogType === "Photo 1" && (<Photo1PostType {...post} {...source} />)}
                 {post.blogType === "Photo 2" && (<Photo2PostType {...post} {...source} />)}
                 {post.blogType === "Photo 3" && (<Photo3PostType {...post} {...source} />)}
-                {post.blogType === "Photo 4" && (<Photo4PostType {...post} {...source} />)}
+                {post.blogType === "Photo 4" && (<Photo4PostType {...post} {...source} />)} */}
                 {/* {post.blogType && (<StandardPostType {...post} {...source} />)} */}
                 {/* {post.postType === "Standard" && ()} */}
             </Box>

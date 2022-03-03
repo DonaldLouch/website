@@ -315,7 +315,8 @@ export default function Post({ postData }:any) {
                                 {/* <option value={post.postStatus} selected>{post.postStatus}</option> */}
                                 <option>---</option>
                                 <option value="Draft">Draft</option>
-                                <option value="Published">Published</option>
+                                <option value="Public">Public</option>
+                                <option value="Unlisted">Unlisted</option>
                                 <option value="Private">Private</option>
                             </FormSelect>
                             <SubmitButton variant="blackFormButton">Update Post</SubmitButton> 
