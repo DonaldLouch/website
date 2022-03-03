@@ -2,7 +2,7 @@ import {
     Stack, 
     HStack, 
     VStack,
-    // Link, 
+    Link, 
     Code,
     useToast,
     Box, 
@@ -205,6 +205,7 @@ export default function Post({ postData }:any) {
                     description={`Post Edit: ${post.title}`}
                     />
                     <Box as="main" id="editBlogPost" color="black">
+                    <Link href={`../../post/${post.slug}`} variant="primaryButton" isExternal>View Blog Post</Link>
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                         {({ handleSubmit, values }: any) => (
                         <Stack as="form" onSubmit={handleSubmit as any}>
