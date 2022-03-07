@@ -44,12 +44,12 @@ export default function Post({ source, postData }:any) {
 
     const { data: session, status } = useSession()
     const toast = useToast()
-    const toastID = "toastID"
+    const id = "toastID"
 
     if (post.postStatus === "Private" && session && status === 'authenticated') {
-        if (!toast.isActive(toastID)) {
+        if (!toast.isActive(id)) {
             toast({
-                id: toastID,
+                id,
                 title: "Private Blog Post",
                 description: `Note that the blog post "${post.title}" is a private post and is only viewable at an administrator level!`,
                 status: "error",
@@ -60,9 +60,9 @@ export default function Post({ source, postData }:any) {
     }
     
     if (post.postStatus === "Draft" && session && status === 'authenticated') {
-        if (!toast.isActive(toastID)) {
+        if (!toast.isActive(id)) {
             toast({
-                id: toastID,
+                id,
                 title: "Blog Post is Drafted",
                 description: `Note that this blog post is drafted! Don't forget to publish the post to the public when you are ready!`,
                 status: "warning",

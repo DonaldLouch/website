@@ -26,6 +26,7 @@ export const Metadata = (props: MetaProps) => {
             <meta name="msapplication-TileColor" content="#ededed" />
             <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
             <script data-token={process.env.SPLITBEE_TOKEN} async src="https://cdn.splitbee.io/sb.js"></script>
+            <script async src="https://donaldlouch.instatus.com/widget/script.js"></script>
             <title>{title}</title>
         </Head>
     )

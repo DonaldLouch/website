@@ -44,7 +44,7 @@ import {
                 borderRadius="0 2rem"
             >
                 {post?.media?.includes("<opusvid>") ? (
-                    <iframe src={`https://opusvid.devlexicon.ca/embed?id=${videoPath}`} allowFullScreen></iframe>
+                    <iframe src={`https://opusvid.donaldlouch.ca/embed?id=${videoPath}`} allowFullScreen></iframe>
                 ) : post?.media?.includes("<youtube>") && (
                     <iframe src={`https://www.youtube.com/embed/${videoPath}`} allowFullScreen></iframe>
                 )}
