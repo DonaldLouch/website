@@ -1088,10 +1088,10 @@
   "resolved" "https://registry.npmjs.org/@next-auth/prisma-adapter/-/prisma-adapter-0.5.2-next.19.tgz"
   "version" "0.5.2-next.19"
 
-"@next/env@12.1.1-canary.5":
-  "integrity" "sha512-WoLapXbjXEoKVCH+dvNrzNyDjzJ6lOAkHvxUFYfrni8VvHQjYp0xQY+tLTUhzS+Q4q95y2FTuLv/aMWE3JQw4Q=="
-  "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.1-canary.5.tgz"
-  "version" "12.1.1-canary.5"
+"@next/env@12.1.1-canary.8":
+  "integrity" "sha512-UAjHkTKzpGG3b6cMWZkjHbvgv6NCWCyB9w+7a4U+6z1VNwC61keXiQwSK8mDM9irli+sYlrZjjFKVYiuTPYL4Q=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.1-canary.8.tgz"
+  "version" "12.1.1-canary.8"
 
 "@next/eslint-plugin-next@12.0.10":
   "integrity" "sha512-PbGRnV5HGSfRGLjf8uTh1MaWgLwnjKjWiGVjK752ifITJbZ28/5AmLAFT2shDYeux8BHgpgVll5QXu7GN3YLFw=="
@@ -1105,10 +1105,10 @@
   "resolved" "https://registry.npmjs.org/@next/mdx/-/mdx-12.1.0.tgz"
   "version" "12.1.0"
 
-"@next/swc-darwin-x64@12.1.1-canary.5":
-  "integrity" "sha512-btmMAi0k+1w+0X6GcA4DKbX+tjMkqN1LA4cwYd2JtJMqN+oXOBjAGSM1WYOAwBiiM4lHx9NjJcu6et9AnW9auQ=="
-  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-12.1.1-canary.5.tgz"
-  "version" "12.1.1-canary.5"
+"@next/swc-darwin-x64@12.1.1-canary.8":
+  "integrity" "sha512-ktp3PiwRkKpnvv0udIb296qqH3yIRk1QQLVWwC9qxpi4w2FeP8q1gBJbBiO8AsKSMomwJ1eUfaJgg9YjYIUt/Q=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-12.1.1-canary.8.tgz"
+  "version" "12.1.1-canary.8"
 
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
@@ -1205,29 +1205,29 @@
     "slash" "3.0.0"
     "source-map" "^0.7.3"
 
-"@swc/core-darwin-x64@1.2.146":
-  "integrity" "sha512-mYRN/WTS7TfYt3jqJYghcrpAW7zkpjdeEx9Rot8rmUEmk97luh9Bcwqafzjb9ndoG1mAiaTQcqvs/QqT2efS5Q=="
-  "resolved" "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.2.146.tgz"
-  "version" "1.2.146"
+"@swc/core-darwin-x64@1.2.151":
+  "integrity" "sha512-N1OBIB7xatR5eybLo91ZhvMJMxT0zxRQURV/a9I8o5CyP4iLd1k8gmrYvBbtj08ohS8F9z7k/dFjxk/9ve5Drw=="
+  "resolved" "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.2.151.tgz"
+  "version" "1.2.151"
 
-"@swc/core@^1.2.146", "@swc/core@^1.2.66":
-  "integrity" "sha512-axIapm2mReT45ILuYxwe0xEWqtITj3dyfDIGIgdC8Tx7ss5vpXvr22UbDSUTRIS+nypFy6hViIR1RhXE1hXnig=="
-  "resolved" "https://registry.npmjs.org/@swc/core/-/core-1.2.146.tgz"
-  "version" "1.2.146"
+"@swc/core@^1.2.151", "@swc/core@^1.2.66":
+  "integrity" "sha512-oHgqKwK/Djv765zUHPiGqfMCaKIxXTgQyyCUBKLBQfAJwe/7FVobQ2fghBp4FsZA/NE1LZBmMPpRZNQwlGjeHw=="
+  "resolved" "https://registry.npmjs.org/@swc/core/-/core-1.2.151.tgz"
+  "version" "1.2.151"
   optionalDependencies:
-    "@swc/core-android-arm-eabi" "1.2.146"
-    "@swc/core-android-arm64" "1.2.146"
-    "@swc/core-darwin-arm64" "1.2.146"
-    "@swc/core-darwin-x64" "1.2.146"
-    "@swc/core-freebsd-x64" "1.2.146"
-    "@swc/core-linux-arm-gnueabihf" "1.2.146"
-    "@swc/core-linux-arm64-gnu" "1.2.146"
-    "@swc/core-linux-arm64-musl" "1.2.146"
-    "@swc/core-linux-x64-gnu" "1.2.146"
-    "@swc/core-linux-x64-musl" "1.2.146"
-    "@swc/core-win32-arm64-msvc" "1.2.146"
-    "@swc/core-win32-ia32-msvc" "1.2.146"
-    "@swc/core-win32-x64-msvc" "1.2.146"
+    "@swc/core-android-arm-eabi" "1.2.151"
+    "@swc/core-android-arm64" "1.2.151"
+    "@swc/core-darwin-arm64" "1.2.151"
+    "@swc/core-darwin-x64" "1.2.151"
+    "@swc/core-freebsd-x64" "1.2.151"
+    "@swc/core-linux-arm-gnueabihf" "1.2.151"
+    "@swc/core-linux-arm64-gnu" "1.2.151"
+    "@swc/core-linux-arm64-musl" "1.2.151"
+    "@swc/core-linux-x64-gnu" "1.2.151"
+    "@swc/core-linux-x64-musl" "1.2.151"
+    "@swc/core-win32-arm64-msvc" "1.2.151"
+    "@swc/core-win32-ia32-msvc" "1.2.151"
+    "@swc/core-win32-x64-msvc" "1.2.151"
 
 "@tootallnate/once@1":
   "integrity" "sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw=="
@@ -1412,10 +1412,10 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz"
   "version" "15.7.4"
 
-"@types/react-dom@^17.0.12":
-  "integrity" "sha512-SeJ430ndLI15JtRSHuzotn7AIdUtr8bdk6XW8mMfzjZo3vahRgJGHZqHiI4nAzCHTVG4qC21ObfsHBVUEHcDhg=="
-  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.12.tgz"
-  "version" "17.0.12"
+"@types/react-dom@^17.0.13":
+  "integrity" "sha512-wEP+B8hzvy6ORDv1QBhcQia4j6ea4SFIBttHYpXKPFZRviBvknq0FRh3VrIxeXUmsPkwuXVZrVGG7KUVONmXCQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.13.tgz"
+  "version" "17.0.13"
   dependencies:
     "@types/react" "*"
 
@@ -2155,10 +2155,10 @@
   "resolved" "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
   "version" "9.2.2"
 
-"enhanced-resolve@^5.8.3":
-  "integrity" "sha512-weDYmzbBygL7HzGGS26M3hGQx68vehdEg6VUmqSOaFzXExFqlnKuSvsEJCVGQHScS8CQMbrAqftT+AzzHNt/YA=="
-  "resolved" "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.9.0.tgz"
-  "version" "5.9.0"
+"enhanced-resolve@^5.9.2":
+  "integrity" "sha512-GIm3fQfwLJ8YZx2smuHpBKkXC1yOk+OBEmKckVyL0i/ea8mqDEykK3ld5dgH1QYPNyT/lIllxV2LULnxCHaHkA=="
+  "resolved" "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.9.2.tgz"
+  "version" "5.9.2"
   dependencies:
     "graceful-fs" "^4.2.4"
     "tapable" "^2.2.0"
@@ -3846,29 +3846,29 @@
     "vfile" "^5.3.0"
     "vfile-matter" "^3.0.1"
 
-"next@^12.1.1-canary.5", "next@>=10.2.0":
-  "integrity" "sha512-QMt2C+/8Sqm5fDri/tptezUGKNj6iHhfokAjvBJm8tZEK8JpUuWwwjgyGCN103zVR5nsoJ6uRjFdyhbRkq6kQg=="
-  "resolved" "https://registry.npmjs.org/next/-/next-12.1.1-canary.5.tgz"
-  "version" "12.1.1-canary.5"
+"next@^12.1.1-canary.8", "next@>=10.2.0":
+  "integrity" "sha512-UHd5sHxNSQcjGlyblve0wC/XHG/PvLdfOAvTO4Kg4WMl6NIH1ZgZGXWOAm1tba5jynaBrdIyErurs4+Mhhjf6w=="
+  "resolved" "https://registry.npmjs.org/next/-/next-12.1.1-canary.8.tgz"
+  "version" "12.1.1-canary.8"
   dependencies:
-    "@next/env" "12.1.1-canary.5"
+    "@next/env" "12.1.1-canary.8"
     "caniuse-lite" "^1.0.30001283"
     "postcss" "8.4.5"
     "styled-jsx" "5.0.0"
     "use-subscription" "1.5.1"
   optionalDependencies:
-    "@next/swc-android-arm-eabi" "12.1.1-canary.5"
-    "@next/swc-android-arm64" "12.1.1-canary.5"
-    "@next/swc-darwin-arm64" "12.1.1-canary.5"
-    "@next/swc-darwin-x64" "12.1.1-canary.5"
-    "@next/swc-linux-arm-gnueabihf" "12.1.1-canary.5"
-    "@next/swc-linux-arm64-gnu" "12.1.1-canary.5"
-    "@next/swc-linux-arm64-musl" "12.1.1-canary.5"
-    "@next/swc-linux-x64-gnu" "12.1.1-canary.5"
-    "@next/swc-linux-x64-musl" "12.1.1-canary.5"
-    "@next/swc-win32-arm64-msvc" "12.1.1-canary.5"
-    "@next/swc-win32-ia32-msvc" "12.1.1-canary.5"
-    "@next/swc-win32-x64-msvc" "12.1.1-canary.5"
+    "@next/swc-android-arm-eabi" "12.1.1-canary.8"
+    "@next/swc-android-arm64" "12.1.1-canary.8"
+    "@next/swc-darwin-arm64" "12.1.1-canary.8"
+    "@next/swc-darwin-x64" "12.1.1-canary.8"
+    "@next/swc-linux-arm-gnueabihf" "12.1.1-canary.8"
+    "@next/swc-linux-arm64-gnu" "12.1.1-canary.8"
+    "@next/swc-linux-arm64-musl" "12.1.1-canary.8"
+    "@next/swc-linux-x64-gnu" "12.1.1-canary.8"
+    "@next/swc-linux-x64-musl" "12.1.1-canary.8"
+    "@next/swc-win32-arm64-msvc" "12.1.1-canary.8"
+    "@next/swc-win32-ia32-msvc" "12.1.1-canary.8"
+    "@next/swc-win32-x64-msvc" "12.1.1-canary.8"
 
 "node-releases@^2.0.1":
   "integrity" "sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg=="
@@ -5125,10 +5125,10 @@
   "resolved" "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   "version" "3.2.3"
 
-"webpack@^5.1.0", "webpack@^5.69.1", "webpack@>=4":
-  "integrity" "sha512-+VyvOSJXZMT2V5vLzOnDuMz5GxEqLk7hKWQ56YxPW/PQRUuKimPqmEIJOx8jHYeyo65pKbapbW464mvsKbaj4A=="
-  "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.69.1.tgz"
-  "version" "5.69.1"
+"webpack@^5.1.0", "webpack@^5.70.0", "webpack@>=4":
+  "integrity" "sha512-ZMWWy8CeuTTjCxbeaQI21xSswseF2oNOwc70QSKNePvmxE7XW36i7vpBMYZFAUHPwQiEbNGCEYIOOlyRbdGmxw=="
+  "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.70.0.tgz"
+  "version" "5.70.0"
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
@@ -5139,7 +5139,7 @@
     "acorn-import-assertions" "^1.7.6"
     "browserslist" "^4.14.5"
     "chrome-trace-event" "^1.0.2"
-    "enhanced-resolve" "^5.8.3"
+    "enhanced-resolve" "^5.9.2"
     "es-module-lexer" "^0.9.0"
     "eslint-scope" "5.1.1"
     "events" "^3.2.0"
