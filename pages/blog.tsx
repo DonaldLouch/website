@@ -12,6 +12,7 @@ import {
   // Image,
   Link,
   useColorModeValue,
+  Icon,
   // Menu,
   // MenuButton,
   // MenuItem,
@@ -39,6 +40,8 @@ import { Pagination } from '../components/Pagination'
 
 export default function Blog({ postData, pagination }: any) {
   const posts = postData
+
+  const FaDown = () => <FontAwesomeIcon icon={['fas', 'circle-chevron-down']}/>
 
   const boxShadow = useColorModeValue("bsBoldOrange", "bsBoldWhite")
   const boxBigShadow = useColorModeValue("bsBigBoldBlue", "bsBigBoldWhite")
@@ -137,7 +140,14 @@ const currentPage = paginationArray?.[1] + 1
           color="white"
           fontSize="1.5rem"
         >
-          <Link href="#posts"><FontAwesomeIcon icon={['fas', 'circle-chevron-down']} width="100%" /></Link>
+          <Link href="#posts">
+            <Icon 
+              as={FaDown} 
+              width="100%"
+              color="currentColor" 
+            />
+          </Link>
+          {/* <Link href="#posts"><FontAwesomeIcon icon={['fas', 'circle-chevron-down']} width="100%" /></Link> */}
         </Box>
         
         <Box as="main" color={useColorModeValue("black", "white")} mt="88vh">

@@ -10,6 +10,7 @@ import {
   MenuList,
   MenuItem,
   Box,
+  Icon,
 //   IconButton,
   Grid,
   Text,
@@ -35,6 +36,8 @@ export const MobileHeaderNavigationItem = ({ slug, iconName, iconPre, isParent, 
     const blackWhiteColour = useColorModeValue('black', 'white')
     // const primGreyColour = useColorModeValue('primary', 'grey')
     const boxShadow = useColorModeValue("bsBoldBlue", "bsBoldWhite")
+    const FaDown = () => <FontAwesomeIcon icon={['fas', 'chevron-down']}/>
+    
 
     return (
         <>
@@ -74,14 +77,19 @@ export const MobileHeaderNavigationItem = ({ slug, iconName, iconPre, isParent, 
                     <Menu>
                         <MenuButton alignItems="center" my="1" borderRadius={{base: "0 1.5rem", lg: "0"}} role="group" cursor="pointer" color={blackWhiteColour} bg="none" _hover={{ bg: 'secondary', boxShadow: "none" }} _focus={{ boxShadow: 'none' }} transition="all 0.3s" textDecoration="none" w={{base: "100%", lg: "100%"}}>
                                 <Box  color={blackWhiteColour} boxShadow={boxShadow} ml={{base: "initial", lg:"0rem"}} _hover={{boxShadow: "none", color: "primary"}} p={{base: "0.9rem", lg: "0.5rem"}} borderRadius={{base: "0 1.5rem", lg: "0"}} w="100%">
-                                    <FontAwesomeIcon 
+                                <Icon 
+                                    as={FaDown} 
+                                    width="100%"
+                                    color="currentColor" 
+                                    />
+                                    {/* <FontAwesomeIcon 
                                         icon={["fas", "chevron-down"]} 
                                         // color="black"
                                         // {
                                         //     useColorModeValue('black', 'white')
                                         // }
                                         width="100%"
-                                    />
+                                    /> */}
                                 </Box>
                         </MenuButton>
                         <MenuList
