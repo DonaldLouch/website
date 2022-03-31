@@ -87,7 +87,7 @@ export default NextAuth({
   secret: process.env.SECRET,
 
   session: {
-    strategy: "jwt",
+    strategy: "database",
   },
 
   // https://next-auth.js.org/configuration/options#jwt

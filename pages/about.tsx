@@ -18,7 +18,8 @@ import {
   TabPanels, 
   Tab, 
   TabPanel,
-  AspectRatio
+  AspectRatio,
+  Icon
 } from '@chakra-ui/react'
 
 import prisma from '../config/prisma'
@@ -35,6 +36,8 @@ import Contact from "../components/Contact"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import '../config/fontAwesome'
+
+const FaHome = () => <FontAwesomeIcon icon={['fas', 'house']}/>
 
 const paragraph = (props: any) => (
   <Text fontSize="1.1rem" lineHeight="1.4rem">{props.children}</Text>
@@ -61,6 +64,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
           keywords={`${process.env.KEYWORDS}, ${about.firstName} ${about.lastName}, ${about.firstName}, ${about.lastName}, ${about.middleName}, about me, ${about.firstName} ${about.middleName} ${about.lastName}, canada, Canadian, photographer, videographer, web developer, devop`}
           description={`${about.bioExcerpt}`}
         />
+        
         <Box 
           position="absolute"
           top="2%"
@@ -69,7 +73,13 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
           color={useColorModeValue("primary", "white")}
           fontSize="1.5rem"
         >
-          <Link href="../"><FontAwesomeIcon icon={['fas', 'house']} width="100%" /></Link>
+          <Link href="../">
+            <Icon 
+              as={FaHome} 
+              width="100%"
+              color="currentColor" 
+            />
+          </Link>
         </Box>
         <Box 
           as="section" 
@@ -93,7 +103,7 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
                 </Box>
               </Box>
               {/* <Text>A {about.currentAge}-year-old, {about.tagLine} from {about.city}, {about.province}, {about.country}</Text> */}
-              <Heading as="h3" size="3xl" fontFamily="body" fontWeight="200" mt="0.5rem">{about.tagLine}</Heading>
+              <Heading as="h3" size="3xl" fontFamily="body" fontWeight="300" mt="0.5rem">{about.tagLine}</Heading>
               <MDXRemote {...source}  components={components}/>
             </Box>
             </SectionCard>
@@ -123,8 +133,8 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
               </Stack>
             {/* </Box> */}
             
-            <Tabs variant="soft-rounded" colorScheme="purple" my="1rem" boxShadow="bsBoldWhite" p="2rem" borderRadius="0 2rem">
-              <TabList>
+            <Tabs variant="soft-rounded" colorScheme="purple" my="1rem" boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")} p="2rem 0" borderRadius="0 2rem">
+              <TabList display="flex" justifyContent="center">
                 <Tab>All</Tab>
                 <Tab>Links</Tab>
                 <Tab>Embed Content</Tab>
