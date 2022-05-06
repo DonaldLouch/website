@@ -4,8 +4,9 @@ import { BuiltInProviderType } from 'next-auth/providers'
 
 import { 
     Box, 
-    // Text, 
+    Text, 
     Heading,
+    Link,
     // Tabs, 
     // TabList, 
     // TabPanels, 
@@ -96,6 +97,7 @@ export default function Login({ csrfToken }: any) {
                 width="20vw"
                 m="0.5rem auto"
             /> 
+            <Text textAlign="center" fontSize="xl">Please note that I have disabled the login function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text>
             {status === 'loading' ? (
                 <Heading as="h2" variant="sectionTitle" size="3xl" m="1rem 0">Loading ...</Heading>
             ) : (
@@ -124,7 +126,7 @@ export default function Login({ csrfToken }: any) {
                                                 >Email</FormLabel>
                                                 <Input variant="unstyled" id="email" name="email" boxShadow={boxShadowColour} _focus={{boxShadow: "bsBoldOrange",}} p="1.5rem 2rem" color={formColour} borderRadius="0 2rem 0 2rem" />
                                             </FormControl>
-                                            <Button leftIcon={<FontAwesomeIcon icon={['fas', 'magic']} color="white" />} type="submit" variant="blackFormButton" w="99%" m="1rem">Login with Email</Button>
+                                            <Button disabled leftIcon={<FontAwesomeIcon icon={['fas', 'magic']} color="white" />} type="submit" variant="blackFormButton" w="99%" m="1rem" >Login with Email</Button>
                                         </form>
                                     </>
                                 )}
