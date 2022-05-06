@@ -126,7 +126,7 @@ export default function Login({ csrfToken }: any) {
                                                 >Email</FormLabel>
                                                 <Input variant="unstyled" id="email" name="email" boxShadow={boxShadowColour} _focus={{boxShadow: "bsBoldOrange",}} p="1.5rem 2rem" color={formColour} borderRadius="0 2rem 0 2rem" />
                                             </FormControl>
-                                            <Button disabled leftIcon={<FontAwesomeIcon icon={['fas', 'magic']} color="white" />} type="submit" variant="blackFormButton" w="99%" m="1rem" >Login with Email</Button>
+                                            <Button leftIcon={<FontAwesomeIcon icon={['fas', 'magic']} color="white" />} type="submit" variant="blackFormButton" w="99%" m="1rem" >Login with Email</Button>
                                         </form>
                                     </>
                                 )}

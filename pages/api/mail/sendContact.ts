@@ -10,11 +10,13 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
         // @ts-ignore
         host: process.env.EMAIL_SERVER_HOST,
         port: process.env.EMAIL_SERVER_PORT,
+        secure: true,
       auth: {
+        type: 'OAuth2',
         user: process.env.EMAIL_SERVER_USER,
-        pass: process.env.EMAIL_SERVER_PASSWORD,
-      },
-      secure: true,
+        serviceClient: process.env.EMAIL_SERVICE_CLIENT,
+        privateKey: process.env.EMAIL_PRIVATE_KEY,
+      }
     }) as any
 
     const mailData = {

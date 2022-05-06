@@ -105,7 +105,7 @@ export default function Contact() {
                         <FormInput inputID="email" inputLabel="Email Address" inputType="email" />
                         <FormInput inputID="subject" inputLabel="Subject" inputType="text" />
                         <FormTextArea inputID="body" inputLabel="Body" textRows={8} />
-                        <SubmitButton variant="blackFormButton" disabled>Submit</SubmitButton>
+                        <SubmitButton variant="blackFormButton">Submit</SubmitButton>
                     </Stack>
                 )}
             </Formik>

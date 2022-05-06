@@ -18,10 +18,20 @@ export default NextAuth({
         host: process.env.EMAIL_SERVER_HOST,
         // @ts-ignore
         port: process.env.EMAIL_SERVER_PORT,
-        auth: {
-          user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD,
-        }
+        secure: true,
+      auth: {
+        type: 'OAuth2',
+        user: process.env.EMAIL_SERVER_USER,
+        serviceClient: process.env.EMAIL_SERVICE_CLIENT,
+        privateKey: process.env.EMAIL_PRIVATE_KEY,
+      }
+        // host: process.env.EMAIL_SERVER_HOST,
+        // // @ts-ignore
+        // port: process.env.EMAIL_SERVER_PORT,
+        // auth: {
+        //   user: process.env.EMAIL_SERVER_USER,
+        //   pass: process.env.EMAIL_SERVER_PASSWORD,
+        // }
       },
       from: process.env.EMAIL_FROM,
       sendVerificationRequest: async ({
