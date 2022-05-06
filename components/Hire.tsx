@@ -101,9 +101,9 @@ export default function Hire() {
     return (
         <SectionCard id="contact" styleType="primaryCard">
             <SectionTitle headingTitle="Request a Freelancing Job" />
-            <Text textAlign="center" fontSize="xl">Please note that I have disabled the contact form function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text>
+            {/* <Text textAlign="center" fontSize="xl">Please note that I have disabled the contact form function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text> */}
             {/* <Heading as="h3" size="xl" my="1rem" textAlign="center" fontWeight="regular">THE CONTACT FORM IS CURRENTLY DISABLED</Heading> */}
-            {/* <Text textAlign="center" fontSize="xl">Hello, if you would like you may hire me to do web development or digital content production freelancing. You may use the following inquiry form below or you may also email me directly and I&#39;ll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca" color={useColorModeValue('primary', 'secondary')}>hello@donaldlouch.ca</Link>.</Text> */}
+            <Text textAlign="center" fontSize="xl">Hello, if you would like you may hire me to do web development or digital content production freelancing. You may use the following inquiry form below or you may also email me directly and I&#39;ll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca" color={useColorModeValue('primary', 'secondary')}>hello@donaldlouch.ca</Link>.</Text>
 
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 {({ handleSubmit }: any) => (
@@ -125,7 +125,7 @@ export default function Hire() {
                         </FormSelect>
                         <FormTextArea inputID="description" inputLabel="In As Much Detail Please Describe What You're Looking For" textRows={8} />
                         <FormInput inputID="budget" inputLabel="Estimated Budget" inputType="text" />
-                        <SubmitButton variant="blackFormButton" disabled>Submit Inquiry</SubmitButton>
+                        <SubmitButton variant="blackFormButton">Submit Inquiry</SubmitButton>
                     </Stack>
                 )}
             </Formik>

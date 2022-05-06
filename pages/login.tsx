@@ -4,9 +4,9 @@ import { BuiltInProviderType } from 'next-auth/providers'
 
 import { 
     Box, 
-    Text, 
+    // Text, 
     Heading,
-    Link,
+    // Link,
     // Tabs, 
     // TabList, 
     // TabPanels, 
@@ -97,7 +97,7 @@ export default function Login({ csrfToken }: any) {
                 width="20vw"
                 m="0.5rem auto"
             /> 
-            <Text textAlign="center" fontSize="xl">Please note that I have disabled the login function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text>
+            {/* <Text textAlign="center" fontSize="xl">Please note that I have disabled the login function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text> */}
             {status === 'loading' ? (
                 <Heading as="h2" variant="sectionTitle" size="3xl" m="1rem 0">Loading ...</Heading>
             ) : (
