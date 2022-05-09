@@ -70,6 +70,18 @@ export default NextAuth({
       },
     // }),
     }),
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_ID,
+    //   clientSecret: process.env.GOOGLE_SECRET,
+    //   // authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
+    //   // authorization: {
+    //   //   params: {
+    //   //     prompt: "consent",
+    //   //     access_type: "offline",
+    //   //     response_type: "code"
+    //   //   }
+    //   // }
+    // }),
     /*GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
@@ -115,7 +127,13 @@ export default NextAuth({
   },
 
   // https://next-auth.js.org/configuration/callbacks
-  callbacks: {
+  callbacks: {  
+    // async signIn({ account, profile }) {
+    //   if (account.provider === "google") {
+    //     return profile.email_verified && profile.email.endsWith("@donaldlouch.ca")
+    //   }
+    //   return true // Do different verification for other providers that don't have `email_verified`
+    // },
     // async signIn(user, account, profile) { return true },
     // async redirect(url, baseUrl) { return baseUrl },
     // async session(session, user) { return session },

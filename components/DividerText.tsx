@@ -8,7 +8,7 @@ export const DividerText = (props: FlexProps) => {
       <Box flex="1">
         <Divider borderColor="currentcolor" />
       </Box>
-      <Text as="span" px="3" color="white" fontWeight="bold">
+      <Text as="span" px="3" color="currentcolor" fontWeight="bold">
         {children}
       </Text>
       <Box flex="1">

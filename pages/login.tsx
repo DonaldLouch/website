@@ -137,7 +137,7 @@ export default function Login({ csrfToken }: any) {
                                     )}
                                     
                                     {providers?.google && (
-                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'google']} color="white" />} type="button" onClick={() => signIn(providers?.google.id)} variant="blackFormButton" w={{ base: '100%', md: '50%' }} disabled>Login with Google</Button>
+                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'google']} color="white" />} type="button" onClick={() => signIn(providers?.google.id)} variant="blackFormButton" w={{ base: '100%', md: '50%' }}>Login with Google</Button>
                                     )}
                                 </Stack>
                         </>
