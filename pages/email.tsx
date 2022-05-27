@@ -33,7 +33,7 @@ export default function Email() {
               {/* <Heading as="h2" variant="sectionTitle" size="3xl">Check Your Emails 👀</Heading> */}
               <Text textAlign="center">We have sent you a link to sign in to Donald Louch, to your email address.</Text>
             </Box>
-            <Button as="a" leftIcon={<FontAwesomeIcon icon={['fas', 'long-arrow-alt-left']} color="white" />} href="../login" variant="blackFormButton" d="flex" mx="auto">Back to Login Page</Button>
+            <Button as="a" leftIcon={<FontAwesomeIcon icon={['fas', 'long-arrow-alt-left']} color="white" />} href="../login" variant="blackFormButton" display="flex" mx="auto">Back to Login Page</Button>
           </SectionCard>
         </Box>
     </>
