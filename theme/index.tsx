@@ -31,7 +31,8 @@ export const theme = extendTheme({
         whiteColourGradient: "radial-gradient(ellipse at center, #EDEDED 0%,#FAFAFA 36%,#EBEBEB 100%)",
         mainGradient: "linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%)",
         backgroundGradient: "linear-gradient(-135deg, rgba(59,103,217,0.8) 0%, rgba(67,12,140,0.95) 75%)",
-        blurredBackground: "rgba(237 237 237 / 15%)"
+        blurredBackground: "rgba(237 237 237 / 15%)",
+        prideGradient: "linear-gradient(92deg, rgba(212,6,6,0.95) 0%, rgba(240,157,0,0.95) 10%, rgba(229,254,3,0.94) 20%, rgba(13,190,3,0.95) 30%, rgba(10,26,154,0.95) 40%, rgba(118,1,138,0.95) 50%, rgba(1,1,1,0.95) 60%, rgba(97,58,22,0.95) 70%, rgba(116,215,237,0.95) 80%, rgba(255,175,199,0.95) 90%, rgba(250,249,245,0.9514180672268907) 100%)"
     },
     fonts: {
         body: "Lato, system-ui, sans-serif",
