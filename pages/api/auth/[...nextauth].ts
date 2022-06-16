@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import EmailProvider from 'next-auth/providers/email'
 // import GitHubProvider from 'next-auth/providers/github'
 // import GoogleProvider from 'next-auth/providers/google'
+import GoogleProvider from 'next-auth/providers/google'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { PrismaClient } from "@prisma/client"
 import nodemailer from 'nodemailer'
@@ -70,6 +71,17 @@ export default NextAuth({
       },
     // }),
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
+    })
     // GoogleProvider({
     //   clientId: process.env.GOOGLE_ID,
     //   clientSecret: process.env.GOOGLE_SECRET,
@@ -116,14 +128,14 @@ export default NextAuth({
   jwt: {
     secret: process.env.JWT_SIGNING_PUBLIC_KEY,
   },
-
+  
   // https://next-auth.js.org/configuration/pages
   pages: {
     signIn: '/login',  // Displays signin buttons
     signOut: '/login', // Displays form with sign out button
     // error: '/error', // Error code passed in query string as ?error=
     verifyRequest: '/email', // Used for check email page
-    newUser: '/signup' // If set, new users will be directed here on first sign in
+    // newUser: '/signup' // If set, new users will be directed here on first sign in
   },
 
   // https://next-auth.js.org/configuration/callbacks

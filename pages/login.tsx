@@ -13,14 +13,14 @@ import {
     // Tab, 
     // TabPanel,
     Image,
-    Input,
-    FormControl,
-    FormLabel,
+    // Input,
+    // FormControl,
+    // FormLabel,
     Button,
     // Divider,
     Stack,
     useToast,
-    useColorModeValue
+    // useColorModeValue
   } from '@chakra-ui/react'
 
   import {Metadata} from "../components/Metadata";
@@ -35,7 +35,9 @@ import { CtxOrReq } from 'next-auth/client/_utils'
 
 import { useRouter } from 'next/router'
 
-export default function Login({ csrfToken }: any) {
+// { csrfToken }: any
+
+export default function Login() {
 
   const [providers, setProviders] = useState<Record<
     LiteralUnion<BuiltInProviderType, string>,
@@ -46,14 +48,19 @@ export default function Login({ csrfToken }: any) {
   const router = useRouter()
   const toast = useToast()
 
-  if (router.query.errCode == "Not Logged In") {
-    toast({
-      title: `${router.query.errCode}`,
-      description: `${router.query.errMessage}`,
-      status: "error",
-      duration: 9000,
-      isClosable: true,
-    })
+  if (router.query.errCode == "NotLoggedIn") {
+    const toastID = "errorLogin"
+    if (!toast.isActive(toastID)) {
+      toast({
+        id: toastID,
+        title: "Not Logged In",
+        description: "You were redirected back to the login screen as it seems that you are not logged in.",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      })
+    }
+    
   }
   console.log(router.query.error)
   if (router.query.error == "EmailSignin") {
@@ -78,9 +85,9 @@ export default function Login({ csrfToken }: any) {
     router.push('/portal')
   }
 
-  const labelColour = useColorModeValue('primary', 'white')
-  const formColour = useColorModeValue('black', 'white')
-  const boxShadowColour = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
+  // const labelColour = useColorModeValue('primary', 'white')
+  // const formColour = useColorModeValue('black', 'white')
+  // const boxShadowColour = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
 
   return (
     <>
@@ -110,7 +117,7 @@ export default function Login({ csrfToken }: any) {
                     providers ? (
                         <> 
                             {/* <Heading as="h2" variant="sectionTitle" size="3xl">Login to DevLexicon</Heading> */}
-                                {providers?.email && (
+                                {/* {providers?.email && (
                                     <>
                                         <form method="post" action="/api/auth/signin/email">
                                             <Input 
@@ -129,15 +136,15 @@ export default function Login({ csrfToken }: any) {
                                             <Button leftIcon={<FontAwesomeIcon icon={['fas', 'magic']} color="white" />} type="submit" variant="blackFormButton" w="99%" m="1rem" >Login with Email</Button>
                                         </form>
                                     </>
-                                )}
+                                )} */}
                                 {/* <DividerText>Or Login With</DividerText> */}
                                 <Stack direction={{ base: 'column', md: 'row' }} spacing={4} justify="center">
-                                    {providers?.github && (
-                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'github']} color="white" />} type="button" onClick={() => signIn(providers?.github.id)} variant="blackFormButton" w={{ base: '100%', md: '50%' }}>Login with Github</Button>
-                                    )}
+                                    {/* {providers?.github && (
+                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'github']} color="white" />} type="button" onClick={() => signIn(providers?.github.id)} variant="blackFormButton" w={{ base: '100%', md: '100%' }}>Login with Github</Button>
+                                    )} */}
                                     
                                     {providers?.google && (
-                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'google']} color="white" />} type="button" onClick={() => signIn(providers?.google.id)} variant="blackFormButton" w={{ base: '100%', md: '50%' }}>Login with Google</Button>
+                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'google']} color="white" />} type="button" onClick={() => signIn(providers?.google.id)} variant="blackFormButton" w="80%">Login with Google</Button>
                                     )}
                                 </Stack>
                         </>
