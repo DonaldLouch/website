@@ -1,8 +1,8 @@
 import NextAuth from "next-auth"
 import EmailProvider from 'next-auth/providers/email'
 // import GitHubProvider from 'next-auth/providers/github'
+import ZohoProvider from 'next-auth/providers/zoho'
 // import GoogleProvider from 'next-auth/providers/google'
-import GoogleProvider from 'next-auth/providers/google'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { PrismaClient } from "@prisma/client"
 import nodemailer from 'nodemailer'
@@ -71,17 +71,21 @@ export default NextAuth({
       },
     // }),
     }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code"
-        }
-      }
+    ZohoProvider({
+      clientId: process.env.ZOHO_CLIENT_ID,
+      clientSecret: process.env.ZOHO_CLIENT_SECRET
     })
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_ID,
+    //   clientSecret: process.env.GOOGLE_SECRET,
+    //   authorization: {
+    //     params: {
+    //       prompt: "consent",
+    //       access_type: "offline",
+    //       response_type: "code"
+    //     }
+    //   }
+    // })
     // GoogleProvider({
     //   clientId: process.env.GOOGLE_ID,
     //   clientSecret: process.env.GOOGLE_SECRET,
@@ -140,6 +144,10 @@ export default NextAuth({
 
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {  
+    async session({ session, user }: any) {
+      session.user.userLevel = user.userLevel as number;
+      return Promise.resolve(session);
+    },
     // async signIn({ account, profile }) {
     //   if (account.provider === "google") {
     //     return profile.email_verified && profile.email.endsWith("@donaldlouch.ca")

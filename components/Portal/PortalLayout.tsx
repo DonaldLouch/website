@@ -44,9 +44,7 @@ export default function PortalLayout(props: PortalLayoutProps) {
 
     const pathName = router.pathname.substring(1)
 
-    // console.log(status)
-
-    // console.log(session?.user?.email)
+    console.log(session)
 
     useEffect(() => {
         if (status === 'loading') {
@@ -62,7 +60,19 @@ export default function PortalLayout(props: PortalLayoutProps) {
                     // errMessage: 'You were redirected back to the login screen as it seems that you are not logged in.',
                 }
             })
-        } if (status === 'authenticated') {
+        }
+        if (status === 'authenticated' && session?.user?.userLevel != 0) {
+            setUserStatus(false)
+            router.push({
+                pathname: '/login',
+                query: {
+                    refURL: pathName,
+                    errCode: 'UserLevel',
+                    // errMessage: 'You were redirected back to the login screen as it seems that you are not logged in.',
+                }
+            })
+        }
+        if (status === 'authenticated' && session?.user?.userLevel == 0) {
             setUserStatus(true)
         }
         /*else {
@@ -85,6 +95,7 @@ export default function PortalLayout(props: PortalLayoutProps) {
             // })()
         }*/
     }, [session, pathName, router, status])
+
     // console.log(userStatus)
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -128,31 +139,3 @@ export default function PortalLayout(props: PortalLayoutProps) {
         </>
     )
 }
-
-// export async function getServerSideProps(context: GetServerSidePropsContext) {
-//     console.log("Hello")
-//     return {
-//       props: {
-//         session: await getSession(context),
-//       },
-//     };
-//   }
-
-// export async function getServerSideProps(context: GetServerSidePropsContext) {
-//     const session = await getSession(context)
-
-//     console.log(session?.user?.email)
-  
-//     // const user = await prisma.user.findMany({
-//     //   where: {
-//     //     email: session?.user?.email
-//     //   }
-//     // })
-  
-//     return {
-//       props: {
-//         session,
-//         // user
-//       },
-//     }
-//   }

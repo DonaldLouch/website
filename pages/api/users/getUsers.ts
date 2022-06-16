@@ -5,10 +5,12 @@ import prisma from '../../../config/prisma'
 export default async function assetHandler(req: NextApiRequest, res: NextApiResponse) {
     const { method } = req
 
+    console.log(req)
+
     if (method === 'GET') {
         try {   
             const userEmail = req.query.uEmail as string
-            const user = await prisma.user.findUnique({
+            const user = await prisma.user.findMany({
                 where: {
                     email: userEmail
                 }

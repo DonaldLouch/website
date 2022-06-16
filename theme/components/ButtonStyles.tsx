@@ -104,7 +104,7 @@ export const ButtonStyles = {
           _hover: { 
               bg: "none",
               boxShadow: "none",
-              color: "tertiary"
+              color: "primary"
           },
       },
   },

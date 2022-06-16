@@ -60,9 +60,22 @@ export default function Login() {
         isClosable: true,
       })
     }
-    
   }
-  console.log(router.query.error)
+  
+  if (router.query.errCode == "UserLevel") {
+    const toastID = "userLevel"
+    if (!toast.isActive(toastID)) {
+      toast({
+        id: toastID,
+        title: "User Not Allowed 🚨",
+        description: "It appears that you do NOT have the proper user clearance to proceed to the portal. Please try signing into another account.",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      })
+    }
+  }
+  
   if (router.query.error == "EmailSignin") {
     toast({
       title: "Oh No!",
@@ -81,7 +94,7 @@ export default function Login() {
     setTheProviders();
   }, [])
 
-  if (status === 'authenticated') {
+  if (status === 'authenticated' && session?.user?.userLevel == 0) {
     router.push('/portal')
   }
 
@@ -110,7 +123,11 @@ export default function Login() {
             ) : (
                 session ? (
                     <>
+                        {session.user?.userLevel == 0 ? (
                         <Heading as="h2" variant="sectionTitle" size="2xl">You are currently logged in as {session.user?.email} 👋</Heading>
+                        ) : (<>
+                          <Heading as="h3" variant="sectionTitle" size="2xl">It appears that you do NOT have the proper user clearance to proceed to the portal. Please try signing into another account.</Heading>
+                        </>)}
                         <Button leftIcon={<FontAwesomeIcon icon={['fas', 'sign-out-alt']} color="black" />} type="button" onClick={() => signOut()} variant="blackFormButton" w="100%">Sign Out</Button>
                     </>
                 ) : ( 
@@ -143,8 +160,11 @@ export default function Login() {
                                         <Button leftIcon={<FontAwesomeIcon icon={['fab', 'github']} color="white" />} type="button" onClick={() => signIn(providers?.github.id)} variant="blackFormButton" w={{ base: '100%', md: '100%' }}>Login with Github</Button>
                                     )} */}
                                     
-                                    {providers?.google && (
+                                    {/* {providers?.google && (
                                         <Button leftIcon={<FontAwesomeIcon icon={['fab', 'google']} color="white" />} type="button" onClick={() => signIn(providers?.google.id)} variant="blackFormButton" w="80%">Login with Google</Button>
+                                    )} */}
+                                    {providers?.zoho && (
+                                        <Button leftIcon={<FontAwesomeIcon icon={['far', 'envelope-open']} color="currentColor" />} type="button" onClick={() => signIn(providers?.zoho.id)} variant="blackFormButton" w="80%">Login with ZoHo</Button>
                                     )}
                                 </Stack>
                         </>
