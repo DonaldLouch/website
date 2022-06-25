@@ -39,6 +39,15 @@ import { Pagination } from '../components/Pagination'
 // import * as Yup from 'yup'
 
 export default function Blog({ postData, pagination }: any) {
+  const pageID = "pageL4UBIE8D9of" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
+  
   const posts = postData
 
   const FaDown = () => <FontAwesomeIcon icon={['fas', 'circle-chevron-down']}/>

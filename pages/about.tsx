@@ -57,6 +57,15 @@ export default function AboutMe({ source, aboutData, linkData, primaryLinkData, 
     p: paragraph
   }
 
+  const pageID = "pageL4UBFE8Gz45" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
+
   return (
     <>
     <Metadata

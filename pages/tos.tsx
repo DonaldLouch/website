@@ -14,6 +14,16 @@ import { SectionCard } from "../components/Cards/SectionCard"
 import { SectionTitle } from "../components/SectionTitle"
 
 export default function TOS() {
+
+  const pageID = "pageL4UBK5TVb2y" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
+
   return (
     <>
     <Metadata

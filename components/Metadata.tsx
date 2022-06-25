@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Script from 'next/script'
+
 interface MetaProps {
     title: string
     keywords: string
@@ -25,8 +27,8 @@ export const Metadata = (props: MetaProps) => {
             <meta name="theme-color" content="#ededed" />
             <meta name="msapplication-TileColor" content="#ededed" />
             <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-            <script data-token={process.env.SPLITBEE_TOKEN} async src="https://cdn.splitbee.io/sb.js"></script>
-            <script async src="https://donaldlouch.instatus.com/widget/script.js"></script>
+            {/* <script data-token={process.env.SPLITBEE_TOKEN} async src="https://cdn.splitbee.io/sb.js"></script> */}
+            <Script src="https://donaldlouch.instatus.com/widget/script.js" strategy="lazyOnload" />
             <title>{title}</title>
         </Head>
     )

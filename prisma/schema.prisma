@@ -229,9 +229,9 @@ model Page {
   id          String @unique
   title       String
   slug        String @unique
-  body        String  @db.Text
-  excerpt     String  @db.VarChar(300)
-  tags        String    @db.Text
+  body        String?  @db.Text
+  excerpt     String?  @db.VarChar(300)
+  tags        String?    @db.Text
   lastUpdatedOn   DateTime @default(now())
   pageStatus  String
   views       Int @default(0)

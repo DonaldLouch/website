@@ -15,6 +15,15 @@ import Hire from "../components/Hire"
 
 export default function Jobs() {
 
+  const pageID = "pageL4UBJ0QWcyw" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
+
   return (
     <>
     <Metadata

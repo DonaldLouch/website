@@ -98,6 +98,15 @@ export default function Login() {
     router.push('/portal')
   }
 
+  const pageID = "pageL4UBJJZ0k7k" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
+
   // const labelColour = useColorModeValue('primary', 'white')
   // const formColour = useColorModeValue('black', 'white')
   // const boxShadowColour = useColorModeValue('bsBoldBlue', 'bsBoldWhite')

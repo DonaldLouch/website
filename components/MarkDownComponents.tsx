@@ -124,7 +124,7 @@ const blockquote = (props: any) => (<Text as="blockquote" fontSize="xl" my="1rem
 const unorderedList = (props: any) => (
     <>
     <List spacing={3}>
-        {console.log(props.children)}
+        {/* {console.log(props.children)} */}
         {props.children.map((list: any) => ( 
             <>
             {list != "\n" && (

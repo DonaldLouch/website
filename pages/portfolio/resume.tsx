@@ -28,6 +28,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../config/fontAwesome'
 
 export default function Test({ resumeData, resumeExperienceData, resumeWorkExperienceHistoryData, resumeEducationData }: any) {
+  const pageID = "pageL4UBGH6Awzq" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
   const resume = resumeData?.[0]
   const resumeExperience = resumeExperienceData
   const resumeWorkExperienceHistory = resumeWorkExperienceHistoryData

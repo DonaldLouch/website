@@ -15,6 +15,15 @@ import { SectionTitle } from "../../components/SectionTitle"
 
 
 export default function PortfolioVideography() {
+  const pageID = "pageL4UBHMANczw" as string
+  updatePostView(pageID)
+  async function updatePostView(pageID: string) {
+      await fetch('/api/pages/updateView', {
+          method: 'POST',
+          body: JSON.stringify(pageID)
+      })
+  }
+  
   return (
     <>  
         <Metadata

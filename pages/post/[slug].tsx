@@ -72,6 +72,24 @@ export default function Post({ source, postData }:any) {
         }
     }
 
+//    async (post: any) => {
+    // console.log("Hello")
+
+       const postViewData = {
+           id: post.id,
+           newView: post.views + 1
+       }
+   
+        updatePostView(postViewData)
+//    }
+
+    async function updatePostView(postViewData: any) {
+        await fetch('/api/posts/updateView', {
+          method: 'POST',
+          body: JSON.stringify(postViewData)
+        })
+      }
+
     return (
         <>  
             <Metadata

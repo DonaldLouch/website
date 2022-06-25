@@ -2,6 +2,7 @@ import {Metadata} from "../components/Metadata"
 import HeroPage from "../components/HeroPage"
 
 
+
 export default function Home() {
     const pageLinks = [
         {
@@ -29,6 +30,17 @@ export default function Home() {
             'linkUrl': 'jobs'
         },
     ]
+
+    const pageID = "pageL4UBF3Y5fn7" as string
+    updatePostView(pageID)
+    async function updatePostView(pageID: string) {
+        await fetch('/api/pages/updateView', {
+            method: 'POST',
+            body: JSON.stringify(pageID)
+        })
+    }
+    
+
   return (
     <>  
       <Metadata
