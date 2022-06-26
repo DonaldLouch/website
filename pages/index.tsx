@@ -1,7 +1,9 @@
 import { Metadata } from "../components/Metadata";
 import HeroPage from "../components/HeroPage";
 
-export default function Home() {
+const pageID = "pageL4UBF3Y5fn7" as string;
+
+export default function Home(pageID: string) {
   const pageLinks = [
     {
       linkTitle: "Blog",
@@ -29,7 +31,7 @@ export default function Home() {
     },
   ];
 
-  const pageID = "pageL4UBF3Y5fn7" as string;
+  //   const pageID = "pageL4UBF3Y5fn7" as string;
   updatePostView(pageID);
   async function updatePostView(pageID: string) {
     await fetch("/api/pages/updateView", {
