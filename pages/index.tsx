@@ -1,6 +1,8 @@
 import { Metadata } from "../components/Metadata";
 import HeroPage from "../components/HeroPage";
 
+import useSWR from "swr";
+
 export default function Home() {
   const pageLinks = [
     {
@@ -29,14 +31,10 @@ export default function Home() {
     },
   ];
 
-  //   const pageID = "pageL4UBF3Y5fn7" as string;
-  //   updatePostView();
-  //   async function updatePostView() {
-  //     await fetch("/api/pages/updateView", {
-  //       method: "POST",
-  //       body: JSON.stringify("pageL4UBF3Y5fn7"),
-  //     });
-  //   }
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBF3Y5fn7" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
   return (
     <>
