@@ -1,7 +1,7 @@
 import { Metadata } from "../components/Metadata";
 import HeroPage from "../components/HeroPage";
 
-export default function Home(pageID: string) {
+export default function Home() {
   const pageLinks = [
     {
       linkTitle: "Blog",
