@@ -31,12 +31,18 @@ import HeroPage from "../components/HeroPage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../config/fontAwesome";
 import { Pagination } from "../components/Pagination";
+import useSWR from "swr";
 // import { FormInput } from '../components/Form/FormInput'
 // import { Formik } from 'formik'
 
 // import * as Yup from 'yup'
 
 export default function Blog({ postData, pagination }: any) {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBIE8D9of" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+
   // const pageID = "pageL4UBIE8D9of" as string
   // updatePostView(pageID)
   // async function updatePostView(pageID: string) {

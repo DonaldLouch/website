@@ -34,6 +34,7 @@ import Contact from "../components/Contact";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../config/fontAwesome";
+import useSWR from "swr";
 
 const FaHome = () => <FontAwesomeIcon icon={["fas", "house"]} />;
 
@@ -62,6 +63,11 @@ export default function AboutMe({
   const components = {
     p: paragraph,
   };
+
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBFE8Gz45" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
   // const pageID = "pageL4UBFE8Gz45" as string
   // updatePostView(pageID)

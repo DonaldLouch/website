@@ -11,8 +11,13 @@ import "../../config/fontAwesome";
 
 import { Metadata } from "../../components/Metadata";
 import { SectionTitle } from "../../components/SectionTitle";
+import useSWR from "swr";
 
 export default function PortfolioVideography() {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBHMANczw" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
   // const pageID = "pageL4UBHMANczw" as string
   // updatePostView(pageID)
   // async function updatePostView(pageID: string) {

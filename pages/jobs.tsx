@@ -10,8 +10,14 @@ import { Metadata } from "../components/Metadata";
 
 // import { SectionCard } from "../components/Cards/SectionCard"
 import Hire from "../components/Hire";
+import useSWR from "swr";
 
 export default function Jobs() {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBJ0QWcyw" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+
   // const pageID = "pageL4UBJ0QWcyw" as string
   // updatePostView(pageID)
   // async function updatePostView(pageID: string) {

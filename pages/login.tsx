@@ -42,6 +42,7 @@ import "../config/fontAwesome";
 import { CtxOrReq } from "next-auth/client/_utils";
 
 import { useRouter } from "next/router";
+import useSWR from "swr";
 
 // { csrfToken }: any
 
@@ -107,6 +108,11 @@ export default function Login() {
   if (status === "authenticated" && session?.user?.userLevel == 0) {
     router.push("/portal");
   }
+
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBJJZ0k7k" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
   // const pageID = "pageL4UBJJZ0k7k" as string;
   // updatePostView(pageID);

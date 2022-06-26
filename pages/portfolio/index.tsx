@@ -1,7 +1,13 @@
 import { Metadata } from "../../components/Metadata";
 import HeroPage from "../../components/HeroPage";
+import useSWR from "swr";
 
 export default function Portfolio() {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBG4TUp4n" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+
   //   const pageID = "pageL4UBG4TUp4n" as string;
   //   updatePostView(pageID);
   //   async function updatePostView(pageID: string) {

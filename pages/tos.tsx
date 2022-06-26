@@ -6,8 +6,14 @@ import { Metadata } from "../components/Metadata";
 
 import { SectionCard } from "../components/Cards/SectionCard";
 import { SectionTitle } from "../components/SectionTitle";
+import useSWR from "swr";
 
 export default function TOS() {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBK5TVb2y" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+
   // const pageID = "pageL4UBK5TVb2y" as string
   // updatePostView(pageID)
   // async function updatePostView(pageID: string) {

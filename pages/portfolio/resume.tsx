@@ -26,6 +26,7 @@ import { SectionTitle } from "../../components/SectionTitle";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../config/fontAwesome";
+import useSWR from "swr";
 
 export default function Test({
   resumeData,
@@ -33,6 +34,11 @@ export default function Test({
   resumeWorkExperienceHistoryData,
   resumeEducationData,
 }: any) {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBGH6Awzq" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+
   // const pageID = "pageL4UBGH6Awzq" as string
   // updatePostView(pageID)
   // async function updatePostView(pageID: string) {
@@ -413,12 +419,13 @@ export default function Test({
                 year: "numeric",
                 month: "long",
                 day: "numeric",
-              })} at ${new Date(
-                resume?.lastUpdatedOn
-              ).toLocaleTimeString("en-US", {
-                hour: "numeric",
-                minute: "2-digit",
-              })}`}</Text>
+              })} at ${new Date(resume?.lastUpdatedOn).toLocaleTimeString(
+                "en-US",
+                {
+                  hour: "numeric",
+                  minute: "2-digit",
+                }
+              )}`}</Text>
             </Box>
 
             <Box

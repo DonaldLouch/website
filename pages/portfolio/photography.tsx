@@ -6,6 +6,7 @@ import {
   Image,
   // useColorModeValue
 } from "@chakra-ui/react";
+import useSWR from "swr";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import '../../config/fontAwesome'
@@ -13,6 +14,11 @@ import {
 import { Metadata } from "../../components/Metadata";
 
 export default function PortfolioVideography() {
+  const fetcher = (url: RequestInfo | URL) =>
+    fetch(url).then((res) => res.json());
+  const pageID = "pageL4UBHBV1wlb" as string;
+  useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+
   //   const pageID = "pageL4UBHBV1wlb" as string
   //   updatePostView(pageID)
   //   async function updatePostView(pageID: string) {
