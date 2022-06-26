@@ -1,8 +1,6 @@
 import { Metadata } from "../components/Metadata";
 import HeroPage from "../components/HeroPage";
 
-const pageID = "pageL4UBF3Y5fn7" as string;
-
 export default function Home(pageID: string) {
   const pageLinks = [
     {
@@ -32,11 +30,11 @@ export default function Home(pageID: string) {
   ];
 
   //   const pageID = "pageL4UBF3Y5fn7" as string;
-  updatePostView(pageID);
-  async function updatePostView(pageID: string) {
+  updatePostView();
+  async function updatePostView() {
     await fetch("/api/pages/updateView", {
       method: "POST",
-      body: JSON.stringify(pageID),
+      body: JSON.stringify("pageL4UBF3Y5fn7"),
     });
   }
 
