@@ -30,13 +30,13 @@ export default function Home() {
   ];
 
   //   const pageID = "pageL4UBF3Y5fn7" as string;
-  updatePostView();
-  async function updatePostView() {
-    await fetch("/api/pages/updateView", {
-      method: "POST",
-      body: JSON.stringify("pageL4UBF3Y5fn7"),
-    });
-  }
+  //   updatePostView();
+  //   async function updatePostView() {
+  //     await fetch("/api/pages/updateView", {
+  //       method: "POST",
+  //       body: JSON.stringify("pageL4UBF3Y5fn7"),
+  //     });
+  //   }
 
   return (
     <>
