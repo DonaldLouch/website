@@ -1,6 +1,8 @@
 import { Metadata } from "../components/Metadata";
 import HeroPage from "../components/HeroPage";
 
+import prisma from "../config/prisma";
+
 export default function Home() {
   const pageLinks = [
     {
@@ -53,4 +55,12 @@ export default function Home() {
       />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const pageID = "pageL4UBF3Y5fn7" as string;
+  await prisma.blogPost.update({
+    where: { id: pageID },
+    data: { views: { increment: 1 } },
+  });
 }
