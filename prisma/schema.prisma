@@ -227,10 +227,28 @@ model Page {
     id            String   @unique
     title         String
     slug          String   @unique
-    body          String?  @db.Text
-    excerpt       String?  @db.VarChar(300)
-    tags          String?  @db.Text
     lastUpdatedOn DateTime @default(now())
     pageStatus    String
     views         Int      @default(0)
+}
+
+model Contact {
+    id      String   @id @default(cuid())
+    name    String
+    email   String
+    subject String
+    message String   @db.Text
+    sentOn  DateTime @default(now())
+}
+
+model Job {
+    id          String   @id @default(cuid())
+    name        String
+    company     String?
+    email       String
+    phone       String
+    type        String
+    description String   @db.Text
+    budget      String?
+    sentOn      DateTime @default(now())
 }

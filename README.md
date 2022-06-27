@@ -39,7 +39,7 @@ If you would you would like you may view the [Public Analytics via. SplitBee](ht
 - [Formik](https://github.com/jaredpalmer/formik): Form Provider
 - [yup](https://github.com/jquense/yup): Form Validation
 - [Fontsource](https://fontsource.org/): Font Provider 
-- [SplitBee](https://splitbee.io/): Public Analytics
+- ~~[SplitBee](https://splitbee.io/): Public Analytics~~ NOW DISCONTINUED AND DONE ON SERVER
 
 ## Support The Production of Donald Louch
 
