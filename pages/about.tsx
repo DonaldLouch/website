@@ -3,7 +3,6 @@ import React from "react";
 import {
   Box,
   Stack,
-  Grid,
   Text,
   useColorModeValue,
   Image,
@@ -18,7 +17,6 @@ import {
   TabPanel,
   AspectRatio,
   Icon,
-  Flex,
 } from "@chakra-ui/react";
 
 import prisma from "../config/prisma";
@@ -29,6 +27,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
 import { SectionCard } from "../components/Cards/SectionCard";
+import { LinkCard } from "../components/Cards/LinkCard";
 import { SectionTitle } from "../components/SectionTitle";
 
 import Contact from "../components/Contact";
@@ -59,7 +58,7 @@ export default function AboutMe({
   const embeds = embedData;
 
   const primeGrey = useColorModeValue("primary", "grey");
-  const primeWhite = useColorModeValue("primary", "white");
+  // const primeWhite = useColorModeValue("primary", "white");
 
   const components = {
     p: paragraph,
@@ -182,6 +181,7 @@ export default function AboutMe({
                   w="100%"
                   variant="unstyled"
                   p="1rem"
+                  h="auto"
                   fontSize="inherit"
                   _hover={{ color: primeGrey }}
                   icon={<FontAwesomeIcon icon={["fab", pLink.icon]} />}
@@ -230,145 +230,147 @@ export default function AboutMe({
                 </AspectRatio>
               ))}
               {links.map((link: any) => (
-                <Link
-                  key={link.id}
-                  href={link.link}
-                  isExternal
-                  variant="unstyled"
-                  _hover={{ textDecoration: "none" }}
-                >
-                  <Flex
-                    // templateColumns={{
-                    //   base: "20% 80%",
-                    //   md: "10% 90%",
-                    //   lg: "5% 95%",
-                    // }}
-                    color={primeWhite}
-                    boxShadow="bsBlue"
-                    my="0.8rem"
-                    p="1.2rem 2rem"
-                    borderRadius="0 2rem"
-                    whiteSpace="nowrap"
-                    overflowX="scroll"
-                    alignItems="center"
-                    justifyContent="start"
-                    // letterSpacing=".005rem"
-                    // fontWeight="900"
-                    // fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
-                    gap="1.3rem"
-                    _hover={{
-                      boxShadow: "none",
-                      bg: "backgroundGradient",
-                      color: "white",
-                    }}
-                  >
-                    <IconButton
-                      aria-label={`${link.title} Link`}
-                      w="1.8rem"
-                      h="auto"
-                      variant="unstyled"
-                      // p="910em"
-                      fontSize="inherit"
-                      // display="flex"
-                      // alignContent="center"
-                      // justifyContent="center"
-                      // pt="0.5rem"
-                      // padding="0.5rem"
-                      // borderRadius="0 1em"
-                      // color={primeWhite}
-                      // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
-                      icon={
-                        <FontAwesomeIcon
-                          icon={[link.iconPrefix, link.iconName]}
-                        />
-                      }
-                    />
-                    <Stack>
-                      <Text
-                        m="0"
-                        fontWeight="700"
-                        fontSize={{ base: "2rem", xl: "1.8rem" }}
-                      >
-                        {link.title}
-                      </Text>
-                      <Text
-                        fontSize="0.8rem"
-                        fontWeight="300"
-                        wordBreak="break-word"
-                        color="grey"
-                      >
-                        {link.subTitle}
-                      </Text>
-                    </Stack>
-                  </Flex>
-                </Link>
+                <LinkCard {...link} />
+                // <Link
+                //   key={link.id}
+                //   href={link.link}
+                //   isExternal
+                //   variant="unstyled"
+                //   _hover={{ textDecoration: "none" }}
+                // >
+                //   <Flex
+                //     // templateColumns={{
+                //     //   base: "20% 80%",
+                //     //   md: "10% 90%",
+                //     //   lg: "5% 95%",
+                //     // }}
+                //     color={primeWhite}
+                //     boxShadow="bsBlue"
+                //     my="0.8rem"
+                //     p="1.2rem 2rem"
+                //     borderRadius="0 2rem"
+                //     whiteSpace="nowrap"
+                //     overflowX="scroll"
+                //     alignItems="center"
+                //     justifyContent="start"
+                //     // letterSpacing=".005rem"
+                //     // fontWeight="900"
+                //     // fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
+                //     gap="1.3rem"
+                //     _hover={{
+                //       boxShadow: "none",
+                //       bg: "backgroundGradient",
+                //       color: "white",
+                //     }}
+                //   >
+                //     <IconButton
+                //       aria-label={`${link.title} Link`}
+                //       w="1.8rem"
+                //       h="auto"
+                //       variant="unstyled"
+                //       // p="910em"
+                //       fontSize="inherit"
+                //       // display="flex"
+                //       // alignContent="center"
+                //       // justifyContent="center"
+                //       // pt="0.5rem"
+                //       // padding="0.5rem"
+                //       // borderRadius="0 1em"
+                //       // color={primeWhite}
+                //       // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
+                //       icon={
+                //         <FontAwesomeIcon
+                //           icon={[link.iconPrefix, link.iconName]}
+                //         />
+                //       }
+                //     />
+                //     <Stack>
+                //       <Text
+                //         m="0"
+                //         fontWeight="700"
+                //         fontSize={{ base: "2rem", xl: "1.8rem" }}
+                //       >
+                //         {link.title}
+                //       </Text>
+                //       <Text
+                //         fontSize="0.8rem"
+                //         fontWeight="300"
+                //         wordBreak="break-word"
+                //         color="grey"
+                //       >
+                //         {link.subTitle}
+                //       </Text>
+                //     </Stack>
+                //   </Flex>
+                // </Link>
               ))}
             </TabPanel>
             <TabPanel>
               {links.map((link: any) => (
-                <Link
-                  key={link.id}
-                  href={link.link}
-                  isExternal
-                  variant="unstyled"
-                  _hover={{ textDecoration: "none" }}
-                >
-                  <Grid
-                    templateColumns={{
-                      base: "20% 80%",
-                      md: "10% 90%",
-                      lg: "5% 95%",
-                    }}
-                    color="primary"
-                    boxShadow="bsBlue"
-                    my="0.8rem"
-                    p="1.2rem"
-                    borderRadius="0 2rem"
-                    overflowX="scroll"
-                    alignItems="center"
-                    justifyContent="start"
-                    letterSpacing=".005rem"
-                    fontWeight="900"
-                    fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
-                    columnGap="0.5rem"
-                    _hover={{
-                      boxShadow: "none",
-                      bg: "backgroundGradient",
-                      color: "white",
-                    }}
-                  >
-                    <IconButton
-                      aria-label={`${link.title} Link`}
-                      w="100%"
-                      variant="unstyled"
-                      p="1rem"
-                      fontSize="inherit"
-                      // pt="0.5rem"
-                      // padding="0.5rem"
-                      // borderRadius="0 1em"
-                      color={primeWhite}
-                      // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
-                      icon={
-                        <FontAwesomeIcon
-                          icon={[link.iconPrefix, link.iconName]}
-                        />
-                      }
-                    />
-                    <Stack>
-                      <Text m="0" fontWeight="700">
-                        {link.title}
-                      </Text>
-                      <Text
-                        fontSize="0.8rem"
-                        fontWeight="300"
-                        wordBreak="break-word"
-                        color="grey"
-                      >
-                        {link.subTitle}
-                      </Text>
-                    </Stack>
-                  </Grid>
-                </Link>
+                <LinkCard {...link} />
+                // <Link
+                //   key={link.id}
+                //   href={link.link}
+                //   isExternal
+                //   variant="unstyled"
+                //   _hover={{ textDecoration: "none" }}
+                // >
+                //   <Grid
+                //     templateColumns={{
+                //       base: "20% 80%",
+                //       md: "10% 90%",
+                //       lg: "5% 95%",
+                //     }}
+                //     color="primary"
+                //     boxShadow="bsBlue"
+                //     my="0.8rem"
+                //     p="1.2rem"
+                //     borderRadius="0 2rem"
+                //     overflowX="scroll"
+                //     alignItems="center"
+                //     justifyContent="start"
+                //     letterSpacing=".005rem"
+                //     fontWeight="900"
+                //     fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
+                //     columnGap="0.5rem"
+                //     _hover={{
+                //       boxShadow: "none",
+                //       bg: "backgroundGradient",
+                //       color: "white",
+                //     }}
+                //   >
+                //     <IconButton
+                //       aria-label={`${link.title} Link`}
+                //       w="100%"
+                //       variant="unstyled"
+                //       p="1rem"
+                //       fontSize="inherit"
+                //       // pt="0.5rem"
+                //       // padding="0.5rem"
+                //       // borderRadius="0 1em"
+                //       color={primeWhite}
+                //       // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
+                //       icon={
+                //         <FontAwesomeIcon
+                //           icon={[link.iconPrefix, link.iconName]}
+                //         />
+                //       }
+                //     />
+                //     <Stack>
+                //       <Text m="0" fontWeight="700">
+                //         {link.title}
+                //       </Text>
+                //       <Text
+                //         fontSize="0.8rem"
+                //         fontWeight="300"
+                //         wordBreak="break-word"
+                //         color="grey"
+                //       >
+                //         {link.subTitle}
+                //       </Text>
+                //     </Stack>
+                //   </Grid>
+                // </Link>
               ))}
             </TabPanel>
             <TabPanel>
