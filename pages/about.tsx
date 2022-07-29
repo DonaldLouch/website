@@ -248,6 +248,7 @@ export default function AboutMe({
                     my="0.8rem"
                     p="1.2rem 2rem"
                     borderRadius="0 2rem"
+                    whiteSpace="nowrap"
                     overflowX="scroll"
                     alignItems="center"
                     justifyContent="start"
