@@ -8,15 +8,17 @@ import {
   Image,
   Heading,
   Link,
-  IconButton,
-  Tooltip,
+  // IconButton,
+  // Tooltip,
   Tabs,
   TabList,
   TabPanels,
-  Tab,
+  // Tab,
   TabPanel,
   AspectRatio,
-  Icon,
+  // Icon,
+  Tooltip,
+  IconButton,
 } from "@chakra-ui/react";
 
 import prisma from "../config/prisma";
@@ -29,6 +31,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { SectionCard } from "../components/Cards/SectionCard";
 import { LinkCard } from "../components/Cards/LinkCard";
 import { SectionTitle } from "../components/SectionTitle";
+import { LinkedButton } from "../components/LinkedButton";
 
 import Contact from "../components/Contact";
 
@@ -36,7 +39,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../config/fontAwesome";
 import useSWR from "swr";
 
-const FaHome = () => <FontAwesomeIcon icon={["fas", "house"]} />;
+// const FaHome = () => <FontAwesomeIcon icon={["fas", "house"]} />;
 
 const paragraph = (props: any) => (
   <Text fontSize="1.1rem" lineHeight="1.4rem">
@@ -58,7 +61,6 @@ export default function AboutMe({
   const embeds = embedData;
 
   const primeGrey = useColorModeValue("primary", "grey");
-  // const primeWhite = useColorModeValue("primary", "white");
 
   const components = {
     p: paragraph,
@@ -68,15 +70,6 @@ export default function AboutMe({
     fetch(url).then((res) => res.json());
   const pageID = "pageL4UBFE8Gz45" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
-
-  // const pageID = "pageL4UBFE8Gz45" as string
-  // updatePostView(pageID)
-  // async function updatePostView(pageID: string) {
-  //     await fetch('/api/pages/updateView', {
-  //         method: 'POST',
-  //         body: JSON.stringify(pageID)
-  //     })
-  // }
 
   return (
     <>
@@ -92,11 +85,25 @@ export default function AboutMe({
         left="2%"
         zIndex="overlay"
         color={useColorModeValue("primary", "white")}
-        fontSize="1.5rem"
+        // fontSize="1.5rem"
       >
-        <Link href="../">
-          <Icon as={FaHome} width="100%" color="currentColor" />
+        <Link href="../" variant="unstyled" _hover={{ textDecoration: "none" }}>
+          <Tooltip label="Go Back Home">
+            <IconButton
+              aria-label="Go Back Home"
+              w="100%"
+              variant="unstyled"
+              p="1rem"
+              h="auto"
+              fontSize="inherit"
+              _hover={{ color: primeGrey }}
+              icon={<FontAwesomeIcon icon={["fas", "house"]} />}
+            />
+          </Tooltip>
         </Link>
+        {/* <Link href="../">
+          <Icon as={FaHome} width="100%" color="currentColor" />
+        </Link> */}
       </Box>
       <Box
         as="section"
@@ -138,7 +145,6 @@ export default function AboutMe({
                 </Text>
               </Box>
             </Box>
-            {/* <Text>A {about.currentAge}-year-old, {about.tagLine} from {about.city}, {about.province}, {about.country}</Text> */}
             <Heading
               as="h3"
               size="3xl"
@@ -167,27 +173,28 @@ export default function AboutMe({
           overflowY="hidden"
           whiteSpace="nowrap"
         >
-          {primaryLinks.map((pLink: any) => (
-            <Link
-              key={pLink.id}
-              href={pLink.link}
-              isExternal
-              variant="unstyled"
-              _hover={{ textDecoration: "none" }}
-            >
-              <Tooltip label={pLink.subTitle} aria-label={pLink.subTitle}>
-                <IconButton
-                  aria-label={`${pLink.title} Link`}
-                  w="100%"
-                  variant="unstyled"
-                  p="1rem"
-                  h="auto"
-                  fontSize="inherit"
-                  _hover={{ color: primeGrey }}
-                  icon={<FontAwesomeIcon icon={["fab", pLink.icon]} />}
-                />
-              </Tooltip>
-            </Link>
+          {primaryLinks.map((buttonLink: any) => (
+            <LinkedButton {...buttonLink} />
+            // <Link
+            //   key={buttonLink.id}
+            //   href={buttonLink.link}
+            //   isExternal
+            //   variant="unstyled"
+            //   _hover={{ textDecoration: "none" }}
+            // >
+            //   <Tooltip label={buttonLink.subTitle} aria-label={buttonLink.subTitle}>
+            //     <IconButton
+            //       aria-label={`${buttonLink.title} Link`}
+            //       w="100%"
+            //       variant="unstyled"
+            //       p="1rem"
+            //       h="auto"
+            //       fontSize="inherit"
+            //       _hover={{ color: primeGrey }}
+            //       icon={<FontAwesomeIcon icon={["fab", buttonLink.icon]} />}
+            //     />
+            //   </Tooltip>
+            // </Link>
           ))}
           <Link href="#contact" variant="primary" pt="0.5rem">
             Contact Me
@@ -196,20 +203,20 @@ export default function AboutMe({
             Direct Email Me
           </Link>
         </Stack>
-        {/* </Box> */}
 
         <Tabs
           variant="soft-rounded"
           colorScheme="purple"
           my="1rem"
           boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
-          p="2rem 0"
+          //FOR TAB SECTION
+          // p="2rem 0"
           borderRadius="0 2rem"
         >
           <TabList display="flex" justifyContent="center">
-            <Tab>All</Tab>
+            {/* <Tab>All</Tab>
             <Tab>Links</Tab>
-            <Tab>Embed Content</Tab>
+            <Tab>Embed Content</Tab> */}
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -231,146 +238,11 @@ export default function AboutMe({
               ))}
               {links.map((link: any) => (
                 <LinkCard {...link} />
-                // <Link
-                //   key={link.id}
-                //   href={link.link}
-                //   isExternal
-                //   variant="unstyled"
-                //   _hover={{ textDecoration: "none" }}
-                // >
-                //   <Flex
-                //     // templateColumns={{
-                //     //   base: "20% 80%",
-                //     //   md: "10% 90%",
-                //     //   lg: "5% 95%",
-                //     // }}
-                //     color={primeWhite}
-                //     boxShadow="bsBlue"
-                //     my="0.8rem"
-                //     p="1.2rem 2rem"
-                //     borderRadius="0 2rem"
-                //     whiteSpace="nowrap"
-                //     overflowX="scroll"
-                //     alignItems="center"
-                //     justifyContent="start"
-                //     // letterSpacing=".005rem"
-                //     // fontWeight="900"
-                //     // fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
-                //     gap="1.3rem"
-                //     _hover={{
-                //       boxShadow: "none",
-                //       bg: "backgroundGradient",
-                //       color: "white",
-                //     }}
-                //   >
-                //     <IconButton
-                //       aria-label={`${link.title} Link`}
-                //       w="1.8rem"
-                //       h="auto"
-                //       variant="unstyled"
-                //       // p="910em"
-                //       fontSize="inherit"
-                //       // display="flex"
-                //       // alignContent="center"
-                //       // justifyContent="center"
-                //       // pt="0.5rem"
-                //       // padding="0.5rem"
-                //       // borderRadius="0 1em"
-                //       // color={primeWhite}
-                //       // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
-                //       icon={
-                //         <FontAwesomeIcon
-                //           icon={[link.iconPrefix, link.iconName]}
-                //         />
-                //       }
-                //     />
-                //     <Stack>
-                //       <Text
-                //         m="0"
-                //         fontWeight="700"
-                //         fontSize={{ base: "2rem", xl: "1.8rem" }}
-                //       >
-                //         {link.title}
-                //       </Text>
-                //       <Text
-                //         fontSize="0.8rem"
-                //         fontWeight="300"
-                //         wordBreak="break-word"
-                //         color="grey"
-                //       >
-                //         {link.subTitle}
-                //       </Text>
-                //     </Stack>
-                //   </Flex>
-                // </Link>
               ))}
             </TabPanel>
-            <TabPanel>
+            {/* <TabPanel>
               {links.map((link: any) => (
                 <LinkCard {...link} />
-                // <Link
-                //   key={link.id}
-                //   href={link.link}
-                //   isExternal
-                //   variant="unstyled"
-                //   _hover={{ textDecoration: "none" }}
-                // >
-                //   <Grid
-                //     templateColumns={{
-                //       base: "20% 80%",
-                //       md: "10% 90%",
-                //       lg: "5% 95%",
-                //     }}
-                //     color="primary"
-                //     boxShadow="bsBlue"
-                //     my="0.8rem"
-                //     p="1.2rem"
-                //     borderRadius="0 2rem"
-                //     overflowX="scroll"
-                //     alignItems="center"
-                //     justifyContent="start"
-                //     letterSpacing=".005rem"
-                //     fontWeight="900"
-                //     fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
-                //     columnGap="0.5rem"
-                //     _hover={{
-                //       boxShadow: "none",
-                //       bg: "backgroundGradient",
-                //       color: "white",
-                //     }}
-                //   >
-                //     <IconButton
-                //       aria-label={`${link.title} Link`}
-                //       w="100%"
-                //       variant="unstyled"
-                //       p="1rem"
-                //       fontSize="inherit"
-                //       // pt="0.5rem"
-                //       // padding="0.5rem"
-                //       // borderRadius="0 1em"
-                //       color={primeWhite}
-                //       // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
-                //       icon={
-                //         <FontAwesomeIcon
-                //           icon={[link.iconPrefix, link.iconName]}
-                //         />
-                //       }
-                //     />
-                //     <Stack>
-                //       <Text m="0" fontWeight="700">
-                //         {link.title}
-                //       </Text>
-                //       <Text
-                //         fontSize="0.8rem"
-                //         fontWeight="300"
-                //         wordBreak="break-word"
-                //         color="grey"
-                //       >
-                //         {link.subTitle}
-                //       </Text>
-                //     </Stack>
-                //   </Grid>
-                // </Link>
               ))}
             </TabPanel>
             <TabPanel>
@@ -390,14 +262,10 @@ export default function AboutMe({
                   <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                 </AspectRatio>
               ))}
-            </TabPanel>
+            </TabPanel> */}
           </TabPanels>
         </Tabs>
-        {/* <Box id="contact" mt="2rem" mb="2rem" p="2rem" borderRadius="0 2rem" boxShadow="bsBoldWhite"> */}
-        {/* <SectionTitle headingTitle="Contact Me" /> */}
         <Contact />
-        {/* <Text textAlign="center">🚧 Section Is Currently Under Construction 🚧</Text> */}
-        {/* </Box> */}
       </Box>
     </>
   );

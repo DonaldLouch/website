@@ -5,7 +5,6 @@ import {
   IconButton,
   Stack,
   useColorModeValue,
-  // useColorModeValue
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,11 +32,6 @@ export const LinkCard = (link: {
       _hover={{ textDecoration: "none" }}
     >
       <Flex
-        // templateColumns={{
-        //   base: "20% 80%",
-        //   md: "10% 90%",
-        //   lg: "5% 95%",
-        // }}
         color={primeWhite}
         boxShadow="bsBlue"
         my="0.8rem"
@@ -47,9 +41,6 @@ export const LinkCard = (link: {
         overflowX="scroll"
         alignItems="center"
         justifyContent="start"
-        // letterSpacing=".005rem"
-        // fontWeight="900"
-        // fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
         gap="1.3rem"
         _hover={{
           boxShadow: "none",
@@ -62,16 +53,7 @@ export const LinkCard = (link: {
           w="1.8rem"
           h="auto"
           variant="unstyled"
-          // p="910em"
           fontSize="inherit"
-          // display="flex"
-          // alignContent="center"
-          // justifyContent="center"
-          // pt="0.5rem"
-          // padding="0.5rem"
-          // borderRadius="0 1em"
-          // color={primeWhite}
-          // _hover={{boxShadow: "none", color: useColorModeValue("primary", "grey")}}
           icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
         />
         <Stack>
