@@ -18,6 +18,7 @@ import {
   TabPanel,
   AspectRatio,
   Icon,
+  Flex,
 } from "@chakra-ui/react";
 
 import prisma from "../config/prisma";
@@ -236,24 +237,24 @@ export default function AboutMe({
                   variant="unstyled"
                   _hover={{ textDecoration: "none" }}
                 >
-                  <Grid
-                    templateColumns={{
-                      base: "20% 80%",
-                      md: "10% 90%",
-                      lg: "5% 95%",
-                    }}
+                  <Flex
+                    // templateColumns={{
+                    //   base: "20% 80%",
+                    //   md: "10% 90%",
+                    //   lg: "5% 95%",
+                    // }}
                     color={primeWhite}
                     boxShadow="bsBlue"
                     my="0.8rem"
-                    p="1.2rem"
+                    p="1.2rem 2rem"
                     borderRadius="0 2rem"
                     overflowX="scroll"
                     alignItems="center"
                     justifyContent="start"
-                    letterSpacing=".005rem"
-                    fontWeight="900"
-                    fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
-                    columnGap="0.5rem"
+                    // letterSpacing=".005rem"
+                    // fontWeight="900"
+                    // fontSize={{ base: "5vw", md: "2rem", lg: "2vw" }}
+                    gap="1.3rem"
                     _hover={{
                       boxShadow: "none",
                       bg: "backgroundGradient",
@@ -262,10 +263,14 @@ export default function AboutMe({
                   >
                     <IconButton
                       aria-label={`${link.title} Link`}
-                      w="100%"
+                      w="1.8rem"
+                      h="auto"
                       variant="unstyled"
-                      p="1rem"
+                      // p="910em"
                       fontSize="inherit"
+                      // display="flex"
+                      // alignContent="center"
+                      // justifyContent="center"
                       // pt="0.5rem"
                       // padding="0.5rem"
                       // borderRadius="0 1em"
@@ -278,7 +283,11 @@ export default function AboutMe({
                       }
                     />
                     <Stack>
-                      <Text m="0" fontWeight="700">
+                      <Text
+                        m="0"
+                        fontWeight="700"
+                        fontSize={{ base: "2rem", xl: "1.8rem" }}
+                      >
                         {link.title}
                       </Text>
                       <Text
@@ -290,7 +299,7 @@ export default function AboutMe({
                         {link.subTitle}
                       </Text>
                     </Stack>
-                  </Grid>
+                  </Flex>
                 </Link>
               ))}
             </TabPanel>
