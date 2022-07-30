@@ -58,7 +58,7 @@ export const LinkCard = (link: {
           icon={
             <FontAwesomeIcon
               icon={[link.iconPrefix, link.iconName]}
-              height="auto"
+              height="auto !important"
             />
           }
           // icon={<ChatIcon />}
@@ -66,8 +66,9 @@ export const LinkCard = (link: {
         <Stack>
           <Text
             m="0"
-            fontWeight="700"
+            fontWeight="300"
             fontSize={{ base: "2rem", xl: "1.8rem" }}
+            lineHeight="0.6"
           >
             {link.title}
           </Text>
