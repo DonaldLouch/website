@@ -58,7 +58,7 @@ export const LinkCard = (link: {
           icon={
             <FontAwesomeIcon
               icon={[link.iconPrefix, link.iconName]}
-              height="auto !important"
+              className=""
             />
           }
           // icon={<ChatIcon />}
