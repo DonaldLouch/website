@@ -9,6 +9,7 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Key } from "react";
+import { ChatIcon } from "@chakra-ui/icons";
 import "../../config/fontAwesome";
 
 // TODO: Fix type safety for iconPrefix and iconName
@@ -54,7 +55,13 @@ export const LinkCard = (link: {
           h="auto"
           variant="unstyled"
           fontSize="inherit"
-          icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
+          icon={
+            <FontAwesomeIcon
+              icon={[link.iconPrefix, link.iconName]}
+              width="100%"
+            />
+          }
+          // icon={<ChatIcon />}
         />
         <Stack>
           <Text

@@ -1,8 +1,10 @@
 import { IconButton, Link, Tooltip, useColorModeValue } from "@chakra-ui/react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Key } from "react";
-import "../config/fontAwesome";
+// import "../config/fontAwesome";
+
+import { ChatIcon } from "@chakra-ui/icons";
 
 export const LinkedButton = (buttonLink: {
   id: Key;
@@ -30,7 +32,8 @@ export const LinkedButton = (buttonLink: {
           h="auto"
           fontSize="inherit"
           _hover={{ color: primeGrey }}
-          icon={<FontAwesomeIcon icon={["fab", buttonLink.icon]} />}
+          icon={<ChatIcon />}
+          // icon={<FontAwesomeIcon icon={["fab", buttonLink.icon]} />}
         />
       </Tooltip>
     </Link>
