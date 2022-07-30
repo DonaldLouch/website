@@ -81,21 +81,16 @@ export default function AboutMe({
 
       <Box
         position="absolute"
-        top="2%"
-        left="2%"
+        top={{ base: "1.4%", md: "1%" }}
+        left={{ base: "4%", md: "1%" }}
         zIndex="overlay"
         color={useColorModeValue("primary", "white")}
-        // fontSize="1.5rem"
       >
         <Link href="../" variant="unstyled" _hover={{ textDecoration: "none" }}>
           <Tooltip label="Go Back Home">
             <IconButton
               aria-label="Go Back Home"
-              w="100%"
               variant="unstyled"
-              p="1rem"
-              h="auto"
-              fontSize="inherit"
               _hover={{ color: primeGrey }}
               icon={<FontAwesomeIcon icon={["fas", "house"]} />}
             />
@@ -175,26 +170,6 @@ export default function AboutMe({
         >
           {primaryLinks.map((buttonLink: any) => (
             <LinkedButton {...buttonLink} />
-            // <Link
-            //   key={buttonLink.id}
-            //   href={buttonLink.link}
-            //   isExternal
-            //   variant="unstyled"
-            //   _hover={{ textDecoration: "none" }}
-            // >
-            //   <Tooltip label={buttonLink.subTitle} aria-label={buttonLink.subTitle}>
-            //     <IconButton
-            //       aria-label={`${buttonLink.title} Link`}
-            //       w="100%"
-            //       variant="unstyled"
-            //       p="1rem"
-            //       h="auto"
-            //       fontSize="inherit"
-            //       _hover={{ color: primeGrey }}
-            //       icon={<FontAwesomeIcon icon={["fab", buttonLink.icon]} />}
-            //     />
-            //   </Tooltip>
-            // </Link>
           ))}
           <Link href="#contact" variant="primary" pt="0.5rem">
             Contact Me
