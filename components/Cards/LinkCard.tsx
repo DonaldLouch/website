@@ -54,13 +54,8 @@ export const LinkCard = (link: {
           w="1.8rem"
           h="auto"
           variant="unstyled"
-          fontSize="inherit"
-          icon={
-            <FontAwesomeIcon
-              icon={[link.iconPrefix, link.iconName]}
-              size="lg"
-            />
-          }
+          fontSize="1rem"
+          icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
           // icon={<ChatIcon />}
         />
         <Stack>
