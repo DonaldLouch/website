@@ -50,10 +50,8 @@ export const LinkCard = (link: {
       >
         <IconButton
           aria-label={`${link.title} Link`}
-          // w="1.8rem"
-          // h="auto"
+          h="auto"
           variant="unstyled"
-          // fontSize="inherit"
           icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
         />
         <Stack>

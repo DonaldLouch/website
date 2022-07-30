@@ -24,10 +24,8 @@ export const LinkedButton = (buttonLink: {
       <Tooltip label={buttonLink.subTitle}>
         <IconButton
           aria-label={`${buttonLink.title} Link`}
-          // w="100%"
           variant="unstyled"
-          // p="1rem"
-          // h="auto"
+          h="auto"
           fontSize="inherit"
           _hover={{ color: primeGrey }}
           icon={<FontAwesomeIcon icon={["fab", buttonLink.icon]} />}

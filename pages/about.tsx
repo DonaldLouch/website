@@ -92,13 +92,11 @@ export default function AboutMe({
               aria-label="Go Back Home"
               variant="unstyled"
               _hover={{ color: primeGrey }}
+              h="auto"
               icon={<FontAwesomeIcon icon={["fas", "house"]} />}
             />
           </Tooltip>
         </Link>
-        {/* <Link href="../">
-          <Icon as={FaHome} width="100%" color="currentColor" />
-        </Link> */}
       </Box>
       <Box
         as="section"
