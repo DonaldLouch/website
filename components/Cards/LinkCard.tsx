@@ -9,7 +9,7 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Key } from "react";
-import { ChatIcon } from "@chakra-ui/icons";
+// import { ChatIcon } from "@chakra-ui/icons";
 import "../../config/fontAwesome";
 
 // TODO: Fix type safety for iconPrefix and iconName
