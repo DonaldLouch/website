@@ -11,6 +11,7 @@ import {
   Link,
   useColorModeValue,
   Icon,
+  Tooltip,
   // Menu,
   // MenuButton,
   // MenuItem,
@@ -32,6 +33,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../config/fontAwesome";
 import { Pagination } from "../components/Pagination";
 import useSWR from "swr";
+
+import { ChevronDownIcon } from "@chakra-ui/icons";
 // import { FormInput } from '../components/Form/FormInput'
 // import { Formik } from 'formik'
 
@@ -167,20 +170,23 @@ export default function Blog({ postData, pagination }: any) {
         links={pageLinks}
         cta={["About Me", "about"]}
       />
-
-      <Box
-        position="absolute"
-        top="95vh"
-        left="50vw"
-        zIndex="overlay"
-        color="white"
-        fontSize="1.5rem"
-      >
-        <Link href="#posts">
-          <Icon as={FaDown} width="100%" color="currentColor" />
-        </Link>
-        {/* <Link href="#posts"><FontAwesomeIcon icon={['fas', 'circle-chevron-down']} width="100%" /></Link> */}
-      </Box>
+      <Tooltip label="View Blog Posts">
+        <Box
+          position="absolute"
+          top="93vh"
+          left="50vw"
+          zIndex="overlay"
+          color="white"
+          fontSize="1.5rem"
+          _hover={{ color: "secondary" }}
+        >
+          <Link href="#posts">
+            <ChevronDownIcon color="currentColor" w="4rem" h="4rem" />
+            {/* <Icon as={FaDown} width="100%" color="currentColor" height="1em" /> */}
+          </Link>
+          {/* <Link href="#posts"><FontAwesomeIcon icon={['fas', 'circle-chevron-down']} width="100%" /></Link> */}
+        </Box>
+      </Tooltip>
 
       <Box as="main" color={useColorModeValue("black", "white")} mt="88vh">
         <SectionCard id="posts" styleType="primaryCard">
