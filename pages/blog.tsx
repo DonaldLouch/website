@@ -10,7 +10,7 @@ import {
   // Image,
   Link,
   useColorModeValue,
-  Icon,
+  // Icon,
   Tooltip,
   // Menu,
   // MenuButton,
@@ -29,8 +29,8 @@ import { SectionCard } from "../components/Cards/SectionCard";
 import { SectionTitle } from "../components/SectionTitle";
 import HeroPage from "../components/HeroPage";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../config/fontAwesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import "../config/fontAwesome";
 import { Pagination } from "../components/Pagination";
 import useSWR from "swr";
 
@@ -57,9 +57,9 @@ export default function Blog({ postData, pagination }: any) {
 
   const posts = postData;
 
-  const FaDown = () => (
-    <FontAwesomeIcon icon={["fas", "circle-chevron-down"]} />
-  );
+  // const FaDown = () => (
+  //   <FontAwesomeIcon icon={["fas", "circle-chevron-down"]} />
+  // );
 
   const boxShadow = useColorModeValue("bsBoldOrange", "bsBoldWhite");
   const boxBigShadow = useColorModeValue("bsBigBoldBlue", "bsBigBoldWhite");
