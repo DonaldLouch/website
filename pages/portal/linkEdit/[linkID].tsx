@@ -1,65 +1,68 @@
 import {
   Stack,
-  // HStack,
   useToast,
   Box,
   Link,
   // Heading,
-  // Text,
   // useColorModeValue,
-  // IconButton
+  // Link,
+  // Text
+  // ModalOverlay
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 
-// import prisma from '../../config/prisma'
+import prisma from "../../../config/prisma";
 
-import { Metadata } from "../../components/Metadata";
+import { Metadata } from "../../../components/Metadata";
 
-import PortalLayout from "../../components/Portal/PortalLayout";
+import PortalLayout from "../../../components/Portal/PortalLayout";
 // import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from "react";
 import * as Yup from "yup";
 
-import { FormInput } from "../../components/Form/FormInput";
-// import { FormTextArea } from '../../components/Form/FormTextArea'
-// import { FormInputReadOnly } from '../../components/Form/FormInputReadOnly'
+import { FormInput } from "../../../components/Form/FormInput";
+// import { FormPhone } from '../../../components/Form/FormPhone'
+// import { FormTextArea } from "../../../components/Form/FormTextArea";
+import { FormInputReadOnly } from "../../../components/Form/FormInputReadOnly";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import '../../config/fontAwesome'
+export default function EditLinkPortal({ linkData }: any) {
+  const link = linkData;
 
-export default function NewLinkPortal() {
   const toast = useToast();
 
   // const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
   // const primeWhite = useColorModeValue('primary', 'white')
 
   const onSubmit = async (values: any, actions: any) => {
-    const addLinkData = {
+    console.log(values);
+
+    const updateLink = {
+      id: values.id,
       iconPrefix: values.iconPrefix,
       iconName: values.iconName,
       title: values.title,
       subTitle: values.subTitle,
-      link: values.link,
-      currentTime: new Date(),
+      link: values.linkForm,
     };
-    await addLink(addLinkData);
+
+    await updateLinkData(updateLink);
 
     actions.setSubmitting(false);
   };
 
-  async function addLink(addLinkData: any) {
-    const response = await fetch("/api/links/addNewLink", {
+  async function updateLinkData(updateLink: any) {
+    const response = await fetch("/api/links/updateLink", {
       method: "POST",
-      body: JSON.stringify(addLinkData),
+      body: JSON.stringify(updateLink),
     });
 
     if (response.ok) {
       toast({
-        title: "Added New Link 🎉",
-        description: `You've successfully added a new link!`,
+        title: "Link Updated 🎉",
+        description: `You've successfully updated link ID ${link.id}!`,
         status: "success",
         duration: 9000,
         isClosable: true,
@@ -69,7 +72,7 @@ export default function NewLinkPortal() {
       toast({
         title: "An Error Occurred",
         description:
-          "It seems like an error occurred while trying to add a new link. Please try again.",
+          "It seems like an error occurred while trying to update the blog post. Please try again.",
         status: "error",
         duration: 9000,
         isClosable: true,
@@ -77,25 +80,33 @@ export default function NewLinkPortal() {
     }
   }
 
-  const initialValues = {};
+  const initialValues = {
+    id: link.id,
+    iconPrefix: link.iconPrefix,
+    iconName: link.iconName,
+    title: link.title,
+    subTitle: link.subTitle,
+    linkForm: link.link,
+  };
 
   const validationSchema = Yup.object({
-    iconPrefix: Yup.string().required("Icon Prefix is required."),
-    iconName: Yup.string().required("Icon Name is required."),
-    title: Yup.string().required("Title is required."),
-    subTitle: Yup.string().required("Sub Title is required."),
+    id: Yup.string().required("ID is required"),
+    iconPrefix: Yup.string().required("Icon Prefix is required"),
+    iconName: Yup.string().required("Icon Name is required"),
+    title: Yup.string().required("Link Title is required"),
+    linkForm: Yup.string().required("The Link is required"),
   });
 
   return (
     <>
-      <PortalLayout pageTitle="Edit: A New Link">
+      <PortalLayout pageTitle={`Edit: Link ${link.id}`}>
         <Metadata
-          title={`Add New Link | ${process.env.WEBSITE_NAME}`}
-          keywords={`${process.env.KEYWORDS}, portal, new, admin`}
-          description={`Add new link's to Donald Louch`}
+          title={`Edit: Link ${link.id} | ${process.env.WEBSITE_NAME}`}
+          keywords={`${process.env.KEYWORDS}, portal, edit, new, admin`}
+          description={`Edit Link ${link.id} for ${link.title}.`}
         />
-        <Box as="main" id="editAbout" color="black">
-          <Link variant="primary" href="pagesLinks">
+        <Box as="main" id="editLink" color="black">
+          <Link variant="primary" href="../pagesLinks">
             &larr; Go Back To Links
           </Link>
           <Formik
@@ -104,7 +115,13 @@ export default function NewLinkPortal() {
             validationSchema={validationSchema}
           >
             {({ handleSubmit }: any) => (
-              <Stack as="form" onSubmit={handleSubmit as any} px="1rem">
+              <Stack as="form" onSubmit={handleSubmit as any}>
+                <FormInputReadOnly
+                  inputID="id"
+                  inputLabel=""
+                  inputType="hidden"
+                />
+
                 <Stack
                   direction="row"
                   alignItems="center"
@@ -140,10 +157,14 @@ export default function NewLinkPortal() {
                   />
                 </Stack>
 
-                <FormInput inputID="link" inputLabel="Link" inputType="text" />
+                <FormInput
+                  inputID="linkForm"
+                  inputLabel="Link"
+                  inputType="text"
+                />
 
                 <SubmitButton variant="blackFormButton">
-                  Add New Link
+                  Update Link {link.id}
                 </SubmitButton>
               </Stack>
             )}
@@ -152,4 +173,20 @@ export default function NewLinkPortal() {
       </PortalLayout>
     </>
   );
+}
+
+export async function getServerSideProps(router: any) {
+  const { linkID } = router.query;
+
+  const linkData = await prisma.links.findUnique({
+    where: {
+      id: linkID,
+    },
+  });
+
+  return {
+    props: {
+      linkData: JSON.parse(JSON.stringify(linkData)),
+    },
+  };
 }

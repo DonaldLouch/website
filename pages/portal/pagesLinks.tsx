@@ -1,13 +1,15 @@
-import { 
-    // Stack, 
-    // HStack,
-    // useToast,
-    Box, 
-    // Heading,
-    Link,
-    Stack,
-    // useColorModeValue
-} from '@chakra-ui/react'
+import {
+  // Stack,
+  // HStack,
+  // useToast,
+  Box,
+  // Heading,
+  Link,
+  Stack,
+  // useColorModeValue
+} from "@chakra-ui/react";
+
+import prisma from "../../config/prisma";
 
 // import { Formik } from 'formik'
 // import {
@@ -16,10 +18,10 @@ import {
 
 // import prisma from '../../config/prisma'
 
-import {Metadata} from "../../components/Metadata"
+import { Metadata } from "../../components/Metadata";
 
-
-import PortalLayout from '../../components/Portal/PortalLayout'
+import PortalLayout from "../../components/Portal/PortalLayout";
+import { LinkCardAdmin } from "../../components/Cards/LinkCardAdmin";
 // import { SectionTitle } from "../../../components/SectionTitle"
 
 // import * as React from 'react'
@@ -29,51 +31,79 @@ import PortalLayout from '../../components/Portal/PortalLayout'
 // import { FormTextArea } from '../../components/Form/FormTextArea'
 // import { FormInputReadOnly } from '../../components/Form/FormInputReadOnly'
 
-export default function LinksPortal() {
+export default function LinksPortal({ linkData }: any) {
   //   const about = aboutData
 
   // const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
   // const primeWhite = useColorModeValue('primary', 'white')
 
-      // const postedData = new Date(post.postedOn)
-      // const postedDay = postedData.toLocaleDateString()
-      // const postedTime = postedData.toLocaleTimeString()
+  // const postedData = new Date(post.postedOn)
+  // const postedDay = postedData.toLocaleDateString()
+  // const postedTime = postedData.toLocaleTimeString()
 
-      // const postedOnString = postedDay +" at " + postedTime
-    
+  // const postedOnString = postedDay +" at " + postedTime
 
-    return (
-        <>  
-            <PortalLayout pageTitle={`Edit: Links`}>
-                <Metadata
-                    title={`Edit: Links | ${process.env.WEBSITE_NAME}`}
-                    keywords={`${process.env.KEYWORDS}`}
-                    description={`${process.env.DESCRIPTION}`}
-                    />
-                    <Box as="main" id="editAbout" color="black">
-                      <Stack direction="row" spacing={8} align="center" justify="center" p={8}>
-                        <Link variant="primary" href="linkNew">Add New Link</Link>
-                        <Link variant="primary" href="embedNew">Add New Embed</Link>
-                        <Link variant="primary" href="pagesLinksPrimary">Edit Primary Links</Link>
-                      </Stack>
-                    </Box>
-            </PortalLayout>
-        </>
-    )
+  const links = linkData;
+  return (
+    <>
+      <PortalLayout pageTitle={`Edit: Links`}>
+        <Metadata
+          title={`Edit: Links | ${process.env.WEBSITE_NAME}`}
+          keywords={`${process.env.KEYWORDS}`}
+          description={`${process.env.DESCRIPTION}`}
+        />
+        <Box as="main" id="editAbout" color="black">
+          <Stack
+            direction="row"
+            spacing={8}
+            align="center"
+            justify="center"
+            p={8}
+          >
+            <Link variant="primary" href="linkNew">
+              Add New Link
+            </Link>
+            <Link variant="primary" href="embedNew">
+              Add New Embed
+            </Link>
+            <Link variant="primary" href="pagesLinksPrimary">
+              Edit Primary Links
+            </Link>
+          </Stack>
+          <Stack>
+            {links.map((link: any) => (
+              <LinkCardAdmin {...link} />
+            ))}
+          </Stack>
+        </Box>
+      </PortalLayout>
+    </>
+  );
 }
 
+export async function getServerSideProps() {
+  const linkData = await prisma.links.findMany({
+    orderBy: { orderNumber: "asc" },
+  });
+
+  return {
+    props: {
+      linkData: JSON.parse(JSON.stringify(linkData)),
+    },
+  };
+}
 
 // export async function getServerSideProps() {
-   
+
 //     const aboutData = await prisma.about.findUnique({
 //         where: {
 //             id
-//         } 
+//         }
 //     })
 
-//     return { 
-//         props: { 
+//     return {
+//         props: {
 //             aboutData: JSON.parse(JSON.stringify(aboutData))
-//         } 
+//         }
 //     }
 // }
