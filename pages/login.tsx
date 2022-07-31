@@ -167,6 +167,7 @@ export default function Login() {
                   <FontAwesomeIcon
                     icon={["fas", "sign-out-alt"]}
                     color="black"
+                    height="1em"
                   />
                 }
                 type="button"
@@ -219,6 +220,7 @@ export default function Login() {
                       <FontAwesomeIcon
                         icon={["far", "envelope-open"]}
                         color="currentColor"
+                        height="1em"
                       />
                     }
                     type="button"
