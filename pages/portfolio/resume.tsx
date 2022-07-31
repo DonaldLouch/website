@@ -24,8 +24,8 @@ import prisma from "../../config/prisma";
 import { SectionCard } from "../../components/Cards/SectionCard";
 import { SectionTitle } from "../../components/SectionTitle";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import "../../config/fontAwesome";
 import useSWR from "swr";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
