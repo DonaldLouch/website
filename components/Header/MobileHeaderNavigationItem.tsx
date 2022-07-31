@@ -10,7 +10,7 @@ import {
   MenuList,
   MenuItem,
   Box,
-  Icon,
+  // Icon,
   //   IconButton,
   Grid,
   Text,
@@ -20,6 +20,8 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../config/fontAwesome";
+
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 import { HeaderSubNavigationItems } from "../../config/HeaderNavigationItems/SubNavigationItems";
 
@@ -44,7 +46,7 @@ export const MobileHeaderNavigationItem = ({
   const blackWhiteColour = useColorModeValue("black", "white");
   // const primGreyColour = useColorModeValue('primary', 'grey')
   const boxShadow = useColorModeValue("bsBoldBlue", "bsBoldWhite");
-  const FaDown = () => <FontAwesomeIcon icon={["fas", "chevron-down"]} />;
+  // const FaDown = () => <FontAwesomeIcon icon={["fas", "chevron-down"]} />;
 
   return (
     <>
@@ -155,7 +157,8 @@ export const MobileHeaderNavigationItem = ({
                 borderRadius={{ base: "0 1.5rem", lg: "0" }}
                 w="100%"
               >
-                <Icon as={FaDown} width="100%" color="currentColor" />
+                <ChevronDownIcon color="currentColor" w="2rem" h="2rem" />
+                {/* <Icon as={FaDown} width="100%" color="currentColor" /> */}
                 {/* <FontAwesomeIcon 
                                         icon={["fas", "chevron-down"]} 
                                         // color="black"

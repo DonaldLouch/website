@@ -28,6 +28,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../config/fontAwesome";
 import useSWR from "swr";
 
+import { ChevronDownIcon } from "@chakra-ui/icons";
+
 export default function Test({
   resumeData,
   resumeExperienceData,
@@ -223,10 +225,15 @@ export default function Test({
                         width={{ base: "4%", md: "12%" }}
                         color="white"
                       >
-                        <FontAwesomeIcon
+                        <ChevronDownIcon
+                          color="currentColor"
+                          w="3rem"
+                          h="3rem"
+                        />
+                        {/* <FontAwesomeIcon
                           icon={["fas", "chevron-down"]}
                           width="100%"
-                        />
+                        /> */}
                       </Box>
                     </AccordionButton>
                     <AccordionPanel>
@@ -328,10 +335,15 @@ export default function Test({
                         width={{ base: "4%", md: "12%" }}
                         color="white"
                       >
-                        <FontAwesomeIcon
+                        <ChevronDownIcon
+                          color="currentColor"
+                          w="3rem"
+                          h="3rem"
+                        />
+                        {/* <FontAwesomeIcon
                           icon={["fas", "chevron-down"]}
                           width="100%"
-                        />
+                        /> */}
                       </Box>
                     </AccordionButton>
                     <AccordionPanel>
