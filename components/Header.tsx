@@ -106,6 +106,7 @@ export default function Header() {
             h="auto"
             padding="0.5rem"
             borderRadius="0 1em"
+            fontSize="inherit"
             color={useColorModeValue("black", "white")}
             _hover={{
               boxShadow: "none",
