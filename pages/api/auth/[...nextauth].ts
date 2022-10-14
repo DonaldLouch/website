@@ -146,6 +146,7 @@ export default NextAuth({
   callbacks: {  
     async session({ session, user }: any) {
       session.user.userLevel = user.userLevel as number;
+      // session.user.username = user.username as string;
       return Promise.resolve(session);
     },
     // async signIn({ account, profile }) {

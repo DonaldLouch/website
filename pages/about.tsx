@@ -101,7 +101,7 @@ export default function AboutMe({
       <Box
         as="section"
         color={useColorModeValue("black", "white")}
-        padding={{ base: "0.5rem", md: "5rem" }}
+        padding={{ base: "0.5rem", md: "2rem 5rem" }}
         position="absolute"
         top="0"
         left="0"
