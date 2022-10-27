@@ -63,9 +63,9 @@ export default function MyApp({ Component, pageProps }: AppProps): any {
             {/* <AuthProvider> */}
             <Component {...pageProps} />
             {/* </AuthProvider> */}
+            <Analytics />
           </Layout>
         </SessionProvider>
-        <Analytics />
       </ColorModeProvider>
     </ChakraProvider>
   );
