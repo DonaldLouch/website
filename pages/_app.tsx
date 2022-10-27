@@ -16,6 +16,8 @@ import { theme } from "../theme/index";
 
 import { SessionProvider } from "next-auth/react";
 
+import { Analytics } from '@vercel/analytics/react';
+
 import "@fontsource/lato/100.css";
 import "@fontsource/lato/300.css";
 import "@fontsource/lato/400.css";
@@ -63,6 +65,7 @@ export default function MyApp({ Component, pageProps }: AppProps): any {
             {/* </AuthProvider> */}
           </Layout>
         </SessionProvider>
+        <Analytics />
       </ColorModeProvider>
     </ChakraProvider>
   );
