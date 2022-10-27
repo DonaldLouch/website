@@ -93,7 +93,7 @@ export default function AboutMe({
               variant="unstyled"
               _hover={{ color: primeGrey }}
               h="auto"
-              icon={<FontAwesomeIcon icon={["fas", "house"]} />}
+              icon={<FontAwesomeIcon icon={["fal", "house"]} />}
             />
           </Tooltip>
         </Link>
