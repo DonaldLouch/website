@@ -11,7 +11,7 @@
         "prettier-fix": "prettier --write ."
     },
     "keywords": [],
-    "author": "Donald Louch<contact@donaldlouch.ca>",
+    "author": "Donald Louch<hello@donaldlouch.ca>",
     "license": "MIT",
     "dependencies": {
         "@chakra-ui/icons": "^2.0.11",
@@ -51,15 +51,15 @@
     },
     "devDependencies": {
         "@swc/cli": "^0.1.57",
-        "@swc/core": "^1.3.8",
-        "@types/mdx": "^2.0.2",
-        "@types/node": "^18.8.5",
+        "@swc/core": "^1.3.11",
+        "@types/mdx": "^2.0.3",
+        "@types/node": "^18.11.7",
         "@types/nodemailer": "^6.4.6",
-        "@types/react": "^18.0.21",
-        "@types/react-dom": "^18.0.6",
-        "eslint": "^8.25.0",
+        "@types/react": "^18.0.24",
+        "@types/react-dom": "^18.0.8",
+        "eslint": "^8.26.0",
         "prettier": "^2.7.1",
-        "prisma": "^4.4.0",
+        "prisma": "^4.5.0",
         "typescript": "^4.8.4"
     }
 }
