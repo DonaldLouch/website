@@ -1,10 +1,11 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 import {
   // Button,
   Box,
   Stack,
   Text,
+  Image,
   //IconButton,
   Link,
   useColorModeValue,
@@ -40,7 +41,6 @@ export default function Footer() {
                 alt="Donald Louch"
                 width="200%"
                 height="50%"
-                layout="intrinsic"
               />
             </Link>
             <Stack
