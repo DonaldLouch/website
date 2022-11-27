@@ -36,7 +36,7 @@ export default function Home() {
           keywords={`${process.env.KEYWORDS}`}
           description={`${process.env.DESCRIPTION}`}
         />
-        <HeroPage name="Donald Louch" tagLine="and I'm a Canadian Digital Content Creator" links={pageLinks} cta={["About Me", "about"]} />
+        <HeroPage name="Donald Louch" tagLine="and I'm a Canadian Digital Content Creator" links={pageLinks} cta={["About Me", "about"]}  imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1645167967/portfolio/hpqfin6z4olakfiso0pv.jpg" />
     </>
   )
 }
