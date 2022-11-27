@@ -9,7 +9,7 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Key } from "react";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 // TODO: Fix type safety for iconPrefix and iconName
 

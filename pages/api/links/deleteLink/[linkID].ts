@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import prisma from "../../../../config/prisma";
+import prisma from "../../../../lib/prisma";
 
 export default async function signature(
   req: NextApiRequest,

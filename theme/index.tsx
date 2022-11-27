@@ -3,6 +3,8 @@ import { extendTheme } from "@chakra-ui/react";
 import { ButtonStyles as Button } from "./components/ButtonStyles";
 import { HeadingStyles as Heading } from "./components/HeadingStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
+import { tabsTheme as Tabs } from "./components/TabsStyles";
+
 //import { InputStyles as Input } from "./components/InputStyles"
 
 export const theme = extendTheme({
@@ -10,7 +12,7 @@ export const theme = extendTheme({
     global: {
       html: {
         scrollBehavior: "smooth",
-        scrollPadding: "5em",
+        scrollPadding: "5rem",
         overscrollBehaviorInline: "contain",
         overscrollBehavior: "contain",
         scrollSnapType: "inline mandatory",
@@ -21,6 +23,10 @@ export const theme = extendTheme({
       svg: {
         height: "auto !important",
       },
+      p: {
+        lineHeight: 1,
+        marginY: 4,
+      }
     },
   },
   colors: {
@@ -47,19 +53,29 @@ export const theme = extendTheme({
     bsBlue: "5px 3px 8.37px rgba(118, 70, 136,.2)",
     bsOrange: "5px 3px 8.37px rgba(231, 196, 98,.2)",
     bsWhite: "5px 3px 8.37px rgba(237, 237, 237,0.2)",
-    bsBoldWhite: "1px 1px 8.37px rgba(237, 237, 237,0.2)",
-    bsBigBoldWhite: "1px 1px 8.37px 12px rgba(237, 237, 237,0.2)",
-    bsBoldRed: "1px 1px 10px rgba(193, 39, 45,1)",
-    bsBigBoldRed: "1px 1px 10px 12px rgba(193, 39, 45,1)",
+    
     bsBoldBlue: "1px 1px 10px rgba(118, 70, 136,1)",
     bsBoldOrange: "1px 1px 10px rgba(231, 196, 98,1)",
+    bsBoldWhite: "1px 1px 8.37px rgba(237, 237, 237,0.2)",
+    bsBoldRed: "1px 1px 10px rgba(193, 39, 45,1)",
+    
+    bsMediumBoldBlue: "1px 1px 10px 9px rgba(118, 70, 136,0.7)",
+    bsMediumBoldOrange: "1px 1px 10px 9px rgba(231, 196, 98,0.7)",
+    bsMediumBoldWhite: "1px 1px 8.37px 9px rgba(237, 237, 237,0.2)",
+    bsMediumBoldRed: "1px 1px 10px 9px rgba(193, 39, 45,1)",
+    
     bsBigBoldBlue: "1px 1px 10px 12px rgba(118, 70, 136,1)",
     bsBigBoldOrange: "1px 1px 10px 12px rgba(231, 196, 98,1)",
+    bsBigBoldWhite: "1px 1px 8.37px 12px rgba(237, 237, 237,0.2)",
+    bsBigBoldRed: "1px 1px 10px 12px rgba(193, 39, 45,1)",
+
+    tsPrimary: "1px 1px 10px rgba(118, 70, 136,0.7)"
   },
   components: {
     Button,
     Heading,
     Link,
+    Tabs,
 
     Input: {
       variants: {
@@ -76,11 +92,11 @@ export const theme = extendTheme({
         color: "white",
       },
     },
-    Text: {
-      baseStyle: {
-        margin: 4,
-        lineHeight: 1.2,
-      },
-    },
+    // Text: {
+    //   baseStyle: {
+    //     margin: 4,
+    //     lineHeight: 1.2,
+    //   },
+    // },
   },
 });

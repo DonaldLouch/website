@@ -50,7 +50,7 @@ import {
     //   } 
   
       return (
-        <Box as="article" id="post" boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")} p="2rem" borderRadius="0 3rem">
+        <Box as="article" id="post" boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")} p="4rem 2rem" borderRadius="0 3rem">
               {children}
           </Box>
       )

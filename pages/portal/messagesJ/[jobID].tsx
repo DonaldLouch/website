@@ -1,6 +1,6 @@
 import { Stack, Link, Box, Text, useColorModeValue } from "@chakra-ui/react";
 
-import prisma from "../../../config/prisma";
+import prisma from "../../../lib/prisma";
 
 import { Metadata } from "../../../components/Metadata";
 

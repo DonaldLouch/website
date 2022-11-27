@@ -15,7 +15,7 @@ import { SectionCard } from "../components/Cards/SectionCard"
 import { SectionTitle } from '../components/SectionTitle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../config/fontAwesome'
+import '../lib/fontAwesome'
 
 export default function Email() {
 

@@ -13,15 +13,16 @@ import {
   Tabs,
   TabList,
   TabPanels,
-  // Tab,
+  Tab,
   TabPanel,
   AspectRatio,
   // Icon,
   Tooltip,
   IconButton,
+  // Card,
 } from "@chakra-ui/react";
 
-import prisma from "../config/prisma";
+import prisma from "../lib/prisma";
 
 import { Metadata } from "../components/Metadata";
 
@@ -36,8 +37,9 @@ import { LinkedButton } from "../components/LinkedButton";
 import Contact from "../components/Contact";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../config/fontAwesome";
+import "../lib/fontAwesome";
 import useSWR from "swr";
+import PinnedPostsCard from "../components/Cards/PinnedPostsCard";
 
 // const FaHome = () => <FontAwesomeIcon icon={["fas", "house"]} />;
 
@@ -53,14 +55,14 @@ export default function AboutMe({
   linkData,
   primaryLinkData,
   embedData,
+  postData
 }: any) {
   const about = aboutData?.[0];
 
   const links = linkData;
   const primaryLinks = primaryLinkData;
   const embeds = embedData;
-
-  const primeGrey = useColorModeValue("primary", "grey");
+  const posts = postData;
 
   const components = {
     p: paragraph,
@@ -91,7 +93,7 @@ export default function AboutMe({
             <IconButton
               aria-label="Go Back Home"
               variant="unstyled"
-              _hover={{ color: primeGrey }}
+              _hover={{ color: "secondary" }}
               h="auto"
               icon={<FontAwesomeIcon icon={["fal", "house"]} />}
             />
@@ -178,21 +180,28 @@ export default function AboutMe({
         </Stack>
 
         <Tabs
-          variant="soft-rounded"
-          colorScheme="purple"
-          my="1rem"
-          boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
+          // variant="soft-rounded"
+          // colorScheme="purple"
+          p="1rem"
+          // boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
           //FOR TAB SECTION
           // p="2rem 0"
           borderRadius="0 2rem"
+          isFitted
         >
           <TabList display="flex" justifyContent="center">
-            {/* <Tab>All</Tab>
+            <Tab>All</Tab>
+            <Tab>Posts</Tab>
             <Tab>Links</Tab>
-            <Tab>Embed Content</Tab> */}
+            {/* <Tab>Embed Content</Tab> */}
           </TabList>
           <TabPanels>
             <TabPanel>
+              <Box my="2rem">
+                {posts.map((post: any) => ( 
+                  <PinnedPostsCard {...post} />
+                ))}
+              </Box>
               {embeds.map((embed: any) => (
                 <AspectRatio
                   key={embed.id}
@@ -213,12 +222,19 @@ export default function AboutMe({
                 <LinkCard {...link} />
               ))}
             </TabPanel>
-            {/* <TabPanel>
+            <TabPanel>        
+              <Box my="2rem">
+                {posts.map((post: any) => (  
+                  <PinnedPostsCard {...post} />
+                ))}
+              </Box>
+            </TabPanel>
+            <TabPanel>
               {links.map((link: any) => (
                 <LinkCard {...link} />
               ))}
             </TabPanel>
-            <TabPanel>
+            {/*<TabPanel>
               {embeds.map((embed: any) => (
                 <AspectRatio
                   key={embed.id}
@@ -259,6 +275,18 @@ export async function getServerSideProps() {
     orderBy: { orderNumber: "asc" },
   });
 
+  const postData = await prisma.blogPost.findMany({
+    where: { pinned: true },
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      thumbnail: true,
+      postedOn: true,
+    },
+    orderBy: { postedOn: "desc" },
+  })
+
   const source = aboutData?.[0].bio as any;
 
   const mdxSource = await serialize(source);
@@ -269,6 +297,7 @@ export async function getServerSideProps() {
       linkData: JSON.parse(JSON.stringify(linkData)),
       primaryLinkData: JSON.parse(JSON.stringify(primaryLinkData)),
       embedData: JSON.parse(JSON.stringify(embedData)),
+      postData: JSON.parse(JSON.stringify(postData)),
       source: mdxSource,
     },
   };

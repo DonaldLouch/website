@@ -3,11 +3,12 @@ import {
   AspectRatio,
   Stack,
   Link,
-  useColorModeValue,
+  Tooltip,
+  IconButton,
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 import { Metadata } from "../../components/Metadata";
 import { SectionTitle } from "../../components/SectionTitle";
@@ -36,6 +37,25 @@ export default function PortfolioVideography() {
       />
       <Box
         position="absolute"
+        top={{ base: "1.4%", md: "1%" }}
+        left={{ base: "4%", md: "1%" }}
+        zIndex="overlay"
+        color={"white"}
+      >
+        <Link href="../" variant="unstyled" _hover={{ textDecoration: "none" }}>
+          <Tooltip label="Go Back Home">
+            <IconButton
+              aria-label="Go Back Home"
+              variant="unstyled"
+              _hover={{ color: "secondary" }}
+              h="auto"
+              icon={<FontAwesomeIcon icon={["fal", "house"]}  color="currentColor"/>}
+            />
+          </Tooltip>
+        </Link>
+      </Box>
+      {/* <Box
+        position="absolute"
         top="2%"
         left="2%"
         zIndex="overlay"
@@ -45,7 +65,7 @@ export default function PortfolioVideography() {
         <Link href="/portfolio">
           <FontAwesomeIcon icon={["fas", "house"]} width="100%" />
         </Link>
-      </Box>
+      </Box> */}
       <Box
         bg="white"
         pos="absolute"

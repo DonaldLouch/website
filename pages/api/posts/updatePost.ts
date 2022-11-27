@@ -1,7 +1,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import prisma from '../../../config/prisma'
+import prisma from '../../../lib/prisma'
 
 export default async function assetHandler(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -23,6 +23,7 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
                 tags: postData.tags,
                 thumbnail: postData.thumbnail,
                 sidebar: postData.sidebar,
+                pinned: postData.pinned,
                 sections: postData.sections,
                 postStatus: postData.postStatus,
                 postedOn: postData.postedOn,

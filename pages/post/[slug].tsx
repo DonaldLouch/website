@@ -23,7 +23,7 @@ import {
 
 import { useSession } from "next-auth/react";
 
-import prisma from "../../config/prisma";
+import prisma from "../../lib/prisma";
 
 import { Metadata } from "../../components/Metadata";
 
@@ -38,6 +38,7 @@ import { Photo1PostType } from "../../components/PostTypes/Photo1PostType";
 import { Photo2PostType } from "../../components/PostTypes/Photo2PostType";
 import { Photo3PostType } from "../../components/PostTypes/Photo3PostType";
 import { Photo4PostType } from "../../components/PostTypes/Photo4PostType";
+import { Photo5PostType } from "../../components/PostTypes/Photo5PostType";
 
 export default function Post({ source, postData }: any) {
   const post = postData;
@@ -127,6 +128,9 @@ export default function Post({ source, postData }: any) {
             )}
             {post.blogType === "Photo 4" && (
               <Photo4PostType {...post} {...source} />
+            )}
+            {post.blogType === "Photo 5" && (
+              <Photo5PostType {...post} {...source} />
             )}
           </>
         ) : (

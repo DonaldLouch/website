@@ -105,17 +105,13 @@ export default function PortfolioVideography() {
       <Box
         as="section"
         id="photoShowcase"
-        padding="4rem 0.3rem 0.5rem"
-        // w={{base: "calc(100% - -6rem)", xl: "100%"}}
-        // w="calc(100% + 5.9rem)"
-        maxW="calc(100vw + 8rem)"
-        mx="-5rem"
-        mt="-5rem"
-        mb="-2rem"
-        sx={{
-          columnCount: { base: "2", md: "3", lg: "4", xl: "5" },
-          columnGap: "0.2rem",
-        }}
+        padding={{base: "6rem 4.4rem 0", lg: "5.4rem 0.4rem 0"}}
+        w="calc(100% + 10rem)"
+        // mx="-5rem"
+        // mt="-5rem"
+        // mb="-2rem"
+        m="-5rem -5rem -2rem"
+        sx={{ columnCount: {base:"1", md: "2", lg: "4"}, gap: "0.4rem", columnWidth: {base: "100%", md: "50% 50%", lg: "33.3% 33.3% 33.3%"}}}
         bg="mainGradient"
       >
         {media?.map((image: any) => (
@@ -124,7 +120,8 @@ export default function PortfolioVideography() {
               src={image}
               alt="portfolio image"
               _hover={{ background: "backgroundGradient", opacity: "0.6" }}
-              mb="0.2rem"
+              display="inherit"
+              // mb="0.2rem"
             ></Image>
           </Link>
         ))}

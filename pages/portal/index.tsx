@@ -6,7 +6,7 @@ import { StatsCard } from "../../components/Cards/StatsCard";
 import PortalLayout from "../../components/Portal/PortalLayout";
 import { Metadata } from "../../components/Metadata";
 
-import prisma from "../../config/prisma";
+import prisma from "../../lib/prisma";
 
 type StatProps = {
   numberOfPosts: number;

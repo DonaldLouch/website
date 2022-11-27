@@ -17,7 +17,7 @@ import * as React from 'react'
 import { InputControl } from 'formik-chakra-ui'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 interface FormProps {
   inputID: string

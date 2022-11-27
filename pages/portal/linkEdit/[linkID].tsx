@@ -13,7 +13,7 @@ import {
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 
-import prisma from "../../../config/prisma";
+import prisma from "../../../lib/prisma";
 
 import { Metadata } from "../../../components/Metadata";
 

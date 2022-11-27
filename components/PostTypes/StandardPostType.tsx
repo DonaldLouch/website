@@ -39,6 +39,7 @@ import {
     const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
 
     const postedOn = postedDay +" at " + postedTime
+    const categorySplit = post.categories.split(",")
 
       return (
           <>
@@ -71,7 +72,7 @@ import {
                     // zIndex="10000" 
                 >
                     <Heading as="h1" fontSize="3rem" fontWeight="900" m="0.5rem">{post.title}</Heading>
-                    <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
+                    <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: {categorySplit.map((category: any) => (<Link key={category}href={`/C/${category}`} boxShadow="bsBoldWhite" p="0.5rem" borderRadius="0 0.5rem" mx="0.2rem" _hover={{boxShadow: "bsBoldOrange"}}>{category}</Link>))}</Text>
                 </Box>
 
             <Box pt={{base: "43vh", md: "50vw"}}></Box>

@@ -1,6 +1,10 @@
 import Head from "next/head";
 import Script from "next/script";
 
+// import { Playfair_Display, Lato } from "@next/font/google"
+// const playfairDisplay = Playfair_Display();
+// const lato = Lato({weight: ["100", "300", "400", "700", "900"]});
+
 interface MetaProps {
   title: string;
   keywords: string;
@@ -17,31 +21,14 @@ export const Metadata = (props: MetaProps) => {
       <meta name="keywords" content={keywords} />
       <meta name="description" content={description} />
       <meta charSet="utf-8" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon/favicon-16x16.png"
-      />
-      {/* <link rel="manifest" href="/site.webmanifest" /> */}
-      <link
-        rel="mask-icon"
-        href="/favicon/safari-pinned-tab.svg"
-        color="#4625e8"
-      />
-      <meta name="apple-mobile-web-app-title" content={title} />
-      <meta name="application-name" content={title} />
+      <link rel="apple-touch-icon" sizes="180x180" href="/faviconChristmas/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/faviconChristmas/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/faviconChristmas/android-chrome-192x192.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/faviconChristmas/favicon-16x16.png" />
+      <link rel="manifest" href="/faviconChristmas/site.webmanifest" />
+      <link rel="mask-icon" href="/faviconChristmas/safari-pinned-tab.svg" color="#764688" />
+      <meta name="apple-mobile-web-app-title" content={process.env.WEBSITE_NAME} />
+      <meta name="application-name" content={process.env.WEBSITE_NAME} />
       <meta name="theme-color" content="#ededed" />
       <meta name="msapplication-TileColor" content="#ededed" />
       <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
@@ -50,6 +37,12 @@ export const Metadata = (props: MetaProps) => {
         src="https://donaldlouch.instatus.com/widget/script.js"
         strategy="lazyOnload"
       ></Script>
+      {/* <style
+          id="font"
+          dangerouslySetInnerHTML={{
+            __html: `*{font-family: ${lato.style.fontFamily}}`,
+          }}
+      /> */}
       <title>{title}</title>
     </Head>
   );

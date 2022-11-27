@@ -9,6 +9,7 @@ import {
   MenuItem,
   Stack,
   Tooltip,
+  // Box,
   //   IconButton,
   //   Icon,
 } from "@chakra-ui/react";
@@ -18,7 +19,8 @@ import {
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-import { HeaderSubNavigationItems } from "../../config/HeaderNavigationItems/SubNavigationItems";
+import { HeaderSubNavigationItems } from "../../lib/HeaderNavigationItems/SubNavigationItems";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface HeaderNavigationItemProps extends FlexProps {
   slug: any;
@@ -69,11 +71,11 @@ export const HeaderNavigationItem = ({
                   <ChevronDownIcon color="currentColor" w="2rem" h="2rem" />
                 </MenuButton>
               </Tooltip>
-              <MenuList bg="white">
+              <MenuList bg={useColorModeValue('white', 'black')}>
                 {HeaderSubNavigationItems.map(
                   (subLink: any) =>
                     subLink?.parentMenu == parentID && (
-                      <MenuItem key={subLink.index}>
+                      <MenuItem key={`sub_${parentID}${subLink.slug}`} bg={useColorModeValue('white', 'black')}>
                         {subLink.slug.includes("https://") ? (
                           <Link
                             href={subLink.slug}

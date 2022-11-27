@@ -5,7 +5,7 @@ interface FormProps {
     inputLabel: string
 }
 
-export const FormSwitch = ( props: FormProps) => {
+export const FormSwitch = (props: FormProps, {...rest}) => {
     const { inputID, inputLabel } = props
     
     return (
@@ -20,8 +20,12 @@ export const FormSwitch = ( props: FormProps) => {
             color={useColorModeValue('primary', 'white')}
             borderRadius="0 2rem 0 2rem"
             m="1.5rem 0"
-            switchProps={{colorScheme: "purple"}}
+            switchProps={{
+                colorScheme: "purple"
+            }}
             labelProps={{color: useColorModeValue('primary', 'white')}}
+            // value={true}
+            {...rest}
         />
     )
 }

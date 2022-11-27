@@ -27,6 +27,9 @@ module.exports = {
     // serverComponents: true
     // swcMinify: true,
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   env: {
     EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST,
     EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT,

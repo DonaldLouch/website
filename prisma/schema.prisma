@@ -200,6 +200,7 @@ model BlogPost {
     categories    String
     tags          String   @db.Text
     thumbnail     String
+    pinned        Boolean? @default(false)
     sidebar       Boolean
     sections      String?  @db.Text
     author        String

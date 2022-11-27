@@ -8,13 +8,13 @@ import { signOut } from "next-auth/react";
 
 // import { FirebaseAuth } from "../../config/Firebase/FirebaseClient"
 
-import { PortalNavigationItems } from "../../config/PortalNavigationItems";
+import { PortalNavigationItems } from "../../lib/PortalNavigationItems";
 // import { PortalSubNavigationItems } from '../../config/Portal/PortalSubNavigationItems'
 
 import { PortalNavigationItem } from "./PortalNavigationItem";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 interface PortalNavigationProps extends BoxProps {
   onClose: () => void;
@@ -46,7 +46,7 @@ export const PortalNavigation = ({
         display={{ base: "flex", md: "none" }}
       >
         <Image
-          src="/titleLogo.svg"
+          src="/titleLogoChristmas.svg"
           alt="Donald Louch"
           width="25vw"
           m="0.5rem auto"
@@ -57,9 +57,8 @@ export const PortalNavigation = ({
       <Box display={{ base: "none", md: "block" }} mt="0.8rem"></Box>
       {PortalNavigationItems.map((link) => (
         // <FontAwesomeIcon icon={['fab', linkIcon]} />
-        <>
+        <Box key={`port_${link.name}`}>
           <PortalNavigationItem
-            key={link.name}
             slug={link.slug}
             iconPre={link.iconPre}
             iconName={link.iconName}
@@ -69,7 +68,7 @@ export const PortalNavigation = ({
           >
             {link.name}
           </PortalNavigationItem>
-        </>
+        </Box>
       ))}
       <Flex
         align="center"

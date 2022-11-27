@@ -16,11 +16,11 @@ import { useRouter } from 'next/router'
 
 import {Metadata} from "../../components/Metadata"
 
-import prisma from '../../config/prisma'
+import prisma from '../../lib/prisma'
 
 import { SectionCard } from "../../components/Cards/SectionCard"
 import { SectionTitle } from "../../components/SectionTitle"
-import { Pagination } from '../../components/Pagination'
+import Pagination from '../../components/Pagination'
 
 
 // import { FormInput } from '../../components/Form/FormInput'
@@ -38,29 +38,29 @@ export default function Blog({ postData, pagination }: any) {
   const whiteBlack = useColorModeValue('white', 'black')
   const blackWhite = useColorModeValue('black', 'white')
 
-  const paginationArray = pagination
-const currentPage = paginationArray?.[1] + 1
+//   const paginationArray = pagination
+// const currentPage = paginationArray?.[1] + 1
   
-  const previousPages = new Array as any
-  const nextPages = new Array as any
+//   const previousPages = new Array as any
+//   const nextPages = new Array as any
 
-  for (let index = currentPage + 1; index < paginationArray?.[0] + 1; index++) {
-    nextPages.push(index)
-  }
+//   for (let index = currentPage + 1; index < paginationArray?.[0] + 1; index++) {
+//     nextPages.push(index)
+//   }
 
-  for (let indexPrev = currentPage - 1; indexPrev >= 1; indexPrev--) {
-    previousPages.push(indexPrev)
-  }
+//   for (let indexPrev = currentPage - 1; indexPrev >= 1; indexPrev--) {
+//     previousPages.push(indexPrev)
+//   }
 
-  const pages = new Array as any
+//   const pages = new Array as any
  
-  if (currentPage <= 4) {
-    pages.push(1,2,3,4,5,"...Nex", paginationArray?.[0])
-  } else if (paginationArray?.[0] - 3 <=  currentPage) {
-    pages.push(1, "...Prev",paginationArray?.[0] - 4,paginationArray?.[0] - 3,paginationArray?.[0] - 2,paginationArray?.[0] - 1, paginationArray?.[0])
-  } else {
-    pages.push(1, "...Prev",currentPage - 1, currentPage,currentPage + 1, "...Nex", paginationArray?.[0])
-  }
+//   if (currentPage <= 4) {
+//     pages.push(1,2,3,4,5,"...Nex", paginationArray?.[0])
+//   } else if (paginationArray?.[0] - 3 <=  currentPage) {
+//     pages.push(1, "...Prev",paginationArray?.[0] - 4,paginationArray?.[0] - 3,paginationArray?.[0] - 2,paginationArray?.[0] - 1, paginationArray?.[0])
+//   } else {
+//     pages.push(1, "...Prev",currentPage - 1, currentPage,currentPage + 1, "...Nex", paginationArray?.[0])
+//   }
 
 // const onSubmit =  async (values: any, e: any) => {
 //   e.preventDefault()
@@ -152,7 +152,9 @@ const currentPage = paginationArray?.[1] + 1
                     </Box>*/}
               </Grid>
 
-              <Pagination pages={pages} currentPage={currentPage} nextPages={nextPages} previousPages={previousPages} />
+              {/* <Pagination pages={pages} currentPage={currentPage} nextPages={nextPages} previousPages={previousPages} />
+               */}
+               <Pagination {...pagination} />
           
           </SectionCard>
         </Box>
@@ -171,7 +173,10 @@ export async function getServerSideProps(router: any) {
   // console.log(currentPage)
   const postLength = await prisma.blogPost.count({
     where: {
-      postStatus: 'Public'
+      postStatus: 'Public',
+      tags: {
+        contains: tag,
+      }
     }
   }) as number
   let numberOfPages = postLength / postLimit as number

@@ -23,7 +23,7 @@ import {
 
 import { Metadata } from "../components/Metadata";
 
-import prisma from "../config/prisma";
+import prisma from "../lib/prisma";
 
 import { SectionCard } from "../components/Cards/SectionCard";
 import { SectionTitle } from "../components/SectionTitle";
@@ -31,10 +31,11 @@ import HeroPage from "../components/HeroPage";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import "../config/fontAwesome";
-import { Pagination } from "../components/Pagination";
+import Pagination from "../components/Pagination";
 import useSWR from "swr";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import PinnedPostsCard from "../components/Cards/PinnedPostsCard";
 // import { FormInput } from '../components/Form/FormInput'
 // import { Formik } from 'formik'
 
@@ -93,47 +94,69 @@ export default function Blog({ postData, pagination }: any) {
     },
   ];
 
-  const paginationArray = pagination;
-  const currentPage = paginationArray?.[1] + 1;
+  // const paginationArray = pagination;
+  // const currentPage = paginationArray?.[1] + 1;
 
-  const previousPages = new Array() as any;
-  const nextPages = new Array() as any;
+  // const previousPages = new Array() as any;
+  // const nextPages = new Array() as any;
 
-  for (let index = currentPage + 1; index < paginationArray?.[0] + 1; index++) {
-    nextPages.push(index);
-  }
+  // for (let index = currentPage + 1; index < paginationArray?.[0] + 1; index++) {
+  //   nextPages.push(index);
+  // }
 
-  for (let indexPrev = currentPage - 1; indexPrev >= 1; indexPrev--) {
-    previousPages.push(indexPrev);
-  }
+  // for (let indexPrev = currentPage - 1; indexPrev >= 1; indexPrev--) {
+  //   previousPages.push(indexPrev);
+  // }
 
-  console.log(previousPages);
+  // console.log(previousPages);
 
-  const pages = new Array() as any;
-
-  if (currentPage <= 4) {
-    pages.push(1, 2, 3, 4, 5, "...Nex", paginationArray?.[0]);
-  } else if (paginationArray?.[0] - 3 <= currentPage) {
-    pages.push(
-      1,
-      "...Prev",
-      paginationArray?.[0] - 4,
-      paginationArray?.[0] - 3,
-      paginationArray?.[0] - 2,
-      paginationArray?.[0] - 1,
-      paginationArray?.[0]
-    );
-  } else {
-    pages.push(
-      1,
-      "...Prev",
-      currentPage - 1,
-      currentPage,
-      currentPage + 1,
-      "...Nex",
-      paginationArray?.[0]
-    );
-  }
+  // const pages = new Array() as any;
+  // console.log(paginationArray)
+  // if (paginationArray?.[0] <= 5) {
+  //   if (paginationArray?.[0] == 1) {
+  //     pages.push(1);
+  //   }
+  //   if (paginationArray?.[0] == 2) {
+  //     pages.push(1, 2);
+  //   }
+  //   if (paginationArray?.[0] == 3) {
+  //     pages.push(1, 2, 3);
+  //   }
+  //   if (paginationArray?.[0] == 4) {
+  //     pages.push(1, 2, 3, 4);
+  //   }
+  //   if (paginationArray?.[0] == 5) {
+  //     pages.push(1, 2, 3, 4, 5);
+  //   }
+  // } else {
+  //   if (currentPage <= 4) {
+  //     pages.push(1, 2, 3, 4, 5, "...Nex", paginationArray?.[0]);
+  //   } else if (paginationArray?.[0] - 3 <= currentPage) {
+  //     pages.push(
+  //       1,
+  //       "...Prev",
+  //       paginationArray?.[0] - 4,
+  //       paginationArray?.[0] - 3,
+  //       paginationArray?.[0] - 2,
+  //       paginationArray?.[0] - 1,
+  //       paginationArray?.[0]
+  //     );
+  //   } else {
+  //     pages.push(
+  //       1,
+  //       "...Prev",
+  //       currentPage - 3,
+  //       currentPage - 2,
+  //       currentPage - 1,
+  //       currentPage,
+  //       currentPage + 1,
+  //       currentPage + 2,
+  //       currentPage + 3,
+  //       "...Nex",
+  //       paginationArray?.[0]
+  //     );
+  //   }
+  // }
 
   // posts.forEach((post:any) => {
   //   posts?.post?.index.push("isFound", false)
@@ -166,9 +189,10 @@ export default function Blog({ postData, pagination }: any) {
 
       <HeroPage
         name="Donald Louch"
-        tagLine="and I'm a Canadian Digital Content Creator"
+        tagLine="and, I'm a Web Developer and Digital Content Creator"
         links={pageLinks}
         cta={["About Me", "about"]}
+        imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg"
       />
       <Tooltip label="View Blog Posts">
         <Box
@@ -188,9 +212,16 @@ export default function Blog({ postData, pagination }: any) {
         </Box>
       </Tooltip>
 
-      <Box as="main" color={useColorModeValue("black", "white")} mt="88vh">
+      <Box as="main" color={useColorModeValue("black", "white")} mt="93vh">
         <SectionCard id="posts" styleType="primaryCard">
           <SectionTitle headingTitle="Blog Posts" />
+          {posts.map((post: any) => (
+            <Box key={post.id} mt="2rem">
+              {post.pinned && (
+                <PinnedPostsCard {...post} />
+              )}
+            </Box>
+          ))}
           <Grid
             templateColumns={{ base: "100%", md: "50% 50%", lg: "33% 33% 33%" }}
             gap={{ base: 0, md: "1rem", xl: "2rem" }}
@@ -262,13 +293,15 @@ export default function Blog({ postData, pagination }: any) {
                   </Formik>
                     </Box>*/}
           </Grid>
-
-          <Pagination
-            pages={pages}
-            currentPage={currentPage}
-            nextPages={nextPages}
-            previousPages={previousPages}
-          />
+            {/* {paginationArray?.[0] > 1 && (
+              <Pagination
+                pages={pages}
+                currentPage={currentPage}
+                nextPages={nextPages}
+                previousPages={previousPages}
+              />
+            )} */}
+            <Pagination {...pagination} />
         </SectionCard>
       </Box>
     </>
@@ -295,9 +328,6 @@ export async function getServerSideProps(router: any) {
   if (numberOfPages < page) {
     currentPage = numberOfPages;
   }
-  // if (currentPage > numberOfPages) {
-  //   // currentPage = 0
-  // }
 
   const pagination = new Array();
   pagination.push(numberOfPages, currentPage);

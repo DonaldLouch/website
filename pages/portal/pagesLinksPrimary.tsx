@@ -11,7 +11,7 @@ import {
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 
-import prisma from "../../config/prisma";
+import prisma from "../../lib/prisma";
 
 import { Metadata } from "../../components/Metadata";
 
@@ -24,7 +24,7 @@ import * as Yup from "yup";
 import { FormInput } from "../../components/Form/FormInput";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 export default function PrimaryLinksPortal({ linkData }: any) {
   const links = linkData;

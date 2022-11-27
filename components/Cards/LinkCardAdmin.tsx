@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
 import { Key } from "react";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 // TODO: Fix type safety for iconPrefix and iconName
 

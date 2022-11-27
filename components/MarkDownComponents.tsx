@@ -24,7 +24,7 @@ import {
     Td,
     List,
     ListItem,
-    Grid,
+    Grid
     // ListIcon,
     // OrderedList,
     // UnorderedList,
@@ -34,7 +34,7 @@ import {
 // import { MinusIcon } from '@chakra-ui/icons'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import '../config/fontAwesome'
+import '../lib/fontAwesome'
 
 const heading1 = (props: any) => (
     <Heading as="h1" size="4xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
@@ -83,14 +83,17 @@ const toggle = (props: any) => (
                     <Box flex='1' textAlign='left'>
                     {props.toggleAlt}
                     </Box>
-                    <Box mr="4" width={{ base: '4%', md: '12%' }} color="white">
+                    <Box w={{base: "4%", lg: "2%"}}>
                         <FontAwesomeIcon 
-                            icon={["fas", "chevron-down"]}
-                            width="100%"
+                            icon={["fal", "chevron-down"]}
+                            height="100%"
+                            fontSize="md"
+                            // width="100%"
+                            color="currentColor"
                         />
                     </Box>
                 </AccordionButton>
-                <AccordionPanel>
+                <AccordionPanel px="0.5rem" mx="1.5rem">
                     {props.children}
                 </AccordionPanel>
             </ AccordionItem>
@@ -119,7 +122,7 @@ const songInfo = (props: any) => (
     </>
 )
 
-const blockquote = (props: any) => (<Text as="blockquote" fontSize="xl" my="1rem" ml="2rem" borderLeft="0.1rem solid grey">{props.children}</Text>)
+const blockquote = (props: any) => (<Text as="blockquote" fontFamily="heading" fontSize="xl" my="1rem" ml="2rem" borderLeft="0.1rem solid" borderColor="primary" paddingLeft="1rem" fontWeight="700">{props.children}</Text>)
 
 const unorderedList = (props: any) => (
     <>
@@ -130,7 +133,12 @@ const unorderedList = (props: any) => (
             {list != "\n" && (
                 <ListItem key={list.index} boxShadow="bsBoldOrange" padding="1.5rem" borderRadius="0 2rem" my="1rem" ml="3rem">
                     {/* <ListIcon as={MinusIcon} color='green.500'/> */}
-                    {list.props?.children}
+                    <Stack direction="row" alignItems="center" ml="-4rem" gap="3rem">
+                        <Box color="primary" width={5}>
+                            <FontAwesomeIcon icon={['fal', 'hand-point-right']} color="currentColor" />
+                        </Box>
+                        {list.props?.children}
+                    </Stack>
                 </ListItem>
             )}
             </>
@@ -168,7 +176,7 @@ const videoFrame = (props: any|boolean) => (
 
 const tabSection = (props: any) => (
     <>
-    <Tabs variant="soft-rounded" colorScheme="purple" my="1rem" boxShadow="bsBoldWhite" p="2rem" borderRadius="0 2rem">
+    <Tabs isFitted>
         <TabList>
             {props.tabTitles.map((tab: any) => (
                 <Tab key={tab}>{tab}</Tab>
@@ -176,7 +184,7 @@ const tabSection = (props: any) => (
         </TabList>
         <TabPanels>
             {props.tabPanels.map((tab: any) => (
-                <TabPanel key={tab}>{tab}</TabPanel>
+                <TabPanel key={tab}>{tab.props.children}</TabPanel>
             ))}
         </TabPanels>
     </Tabs>
@@ -188,18 +196,17 @@ const inlinePhotoGallery = (props: any) => (
           <Box 
             as="section" 
             id={props.id} 
-            padding="0.5rem 0.3rem"
-            // w={{base: "calc(100% - -6rem)", xl: "100%"}}
-            w={{base: "calc(100vw + 4rem)", lg: "100vw"}}
-            sx={{ columnCount: {base:"1", md: "2", lg: "4"}, columnGap: "0.2rem", columnWidth: {base: "100%", md: "50% 50%", lg: "25% 25% 25% 25%"} }}
-            m="1rem -7rem"
+            padding="0.4rem"
+            w="100vw"
+            sx={{ columnCount: {base:"1", md: "2", lg: "4"}, gap: "0.4rem", columnWidth: {base: "100%", md: "50% 50%", lg: "25% 25% 25% 25%"}}}
+            m={{base: "1rem -3rem", lg: "1rem -7rem"}}
             bg="mainGradient"
             zIndex="tooltip"
             pos="sticky"
         >
             {props.content.split(" || ")?.map((image: any) => (
                 <Link key={image.index} href={image.split(';;')?.[0]}>
-                    <Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} _hover={{background: "backgroundGradient", opacity: "0.6"}} mb="0.2rem"></Image>
+                    <Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} _hover={{background: "backgroundGradient", opacity: "0.6"}} display="inherit"></Image>
                 </Link>
             ))}
         </Box>

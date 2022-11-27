@@ -19,7 +19,7 @@ import {
 
 import { Metadata } from "../../components/Metadata";
 
-import prisma from "../../config/prisma";
+import prisma from "../../lib/prisma";
 
 import { SectionCard } from "../../components/Cards/SectionCard";
 import { SectionTitle } from "../../components/SectionTitle";
@@ -28,7 +28,8 @@ import { SectionTitle } from "../../components/SectionTitle";
 // import "../../config/fontAwesome";
 import useSWR from "swr";
 
-import { ChevronDownIcon } from "@chakra-ui/icons";
+// import { ChevronDownIcon } from "@chakra-ui/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Test({
   resumeData,
@@ -220,7 +221,16 @@ export default function Test({
                           </>
                         )}
                       </Box>
-                      <Box
+                      <Box w={{base: "4%", lg: "2%"}}>
+                        <FontAwesomeIcon 
+                            icon={["fal", "chevron-down"]}
+                            height="100%"
+                            fontSize="md"
+                            // width="100%"
+                            color="currentColor"
+                        />
+                    </Box>
+                      {/* <Box
                         mr="4"
                         width={{ base: "4%", md: "12%" }}
                         color="white"
@@ -233,10 +243,10 @@ export default function Test({
                         {/* <FontAwesomeIcon
                           icon={["fas", "chevron-down"]}
                           width="100%"
-                        /> */}
-                      </Box>
+                        /> 
+                      </Box> */}
                     </AccordionButton>
-                    <AccordionPanel>
+                    <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Heading as="h3" my="1rem">
                         {experience.position}
                       </Heading>
@@ -330,7 +340,16 @@ export default function Test({
                       <Box flex="1" textAlign="left">
                         {`${education.startDate} - ${education.endDate}: ${education.school}`}
                       </Box>
-                      <Box
+                      <Box w={{base: "4%", lg: "2%"}}>
+                        <FontAwesomeIcon 
+                            icon={["fal", "chevron-down"]}
+                            height="100%"
+                            fontSize="md"
+                            // width="100%"
+                            color="currentColor"
+                        />
+                    </Box>
+                      {/* <Box
                         mr="4"
                         width={{ base: "4%", md: "12%" }}
                         color="white"
@@ -343,10 +362,10 @@ export default function Test({
                         {/* <FontAwesomeIcon
                           icon={["fas", "chevron-down"]}
                           width="100%"
-                        /> */}
-                      </Box>
+                        />
+                      </Box> */}
                     </AccordionButton>
-                    <AccordionPanel>
+                    <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Text fontSize="1.1rem">{education.description}</Text>
                     </AccordionPanel>
                   </AccordionItem>

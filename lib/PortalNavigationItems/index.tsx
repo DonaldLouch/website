@@ -12,7 +12,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Portal",
     slug: "../portal",
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "tachometer-alt",
     isParent: false,
     parentID: null,
@@ -22,7 +22,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Test Page",
     slug: "../portal/test",
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "layer-group",
     isParent: false,
     parentID: null,
@@ -32,7 +32,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Media Manger",
     slug: "../portal/media",
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "images",
     isParent: false,
     parentID: null,
@@ -42,7 +42,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Blog Posts",
     slug: null,
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "blog",
     isParent: true,
     parentID: 0,
@@ -52,7 +52,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Pages",
     slug: null,
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "copy",
     isParent: true,
     parentID: 1,
@@ -62,7 +62,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Messages",
     slug: "../portal/messages",
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "inbox",
     isParent: false,
     parentID: null,
@@ -72,7 +72,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Sitemap",
     slug: "../sitemap",
-    iconPre: "fas",
+    iconPre: "fal",
     iconName: "map",
     isParent: false,
     parentID: null,

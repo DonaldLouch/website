@@ -38,7 +38,7 @@ import { SectionCard } from "../components/Cards/SectionCard";
 // import { DividerText } from "../components/DividerText"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../config/fontAwesome";
+import "../lib/fontAwesome";
 import { CtxOrReq } from "next-auth/client/_utils";
 
 import { useRouter } from "next/router";
@@ -137,7 +137,7 @@ export default function Login() {
       <Box as="main" color="white">
         <SectionCard id="signup" styleType="primaryCard">
           <Image
-            src="/titleLogo.svg"
+            src="/titleLogoChristmas.svg"
             alt="Donald Louch"
             width="20vw"
             m="0.5rem auto"

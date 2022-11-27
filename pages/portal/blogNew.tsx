@@ -77,6 +77,14 @@ export default function BlogNew() {
     } else {
       sidebar = true
     }
+    
+    let pinned = null as null|boolean
+    
+    if (!values.pinned) {
+      pinned = false
+    } else {
+      pinned = true
+    }
 
     let updatePostedOn = new Date()
     if (values.postedOn) {updatePostedOn = new Date(values.postedOn)}
@@ -97,6 +105,7 @@ export default function BlogNew() {
       tags: values.tags,
       thumbnail: thumbnail,
       sidebar: sidebar,
+      pinned: pinned,
       sections: values.sections,
       author: "Donald Louch",
       postStatus: "Public",
@@ -180,7 +189,7 @@ export default function BlogNew() {
     headingText: Yup.string().required('This field is required.'),
     body: Yup.string().required('This field is required.'),
     excerpt: Yup.string().max(300, 'The excerpt must not be more than 300 characters long.').required('This field is required.'),
-    category: Yup.boolean().required('This field is required.'),
+    // category: Yup.required('This field is required.'),
     tags: Yup.string().required('This field is required.'),
     // thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
     // sidebar: Yup.string().required('This field is required.')
@@ -211,6 +220,7 @@ export default function BlogNew() {
                         <option value="Photo 2">Photo 2</option>
                         <option value="Photo 3">Photo 3</option>
                         <option value="Photo 4">Photo 4</option>
+                        <option value="Photo 5">Photo 5</option>
                         <option value="Audio">Audio</option>
                         <option value="Special">Special</option>
                     </FormSelect>
@@ -276,6 +286,8 @@ export default function BlogNew() {
                     </HStack>
                           
                     <FormSwitch inputID="sidebar" inputLabel="Sidebar" />
+
+                    <FormSwitch inputID="pinned" inputLabel="Is this posted pinned?" />
                     
                     <Box
                       boxShadow={boxShadow}

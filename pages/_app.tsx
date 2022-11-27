@@ -16,6 +16,8 @@ import { theme } from "../theme/index";
 
 import { SessionProvider } from "next-auth/react";
 
+import { Analytics } from '@vercel/analytics/react';
+
 // import { Analytics } from "@vercel/analytics/react";
 
 import "@fontsource/lato/100.css";
@@ -44,6 +46,10 @@ import "@fontsource/playfair-display/900-italic.css";
 
 import { Layout } from "../components/Layout";
 
+// import { Playfair_Display, Lato } from "@next/font/google"
+// const playfairDisplay = Playfair_Display();
+// const lato = Lato({weight: ["100", "300", "400", "700", "900"]});
+
 export default function MyApp({ Component, pageProps }: AppProps): any {
   // useEffect((): void => { splitbee.init({
   //   token: process.env.SPLITBEE_TOKEN,
@@ -63,7 +69,7 @@ export default function MyApp({ Component, pageProps }: AppProps): any {
             {/* <AuthProvider> */}
             <Component {...pageProps} />
             {/* </AuthProvider> */}
-            {/* <Analytics /> */}
+            <Analytics />
           </Layout>
         </SessionProvider>
       </ColorModeProvider>

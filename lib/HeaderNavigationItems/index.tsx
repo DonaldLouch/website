@@ -11,7 +11,7 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     { 
         name: 'About Me',
         slug: 'about',
-        iconPre: 'far', 
+        iconPre: 'fal', 
         iconName: 'id-badge',
         isParent: true,
         parentID: 0
@@ -19,7 +19,7 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     { 
         name: 'Portfolio',
         slug: 'portfolio',
-        iconPre: 'far', 
+        iconPre: 'fal', 
         iconName: 'folder-open',
         isParent: true,
         parentID: 1
@@ -27,7 +27,7 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     { 
         name: 'Blog',
         slug: 'blog',
-        iconPre: 'far', 
+        iconPre: 'fal', 
         iconName: 'newspaper',
         isParent: true,
         parentID: 2
@@ -35,7 +35,7 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     { 
         name: 'Links',
         slug: 'about#links',
-        iconPre: 'fas', 
+        iconPre: 'fal', 
         iconName: 'link',
         isParent: false,
         parentID: 3

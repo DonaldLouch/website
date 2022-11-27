@@ -9,7 +9,7 @@ import {
   // useColorModeValue
 } from "@chakra-ui/react";
 
-import prisma from "../../config/prisma";
+import prisma from "../../lib/prisma";
 
 // import { Formik } from 'formik'
 // import {
@@ -65,6 +65,9 @@ export default function LinksPortal({ linkData }: any) {
             </Link>
             <Link variant="primary" href="embedNew">
               Add New Embed
+            </Link>
+            <Link variant="primary" href="pinnedPosts">
+              Manage Pinned Post
             </Link>
             <Link variant="primary" href="pagesLinksPrimary">
               Edit Primary Links

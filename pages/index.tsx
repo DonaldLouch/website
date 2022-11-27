@@ -36,6 +36,11 @@ export default function Home() {
   const pageID = "pageL4UBF3Y5fn7" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
+   // https://res.cloudinary.com/donaldlouch/image/upload/v1645167967/portfolio/hpqfin6z4olakfiso0pv.jpg
+    // https://res.cloudinary.com/donaldlouch/image/upload/v1645167811/portfolio/kley3bouwow9kls6ifqh.jpg
+    // https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg
+    // https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg
+
   return (
     <>
       <Metadata
@@ -45,9 +50,10 @@ export default function Home() {
       />
       <HeroPage
         name="Donald Louch"
-        tagLine="and I'm a Canadian Digital Content Creator"
+        tagLine="and, I'm a Web Developer and Digital Content Creator"
         links={pageLinks}
         cta={["About Me", "about"]}
+        imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1645167967/portfolio/hpqfin6z4olakfiso0pv.jpg"
       />
     </>
   );

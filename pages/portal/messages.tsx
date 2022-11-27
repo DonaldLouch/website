@@ -15,7 +15,7 @@ import PortalLayout from "../../components/Portal/PortalLayout";
 import { Metadata } from "../../components/Metadata";
 import { SectionTitle } from "../../components/SectionTitle";
 
-import prisma from "../../config/prisma";
+import prisma from "../../lib/prisma";
 
 export default function Messages({ contactData, jobData }: any) {
   // console.log(contactData, jobData);

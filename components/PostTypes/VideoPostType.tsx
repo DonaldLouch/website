@@ -26,7 +26,7 @@ import {
 
     const videoPath = post?.media?.split(" || ")?.[1]
     const mediaCreditSplit = post?.mediaCredit?.split(";;")
-    console.log(videoPath)
+    // console.log(videoPath)
 
 
       return (

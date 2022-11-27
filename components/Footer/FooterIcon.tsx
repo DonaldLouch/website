@@ -1,7 +1,7 @@
 import { Box, IconButton, Link, Tooltip } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 interface FooterProps {
   linkURL: string;

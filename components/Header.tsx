@@ -38,7 +38,7 @@ import { HeaderNavigation } from "./Header/HeaderNavigation";
 // import { signOut } from 'next-auth/react'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../config/fontAwesome";
+import "../lib/fontAwesome";
 
 export default function Header() {
   // const { isOpen, onOpen, onClose } = useDisclosure()
@@ -51,16 +51,16 @@ export default function Header() {
       as="header"
       role="header"
       mx="auto"
-      py="2"
+      py="1rem"
       px={{ base: 0, lg: 20 }}
       pos="fixed"
       w="100vw"
       bg="blurredBackground"
       backdropFilter="blur(20px)"
       zIndex="docked"
-      boxShadow={useColorModeValue("bsOrange", "bsBoldWhite")}
+      boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
     >
-      <Stack direction="row" spacing="4" mx="auto">
+      <Stack direction="row" spacing="1rem" mx="auto">
         <Stack
           direction="row"
           align="center"
@@ -70,7 +70,7 @@ export default function Header() {
         >
           <Link href="../../../">
             <Image
-              src="/titleLogo.svg"
+              src="/titleLogoChristmas.svg"
               alt="Donald Louch"
               // w="12vw"
               width={{ base: "30vw", lg: "12vw" }}

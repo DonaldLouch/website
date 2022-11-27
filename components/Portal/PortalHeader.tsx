@@ -14,7 +14,7 @@ import {
 //   } from "nookies"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../../config/fontAwesome'
+import '../../lib/fontAwesome'
 
 // import { useSession } from 'next-auth/react'
 // import prisma from '../../config/prisma'

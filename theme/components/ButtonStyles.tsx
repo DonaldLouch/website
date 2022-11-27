@@ -10,11 +10,12 @@ export const ButtonStyles = {
           wordBreak: "break-word",
           boxShadow: "bsBoldBlue",
           fontWeight: "900",
+          textShadow: "tsPrimary",
           _hover: { 
               bg: "none",
               boxShadow: "bsBigBoldOrange",
-              fontWeight: "500",
-              color: "secondary"
+              fontWeight: "600",
+              color: "white"
           },
       },
 

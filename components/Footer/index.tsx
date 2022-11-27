@@ -37,7 +37,7 @@ export default function Footer() {
           >
             <Link href="#">
               <Image
-                src="/titleLogoWhite.svg"
+                src="/titleLogoChristmas.svg"
                 alt="Donald Louch"
                 width="200%"
                 height="50%"
@@ -92,7 +92,7 @@ export default function Footer() {
             justify={{ base: "center", md: "space-between" }}
             align={{ base: "center", md: "flex-start" }}
           >
-            <Text fontSize="sm" fontWeight="medium" m="0 1rem">
+            <Text fontSize="sm" fontWeight="medium" m="0">
               &copy; 1994 - {new Date().getFullYear()} Donald Louch.
             </Text>
             <iframe

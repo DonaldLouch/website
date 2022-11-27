@@ -16,7 +16,7 @@ import {
     SubmitButton
 } from 'formik-chakra-ui'
 
-import prisma from '../../../config/prisma'
+import prisma from '../../../lib/prisma'
 
 import {Metadata} from "../../../components/Metadata"
 
@@ -86,6 +86,14 @@ export default function Post({ postData }:any) {
     } else {
       sidebar = true
     }
+   
+    let pinned = null as null|boolean
+    
+    if (!values.pinned) {
+      pinned = false
+    } else {
+      pinned = true
+    }
 
     let updatePostedOn = post.postedOn
     if (values.postedOn) {updatePostedOn = new Date(values.postedOn)}
@@ -109,6 +117,7 @@ export default function Post({ postData }:any) {
         tags: values.tags,
         thumbnail: thumbnail,
         sidebar: sidebar,
+        pinned: pinned,
         sections: values.sections,
         // author: "Donald Louch",
         postedOn: updatePostedOn,
@@ -171,6 +180,7 @@ export default function Post({ postData }:any) {
         category: [`${post.categories}`],
         tags: post.tags,
         sidebar: post.sidebar,
+        pinned: post.pinned,
         sections: post.sections,
         postStatus: post.postStatus,
       }
@@ -222,6 +232,7 @@ export default function Post({ postData }:any) {
                                 <option value="Photo 2">Photo 2</option>
                                 <option value="Photo 3">Photo 3</option>
                                 <option value="Photo 4">Photo 4</option>
+                                <option value="Photo 5">Photo 5</option>
                                 <option value="Audio">Audio</option>
                                 <option value="Special">Special</option>
                             </FormSelect>
@@ -295,6 +306,8 @@ export default function Post({ postData }:any) {
                             </HStack>
                                 
                             <FormSwitch inputID="sidebar" inputLabel="Sidebar" />
+
+                            <FormSwitch inputID="pinned" inputLabel="Is this posted pinned?" />
                             
                             <Box
                             boxShadow={boxShadow}

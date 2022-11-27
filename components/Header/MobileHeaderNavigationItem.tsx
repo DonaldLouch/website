@@ -19,11 +19,11 @@ import {
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-import { HeaderSubNavigationItems } from "../../config/HeaderNavigationItems/SubNavigationItems";
+import { HeaderSubNavigationItems } from "../../lib/HeaderNavigationItems/SubNavigationItems";
 
 interface HeaderNavigationItemProps extends FlexProps {
   slug: any;
@@ -170,25 +170,27 @@ export const MobileHeaderNavigationItem = ({
               </Box>
             </MenuButton>
             <MenuList
-              bg="white"
+             bg={useColorModeValue('white', 'black')}
               //{useColorModeValue('white', 'black')}
               boxShadow="bsBlue"
               //{useColorModeValue('bsBlue', 'bsBoldBlue')}
               m="-0.5rem 1.9rem"
             >
               {HeaderSubNavigationItems.map((subLink: any) =>
+                <Box key={`mobileSubHead_${parentID}${subLink.slug}`}>
                 subLink?.parentMenu == parentID ? (
                   <Link
-                    key={subLink.index}
+                    key={`mobileSubHead_${parentID}${subLink.slug}`}
                     href={`../../../${subLink.slug}`}
                     variant="unstyled"
                     _hover={{ textDecoration: "none", color: "secondary" }}
                   >
-                    <MenuItem key={subLink.index}>{subLink.name}</MenuItem>
+                    <MenuItem bg={useColorModeValue('white', 'black')}>{subLink.name}</MenuItem>
                   </Link>
                 ) : (
                   <></>
                 )
+                </Box>
               )}
             </MenuList>
           </Menu>

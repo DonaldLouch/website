@@ -9,7 +9,7 @@ import {
     BoxProps
   } from '@chakra-ui/react'
 
-import { HeaderNavigationItems } from '../../config/HeaderNavigationItems'
+import { HeaderNavigationItems } from '../../lib/HeaderNavigationItems'
 // import { PortalSubNavigationItems } from '../../config/Portal/PortalSubNavigationItems'
 
 import { MobileHeaderNavigationItem } from './MobileHeaderNavigationItem'
@@ -56,19 +56,19 @@ interface HeaderNavigationProps extends BoxProps {
 
         <Stack transition="3s ease" direction={{base:"column", lg:"row"}} borderRadius="0 0 0 2rem" pos={{base: "fixed", lg:"initial"}} h={{ base:"auto", lg:"initial"}} bg={{base: "blurredBackground", lg:"none"}} backdropFilter={{base: "blur(20px)", lg:"none"}} pb={{base: "6", lg:"initial"}} w={{ base: "100%", lg:"initial"}} {...rest}>
           <Flex h="20" alignItems="center" mx="8" justifyContent="space-between" display={{ base: 'flex', lg: 'none' }}>
-            <Image src="/titleLogo.svg" alt="Donald Louch" width="25vw" m="0.5rem auto" />
+            <Image src="/titleLogoChristmas.svg" alt="Donald Louch" width="25vw" m="0.5rem auto" />
             <CloseButton onClick={onClose} />
           </Flex>
           <Box display={{ base: 'none', lg: 'flex' }} alignItems="center">
             {HeaderNavigationItems.map((link) => (
-              <HeaderNavigationItem key={link.name} slug={link.slug} isParent={link.isParent} parentID={link.parentID}>
+              <HeaderNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID}>
                 {link.name}
               </HeaderNavigationItem>
             ))}
           </Box>
           <Box display={{ base: 'initial', lg: 'none' }}>
             {HeaderNavigationItems.map((link) => (
-              <MobileHeaderNavigationItem key={link.name} slug={link.slug} iconPre={link.iconPre} iconName={link.iconName} isParent={link.isParent} parentID={link.parentID}>
+              <MobileHeaderNavigationItem key={`mobile_${link.name}`} slug={link.slug} iconPre={link.iconPre} iconName={link.iconName} isParent={link.isParent} parentID={link.parentID}>
                 {link.name}
               </MobileHeaderNavigationItem>
             ))}

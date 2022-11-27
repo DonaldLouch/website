@@ -13,9 +13,9 @@ import {
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../config/fontAwesome";
+import "../../lib/fontAwesome";
 
-import { PortalSubNavigationItems } from "../../config/PortalNavigationItems/PortalSubNavigationItems";
+import { PortalSubNavigationItems } from "../../lib/PortalNavigationItems/PortalSubNavigationItems";
 
 interface PortalNavigationItemProps extends FlexProps {
   slug: any;
@@ -120,16 +120,31 @@ export const PortalNavigationItem = ({
             </Flex>
           </MenuButton>
           <MenuList
-            bg="white"
+            bg={useColorModeValue('white', 'black')}
             //{useColorModeValue('white', 'black')}
             boxShadow="bsBlue"
             //{useColorModeValue('bsBlue', 'bsBoldBlue')}
             m="-0.5rem"
           >
-            {PortalSubNavigationItems.map((subLink: any) =>
+            {PortalSubNavigationItems.map((subLink: any) => (
+               <Box key={`portSub_${parentID}${subLink.slug}`}>
+               {subLink?.parentMenu == parentID && (
+                 <Link
+                   key={`portSub_${parentID}${subLink.slug}`}
+                   href={`../../../${subLink.slug}`}
+                   variant="unstyled"
+                   textDecoration="none"
+                 >
+                   <MenuItem textDecoration="none" bg={useColorModeValue('white', 'black')}>{subLink.name}</MenuItem>
+                 </Link>
+               )}
+               </Box>
+            ))}
+            {/* {PortalSubNavigationItems.map((subLink: any) => (
+              <Box key={`portSub_${parentID}${subLink.slug}`}>
               subLink?.parentMenu == parentID ? (
                 <Link
-                  key={subLink.index}
+                  key={`portSub_${parentID}${subLink.slug}`}
                   href={`../../../${subLink.slug}`}
                   variant="unstyled"
                   textDecoration="none"
@@ -139,7 +154,8 @@ export const PortalNavigationItem = ({
               ) : (
                 <></>
               )
-            )}
+              </Box>
+            ))} */}
           </MenuList>
         </Menu>
       )}
