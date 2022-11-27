@@ -38,6 +38,7 @@ export const PortalNavigationItem = ({
   ...rest
 }: PortalNavigationItemProps) => {
   const blackWhiteColour = useColorModeValue("black", "white");
+  const primeColour = useColorModeValue("primary", "secondary");
 
   return (
     <>
@@ -90,7 +91,7 @@ export const PortalNavigationItem = ({
             borderRadius="0 1.5rem"
             role="group"
             cursor="pointer"
-            color={blackWhiteColour}
+            color={primeColour}
             bg="none"
             _hover={{ bg: "secondary" }}
             _focus={{ boxShadow: "none" }}
@@ -104,7 +105,7 @@ export const PortalNavigationItem = ({
                 <Box
                   mr="4"
                   width={{ base: "4%", md: "12%" }}
-                  color={blackWhiteColour}
+                  color={primeColour}
                 >
                   <FontAwesomeIcon
                     icon={[iconPre, iconName]}

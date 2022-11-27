@@ -86,7 +86,7 @@ export default function PortalHeader({ pageTitle, onOpen, ...rest }: PortalHeade
                 variant="unstyled"
                 boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
                 aria-label="open menu"
-                // w="5%"
+                w="5%"
                 padding="0.5rem"
                 borderRadius="0 1em"
                 color={blackWhite}
@@ -94,6 +94,8 @@ export default function PortalHeader({ pageTitle, onOpen, ...rest }: PortalHeade
                 icon={
                     <FontAwesomeIcon 
                         icon={'bars'} 
+                        width="100%"
+                        height="100%"
                         // color={blackWhite}
                         //width="50%"
                     />
