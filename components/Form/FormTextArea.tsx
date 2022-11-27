@@ -5,7 +5,6 @@ interface FormProps {
     inputID: string
     inputLabel: string
     textRows: number
-    //children: React.ReactNode
 }
 
 export const FormTextArea = ( props: FormProps) => {

@@ -1,7 +1,6 @@
 import { PaginationMenu } from "./PaginationMenu";
 
 export default function Pagination(pagination: any) {
-// export const Pagination = () => {
   const paginationArray = pagination;
   const currentPage = paginationArray?.[1] + 1;
 

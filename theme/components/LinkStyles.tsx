@@ -1,14 +1,11 @@
 export const LinkStyles = {
   baseStyle: {
-    // color: "primary",
     _hover: { color: "secondary" },
     fontWeight: "bold",
-    // textDecoration: "underline",
   },
   variants: {
     primary: {
       borderBottom: "1px solid purple",
-      // pb: "0.1rem",
       _hover: {
         borderColor: "orange",
         textDecoration: "none",

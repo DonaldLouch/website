@@ -3,11 +3,6 @@ import {
   useToast,
   Box,
   Link,
-  // Heading,
-  // useColorModeValue,
-  // Link,
-  // Text
-  // ModalOverlay
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -18,23 +13,17 @@ import prisma from "../../../lib/prisma";
 import { Metadata } from "../../../components/Metadata";
 
 import PortalLayout from "../../../components/Portal/PortalLayout";
-// import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from "react";
 import * as Yup from "yup";
 
 import { FormInput } from "../../../components/Form/FormInput";
-// import { FormPhone } from '../../../components/Form/FormPhone'
-// import { FormTextArea } from "../../../components/Form/FormTextArea";
 import { FormInputReadOnly } from "../../../components/Form/FormInputReadOnly";
 
 export default function EditLinkPortal({ linkData }: any) {
   const link = linkData;
 
   const toast = useToast();
-
-  // const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
-  // const primeWhite = useColorModeValue('primary', 'white')
 
   const onSubmit = async (values: any, actions: any) => {
     console.log(values);

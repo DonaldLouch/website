@@ -1,40 +1,25 @@
 import {
   Stack,
-  // HStack,
   useToast,
   Box,
   Link,
-  // Heading,
-  // Text,
-  // useColorModeValue,
-  // IconButton
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 
-// import prisma from '../../config/prisma'
-
 import { Metadata } from "../../components/Metadata";
 
 import PortalLayout from "../../components/Portal/PortalLayout";
-// import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from "react";
 import * as Yup from "yup";
 
 import { FormInput } from "../../components/Form/FormInput";
 import { FormTextArea } from "../../components/Form/FormTextArea";
-// import { FormInputReadOnly } from '../../components/Form/FormInputReadOnly'
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import '../../config/fontAwesome'
 
 export default function NewEmbedPortal() {
   const toast = useToast();
-
-  // const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
-  // const primeWhite = useColorModeValue('primary', 'white')
 
   const onSubmit = async (values: any, actions: any) => {
     const addEmbedData = {

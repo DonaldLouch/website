@@ -1,16 +1,6 @@
 import {
   Stack,
-  // Text,
-  // Heading,
-  // Link,
-  // Button,
-  // Input,
-  // FormControl,
-  // FormLabel,
-  // FormErrorMessage,
-  // Textarea,
   useToast,
-  // useColorModeValue
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -32,9 +22,6 @@ export default function Contact() {
 
   const onSubmit = async (values: any, actions: any) => {
     // TODO: create a nodemailer transporter and send email of the submitted values.
-    // actions.setSubmitting(false)
-
-    // console.log(values)
 
     const contactData = {
       name: values.name,

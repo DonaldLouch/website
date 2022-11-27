@@ -8,15 +8,7 @@ export default async function signature(
 ) {
   const { method } = req;
 
-  // cloudinary.config({
-  //     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  //     api_key: process.env.CLOUDINARY_API_KEY,
-  //     api_secret: process.env.CLOUDINARY_API_SECRET
-  // })
-
   const linkID = req.query.linkID as any;
-  // const mediaIDSplit = mediaIDQuery.split(';;') as any
-  // const mediaID = mediaIDSplit[0] + "/" + mediaIDSplit[1]
 
   if (method === "POST") {
     try {

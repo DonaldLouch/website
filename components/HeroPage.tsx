@@ -3,15 +3,9 @@ import {
     Box, 
     Flex,
     Heading,
-    // Text,
     Link,
     Grid,
     Stack,
-    // Skeleton,
-    // AspectRatio,
-    // Image,
-    // useColorModeValue,
-    // color
 } from '@chakra-ui/react'
 
 

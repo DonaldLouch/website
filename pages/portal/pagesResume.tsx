@@ -14,7 +14,6 @@ import {
     ModalFooter,
     ModalHeader,
     Link
-    // ModalOverlay
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -28,7 +27,6 @@ import {Metadata} from "../../components/Metadata"
 
 
 import PortalLayout from '../../components/Portal/PortalLayout'
-// import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from 'react'
 import * as Yup from 'yup'
@@ -272,7 +270,6 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
         company: Yup.string().required('Company is required'),
         position: Yup.string().required('Position is required'),
         startDate: Yup.string().required('Start Date is required'),
-        // endDate: Yup.string().required('End Date is required'),
         description: Yup.string().required('Description is required'),
       })
 
@@ -282,13 +279,6 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
         startDate: Yup.string().required('Start Date is required'),
         endDate: Yup.string().required('End Date is required'),
       })
-
-      // const postedData = new Date(post.postedOn)
-      // const postedDay = postedData.toLocaleDateString()
-      // const postedTime = postedData.toLocaleTimeString()
-
-      // const postedOnString = postedDay +" at " + postedTime
-    
 
     return (
         <>  

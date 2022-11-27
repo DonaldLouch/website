@@ -9,18 +9,11 @@ import {
   MenuItem,
   Stack,
   Tooltip,
-  // Box,
-  //   IconButton,
-  //   Icon,
 } from "@chakra-ui/react";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import "../../config/fontAwesome";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 import { HeaderSubNavigationItems } from "../../lib/HeaderNavigationItems/SubNavigationItems";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface HeaderNavigationItemProps extends FlexProps {
   slug: any;

@@ -6,7 +6,6 @@ import prisma from '../../../lib/prisma'
 export default async function assetHandler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const postData = JSON.parse(req.body) as unknown|any|null
-        // console.log(postData)
         const post = await prisma.blogPost.update({
             where: {
                 id: postData.id

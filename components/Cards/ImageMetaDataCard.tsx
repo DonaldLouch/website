@@ -2,8 +2,7 @@ import {
     Box,
     Text,
     Link,
-    Heading,
-    // useColorModeValue
+    Heading
   } from '@chakra-ui/react'
   
 
@@ -13,21 +12,17 @@ import {
     const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
 
     const categorySplit = post.categories.split(",")
-    // const categorySplitLength = categorySplit?.length()
 
     const postedOn = postedDay +" at " + postedTime
 
     return (
         <Box 
-            // pos="absolute"
-            // top={{ base: "30vw", md:"5vw" }}
             fontSize="0.8rem" 
             bg="backgroundGradient"
             color="white"
             p="1rem"
             m="4rem 0 1.5rem"
             borderRadius="0 2rem"
-            // animation={metaAnimation}
         >
             <Heading as="h1" fontSize="3rem" fontWeight="900" my="0.5rem" ml="0.9rem">{post.title}</Heading>
             <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: {categorySplit.map((category: any) => (

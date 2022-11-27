@@ -6,10 +6,7 @@ import {
     usePrefersReducedMotion,
     Heading,
     Link,
-    AspectRatio,
-    // Stack,
-    // Button,
-    // Grid
+    AspectRatio
   } from '@chakra-ui/react'
 
   import { PostCard } from '../Cards/PostCard'
@@ -27,8 +24,6 @@ import {
     `
   
   export const StandardPostType = (post: any, source: any) => {
-    // const post = post
-
     const prefersReducedMotion = usePrefersReducedMotion()
     const metaAnimation = prefersReducedMotion
     ? undefined
@@ -45,13 +40,9 @@ import {
           <>
           <AspectRatio 
                 ratio={16/9}
-                // w={{base: "calc(100% - -6rem);", xl: "95%"}}
                 w="100%"
-                // m={{ base: "0 -4rem", xl: "0"}}
                 overflow="hidden"
-                // zIndex="10000"
                 bg="mainGradient"
-                // borderRadius="0 2rem"
                 pos="absolute"
                 top="0"
                 left="0"
@@ -69,7 +60,6 @@ import {
                     animation={metaAnimation}
                     borderRadius="0 2rem"
                     ml={{base: "-2rem", md:"-4rem"}}
-                    // zIndex="10000" 
                 >
                     <Heading as="h1" fontSize="3rem" fontWeight="900" m="0.5rem">{post.title}</Heading>
                     <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: {categorySplit.map((category: any) => (<Link key={category}href={`/C/${category}`} boxShadow="bsBoldWhite" p="0.5rem" borderRadius="0 0.5rem" mx="0.2rem" _hover={{boxShadow: "bsBoldOrange"}}>{category}</Link>))}</Text>

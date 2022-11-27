@@ -18,13 +18,11 @@ import {
           <Stack bg="mainGradient" pos="absolute" top="0" left="0" w="100vw" justifyContent="center" alignItems="center" h={{base: "60vw", md:"100vh"}} zIndex="banner">
             <AspectRatio 
                 ratio={16/9}
-                // w={{base: "calc(100% - -6rem);", xl: "95%"}}
                 w="88%"
                 m={{ base: "0 -4rem", xl: "0"}}
                 overflow="hidden"
                 zIndex="10000"
                 bg="mainGradient"
-                // borderRadius="0 2rem"
             >
                 <iframe src={post?.media}></iframe>
             </AspectRatio>

@@ -23,12 +23,8 @@ import prisma from "../../lib/prisma";
 
 import { SectionCard } from "../../components/Cards/SectionCard";
 import { SectionTitle } from "../../components/SectionTitle";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import "../../config/fontAwesome";
 import useSWR from "swr";
 
-// import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Test({
@@ -42,14 +38,6 @@ export default function Test({
   const pageID = "pageL4UBGH6Awzq" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
-  // const pageID = "pageL4UBGH6Awzq" as string
-  // updatePostView(pageID)
-  // async function updatePostView(pageID: string) {
-  //     await fetch('/api/pages/updateView', {
-  //         method: 'POST',
-  //         body: JSON.stringify(pageID)
-  //     })
-  // }
   const resume = resumeData?.[0];
   const resumeExperience = resumeExperienceData;
   const resumeWorkExperienceHistory = resumeWorkExperienceHistoryData;
@@ -226,25 +214,9 @@ export default function Test({
                             icon={["fal", "chevron-down"]}
                             height="100%"
                             fontSize="md"
-                            // width="100%"
                             color="currentColor"
                         />
                     </Box>
-                      {/* <Box
-                        mr="4"
-                        width={{ base: "4%", md: "12%" }}
-                        color="white"
-                      >
-                        <ChevronDownIcon
-                          color="currentColor"
-                          w="3rem"
-                          h="3rem"
-                        />
-                        {/* <FontAwesomeIcon
-                          icon={["fas", "chevron-down"]}
-                          width="100%"
-                        /> 
-                      </Box> */}
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Heading as="h3" my="1rem">
@@ -345,25 +317,9 @@ export default function Test({
                             icon={["fal", "chevron-down"]}
                             height="100%"
                             fontSize="md"
-                            // width="100%"
                             color="currentColor"
                         />
                     </Box>
-                      {/* <Box
-                        mr="4"
-                        width={{ base: "4%", md: "12%" }}
-                        color="white"
-                      >
-                        <ChevronDownIcon
-                          color="currentColor"
-                          w="3rem"
-                          h="3rem"
-                        />
-                        {/* <FontAwesomeIcon
-                          icon={["fas", "chevron-down"]}
-                          width="100%"
-                        />
-                      </Box> */}
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Text fontSize="1.1rem">{education.description}</Text>
@@ -421,7 +377,6 @@ export default function Test({
                 >
                   Graphic Design
                 </Button>
-                {/* <Button as="a" variant="portalButton" href="written" w="100%" color={useColorModeValue("black", "white")}>Written Work</Button> */}
               </Stack>
 
               <Heading
@@ -438,8 +393,6 @@ export default function Test({
                   Request
                 </Link>
               </Text>
-              {/* const postedDay = postedData.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-  const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) */}
 
               <Text
                 textShadow="3px 2px 4px rgb(193 93 79 / 20%)"

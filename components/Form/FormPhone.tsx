@@ -5,10 +5,7 @@ import { InputControl } from 'formik-chakra-ui'
 interface FormProps {
     inputID: string
     inputLabel: string
-    //children: React.ReactNode
 }
-
-//import React, { useState } from "react"
 
 export const FormPhone = ( props: FormProps) => {
     const { inputID, inputLabel } = props

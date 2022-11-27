@@ -6,7 +6,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(tabsAnatomy.keys);
 
 const mainVariant = definePartsStyle(props => {
-  const { colorScheme: c } = props; // add colorScheme as a prop
+  const { colorScheme: c } = props;
 
   return {
     root: {
@@ -35,8 +35,6 @@ const mainVariant = definePartsStyle(props => {
       overflow: "scroll",
       whiteSpace: "nowrap",
       maxW: "100%"
-    //   borderBottom: '2x solid',
-    //   borderColor: 'inherit',
     },
   };
 });
@@ -45,19 +43,13 @@ const variants = {
   main: mainVariant,
 };
 
-// define which sizes, variants, and color schemes are applied by default
-
 const defaultProps = {
   size: 'md',
   variant: 'main',
   colorScheme: 'purple',
 } as any
 
-// export the component theme
-
 export const tabsTheme = defineMultiStyleConfig({
-//   baseStyle,
-//   sizes,
   variants,
   defaultProps,
 });

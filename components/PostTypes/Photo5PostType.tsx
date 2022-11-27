@@ -3,13 +3,6 @@ import {
     Image,
     Link,
     Heading,
-    // Text,
-    // AspectRatio,
-    // Stack,
-    // Link
-    // Stack,
-    // Button,
-    // Grid
   } from '@chakra-ui/react'
 
   import { PostCard } from '../Cards/PostCard'
@@ -21,15 +14,8 @@ import { ImageMetaDataCard } from '../Cards/ImageMetaDataCard'
   
   
   export const Photo5PostType = (post: any, source: any) => {
-    // const postedData = new Date(post.postedOn)
-    // const postedDay = postedData.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    // const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
-
-    // const postedOn = postedDay +" at " + postedTime
 
    const gallerySplit = post?.media?.split(' || ')
-    
-    // console.log(gallerySplit)
 
       return (
           <>

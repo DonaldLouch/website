@@ -2,11 +2,9 @@ import {
   Stack, 
   HStack, 
   VStack,
-  // Link, 
   Code,
   useToast,
-  Box, 
-  // Radio,
+  Box,
   Heading,
   useColorModeValue
   } from '@chakra-ui/react'
@@ -30,8 +28,6 @@ import { FormSwitch } from '../../components/Form/FormSwitch'
 import { FormCheckGroup } from '../../components/Form/FormCheckGroup'
 
 export default function BlogNew() {
-
-  // const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
   const toast = useToast()
 
   const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
@@ -112,15 +108,9 @@ export default function BlogNew() {
       postedOn: updatePostedOn,
     }
 
-    // if (submitBlogPostData) {
       await addPost(submitBlogPostData)
 
       actions.setSubmitting(false)
-    // }
-
-    // sleep(5000).then(() => {
-      // actions.setSubmitting(false)
-    // })
   }
 
   async function addMedia(submitMediaData: any) {
@@ -140,10 +130,6 @@ export default function BlogNew() {
       method: 'POST',
       body: JSON.stringify(submitBlogPostData)
     })
-  
-    // if (!response.ok) {
-    //   throw new Error(response.statusText);
-    // }
     if (response.ok) {
       toast({
         title: "Blog Post Created 🎉",
@@ -162,8 +148,6 @@ export default function BlogNew() {
         isClosable: true,
       })
     }
-    // console.log(response)
-      // return await response.json()
   }
 
   const initialValues = {
@@ -261,7 +245,6 @@ export default function BlogNew() {
                     )}
 
                     <FormInput inputID="headingText" inputLabel="Heading Text" inputType="text" />
-                    {/* <FormTextArea inputID="tagLine" inputLabel="Tag Line" textRows={3} /> */}
 
                     <FormTextArea inputID="body" inputLabel="Body" textRows={10} />
                     

@@ -1,48 +1,17 @@
 import {
-  // Stack,
-  // HStack,
-  // useToast,
   Box,
-  // Heading,
   Link,
   Stack,
-  // useColorModeValue
 } from "@chakra-ui/react";
 
 import prisma from "../../lib/prisma";
-
-// import { Formik } from 'formik'
-// import {
-//     SubmitButton
-// } from 'formik-chakra-ui'
-
-// import prisma from '../../config/prisma'
 
 import { Metadata } from "../../components/Metadata";
 
 import PortalLayout from "../../components/Portal/PortalLayout";
 import { LinkCardAdmin } from "../../components/Cards/LinkCardAdmin";
-// import { SectionTitle } from "../../../components/SectionTitle"
-
-// import * as React from 'react'
-// import * as Yup from 'yup'
-
-// import { FormInput } from '../../components/Form/FormInput'
-// import { FormTextArea } from '../../components/Form/FormTextArea'
-// import { FormInputReadOnly } from '../../components/Form/FormInputReadOnly'
 
 export default function LinksPortal({ linkData }: any) {
-  //   const about = aboutData
-
-  // const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
-  // const primeWhite = useColorModeValue('primary', 'white')
-
-  // const postedData = new Date(post.postedOn)
-  // const postedDay = postedData.toLocaleDateString()
-  // const postedTime = postedData.toLocaleTimeString()
-
-  // const postedOnString = postedDay +" at " + postedTime
-
   const links = linkData;
   return (
     <>
@@ -95,18 +64,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
-// export async function getServerSideProps() {
-
-//     const aboutData = await prisma.about.findUnique({
-//         where: {
-//             id
-//         }
-//     })
-
-//     return {
-//         props: {
-//             aboutData: JSON.parse(JSON.stringify(aboutData))
-//         }
-//     }
-// }

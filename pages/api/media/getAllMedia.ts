@@ -9,7 +9,6 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
         try {
             const media = await prisma.media.findMany()
             return res.status(200).json(media)
-            // res.end()
         } catch(e) {
             console.log("Request error", e);
             res.status(422).json(e)

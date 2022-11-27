@@ -18,7 +18,6 @@ export const FooterIcon = (props: FooterProps) => {
         href={linkURL}
         isExternal
         variant="unstyled"
-        // colorScheme="white"
         _hover={{ color: "tertiary", border: "none" }}
         px="0.2rem"
       >
@@ -28,26 +27,10 @@ export const FooterIcon = (props: FooterProps) => {
             variant="unstyled"
             h="auto"
             fontSize="inherit"
-            //   _hover={{ color: primeGrey }}
             icon={<FontAwesomeIcon icon={["fab", linkIcon]} />}
           />
         </Tooltip>
       </Link>
     </Box>
-    // <IconButton
-    //     aria-label={socialMedia}
-    //     variant="unstyled"
-    //     h="auto"
-    //     fontSize="inherit"
-    //     as="a"
-    //     href={linkURL}
-
-    //     p="0.5rem"
-    //     variant="outline"
-    //     rounded="full"
-    //     colorScheme="white"
-    //     _hover={{ bg: "white", color: "tertiary", border: "none" }}>
-    //         <FontAwesomeIcon icon={['fab', linkIcon]} />
-    // </IconButton>
   );
 };

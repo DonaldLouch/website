@@ -1,8 +1,7 @@
 import {
     Box,
     keyframes,
-    usePrefersReducedMotion,
-    // useColorModeValue
+    usePrefersReducedMotion
 } from '@chakra-ui/react'
 
 const spinningGradient = keyframes `

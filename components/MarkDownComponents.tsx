@@ -25,13 +25,7 @@ import {
     List,
     ListItem,
     Grid
-    // ListIcon,
-    // OrderedList,
-    // UnorderedList,
-    // IconButton,
 } from "@chakra-ui/react"
-
-// import { MinusIcon } from '@chakra-ui/icons'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import '../lib/fontAwesome'
@@ -88,7 +82,6 @@ const toggle = (props: any) => (
                             icon={["fal", "chevron-down"]}
                             height="100%"
                             fontSize="md"
-                            // width="100%"
                             color="currentColor"
                         />
                     </Box>
@@ -98,20 +91,17 @@ const toggle = (props: any) => (
                 </AccordionPanel>
             </ AccordionItem>
         </Accordion>
-        {/* <Box id={props.id}>{props.toggleID}</Box> */}
         <Box hidden>{props.children}</Box>
     </>
 )
 
 const image = (props: any) => (
-    // console.log(props)
     <>
         <Image src={props.src} alt={props.alt} w="100%" />
     </>
 )
 
 const songInfo = (props: any) => (
-    // console.log(props)
     <>
     <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center">
         <Image src={props.artworkSrc} alt={props.artworkTitle} w="100%" />
@@ -127,7 +117,6 @@ const blockquote = (props: any) => (<Text as="blockquote" fontFamily="heading" f
 const unorderedList = (props: any) => (
     <>
     <List spacing={3}>
-        {/* {console.log(props.children)} */}
         {props.children.map((list: any) => ( 
             <>
             {list != "\n" && (
@@ -144,16 +133,6 @@ const unorderedList = (props: any) => (
             </>
         ))} 
     </List>
-        {/* <List my="1.5rem" spacing={3} listStyleType="none" >
-            {props.children.map((list: any) => ( 
-                <ListItem key={list.index} listStyleType="none" variant="outline"
-                // boxShadow="bsBoldOrange" padding="1rem" borderRadius="0 2rem" my="1rem"
-                >
-                    <ListIcon as="-" color='green.500' />
-                    {list}
-                </ListItem>
-            ))} 
-        </List> */}
     </>
 )
 
@@ -162,13 +141,11 @@ const links = (props: any) => (<Link href={props.href} variant="primary">{props.
 const videoFrame = (props: any|boolean) => (
     <AspectRatio 
                 ratio={16/9}
-                // w={{base: "calc(100% - -6rem);", xl: "95%"}}
                 w="calc(100% + 4rem)"
                 m="1rem 0 1rem -2rem"
                 overflow="hidden"
                 bg="mainGradient"
                 zIndex="banner"
-                // borderRadius="0 2rem"
             >
                 <iframe  width={props.width} height={props.height} src={props.src} frameBorder="0" allow={props.options} allowFullScreen></iframe>
             </AspectRatio>

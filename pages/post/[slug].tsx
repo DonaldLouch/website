@@ -1,24 +1,8 @@
 import {
-  // Grid,
-  // Image,
-  // Heading,
   Text,
-  // Button,
   Box,
   useColorModeValue,
   useToast,
-  // Accordion,
-  // AccordionItem,
-  // AccordionButton,
-  // AccordionPanel,
-  // Image,
-  // Stack,
-  // Tabs,
-  // TabList,
-  // Tab,
-  // TabPanels,
-  // TabPanel,
-  // VisuallyHidden,
 } from "@chakra-ui/react";
 
 import { useSession } from "next-auth/react";
@@ -72,24 +56,6 @@ export default function Post({ source, postData }: any) {
       });
     }
   }
-
-  //    async (post: any) => {
-  // console.log("Hello")
-
-  //        const postViewData = {
-  //            id: post.id,
-  //            newView: post.views + 1
-  //        }
-
-  //         updatePostView(postViewData)
-  // //    }
-
-  //     async function updatePostView(postViewData: any) {
-  //         await fetch('/api/posts/updateView', {
-  //           method: 'POST',
-  //           body: JSON.stringify(postViewData)
-  //         })
-  //       }
 
   return (
     <>
@@ -175,17 +141,6 @@ export default function Post({ source, postData }: any) {
             )}
           </>
         )}
-        {/* {post.blogType === "Video" && (<VideoPostType {...post} {...source} />)}
-                {post.blogType === "Audio" && (<AudioPostType {...post} {...source} />)}
-                {post.blogType === "Standard" && (<StandardPostType {...post} {...source} />)}
-                {post.blogType === "Special" && (<SpecialPostType {...post} {...source} />)}
-                {post.blogType === "Gallery" && (<GalleryPostType {...post} {...source} />)}
-                {post.blogType === "Photo 1" && (<Photo1PostType {...post} {...source} />)}
-                {post.blogType === "Photo 2" && (<Photo2PostType {...post} {...source} />)}
-                {post.blogType === "Photo 3" && (<Photo3PostType {...post} {...source} />)}
-                {post.blogType === "Photo 4" && (<Photo4PostType {...post} {...source} />)} */}
-        {/* {post.blogType && (<StandardPostType {...post} {...source} />)} */}
-        {/* {post.postType === "Standard" && ()} */}
       </Box>
     </>
   );

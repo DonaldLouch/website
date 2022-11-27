@@ -8,18 +8,14 @@ import {
   Image,
   Heading,
   Link,
-  // IconButton,
-  // Tooltip,
   Tabs,
   TabList,
   TabPanels,
   Tab,
   TabPanel,
   AspectRatio,
-  // Icon,
   Tooltip,
   IconButton,
-  // Card,
 } from "@chakra-ui/react";
 
 import prisma from "../lib/prisma";
@@ -40,8 +36,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../lib/fontAwesome";
 import useSWR from "swr";
 import PinnedPostsCard from "../components/Cards/PinnedPostsCard";
-
-// const FaHome = () => <FontAwesomeIcon icon={["fas", "house"]} />;
 
 const paragraph = (props: any) => (
   <Text fontSize="1.1rem" lineHeight="1.4rem">
@@ -180,12 +174,7 @@ export default function AboutMe({
         </Stack>
 
         <Tabs
-          // variant="soft-rounded"
-          // colorScheme="purple"
           p="1rem"
-          // boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
-          //FOR TAB SECTION
-          // p="2rem 0"
           borderRadius="0 2rem"
           isFitted
         >
@@ -206,9 +195,7 @@ export default function AboutMe({
                 <AspectRatio
                   key={embed.id}
                   ratio={16 / 9}
-                  // w={{base: "calc(100% - -6rem);", xl: "95%"}}
                   w="95%"
-                  // m={{ base: "0 -4rem", xl: "0"}}
                   m="1rem auto"
                   overflow="hidden"
                   zIndex="10000"

@@ -5,8 +5,6 @@ import { HeadingStyles as Heading } from "./components/HeadingStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
 import { tabsTheme as Tabs } from "./components/TabsStyles";
 
-//import { InputStyles as Input } from "./components/InputStyles"
-
 export const theme = extendTheme({
   styles: {
     global: {
@@ -92,11 +90,5 @@ export const theme = extendTheme({
         color: "white",
       },
     },
-    // Text: {
-    //   baseStyle: {
-    //     margin: 4,
-    //     lineHeight: 1.2,
-    //   },
-    // },
   },
 });

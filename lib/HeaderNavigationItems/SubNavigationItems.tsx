@@ -30,16 +30,6 @@ export const HeaderSubNavigationItems: Array<HeaderSubNavigationItemsProps> = [
         slug: 'portfolio/videography',
         parentMenu: 1
     },
-    // { 
-    //     name: 'Graphic Design',
-    //     slug: 'portfolio/graphic',
-    //     parentMenu: 1
-    // },
-    // { 
-    //     name: 'Written Work',
-    //     slug: 'portfolio/written',
-    //     parentMenu: 1
-    // },
     { 
         name: 'Photography',
         slug: '/C/photography',

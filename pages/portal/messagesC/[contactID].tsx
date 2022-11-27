@@ -8,7 +8,6 @@ import PortalLayout from "../../../components/Portal/PortalLayout";
 
 export default function Post({ contactData }: any) {
   const contact = contactData;
-  // console.log(post.body)
 
   const postedData = new Date(contact.sentOn);
   const postedDay = postedData.toLocaleDateString();
@@ -25,7 +24,6 @@ export default function Post({ contactData }: any) {
           description={`Contact Message: ${contact.od}`}
         />
         <Box as="main" id="contact" color="black">
-          {/* <Link href="../" variant="primaryButton2" w="fit-content" mx="0"> */}
           <Link href="/portal/messages" variant="primary" fontSize="1.1rem">
             Go Back To All Messages
           </Link>
@@ -65,14 +63,6 @@ export default function Post({ contactData }: any) {
                 On: <strong>{postedOnString}</strong>
               </Text>
             </Stack>
-
-            {/* <Link
-              href={`/portal/messages/${contact.id}`}
-              variant="primaryButton"
-              w="100%"
-            >
-              View Message
-            </Link> */}
           </Stack>
           <Box
             boxShadow="bsBoldOrange"

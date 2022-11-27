@@ -5,10 +5,7 @@ interface FormProps {
     inputID: string
     inputLabel: string
     inputType: any|undefined|null
-    //children: React.ReactNode
 }
-
-//import React, { useState } from "react"
 
 export const FormInput = ( props: FormProps) => {
     const { inputID, inputLabel, inputType } = props

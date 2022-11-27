@@ -6,9 +6,6 @@ import {
     usePrefersReducedMotion,
     Heading,
     Link,
-    // Stack,
-    // Button,
-    // Grid
   } from '@chakra-ui/react'
 
   import { PostCard } from '../Cards/PostCard'
@@ -47,13 +44,6 @@ import {
                 pos="absolute"
                 top="0"
                 left="0"
-                //   filter="opacity(80%)" 
-                //   p="2rem" 
-                //   borderRadius="0 3rem 0 3rem" 
-                //   mb="2rem" 
-                //   bg={useColorModeValue(stylesForComp.background.bgLight, stylesForComp.background.bgDark)}
-                //   boxShadow={useColorModeValue(stylesForComp.boxShadow.bsLight, stylesForComp.boxShadow.bsDark)}
-                //   color={useColorModeValue('black', 'white')}
             >
                 <Image src={post.thumbnail} alt={post.title} w="100vw" maxH="100vh"/>
                 <Box 

@@ -1,14 +1,7 @@
 import {
   Stack,
   Text,
-  // Heading,
   Link,
-  // Button,
-  // Input,
-  // FormControl,
-  // FormLabel,
-  // FormErrorMessage,
-  // Textarea,
   useToast,
   useColorModeValue,
 } from "@chakra-ui/react";

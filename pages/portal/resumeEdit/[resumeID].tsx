@@ -3,8 +3,6 @@ import {
     HStack,
     useToast,
     Box, 
-    // Heading,
-    // useColorModeValue,
     useDisclosure,
     Button,
     Modal,
@@ -13,9 +11,6 @@ import {
     ModalContent,
     ModalFooter,
     ModalHeader,
-    // Link,
-    // Text
-    // ModalOverlay
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -29,13 +24,11 @@ import {Metadata} from "../../../components/Metadata"
 
 
 import PortalLayout from '../../../components/Portal/PortalLayout'
-// import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from 'react'
 import * as Yup from 'yup'
 
 import { FormInput } from '../../../components/Form/FormInput'
-// import { FormPhone } from '../../../components/Form/FormPhone'
 import { FormTextArea } from '../../../components/Form/FormTextArea'
 import { FormInputReadOnly } from '../../../components/Form/FormInputReadOnly'
 
@@ -44,18 +37,11 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
   const resumeExperience = resumeExperienceData
 
   const { isOpen: isHistoryOpen, onOpen: onHistoryOpen, onClose: onHistoryClose } = useDisclosure()
-  // const { isOpen: isEducationOpen, onOpen: onEducationOpen, onClose: onEducationClose } = useDisclosure()
 
     const toast = useToast()
 
-  // const boxShadow = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
-  // const primeWhite = useColorModeValue('primary', 'white')
-
   const onSubmit =  async (values: any, actions: any) => {
     console.log(values)
-
-      // await updateResume(updateResumeData)
-
       actions.setSubmitting(false)
   }
 
@@ -167,13 +153,6 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
 
       const validationSchemaHistory = Yup.object({
       })
-
-      // const postedData = new Date(post.postedOn)
-      // const postedDay = postedData.toLocaleDateString()
-      // const postedTime = postedData.toLocaleTimeString()
-
-      // const postedOnString = postedDay +" at " + postedTime
-    
 
     return (
         <>  

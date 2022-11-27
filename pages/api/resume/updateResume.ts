@@ -6,7 +6,6 @@ import prisma from '../../../lib/prisma'
 export default async function assetHandler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const resumeData = JSON.parse(req.body) as unknown|any|null
-        // console.log(postData)
         const resume = await prisma.resume.update({
             where: {
                 id: resumeData.id

@@ -1,14 +1,10 @@
 import { 
     Box,
-    // Image,
     Text,
     Heading,
     AspectRatio,
     Stack,
     Link
-    // Stack,
-    // Button,
-    // Grid
   } from '@chakra-ui/react'
 
   import { PostCard } from '../Cards/PostCard'
@@ -18,24 +14,14 @@ import {
   import { PostContent } from '../PostContent'
   
   export const VideoPostType = (post: any, source: any) => {
-    // const postedData = new Date(post.postedOn)
-    // const postedDay = postedData.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    // const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
-
-    // const postedOn = postedDay +" at " + postedTime
-
     const videoPath = post?.media?.split(" || ")?.[1]
     const mediaCreditSplit = post?.mediaCredit?.split(";;")
-    // console.log(videoPath)
-
-
       return (
           <>
           <Box bg="white"pos="absolute" top="0" left="0" w="100vw" justifyContent="center" alignItems="center" h={{base: "60vw", md:"100vh"}} zIndex="banner"></Box>
           <Stack bg="mainGradient" pos="absolute" top="0" left="0" w="100vw" justifyContent="center" alignItems="center" h={{base: "60vw", md:"100vh"}} zIndex="banner">
             <AspectRatio 
                 ratio={16/9}
-                // w={{base: "calc(100% - -6rem);", xl: "95%"}}
                 w="88%"
                 m={{ base: "0 -4rem", xl: "0"}}
                 overflow="hidden"

@@ -12,7 +12,6 @@ export const FormSwitch = (props: FormProps, {...rest}) => {
         <SwitchControl 
             name={inputID}
             label={inputLabel}
-            // variant="unstyled"
             boxShadow={useColorModeValue('bsBoldBlue', 'bsBoldWhite')}
             _focus={{boxShadow: "bsBoldOrange"}}
             _invalid={{boxShadow: "bsBoldRed"}}
@@ -24,7 +23,6 @@ export const FormSwitch = (props: FormProps, {...rest}) => {
                 colorScheme: "purple"
             }}
             labelProps={{color: useColorModeValue('primary', 'white')}}
-            // value={true}
             {...rest}
         />
     )

@@ -19,14 +19,6 @@ export default function PortfolioVideography() {
     fetch(url).then((res) => res.json());
   const pageID = "pageL4UBHMANczw" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
-  // const pageID = "pageL4UBHMANczw" as string
-  // updatePostView(pageID)
-  // async function updatePostView(pageID: string) {
-  //     await fetch('/api/pages/updateView', {
-  //         method: 'POST',
-  //         body: JSON.stringify(pageID)
-  //     })
-  // }
 
   return (
     <>
@@ -54,18 +46,6 @@ export default function PortfolioVideography() {
           </Tooltip>
         </Link>
       </Box>
-      {/* <Box
-        position="absolute"
-        top="2%"
-        left="2%"
-        zIndex="overlay"
-        color={useColorModeValue("primary", "white")}
-        fontSize="1.5rem"
-      >
-        <Link href="/portfolio">
-          <FontAwesomeIcon icon={["fas", "house"]} width="100%" />
-        </Link>
-      </Box> */}
       <Box
         bg="white"
         pos="absolute"
@@ -91,7 +71,6 @@ export default function PortfolioVideography() {
         <SectionTitle headingTitle="Videography Portfolio" />
         <AspectRatio
           ratio={16 / 9}
-          // w={{base: "calc(100% - -6rem);", xl: "95%"}}
           w="80%"
           m={{ base: "0 -4rem", xl: "0" }}
           overflow="hidden"

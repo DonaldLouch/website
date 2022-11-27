@@ -3,10 +3,6 @@ import Script from "next/script";
 
 import { useColorModeValue } from "@chakra-ui/react"
 
-// import { Playfair_Display, Lato } from "@next/font/google"
-// const playfairDisplay = Playfair_Display();
-// const lato = Lato({weight: ["100", "300", "400", "700", "900"]});
-
 interface MetaProps {
   title: string;
   keywords: string;
@@ -14,7 +10,6 @@ interface MetaProps {
 }
 
 export const Metadata = (props: MetaProps) => {
-  //const Meta = ({ title, keywords, description }) => {
   const { title, keywords, description } = props;
 
   const colour = useColorModeValue("#EDEDED", "#0F111B")
@@ -36,17 +31,10 @@ export const Metadata = (props: MetaProps) => {
       <meta name="theme-color" content={colour} />
       <meta name="msapplication-TileColor" content={colour} />
       <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-      {/* <script data-token={process.env.SPLITBEE_TOKEN} async src="https://cdn.splitbee.io/sb.js"></script> */}
       <Script
         src="https://donaldlouch.instatus.com/widget/script.js"
         strategy="lazyOnload"
       ></Script>
-      {/* <style
-          id="font"
-          dangerouslySetInnerHTML={{
-            __html: `*{font-family: ${lato.style.fontFamily}}`,
-          }}
-      /> */}
       <title>{title}</title>
     </Head>
   );

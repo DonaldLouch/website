@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-// import prisma from '../../../config/prisma'
 import nodemailer from 'nodemailer'
 
 export default async function assetHandler(req: NextApiRequest, res: NextApiResponse) {

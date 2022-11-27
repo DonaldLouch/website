@@ -8,8 +8,6 @@ interface FormProps {
    children: React.ReactNode
 }
 
-//import React, { useState } from "react"
-
 export const FormSelect = ( props: FormProps) => {
     const { selectID, selectPlaceholder, selectLabel, children } = props
     return (

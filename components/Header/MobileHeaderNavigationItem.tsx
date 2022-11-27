@@ -1,6 +1,5 @@
 import React, { ReactText } from "react";
 import {
-  //   HStack,
   Flex,
   useColorModeValue,
   Link,
@@ -10,12 +9,8 @@ import {
   MenuList,
   MenuItem,
   Box,
-  // Icon,
-  //   IconButton,
   Grid,
   Text,
-
-  //   MenuDivider
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,9 +39,7 @@ export const MobileHeaderNavigationItem = ({
   ...rest
 }: HeaderNavigationItemProps) => {
   const blackWhiteColour = useColorModeValue("black", "white");
-  // const primGreyColour = useColorModeValue('primary', 'grey')
   const boxShadow = useColorModeValue("bsBoldBlue", "bsBoldWhite");
-  // const FaDown = () => <FontAwesomeIcon icon={["fas", "chevron-down"]} />;
 
   return (
     <>
@@ -123,10 +116,6 @@ export const MobileHeaderNavigationItem = ({
               >
                 <FontAwesomeIcon
                   icon={[iconPre, iconName]}
-                  // color="black"
-                  // {
-                  //     useColorModeValue('black', 'white')
-                  // }
                   width="100%"
                 />
               </Box>
@@ -158,22 +147,11 @@ export const MobileHeaderNavigationItem = ({
                 w="100%"
               >
                 <ChevronDownIcon color="currentColor" w="2rem" h="2rem" />
-                {/* <Icon as={FaDown} width="100%" color="currentColor" /> */}
-                {/* <FontAwesomeIcon 
-                                        icon={["fas", "chevron-down"]} 
-                                        // color="black"
-                                        // {
-                                        //     useColorModeValue('black', 'white')
-                                        // }
-                                        width="100%"
-                                    /> */}
               </Box>
             </MenuButton>
             <MenuList
              bg={useColorModeValue('white', 'black')}
-              //{useColorModeValue('white', 'black')}
               boxShadow="bsBlue"
-              //{useColorModeValue('bsBlue', 'bsBoldBlue')}
               m="-0.5rem 1.9rem"
             >
               {HeaderSubNavigationItems.map(
@@ -199,22 +177,6 @@ export const MobileHeaderNavigationItem = ({
                       </MenuItem>
                     )
                 )}
-              {/* {HeaderSubNavigationItems.map((subLink: any) => */}
-                {/* // <Box key={`mobileSubHead_${parentID}${subLink.slug}`}> */}
-                {/* subLink?.parentMenu == parentID ? (
-                  <Link
-                    key={`mobileSubHead_${parentID}${subLink.slug}`}
-                    href={`../../../${subLink.slug}`}
-                    variant="unstyled"
-                    _hover={{ textDecoration: "none", color: "secondary" }}
-                  >
-                    <MenuItem bg={useColorModeValue('white', 'black')}>{subLink.name}</MenuItem>
-                  </Link>
-                ) : (
-                  <></>
-                ) 
-                 </Box>
-              )} */}
             </MenuList>
           </Menu>
         </Grid>

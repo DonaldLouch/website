@@ -1,5 +1,4 @@
 import { Heading, useColorModeValue } from '@chakra-ui/react'
-//import React, { useState } from "react"
 
 interface SectionTitleProps {
     headingTitle: String
@@ -15,7 +14,6 @@ export const SectionTitle = ( props: SectionTitleProps) => {
             textDecorationColor="primary"
             textAlign="center"
             color={useColorModeValue('black', 'white')}
-            // textTransform="capitalize"
         >{headingTitle}</Heading>
     )
 }

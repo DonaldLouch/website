@@ -1,6 +1,5 @@
 import { Box, Heading, Stack, Link, Divider } from "@chakra-ui/react";
 
-// import { PortalStats } from '../../components/Cards/PortalStats'
 import { StatsCard } from "../../components/Cards/StatsCard";
 
 import PortalLayout from "../../components/Portal/PortalLayout";
@@ -109,7 +108,6 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      // postViews: JSON.parse(JSON.stringify(postViews)),
       numberOfPosts,
       numberOfPages,
       postViews: postViews._sum.views,

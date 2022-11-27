@@ -1,50 +1,22 @@
-// import React, { ReactNode } from 'react'
-
 import {
   Box,
   Stack,
-  // HStack,
-  // ButtonGroup,
   Image,
   Link,
   useColorModeValue,
-  // FlexProps,
   useDisclosure,
   Drawer,
   DrawerContent,
   IconButton,
-  // Avatar,
-  // Tooltip,
-  // HStack,
-  // Flex,
-  // Menu,
-  // MenuButton,
-  // MenuDivider,
-  // MenuItem,
-  // MenuList
 } from "@chakra-ui/react";
 
 import { HeaderNavigation } from "./Header/HeaderNavigation";
-
-// import { HeaderNavigation } from './HeaderLink/HeaderNavigation';
-// import { HeaderIcon } from './HeaderLink/HeaderIcon';
-
-// import { useSession } from 'next-auth/react'
-// import { useState, useEffect } from 'react'
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import "../config/fontAwesome";
-
-// import { signOut } from 'next-auth/react'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../lib/fontAwesome";
 
 export default function Header() {
-  // const { isOpen, onOpen, onClose } = useDisclosure()
-  // { children } : { children: ReactNode }
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const blackWhite = useColorModeValue('black', 'white')
 
   return (
     <Box
@@ -72,7 +44,6 @@ export default function Header() {
             <Image
               src="/titleLogoChristmas.svg"
               alt="Donald Louch"
-              // w="12vw"
               width={{ base: "30vw", lg: "12vw" }}
             />
           </Link>
@@ -94,8 +65,6 @@ export default function Header() {
             </DrawerContent>
           </Drawer>
 
-          {/* <PortalHeader onOpen={onOpen} pageTitle={pageTitle} /> */}
-
           <IconButton
             display={{ base: "flex", lg: "none" }}
             onClick={onOpen}
@@ -116,20 +85,10 @@ export default function Header() {
               <FontAwesomeIcon
                 icon={"grip"}
                 height="100%"
-                // color={blackWhite}
                 width="100%"
               />
             }
           />
-          {/* <Stack as="nav" display="flex" direction="row">
-                        <HeaderNavigation
-                            onClose={() => onClose}
-                            // display="flex"
-                            // direction="row"
-                            // align="center"
-                            // justify="center"
-                        />
-                    </Stack> */}
         </Stack>
       </Stack>
     </Box>

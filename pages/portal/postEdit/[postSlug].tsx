@@ -5,8 +5,7 @@ import {
     Link, 
     Code,
     useToast,
-    Box, 
-    // Radio,
+    Box,
     Heading,
     useColorModeValue
 } from '@chakra-ui/react'
@@ -22,7 +21,6 @@ import {Metadata} from "../../../components/Metadata"
 
 
 import PortalLayout from '../../../components/Portal/PortalLayout'
-// import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from 'react'
 import * as Yup from 'yup'
@@ -37,7 +35,6 @@ import { FormCheckGroup } from '../../../components/Form/FormCheckGroup'
 
 export default function Post({ postData }:any) {
     const post = postData
-    // console.log(post.body)
 
     const toast = useToast()
 
@@ -98,11 +95,8 @@ export default function Post({ postData }:any) {
     let updatePostedOn = post.postedOn
     if (values.postedOn) {updatePostedOn = new Date(values.postedOn)}
 
-    // console.log(values.category)
-
     const categoryValue = values.category.toString()
 
-    // console.log(categoryValue)
     const updateBlogPostData = {
         id: values.id,
         title: values.title,
@@ -119,7 +113,6 @@ export default function Post({ postData }:any) {
         sidebar: sidebar,
         pinned: pinned,
         sections: values.sections,
-        // author: "Donald Louch",
         postedOn: updatePostedOn,
         postStatus: values.postStatus,
         lastUpdatedOn: new Date()
@@ -273,7 +266,6 @@ export default function Post({ postData }:any) {
                             )}
 
                             <FormInput inputID="headingText" inputLabel="Heading Text" inputType="text" />
-                            {/* <FormTextArea inputID="tagLine" inputLabel="Tag Line" textRows={3} /> */}
 
                             <FormTextArea inputID="body" inputLabel="Body" textRows={10} />
                             
@@ -293,14 +285,6 @@ export default function Post({ postData }:any) {
                                 {'checkValue':'Education', 'checkLabel':'Education'},
                               ]}
                             />
-                                {/* <FormSelect selectLabel="Category" selectID="category" selectPlaceholder="Select A Category">
-                                <option value="Photography">Photography</option>
-                                <option value="Videography">Videography</option>
-                                <option value="Audio">Audio</option>
-                                <option value="Graphic Design">Graphic Design</option>
-                                <option value="General">General</option>
-                                <option value="Education">Education</option>
-                                </FormSelect> */}
                             </VStack>
                             <FormTextArea inputID="tags" inputLabel="Tags" textRows={3} />
                             </HStack>
@@ -325,7 +309,6 @@ export default function Post({ postData }:any) {
                             <Code p={3} colorScheme='yellow'>Title#ID, Separate with comma</Code>
                             <FormInput inputID="postedOn" inputLabel={`Update Posted On: ${postedOnString}`} inputType="datetime-local" />
                             <FormSelect selectLabel="Post Status" selectID="postStatus" selectPlaceholder={post.postStatus}>
-                                {/* <option value={post.postStatus} selected>{post.postStatus}</option> */}
                                 <option>---</option>
                                 <option value="Draft">Draft</option>
                                 <option value="Public">Public</option>

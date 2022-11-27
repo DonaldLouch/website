@@ -1,4 +1,4 @@
-import React, { ReactText } from "react";
+import React, { ReactNode } from "react";
 import {
   Box,
   Flex,
@@ -9,7 +9,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  //   MenuDivider
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +23,7 @@ interface PortalNavigationItemProps extends FlexProps {
   isParent: boolean;
   parentID: number | null;
   levelOfAccess: string;
-  children: ReactText;
+  children: ReactNode
 }
 
 export const PortalNavigationItem = ({
@@ -70,10 +69,6 @@ export const PortalNavigationItem = ({
               >
                 <FontAwesomeIcon
                   icon={[iconPre, iconName]}
-                  // color="black"
-                  // {
-                  //     useColorModeValue('black', 'white')
-                  // }
                   width="100%"
                 />
               </Box>
@@ -109,10 +104,6 @@ export const PortalNavigationItem = ({
                 >
                   <FontAwesomeIcon
                     icon={[iconPre, iconName]}
-                    // color="black"
-                    // {
-                    //     useColorModeValue('black', 'white')
-                    // }
                     width="100%"
                   />
                 </Box>
@@ -122,9 +113,7 @@ export const PortalNavigationItem = ({
           </MenuButton>
           <MenuList
             bg={useColorModeValue('white', 'black')}
-            //{useColorModeValue('white', 'black')}
             boxShadow="bsBlue"
-            //{useColorModeValue('bsBlue', 'bsBoldBlue')}
             m="-0.5rem"
           >
             {PortalSubNavigationItems.map((subLink: any) => (
@@ -141,22 +130,6 @@ export const PortalNavigationItem = ({
                )}
                </Box>
             ))}
-            {/* {PortalSubNavigationItems.map((subLink: any) => (
-              <Box key={`portSub_${parentID}${subLink.slug}`}>
-              subLink?.parentMenu == parentID ? (
-                <Link
-                  key={`portSub_${parentID}${subLink.slug}`}
-                  href={`../../../${subLink.slug}`}
-                  variant="unstyled"
-                  textDecoration="none"
-                >
-                  <MenuItem textDecoration="none">{subLink.name}</MenuItem>
-                </Link>
-              ) : (
-                <></>
-              )
-              </Box>
-            ))} */}
           </MenuList>
         </Menu>
       )}

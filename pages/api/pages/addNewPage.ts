@@ -6,9 +6,6 @@ export default async function assetHandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // if (req.method === 'POST') {
-  //     return res.status(405).json({ message: 'Method Not Allowed' })
-  // }
 
   try {
     const postData = JSON.parse(req.body) as unknown | any | null;
@@ -25,13 +22,11 @@ export default async function assetHandler(
 
     res.status(200).json(post);
   } catch (error: any) {
-    // console.log(error.code)
     if (error.code === "P2002") {
       res
         .status(400)
         .json({ message: "Slug is already used. Try another slug." });
     } else {
-      // console.log(error)
       res.status(500).json({ error });
     }
   }

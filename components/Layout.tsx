@@ -3,7 +3,6 @@ import { Box, useColorModeValue } from '@chakra-ui/react'
 
 import Header from "./Header";
 import Footer from "./Footer";
-//import { LayoutProps } from "framer-motion";
 import { Metadata } from "./Metadata";
 
 interface LayoutProps {

@@ -1,10 +1,8 @@
 import {
   Stack,
   HStack,
-  // Link,
   useToast,
   Box,
-  // Radio
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -20,7 +18,6 @@ import { FormInput } from "../../components/Form/FormInput";
 import { FormTextArea } from "../../components/Form/FormTextArea";
 
 export default function NewPage() {
-  // const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
   const toast = useToast();
 
   const onSubmit = async (values: any, actions: any) => {
@@ -43,15 +40,9 @@ export default function NewPage() {
       postedOn: updatePostedOn,
     };
 
-    // if (submitBlogPostData) {
     await addPost(submitBlogPostData);
 
     actions.setSubmitting(false);
-    // }
-
-    // sleep(5000).then(() => {
-    // actions.setSubmitting(false)
-    // })
   };
 
   async function addPost(submitBlogPostData: any) {
@@ -60,9 +51,6 @@ export default function NewPage() {
       body: JSON.stringify(submitBlogPostData),
     });
 
-    // if (!response.ok) {
-    //   throw new Error(response.statusText);
-    // }
     if (response.ok) {
       toast({
         title: "Page Created 🎉",
@@ -82,8 +70,6 @@ export default function NewPage() {
         isClosable: true,
       });
     }
-    // console.log(response)
-    // return await response.json()
   }
 
   const initialValues = {

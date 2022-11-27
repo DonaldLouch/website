@@ -2,7 +2,6 @@ import {
     Box,
     Text,
     Link,
-    // useColorModeValue
   } from '@chakra-ui/react'
   
 

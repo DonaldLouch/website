@@ -1,15 +1,9 @@
 import * as React from "react";
 import type { AppProps } from "next/app";
 
-// import splitbee from '@splitbee/web'
-// import { useEffect } from 'react'
-
-// import { AuthProvider } from '../config/Firebase/FirebaseAuth'
-
 import {
   ChakraProvider,
   ColorModeProvider,
-  // CSSReset,
 } from "@chakra-ui/react";
 
 import { theme } from "../theme/index";
@@ -17,8 +11,6 @@ import { theme } from "../theme/index";
 import { SessionProvider } from "next-auth/react";
 
 import { Analytics } from '@vercel/analytics/react';
-
-// import { Analytics } from "@vercel/analytics/react";
 
 import "@fontsource/lato/100.css";
 import "@fontsource/lato/300.css";
@@ -46,15 +38,7 @@ import "@fontsource/playfair-display/900-italic.css";
 
 import { Layout } from "../components/Layout";
 
-// import { Playfair_Display, Lato } from "@next/font/google"
-// const playfairDisplay = Playfair_Display();
-// const lato = Lato({weight: ["100", "300", "400", "700", "900"]});
-
 export default function MyApp({ Component, pageProps }: AppProps): any {
-  // useEffect((): void => { splitbee.init({
-  //   token: process.env.SPLITBEE_TOKEN,
-  // }); }, []);
-
   return (
     <ChakraProvider theme={theme} resetCSS={true}>
       <ColorModeProvider
@@ -63,12 +47,9 @@ export default function MyApp({ Component, pageProps }: AppProps): any {
           useSystemColorMode: true,
         }}
       >
-        {/* <CSSReset /> */}
         <SessionProvider session={pageProps.session}>
           <Layout>
-            {/* <AuthProvider> */}
             <Component {...pageProps} />
-            {/* </AuthProvider> */}
             <Analytics />
           </Layout>
         </SessionProvider>
@@ -76,5 +57,3 @@ export default function MyApp({ Component, pageProps }: AppProps): any {
     </ChakraProvider>
   );
 }
-
-//export default MyApp

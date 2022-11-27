@@ -18,7 +18,6 @@ import {Metadata} from "../../components/Metadata"
 
 
 import PortalLayout from '../../components/Portal/PortalLayout'
-// import { SectionTitle } from "../../../components/SectionTitle"
 
 import * as React from 'react'
 import * as Yup from 'yup'
@@ -29,7 +28,6 @@ import { FormInputReadOnly } from '../../components/Form/FormInputReadOnly'
 
 export default function TermsOfServicePortal({ aboutData }:any) {
     const about = aboutData?.[0]
-    // console.log(post.body)
 
     const toast = useToast()
 
@@ -163,11 +161,6 @@ export default function TermsOfServicePortal({ aboutData }:any) {
         bioExcerpt: Yup.string().max(300, 'Bio Excerpt cannot exceed 300 characters.').required('Bio Excerpt is required'),
         email: Yup.string().email().required('Email is required'),
       })
-      // const postedData = new Date(post.postedOn)
-      // const postedDay = postedData.toLocaleDateString()
-      // const postedTime = postedData.toLocaleTimeString()
-
-      // const postedOnString = postedDay +" at " + postedTime
     
 
     return (

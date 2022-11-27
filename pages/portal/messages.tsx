@@ -18,7 +18,6 @@ import { SectionTitle } from "../../components/SectionTitle";
 import prisma from "../../lib/prisma";
 
 export default function Messages({ contactData, jobData }: any) {
-  // console.log(contactData, jobData);
 
   return (
     <>
@@ -34,7 +33,6 @@ export default function Messages({ contactData, jobData }: any) {
             variant="soft-rounded"
             colorScheme="purple"
             my="1rem"
-            // boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
             p="2rem 0"
             borderRadius="0 2rem"
           >

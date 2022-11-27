@@ -1,8 +1,6 @@
 export const ButtonStyles = {
   variants: {
       heroButton: {
-        //   bg: "blurredBackground",
-        //   backdropFill: "blur(3rem)",
           color: "black",
           m: "0.5rem 0",
           p: { base: "1rem", md: "2rem"} ,
@@ -20,8 +18,6 @@ export const ButtonStyles = {
       },
 
       portalButton: {
-        //   bg: "blurredBackground",
-        //   backdropFill: "blur(3rem)",
           color: "black",
           px: { base: 2, md: 5 },
           py: "2.5rem",
@@ -38,8 +34,6 @@ export const ButtonStyles = {
       },
       
       portalButtonRed: {
-        //   bg: "blurredBackground",
-        //   backdropFill: "blur(3rem)",
           color: "red",
           px: { base: 2, md: 5 },
           py: "2.5rem",
@@ -57,7 +51,6 @@ export const ButtonStyles = {
 
       formButton: {
           bg: "mainGradient",
-          //backdropFill: "blur(3rem)",
           color: "white",
           m: "2rem",
           p: "2rem",
@@ -90,7 +83,6 @@ export const ButtonStyles = {
 
       blackFormButton: {
           bg: "black",
-          //backdropFill: "blur(3rem)",
           color: "white",
           m: "1.5rem 1rem 0 !important",
           p: "2rem",

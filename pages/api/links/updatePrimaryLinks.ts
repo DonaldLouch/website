@@ -6,7 +6,6 @@ import prisma from '../../../lib/prisma'
 export default async function assetHandler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const linkData = JSON.parse(req.body) as unknown|any|null
-        // console.log(postData)
 
         await prisma.primaryLinks.updateMany({
             where: { title: "Facebook" },

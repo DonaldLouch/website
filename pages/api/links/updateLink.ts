@@ -8,7 +8,6 @@ export default async function assetHandler(
 ) {
   try {
     const linkData = JSON.parse(req.body) as unknown | any | null;
-    // console.log(linkData)
     const link = await prisma.links.update({
       where: {
         id: linkData.id,

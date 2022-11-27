@@ -1,12 +1,10 @@
 // import Image from "next/image";
 
 import {
-  // Button,
   Box,
   Stack,
   Text,
   Image,
-  //IconButton,
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -41,7 +39,6 @@ export default function Footer() {
                 alt="Donald Louch"
                 width={{base: "100%", lg: "20vw !important"}}
                 height="auto"
-                // height="50%"
               />
             </Link>
             <Stack
@@ -52,7 +49,6 @@ export default function Footer() {
               pb={{ base: "1rem", lg: "0" }}
               mx={{ base: "4rem", lg: "0" }}
             >
-              {/* <Button as="a" href="#" aria-label="TOS" variant="outline" colorScheme="white" size="md" _hover={{ bg: "white", color: "tertiary", border: "none" }}>Terms of Services</Button> */}
               <iframe
                 src="https://github.com/sponsors/DonaldLouch/button"
                 title="Sponsor DonaldLouch"

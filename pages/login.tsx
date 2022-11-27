@@ -12,30 +12,16 @@ import { BuiltInProviderType } from "next-auth/providers";
 
 import {
   Box,
-  // Text,
   Heading,
-  // Link,
-  // Tabs,
-  // TabList,
-  // TabPanels,
-  // Tab,
-  // TabPanel,
   Image,
-  // Input,
-  // FormControl,
-  // FormLabel,
   Button,
-  // Divider,
   Stack,
   useToast,
-  // useColorModeValue
 } from "@chakra-ui/react";
 
 import { Metadata } from "../components/Metadata";
-// import { parseCookies, destroyCookie } from 'nookies'
 
 import { SectionCard } from "../components/Cards/SectionCard";
-// import { DividerText } from "../components/DividerText"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../lib/fontAwesome";
@@ -43,8 +29,6 @@ import { CtxOrReq } from "next-auth/client/_utils";
 
 import { useRouter } from "next/router";
 import useSWR from "swr";
-
-// { csrfToken }: any
 
 export default function Login() {
   const [providers, setProviders] = useState<Record<
@@ -114,19 +98,6 @@ export default function Login() {
   const pageID = "pageL4UBJJZ0k7k" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
-  // const pageID = "pageL4UBJJZ0k7k" as string;
-  // updatePostView(pageID);
-  // async function updatePostView(pageID: string) {
-  //   await fetch("/api/pages/updateView", {
-  //     method: "POST",
-  //     body: JSON.stringify(pageID),
-  //   });
-  // }
-
-  // const labelColour = useColorModeValue('primary', 'white')
-  // const formColour = useColorModeValue('black', 'white')
-  // const boxShadowColour = useColorModeValue('bsBoldBlue', 'bsBoldWhite')
-
   return (
     <>
       <Metadata
@@ -142,7 +113,6 @@ export default function Login() {
             width="20vw"
             m="0.5rem auto"
           />
-          {/* <Text textAlign="center" fontSize="xl">Please note that I have disabled the login function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text> */}
           {status === "loading" ? (
             <Heading as="h2" variant="sectionTitle" size="3xl" m="1rem 0">
               Loading ...
@@ -180,40 +150,11 @@ export default function Login() {
             </>
           ) : providers ? (
             <>
-              {/* <Heading as="h2" variant="sectionTitle" size="3xl">Login to DevLexicon</Heading> */}
-              {/* {providers?.email && (
-                                    <>
-                                        <form method="post" action="/api/auth/signin/email">
-                                            <Input 
-                                                variant="unstyled" boxShadow="bsBoldBlue" p="1.5rem 2rem" color="primary" borderRadius="0 2rem 0 2rem" my="1rem"
-                                                name="csrfToken"
-                                                defaultValue={csrfToken}
-                                                hidden
-                                            /> 
-                                            <FormControl>
-                                                <FormLabel 
-                                                  htmlFor="email" 
-                                                  color={labelColour}
-                                                >Email</FormLabel>
-                                                <Input variant="unstyled" id="email" name="email" boxShadow={boxShadowColour} _focus={{boxShadow: "bsBoldOrange",}} p="1.5rem 2rem" color={formColour} borderRadius="0 2rem 0 2rem" />
-                                            </FormControl>
-                                            <Button leftIcon={<FontAwesomeIcon icon={['fas', 'magic']} color="white" />} type="submit" variant="blackFormButton" w="99%" m="1rem" >Login with Email</Button>
-                                        </form>
-                                    </>
-                                )} */}
-              {/* <DividerText>Or Login With</DividerText> */}
               <Stack
                 direction={{ base: "column", md: "row" }}
                 spacing={4}
                 justify="center"
               >
-                {/* {providers?.github && (
-                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'github']} color="white" />} type="button" onClick={() => signIn(providers?.github.id)} variant="blackFormButton" w={{ base: '100%', md: '100%' }}>Login with Github</Button>
-                                    )} */}
-
-                {/* {providers?.google && (
-                                        <Button leftIcon={<FontAwesomeIcon icon={['fab', 'google']} color="white" />} type="button" onClick={() => signIn(providers?.google.id)} variant="blackFormButton" w="80%">Login with Google</Button>
-                                    )} */}
                 {providers?.zoho && (
                   <Button
                     leftIcon={
@@ -250,5 +191,3 @@ export async function getServerSideProps(context: CtxOrReq | undefined) {
     props: { csrfToken },
   };
 }
-
-// export default Login;

@@ -1,15 +1,9 @@
 import {
   Box,
-  // AspectRatio,
-  // Stack,
   Link,
   Image,
-  // useColorModeValue
 } from "@chakra-ui/react";
 import useSWR from "swr";
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import '../../config/fontAwesome'
 
 import { Metadata } from "../../components/Metadata";
 
@@ -19,14 +13,6 @@ export default function PortfolioVideography() {
   const pageID = "pageL4UBHBV1wlb" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
-  //   const pageID = "pageL4UBHBV1wlb" as string
-  //   updatePostView(pageID)
-  //   async function updatePostView(pageID: string) {
-  //       await fetch('/api/pages/updateView', {
-  //           method: 'POST',
-  //           body: JSON.stringify(pageID)
-  //       })
-  //   }
   const media = [
     "https://res.cloudinary.com/donaldlouch/image/upload/v1645167775/portfolio/cej5cop0qzrxcf2ujaxa.jpg",
     "https://res.cloudinary.com/donaldlouch/image/upload/v1645167777/portfolio/kq8yotmxl5xm3ib309qm.jpg",
@@ -115,13 +101,12 @@ export default function PortfolioVideography() {
         bg="mainGradient"
       >
         {media?.map((image: any) => (
-          <Link key={image.index} href={image}>
+          <Link key={image.index} href={image} isExternal>
             <Image
               src={image}
               alt="portfolio image"
               _hover={{ background: "backgroundGradient", opacity: "0.6" }}
               display="inherit"
-              // mb="0.2rem"
             ></Image>
           </Link>
         ))}

@@ -8,8 +8,6 @@ export default async function assetHandler(
 ) {
   try {
     const pageID = req.query.pageID?.toString() as string;
-    // const postData = JSON.parse(req.body) as unknown | any | null;
-    // console.log(postData);
     const post = await prisma.page.update({
       where: {
         id: pageID,

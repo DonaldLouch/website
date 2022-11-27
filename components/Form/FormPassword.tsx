@@ -1,16 +1,8 @@
 import {
-  //Box,
-  //Flex,
   FormControl,
-  //FormLabel,
   IconButton,
-  //Input,
-  //InputGroup,
-  //InputProps,
   InputRightElement,
   useDisclosure,
-  //useMergeRefs,
-  //useColorModeValue as mode,
 } from '@chakra-ui/react'
 import * as React from 'react'
 
@@ -24,17 +16,10 @@ interface FormProps {
   inputLabel: string
 }
 
-//import { HiEye, HiEyeOff } from 'react-icons/hi'
-
-// eslint-disable-next-line react/display-name
-//export const FormPassword = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-
 export const FormPassword = ( props: FormProps) => {
   const { inputID, inputLabel } = props
   const { isOpen, onToggle } = useDisclosure()
   const inputRef = React.useRef<HTMLInputElement>(null)
-
-  //const mergeRef = useMergeRefs(inputRef, ref)
 
   const onClickReveal = () => {
     onToggle()
@@ -49,7 +34,6 @@ export const FormPassword = ( props: FormProps) => {
   }
 
   return (
-    // <FormControl id="password">
     <>
 <FormControl my="2rem">
   <InputRightElement>
@@ -82,8 +66,5 @@ export const FormPassword = ( props: FormProps) => {
   />
 </FormControl>
     </>
-    // </FormControl>
   )
 }
-
-//displayName = 'PasswordField'

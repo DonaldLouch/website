@@ -8,15 +8,6 @@ export default function Portfolio() {
   const pageID = "pageL4UBG4TUp4n" as string;
   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
-  //   const pageID = "pageL4UBG4TUp4n" as string;
-  //   updatePostView(pageID);
-  //   async function updatePostView(pageID: string) {
-  //     await fetch("/api/pages/updateView", {
-  //       method: "POST",
-  //       body: JSON.stringify(pageID),
-  //     });
-  //   }
-
   const pageLinks = [
     {
       linkTitle: "Websites",
