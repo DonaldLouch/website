@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Script from "next/script";
 
+import { useColorModeValue } from "@chakra-ui/react"
+
 // import { Playfair_Display, Lato } from "@next/font/google"
 // const playfairDisplay = Playfair_Display();
 // const lato = Lato({weight: ["100", "300", "400", "700", "900"]});
@@ -14,6 +16,8 @@ interface MetaProps {
 export const Metadata = (props: MetaProps) => {
   //const Meta = ({ title, keywords, description }) => {
   const { title, keywords, description } = props;
+
+  const colour = useColorModeValue("#EDEDED", "#0F111B")
 
   return (
     <Head>
@@ -29,8 +33,8 @@ export const Metadata = (props: MetaProps) => {
       <link rel="mask-icon" href="/faviconChristmas/safari-pinned-tab.svg" color="#764688" />
       <meta name="apple-mobile-web-app-title" content={process.env.WEBSITE_NAME} />
       <meta name="application-name" content={process.env.WEBSITE_NAME} />
-      <meta name="theme-color" content="#ededed" />
-      <meta name="msapplication-TileColor" content="#ededed" />
+      <meta name="theme-color" content={colour} />
+      <meta name="msapplication-TileColor" content={colour} />
       <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
       {/* <script data-token={process.env.SPLITBEE_TOKEN} async src="https://cdn.splitbee.io/sb.js"></script> */}
       <Script
