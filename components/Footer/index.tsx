@@ -39,8 +39,9 @@ export default function Footer() {
               <Image
                 src="/titleLogoChristmas.svg"
                 alt="Donald Louch"
-                width="200%"
-                height="50%"
+                width={{base: "100%", lg: "20vw !important"}}
+                height="auto"
+                // height="50%"
               />
             </Link>
             <Stack

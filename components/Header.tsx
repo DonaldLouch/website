@@ -102,8 +102,8 @@ export default function Header() {
             variant="unstyled"
             boxShadow={useColorModeValue("bsBoldBlue", "bsBoldWhite")}
             aria-label="open menu"
-            // w="5%"
-            h="auto"
+            w="5%"
+            // h="auto"
             padding="0.5rem"
             borderRadius="0 1em"
             fontSize="inherit"
@@ -115,8 +115,9 @@ export default function Header() {
             icon={
               <FontAwesomeIcon
                 icon={"grip"}
+                height="100%"
                 // color={blackWhite}
-                //width="50%"
+                width="100%"
               />
             }
           />

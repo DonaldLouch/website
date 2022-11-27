@@ -66,7 +66,7 @@ interface HeaderNavigationProps extends BoxProps {
               </HeaderNavigationItem>
             ))}
           </Box>
-          <Box display={{ base: 'initial', lg: 'none' }}>
+          <Box display={{ base: 'initial', lg: 'none' }} w="100%">
             {HeaderNavigationItems.map((link) => (
               <MobileHeaderNavigationItem key={`mobile_${link.name}`} slug={link.slug} iconPre={link.iconPre} iconName={link.iconName} isParent={link.isParent} parentID={link.parentID}>
                 {link.name}

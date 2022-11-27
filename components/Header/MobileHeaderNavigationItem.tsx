@@ -176,9 +176,32 @@ export const MobileHeaderNavigationItem = ({
               //{useColorModeValue('bsBlue', 'bsBoldBlue')}
               m="-0.5rem 1.9rem"
             >
-              {HeaderSubNavigationItems.map((subLink: any) =>
-                <Box key={`mobileSubHead_${parentID}${subLink.slug}`}>
-                subLink?.parentMenu == parentID ? (
+              {HeaderSubNavigationItems.map(
+                  (subLink: any) =>
+                    subLink?.parentMenu == parentID && (
+                      <MenuItem key={`sub_${parentID}${subLink.slug}`} bg={useColorModeValue('white', 'black')}>
+                        {subLink.slug.includes("https://") ? (
+                          <Link
+                            href={subLink.slug}
+                            variant="unstyled"
+                            isExternal
+                          >
+                            {subLink.name}
+                          </Link>
+                        ) : (
+                          <Link
+                            href={`../../${subLink.slug}`}
+                            variant="unstyled"
+                          >
+                            {subLink.name}
+                          </Link>
+                        )}
+                      </MenuItem>
+                    )
+                )}
+              {/* {HeaderSubNavigationItems.map((subLink: any) => */}
+                {/* // <Box key={`mobileSubHead_${parentID}${subLink.slug}`}> */}
+                {/* subLink?.parentMenu == parentID ? (
                   <Link
                     key={`mobileSubHead_${parentID}${subLink.slug}`}
                     href={`../../../${subLink.slug}`}
@@ -189,9 +212,9 @@ export const MobileHeaderNavigationItem = ({
                   </Link>
                 ) : (
                   <></>
-                )
-                </Box>
-              )}
+                ) 
+                 </Box>
+              )} */}
             </MenuList>
           </Menu>
         </Grid>
