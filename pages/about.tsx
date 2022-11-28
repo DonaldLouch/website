@@ -152,7 +152,7 @@ export default function AboutMe({
         <Stack
           id="links"
           direction="row"
-          justify={{ base: "start", md: "center" }}
+          justifyContent={{ base: "flex-start", xl: "center" }}
           m="1.5rem"
           fontSize="2rem"
           color={useColorModeValue("black", "white")}
