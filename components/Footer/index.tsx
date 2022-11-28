@@ -12,6 +12,7 @@ import {
 import { FooterIcon } from "./FooterIcon";
 
 export default function Footer() {
+
   return (
     <Box
       bg="black"

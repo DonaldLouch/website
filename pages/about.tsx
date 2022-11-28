@@ -182,7 +182,7 @@ export default function AboutMe({
             <Tab>All</Tab>
             <Tab>Posts</Tab>
             <Tab>Links</Tab>
-            {/* <Tab>Embed Content</Tab> */}
+            <Tab>Embed Content</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -221,24 +221,22 @@ export default function AboutMe({
                 <LinkCard {...link} />
               ))}
             </TabPanel>
-            {/*<TabPanel>
+            <TabPanel>
               {embeds.map((embed: any) => (
-                <AspectRatio
-                  key={embed.id}
-                  ratio={16 / 9}
-                  // w={{base: "calc(100% - -6rem);", xl: "95%"}}
-                  w="95%"
-                  // m={{ base: "0 -4rem", xl: "0"}}
-                  m="1rem auto"
-                  overflow="hidden"
-                  zIndex="10000"
-                  bg="mainGradient"
-                  borderRadius="0 2rem"
-                >
-                  <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
-                </AspectRatio>
-              ))}
-            </TabPanel> */}
+                  <AspectRatio
+                    key={embed.id}
+                    ratio={16 / 9}
+                    w="95%"
+                    m="1rem auto"
+                    overflow="hidden"
+                    zIndex="10000"
+                    bg="mainGradient"
+                    borderRadius="0 2rem"
+                  >
+                    <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
+                  </AspectRatio>
+                ))}
+            </TabPanel>
           </TabPanels>
         </Tabs>
         <Contact />
