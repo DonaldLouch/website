@@ -103,9 +103,9 @@ const image = (props: any) => (
 
 const songInfo = (props: any) => (
     <>
-    <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center">
-        <Image src={props.artworkSrc} alt={props.artworkTitle} w="100%" />
-        <Stack>
+    <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center" boxShadow="bsBoldBlue" borderRadius="0 2rem">
+        <Image src={props.artworkSrc} alt={props.artworkTitle} w="100%" borderBottomLeftRadius="2rem"/>
+        <Stack mr="2rem">
             {props.children}
         </Stack>
     </Grid>
@@ -153,6 +153,23 @@ const videoFrame = (props: any|boolean) => (
 
 const tabSection = (props: any) => (
     <>
+        <Tabs isFitted>
+            <TabList>
+                {props.tabTitles.map((tab: any) => (
+                    <Tab key={tab}>{tab}</Tab>
+                ))}
+            </TabList>
+            <TabPanels>
+                {props.children.map((tab: any) => (
+                    // console.log(tab)
+                    <TabPanel key={tab}>{tab}</TabPanel>
+                ))}
+            </TabPanels>
+        </Tabs>
+    </>
+)
+
+{/* <>
     <Tabs isFitted>
         <TabList>
             {props.tabTitles.map((tab: any) => (
@@ -161,12 +178,12 @@ const tabSection = (props: any) => (
         </TabList>
         <TabPanels>
             {props.tabPanels.map((tab: any) => (
-                <TabPanel key={tab}>{tab.props.children}</TabPanel>
+                // console.log(tab)
+                <TabPanel key={tab}>{tab}</TabPanel>
             ))}
         </TabPanels>
     </Tabs>
-    </>
-)
+     </> */}
 
 const inlinePhotoGallery = (props: any) => (
     <>
