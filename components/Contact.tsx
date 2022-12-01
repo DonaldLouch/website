@@ -51,15 +51,35 @@ export default function Contact() {
       method: "POST",
       body: JSON.stringify(contactData),
     });
+    // console.log(response);
 
     if (response.ok) {
-      toast({
-        title: "Submitted 🎉",
-        description: `You've successfully submitted a contact form to Donald Louch!`,
-        status: "success",
-        duration: 9000,
-        isClosable: true,
+      const sendMail = await fetch("/api/mail/sendContact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
       });
+      if (sendMail.ok) {
+        toast({
+          title: "Submitted 🎉",
+          description: `You've successfully submitted a contact form to Donald Louch!`,
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "An Error Occurred",
+          description:
+            "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
     }
 
     if (response.status === 500) {

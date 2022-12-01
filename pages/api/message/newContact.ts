@@ -19,7 +19,8 @@ export default async function assetHandler(
       },
     });
 
-    res.status(200).json(contact);
+    res.status(200).json(contact.id);
+    // res.writeHead(200, contact?.id);
   } catch (error: any) {
     if (error.code === "P2002") {
       res.status(400).json({ message: "Error sending contact form." });
