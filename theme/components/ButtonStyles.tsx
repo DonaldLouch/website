@@ -28,7 +28,7 @@ export const ButtonStyles = {
           _hover: { 
               bg: "none",
               boxShadow: "bsBigBoldOrange",
-              fontWeight: "100",
+              fontWeight: "600",
               color: "primary"
           },
       },
