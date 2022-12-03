@@ -13,7 +13,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  AspectRatio,
+  // AspectRatio,
   Tooltip,
   IconButton,
 } from "@chakra-ui/react";
@@ -48,14 +48,14 @@ export default function AboutMe({
   aboutData,
   linkData,
   primaryLinkData,
-  embedData,
+  // embedData,
   postData
 }: any) {
   const about = aboutData?.[0];
 
   const links = linkData;
   const primaryLinks = primaryLinkData;
-  const embeds = embedData;
+  // const embeds = embedData;
   const posts = postData;
 
   const components = {
@@ -182,7 +182,7 @@ export default function AboutMe({
             <Tab>All</Tab>
             <Tab>Posts</Tab>
             <Tab>Links</Tab>
-            <Tab>Embed Content</Tab>
+            {/* <Tab>Embed Content</Tab> */}
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -191,7 +191,7 @@ export default function AboutMe({
                   <PinnedPostsCard {...post} />
                 ))}
               </Box>
-              {embeds.map((embed: any) => (
+              {/* {embeds.map((embed: any) => (
                 <AspectRatio
                   key={embed.id}
                   ratio={16 / 9}
@@ -204,7 +204,7 @@ export default function AboutMe({
                 >
                   <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                 </AspectRatio>
-              ))}
+              ))} */}
               {links.map((link: any) => (
                 <LinkCard {...link} />
               ))}
@@ -221,7 +221,7 @@ export default function AboutMe({
                 <LinkCard {...link} />
               ))}
             </TabPanel>
-            <TabPanel>
+            {/* <TabPanel>
               {embeds.map((embed: any) => (
                   <AspectRatio
                     key={embed.id}
@@ -236,7 +236,7 @@ export default function AboutMe({
                     <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                   </AspectRatio>
                 ))}
-            </TabPanel>
+            </TabPanel> */}
           </TabPanels>
         </Tabs>
         <Contact />
@@ -256,9 +256,9 @@ export async function getServerSideProps() {
     orderBy: { orderNumber: "asc" },
   });
 
-  const embedData = await prisma.embed.findMany({
-    orderBy: { orderNumber: "asc" },
-  });
+  // const embedData = await prisma.embed.findMany({
+  //   orderBy: { orderNumber: "asc" },
+  // });
 
   const postData = await prisma.blogPost.findMany({
     where: { pinned: true },
@@ -281,7 +281,7 @@ export async function getServerSideProps() {
       aboutData: JSON.parse(JSON.stringify(aboutData)),
       linkData: JSON.parse(JSON.stringify(linkData)),
       primaryLinkData: JSON.parse(JSON.stringify(primaryLinkData)),
-      embedData: JSON.parse(JSON.stringify(embedData)),
+      // embedData: JSON.parse(JSON.stringify(embedData)),
       postData: JSON.parse(JSON.stringify(postData)),
       source: mdxSource,
     },
