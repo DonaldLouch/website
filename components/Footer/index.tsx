@@ -36,7 +36,7 @@ export default function Footer() {
           >
             <Link href="#">
               <Image
-                src="/titleLogoChristmas.svg"
+                src="/titleLogo.svg"
                 alt="Donald Louch"
                 width={{base: "100%", lg: "20vw !important"}}
                 height="auto"
@@ -93,13 +93,12 @@ export default function Footer() {
             <Text fontSize="sm" fontWeight="medium" m="0">
               &copy; 1994 - {new Date().getFullYear()} Donald Louch.
             </Text>
-            <iframe
-              src="https://donaldlouch.instatus.com/embed-status/dark-md"
-              width="250"
-              height="50"
-              frameBorder="0"
-              scrolling="no"
-            ></iframe>
+            <iframe 
+              src="https://donaldlouch.instatus.com/embed-status/6390a14d/dark-sm" 
+              width="230" 
+              height="61" 
+            >
+            </iframe>
           </Stack>
         </Stack>
       </Box>

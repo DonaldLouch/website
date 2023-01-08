@@ -108,7 +108,7 @@ export default function Login() {
       <Box as="main" color="white">
         <SectionCard id="signup" styleType="primaryCard">
           <Image
-            src="/titleLogoChristmas.svg"
+            src="/titleLogo.svg"
             alt="Donald Louch"
             width="20vw"
             m="0.5rem auto"

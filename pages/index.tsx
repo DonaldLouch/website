@@ -53,7 +53,7 @@ export default function Home() {
         tagLine="and, I'm a Web Developer and Digital Content Creator"
         links={pageLinks}
         cta={["About Me", "about"]}
-        imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1645167967/portfolio/hpqfin6z4olakfiso0pv.jpg"
+        imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg"
       />
     </>
   );

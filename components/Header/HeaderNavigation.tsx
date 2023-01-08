@@ -6,7 +6,8 @@ import {
     Flex, 
     Image, 
     Stack,
-    BoxProps
+    BoxProps,
+    useColorModeValue
   } from '@chakra-ui/react'
 
 import { HeaderNavigationItems } from '../../lib/HeaderNavigationItems'
@@ -22,7 +23,7 @@ interface HeaderNavigationProps extends BoxProps {
     return (
         <Stack transition="3s ease" direction={{base:"column", lg:"row"}} borderRadius="0 0 0 2rem" pos={{base: "fixed", lg:"initial"}} h={{ base:"auto", lg:"initial"}} bg={{base: "blurredBackground", lg:"none"}} backdropFilter={{base: "blur(20px)", lg:"none"}} pb={{base: "6", lg:"initial"}} w={{ base: "100%", lg:"initial"}} {...rest}>
           <Flex h="20" alignItems="center" mx="8" justifyContent="space-between" display={{ base: 'flex', lg: 'none' }}>
-            <Image src="/titleLogoChristmas.svg" alt="Donald Louch" width="25vw" m="0.5rem auto" />
+            <Image src={useColorModeValue("/titleLogo.svg", "/titleLogoWhite.svg")} alt="Donald Louch" width="25vw" m="0.5rem auto" />
             <CloseButton onClick={onClose} />
           </Flex>
           <Box display={{ base: 'none', lg: 'flex' }} alignItems="center">
