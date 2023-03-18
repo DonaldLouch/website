@@ -16,7 +16,10 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
                 resumeID: historyData.company,
             },
         })
-
+        await prisma.resume.update({
+          where: { id: "ckzp10ifd01967cvu4kc66p5o" },
+          data: { lastUpdatedOn: new Date() },
+        });
         res.status(200).json(history)
     } catch (error: any) {
         console.log(error)

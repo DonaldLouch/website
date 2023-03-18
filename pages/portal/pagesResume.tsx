@@ -12,8 +12,7 @@ import {
     ModalCloseButton,
     ModalContent,
     ModalFooter,
-    ModalHeader,
-    Link
+    ModalHeader
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -336,8 +335,10 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
                         </Stack>
                         )}
                     </Formik>
-                    <Button onClick={onExperienceOpen}>Add Experience</Button>
-
+                    <Stack my="2rem" direction="row" justifyContent="center" gap="2rem">
+                    <Button onClick={onExperienceOpen} variant="sectionButton">Add Experience</Button>
+                    <Button onClick={onEducationOpen} variant="sectionButton">Add Education</Button>
+                    </Stack>
                     <Modal isOpen={isExperienceOpen} onClose={onExperienceClose} id="addExperience" size="3xl">
                       <ModalContent>
                         <ModalHeader>Add Experience</ModalHeader>
@@ -373,7 +374,7 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
                       </ModalContent>
                     </Modal>
 
-                    <Button onClick={onEducationOpen}>Add Education</Button>
+                    
                     <Modal isOpen={isEducationOpen} onClose={onEducationClose} id="addEduction" size="3xl">
                       <ModalContent>
                         <ModalHeader>Add Education</ModalHeader>
@@ -411,7 +412,7 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
                     <Stack m="2rem">
                       {resumeExperience?.map((experience: any) => (
                         <>
-                          <Link key={experience.id} variant="primary" href={`resumeEdit/${experience.id}`}>{experience.company}</Link>
+                          <Button as="a" key={experience.id} variant="sectionButton" href={`resumeEdit/${experience.id}`} justifyContent="left" pl="3rem" fontSize="1.2rem" fontWeight="500">{experience.company}</Button>
                         </>
                       ))}
                     </Stack>

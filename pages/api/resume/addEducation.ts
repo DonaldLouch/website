@@ -15,7 +15,10 @@ export default async function assetHandler(req: NextApiRequest, res: NextApiResp
                 description: educationData.description,
             },
         })
-
+        await prisma.resume.update({
+            where: { id: "ckzp10ifd01967cvu4kc66p5o" },
+            data: { lastUpdatedOn: new Date() },
+        });
         res.status(200).json(education)
     } catch (error: any) {
             res.status(500).json({ error })

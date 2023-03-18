@@ -11,6 +11,7 @@ import {
     ModalContent,
     ModalFooter,
     ModalHeader,
+    Link,
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -33,16 +34,51 @@ import { FormTextArea } from '../../../components/Form/FormTextArea'
 import { FormInputReadOnly } from '../../../components/Form/FormInputReadOnly'
 
 
-export default function AboutMePortal({ resumeExperienceData }:any) {
+export default function AboutMePortal({ resumeExperienceData, resumeHistoryData }:any) {
   const resumeExperience = resumeExperienceData
+  const resumeExperienceHistory = resumeHistoryData
 
   const { isOpen: isHistoryOpen, onOpen: onHistoryOpen, onClose: onHistoryClose } = useDisclosure()
 
     const toast = useToast()
 
   const onSubmit =  async (values: any, actions: any) => {
-    console.log(values)
+    const updateResumeData = {
+      id: values.id,
+      company: values.company,
+      position: values.position,
+      startDate: values.startDate,
+      endDate: values.endDate,
+      description: values.description
+        // lastUpdatedOn: new Date()
+      }
+      await updateResume(updateResumeData)
       actions.setSubmitting(false)
+  }
+  async function updateResume(updateResumeData: any) {
+    const response = await fetch('/api/resume/updateExperience', {
+      method: 'POST',
+      body: JSON.stringify(updateResumeData)
+    })
+    
+    if (response.ok) {
+        toast({
+          title: "Resume Page Updated 🎉",
+          description: `You've successfully updated the Resume page!`,
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        })
+      }
+      if (response.status === 500) {
+        toast({
+          title: "An Error Occurred",
+          description: "It seems like an error occurred while trying to update the resume page. Please try again.",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        })
+      }
   }
 
   const onSubmitHistory =  async (values: any, actions: any) => {
@@ -86,32 +122,6 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
 
       return await response.json()
   }
-    
-  // async function updateResume(updateResumeData: any) {
-  //   const response = await fetch('/api/resume/updateResume', {
-  //     method: 'POST',
-  //     body: JSON.stringify(updateResumeData)
-  //   })
-    
-  //   if (response.ok) {
-  //       toast({
-  //         title: "Resume Page Updated 🎉",
-  //         description: `You've successfully updated the Resume page!`,
-  //         status: "success",
-  //         duration: 9000,
-  //         isClosable: true,
-  //       })
-  //     }
-  //     if (response.status === 500) {
-  //       toast({
-  //         title: "An Error Occurred",
-  //         description: "It seems like an error occurred while trying to update the resume page. Please try again.",
-  //         status: "error",
-  //         duration: 9000,
-  //         isClosable: true,
-  //       })
-  //     }
-  // }
   
     // const initialValues = {
     //   id: resume.id,
@@ -163,13 +173,16 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
                     description={`Edit the resume work experience page.`}
                     />
                     <Box as="main" id="editAbout" color="black">
+                      <Link variant="primary" href="../pagesResume">
+                        &larr; Go Back To Resume
+                      </Link>
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                         {({ handleSubmit }: any) => (
                         <Stack as="form" onSubmit={handleSubmit as any}>
                             <FormInputReadOnly inputID="id" inputLabel="" inputType="hidden" />
                           
                             <HStack spacing="2rem">
-                                    <FormInput inputID="company" inputLabel="Company" inputType="text" />
+                                    <FormInputReadOnly inputID="company" inputLabel="Company" inputType="text" />
                                     <FormInput inputID="position" inputLabel="Position" inputType="text" />
                                 </HStack>
                                 
@@ -180,13 +193,12 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
                                 
                                 <FormTextArea inputID="description" inputLabel="Description" textRows={4} />
                             
-                            <SubmitButton variant="blackFormButton">Update Resume Page</SubmitButton> 
+                            <SubmitButton variant="blackFormButton">Update Experience</SubmitButton> 
                         </Stack>
                         )}
                     </Formik>
                     
-                    <Button onClick={onHistoryOpen}>Add History</Button>
-
+                    <Button onClick={onHistoryOpen} variant="sectionButton" m="2rem 0 1rem">Add History</Button>
                     <Modal isOpen={isHistoryOpen} onClose={onHistoryClose} id="addExperience" size="3xl">
                       <ModalContent>
                         <ModalHeader>Add History</ModalHeader>
@@ -219,6 +231,14 @@ export default function AboutMePortal({ resumeExperienceData }:any) {
                         </ModalFooter>
                       </ModalContent>
                     </Modal>
+
+                    <Stack m="2rem">
+                      {resumeExperienceHistory?.map((history: any) => (
+                        <>
+                        <Button as="a" key={history.id} variant="sectionButton" href={`../resumeHistoryEdit/${history.id}`} justifyContent="left" pl="3rem" fontSize="1.2rem" fontWeight="500">{history.position} ({new Date(history.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' })})</Button>
+                        </>
+                      ))}
+                    </Stack>
                     </Box>
             </PortalLayout>
         </>
@@ -234,10 +254,17 @@ export async function getServerSideProps(router: any) {
         id: resumeID
       }
     })
+     const resumeHistoryData = await prisma.resumeWorkExperienceHistory.findMany({
+      where: {
+        resumeID: resumeID
+      },
+      orderBy: {startDate: "desc"},
+    })
 
     return { 
         props: { 
-          resumeExperienceData: JSON.parse(JSON.stringify(resumeExperienceData))
+          resumeExperienceData: JSON.parse(JSON.stringify(resumeExperienceData)),
+          resumeHistoryData: JSON.parse(JSON.stringify(resumeHistoryData)),
         } 
     }
 }
