@@ -38,8 +38,8 @@ export const MobileHeaderNavigationItem = ({
   children,
   ...rest
 }: HeaderNavigationItemProps) => {
-  const blackWhiteColour = useColorModeValue("black", "white");
-  const boxShadow = useColorModeValue("bsBoldBlue", "bsBoldWhite");
+  const blackWhiteColour = useColorModeValue("black", "black");
+  const boxShadow = useColorModeValue("bsBoldBlue", "bsBoldBlue");
 
   return (
     <>
@@ -52,20 +52,21 @@ export const MobileHeaderNavigationItem = ({
           <Flex
             align="center"
             fontSize="1.3rem"
-            py={{ base: "8", lg: "0rem" }}
+            py={{ base: "4", lg: "0rem" }}
             px={{ base: "4", lg: "1rem" }}
             mx="3"
-            my="1"
+            my="4"
             borderRadius="0 1.5rem"
             role="group"
             cursor="pointer"
             color={blackWhiteColour}
-            bg="none"
-            _hover={{ bg: "secondary" }}
+            boxShadow={boxShadow}
+            background={"none"}
+            _hover={{ bg: "secondary", boxShadow: "none"  }}
             _focus={{ boxShadow: "none" }}
             transition="all 0.3s"
             {...rest}
-            boxShadow={{ base: "none", lg: "bsBoldBlue" }}
+            // boxShadow={{ base: "none", lg: "bsBoldBlue" }}
             justifyContent={{ base: "initial", lg: "center" }}
           >
             <Box
@@ -76,7 +77,7 @@ export const MobileHeaderNavigationItem = ({
             >
               <FontAwesomeIcon icon={[iconPre, iconName]} width="100%" />
             </Box>
-            <Text fontSize={{ base: "initial", lg: "1rem" }}>{children}</Text>
+            <Text fontSize="1.3rem">{children}</Text>
           </Flex>
         </Link>
       ) : (
@@ -95,17 +96,19 @@ export const MobileHeaderNavigationItem = ({
               py={{ base: "4", lg: "0rem" }}
               px={{ base: "4", lg: "0.5rem" }}
               mx="3"
-              my={{ base: "1", lg: "0" }}
+              my={{ base: "2.5", lg: "0" }}
               borderRadius="0 1.5rem"
               role="group"
               cursor="pointer"
               color={blackWhiteColour}
-              bg="none"
-              _hover={{ bg: "secondary" }}
+              bg={"none"}
+              boxShadow={boxShadow}
+              _hover={{ bg: "secondary", boxShadow: "none" }}
               _focus={{ boxShadow: "none" }}
               transition="all 0.3s"
-              boxShadow={{ base: "none", lg: "bsBoldBlue" }}
+              // boxShadow={{ base: "none", lg: "bsBoldBlue" }}
               justifyContent={{ base: "initial", lg: "center" }}
+              gap="0.8rem"
               {...rest}
             >
               <Box
@@ -119,7 +122,7 @@ export const MobileHeaderNavigationItem = ({
                   width="100%"
                 />
               </Box>
-              <Text fontSize={{ base: "initial", lg: "1rem" }}>{children}</Text>
+              <Text fontSize="1.3rem">{children}</Text>
             </Flex>
           </Link>
           <Menu>

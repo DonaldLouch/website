@@ -21,9 +21,9 @@ interface HeaderNavigationProps extends BoxProps {
 
   export const HeaderNavigation = ({ onClose, ...rest }: HeaderNavigationProps) => {
     return (
-        <Stack transition="3s ease" direction={{base:"column", lg:"row"}} borderRadius="0 0 0 2rem" pos={{base: "fixed", lg:"initial"}} h={{ base:"auto", lg:"initial"}} bg={{base: "blurredBackground", lg:"none"}} backdropFilter={{base: "blur(20px)", lg:"none"}} pb={{base: "6", lg:"initial"}} w={{ base: "100%", lg:"initial"}} {...rest}>
+        <Stack transition="3s ease" direction={{base:"column", lg:"row"}} pos={{base: "fixed", lg:"initial"}} h={{ base:"100vh", lg:"initial"}} bg={{base: "mainGradient", lg:"none"}} backdropFilter={{base: "blur(20px)", lg:"none"}} pb={{base: "6", lg:"initial"}} w={{ base: "100%", lg:"initial"}} {...rest}>
           <Flex h="20" alignItems="center" mx="8" justifyContent="space-between" display={{ base: 'flex', lg: 'none' }}>
-            <Image src={useColorModeValue("/titleLogo.svg", "/titleLogoWhite.svg")} alt="Donald Louch" width="25vw" m="0.5rem auto" />
+            <Image src={useColorModeValue("/titleLogoWhite.svg", "/titleLogoWhite.svg")} alt="Donald Louch" width="25vw" m="0.5rem auto" />
             <CloseButton onClick={onClose} />
           </Flex>
           <Box display={{ base: 'none', lg: 'flex' }} alignItems="center">
@@ -33,13 +33,13 @@ interface HeaderNavigationProps extends BoxProps {
               </HeaderNavigationItem>
             ))}
           </Box>
-          <Box display={{ base: 'initial', lg: 'none' }} w="100%">
+          <Stack display={{ base: 'initial', lg: 'none' }} w="100%" p="1rem">
             {HeaderNavigationItems.map((link) => (
               <MobileHeaderNavigationItem key={`mobile_${link.name}`} slug={link.slug} iconPre={link.iconPre} iconName={link.iconName} isParent={link.isParent} parentID={link.parentID}>
                 {link.name}
               </MobileHeaderNavigationItem>
             ))}
-          </Box>
+          </Stack>
         </Stack>
       )
     }
