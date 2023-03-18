@@ -46,5 +46,6 @@ If you would you would like you may view the [Public Analytics via. SplitBee](ht
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
 ## Change Log
+- [Version 28.03.18: Visual Updates, Sticky Bars, Bug Fixes, Backend Portal Updates, and more](https://github.com/DonaldLouch/website/releases/tag/version280318)
 - [Version 28: Brand and Website Update 12/03/22](https://donaldlouch.ca/post/12-03-22-Changes)
-- Please feel free to read my in-depth change log for the February 22nd, 2022 (022222) change, over on my [Website](https://donaldlouch.ca/post/02-22-22-Changes).
+- Please feel free to read my in-depth change log for the February 22nd, 2022 (022222) changes, over on my [Website](https://donaldlouch.ca/post/02-22-22-Changes).
