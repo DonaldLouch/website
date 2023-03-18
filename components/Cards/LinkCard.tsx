@@ -57,14 +57,14 @@ export const LinkCard = (link: {
         <Stack>
           <Text
             m="0"
-            fontWeight="300"
-            fontSize={{ base: "2rem", xl: "1.8rem" }}
-            lineHeight="0.6"
+            fontWeight={{ base: "300", md: "400" }}
+            fontSize={{ base: "2rem", md: "1.5rem" }}
+            lineHeight="0.9"
           >
             {link.title}
           </Text>
           <Text
-            fontSize="0.8rem"
+            fontSize="1rem"
             fontWeight="300"
             wordBreak="break-word"
             color="grey"

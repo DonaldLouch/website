@@ -36,6 +36,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../lib/fontAwesome";
 import useSWR from "swr";
 import PinnedPostsCard from "../components/Cards/PinnedPostsCard";
+import { LinkedSVGButton } from "../components/LinkedSVGButton";
 
 const paragraph = (props: any) => (
   <Text fontSize="1.1rem" lineHeight="1.4rem">
@@ -156,12 +157,13 @@ export default function AboutMe({
           m="1.5rem"
           fontSize="2rem"
           color={useColorModeValue("black", "white")}
-          gap="2rem"
+          gap={{base: "1.2rem", xl: "2rem"}}
           alignItems="center"
           overflowX="scroll"
           overflowY="hidden"
           whiteSpace="nowrap"
         >
+          <LinkedSVGButton link="/" title="Go Home" icon="home" />
           {primaryLinks.map((buttonLink: any) => (
             <LinkedButton {...buttonLink} />
           ))}
