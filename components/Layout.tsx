@@ -29,7 +29,7 @@ export const Layout = (props: LayoutProps) => {
           description={`${process.env.DESCRIPTION}`}
        />
       <Header />
-      <Box as="main" bg={useColorModeValue('white', 'black')} minH="100vh" pt="4rem" pb="2rem" px={{base: "1rem", lg: 20}} overflowX="hidden">
+      <Box as="main" bg={useColorModeValue('white', 'black')} minH="100vh" pt="4rem" pb="2rem" px={{base: "1rem", lg: 20}} overflowX="clip">
         {children}
       </Box>
       <Footer />
