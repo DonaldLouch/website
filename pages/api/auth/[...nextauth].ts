@@ -3,13 +3,13 @@ import NextAuth from "next-auth"
 import ZohoProvider from 'next-auth/providers/zoho'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { PrismaClient } from "@prisma/client"
+import AppleProvider from "next-auth/providers/apple";
 // import nodemailer from 'nodemailer'
 
 const prisma = new PrismaClient()
 
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
-  
   adapter: PrismaAdapter(prisma),
   providers: [
     // EmailProvider({
@@ -64,10 +64,15 @@ export default NextAuth({
     // }),
     ZohoProvider({
       clientId: process.env.ZOHO_CLIENT_ID,
-      clientSecret: process.env.ZOHO_CLIENT_SECRET
-    })
+      clientSecret: process.env.ZOHO_CLIENT_SECRET,
+    }),
+    AppleProvider({
+      clientId: process.env.APPLE_ID,
+      // @ts-ignore
+      clientSecret: process.env.APPLE_SECRET,
+    }),
   ],
-  
+
   secret: process.env.SECRET,
 
   session: {
@@ -78,18 +83,18 @@ export default NextAuth({
   jwt: {
     secret: process.env.JWT_SIGNING_PUBLIC_KEY,
   },
-  
+
   // https://next-auth.js.org/configuration/pages
   pages: {
-    signIn: '/login',  // Displays signin buttons
-    signOut: '/login', // Displays form with sign out button
+    // signIn: "/login", // Displays signin buttons
+    signOut: "/login", // Displays form with sign out button
     // error: '/error', // Error code passed in query string as ?error=
-    verifyRequest: '/email', // Used for check email page
+    verifyRequest: "/email", // Used for check email page
     // newUser: '/signup' // If set, new users will be directed here on first sign in
   },
 
   // https://next-auth.js.org/configuration/callbacks
-  callbacks: {  
+  callbacks: {
     async session({ session, user }: any) {
       session.user.userLevel = user.userLevel as number;
       // session.user.username = user.username as string;
@@ -111,7 +116,7 @@ export default NextAuth({
   events: {},
 
   debug: true,
-})
+});
 
 // Email HTML body
 // function html({ url, host, email }: Record<'url' | 'host' | 'email', string>) {

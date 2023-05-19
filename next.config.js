@@ -31,6 +31,10 @@ module.exports = {
     domains: ['res.cloudinary.com'],
   },
   env: {
+    APPLE_ID: process.env.APPLE_ID,
+    APPLE_TEAM_ID: process.env.APPLE_TEAM_ID,
+    APPLE_KEY_ID: process.env.APPLE_KEY_ID,
+    APPLE_SECRET: process.env.APPLE_SECRET,
     EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST,
     EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT,
     EMAIL_SERVER_USER: process.env.EMAIL_SERVER_USER,

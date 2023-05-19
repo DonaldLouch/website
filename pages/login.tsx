@@ -172,6 +172,23 @@ export default function Login() {
                     Login with ZoHo
                   </Button>
                 )}
+                {providers?.apple && (
+                  <Button
+                    leftIcon={
+                      <FontAwesomeIcon
+                        icon={["fab", "apple"]}
+                        color="currentColor"
+                        height="1em"
+                      />
+                    }
+                    type="button"
+                    onClick={() => signIn(providers?.apple.id)}
+                    variant="blackFormButton"
+                    w="80%"
+                  >
+                    Login with Apple
+                  </Button>
+                )}
               </Stack>
             </>
           ) : (
