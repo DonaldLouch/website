@@ -41,7 +41,8 @@ export const theme = extendTheme({
       "linear-gradient(-135deg, rgba(59,103,217,0.8) 0%, rgba(67,12,140,0.95) 75%)",
     blurredBackground: "rgba(237 237 237 / 15%)",
     prideGradient:
-      "linear-gradient(92deg, rgba(212,6,6,0.95) 0%, rgba(240,157,0,0.95) 10%, rgba(229,254,3,0.94) 20%, rgba(13,190,3,0.95) 30%, rgba(10,26,154,0.95) 40%, rgba(118,1,138,0.95) 50%, rgba(1,1,1,0.95) 60%, rgba(97,58,22,0.95) 70%, rgba(116,215,237,0.95) 80%, rgba(255,175,199,0.95) 90%, rgba(250,249,245,0.9514180672268907) 100%)",
+      "linear-gradient(75deg, rgba(212,6,6,1) 0%, rgba(240,157,0,1) 15%, rgba(229,254,3,1) 22%, rgba(13,190,3,1) 35%, rgba(10,26,154,1) 42%, rgba(118,1,138,1) 60%,  rgba(118,1,138,1) 65%, rgba(1,1,1,1) 70%, rgba(97,58,22,1) 80%, rgba(116,215,237,1) 90%, rgba(255,175,199,1) 100%)",
+    newPrideGradient : "linear-gradient(45deg, #5D62B5 0%, #5D62B5 17%, #6BB0A6 17%, #6BB0A6 34%, #EFC050 34%, #EFC050 51%, #EB7F3F 51%, #EB7F3F 68%, #ED4C67 68%, #ED4C67 85%, #652D90 85%, #652D90 100%);"
   },
   fonts: {
     body: "Lato, system-ui, sans-serif",

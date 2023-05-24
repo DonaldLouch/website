@@ -35,7 +35,7 @@ export default function Hero() {
                             <Box>
                             <Heading as="h1" hidden textAlign="center" fontSize="5xl" fontWeight="bold" color="black">Welcome to Donald Louch</Heading>
                             <Image
-                                src="/titleLogo.svg"
+                                src="/titleLogoPride.svg"
                                 alt="DevLexicon"
                                 width="35vw"
                                 m="0.5rem auto"

@@ -107,8 +107,9 @@ export default function Login() {
       />
       <Box as="main" color="white">
         <SectionCard id="signup" styleType="primaryCard">
+          {/* @ts-ignore */}
           <Image
-            src="/titleLogo.svg"
+            src="/titleLogoPride.svg"
             alt="Donald Louch"
             width="20vw"
             m="0.5rem auto"
@@ -196,7 +197,7 @@ export default function Login() {
               Oh no, we are having issues with loading our login system.
             </Heading>
           )}
-        </SectionCard>
+        </SectionCard> 
       </Box>
     </>
   );
