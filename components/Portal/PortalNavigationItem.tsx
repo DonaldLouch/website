@@ -56,7 +56,7 @@ export const PortalNavigationItem = ({
             cursor="pointer"
             color={blackWhiteColour}
             bg="none"
-            _hover={{ bg: "secondary" }}
+            _hover={{ bg: "secondary", color: "white" }}
             _focus={{ boxShadow: "none" }}
             transition="all 0.3s"
             {...rest}
@@ -88,7 +88,7 @@ export const PortalNavigationItem = ({
             cursor="pointer"
             color={primeColour}
             bg="none"
-            _hover={{ bg: "secondary" }}
+            _hover={{ bg: "secondary", color: "primary" }}
             _focus={{ boxShadow: "none" }}
             transition="all 0.3s"
             w={{ base: "96%", md: "initial" }}
