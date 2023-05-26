@@ -48,7 +48,7 @@ export default function Messages({ contactData, jobData }: any) {
                       key={contact.index}
                       boxShadow={useColorModeValue("bsBlue", "bsWhite")}
                       p="1.5rem"
-                      color="black"
+                      color={useColorModeValue("black", "white")}
                       borderRadius="0 1.5rem"
                       justifyContent="center"
                       align="center"
@@ -100,7 +100,7 @@ export default function Messages({ contactData, jobData }: any) {
                       key={contact.index}
                       boxShadow={useColorModeValue("bsBlue", "bsWhite")}
                       p="1.5rem"
-                      color="black"
+                      color={useColorModeValue("black", "white")}
                       borderRadius="0 1.5rem"
                       justifyContent="center"
                       align="center"

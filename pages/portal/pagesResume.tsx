@@ -336,8 +336,8 @@ export default function AboutMePortal({ resumeData, resumeExperienceData }:any) 
                         )}
                     </Formik>
                     <Stack my="2rem" direction="row" justifyContent="center" gap="2rem">
-                    <Button onClick={onExperienceOpen} variant="sectionButton">Add Experience</Button>
-                    <Button onClick={onEducationOpen} variant="sectionButton">Add Education</Button>
+                    <Button onClick={onExperienceOpen} variant="primary" background="primary" color="white" my="1rem 0 !important">Add Experience</Button>
+                    <Button onClick={onEducationOpen} variant="primary"  background="primary"color="white" my="1rem 0 !important">Add Education</Button>
                     </Stack>
                     <Modal isOpen={isExperienceOpen} onClose={onExperienceClose} id="addExperience" size="3xl">
                       <ModalContent>

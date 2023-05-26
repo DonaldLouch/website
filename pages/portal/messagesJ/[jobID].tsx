@@ -1,4 +1,4 @@
-import { Stack, Link, Box, Text, useColorModeValue } from "@chakra-ui/react";
+import { Stack, Link, Box, Text, useColorModeValue, Button } from "@chakra-ui/react";
 
 import prisma from "../../../lib/prisma";
 
@@ -23,15 +23,15 @@ export default function Post({ contactData }: any) {
           keywords={`${process.env.KEYWORDS}, portal, edit, admin`}
           description={`Contact Message: ${contact.od}`}
         />
-        <Box as="main" id="contact" color="black">
-          <Link href="/portal/messages" variant="primary" fontSize="1.1rem">
-            Go Back To All Messages
-          </Link>
+        <Box as="main" id="contact" color={useColorModeValue("black", "white")}>
+          <Button as="a" href="/portal/messages" variant="primary" background="primary" color="white" my="1rem !important">
+            &larr; Go Back To All Messages
+          </Button>
           <Stack
             key={contact.index}
             boxShadow={useColorModeValue("bsBlue", "bsWhite")}
             p="1.5rem"
-            color="black"
+            color={useColorModeValue("black", "white")}
             borderRadius="0 1.5rem"
             justifyContent="center"
             align="center"

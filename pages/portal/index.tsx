@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, Link, Divider } from "@chakra-ui/react";
+import { Box, Heading, Stack, Link, useColorModeValue} from "@chakra-ui/react";
 
 import { StatsCard } from "../../components/Cards/StatsCard";
 
@@ -6,6 +6,7 @@ import PortalLayout from "../../components/Portal/PortalLayout";
 import { Metadata } from "../../components/Metadata";
 
 import prisma from "../../lib/prisma";
+import { SectionCard } from "../../components/Cards/SectionCard";
 
 type StatProps = {
   numberOfPosts: number;
@@ -47,32 +48,34 @@ export default function PortalHome({
           keywords={`${process.env.KEYWORDS}, portal`}
           description={`The portal home page for Donald Louch. This area is restricted to access by Donald Louch ONLY!`}
         />
-        <Box as="main" id="homeWrapper" color="white">
-          <Heading as="h3" variant="sectionTitle" size="2xl">
-            Quick Actions
-          </Heading>
-          <Divider />
-          <Stack
-            direction="row"
-            spacing={8}
-            align="center"
-            justify="center"
-            p={8}
-            color="black"
-          >
-            <Link variant="primary" href="portal/blog">
-              Manage Posts
-            </Link>
-            <Link variant="primary" href="portal/media">
-              Manage Media
-            </Link>
-            <Link variant="primary" href="portal/pages">
-              Manage Pages
-            </Link>
-          </Stack>
-          <Divider />
-          <Box>
-            <Heading as="h2" variant="sectionTitle" size="2xl">
+        <Box as="main" id="homeWrapper" color="white" mx="2rem">
+          <Box mt="0.5rem" />
+          <SectionCard styleType="primaryCard" id="quickActions">
+            <Heading as="h3" variant="sectionTitle" size="2xl" color={useColorModeValue("black", "White")}>
+              Quick Actions
+            </Heading>
+            <Stack
+              direction="row"
+              spacing={8}
+              align="center"
+              justify="center"
+              p={8}
+              color={useColorModeValue("black", "white")}
+            >
+              <Link variant="primary" href="portal/blog">
+                Manage Posts
+              </Link>
+              <Link variant="primary" href="portal/media">
+                Manage Media
+              </Link>
+              <Link variant="primary" href="portal/pages">
+                Manage Pages
+              </Link>
+            </Stack>
+          </SectionCard>
+          <SectionCard styleType="secondaryCard" id="stats">
+          {/* <Box> */}
+            <Heading as="h2" variant="sectionTitle" size="2xl" color={useColorModeValue("black", "White")}>
               Current Status
             </Heading>
             <Stack
@@ -81,7 +84,7 @@ export default function PortalHome({
               align="center"
               justify="center"
               p={8}
-              color="black"
+              color={useColorModeValue("black", "white")}
             >
               {portalStats?.map((media: any) => (
                 <>
@@ -92,7 +95,8 @@ export default function PortalHome({
                 </>
               ))}
             </Stack>
-          </Box>
+          {/* </Box> */}
+          </SectionCard>
         </Box>
       </PortalLayout>
     </>

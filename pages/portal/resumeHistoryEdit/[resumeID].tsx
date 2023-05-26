@@ -3,7 +3,8 @@ import {
     HStack,
     useToast,
     Box, 
-    Link,
+    // Link,
+    Button,
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -91,9 +92,9 @@ export default function AboutMePortal({ resumeExperienceHistoryData }:any) {
                     description={`Edit the resume work experience page.`}
                     />
                     <Box as="main" id="editAbout" color="black">
-                      <Link variant="primary" href={`../resumeEdit/${resumeExperience.resumeID}`}>
+                      <Button as="a" href={`../resumeEdit/${resumeExperience.resumeID}`} variant="primary" background="primary" color="white" my="1rem !important">
                         &larr; Go Back To Experience Manager
-                      </Link>
+                      </Button>
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                         {({ handleSubmit }: any) => (
                         <Stack as="form" onSubmit={handleSubmit as any}>

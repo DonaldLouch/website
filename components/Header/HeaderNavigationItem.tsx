@@ -58,8 +58,8 @@ export const HeaderNavigationItem = ({
               <Tooltip label="More Pages">
                 <MenuButton
                   color={blackWhite}
-                  _hover={{ color: "secondary" }}
-                  _active={{ color: "secondary" }}
+                  _hover={{ color: "white !important" }}
+                  _active={{ color: "white" }}
                 >
                   <ChevronDownIcon color="currentColor" w="2rem" h="2rem" />
                 </MenuButton>

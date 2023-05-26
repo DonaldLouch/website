@@ -11,7 +11,7 @@ import {
     ModalContent,
     ModalFooter,
     ModalHeader,
-    Link,
+    // Link,
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -173,9 +173,9 @@ export default function AboutMePortal({ resumeExperienceData, resumeHistoryData 
                     description={`Edit the resume work experience page.`}
                     />
                     <Box as="main" id="editAbout" color="black">
-                      <Link variant="primary" href="../pagesResume">
+                      <Button as="a" variant="primary" href="../pagesResume" background="primary" color="white" my="1rem !important">
                         &larr; Go Back To Resume
-                      </Link>
+                      </Button>
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                         {({ handleSubmit }: any) => (
                         <Stack as="form" onSubmit={handleSubmit as any}>
@@ -197,8 +197,9 @@ export default function AboutMePortal({ resumeExperienceData, resumeHistoryData 
                         </Stack>
                         )}
                     </Formik>
-                    
-                    <Button onClick={onHistoryOpen} variant="sectionButton" m="2rem 0 1rem">Add History</Button>
+                    <Stack alignItems="center">
+                      <Button onClick={onHistoryOpen} variant="primary" background="primary" color="white" my="3rem 0 !important">Add History</Button>
+                    </Stack>
                     <Modal isOpen={isHistoryOpen} onClose={onHistoryClose} id="addExperience" size="3xl">
                       <ModalContent>
                         <ModalHeader>Add History</ModalHeader>

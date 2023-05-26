@@ -1,10 +1,10 @@
 {
     "name": "donaldlouch",
-    "version": "28.01.08",
+    "version": "28.06.01",
     "description": "Hi, my name is Donald Louch and I&#39;m a twenty-seven-year-old Canadian web developer and digital content creator.",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem next dev",
         "build": "prisma generate && next build",
         "start": "next start",
         "lint": "next lint",

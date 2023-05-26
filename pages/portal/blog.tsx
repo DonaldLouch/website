@@ -10,7 +10,8 @@ import {
   Link,
   useColorModeValue,
   Image,
-  Text
+  Text,
+  Button
 } from '@chakra-ui/react'
 
 import {Metadata} from "../../components/Metadata"
@@ -38,9 +39,9 @@ export default function Blog({ postData, pagination }: any) {
           description={`${process.env.DESCRIPTION}`}
         />
         <Box as="main" color={useColorModeValue("black", "white")}>
-            <Link href="blogNew" variant="primaryButton">Create New Blog Post</Link>
+            <Button as="a" href="blogNew" variant="primary" background="primary" color="white" my="1rem !important">Create New Blog Post</Button>
 
-            <Grid templateColumns={{base: "100%" , md:"50% 50%"}} gap={{base: 0, md: "1rem", xl:"2rem"}} mt="3rem" pr={{base: "initial", lg: "3rem"}} w="100%">
+            <Grid templateColumns={{base: "100%" , md:"50% 50%"}} gap={{base: 0, md: "1rem", xl:"2rem"}} mt="1rem" pr={{base: "initial", lg: "3rem"}} w="100%">
                   {posts?.map((post: any) => ( 
                     <Box 
                         key={post.id} 

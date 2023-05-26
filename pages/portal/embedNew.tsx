@@ -2,7 +2,8 @@ import {
   Stack,
   useToast,
   Box,
-  Link,
+  // Link,
+  Button,
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -78,9 +79,9 @@ export default function NewEmbedPortal() {
           description={`Add new embed's to Donald Louch`}
         />
         <Box as="main" id="editAbout" color="black">
-          <Link variant="primary" href="pagesLinks">
+          <Button as="a" variant="primary" href="pagesLinks" background="primary" color="white" my="1rem !important">
             &larr; Go Back To Links
-          </Link>
+          </Button>
           <Formik
             initialValues={initialValues}
             onSubmit={onSubmit}

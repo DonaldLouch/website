@@ -4,31 +4,52 @@ export const LinkStyles = {
     fontWeight: "bold",
   },
   variants: {
+    // primary: {
+    //   borderBottom: "1px solid purple",
+    //   _hover: {
+    //     borderColor: "orange",
+    //     textDecoration: "none",
+    //     color: "inherit",
+    //   },
+    // },
     primary: {
-      borderBottom: "1px solid purple",
-      _hover: {
-        borderColor: "orange",
-        textDecoration: "none",
-        color: "inherit",
+        borderBottom: "3px solid",
+        borderColor: "primary",
+        color: "currentColor",
+        // pb: "0.1rem",
+        _hover: {
+          borderColor: "currentColor",
+          textDecoration: "none",
+          color: "white",
+        }
       },
-    },
 
+    // primaryButton: {
+    //   boxShadow: "bsBoldBlue",
+    //   _hover: {
+    //     boxShadow: "none",
+    //     textDecoration: "none",
+    //     color: "primary",
+    //     bg: "none",
+    //     fontWeight: "900",
+    //   },
+    //   p: "1rem 2rem",
+    //   color: "white",
+    //   borderRadius: "0 1.5rem",
+    //   fontSize: "2xl",
+    //   fontWeight: "400",
+    //   bg: "backgroundGradient",
+    // },
     primaryButton: {
-      boxShadow: "bsBoldBlue",
-      _hover: {
-        boxShadow: "none",
-        textDecoration: "none",
-        color: "primary",
-        bg: "none",
-        fontWeight: "900",
+        boxShadow: "bsBoldBlue",
+        _hover: {boxShadow: "none", textDecoration: "none", color: "primary", bg: "none", fontWeight: "900"},
+        p: "1rem 2rem",
+        color: "white",
+        borderRadius: "0 1.5rem",
+        fontSize: "2xl",
+        fontWeight: "400",
+        bg: "backgroundGradient",
       },
-      p: "1rem 2rem",
-      color: "white",
-      borderRadius: "0 1.5rem",
-      fontSize: "2xl",
-      fontWeight: "400",
-      bg: "backgroundGradient",
-    },
 
     primaryButton2: {
       boxShadow: "bsBoldBlue",

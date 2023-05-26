@@ -5,6 +5,7 @@ export const HeadingStyles = {
           textDecorationColor: "primary",
           textAlign: "center",
           color: "black",
+          border: "none"
       },
   },
 };

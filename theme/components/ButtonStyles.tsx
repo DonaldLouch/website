@@ -1,5 +1,22 @@
 export const ButtonStyles = {
   variants: {
+    primary: {
+        m: "1.5rem 0.5rem 0 !important",
+        p: "1.5rem",
+        borderRadius: "0 2rem",
+        _hover: { 
+            bg: "none",
+            boxShadow: "none",
+            color: "primary"
+        },
+         _disabled: { 
+            bg: "black",
+            opacity: "0.2",
+            pointerEvent: "none",
+        },
+        wordBreak: "break-word",
+      },
+      
       heroButton: {
           color: "black",
           m: "0.5rem 0",

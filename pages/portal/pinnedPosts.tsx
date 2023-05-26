@@ -2,8 +2,9 @@ import {
   Stack,
   useToast,
   Box,
-  Link,
+  // Link,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -73,9 +74,9 @@ export default function ManagerPinnedPostsPortal({ postData }: any) {
           description={`Manage Pinned Posts for Donald Louch`}
         />
         <Box as="main" id="editAbout" color="black">
-          <Link variant="primary" href="pagesLinks">
+          <Button as="a" variant="primary" href="pagesLinks" background="primary" color="white" my="1rem !important">
             &larr; Go Back To Links
-          </Link>
+          </Button>
           <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
             {({ handleSubmit }: any) => (
               <Stack as="form" onSubmit={handleSubmit as any}>

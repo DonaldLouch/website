@@ -2,12 +2,13 @@ import {
     Stack, 
     HStack, 
     VStack,
-    Link, 
+    // Link, 
     Code,
     useToast,
     Box,
     Heading,
-    useColorModeValue
+    useColorModeValue,
+    Button
 } from '@chakra-ui/react'
 
 import { Formik } from 'formik'
@@ -208,7 +209,8 @@ export default function Post({ postData }:any) {
                     description={`Post Edit: ${post.title}`}
                     />
                     <Box as="main" id="editBlogPost" color="black">
-                    <Link href={`../../post/${post.slug}`} variant="primaryButton" isExternal>View Blog Post</Link>
+                    <Button as="a" href={`/portal/blog`} variant="primary" background="primary" color="white" my="1rem !important">&larr;  Back To All Posts</Button>
+                    <Button as="a" href={`../../post/${post.slug}`} variant="primary" background="primary" color="white" my="1rem !important">View Blog Post</Button>
                     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                         {({ handleSubmit, values }: any) => (
                         <Stack as="form" onSubmit={handleSubmit as any}>

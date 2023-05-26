@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Button, Stack, useToast } from '@chakra-ui/react'
+import { Box, Button, Stack, useColorModeValue, useToast, Text, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 
 import PortalLayout from '../../components/Portal/PortalLayout'
 import { Metadata } from '../../components/Metadata'
@@ -12,14 +12,22 @@ import Pagination from '../../components/Pagination'
 import prisma from '../../lib/prisma'
 
 import { useRouter } from 'next/router'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function MediaManager({mediaData, pagination}: any) {
   const router = useRouter()
 
   const toast = useToast()
 
-  const [uploaded, setUploaded] = useState(false)
-  const [uploading, setUploading] = useState(false)
+  // const [uploaded, setUploaded] = useState(false)
+  // const [uploading, setUploading] = useState(false)
+  const [isUploaded, setUploaded] = useState(false)
+  const [isUploading, setUploading] = useState(false)
+  // const [isError, setError] = useState(false)
+
+
+  const boxShadow1 = useColorModeValue("bsBoldBlue", "bsBoldWhite");
+  // const boxShadow2 = useColorModeValue("bsBoldRed", "bsBoldWhite");
 
   function handleOnChange(changeEvent: any) {
     const reader = new FileReader();
@@ -73,7 +81,7 @@ export default function MediaManager({mediaData, pagination}: any) {
     setUploaded(true)
     setUploading(false)
 
-      router.replace('/portal/media')
+    router.replace('/portal/media')
   }
 
   async function addMedia(submitMediaData: any) {
@@ -114,17 +122,36 @@ export default function MediaManager({mediaData, pagination}: any) {
               description={`Manage the media for Donald Louch.`}
             />
             <Box as="main" id="homeWrapper" color="white">
-              <SectionCard styleType="primaryCard" id="mediaUpload">
-                <SectionTitle headingTitle="Upload New Media" />
-                <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} mt={3}>
+              <Box m="1rem">
+                <SectionCard styleType="primaryCard" id="mediaUpload"> 
+                  <SectionTitle headingTitle="Upload New Media" />
+                  <Text textAlign="center">Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.</Text> 
+                  <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow={boxShadow1} p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" my="1rem"> 
+                    <InputGroup border="none" appearance="none" outline="none">
+                      <InputLeftElement pointerEvents='none'>
+                        <FontAwesomeIcon icon={["fal", "cloud-arrow-up"]} width="100%" color='currentColor' />
+                      </InputLeftElement>
+                      <Input 
+                        type='file' 
+                        name="file[]" 
+                        id="file"
+                        multiple 
+                        sx={{
+                            "::file-selector-button": {
+                              display: "none",
+                            }
+                          }}
+                          p="0.4rem 3rem"
+                          border="none"
+                        />
+                    </InputGroup>
+                    {isUploaded != true && (
+                        <Button variant="blackFormButton" type="submit" isLoading={isUploading === true} p="1.8rem 4rem" m="0">Confirm Media Upload</Button>
+                    )}
+                  </Stack>
+                </SectionCard>
+              </Box>
 
-                  <input type="file" name="file[]" id="file" multiple />
-                  
-                  {uploaded != true && (
-                      <Button variant="blackFormButton" type="submit" isLoading={uploading === true}>Confirm File(s) Upload</Button>
-                  )}
-                </Stack>
-              </SectionCard>
               <Box px="2rem" color="black" m="0">
                 <SectionTitle headingTitle="Uploaded Media" />
                   {mediaData?.map((media: any) => (

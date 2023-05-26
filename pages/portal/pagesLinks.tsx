@@ -1,6 +1,7 @@
 import {
   Box,
-  Link,
+  Button,
+  // Link,
   Stack,
 } from "@chakra-ui/react";
 
@@ -29,18 +30,18 @@ export default function LinksPortal({ linkData }: any) {
             justify="center"
             p={8}
           >
-            <Link variant="primary" href="linkNew">
+            <Button as="a" variant="primary" href="linkNew" background="primary" color="white" my="1rem !important">
               Add New Link
-            </Link>
-            <Link variant="primary" href="embedNew">
+            </Button>
+            <Button as="a" variant="primary" href="embedNew" background="primary" color="white" my="1rem !important">
               Add New Embed
-            </Link>
-            <Link variant="primary" href="pinnedPosts">
+            </Button>
+            <Button as="a" variant="primary" href="pinnedPosts" background="primary" color="white" my="1rem !important">
               Manage Pinned Post
-            </Link>
-            <Link variant="primary" href="pagesLinksPrimary">
+            </Button>
+            <Button as="a" variant="primary" href="pagesLinksPrimary" background="primary" color="white" my="1rem !important">
               Edit Primary Links
-            </Link>
+            </Button>
           </Stack>
           <Stack>
             {links.map((link: any) => (
