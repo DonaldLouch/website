@@ -39,6 +39,7 @@ export const HeaderNavigationItem = ({
           mx="0.7rem"
           fontSize="1.2rem"
           color={blackWhite}
+          _hover={{ color: "secondary" }}
         >
           {children}
         </Link>
@@ -51,6 +52,7 @@ export const HeaderNavigationItem = ({
               variant="primary"
               fontSize="1.2rem"
               color={blackWhite}
+              _hover={{ color: "secondary" }}
             >
               {children}
             </Link>
