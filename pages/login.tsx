@@ -3,7 +3,7 @@ import {
   useSession,
   getProviders,
   signOut,
-  signIn,
+  // signIn,
   ClientSafeProvider,
   LiteralUnion,
   getCsrfToken,
@@ -15,7 +15,7 @@ import {
   Heading,
   Image,
   Button,
-  Stack,
+  // Stack,
   useToast,
 } from "@chakra-ui/react";
 
@@ -151,7 +151,14 @@ export default function Login() {
             </>
           ) : providers ? (
             <>
-              <Stack
+            <Button as="a" variant="blackFormButton" href="/api/auth/signin" w="98%" leftIcon={
+                  <FontAwesomeIcon
+                    icon={["fas", "sign-in-alt"]}
+                    color="currentColor"
+                    height="1em"
+                  />
+                }>Login</Button>
+              {/* <Stack
                 direction={{ base: "column", md: "row" }}
                 spacing={4}
                 justify="center"
@@ -190,7 +197,7 @@ export default function Login() {
                     Login with Apple
                   </Button>
                 )}
-              </Stack>
+              </Stack> */}
             </>
           ) : (
             <Heading as="h2" variant="sectionTitle" size="xl" m="1rem 0">

@@ -4,7 +4,7 @@
     "description": "Hi, my name is Donald Louch and I&#39;m a twenty-seven-year-old Canadian web developer and digital content creator.",
     "private": true,
     "scripts": {
-        "dev": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem next dev",
+        "dev": "next dev",
         "build": "prisma generate && next build",
         "start": "next start",
         "lint": "next lint",

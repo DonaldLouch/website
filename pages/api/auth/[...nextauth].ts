@@ -86,9 +86,9 @@ export default NextAuth({
 
   // https://next-auth.js.org/configuration/pages
   pages: {
-    signIn: "/login", // Displays signin buttons
+    // signIn: "/login", // Displays signin buttons
     signOut: "/login", // Displays form with sign out button
-    // error: '/error', // Error code passed in query string as ?error=
+    error: '/error', // Error code passed in query string as ?error=
     verifyRequest: "/email", // Used for check email page
     // newUser: '/signup' // If set, new users will be directed here on first sign in
   },
