@@ -100,6 +100,51 @@ export default NextAuth({
       // session.user.username = user.username as string;
       return Promise.resolve(session);
     },
+    async signIn({ profile, email }: any) {
+      try {
+
+        const user = await prisma.user.findUnique({
+          where: {
+            email,
+          },
+        })
+
+        if (!user) {
+          // throw new Error('User not found')
+          await prisma.user.create({
+             data: {
+               email: profile.email,
+               accounts: {
+                create: {
+                 type: profile.type,
+                 provider: profile.provider ? profile.provider : profile.name,
+                 providerAccountId: profile.providerAccountId
+                   ? profile.providerAccountId
+                   : profile.sub,
+                }
+               },
+             },
+           })
+          //  .then(JSON.parse(JSON.stringify(this)));
+          // await prisma.account.create({
+          //   data: {
+          //     userId: newUser.id,
+          //     type: profile.type,
+          //     provider: profile.provider ?  profile.provider : profile.name,
+          //     providerAccountId: profile.providerAccountId ? profile.providerAccountId : profile.sub,
+          //   }
+          // })
+        }
+
+        return true;
+      } catch (error: any) {
+        console.log("Error checking if user exists: ", error.message);
+        return false;
+      }
+
+      // console.log(user, account, profile, email);
+      // return true;
+    },
     // async signIn({ account, profile }) {
     //   if (account.provider === "google") {
     //     return profile.email_verified && profile.email.endsWith("@donaldlouch.ca")
