@@ -100,31 +100,64 @@ export default NextAuth({
       // session.user.username = user.username as string;
       return Promise.resolve(session);
     },
-    async signIn({ profile, email }: any) {
-      try {
-
+    async signIn({ profile, email, provider }: any) {
+      if (provider.name === "Apple") {
         const user = await prisma.user.findUnique({
           where: {
             email,
           },
         })
-
         if (!user) {
-          // throw new Error('User not found')
+          //Create new user and account
           await prisma.user.create({
-             data: {
-               email: profile.email,
-               accounts: {
+            data: {
+              name: profile.name,
+              email,
+              accounts: {
                 create: {
-                 type: profile.type,
-                 provider: profile.provider ? profile.provider : profile.name,
-                 providerAccountId: profile.providerAccountId
-                   ? profile.providerAccountId
-                   : profile.sub,
-                }
-               },
-             },
-           })
+                  type: provider.type,
+                  provider: provider.id,
+                  providerAccountId: profile.sub,
+                },
+              },
+            },
+          });
+        }
+        return true;
+      }
+      // console.log(profile, email)
+
+      // let providerID = null
+      // if (provider.name === "Zoho") {
+      //   providerID = profile.ZUID
+      // } else if (provider.name === "Apple") {
+      //   providerID = "SOMEID"
+      // }
+      // try {
+
+      //   const user = await prisma.user.findUnique({
+      //     where: {
+      //       email,
+      //     },
+      //   })
+
+        // if (!user) {
+          // throw new Error('User not found')
+          // await prisma.user.create({
+          //    data: {
+          //      email: profile.email,
+          //      accounts: {
+          //       create: {
+          //        type: profile.type,
+          //        provider: profile.provider ? profile.provider : profile.name,
+          //        providerAccountId: profile.providerAccountId
+          //          ? profile.providerAccountId
+          //          : profile.sub,
+          //       }
+          //      },
+          //    },
+          //  })
+          //  console.log(profile)
           //  .then(JSON.parse(JSON.stringify(this)));
           // await prisma.account.create({
           //   data: {
@@ -134,13 +167,14 @@ export default NextAuth({
           //     providerAccountId: profile.providerAccountId ? profile.providerAccountId : profile.sub,
           //   }
           // })
-        }
+        // }
+        // console.log(profile)
 
         return true;
-      } catch (error: any) {
-        console.log("Error checking if user exists: ", error.message);
-        return false;
-      }
+      // } catch (error: any) {
+      //   console.log("Error checking if user exists: ", error.message);
+      //   return false;
+      // }
 
       // console.log(user, account, profile, email);
       // return true;
