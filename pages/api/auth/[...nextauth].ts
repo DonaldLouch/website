@@ -100,7 +100,7 @@ export default NextAuth({
       // session.user.username = user.username as string;
       return Promise.resolve(session);
     },
-    async signIn({ profile, email, provider }: any) {
+    async signIn({ profile, email, provider, error }: any) {
       if (provider.name === "Apple") {
         const user = await prisma.user.findUnique({
           where: {
@@ -125,7 +125,7 @@ export default NextAuth({
         }
         return true;
       }
-      // console.log(profile, email)
+      console.log(profile, email, error)
 
       // let providerID = null
       // if (provider.name === "Zoho") {
