@@ -6,7 +6,7 @@ import {
   // signIn,
   // ClientSafeProvider,
   // LiteralUnion,
-  getCsrfToken,
+  // getCsrfToken,
 } from "next-auth/react";
 // import { BuiltInProviderType } from "next-auth/providers";
 
@@ -26,7 +26,7 @@ import { SectionCard } from "../components/Cards/SectionCard";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../lib/fontAwesome";
-import { CtxOrReq } from "next-auth/client/_utils";
+// import { CtxOrReq } from "next-auth/client/_utils";
 
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -95,7 +95,7 @@ export default function Login() {
   if (status === "authenticated" && session?.user?.userLevel == 0) {
     router.push("/portal");
   }
-  if (status !== "authenticated") {
+  if (status !== "authenticated" && status !== "loading") {
     router.push("/api/auth/signin");
   }
 
@@ -216,9 +216,9 @@ export default function Login() {
   )
 }
 
-export async function getServerSideProps(context: CtxOrReq | undefined) {
-  const csrfToken = await getCsrfToken(context);
-  return {
-    props: { csrfToken },
-  };
-}
+// export async function getServerSideProps(context: CtxOrReq | undefined) {
+//   const csrfToken = await getCsrfToken(context);
+//   return {
+//     props: { csrfToken },
+//   };
+// }
