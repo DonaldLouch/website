@@ -18,7 +18,7 @@ export const FooterIcon = (props: FooterProps) => {
         href={linkURL}
         isExternal
         variant="unstyled"
-        _hover={{ color: "tertiary", border: "none" }}
+        _hover={{ color: "primary", border: "none" }}
         px="0.2rem"
       >
         <Tooltip label={socialMedia}>
