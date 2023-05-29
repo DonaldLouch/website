@@ -125,7 +125,8 @@ export default NextAuth({
         }
         return true;
       }
-      console.log(profile, email, error)
+      alert(error)
+      alert(profile)
 
       // let providerID = null
       // if (provider.name === "Zoho") {
