@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import {
   useSession,
-  getProviders,
-  signOut,
+  // getProviders,
+  // signOut,
   // signIn,
-  ClientSafeProvider,
-  LiteralUnion,
+  // ClientSafeProvider,
+  // LiteralUnion,
   getCsrfToken,
 } from "next-auth/react";
-import { BuiltInProviderType } from "next-auth/providers";
+// import { BuiltInProviderType } from "next-auth/providers";
 
 import {
   Box,
   Heading,
-  Image,
-  Button,
+  // Image,
+  // Button,
   // Stack,
+  useColorModeValue,
   useToast,
 } from "@chakra-ui/react";
 
@@ -23,7 +24,7 @@ import { Metadata } from "../components/Metadata";
 
 import { SectionCard } from "../components/Cards/SectionCard";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../lib/fontAwesome";
 import { CtxOrReq } from "next-auth/client/_utils";
 
@@ -31,10 +32,10 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 export default function Login() {
-  const [providers, setProviders] = useState<Record<
-    LiteralUnion<BuiltInProviderType, string>,
-    ClientSafeProvider
-  > | null>();
+  // const [providers, setProviders] = useState<Record<
+  //   LiteralUnion<BuiltInProviderType, string>,
+  //   ClientSafeProvider
+  // > | null>();
   const { data: session, status } = useSession();
 
   const router = useRouter();
@@ -81,16 +82,21 @@ export default function Login() {
     });
   }
 
-  useEffect(() => {
-    const setTheProviders = async () => {
-      const setupProviders = await getProviders();
-      setProviders(setupProviders);
-    };
-    setTheProviders();
-  }, []);
-
+  // useEffect(() => {
+  //   const setTheProviders = async () => {
+  //     const setupProviders = await getProviders();
+  //     setProviders(setupProviders);
+  //   };
+  //   setTheProviders();
+  // }, []);
+  // if (status != "loading") {
+  //   return (<h2>Loading ...</h2>)
+  // }
   if (status === "authenticated" && session?.user?.userLevel == 0) {
     router.push("/portal");
+  }
+  if (status !== "authenticated") {
+    router.push("/api/auth/signin");
   }
 
   const fetcher = (url: RequestInfo | URL) =>
@@ -106,108 +112,108 @@ export default function Login() {
         description={`${process.env.DESCRIPTION}`}
       />
       <Box as="main" color="white">
-        <SectionCard id="signup" styleType="primaryCard">
-          {/* @ts-ignore */}
-          <Image
-            src="/titleLogoPride.svg"
-            alt="Donald Louch"
-            width="20vw"
-            m="0.5rem auto"
-          />
-          {status === "loading" ? (
-            <Heading as="h2" variant="sectionTitle" size="3xl" m="1rem 0">
-              Loading ...
-            </Heading>
-          ) : session ? (
-            <>
-              {session.user?.userLevel == 0 ? (
-                <Heading as="h2" variant="sectionTitle" size="2xl">
-                  You are currently logged in as {session.user?.email} 👋
+          <SectionCard id="signup" styleType="primaryCard">
+            {/*//         {/* @ts-ignore 
+            //         <Image
+            //           src="/titleLogoPride.svg"
+            //           alt="Donald Louch"
+            //           width="20vw"
+            //           m="0.5rem auto"
+          //         />*/}
+              {status === "loading" && (
+                <Heading as="h2" variant="sectionTitle" size="3xl" m="1rem 0" color={useColorModeValue("black", "white")}>
+                  Loading ...
                 </Heading>
-              ) : (
-                <>
-                  <Heading as="h3" variant="sectionTitle" size="2xl">
-                    It appears that you do NOT have the proper user clearance to
-                    proceed to the portal. Please try signing into another
-                    account.
-                  </Heading>
-                </>
-              )}
-              <Button
-                leftIcon={
-                  <FontAwesomeIcon
-                    icon={["fas", "sign-out-alt"]}
-                    color="black"
-                    height="1em"
-                  />
-                }
-                type="button"
-                onClick={() => signOut()}
-                variant="blackFormButton"
-                w="100%"
-              >
-                Sign Out
-              </Button>
-            </>
-          ) : providers ? (
-            <>
-            <Button as="a" variant="blackFormButton" href="/api/auth/signin" w="98%" leftIcon={
-                  <FontAwesomeIcon
-                    icon={["fas", "sign-in-alt"]}
-                    color="currentColor"
-                    height="1em"
-                  />
-                }>Login</Button>
-              {/* <Stack
-                direction={{ base: "column", md: "row" }}
-                spacing={4}
-                justify="center"
-              >
-                {providers?.zoho && (
-                  <Button
-                    leftIcon={
-                      <FontAwesomeIcon
-                        icon={["far", "envelope-open"]}
-                        color="currentColor"
-                        height="1em"
-                      />
-                    }
-                    type="button"
-                    onClick={() => signIn(providers?.zoho.id)}
-                    variant="blackFormButton"
-                    w="80%"
-                  >
-                    Login with ZoHo
-                  </Button>
-                )}
-                {providers?.apple && (
-                  <Button
-                    leftIcon={
-                      <FontAwesomeIcon
-                        icon={["fab", "apple"]}
-                        color="currentColor"
-                        height="1em"
-                      />
-                    }
-                    type="button"
-                    onClick={() => signIn(providers?.apple.id)}
-                    variant="blackFormButton"
-                    w="80%"
-                  >
-                    Login with Apple
-                  </Button>
-                )}
-              </Stack> */}
-            </>
-          ) : (
-            <Heading as="h2" variant="sectionTitle" size="xl" m="1rem 0">
-              Oh no, we are having issues with loading our login system.
-            </Heading>
-          )}
-        </SectionCard> 
-      </Box>
+               )} 
+            {/*</SectionCard>//           <>
+            //             {session.user?.userLevel == 0 ? (
+            //               <Heading as="h2" variant="sectionTitle" size="2xl">
+            //                 You are currently logged in as {session.user?.email} 👋
+            //               </Heading>
+            //             ) : (
+            //               <>
+            //                 <Heading as="h3" variant="sectionTitle" size="2xl">
+            //                   It appears that you do NOT have the proper user clearance to
+            //                   proceed to the portal. Please try signing into another
+            //                   account.
+            //                 </Heading>
+            //               </>
+            //             )}
+            //             <Button
+            //               leftIcon={
+            //                 <FontAwesomeIcon
+            //                   icon={["fas", "sign-out-alt"]}
+            //                   color="black"
+            //                   height="1em"
+            //                 />
+            //               }
+            //               type="button"
+            //               onClick={() => signOut()}
+            //               variant="blackFormButton"
+            //               w="100%"
+            //             >
+            //               Sign Out
+            //             </Button>
+            //           </>
+            //         ) : providers ? (
+            //           <>
+            //           <Button as="a" variant="blackFormButton" href="/api/auth/signin" w="98%" leftIcon={
+            //                 <FontAwesomeIcon
+            //                   icon={["fas", "sign-in-alt"]}
+            //                   color="currentColor"
+            //                   height="1em"
+            //                 />
+            //               }>Login</Button>
+            //             {/* <Stack
+            //               direction={{ base: "column", md: "row" }}
+            //               spacing={4}
+            //               justify="center"
+            //             >
+            //               {providers?.zoho && (
+            //                 <Button
+            //                   leftIcon={
+            //                     <FontAwesomeIcon
+            //                       icon={["far", "envelope-open"]}
+            //                       color="currentColor"
+            //                       height="1em"
+            //                     />
+            //                   }
+            //                   type="button"
+            //                   onClick={() => signIn(providers?.zoho.id)}
+            //                   variant="blackFormButton"
+            //                   w="80%"
+            //                 >
+            //                   Login with ZoHo
+            //                 </Button>
+            //               )}
+            //               {providers?.apple && (
+            //                 <Button
+            //                   leftIcon={
+            //                     <FontAwesomeIcon
+            //                       icon={["fab", "apple"]}
+            //                       color="currentColor"
+            //                       height="1em"
+            //                     />
+            //                   }
+            //                   type="button"
+            //                   onClick={() => signIn(providers?.apple.id)}
+            //                   variant="blackFormButton"
+            //                   w="80%"
+            //                 >
+            //                   Login with Apple
+            //                 </Button>
+            //               )}
+            //             </Stack>
+            //           </>
+            //         ) : (
+            //           <Heading as="h2" variant="sectionTitle" size="xl" m="1rem 0">
+            //             Oh no, we are having issues with loading our login system.
+            //           </Heading>
+                    //         )}*/}
+          </SectionCard> 
+        </Box>
     </>
-  );
+  )
 }
 
 export async function getServerSideProps(context: CtxOrReq | undefined) {
