@@ -100,86 +100,89 @@ export default NextAuth({
       // session.user.username = user.username as string;
       return Promise.resolve(session);
     },
-    async signIn({ profile, email, provider, error }: any) {
-      if (provider.name === "Apple") {
-        const user = await prisma.user.findUnique({
-          where: {
-            email,
-          },
-        })
-        if (!user) {
-          //Create new user and account
-          await prisma.user.create({
-            data: {
-              name: profile.name,
-              email,
-              accounts: {
-                create: {
-                  type: provider.type,
-                  provider: provider.id,
-                  providerAccountId: profile.sub,
-                },
-              },
-            },
-          });
-        }
-        return true;
+    // async signIn({ profile, email, provider }: any) {
+    //   if (provider.name === "Apple") {
+    //     const user = await prisma.user.findUnique({
+    //       where: {
+    //         email,
+    //       },
+    //     })
+    //     if (!user) {
+    //       //Create new user and account
+    //       await prisma.user.create({
+    //         data: {
+    //           name: profile.name,
+    //           email,
+    //           accounts: {
+    //             create: {
+    //               type: provider.type,
+    //               provider: provider.id,
+    //               providerAccountId: profile.sub,
+    //             },
+    //           },
+    //         },
+    //       });
+    //     }
+    //     return true;
+    //   }
+
+    //   // let providerID = null
+    //   // if (provider.name === "Zoho") {
+    //   //   providerID = profile.ZUID
+    //   // } else if (provider.name === "Apple") {
+    //   //   providerID = "SOMEID"
+    //   // }
+    //   // try {
+
+    //   //   const user = await prisma.user.findUnique({
+    //   //     where: {
+    //   //       email,
+    //   //     },
+    //   //   })
+
+    //     // if (!user) {
+    //       // throw new Error('User not found')
+    //       // await prisma.user.create({
+    //       //    data: {
+    //       //      email: profile.email,
+    //       //      accounts: {
+    //       //       create: {
+    //       //        type: profile.type,
+    //       //        provider: profile.provider ? profile.provider : profile.name,
+    //       //        providerAccountId: profile.providerAccountId
+    //       //          ? profile.providerAccountId
+    //       //          : profile.sub,
+    //       //       }
+    //       //      },
+    //       //    },
+    //       //  })
+    //       //  console.log(profile)
+    //       //  .then(JSON.parse(JSON.stringify(this)));
+    //       // await prisma.account.create({
+    //       //   data: {
+    //       //     userId: newUser.id,
+    //       //     type: profile.type,
+    //       //     provider: profile.provider ?  profile.provider : profile.name,
+    //       //     providerAccountId: profile.providerAccountId ? profile.providerAccountId : profile.sub,
+    //       //   }
+    //       // })
+    //     // }
+    //     // console.log(profile)
+
+    //     return true;
+    //   // } catch (error: any) {
+    //   //   console.log("Error checking if user exists: ", error.message);
+    //   //   return false;
+    //   // }
+
+    //   // console.log(user, account, profile, email);
+    //   // return true;
+    // },
+  async jwt({token, user, account, profile}: any) {
+      if (token) {
+        return Promise.resolve({ ...token, ...user, ...account, ...profile });
       }
-      alert(error)
-      alert(profile)
-
-      // let providerID = null
-      // if (provider.name === "Zoho") {
-      //   providerID = profile.ZUID
-      // } else if (provider.name === "Apple") {
-      //   providerID = "SOMEID"
-      // }
-      // try {
-
-      //   const user = await prisma.user.findUnique({
-      //     where: {
-      //       email,
-      //     },
-      //   })
-
-        // if (!user) {
-          // throw new Error('User not found')
-          // await prisma.user.create({
-          //    data: {
-          //      email: profile.email,
-          //      accounts: {
-          //       create: {
-          //        type: profile.type,
-          //        provider: profile.provider ? profile.provider : profile.name,
-          //        providerAccountId: profile.providerAccountId
-          //          ? profile.providerAccountId
-          //          : profile.sub,
-          //       }
-          //      },
-          //    },
-          //  })
-          //  console.log(profile)
-          //  .then(JSON.parse(JSON.stringify(this)));
-          // await prisma.account.create({
-          //   data: {
-          //     userId: newUser.id,
-          //     type: profile.type,
-          //     provider: profile.provider ?  profile.provider : profile.name,
-          //     providerAccountId: profile.providerAccountId ? profile.providerAccountId : profile.sub,
-          //   }
-          // })
-        // }
-        // console.log(profile)
-
-        return true;
-      // } catch (error: any) {
-      //   console.log("Error checking if user exists: ", error.message);
-      //   return false;
-      // }
-
-      // console.log(user, account, profile, email);
-      // return true;
-    },
+    }
     // async signIn({ account, profile }) {
     //   if (account.provider === "google") {
     //     return profile.email_verified && profile.email.endsWith("@donaldlouch.ca")
