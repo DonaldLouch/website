@@ -23,6 +23,8 @@ module.exports = {
   swcMinify: true,
   experimental: {
     esmExternals: false,
+    topLevelAwait: true,
+    // topLevelAwait: true,
     //concurrentFeatures: true,
     // serverComponents: true
     // swcMinify: true,

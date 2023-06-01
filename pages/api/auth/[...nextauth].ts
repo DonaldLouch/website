@@ -4,10 +4,65 @@ import ZohoProvider from 'next-auth/providers/zoho'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { PrismaClient } from "@prisma/client"
 import AppleProvider from "next-auth/providers/apple";
+
+// import { SignJWT } from "jose";
+// import { createPrivateKey } from "crypto";
+
+// interface generateSecretArgs {
+//   teamId: string;
+//   privateKey: string;
+//   clientId: string;
+//   keyId: string;
+//   expiresIn?: number;
+// }
+
+// export async function generateSecret({
+//   teamId,
+//   privateKey,
+//   clientId,
+//   keyId,
+//   expiresIn = 86400 * 180,
+// }: generateSecretArgs) {
+//   const exp = Math.ceil(Date.now() / 1000) + expiresIn;
+
+//   /**
+//    * How long is the secret valid in seconds.
+//    * @default 15780000
+//    */
+//   const expiresAt = Math.ceil(Date.now() / 1000) + expiresIn;
+//   const expirationTime = exp ?? expiresAt;
+//   console.log(
+//     `Apple client secret generated. Valid until: ${new Date(
+//       expirationTime * 1000
+//     )}`
+//   );
+//   return new SignJWT({})
+//     .setAudience("https://appleid.apple.com")
+//     .setIssuer(teamId)
+//     .setIssuedAt()
+//     .setExpirationTime(expirationTime)
+//     .setSubject(keyId)
+//     .setProtectedHeader({ alg: "ES256", kid: keyId, typ: "JWT" })
+//     .sign(createPrivateKey(privateKey.replace(/\\n/g, "\n")));
+// }
 // import nodemailer from 'nodemailer'
 
 const prisma = new PrismaClient()
 
+// const getAppleToken = async () => {
+//   const appleToken = await new SignJWT({})
+//     .setAudience("https://appleid.apple.com")
+//     .setIssuer(process.env.APPLE_TEAM_ID)
+//     .setIssuedAt(new Date().getTime() / 1000)
+//     .setExpirationTime(new Date().getTime() / 1000 + 3600 * 2)
+//     .setSubject(process.env.APPLE_ID)
+//     .setProtectedHeader({
+//       alg: "ES256",
+//       kid: process.env.APPLE_KEY_ID,
+//     })
+//     .sign(createPrivateKey(process.env.APPLE_PRIVATE_KEY));
+//   return appleToken;
+// };
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -68,15 +123,40 @@ export default NextAuth({
     }),
     AppleProvider({
       clientId: process.env.APPLE_ID,
-      // @ts-ignore
-      clientSecret: process.env.APPLE_SECRET,
+      // clientSecret: await generateSecret({
+      //   clientId: process.env.APPLE_ID, // my unique service identifier
+      //   keyId: process.env.APPLE_KEY_ID, // Private Key ID from apple developer account
+      //   teamId: process.env.APPLE_TEAM_ID, // Team ID from my apple developer account
+      //   privateKey: process.env.APPLE_SECRET!,
+      // }),
+      clientSecret: process.env.APPLE_SECRET!,
+      authorization: {
+        params: {
+          response_type: "code id_token",
+          response_mode: "form_post",
+          scope: "name email",
+          client_id: process.env.APPLE_ID,
+        },
+      },
     }),
   ],
+
+  cookies: {
+    pkceCodeVerifier: {
+      name: "next-auth.pkce.code_verifier",
+      options: {
+        httpOnly: true,
+        sameSite: "none",
+        path: "/",
+        secure: true,
+      },
+    },
+  },
 
   secret: process.env.SECRET,
 
   session: {
-    strategy: "database",
+    strategy: "jwt",
   },
 
   // https://next-auth.js.org/configuration/options#jwt
@@ -95,19 +175,47 @@ export default NextAuth({
 
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {
-    async session({ session, user }: any) {
+    async jwt({ token, account }: any) {
+      console.log(token, account);
+      if (account) {
+        return {
+          ...token,
+          accessToken: account.access_token,
+        };
+      }
+    },
+    async session({ session, user, sessionToken }: any) {
       session.user.userLevel = user.userLevel as number;
       // session.user.username = user.username as string;
-      return Promise.resolve(session);
+      return Promise.resolve({ ...session, ...user, ...sessionToken });
     },
-    // async signIn({ profile, email, provider }: any) {
+    // async session({ session, token, user }) {
+    //   session.accessToken = token.accessToken;
+    //   return session;
+    // },
+    // async signIn({ profile, email }: any) {
+    //   const user = await prisma.user.findUnique({
+    //     where: {
+    //       email
+    //     }
+    //   })
+
     //   if (provider.name === "Apple") {
-    //     const user = await prisma.user.findUnique({
-    //       where: {
-    //         email,
-    //       },
-    //     })
-    //     if (!user) {
+    // const user = await prisma.user.findUnique({
+    //   where: {
+    //     email: profile.email,
+    //   },
+    // })
+    // if (!user) {
+    //   return false
+    // }
+    // return true
+    // if(!user) return false
+
+    // if(user?.userLevel == 0) return true
+
+    // return false
+
     //       //Create new user and account
     //       await prisma.user.create({
     //         data: {
@@ -176,13 +284,13 @@ export default NextAuth({
     //   // }
 
     //   // console.log(user, account, profile, email);
-    //   // return true;
+    // return true;
     // },
-  async jwt({token, user, account, profile}: any) {
-      if (token) {
-        return Promise.resolve({ ...token, ...user, ...account, ...profile });
-      }
-    }
+    // async jwt({token, user, account, profile}: any) {
+    //     if (token) {
+    //       return Promise.resolve({ ...token, ...user, ...account, ...profile });
+    //     }
+    //   }
     // async signIn({ account, profile }) {
     //   if (account.provider === "google") {
     //     return profile.email_verified && profile.email.endsWith("@donaldlouch.ca")
@@ -198,6 +306,7 @@ export default NextAuth({
   // https://next-auth.js.org/configuration/events
   events: {},
 
+  useSecureCookies: false,
   debug: true,
 });
 
