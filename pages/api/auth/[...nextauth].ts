@@ -156,7 +156,7 @@ export default NextAuth({
   secret: process.env.SECRET,
 
   session: {
-    strategy: "jwt",
+    strategy: "database",
   },
 
   // https://next-auth.js.org/configuration/options#jwt
@@ -175,15 +175,15 @@ export default NextAuth({
 
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {
-    async jwt({ token, account }: any) {
-      console.log(token, account);
-      if (account) {
-        return {
-          ...token,
-          accessToken: account.access_token,
-        };
-      }
-    },
+    // async jwt({ token, account }: any) {
+    //   console.log(token, account);
+    //   if (account) {
+    //     return {
+    //       ...token,
+    //       accessToken: account.access_token,
+    //     };
+    //   }
+    // },
     async session({ session, user, sessionToken }: any) {
       session.user.userLevel = user.userLevel as number;
       // session.user.username = user.username as string;
