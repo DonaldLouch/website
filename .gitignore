@@ -3,6 +3,8 @@
 server.js
 /certificates
 
+/pscale_dump_donaldlouch_main
+
 # dependencies
 /node_modules
 /.pnp
