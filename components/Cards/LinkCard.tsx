@@ -15,7 +15,7 @@ import "../../lib/fontAwesome";
 
 export const LinkCard = (link: {
   id: Key;
-  link: string;
+  link: any;
   title: string;
   iconPrefix: any;
   iconName: any;
@@ -26,7 +26,7 @@ export const LinkCard = (link: {
   return (
     <Link
       key={link.id}
-      href={link.link}
+      href={link.link ? link.link : "#"}
       isExternal
       variant="unstyled"
       _hover={{ textDecoration: "none" }}

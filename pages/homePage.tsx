@@ -1,34 +1,12 @@
+// import { Button, Heading, Link, Stack, Text } from "@chakra-ui/react"
 import {Metadata} from "../components/Metadata"
-import HeroPage from "../components/HeroPage"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import "../lib/fontAwesome";
+// import MaintenanceModePage from "../components/MaintenanceMode";
+// import HeroPage from "../components/HeroPage"
 
 
-export default function Home() {
-    const pageLinks = [
-        {
-            'linkTitle': 'Blog', 
-            'linkUrl': 'blog'
-        },
-        {
-            'linkTitle': 'Portfolio', 
-            'linkUrl': 'portfolio'
-        },
-        {
-            'linkTitle': 'Resume', 
-            'linkUrl': 'portfolio/resume'
-        },
-        {
-            'linkTitle': 'Contact Me', 
-            'linkUrl': 'about#contact'
-        },
-        {
-            'linkTitle': 'Links', 
-            'linkUrl': 'about#links'
-        },
-        {
-            'linkTitle': 'Available For Freelance Jobs!', 
-            'linkUrl': 'jobs'
-        },
-    ]
+export default function MaintenanceMode() {
   return (
     <>  
       <Metadata
@@ -36,7 +14,7 @@ export default function Home() {
           keywords={`${process.env.KEYWORDS}`}
           description={`${process.env.DESCRIPTION}`}
         />
-        <HeroPage name="Donald Louch" tagLine="and I'm a Canadian Digital Content Creator" links={pageLinks} cta={["About Me", "about"]}  imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1645167967/portfolio/hpqfin6z4olakfiso0pv.jpg" />
+        {/* <MaintenanceModePage /> */}
     </>
   )
 }

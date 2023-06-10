@@ -98,6 +98,7 @@ export default function Blog({ postData, pagination }: any) {
       </Tooltip>
 
       <Box as="main" color={useColorModeValue("black", "white")} mt="93vh">
+      {/* <Box as="main" color={useColorModeValue("black", "white")}> */}
         <SectionCard id="posts" styleType="primaryCard">
           <SectionTitle headingTitle="Blog Posts" />
           {posts.map((post: any) => (
@@ -177,6 +178,7 @@ export async function getServerSideProps(router: any) {
   let currentPage = ((page - 1) as number) || 0;
 
   const postLimit = 12 as number;
+  // const postLimit = 6 as number;
 
   const postLength = (await prisma.blogPost.count({
     where: {

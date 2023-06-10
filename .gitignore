@@ -2,6 +2,7 @@
 
 server.js
 /certificates
+/prisma/migrations
 
 /pscale_dump_donaldlouch_main
 

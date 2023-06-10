@@ -1,9 +1,10 @@
-import * as React from "react"
+// import { useState } from "react"
 import { Box, useColorModeValue } from '@chakra-ui/react'
 
 import Header from "./Header";
 import Footer from "./Footer";
 import { Metadata } from "./Metadata";
+import MaintenanceModePage from "./MaintenanceModePage";
 
 interface LayoutProps {
     children: React.ReactNode
@@ -11,6 +12,8 @@ interface LayoutProps {
 
 export const Layout = (props: LayoutProps) => {
     const { children } = props
+    // const [maintenanceMode, setMaintenanceMode] = useState(true)
+    const maintenanceMode = true
     // const toast = useToast()
 
     // toast({
@@ -28,11 +31,15 @@ export const Layout = (props: LayoutProps) => {
           keywords={`${process.env.KEYWORDS}`}
           description={`${process.env.DESCRIPTION}`}
        />
-      <Header />
-      <Box as="main" bg={useColorModeValue('white', 'black')} minH="100vh" pt="4rem" pb="2rem" px={{base: "1rem", lg: 20}} overflowX="clip">
-        {children}
-      </Box>
-      <Footer />
+       {maintenanceMode ? <MaintenanceModePage /> : (
+        <>
+          <Header />
+            <Box as="main" bg={useColorModeValue('white', 'black')} minH="100vh" pt="4rem" pb="2rem" px={{base: "1rem", lg: 20}} overflowX="clip">
+              {children}
+            </Box>
+          <Footer />
+        </>
+       )}
     </>
   );
 }

@@ -7,6 +7,17 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+// datasource db {
+//     provider             = "mysql"
+//     url                  = env("DATABASE_URL")
+//     shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+//     referentialIntegrity = "prisma"
+// }
+
+// generator client {
+//     provider = "prisma-client-js"
+// }
+
 model User {
     id            String    @id @default(cuid())
     name          String?
@@ -61,15 +72,6 @@ model VerificationToken {
     @@unique([identifier, token])
 }
 
-model BusinessVerification {
-    id           String   @id @default(cuid())
-    companyID    String
-    userID       String   @unique
-    userPosition String?
-    token        String
-    requestedOn  DateTime
-}
-
 model About {
     id            String   @id @default(cuid())
     birthDate     DateTime
@@ -95,7 +97,7 @@ model Links {
     iconPrefix    String
     title         String
     subTitle      String
-    link          String
+    link          String?
     addedOn       DateTime @default(now())
     lastUpdatedOn DateTime @default(now())
     orderNumber   Int?     @unique
@@ -184,8 +186,7 @@ model ResumeEducation {
 }
 
 model BlogPost {
-    orderNumber   Int      @id @default(autoincrement())
-    id            String   @unique
+    id            String   @id @unique
     title         String
     slug          String   @unique
     blogType      String
@@ -213,7 +214,6 @@ model Media {
     mediaSignature   String   @db.Text
     mediaKind        String
     mediaTitle       String
-    mediaALT         String?
     mediaExtension   String
     mediaPath        String   @unique
     mediaDescription String?  @db.Text

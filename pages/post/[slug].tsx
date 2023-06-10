@@ -155,10 +155,10 @@ export async function getServerSideProps(router: any) {
     },
   });
 
-  await prisma.blogPost.update({
-    where: { id: postData?.id },
-    data: { views: { increment: 1 } },
-  });
+  // await prisma.blogPost.update({
+  //   where: { id: postData?.id },
+  //   data: { views: { increment: 1 } },
+  // });
 
   const source = postData?.body as any;
 
