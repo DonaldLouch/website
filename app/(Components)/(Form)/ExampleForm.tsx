@@ -25,7 +25,7 @@ import {
   import { FormRadio } from './FormRadio'
   import { FormCheckGroup } from './FormCheckGroup'
   import { FormTextArea } from './FormTextArea'
-  import { FormSwitch } from './FormSwitchOLD'
+  import { FormSwitch } from './FormSwitch'
   import { FormPassword } from './FormPassword'
   
   export default function ExampleForm() {
@@ -125,7 +125,7 @@ import {
               ]}
             />
             <FormTextArea inputID="notes" inputLabel="Notes" textRows={10} />
-            <FormSwitch inputID="employed" inputLabel="Employed" />
+            <FormSwitch inputID="employed" helperText="Employed" />
             
             <SliderControl name="foo" sliderProps={{ max: 40, colorScheme: 'orange' }} /> 
 
