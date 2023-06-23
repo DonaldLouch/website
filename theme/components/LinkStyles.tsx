@@ -20,7 +20,7 @@ export const LinkStyles = {
         _hover: {
           borderColor: "currentColor",
           textDecoration: "none",
-          color: "white",
+          color: "primary",
         }
       },
 

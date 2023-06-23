@@ -8,55 +8,55 @@ interface PortalSubNavigationItemsProps {
 export const PortalSubNavigationItems: Array<PortalSubNavigationItemsProps> = [
     { 
         name: 'Manage',
-        slug: '../portal/blog',
+        slug: '/portal/blog',
         parentMenu: 0,
         levelOfAccess: '0'
     },
     { 
         name: 'Create New Post',
-        slug: '../portal/blogNew',
+        slug: '/portal/postNew',
         parentMenu: 0,
         levelOfAccess: '0'
     },
 
     { 
         name: 'Manage',
-        slug: '../portal/pages',
+        slug: '/portal/pages',
         parentMenu: 1,
         levelOfAccess: '0'
     },
     
     { 
         name: 'About Me',
-        slug: '../portal/pagesAbout',
+        slug: '/portal/pagesAbout',
         parentMenu: 1,
         levelOfAccess: '0'
     },
 
     { 
         name: 'Resume',
-        slug: '../portal/pagesResume',
+        slug: '/portal/pagesResume',
         parentMenu: 1,
         levelOfAccess: '0'
     },
 
     { 
         name: 'Links',
-        slug: '../portal/pagesLinks',
+        slug: '/portal/pagesLinks',
         parentMenu: 1,
         levelOfAccess: '0'
     },
 
     { 
         name: 'Terms of Service',
-        slug: '../portal/pagesTOS',
+        slug: '/portal/pagesTOS',
         parentMenu: 1,
         levelOfAccess: '0'
     },
 
     { 
         name: 'New Page',
-        slug: '../portal/pagesNew',
+        slug: '/portal/pagesNew',
         parentMenu: 1,
         levelOfAccess: '0'
     },

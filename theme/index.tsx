@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
+import { cardTheme as Card } from "./components/CardStyles";
 import { ButtonStyles as Button } from "./components/ButtonStyles";
 import { HeadingStyles as Heading } from "./components/HeadingStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
@@ -9,21 +10,28 @@ export const theme = extendTheme({
   styles: {
     global: {
       html: {
-        scrollBehavior: "smooth",
-        scrollPadding: "5rem",
-        overscrollBehaviorInline: "contain",
-        overscrollBehavior: "contain",
-        scrollSnapType: "inline mandatory",
+        scrollBehavior: "smooth !important",
+        // scrollPadding: "5rem",
+        // overscrollBehaviorInline: "contain",
+        // overscrollBehavior: "contain",
+        // scrollSnapType: "inline mandatory",
+        background: "blurredBackground",
+      },
+      body: {
+        background: "black",
+        color: "white"
       },
       a: {
         color: "primary",
       },
       svg: {
-        height: "auto !important",
+        height: "auto",
+        // height: "100% !important",
       },
       p: {
-        lineHeight: 1,
-        marginY: 4,
+        lineHeight: "1.25",
+        fontSize: "1.3rem",
+        // marginY: "0.1rem",
       }
     },
   },
@@ -33,13 +41,15 @@ export const theme = extendTheme({
     tertiary: "#6acc1b",
     black: "#0F111B",
     white: "#EDEDED",
+    blurredPurple: "#30243c",
     whiteColourGradient:
       "radial-gradient(ellipse at center, #EDEDED 0%,#FAFAFA 36%,#EBEBEB 100%)",
     mainGradient:
       "linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%)",
     backgroundGradient:
       "linear-gradient(-135deg, rgba(59,103,217,0.8) 0%, rgba(67,12,140,0.95) 75%)",
-    blurredBackground: "rgba(237 237 237 / 15%)",
+    blurredBackground: "rgba(118 70 136 / 15%)",
+    subtleBlurredBackground: "rgba(237 237 237 / 15%)",
     prideGradient:
       "linear-gradient(75deg, rgba(212,6,6,1) 0%, rgba(240,157,0,1) 15%, rgba(229,254,3,1) 22%, rgba(13,190,3,1) 35%, rgba(10,26,154,1) 42%, rgba(118,1,138,1) 60%,  rgba(118,1,138,1) 65%, rgba(1,1,1,1) 70%, rgba(97,58,22,1) 80%, rgba(116,215,237,1) 90%, rgba(255,175,199,1) 100%)",
     newPrideGradient : "linear-gradient(45deg, #5D62B5 0%, #5D62B5 17%, #6BB0A6 17%, #6BB0A6 34%, #EFC050 34%, #EFC050 51%, #EB7F3F 51%, #EB7F3F 68%, #ED4C67 68%, #ED4C67 85%, #652D90 85%, #652D90 100%);"
@@ -71,11 +81,18 @@ export const theme = extendTheme({
     tsPrimary: "1px 1px 10px rgba(118, 70, 136,0.7)"
   },
   components: {
+    Card,
     Button,
     Heading,
     Link,
     Tabs,
 
+    // Text: {
+    //   base: {
+    //     lineHeight: "1.2",
+    //     fontSize: "1.5rem",
+    //   }
+    // },
     Input: {
       variants: {
         primary: {
