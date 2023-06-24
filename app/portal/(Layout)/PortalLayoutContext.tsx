@@ -7,12 +7,18 @@ import { useRouter } from 'next/navigation'
 import { PortalNavigation } from './PortalNavigation'
 import PortalHeader from './PortalHeader'
 import LoadingComponent from '@/app/(Config)/ContentLoading'
+import { useEffect } from 'react'
 
 export default function PortalLayoutContext({ children, isLoggedIn }: { children: React.ReactNode, isLoggedIn: boolean }) {
     const router = useRouter()
 
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    !isLoggedIn && router.push("/?message=userLoginNotAllowed")
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    
+    useEffect(() => {
+       !isLoggedIn && router.push("/?message=userLoginNotAllowed")
+    })
+    
+   
     // !isLoggedIn && router.push("../../../../../")
 
     return (
