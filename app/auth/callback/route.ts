@@ -17,6 +17,6 @@ export async function GET(request: NextRequest) {
   }
 
   return NextResponse.redirect(
-    `${process.env.SITE_URL}/portal`
+    `${process.env.NEXT_PUBLIC_SITE_URL}/portal`
   );
 }
