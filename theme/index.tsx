@@ -11,10 +11,10 @@ export const theme = extendTheme({
     global: {
       html: {
         scrollBehavior: "smooth !important",
-        // scrollPadding: "5rem",
-        // overscrollBehaviorInline: "contain",
-        // overscrollBehavior: "contain",
-        // scrollSnapType: "inline mandatory",
+        scrollPadding: "5rem",
+        overscrollBehaviorInline: "contain",
+        overscrollBehavior: "contain",
+        scrollSnapType: "inline mandatory",
         background: "blurredBackground",
       },
       body: {
