@@ -10,7 +10,7 @@ export const PaginationMenu = ( props: any ) => {
           page === "...Prev" && (
             <Menu placement="top">
               <MenuButton>...</MenuButton>
-              <MenuList maxH="80vh !important" overflowY="scroll" background="black">
+              <MenuList maxH="80vh !important" overflowY="scroll" background="black" border="none">
                 {previousPages?.map((number: any) => (
                   <Link href={`?pg=${number}`} key={`prev_${number}`} _hover={{border: "none"}}>
                     <MenuItem background="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>{number}</MenuItem>
@@ -21,7 +21,7 @@ export const PaginationMenu = ( props: any ) => {
           ) || page === "...Nex" && (
           <Menu placement="top">
             <MenuButton>...</MenuButton>
-            <MenuList maxH="80vh !important" overflowY="scroll" background="black">
+            <MenuList maxH="80vh !important" overflowY="scroll" background="black" border="none">
               {nextPages?.map((number: any) => (
                 <Link href={`?pg=${number}`} key={`next_${number}`} _hover={{border: "none"}}>
                   <MenuItem background="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>{number}</MenuItem>
