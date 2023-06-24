@@ -22,7 +22,7 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
   // useEffect(() => {
   //   // setBaseURL(process.env.NEXT_PUBLIC_VERCEL_URL? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.SITE_URL)
   // })
-  const baseURL = process.env.SITE_URL!
+  const baseURL = process.env.NEXT_PUBLIC_SITE_URL!
   const supabase = createClientComponentClient<Database>()
 
   console.log("Base URL", baseURL)
