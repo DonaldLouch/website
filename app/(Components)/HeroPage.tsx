@@ -56,9 +56,9 @@ export default function HeroPage(props: HeroProps) {
                 <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "3rem"}} overflow="hidden">
                     <Grid templateColumns={{base: "1fr", md: "1fr 2fr"}} gap={{base: 0.5, md: 10}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
                         <Stack boxShadow="bsBigBoldBlue" borderRadius="0 2.5rem" align="center" justify="center" p={{base: "1rem"}} w={{base: "80%", md: "100%"}} m={{base: "auto", md: "initial"}}>
-                            <Heading as="h1" fontFamily="lato" fontWeight="400" fontSize="1.1rem" lineHeight={0.1} textShadow="tsPrimary" color="white">Hello, I&apos;m</Heading>
+                            <Heading as="h1" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={0.1} textShadow="tsPrimary" color="white">Hello, I&apos;m</Heading>
                             <Heading as="h2" fontWeight={900} fontSize="8xl" lineHeight={0.85} textShadow="tsPrimary" color="white">{name}</Heading>
-                            <Heading as="h3" fontFamily="lato" fontWeight="400" fontSize="1.1rem" lineHeight={2} textShadow="tsPrimary" color="white">{tagLine}</Heading>
+                            <Heading as="h3" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={2} textShadow="tsPrimary" color="white">{tagLine}</Heading>
                             <Button as="a" href={cta?.[1]} variant="heroButton" w="80%" color="white">
                                 {cta?.[0]}
                             </Button>

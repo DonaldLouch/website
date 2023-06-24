@@ -73,7 +73,7 @@ const toggle = (props: any) => (
     <>
         <Accordion allowToggle mt="2rem" mx="auto" w="100%" textDecoration="none" whiteSpace="break-spaces" wordBreak="break-word">
             <AccordionItem border="none">
-                <AccordionButton bg="backgroundGradient" color="white" borderRadius="0 2rem" p="1.5rem 3rem" fontSize="1.2rem" fontWeight="600" fontFamily="Lato" _hover={{bg: "none", color: "primary"}} outline="none" _expanded={{bg: "primary", color: "white"}}>
+                <AccordionButton bg="backgroundGradient" color="white" borderRadius="0 2rem" p="1.5rem 3rem" fontSize="1.2rem" fontWeight="600" fontFamily="body" _hover={{bg: "none", color: "primary"}} outline="none" _expanded={{bg: "primary", color: "white"}}>
                     <Box flex='1' textAlign='left'>
                     {props.toggleAlt}
                     </Box>

@@ -171,7 +171,7 @@ export default function ResumePage() {
                       p="1.5rem 3rem"
                       fontSize="1.2rem"
                       fontWeight="600"
-                      fontFamily="Lato"
+                      fontFamily="body"
                       _hover={{ bg: "none", color: "primary" }}
                       outline="none"
                       _expanded={{ bg: "primary", color: "white" }}
@@ -304,7 +304,7 @@ export default function ResumePage() {
                       p="1.5rem 3rem"
                       fontSize="1.2rem"
                       fontWeight="600"
-                      fontFamily="Lato"
+                      fontFamily="body"
                       _hover={{ bg: "none", color: "primary" }}
                       outline="none"
                       _expanded={{ bg: "primary", color: "white" }}
