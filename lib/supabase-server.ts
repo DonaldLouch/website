@@ -1,6 +1,6 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+// import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+// import { cookies } from "next/headers";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
-export default () => createServerComponentClient({ cookies });
+// export default () => createServerComponentClient({ cookies });

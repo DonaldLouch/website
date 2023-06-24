@@ -27,7 +27,7 @@ export default function PortalHome() {
         <CardHeader><Heading textAlign="center" size="4xl" textDecoration="underline" fontWeight="900" mb="1rem">Welcome!</Heading></CardHeader>
         <CardBody>
           <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Welcome to the Donald Louch Website</Text>
-          <Text textAlign="center">{process.env.DESCRIPTION!}</Text>
+          <Text textAlign="center">{process.env.DESCRIPTION}</Text>
         </CardBody>
       </Card>
       <Text textAlign="center" fontSize="3xl" fontWeight="900" color="secondary"><FontAwesomeIcon icon={["fal", "traffic-cone"]} color="currentColor" width="3%" shake  /> The portal is currently under construction</Text>

@@ -13,7 +13,7 @@ import { FooterIcon } from "./FooterIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useRouter } from "next/navigation"
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+// import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
 
 export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
@@ -22,26 +22,26 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
   // useEffect(() => {
   //   // setBaseURL(process.env.NEXT_PUBLIC_VERCEL_URL? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.SITE_URL)
   // })
-  const baseURL = process.env.NEXT_PUBLIC_SITE_URL!
-  const supabase = createClientComponentClient<Database>()
+  // const baseURL = process.env.NEXT_PUBLIC_SITE_URL!
+  // const supabase = createClientComponentClient<Database>()
   
-  const signInWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-        redirectTo: `${baseURL}/auth/callback`
-      }
-    })
-    router.refresh();
-  }
-  const signOut = async () => {
-    await supabase.auth.signOut()
-    router.refresh()
-  }
+  // const signInWithGoogle = async () => {
+  //   await supabase.auth.signInWithOAuth({
+  //     provider: 'google',
+  //     options: {
+  //       queryParams: {
+  //         access_type: 'offline',
+  //         prompt: 'consent',
+  //       },
+  //       redirectTo: `${baseURL}/auth/callback`
+  //     }
+  //   })
+  //   router.refresh();
+  // }
+  // const signOut = async () => {
+  //   await supabase.auth.signOut()
+  //   router.refresh()
+  // }
   return (
     <Box
       bg="black"
@@ -122,11 +122,11 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
           >
             <Text fontSize="sm" fontWeight="medium" m="0">&copy; 1994 - {new Date().getFullYear()} Donald Louch.</Text>
           </Stack>
-          {isLoggedIn ? 
+          {/* {isLoggedIn ? 
             <Button pos="absolute" bottom="3%" right="0" opacity="0.09" onClick={signOut} size="xs">Logout</Button>
           :   
             <Button pos="absolute" bottom="3%" right="0" opacity="0.09" onClick={signInWithGoogle} size="xs">Developer Login</Button>  
-          } 
+          }  */}
         </Stack>
       </Box>
     </Box>

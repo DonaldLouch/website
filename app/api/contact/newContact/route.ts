@@ -1,19 +1,20 @@
 import nodemailer from "nodemailer";
 
-import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
-import type { Database } from "@/lib/database.types";
+// import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
+// import type { Database } from "@/lib/database.types";
 
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
+// import { cookies } from "next/headers";
 
 import { createId } from "@paralleldrive/cuid2";
+import supabase from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   const { name, email, subject, message } = (await request.json()) as any;
   const id = createId();
-  const supabase = createRouteHandlerClient<Database>({ cookies });
+  // const supabase = createRouteHandlerClient<Database>({ cookies });
   const { data: supData, status: supStatus } = (await supabase
     .from("Contact")
     .insert({ id, name, email, subject, message })

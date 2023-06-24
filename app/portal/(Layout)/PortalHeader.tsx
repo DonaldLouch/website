@@ -3,8 +3,11 @@
 import {
   IconButton,
   Flex,
-  FlexProps
+  FlexProps,
+  Stack,
+  Text
 } from '@chakra-ui/react'
+import { UserButton, useUser } from '@clerk/nextjs'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -14,6 +17,8 @@ interface PortalHeaderProps extends FlexProps {
 
 
 export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
+    const {user} = useUser();
+
     return (
         <Flex
             ml={{ base: 0, md: "15rem" }}
@@ -46,7 +51,10 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
                     />
                 }
             />
-
+            <Stack alignItems="center" direction="row">
+                <Text fontWeight="700">{user?.fullName}</Text>
+                <UserButton afterSignOutUrl="/"/>
+            </Stack>
             {/* <VStack
                 alignItems="flex-end"
                 spacing="0.2rem"

@@ -9,21 +9,21 @@ import PortalHeader from './PortalHeader'
 import LoadingComponent from '@/app/(Config)/ContentLoading'
 import { useEffect } from 'react'
 
-export default function PortalLayoutContext({ children, isLoggedIn }: { children: React.ReactNode, isLoggedIn: boolean }) {
-    const router = useRouter()
+export default function PortalLayoutContext({ children }: { children: React.ReactNode }) {
+    // const router = useRouter()
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     
-    useEffect(() => {
-       !isLoggedIn && router.push("/?message=userLoginNotAllowed")
-    })
+    // useEffect(() => {
+    //    !isLoggedIn && router.push("/?message=userLoginNotAllowed")
+    // })
     
    
     // !isLoggedIn && router.push("../../../../../")
 
     return (
       <>
-      {!isLoggedIn ? <LoadingComponent /> : (<>
+      {/* {!isLoggedIn ? <LoadingComponent /> : (<> */}
         <Box
           minH="80vh"
           bg="none"
@@ -60,7 +60,7 @@ export default function PortalLayoutContext({ children, isLoggedIn }: { children
             {children}
           </Box>
         </Box>
-      </>)}
+      {/* </>)} */}
       </>
     )
 }

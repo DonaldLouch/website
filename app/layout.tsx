@@ -1,6 +1,6 @@
 import Context from "./(Config)/Context"
 
-import createClient from "@/lib/supabase-server"
+// import createClient from "@/lib/supabase-server"
 
 // import { Playfair_Display, Lato } from "next/font/google"
 // const playfairDisplay = Playfair_Display({ 
@@ -53,9 +53,10 @@ export const metadata: Metadata = {
 export const revalidate = 0;
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const supabase = createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  const isLoggedIn = user ? true : false
+  // const supabase = createClient()
+  // const { data: { user } } = await supabase.auth.getUser()
+  // const isLoggedIn = user ? true : false
+  const isLoggedIn = false
   return (
     <html>
       <body>
