@@ -42,6 +42,8 @@ export const metadata: Metadata = {
     appleWebApp: { capable: true, title: process.env.WEBSITE_NAME, statusBarStyle: "black-translucent" }
 }
 
+export const revalidate = 0;
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const supabase = createClient()
   const { data: { user } } = await supabase.auth.getUser()
