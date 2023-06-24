@@ -8,6 +8,8 @@ import { cookies } from "next/headers";
 
 import { createId } from "@paralleldrive/cuid2";
 
+export const revalidate = 0;
+
 export async function POST(request: Request) {
   const { name, email, subject, message } = (await request.json()) as any;
   const id = createId();
