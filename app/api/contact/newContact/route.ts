@@ -8,7 +8,7 @@ import { cookies } from "next/headers";
 
 import { createId } from "@paralleldrive/cuid2";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   const { name, email, subject, message } = (await request.json()) as any;
