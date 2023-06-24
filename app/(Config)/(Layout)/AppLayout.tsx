@@ -23,7 +23,7 @@ export default function AppLayout({ children, isLoggedIn }: { children: React.Re
         isClosable: true,
     })
 
-    !toast.isActive(toastID) &&
+    !isLoggedIn && !toast.isActive(toastID) &&
     toast({
         id: toastID,
         title: "Alpha Website",
