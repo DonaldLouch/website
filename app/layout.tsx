@@ -2,14 +2,22 @@ import Context from "./(Config)/Context"
 
 import createClient from "@/lib/supabase-server"
 
-import { Playfair_Display, Lato } from "next/font/google"
-const playfairDisplay = Playfair_Display({ subsets: ["latin"], style: ['normal', 'italic'], display: 'swap' })
-const lato = Lato({
-    weight: ["100", "300", "400", "700", "900"], 
-    style: ['normal', 'italic'],
-    subsets: ["latin"],
-    display: 'swap'
-})
+// import { Playfair_Display, Lato } from "next/font/google"
+// const playfairDisplay = Playfair_Display({ 
+//   subsets: ["latin"], 
+//   style: ['normal', 'italic'], 
+//   display: 'swap', 
+//   preload: true,
+//   fallback: ['']
+// })
+// const lato = Lato({
+//     weight: ["100", "300", "400", "700", "900"], 
+//     style: ['normal', 'italic'],
+//     subsets: ["latin"],
+//     display: 'swap', 
+//     preload: true,
+//     fallback: ['']
+// })
 
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
@@ -49,7 +57,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { data: { user } } = await supabase.auth.getUser()
   const isLoggedIn = user ? true : false
   return (
-    <html className={playfairDisplay.className + lato.className}>
+    <html>
       <body>
         <Context isLoggedIn={isLoggedIn}>{children}</Context>
       </body>

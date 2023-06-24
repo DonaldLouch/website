@@ -41,13 +41,15 @@ export default async function AboutMeBio(about: any) {
                                 alt={`${about.firstName} ${about.lastName}`}
                                 w={{ base: "50%", md: "100%" }}
                                 m="0 auto"
+                                borderRadius="0 2rem"
                             />
                             <Box>
                                 <Heading
                                     as="h2"
                                     fontSize={{ base: "3rem", md: "5rem" }}
                                     textDecoration="underline"
-                                    textDecorationColor="white"
+                                    textDecorationThickness="0.4rem"
+                                    textDecorationColor="primary"
                                 >
                                     {about.firstName} {about.middleName} {about.lastName}
                                 </Heading>
@@ -60,9 +62,11 @@ export default async function AboutMeBio(about: any) {
                             as="h3"
                             size="2xl"
                             fontFamily="body"
-                            fontWeight="400"
+                            fontWeight="300"
                             my="0.5rem"
                             textDecor="underline"
+                            textDecorationThickness="0.2rem"
+                            textDecorationColor="primary"
                         >
                             {about.tagLine}
                         </Heading>

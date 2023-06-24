@@ -24,8 +24,7 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
   // })
   const baseURL = process.env.NEXT_PUBLIC_SITE_URL!
   const supabase = createClientComponentClient<Database>()
-
-  console.log("Base URL", baseURL)
+  
   const signInWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: 'google',

@@ -33,7 +33,7 @@ export default function BlogPostCard(props: any) {
                 bg="blurredBackground"
                 borderRadius="0 3rem 0 0"
             >
-                <Image src={props.thumbnail} alt={props.title} width="300" height="300" />
+                <Image src={props.thumbnail} alt={props.title} width="3840" height="2160" />
             </AspectRatio>
             <Heading
                 as="h2"

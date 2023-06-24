@@ -18,7 +18,7 @@ export const SectionCard = (props: CardProps) => {
             mx="-2rem"
             my="2rem" 
             p="2rem" 
-            borderRadius="0 3rem 0 3rem" 
+            borderRadius="0 2rem" 
             bg="none"
             boxShadow={
                 styleType == "primaryCard" ? "bsBoldBlue" 

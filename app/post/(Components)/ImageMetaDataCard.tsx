@@ -3,10 +3,9 @@
 import { 
     Box,
     Text,
-    Heading
+    Heading,
+    Link
 } from '@chakra-ui/react'
-
-import Link from 'next/link'
 
 export const ImageMetaDataCard = (post: any) => {
     const postedData = new Date(post.postedOn)
@@ -27,7 +26,7 @@ export const ImageMetaDataCard = (post: any) => {
         >
             <Heading as="h1" fontSize="3rem" fontWeight="900" my="0.5rem" ml="0.9rem">{post.title}</Heading>
             <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: {categorySplit.map((category: any) => (
-                <Link key={category} href={`/C/${category}`} style={{textDecoration: "none", color: "currentColor"}}><Text boxShadow="bsBoldWhite" p="0.5rem" borderRadius="0 0.5rem" mx="0.2rem" _hover={{boxShadow: "bsBoldOrange"}}>{category}</Text></Link>
+                <Link key={category} href={`/C/${category}`} variant="unstyled" textDecoration="none" color="currentColor" boxShadow="bsBoldWhite" p="0.5rem" borderRadius="0 0.5rem" mx="0.2rem" _hover={{boxShadow: "bsBoldOrange"}}>{category}</Link>
             ))}</Text>
         </Box>
     )

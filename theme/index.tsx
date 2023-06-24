@@ -6,6 +6,23 @@ import { HeadingStyles as Heading } from "./components/HeadingStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
 import { tabsTheme as Tabs } from "./components/TabsStyles";
 
+import { Playfair_Display, Lato } from "next/font/google"
+const playfairDisplay = Playfair_Display({ 
+  subsets: ["latin"], 
+  style: ['normal', 'italic'], 
+  display: 'swap', 
+  preload: true,
+  fallback: ['Georgia', 'serif']
+})
+const lato = Lato({
+    weight: ["100", "300", "400", "700", "900"], 
+    style: ['normal', 'italic'],
+    subsets: ["latin"],
+    display: 'swap', 
+    preload: true,
+    fallback: ['system-ui', 'arial', 'sans-serif']
+})
+
 export const theme = extendTheme({
   styles: {
     global: {
@@ -55,8 +72,8 @@ export const theme = extendTheme({
     newPrideGradient : "linear-gradient(45deg, #5D62B5 0%, #5D62B5 17%, #6BB0A6 17%, #6BB0A6 34%, #EFC050 34%, #EFC050 51%, #EB7F3F 51%, #EB7F3F 68%, #ED4C67 68%, #ED4C67 85%, #652D90 85%, #652D90 100%);"
   },
   fonts: {
-    body: "Lato, system-ui, sans-serif",
-    heading: "Playfair Display, Georgia, serif",
+    body: lato.style.fontFamily,
+    heading: playfairDisplay.style.fontFamily,
   },
   shadows: {
     bsBlue: "5px 3px 8.37px rgba(118, 70, 136,.2)",

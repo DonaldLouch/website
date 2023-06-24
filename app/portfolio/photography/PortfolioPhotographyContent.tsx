@@ -89,12 +89,9 @@ export default function PortfolioPhotographyContent() {
       <Box
         as="section"
         id="photoShowcase"
-        padding={{base: "6rem 4.4rem 0", lg: "6rem 0.4rem 0"}}
+       padding={{base: "6rem 4.4rem 1rem", lg: "6rem 0.4rem 1rem"}}
         w="calc(100% + 10rem)"
-        // mx="-5rem"
-        // mt="-5rem"
-        // mb="-2rem"
-        m="-5rem -5rem -2rem"
+        m="-6rem -5rem"
         sx={{ columnCount: {base:"1", md: "2", lg: "4"}, gap: "0.4rem", columnWidth: {base: "100%", md: "50% 50%", lg: "33.3% 33.3% 33.3%"}}}
         bg="mainGradient"
       >
@@ -103,8 +100,8 @@ export default function PortfolioPhotographyContent() {
             <Image
               src={image}
               alt="portfolio image"
-              width="1920"
-              height="1080"
+             width="3840" 
+             height="2160"
               // _hover={{ background: "backgroundGradient", opacity: "0.6" }}
               style={{display: "inherit"}}
             ></Image>

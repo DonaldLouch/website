@@ -7,7 +7,8 @@ import {
     keyframes,
     usePrefersReducedMotion,
     Heading,
-    Link
+    Link,
+    AspectRatio
 } from '@chakra-ui/react'
 
 import Image from 'next/image'
@@ -37,14 +38,26 @@ export const SpecialPostType = (post: any) => {
     const postedOn = postedDay +" at " + postedTime
     return (
         <>
-            <Box 
+            {/* <Box 
                 as="section" 
                 id="thumbWrap" 
                 pos="absolute"
                 top="0"
                 left="0"
             >
-                <Image src={post.thumbnail} alt={post.title} width="1080" height="1920"/>
+                <Image src={post.thumbnail} alt={post.title} width="3840" height="2160"/> */}
+                <AspectRatio 
+                ratio={16/9}
+                w="100%"
+                overflow="hidden"
+                bg="mainGradient"
+                pos="absolute"
+                top="0"
+                left="0"
+                p="0"
+            >
+                <Image src={post.thumbnail} alt={post.title} width="3840" height="2160" />
+            </AspectRatio>
                 <Box 
                     pos="absolute"
                     top={{ base: "30vw", md:"5vw" }}
@@ -57,7 +70,7 @@ export const SpecialPostType = (post: any) => {
                     <Heading as="h1" fontSize="3rem" fontWeight="900" my="0.5rem">{post.title}</Heading>
                     <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
                 </Box>
-            </Box>
+            {/* </Box> */}
 
             <Box pt={{base: "43vh", md: "55vw", lg: "60vw", xl: "89vh"}}></Box>
 

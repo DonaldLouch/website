@@ -20,9 +20,9 @@ export const GalleryPostType = (post: any) => {
             <Box 
                 as="section" 
                 id="photoShowcase" 
-                padding={{base: "6rem 4.4rem 0", lg: "5.4rem 0.4rem 0"}}
+                padding={{base: "6rem 4.4rem 1rem", lg: "6rem 0.4rem 1rem"}}
                 w="calc(100% + 10rem)"
-                m="-5rem"
+                m="-6rem -5rem"
                 sx={{ columnCount: {base:"1", md: "2", lg: "3"}, gap: "0.4rem", columnWidth: {base: "100%", md: "50% 50%", lg: "33.3% 33.3% 33.3%"}}}
                 bg="mainGradient"
             >
