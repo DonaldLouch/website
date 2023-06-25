@@ -14,7 +14,7 @@ import LoadingComponent from '@/app/(Config)/ContentLoading'
 export default function LinksSection({about, posts, primaryLinks, links, embeds}: any) {
     return (
         <>
-            <Suspense fallback={<LoadingComponent />}>
+            {/* <Suspense fallback={<LoadingComponent />}> */}
                 <SectionTitle headingTitle="Links" />
 
                 <Stack
@@ -104,7 +104,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
-            </Suspense> 
+            {/* </Suspense>  */}
         </>
     )
 }
