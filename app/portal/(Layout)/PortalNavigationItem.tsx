@@ -61,7 +61,8 @@ export const PortalNavigationItem = ({
             {iconName && (
               <Box
                 mr="4"
-                width={{ base: "4%", md: "12%" }}
+                // width={{ base: "4%", md: "12%" }}
+                fontSize="xl"
                 color="white"
               >
                 <FontAwesomeIcon
@@ -96,7 +97,8 @@ export const PortalNavigationItem = ({
               {iconName && (
                 <Box
                   mr="4"
-                  width={{ base: "4%", md: "12%" }}
+                  // width={{ base: "4%", md: "12%" }}
+                  fontSize="xl"
                   color="currentColor"
                 >
                   <FontAwesomeIcon

@@ -1,5 +1,6 @@
+import supabase from '@/lib/supabase';
 import EditPostContent from '../EditPostContent'
-import createClient from "@/lib/supabase-server"
+// import createClient from "@/lib/supabase-server"
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -18,7 +19,7 @@ type Props = {
 
 export default async function EditBlogPost({ params }: Props) {
   const { slug } = params
-  const supabase = createClient();
+  // const supabase = createClient();
   const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
 
   return <EditPostContent post={post} />

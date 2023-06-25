@@ -5,7 +5,8 @@ import {
   useToast,
   Text,
   // Heading,
-  Link
+  Link,
+  Heading
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -77,9 +78,9 @@ export default function Contact() {
   return (
     <SectionCard id="contact" styleType="primaryCard">
       <SectionTitle headingTitle="Contact Me" />
-      {/* <Heading as="h3" size="xl" my="1rem" textAlign="center" fontWeight="regular">THE CONTACT FORM IS CURRENTLY DISABLED</Heading> */}
-      <Text textAlign="center" fontSize="xl" my="1rem">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca" variant="primary">hello@donaldlouch.ca</Link>.</Text>
-      <Formik
+      <Heading as="h3" size="xl" my="1rem" textAlign="center" fontWeight="regular">THE CONTACT FORM IS CURRENTLY DISABLED</Heading>
+      {/* <Text textAlign="center" fontSize="xl" my="1rem">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca" variant="primary">hello@donaldlouch.ca</Link>.</Text> */}
+      {/* <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
@@ -106,7 +107,7 @@ export default function Contact() {
             <SubmitButton variant="blackFormButton">Submit</SubmitButton>
           </Stack>
         )}
-      </Formik>
+      </Formik> */}
     </SectionCard>
   );
 }

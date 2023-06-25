@@ -60,31 +60,6 @@ export const PortalNavigation = ({
           </PortalNavigationItem>
         </Box>
       ))}
-      <Flex
-        align="center"
-        p="4"
-        mx="3"
-        my="1"
-        borderRadius="0 1.5rem"
-        role="group"
-        cursor="pointer"
-        color="white"
-        bg="red.500"
-        _hover={{ bg: "secondary" }}
-        _focus={{ boxShadow: "none" }}
-        transition="all 0.3s"
-        // onClick={() => signOut()}
-        fontWeight="900"
-      >
-        <Box mr="4" width={{ base: "5%", md: "12%" }}>
-          <FontAwesomeIcon
-            icon={["fas", "sign-out-alt"]}
-            color="black"
-            width="100%"
-          />
-        </Box>
-        Logout
-      </Flex>
     </Box>
   )
 }
