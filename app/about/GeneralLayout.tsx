@@ -52,7 +52,7 @@ export default function AboutGeneralLayout() {
                         as="section"
                         color="white"
                         padding={{ base: "0.5rem", md: "2rem 5rem" }}
-                        position="relative"
+                        // position="relative"
                         background="blurredBackground"
                         width="100%"
                         maxW="100%"
