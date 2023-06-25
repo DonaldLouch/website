@@ -1,4 +1,5 @@
-import createClient from "@/lib/supabase-server"
+// import createClient from "@/lib/supabase-server"
+import supabase from "@/lib/supabase";
 import PostPage from "./PostPage";
 
 {/* <Metadata
@@ -13,7 +14,7 @@ type Props = {
 };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = params
-    const supabase = createClient();
+    // const supabase = createClient();
     const {data: post} = await supabase.from('BlogPost').select('title,excerpt,thumbnail,tags,categories,slug').match({ slug: slug }) as any
     const postMeta = post[0]
     // console.log("Metadata", excerpt)
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Post({ params }: Props) {
   const { slug } = params
-  const supabase = createClient();
+  // const supabase = createClient();
   const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }) as any
 
   const { data: { user } } = await supabase.auth.getUser();

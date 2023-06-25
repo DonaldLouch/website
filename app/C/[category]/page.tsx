@@ -1,14 +1,15 @@
-import createClient from "@/lib/supabase-server"
+// import createClient from "@/lib/supabase-server"
 
 import { Metadata } from 'next'
 import CategoryContent from "./CategoryContent";
+import supabase from "@/lib/supabase";
 
 type Props = {
     params: { category: string }
 };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { category } = params
-    const supabase = createClient()
+    // const supabase = createClient()
     const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('categories', `%${category}%`).match({ postStatus: 'Public' }) as any
     return {
       title: `(${postCount}) ${category} | ${process.env.WEBSITE_NAME}`,

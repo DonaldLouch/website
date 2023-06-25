@@ -1,10 +1,11 @@
-import createClient from "@/lib/supabase-server"
+// import createClient from "@/lib/supabase-server"
 
+import supabase from "@/lib/supabase";
 import AboutGeneralLayout from "./GeneralLayout";
 
 import { Metadata } from 'next'
 export async function generateMetadata(): Promise<Metadata> {
-    const supabase = createClient();
+    // const supabase = createClient();
     const {data: about} = await supabase.from('About').select() as any
     const aboutMeta = about[0]
     return {
