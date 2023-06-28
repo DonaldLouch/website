@@ -14,45 +14,45 @@ import supabase from "@/lib/supabase"
 import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 
-export default function CategoryContent(props: { category: string }) {
-  const [posts, setPosts] = useState<any>([])
-  const [pagination, setPagination] = useState<any>([])
-  const [postsNumber, setPostsNumber] = useState(null) as any
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+export default function CategoryContent({posts, pagination, postsNumber, category}: any) {
+  // const [posts, setPosts] = useState<any>([])
+  // const [pagination, setPagination] = useState<any>([])
+  // const [postsNumber, setPostsNumber] = useState(null) as any
+  // const [isLoading, setIsLoading] = useState<boolean>(true)
     
-  let pageParams = useSearchParams()
-  let pageRaw = pageParams.get("pg") as string
-  let page = parseInt(pageRaw) as number
-  let currentPage = (((page) - 1) as number) || 0
+  // let pageParams = useSearchParams()
+  // let pageRaw = pageParams.get("pg") as string
+  // let page = parseInt(pageRaw) as number
+  // let currentPage = (((page) - 1) as number) || 0
 
-  const {category} = props
+  // const {category} = props
 
-  useEffect(() => {
-      const fetchSupabaseData = async () => {
-          const postLimit = 12 as number
-          const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('categories', `%${category}%`).match({ postStatus: 'Public' }) as any
-          let numberOfPages = (postLength / postLimit) as number;
+  // useEffect(() => {
+  //     const fetchSupabaseData = async () => {
+  //         const postLimit = 12 as number
+  //         const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('categories', `%${category}%`).match({ postStatus: 'Public' }) as any
+  //         let numberOfPages = (postLength / postLimit) as number;
 
-          if (!Number.isInteger(numberOfPages)) {
-              numberOfPages = Math.floor(numberOfPages) + 1;
-          }
+  //         if (!Number.isInteger(numberOfPages)) {
+  //             numberOfPages = Math.floor(numberOfPages) + 1;
+  //         }
 
-          if (numberOfPages < page) {
-              currentPage = numberOfPages;
-          }
-          const pageCalc = currentPage * postLimit
-          const { data: postData } = await supabase.from('BlogPost').select().ilike('categories', `%${category}%`).match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+  //         if (numberOfPages < page) {
+  //             currentPage = numberOfPages;
+  //         }
+  //         const pageCalc = currentPage * postLimit
+  //         const { data: postData } = await supabase.from('BlogPost').select().ilike('categories', `%${category}%`).match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
           
-          const paginationArray = new Array();
-          paginationArray.push(numberOfPages, currentPage);
+  //         const paginationArray = new Array();
+  //         paginationArray.push(numberOfPages, currentPage);
           
-          setPosts(postData)
-          setPagination(paginationArray)
-          setPostsNumber(parseInt(postLength)) as number
-      }
-      fetchSupabaseData()
-      posts ? setIsLoading(false) : setIsLoading(true)
-  }, [page])
+  //         setPosts(postData)
+  //         setPagination(paginationArray)
+  //         setPostsNumber(parseInt(postLength)) as number
+  //     }
+  //     fetchSupabaseData()
+  //     posts ? setIsLoading(false) : setIsLoading(true)
+  // }, [page])
 
   let capitalizedCategoryTitle = category.charAt(0).toUpperCase() + category.slice(1) as string
 
@@ -64,7 +64,7 @@ export default function CategoryContent(props: { category: string }) {
     <>
         <Box as="main" color="white">
           <SectionCard id="posts" styleType="primaryCard">
-            {isLoading ? <LoadingComponent /> : (
+            {/* {isLoading ? <LoadingComponent /> : ( */}
               <>
                 <SectionTitle headingTitle={posts.length === 0 ? (`It seems that there is no blog posts under the category "${capitalizedCategoryTitle}".`) : (`"${capitalizedCategoryTitle}" has ${postsNumber} ${postsNumber === 1 ? ("post") : ("posts")} in it's category`)} />
                 <Grid templateColumns={{base: "100%" , md:"50% 50%", lg: "33% 33% 33%"}} gap={{base: 0, md: "1rem", xl:"2rem"}} mt="3rem" pr={{base: "initial", lg: "3rem"}} w="100%">
@@ -105,7 +105,7 @@ export default function CategoryContent(props: { category: string }) {
                 </Grid>
                 <Pagination {...pagination} />
               </>
-            )}
+            {/* )} */}
           </SectionCard>
         </Box>
     </>

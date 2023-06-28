@@ -1,3 +1,4 @@
+import supabase from "@/lib/supabase";
 import HeroPage from "../(Components)/HeroPage";
 
 import Posts from "./Posts";
@@ -5,6 +6,10 @@ import ViewPostButton from "./ViewPostButton";
 
 // import createClient from "@/lib/supabase-server"
 // import supabase from "@/lib/supabase";
+
+type Props = {
+    params: { pg: string }
+};
 
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
@@ -24,7 +29,28 @@ export const metadata: Metadata = {
     twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
-export default async function Blog() {
+export default async function Blog({params}: Props) {
+  let page = parseInt(params.pg) as number
+  let currentPage = (((page) - 1) as number) || 0
+  
+  const postLimit = 9 as number
+  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).match({ postStatus: 'Public' }) as any
+  let numberOfPages = (postLength / postLimit) as number;
+
+  if (!Number.isInteger(numberOfPages)) {
+      numberOfPages = Math.floor(numberOfPages) + 1;
+  }
+
+  if (numberOfPages < page) {
+      currentPage = numberOfPages;
+  }
+  const pageCalc = currentPage * postLimit
+  const { data: postData } = await supabase.from('BlogPost').select().match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+  const { data: pinnedPosts } = await supabase.from('BlogPost').select().match({ postStatus: 'Public', pinned: true }).order('postedOn', { ascending: false })
+  
+  const paginationArray = new Array()
+  paginationArray.push(numberOfPages, currentPage)
+
   const pageLinks = [
     {
       linkTitle: "Photography",
@@ -67,6 +93,7 @@ export default async function Blog() {
     // https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg
     // https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg
 
+    
   return (
     <>
       <HeroPage
@@ -78,7 +105,7 @@ export default async function Blog() {
       />
       <ViewPostButton />
       {/* @ts-ignore */}
-      <Posts />
+      <Posts posts={postData} pinnedPosts={pinnedPosts} pagination={paginationArray} postsNumber={parseInt(postLength)} />
     </>
   );
 }

@@ -5,7 +5,7 @@ import CategoryContent from "./CategoryContent";
 import supabase from "@/lib/supabase";
 
 type Props = {
-    params: { category: string }
+    params: { category: string, pg: string}
 };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { category } = params
@@ -24,7 +24,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default function Category({ params }: Props) {
+export default async function Category({ params }: Props) {
   const { category } = params
-  return <CategoryContent category={category} />
+
+  let page = parseInt(params.pg) as number
+  let currentPage = (((page) - 1) as number) || 0
+
+  const postLimit = 12 as number
+  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('categories', `%${category}%`).match({ postStatus: 'Public' }) as any
+  let numberOfPages = (postLength / postLimit) as number;
+
+  if (!Number.isInteger(numberOfPages)) {
+      numberOfPages = Math.floor(numberOfPages) + 1;
+  }
+
+  if (numberOfPages < page) {
+      currentPage = numberOfPages;
+  }
+  const pageCalc = currentPage * postLimit
+  const { data: postData } = await supabase.from('BlogPost').select().ilike('categories', `%${category}%`).match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+  
+  const paginationArray = new Array();
+  paginationArray.push(numberOfPages, currentPage);
+
+  return <CategoryContent posts={postData} pagination={paginationArray} postsNumber={postLength} category={category} />
 }

@@ -130,7 +130,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               <Heading textAlign="center" my="1rem" id="profile">
                 Profile
               </Heading>
-              <Text fontSize="1.1rem" lineHeight="1.4rem">
+              <Text>
                 {resume.profile}
               </Text>
 
@@ -142,7 +142,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               >
                 Skills
               </Heading>
-              <Text fontSize="1.1rem" lineHeight="1.4rem">
+              <Text>
                 {resume.skills}
               </Text>
 
@@ -224,7 +224,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                       <Heading as="h3" my="1rem">
                         {experience.position}
                       </Heading>
-                      <Text fontSize="1.1rem">{experience.description}</Text>
+                      <Text>{experience.description}</Text>
 
                       {resumeWorkExperienceHistory.map((history: any) =>
                         history.resumeID === experience.id ? (
@@ -235,10 +235,10 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                             borderRadius="0 2rem"
                             my="1rem"
                           >
-                            <Heading as="h3" my="1rem">
+                            <Heading as="h3" my="1rem 0.8rem">
                               {history.position}
                             </Heading>
-                            <Text fontSize="1.1rem">
+                            <Text color="gray" mb="0.8rem" fontWeight="300">
                               {history?.startDate === history?.endDate ? (
                                 <>
                                   {`${new Date(
@@ -271,7 +271,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                                 </>
                               )}
                             </Text>
-                            <Text fontSize="1.1rem">{history.description}</Text>
+                            <Text>{history.description}</Text>
                           </Box>
                         ) : null
                       )}
@@ -324,7 +324,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                     </Icon>
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
-                      <Text fontSize="1.1rem">{education.description}</Text>
+                      <Text>{education.description}</Text>
                     </AccordionPanel>
                   </AccordionItem>
                 </Accordion>
