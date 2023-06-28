@@ -28,7 +28,6 @@ import {
 } from "@chakra-ui/react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import '../../lib/fontAwesome'
 
 const heading1 = (props: any) => (
     <Heading as="h1" size="4xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>

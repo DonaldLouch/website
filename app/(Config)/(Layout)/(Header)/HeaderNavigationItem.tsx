@@ -9,6 +9,7 @@ import {
   MenuItem,
   Stack,
   Tooltip,
+  Icon,
 } from "@chakra-ui/react";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
@@ -55,7 +56,11 @@ export const HeaderNavigationItem = ({ slug, isParent, parentID, children }: Hea
           </Link>
           <Menu>
             <Tooltip label="More Pages">
-              <MenuButton as="button" color="white" _hover={{ color: "secondary" }} _active={{ color: "secondary" }}>+</MenuButton>
+              <MenuButton as="button" color="white" _hover={{ color: "secondary" }} _active={{ color: "secondary" }}>
+                <Icon w="1.2rem" h="1.2rem">
+                  <FontAwesomeIcon icon={['fal', 'chevron-down']} color="currentColor" /> 
+                </Icon>
+              </MenuButton>
             </Tooltip>
             <MenuList bg="black" border="none">
                 {HeaderSubNavigationItems.map( (subLink: any) =>subLink?.parentMenu == parentID && (

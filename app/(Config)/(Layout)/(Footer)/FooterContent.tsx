@@ -10,11 +10,11 @@ Button,
 } from "@chakra-ui/react";
 
 import { FooterIcon } from "./FooterIcon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useRouter } from "next/navigation"
 // import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
   const router = useRouter()  

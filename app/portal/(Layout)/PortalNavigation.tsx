@@ -6,7 +6,7 @@ import { PortalNavigationItem } from "./PortalNavigationItem";
 
 import { PortalNavigationItems } from "@/lib/PortalNavigationItems"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 interface PortalNavigationProps extends BoxProps {
   onClose: () => void;

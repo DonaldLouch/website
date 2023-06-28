@@ -1,13 +1,10 @@
 'use client'
 
-// import { ChevronDownIcon } from '@chakra-ui/icons'
-import { Box, Tooltip } from '@chakra-ui/react'
+import { Box, Icon, Tooltip } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import React from 'react'
 
 export default function ViewPostButton() {
-  // const ChevronDownIcon = () => <FontAwesomeIcon icon={['fal', 'down']} color="currentColor" />
   return (
     <Tooltip label="View Blog Posts">
         <Box
@@ -19,8 +16,10 @@ export default function ViewPostButton() {
           fontSize="1.5rem"
           _hover={{ color: "secondary" }}
         >
-          <Link href="/blog#posts">
-            {/* <ChevronDownIcon /> */}
+          <Link href="/blog#posts" style={{color: "inherit"}}>
+            <Icon w="2rem" h="2rem">
+              <FontAwesomeIcon icon={['fal', 'down']} color="currentColor" /> 
+            </Icon>
           </Link>
         </Box>
       </Tooltip>

@@ -14,6 +14,7 @@ import {
   Grid,
   Image,
   AspectRatio,
+  Icon,
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -209,14 +210,14 @@ export default function ResumePage() {
                           </>
                         )}
                       </Box>
-                      <Box w={{base: "4%", lg: "2%"}}>
-                        <FontAwesomeIcon 
-                            icon={["fal", "chevron-down"]}
-                            height="100%"
-                            fontSize="md"
-                            color="currentColor"
-                        />
-                    </Box>
+                      <Icon w="1.5rem" h="1.5rem">
+                          <FontAwesomeIcon 
+                              icon={["fal", "chevron-down"]}
+                              // height="100%"
+                              // fontSize="md"
+                              color="currentColor"
+                          />
+                      </Icon>
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Heading as="h3" my="1rem">
@@ -312,14 +313,14 @@ export default function ResumePage() {
                       <Box flex="1" textAlign="left">
                         {`${education.startDate} - ${education.endDate}: ${education.school}`}
                       </Box>
-                      <Box w={{base: "4%", lg: "2%"}}>
+                      <Icon w="1.5rem" h="1.5rem">
                         <FontAwesomeIcon 
                             icon={["fal", "chevron-down"]}
-                            height="100%"
-                            fontSize="md"
+                            // height="100%"
+                            // fontSize="md"
                             color="currentColor"
                         />
-                    </Box>
+                    </Icon>
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Text fontSize="1.1rem">{education.description}</Text>

@@ -4,12 +4,12 @@ import {
   Box,
   AspectRatio,
   Stack,
-  Link,
-  Tooltip,
-  IconButton,
+  // Link,
+  // Tooltip,
+  // IconButton,
 } from "@chakra-ui/react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
