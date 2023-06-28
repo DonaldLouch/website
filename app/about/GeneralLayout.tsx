@@ -6,38 +6,38 @@ import AboutMeBio from "./(Sections)/AboutMeBio";
 import LinksSection from "./(Sections)/LinksSection";
 import Contact from "./(Sections)/Contact";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-import supabase from "@/lib/supabase"
-import LoadingComponent from "../(Config)/ContentLoading";
+// import supabase from "@/lib/supabase"
+// import LoadingComponent from "../(Config)/ContentLoading";
 import HomeButton from "../(Components)/(Buttons)/HomeButton";
 
-export default function AboutGeneralLayout() {
-    const [about, setAbout] = useState([])
-    const [posts, setPosts] = useState([])
-    const [primaryLinks, setPrimaryLinks] = useState([])
-    const [links, setLinks] = useState([])
-    const [embeds, setEmbeds] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
-        const fetchSupabaseData = async () => {
-            const { data: aboutMe } = await supabase.from('About').select().single()
-            const { data: pinnedPostsData } = await supabase.from('BlogPost').select().match({ pinned: true }).order('postedOn', { ascending: false }) as any
-            const { data: primaryLinksData } = await supabase.from('PrimaryLinks').select().order('orderNumber', { ascending: true }) as any
-            const { data: linksData } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
-            const { data: embedsData } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
-            setAbout(aboutMe)
-            setPosts(pinnedPostsData)
-            setPrimaryLinks(primaryLinksData)
-            setLinks(linksData)
-            setEmbeds(embedsData)
-        }
-        fetchSupabaseData()
-        about && posts && primaryLinks && links && embeds && setIsLoading(false)
-    }, [])
+export default function AboutGeneralLayout({about, posts, primaryLinks, links, embeds}: any) {
+    // const [about, setAbout] = useState([])
+    // const [posts, setPosts] = useState([])
+    // const [primaryLinks, setPrimaryLinks] = useState([])
+    // const [links, setLinks] = useState([])
+    // const [embeds, setEmbeds] = useState([])
+    // const [isLoading, setIsLoading] = useState(true)
+    // useEffect(() => {
+    //     const fetchSupabaseData = async () => {
+    //         const { data: aboutMe } = await supabase.from('About').select().single()
+    //         const { data: pinnedPostsData } = await supabase.from('BlogPost').select().match({ pinned: true, postStatus: 'Public' }).order('postedOn', { ascending: false }) as any
+    //         const { data: primaryLinksData } = await supabase.from('PrimaryLinks').select().order('orderNumber', { ascending: true }) as any
+    //         const { data: linksData } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
+    //         const { data: embedsData } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
+    //         setAbout(aboutMe)
+    //         setPosts(pinnedPostsData)
+    //         setPrimaryLinks(primaryLinksData)
+    //         setLinks(linksData)
+    //         setEmbeds(embedsData)
+    //     }
+    //     fetchSupabaseData()
+    //     about && posts && primaryLinks && links && embeds && setIsLoading(false)
+    // }, [])
     return (
         <>
-            {isLoading ? <LoadingComponent /> : <>
+            {/* {isLoading ? <LoadingComponent /> : <> */}
                 <HomeButton />
                 <Box
                     position="absolute"
@@ -62,7 +62,7 @@ export default function AboutGeneralLayout() {
                         <Contact />
                     </Box>
                 </Box>
-            </>}
+            {/* </>} */}
         </>
     )
 }

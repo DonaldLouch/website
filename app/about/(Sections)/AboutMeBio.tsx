@@ -27,55 +27,57 @@ export default async function AboutMeBio(about: any) {
     const { mdxSource } = await getAboutBio(about.bio!)
     return (
         <>
-            <Suspense fallback={<LoadingComponent />}>
+            {/* <Suspense fallback={<LoadingComponent />}> */}
                 <SectionCard id="aboutMe" styleType="primaryCard">
                     <Box id="bio">
-                        <Box
-                            display="grid"
-                            gridTemplateColumns={{ base: "100%", md: "25% 75%" }}
-                            gap="2rem"
-                            alignItems="center"
-                        >
-                            <Image
-                                src={about.avatar}
-                                alt={`${about.firstName} ${about.lastName}`}
-                                w={{ base: "50%", md: "100%" }}
-                                m="0 auto"
-                                borderRadius="0 2rem"
-                            />
-                            <Box>
-                                <Heading
-                                    as="h2"
-                                    fontSize={{ base: "3rem", md: "5rem" }}
-                                    textDecoration="underline"
-                                    textDecorationThickness="0.4rem"
-                                    textDecorationColor="primary"
-                                >
-                                    {about.firstName} {about.middleName} {about.lastName}
-                                </Heading>
-                                <Text fontSize="2rem" m="0.5rem 0">
-                                    {about.pronouns}
-                                </Text>
+                        <Suspense fallback={<LoadingComponent />}>
+                            <Box
+                                display="grid"
+                                gridTemplateColumns={{ base: "100%", md: "25% 75%" }}
+                                gap="2rem"
+                                alignItems="center"
+                            >
+                                <Image
+                                    src={about.avatar}
+                                    alt={`${about.firstName} ${about.lastName}`}
+                                    w={{ base: "50%", md: "100%" }}
+                                    m="0 auto"
+                                    borderRadius="0 2rem"
+                                />
+                                <Box>
+                                    <Heading
+                                        as="h2"
+                                        fontSize={{ base: "3rem", md: "5rem" }}
+                                        textDecoration="underline"
+                                        textDecorationThickness="0.4rem"
+                                        textDecorationColor="primary"
+                                    >
+                                        {about.firstName} {about.middleName} {about.lastName}
+                                    </Heading>
+                                    <Text fontSize="2rem" m="0.5rem 0">
+                                        {about.pronouns}
+                                    </Text>
+                                </Box>
                             </Box>
-                        </Box>
-                        <Heading
-                            as="h3"
-                            size="2xl"
-                            fontFamily="body"
-                            fontWeight="300"
-                            my="0.5rem"
-                            textDecor="underline"
-                            textDecorationThickness="0.2rem"
-                            textDecorationColor="primary"
-                        >
-                            {about.tagLine}
-                        </Heading>
-                        <Suspense fallback={<Loading />}>
-                            <MdxContent source={mdxSource} />
-                        </Suspense> 
+                            <Heading
+                                as="h3"
+                                size="2xl"
+                                fontFamily="body"
+                                fontWeight="300"
+                                my="0.5rem"
+                                textDecor="underline"
+                                textDecorationThickness="0.2rem"
+                                textDecorationColor="primary"
+                            >
+                                {about.tagLine}
+                            </Heading>
+                            <Suspense fallback={<Loading />}>
+                                <MdxContent source={mdxSource} />
+                            </Suspense> 
+                        </Suspense>
                     </Box>
                 </SectionCard>
-            </Suspense>
+            {/* </Suspense> */}
         </>
     )
 }

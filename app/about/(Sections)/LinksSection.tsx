@@ -30,14 +30,16 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                     overflowY="hidden"
                     whiteSpace="nowrap"
                 >
-                    <LinkedSVGButton link="/" title="Go Home" icon="home" />
-                    {primaryLinks.map((buttonLink: any) => (
-                        <LinkedButton {...buttonLink} />
-                    ))}
-                    <Link href="#contact" variant="primary" pt="0.5rem">Contact Me</Link>
-                    <Link href={`mailto:${about.email}`} variant="primary" pt="0.5rem">Direct Email Me</Link>
+                    <Suspense fallback={<LoadingComponent />}>
+                        <LinkedSVGButton link="/" title="Go Home" icon="home" />
+                        {primaryLinks.map((buttonLink: any) => (
+                            <LinkedButton {...buttonLink} />
+                        ))}
+                        <Link href="#contact" variant="primary" pt="0.5rem">Contact Me</Link>
+                        <Link href={`mailto:${about.email}`} variant="primary" pt="0.5rem">Direct Email Me</Link>
+                    </Suspense>
                 </Stack>
-
+            <Suspense fallback={<LoadingComponent />}>
                 <Tabs
                     p="1rem"
                     borderRadius="0 2rem"
@@ -56,7 +58,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                                     <PinnedPostsCard {...post} />
                                 ))}
                             </Box>
-                            {embeds.map((embed: any) => (
+                            {/* {embeds.map((embed: any) => (
                                 <AspectRatio
                                     key={embed.id}
                                     ratio={16 / 9}
@@ -69,7 +71,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                                 >
                                     <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                                 </AspectRatio>
-                            ))}
+                            ))} */}
                             {links.map((link: any) => (
                                 <LinkButton {...link} />
                             ))} 
@@ -87,7 +89,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                             ))} 
                         </TabPanel>
                         <TabPanel>
-                            {embeds.map((embed: any) => (
+                            {/* {embeds.map((embed: any) => (
                                 <AspectRatio
                                     key={embed.id}
                                     ratio={16 / 9}
@@ -100,10 +102,11 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                                 >
                                     <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                                 </AspectRatio>
-                            ))}
+                            ))} */}
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
+                </Suspense>
             {/* </Suspense>  */}
         </>
     )

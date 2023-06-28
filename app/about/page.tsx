@@ -25,11 +25,17 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-export default function AboutMe() {
+export default async function AboutMe() {
   // const fetcher = (url: RequestInfo | URL) =>
   //   fetch(url).then((res) => res.json());
   // const pageID = "pageL4UBFE8Gz45" as string;
   // useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
-  return <AboutGeneralLayout />
+  const { data: aboutMe } = await supabase.from('About').select().single()
+  const { data: pinnedPostsData } = await supabase.from('BlogPost').select().match({ pinned: true, postStatus: 'Public' }).order('postedOn', { ascending: false }) as any
+  const { data: primaryLinksData } = await supabase.from('PrimaryLinks').select().order('orderNumber', { ascending: true }) as any
+  const { data: linksData } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
+  const { data: embedsData } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
+
+  return <AboutGeneralLayout  about={aboutMe} posts={pinnedPostsData} primaryLinks={primaryLinksData} links={linksData} embeds={embedsData}/>
 }

@@ -18,7 +18,7 @@ interface PortalHeaderProps extends FlexProps {
 
 export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
     const {user} = useUser();
-
+    // console.log(user?.publicMetadata.role)
     return (
         <Flex
             ml={{ base: 0, md: "15rem" }}

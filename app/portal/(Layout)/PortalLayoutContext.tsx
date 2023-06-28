@@ -7,23 +7,31 @@ import { useRouter } from 'next/navigation'
 import { PortalNavigation } from './PortalNavigation'
 import PortalHeader from './PortalHeader'
 import LoadingComponent from '@/app/(Config)/ContentLoading'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { useUser } from '@clerk/nextjs'
 
 export default function PortalLayoutContext({ children }: { children: React.ReactNode }) {
     // const router = useRouter()
-
+    // const {user} = useUser();
     const { isOpen, onOpen, onClose } = useDisclosure()
+    // const [isAdmin, setIsAdmin] = useState<any>()
+
+    // useEffect(() => {
+    //     setIsAdmin(user?.publicMetadata.role === "ADMIN" ? true : false)
+    // })
+    // const isAdmin = user?.publicMetadata.role === "ADMIN" ? true : false
+    // console.log(isAdmin)
     
     // useEffect(() => {
-    //    !isLoggedIn && router.push("/?message=userLoginNotAllowed")
-    // })
+    //    isAdmin ? null : router.push("/?message=userLoginNotAllowed")
+    // }, [isAdmin])
     
    
     // !isLoggedIn && router.push("../../../../../")
 
     return (
       <>
-      {/* {!isLoggedIn ? <LoadingComponent /> : (<> */}
+      {/* {!isAdmin ? <LoadingComponent /> : (<> */}
         <Box
           minH="80vh"
           bg="none"

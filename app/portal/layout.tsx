@@ -1,5 +1,5 @@
 // import createClient from "@/lib/supabase-server"
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, currentUser } from "@clerk/nextjs";
 import PortalLayoutContext from "./(Layout)/PortalLayoutContext";
 import { useRouter } from "next/navigation";
 

@@ -42,7 +42,7 @@ export const theme = extendTheme({
         color: "primary",
       },
       svg: {
-        height: "auto",
+        height: "initial",
         // height: "100% !important",
       },
       p: {

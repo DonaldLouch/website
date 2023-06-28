@@ -7,6 +7,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Icon,
 } from "@chakra-ui/react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -59,17 +60,19 @@ export const PortalNavigationItem = ({
             {...rest}
           >
             {iconName && (
-              <Box
-                mr="4"
-                // width={{ base: "4%", md: "12%" }}
-                fontSize="xl"
-                color="white"
-              >
+              // <Box
+              //   mr="4"
+              //   // width={{ base: "4%", md: "12%" }}
+              //   // fontSize="xl"
+              //   color="white"
+              // >
+              <Icon mr='1rem' w="1.5rem" h="1.5rem">
                 <FontAwesomeIcon
                   icon={[iconPre, iconName]}
                   width="100%"
                 />
-              </Box>
+              </Icon>
+              // </Box>
             )}
             {children}
           </Flex>
@@ -95,17 +98,18 @@ export const PortalNavigationItem = ({
           >
             <Flex align="center" whiteSpace="nowrap" {...rest}>
               {iconName && (
-                <Box
-                  mr="4"
-                  // width={{ base: "4%", md: "12%" }}
-                  fontSize="xl"
-                  color="currentColor"
-                >
+                // <Box
+                //   mr="4"
+                //   // width={{ base: "4%", md: "12%" }}
+                //   // fontSize="xl"
+                //   color="currentColor"
+                // >
+                <Icon mr='1rem' w="1.5rem" h="1.5rem">
                   <FontAwesomeIcon
                     icon={[iconPre, iconName]}
                     width="100%"
                   />
-                </Box>
+                </Icon>
               )}
               {children}
             </Flex>
