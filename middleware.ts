@@ -1,11 +1,11 @@
 import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
-  publicRoutes: ["/"]
+  publicRoutes: ["/", "/about", "/blog", "/(post)(.*)", "/(portfolio)(.*)", "/jobs", "/(T)(.*)", "/(C)(.*)"],
 });
 
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api)(.*)"],
-}
+};
 // import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 // import { NextResponse } from "next/server";
 
