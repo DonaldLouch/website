@@ -46,47 +46,18 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-export default function Resume() {
+export default async function Resume() {
   // const fetcher = (url: RequestInfo | URL) =>
   //   fetch(url).then((res) => res.json());
   // const pageID = "pageL4UBGH6Awzq" as string;
   // useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
 
-  // const resume = resumeData?.[0];
-  // const resumeExperience = resumeExperienceData;
-  // const resumeWorkExperienceHistory = resumeWorkExperienceHistoryData;
-  // const resumeEducation = resumeEducationData;
+  const { data: resumeData } = await supabase.from('Resume').select().single() as any
+  const { data: experienceData } = await supabase.from('ResumeWorkExperience').select().order('startDate', { ascending: false }) as any
+  const { data: workExperienceHistoryData } = await supabase.from('ResumeWorkExperienceHistory').select().order('startDate', { ascending: false }) as any
+  const { data: educationData } = await supabase.from('ResumeEducation').select().order('startDate', { ascending: false }) as any
 
   return (
-    <ResumePage />
+    <ResumePage resume={resumeData} resumeExperience={experienceData} resumeWorkExperienceHistory={workExperienceHistoryData} resumeEducation={educationData} />
   );
 }
-
-// export async function getServerSideProps() {
-//   const resumeData = await prisma.resume.findMany({});
-
-//   const resumeExperienceData = await prisma.resumeWorkExperience.findMany({
-//     orderBy: { startDate: "desc" },
-//   });
-
-//   const resumeWorkExperienceHistoryData = await prisma.resumeWorkExperienceHistory.findMany(
-//     {
-//       orderBy: { startDate: "desc" },
-//     }
-//   );
-
-//   const resumeEducationData = await prisma.resumeEducation.findMany({
-//     orderBy: { startDate: "desc" },
-//   });
-
-//   return {
-//     props: {
-//       resumeData: JSON.parse(JSON.stringify(resumeData)),
-//       resumeExperienceData: JSON.parse(JSON.stringify(resumeExperienceData)),
-//       resumeWorkExperienceHistoryData: JSON.parse(
-//         JSON.stringify(resumeWorkExperienceHistoryData)
-//       ),
-//       resumeEducationData: JSON.parse(JSON.stringify(resumeEducationData)),
-//     },
-//   };
-// }

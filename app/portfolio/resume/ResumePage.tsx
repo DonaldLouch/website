@@ -27,30 +27,31 @@ import { useEffect, useState } from "react"
 import supabase from "@/lib/supabase"
 import LoadingComponent from "@/app/(Config)/ContentLoading";
 
-export default function ResumePage() {
-    const [resume, setResume] = useState<any>([])
-    const [resumeExperience, setResumeExperience] = useState<any>([])
-    const [resumeWorkExperienceHistory, setResumeWorkExperienceHistory] = useState<any>([])
-    const [resumeEducation, setResumeEducation] = useState<any>([])
-    const [isLoading, setIsLoading] = useState<boolean>(true)
-    useEffect(() => {
-        const fetchSupabaseData = async () => {
-            const { data: resumeData } = await supabase.from('Resume').select() as any
-            const { data: experienceData } = await supabase.from('ResumeWorkExperience').select().order('startDate', { ascending: false }) as any
-            const { data: workExperienceHistoryData } = await supabase.from('ResumeWorkExperienceHistory').select().order('startDate', { ascending: false }) as any
-            const { data: educationData } = await supabase.from('ResumeEducation').select().order('startDate', { ascending: false }) as any
-            setResume(resumeData[0])
-            setResumeExperience(experienceData)
-            setResumeWorkExperienceHistory(workExperienceHistoryData)
-            setResumeEducation(educationData)
-        }
-        fetchSupabaseData()
-        setIsLoading(false)
-    }, [])
+export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {
+    // const [resume, setResume] = useState<any>([])
+    // const [resumeExperience, setResumeExperience] = useState<any>([])
+    // const [resumeWorkExperienceHistory, setResumeWorkExperienceHistory] = useState<any>([])
+    // const [resumeEducation, setResumeEducation] = useState<any>([])
+    // const [isLoading, setIsLoading] = useState<boolean>(true)
+
+    // useEffect(() => {
+    //     const fetchSupabaseData = async () => {
+    //         const { data: resumeData } = await supabase.from('Resume').select() as any
+    //         const { data: experienceData } = await supabase.from('ResumeWorkExperience').select().order('startDate', { ascending: false }) as any
+    //         const { data: workExperienceHistoryData } = await supabase.from('ResumeWorkExperienceHistory').select().order('startDate', { ascending: false }) as any
+    //         const { data: educationData } = await supabase.from('ResumeEducation').select().order('startDate', { ascending: false }) as any
+    //         setResume(resumeData[0])
+    //         setResumeExperience(experienceData)
+    //         setResumeWorkExperienceHistory(workExperienceHistoryData)
+    //         setResumeEducation(educationData)
+    //     }
+    //     fetchSupabaseData()
+    //     setIsLoading(false)
+    // }, [])
     return (
         <>
-        {isLoading ? <LoadingComponent /> : (
-            <>
+        {/* {isLoading ? <LoadingComponent /> : (
+            <> */}
       <Box as="main" color="white">
         <SectionCard id="resume" styleType="primaryCard">
           <Grid
@@ -88,7 +89,7 @@ export default function ResumePage() {
               <Text fontSize="sm" color="gray.500" mt="0" textAlign="center">
                 {resume.address}
               </Text>
-              <Stack gap="0.5rem" mt="1rem">
+              <Stack gap="1.8rem" mt="1rem">
                 <Button
                   as="a"
                   variant="portalButton"
@@ -421,7 +422,7 @@ export default function ResumePage() {
               id="menu"
               display={{ base: "none", lg: "initial" }}
             >
-              <Stack gap="1.4rem" mx="1rem">
+              <Stack gap="1.8rem" mx="1rem">
                 <Button
                   as="a"
                   variant="portalButton"
@@ -481,7 +482,7 @@ export default function ResumePage() {
           </Grid>
         </SectionCard>
       </Box>
-      </>)}
+      {/* </>)} */}
       </>
     )
 }
