@@ -6,7 +6,7 @@ import { Box, Button, Grid, Stack } from "@chakra-ui/react"
 import * as Yup from 'yup'
 import AddEducation from "./AddEducation"
 
-export default async function EditResumeExperiencePage() {
+export default async function EditResumeExperiencePage({ resumeExperience, resumeEducation }: any) {
 
   const breadCrumbs = [
     {"pageLink": "/portal/pages", "pageName": "Page Manager"},
@@ -14,8 +14,8 @@ export default async function EditResumeExperiencePage() {
     {"pageLink": "/portal/pagesResumeExperience", "pageName": "Resume Experience"}
   ]
 
-  const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
-  const { data: resumeEducation } = await supabase.from('ResumeEducation').select().order('startDate', {ascending: false}) as any
+  // const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
+  // const { data: resumeEducation } = await supabase.from('ResumeEducation').select().order('startDate', {ascending: false}) as any
 
   return (
     <>

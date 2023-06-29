@@ -1,3 +1,4 @@
+import supabase from '@/lib/supabase'
 import EditResumeExperiencePage from './EditResumeExperiencePage'
 
 // import type { Metadata } from 'next'
@@ -11,6 +12,8 @@ import EditResumeExperiencePage from './EditResumeExperiencePage'
 //     },
 // }
 
-export default function PortalResumeExperiencePage() {
-  return <EditResumeExperiencePage />
+export default async function PortalResumeExperiencePage() {
+  const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
+  const { data: resumeEducation } = await supabase.from('ResumeEducation').select().order('startDate', {ascending: false}) as any
+  return <EditResumeExperiencePage resumeExperience={resumeExperience} resumeEducation={resumeEducation} />
 }

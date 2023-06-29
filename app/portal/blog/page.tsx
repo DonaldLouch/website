@@ -1,3 +1,4 @@
+import supabase from '@/lib/supabase'
 import BlogContent from './BlogContent'
 
 // import type { Metadata } from 'next'
@@ -11,6 +12,30 @@ import BlogContent from './BlogContent'
 //     },
 // }
 
-export default function PortalBlog() {
-  return <BlogContent />
+type Props = {
+    params: { pg: string },
+}
+
+export default async function PortalBlog({params}: Props) {
+  let page = parseInt(params.pg) as number
+  let currentPage = (((page) - 1) as number) || 0
+
+  const postLimit = 10 as number
+  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}) as any
+  let numberOfPages = (postLength / postLimit) as number;
+
+  if (!Number.isInteger(numberOfPages)) {
+    numberOfPages = Math.floor(numberOfPages) + 1;
+  }
+
+  if (numberOfPages < page) {
+    currentPage = numberOfPages;
+  }
+  const pageCalc = currentPage * postLimit
+  const { data: theBlogData } = await supabase.from('BlogPost').select().order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+
+  const paginationArray = new Array();
+  paginationArray.push(numberOfPages, currentPage);
+
+  return <BlogContent posts={theBlogData} pagination={paginationArray} />
 }

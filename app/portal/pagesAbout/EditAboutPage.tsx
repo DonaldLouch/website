@@ -11,7 +11,7 @@ import { Formik } from "formik"
 import { SubmitButton } from "formik-chakra-ui"
 import * as Yup from 'yup'
 
-export default async function EditAboutPage() {
+export default async function EditAboutPage({ about }: any) {
   const toast = useToast()
   const toastID = "toastID"
   
@@ -20,7 +20,7 @@ export default async function EditAboutPage() {
     {"pageLink": "/portal/pagesAbout", "pageName": "Edit: About Me Page"}
   ]
 
-  const { data: about } = await supabase.from('About').select().single() as any
+  // const { data: about } = await supabase.from('About').select().single() as any
 
   const onSubmit =  async (values: any, actions: any) => {
     let avatar = about.avatar

@@ -11,15 +11,15 @@ import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import {MediaCard} from "./MediaCard"
 
-export default function MediaManager() {
+export default function MediaManager({mediaData, pagination}: any) {
   const router = useRouter()
   const toast = useToast()
   const toastID = "toastID"
 
   const [isUploaded, setUploaded] = useState(false)
   const [isUploading, setUploading] = useState(false)
-  const [mediaData, setMediaData] = useState<any>([])
-  const [pagination, setPagination] = useState<any>([])
+  // const [mediaData, setMediaData] = useState<any>([])
+  // const [pagination, setPagination] = useState<any>([])
   // const [isError, setError] = useState(false)
 
   const breadCrumbs = [
@@ -98,34 +98,34 @@ export default function MediaManager() {
 
     router.push('/portal/media')
   }
-  let pageParams = useSearchParams()
-  let pageRaw = pageParams.get("pg") as string
-  let page = parseInt(pageRaw) as number
-  let currentPage = (((page) - 1) as number) || 0
-  useEffect(() => {
-    const fetchSupabaseData = async () => {
-      const postLimit = 15 as number
-      const {count: postLength} = await supabase.from('Media').select("*", { count: 'exact'}) as any
-      let numberOfPages = (postLength / postLimit) as number;
+  // let pageParams = useSearchParams()
+  // let pageRaw = pageParams.get("pg") as string
+  // let page = parseInt(pageRaw) as number
+  // let currentPage = (((page) - 1) as number) || 0
+  // useEffect(() => {
+  //   const fetchSupabaseData = async () => {
+  //     const postLimit = 15 as number
+  //     const {count: postLength} = await supabase.from('Media').select("*", { count: 'exact'}) as any
+  //     let numberOfPages = (postLength / postLimit) as number;
 
-      if (!Number.isInteger(numberOfPages)) {
-        numberOfPages = Math.floor(numberOfPages) + 1;
-      }
+  //     if (!Number.isInteger(numberOfPages)) {
+  //       numberOfPages = Math.floor(numberOfPages) + 1;
+  //     }
 
-      if (numberOfPages < page) {
-        currentPage = numberOfPages;
-      }
-      const pageCalc = currentPage * postLimit
-      const { data: theMediaData } = await supabase.from('Media').select().order('uploadedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+  //     if (numberOfPages < page) {
+  //       currentPage = numberOfPages;
+  //     }
+  //     const pageCalc = currentPage * postLimit
+  //     const { data: theMediaData } = await supabase.from('Media').select().order('uploadedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
 
-      const paginationArray = new Array();
-      paginationArray.push(numberOfPages, currentPage);
+  //     const paginationArray = new Array();
+  //     paginationArray.push(numberOfPages, currentPage);
 
-      setMediaData(theMediaData)
-      setPagination(paginationArray)
-    }
-    fetchSupabaseData()
-  }, [page])
+  //     setMediaData(theMediaData)
+  //     setPagination(paginationArray)
+  //   }
+  //   fetchSupabaseData()
+  // }, [page])
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />

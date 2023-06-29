@@ -38,7 +38,7 @@ export default function AboutGeneralLayout({about, posts, primaryLinks, links, e
     return (
         <>
             {/* {isLoading ? <LoadingComponent /> : <> */}
-                {/* <HomeButt */}
+                <HomeButton />
                 <Box
                     position="absolute"
                     top="0"

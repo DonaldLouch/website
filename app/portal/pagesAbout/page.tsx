@@ -1,3 +1,4 @@
+import supabase from '@/lib/supabase'
 import EditAboutPage from './EditAboutPage'
 
 // import type { Metadata } from 'next'
@@ -11,6 +12,7 @@ import EditAboutPage from './EditAboutPage'
 //     },
 // }
 
-export default function PortalAboutPage() {
-  return <EditAboutPage />
+export default async function PortalAboutPage() {
+  const { data: about } = await supabase.from('About').select().single() as any
+  return <EditAboutPage about={about} />
 }

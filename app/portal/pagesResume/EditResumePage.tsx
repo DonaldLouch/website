@@ -13,7 +13,7 @@ import { Formik } from "formik"
 import { SubmitButton } from "formik-chakra-ui"
 import * as Yup from 'yup'
 
-export default async function EditResumePage() {
+export default async function EditResumePage({ resume }: any) {
   const toast = useToast()
   const toastID = "toastID"
   
@@ -22,8 +22,8 @@ export default async function EditResumePage() {
     {"pageLink": "/portal/pagesResume", "pageName": "Edit: Resume Page"}
   ]
 
-  const { data: resume } = await supabase.from('Resume').select().single() as any
-  const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
+  // const { data: resume } = await supabase.from('Resume').select().single() as any
+  // const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
 
   const onSubmit =  async (values: any, actions: any) => {
     let avatar = resume.avatar
