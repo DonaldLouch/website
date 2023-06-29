@@ -12,6 +12,6 @@ export default function Context({ children, isLoggedIn }: { children: React.Reac
             <ChakraProvider theme={theme} resetCSS={true}>
                 <AppLayout isLoggedIn={isLoggedIn}>{children}</AppLayout>
             </ChakraProvider>
-        // </ClerkP/rovider>
+        // </ClerkProvider>
     )
 }

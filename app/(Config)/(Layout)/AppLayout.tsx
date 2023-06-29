@@ -23,15 +23,15 @@ export default function AppLayout({ children, isLoggedIn }: { children: React.Re
         isClosable: true,
     })
 
-    !isLoggedIn && !toast.isActive(toastID) &&
-    toast({
-        id: toastID,
-        title: "Alpha Website",
-        description: `Please note that this version of Donald Louch's Website is currently under an alpha development and may not be working properly. You may visit the live version of the website at https://donaldlouch.ca.`,
-        status: "error",
-        duration: null,
-        isClosable: false,
-    })
+    // !toast.isActive(toastID) &&
+    // toast({
+    //     id: toastID,
+    //     title: "Alpha Website",
+    //     description: `Please note that this version of Donald Louch's Website is currently under an alpha development and may not be working properly. You may visit the live version of the website at https://donaldlouch.ca.`,
+    //     status: "error",
+    //     duration: 90000,
+    //     isClosable: true,
+    // })
     
     return (
         <>

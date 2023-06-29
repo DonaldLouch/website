@@ -27,15 +27,8 @@ import { FormTextAreaRow } from "../(Components)/(Form)/FormTextAreaRow";
 export default function Hire() {
   const toast = useToast();
 
-  const sleep = (ms: number) =>
-    new Promise((resolve) => setTimeout(resolve, ms));
-
-  const onSubmit = async (values: any, actions: any) => {
-    // TODO: create a nodemailer transporter and send email of the submitted values.
-    // actions.setSubmitting(false)
-
-    // console.log(values)
-
+  const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+  const onSubmit = async (values: any, actions: any) => {  
     const contactData = {
       name: values.name,
       company: values.company,
@@ -46,10 +39,31 @@ export default function Hire() {
       budget: values.budget,
     };
 
-    // await sendContact(contactData);
+    const response = await fetch('/api/mail/newJob', {
+      method: 'POST',
+      body: JSON.stringify(contactData),
+    })
+
+    if (response.ok) {
+      toast({
+        title: "Submitted 🎉",
+        description: `You've successfully submitted a request for Donald Louch to do a job for you!`,
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: "An Error Occurred",
+        description: "It seems like an error occurred while trying to submit your request form to Donald Louch. Please try again",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
 
     sleep(5000).then(() => {
-      actions.setSubmitting(false);
+      actions.setSubmitting(false)
     });
   };
 
@@ -129,10 +143,10 @@ export default function Hire() {
     <SectionCard id="contact" styleType="primaryCard">
       <SectionTitle headingTitle="Request a Freelancing Job" />
       {/* <Text textAlign="center" fontSize="xl">Please note that I have disabled the contact form function. For more details please visit the incident page <Link href="https://donaldlouch.instatus.com/cl2uwebu5113668jaoefzwgiw9t" color={useColorModeValue('primary', 'secondary')}>on Instatus</Link>.</Text> */}
-      <Heading as="h3" size="xl" my="1rem" textAlign="center" fontWeight="regular">THE CONTACT FORM IS CURRENTLY DISABLED</Heading>
-      {/* <Text textAlign="center" fontSize="xl">Hello, if you would like you may hire me to do web development or digital content production freelancing. You may use the following inquiry form below or you may also email me directly and I&#39;ll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Link>.</Text> */}
+      {/* <Heading as="h3" size="xl" my="1rem" textAlign="center" fontWeight="regular">THE CONTACT FORM IS CURRENTLY DISABLED</Heading> */}
+      <Text textAlign="center" fontSize="xl">Hello, if you would like you may hire me to do web development or digital content production freelancing. You may use the following inquiry form below or you may also email me directly and I&#39;ll be happy to help! My email is <Link href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Link>.</Text>
 
-      {/* <Formik
+      <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
@@ -188,7 +202,7 @@ export default function Hire() {
             </SubmitButton>
           </Stack>
         )}
-      </Formik> */}
+      </Formik> 
     </SectionCard>
   );
 }

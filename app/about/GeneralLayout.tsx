@@ -38,7 +38,7 @@ export default function AboutGeneralLayout({about, posts, primaryLinks, links, e
     return (
         <>
             {/* {isLoading ? <LoadingComponent /> : <> */}
-                <HomeButton />
+                {/* <HomeButt */}
                 <Box
                     position="absolute"
                     top="0"
@@ -58,8 +58,8 @@ export default function AboutGeneralLayout({about, posts, primaryLinks, links, e
                         maxW="100%"
                     >
                         <AboutMeBio {...about} />
-                        <LinksSection about={about} posts={...posts} primaryLinks={...primaryLinks} links={...links} embeds={...embeds}/>
-                        <Contact />
+                        <LinksSection about={about} posts={...posts} primaryLinks={...primaryLinks} links={...links} embeds={...embeds}/> 
+                        <Contact /> 
                     </Box>
                 </Box>
             {/* </>} */}

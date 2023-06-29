@@ -4,6 +4,8 @@ server.js
 /certificates
 /prisma/migrations
 
+/lib/google.json
+
 /pscale_dump_donaldlouch_main
 
 # dependencies

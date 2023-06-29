@@ -30,7 +30,7 @@ export default async function AboutMeBio(about: any) {
             {/* <Suspense fallback={<LoadingComponent />}> */}
                 <SectionCard id="aboutMe" styleType="primaryCard">
                     <Box id="bio">
-                        <Suspense fallback={<LoadingComponent />}>
+                        {/* <Suspense fallback={<LoadingComponent />}> */}
                             <Box
                                 display="grid"
                                 gridTemplateColumns={{ base: "100%", md: "25% 75%" }}
@@ -71,10 +71,10 @@ export default async function AboutMeBio(about: any) {
                             >
                                 {about.tagLine}
                             </Heading>
-                            <Suspense fallback={<Loading />}>
+                            {/* <Suspense fallback={<Loading />}> */}
                                 <MdxContent source={mdxSource} />
-                            </Suspense> 
-                        </Suspense>
+                            {/* </Suspense>  */}
+                        {/* </Suspense> */}
                     </Box>
                 </SectionCard>
             {/* </Suspense> */}
