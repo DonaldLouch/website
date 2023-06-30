@@ -227,7 +227,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                       <Text>{experience.description}</Text>
 
                       {resumeWorkExperienceHistory.map((history: any) =>
-                        history.resumeID === experience.id ? (
+                        history.workID === experience.id ? (
                           <Box
                             key={history.id}
                             boxShadow="bsBoldBlue"
@@ -312,7 +312,18 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                       _expanded={{ bg: "primary", color: "white" }}
                     >
                       <Box flex="1" textAlign="left">
-                        {`${education.startDate} - ${education.endDate}: ${education.school}`}
+                        {education?.startDate === education?.endDate ? (
+                          <>
+                            {`${education.startDate}: ${education.school}`}
+                          </>
+                        ) : (
+                          <>
+                            {`${education.startDate} - ${
+                              education.endDate ? education.endDate : "Present"
+                            }: ${education.school}`}
+                          </>
+                        )}
+                        {/* {`${education.startDate} - ${education.endDate}: ${education.school}`} */}
                       </Box>
                       <Icon w="1.5rem" h="1.5rem">
                         <FontAwesomeIcon 

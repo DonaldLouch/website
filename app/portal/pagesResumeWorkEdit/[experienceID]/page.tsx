@@ -1,5 +1,5 @@
 import supabase from '@/lib/supabase'
-import EditResumeExperiencePage from './EditResumeExperiencePage'
+import EditResumeWorkExperiencePage from '../EditResumeWorkExperiencePage'
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -12,9 +12,15 @@ import EditResumeExperiencePage from './EditResumeExperiencePage'
 //     },
 // }
 
-export default async function PortalResumeExperiencePage() {
-  const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
-  const { data: resumeEducation } = await supabase.from('ResumeEducation').select().order('startDate', {ascending: false}) as any
+type Props = {
+    params: { experienceID: string }
+};
+
+export default async function PortalResumeWorkExperiencePage({ params }: Props) {
+  const { experienceID } = params
+
+  const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().match({ id: experienceID }).single() as any
+  const { data: resumeHistory} = await supabase.from('ResumeWorkExperienceHistory').select().match({ workID: experienceID }) as any
   const { data: resume } = await supabase.from('Resume').select("id").single() as any
-  return <EditResumeExperiencePage resumeExperience={resumeExperience} resumeEducation={resumeEducation} resumeID={resume.id} />
+  return <EditResumeWorkExperiencePage resumeExperience={resumeExperience} resumeHistory={resumeHistory} resumeID={resume.id} />
 }
