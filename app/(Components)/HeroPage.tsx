@@ -56,9 +56,9 @@ export default function HeroPage(props: HeroProps) {
                 <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "2rem", lg: "3rem", xl: "5rem"}} overflow="hidden">
                     <Grid templateColumns={{base: "1fr", lg: "2.5fr 3fr", xl: "1fr 2fr"}} gap={{base: "2rem", lg: "1rem", xl: "2rem"}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
                         <Stack boxShadow="bsBigBoldBlue" borderRadius="0 2.5rem" align="center" justify="center" p={{base: "1rem"}} w={{base: "80%", md: "100%"}} m={{base: "auto", md: "initial"}}>
-                            <Heading as="h1" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={0.1} textShadow="tsPrimary" color="white">Hello, I&apos;m</Heading>
-                            <Heading as="h2" fontWeight={900} fontSize="8xl" lineHeight={0.85} textShadow="tsPrimary" color="white">{name}</Heading>
-                            <Heading as="h3" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={2} textShadow="tsPrimary" color="white">and I am a Web Developer</Heading>
+                            <Heading as="h1" fontFamily="body" fontWeight="400" fontSize="1.1rem" textShadow="tsPrimary" color="white" m="0">Hello, I&apos;m</Heading>
+                            <Heading as="h2" fontWeight={900} fontSize={{base: "4xl", md: "6xl", lg:"8xl"}} textShadow="tsPrimary" color="white" my={{base: "-0.5rem", md: "-0.5rem"}} lineHeight={{ base: "inherit", lg: "5rem"}}>{name}</Heading>
+                            <Heading as="h3" fontFamily="body" fontWeight="400" fontSize="1.1rem" textShadow="tsPrimary" color="white" mt={{base: "0", md:"1rem"}}>and I am a Web Developer</Heading>
                             <Button as="a" href={cta?.[1]} variant="heroButton" w="80%" color="white">
                                 {cta?.[0]}
                             </Button>
