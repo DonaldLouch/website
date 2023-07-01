@@ -39,7 +39,7 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
               <Image
                 src="/titleLogoWhite.svg"
                 alt="Donald Louch"
-                width={{base: "100%", lg: "20vw !important"}}
+                width={{base: "60vw", lg: "20vw !important"}}
                 height="auto"
               />
             </Link>
