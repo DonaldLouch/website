@@ -1,10 +1,4 @@
-// const withMDX = require('@next/mdx')({
-//   extension: /\.mdx$/
-// })
-
-// module.exports = withMDX({
-//     pageExtensions: ['js', 'jsx', 'tsx', 'mdx']
-//   })
+/** @type {import('next').NextConfig} */
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -19,45 +13,17 @@ module.exports = withMDX({
 })
 
 module.exports = {
-  reactStrictMode: true,
-  swcMinify: true,
   experimental: {
-    esmExternals: false,
-    topLevelAwait: true,
-    // topLevelAwait: true,
-    //concurrentFeatures: true,
-    // serverComponents: true
-    // swcMinify: true,
+    serverActions: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
   },
   images: {
     domains: ['res.cloudinary.com'],
   },
-  env: {
-    APPLE_ID: process.env.APPLE_ID,
-    APPLE_TEAM_ID: process.env.APPLE_TEAM_ID,
-    APPLE_KEY_ID: process.env.APPLE_KEY_ID,
-    APPLE_SECRET: process.env.APPLE_SECRET,
-    EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST,
-    EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT,
-    EMAIL_SERVER_USER: process.env.EMAIL_SERVER_USER,
-    EMAIL_SERVER_PASSWORD: process.env.EMAIL_SERVER_PASSWORD,
-    EMAIL_FROM: process.env.EMAIL_FROM,
-    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    DATABASE_URL: process.env.DATABASE_URL,
-    SHADOW_DATABASE_URL: process.env.SHADOW_DATABASE_URL,
-    JWT_SIGNING_PUBLIC_KEY: process.env.JWT_SIGNING_PUBLIC_KEY,
-    GOOGLE_ID: process.env.GOOGLE_ID,
-    GOOGLE_SECRET: process.env.GOOGLE_SECRET,
-    GITHUB_ID: process.env.GITHUB_ID,
-    GITHUB_SECRET: process.env.GITHUB_SECRET,
-    SECRET: process.env.SECRET,
-    WEBSITE_NAME: process.env.WEBSITE_NAME,
-    KEYWORDS: process.env.KEYWORDS,
-    DESCRIPTION: process.env.DESCRIPTION,
-    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
-    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
-    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
-    CLOUDINARY: process.env.CLOUDINARY,
-  },
 }
-

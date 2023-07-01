@@ -3,7 +3,7 @@ export const ButtonStyles = {
     primary: {
         m: "1.5rem 0.5rem 0 !important",
         p: "1.5rem",
-        borderRadius: "0 2rem",
+        borderRadius: "0 1.5rem",
         _hover: { 
             bg: "none",
             boxShadow: "none",
@@ -99,13 +99,17 @@ export const ButtonStyles = {
       },
 
       blackFormButton: {
-          bg: "black",
+          bg: "subtleBlurredBackground",
           color: "white",
-          m: "1.5rem 1rem 0 !important",
-          p: "2rem",
-          borderRadius: "0 3rem 0 3rem",
+        //   m: "1.5rem 1rem 0",
+          m: "0 3rem -1rem !important",
+          p: "2rem 0",
+          borderRadius: "0 2rem",
           wordBreak: "break-word",
-          boxShadow: "bsBoldWhite",
+        //   boxShadow: "bsBoldWhite",
+        //   fontWeight: "900",
+          fontSize: "lg",
+          w: "calc(100% - 6rem)" ,
            _disabled: { 
               bg: "black",
               opacity: "0.2",

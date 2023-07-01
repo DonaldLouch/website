@@ -69,13 +69,13 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
     levelOfAccess: "0",
   },
 
-  {
-    name: "Sitemap",
-    slug: "../sitemap",
-    iconPre: "fal",
-    iconName: "map",
-    isParent: false,
-    parentID: null,
-    levelOfAccess: "0",
-  },
+  // {
+  //   name: "Sitemap",
+  //   slug: "../sitemap",
+  //   iconPre: "fal",
+  //   iconName: "map",
+  //   isParent: false,
+  //   parentID: null,
+  //   levelOfAccess: "0",
+  // },
 ]

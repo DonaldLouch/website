@@ -1,0 +1,16 @@
+import PAGECONTENT from './PAGECONTENT'
+
+// import type { Metadata } from 'next'
+// export const metadata: Metadata = {
+//     title: `Test Page | ${process.env.WEBSITE_NAME}`,
+//     description: 'The portal test page for Donald Louch. This area is restricted to access by Donald Louch ONLY!',
+//     keywords: `${process.env.KEYWORDS}, portal`,
+//     openGraph: {
+//         title: `Test Page | ${process.env.WEBSITE_NAME}`,
+//         description: 'The portal test page for Donald Louch. This area is restricted to access by Donald Louch ONLY!',
+//     },
+// }
+
+export default function Test() {
+  return <PAGECONTENT />
+}

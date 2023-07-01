@@ -1,0 +1,26 @@
+import supabase from '@/lib/supabase';
+import EditPostContent from '../EditPostContent'
+// import createClient from "@/lib/supabase-server"
+
+// import type { Metadata } from 'next'
+// export const metadata: Metadata = {
+//     title: `Edit: POST | ${process.env.WEBSITE_NAME}`,
+//     description: 'Edit blog post. This area is restricted to access by Donald Louch ONLY!',
+//     keywords: `${process.env.KEYWORDS}, portal`,
+//     openGraph: {
+//         title: `Edit: POST | ${process.env.WEBSITE_NAME}`,
+//         description: 'Edit blog post. This area is restricted to access by Donald Louch ONLY!',
+//     },
+// }
+
+type Props = {
+    params: { slug: string }
+};
+
+export default async function EditBlogPost({ params }: Props) {
+  const { slug } = params
+  // const supabase = createClient();
+  const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
+
+  return <EditPostContent post={post} />
+}

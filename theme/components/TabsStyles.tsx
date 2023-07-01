@@ -23,10 +23,10 @@ const mainVariant = definePartsStyle(props => {
       fontFamily: "body",
       fontWeight: "500",
       opacity: 0.6,
-      color: mode(c, "white")(props),
+      color: mode("white", "white")(props),
       _selected: {
         bg: "rgba(118, 70, 136, 0.3)",
-        color: mode("black", "white")(props),
+        color: mode("gray", "gray")(props),
         fontWeight: "900",
         opacity: 1,
       },
