@@ -29,7 +29,7 @@ export default function ImageGradientBox(props: any) {
     
     return (
         <>
-            <Box bg='prideGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.6" pos="absolute" backgroundSize="150% 150%"></Box>
+            <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.6" pos="absolute" backgroundSize="150% 150%"></Box>
             <Box bg={`no-repeat url(${props.image ? props.image : "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
         </>
     )

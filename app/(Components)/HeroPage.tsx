@@ -46,12 +46,12 @@ export default function HeroPage(props: HeroProps) {
     const prefersReducedMotion = usePrefersReducedMotion()
     const spinningGradientAnimation = prefersReducedMotion
     ? undefined
-    : `${spinningGradient} infinite 10s`
+    : `${spinningGradient} infinite 7s`
 
     return (
         <>
             <Box as="section" id="homeHero" w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsOrange" bg="white" overflow="hidden !Important">
-                <Box bg='prideGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.6" pos="absolute" backgroundSize="150% 150%"></Box>
+                <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
                 <Box bg={`no-repeat url(${imageLink ? imageLink : "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
                 <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "3rem"}} overflow="hidden">
                     <Grid templateColumns={{base: "1fr", md: "1fr 2fr"}} gap={{base: 0.5, md: 10}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
