@@ -1,68 +1,39 @@
 'use client'
 
 import {
-Box,
 Stack,
 Text,
 Image,
 Link,
-Button,
 } from "@chakra-ui/react";
 
 import { FooterIcon } from "./FooterIcon";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useRouter } from "next/navigation"
-// import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-// import { useEffect, useState } from "react";
 
 export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
-  const router = useRouter()  
-  // const [baseURL, setBaseURL] = useState(process.env.SITE_URL)
-  // useEffect(() => {
-  //   // setBaseURL(process.env.NEXT_PUBLIC_VERCEL_URL? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.SITE_URL)
-  // })
-  // const baseURL = process.env.NEXT_PUBLIC_SITE_URL!
-  // const supabase = createClientComponentClient<Database>()
-  
-  // const signInWithGoogle = async () => {
-  //   await supabase.auth.signInWithOAuth({
-  //     provider: 'google',
-  //     options: {
-  //       queryParams: {
-  //         access_type: 'offline',
-  //         prompt: 'consent',
-  //       },
-  //       redirectTo: `${baseURL}/auth/callback`
-  //     }
-  //   })
-  //   router.refresh();
-  // }
-  // const signOut = async () => {
-  //   await supabase.auth.signOut()
-  //   router.refresh()
-  // }
+  const router = useRouter()
   return (
-    <Box
-      bg="black"
-      maxW="100vw"
-      boxShadow="bsBoldBlue"
-    >
-      <Box
+      <Stack
         as="footer"
         role="contentinfo"
-        mx="auto"
-        py="10"
-        px={32}
+        py={{base: "2rem", lg: "4rem" }}
+        px={{base: "0", lg: "4rem"}}
         color="white"
-        pos="relative"
+        alignItems="center"
+        w="100%"
+        direction={{base: "column", lg: "row"}}
+        boxShadow="bsBoldBlue"
       >
-        <Stack>
+        <Stack alignItems={{base: "center", lg: "initial"}} w="100%">
           <Stack
             direction={{ base: "column", lg: "row" }}
-            spacing="4"
-            alignItems="baseline"
-            justifyContent="space-between"
+            // spacing="4"
+            alignItems="center"
+            // justifyCont="space-between"
+            // gap="0.5rem"
+            justifyContent={{base: "initial", lg: "space-between"}}
+            w="100%"
           >
             <Link href="#">
               <Image
@@ -74,11 +45,12 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
             </Link>
             <Stack
               direction={{ base: "column", md: "row" }}
-              spacing="4"
+              // gap="1rem"
+              // spacing="4"
               alignItems="center"
-              justifyContent="space-between"
-              pb={{ base: "1rem", lg: "0" }}
-              mx={{ base: "4rem", lg: "0" }}
+              // justifyContent="space-between"
+              // pb={{ base: "0", lg: "0" }}
+              // mx={{ base: "4rem", lg: "0" }}
             >
             <iframe
               src="https://github.com/sponsors/DonaldLouch/button"
@@ -86,7 +58,7 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
               height="35"
               width="116"
             ></iframe>
-            <Stack direction="row" alignItems="baseline" mt="-0.5rem">
+            <Stack direction="row" alignItems="baseline" mt="-0.5rem" mx="0">
               <FooterIcon
                 linkURL="https://facebook.com/DonaldLouchProductions"
                 socialMedia="Facebook"
@@ -115,20 +87,15 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
             </Stack>
             </Stack>
           </Stack>
-          <Stack
-            direction={{ base: "column", md: "row" }}
-            justify={{ base: "center", md: "space-between" }}
-            align={{ base: "center", md: "flex-start" }}
-          >
-            <Text fontSize="sm" fontWeight="medium" m="0">&copy; 1994 - {new Date().getFullYear()} Donald Louch.</Text>
-          </Stack>
-          {/* {isLoggedIn ? 
-            <Button pos="absolute" bottom="3%" right="0" opacity="0.09" onClick={signOut} size="xs">Logout</Button>
-          :   
-            <Button pos="absolute" bottom="3%" right="0" opacity="0.09" onClick={signInWithGoogle} size="xs">Developer Login</Button>  
-          }  */}
+          {/* <Stack
+            // direction={{ base: "column", md: "row" }}
+            // alignItems="center"
+            // justifyContent={{ base: "center", md: "space-between" }}
+            justifyContent={{ base: "center", lg: "flex-start" }}
+          > */}
+            <Text fontSize="sm" fontWeight="medium" p="0" lineHeight="auto" textAlign="left">&copy; 1994 - {new Date().getFullYear()} Donald Louch.</Text>
+          {/* </Stack> */}
         </Stack>
-      </Box>
-    </Box>
+      </Stack>
   );
 }

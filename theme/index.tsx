@@ -80,6 +80,8 @@ export const theme = extendTheme({
     bsOrange: "5px 3px 8.37px rgba(231, 196, 98,.2)",
     bsWhite: "5px 3px 8.37px rgba(237, 237, 237,0.2)",
     
+    bsBoldBlueRev: "1px 1px 10px rgba(118, 70, 136,1)",
+    
     bsBoldBlue: "1px 1px 10px rgba(118, 70, 136,1)",
     bsBoldOrange: "1px 1px 10px rgba(231, 196, 98,1)",
     bsBoldWhite: "1px 1px 8.37px rgba(237, 237, 237,0.2)",

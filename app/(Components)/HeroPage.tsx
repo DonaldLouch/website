@@ -63,7 +63,7 @@ export default function HeroPage(props: HeroProps) {
                                 {cta?.[0]}
                             </Button>
                         </Stack>
-                        <Grid templateColumns={{base: "repeat(3, 1fr)", md: "repeat(2, 1fr)"}} gap={{base: "2rem", md: "2rem"}} alignItems="center" justifyContent="center" p="1rem 2.5rem" w="100%">
+                        <Grid templateColumns={{base: "repeat(3, 1fr)", md: "repeat(2, 1fr)"}} gap={{base: "2rem", md: "2rem", xl: "4rem"}} alignItems="center" justifyContent="center" p="1rem 2.5rem" w="100%">
                             {links.map((link:any) => (
                                 <Link as="a" href={link.linkUrl} key={link.linkTitle} color="white" boxShadow="bsMediumBoldBlue" py={{ base: "2rem", md: "4.5rem" }} px="1rem" borderRadius="0 2rem" textShadow="tsPrimary" _hover={{ boxShadow: "bsBigBoldOrange", fontWeight: 600, color: "white" }} fontWeight={900} fontSize={{base: "lg", md: "2xl"}} alignSelf="center">
                                     {link.linkTitle}
