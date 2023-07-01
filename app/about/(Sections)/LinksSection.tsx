@@ -3,9 +3,9 @@
 import { AspectRatio, Box, Link, Stack, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
-import { LinkedButton } from '@/app/(Components)/(Buttons)/LinkedButton'
 import { LinkedSVGButton } from '@/app/(Components)/(Buttons)/LinkedSVGButton'
-import { LinkButton } from '@/app/(Components)/(Buttons)/LinkButton'
+import { LinkedButton } from '../LinkedButton'
+import { LinkButton } from '../LinkButton'
 import PinnedPostsCard from '@/app/(Components)/(Cards)/PinnedPostsCard'
 
 export default function LinksSection({about, posts, primaryLinks, links, embeds}: any) {

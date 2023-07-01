@@ -5,7 +5,8 @@ import CategoryContent from "./CategoryContent";
 import supabase from "@/lib/supabase";
 
 type Props = {
-    params: { category: string, pg: string}
+    params: { category: string }
+    searchParams: { pg: string }
 };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { category } = params
@@ -24,10 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Category({ params }: Props) {
+export default async function Category({ params, searchParams }: Props) {
   const { category } = params
 
-  let page = parseInt(params.pg) as number
+  
+  let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
 
   const postLimit = 12 as number

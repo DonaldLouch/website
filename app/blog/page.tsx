@@ -7,9 +7,9 @@ import ViewPostButton from "./ViewPostButton";
 // import createClient from "@/lib/supabase-server"
 // import supabase from "@/lib/supabase";
 
-type Props = {
-    params: { pg: string }
-};
+// type Props = {
+//     params: { pg: string }
+// };
 
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
-export default async function Blog({params}: Props) {
-  let page = parseInt(params.pg) as number
+export default async function Blog({searchParams}: any) {
+  let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
-  
+ 
   const postLimit = 9 as number
   const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).match({ postStatus: 'Public' }) as any
   let numberOfPages = (postLength / postLimit) as number;

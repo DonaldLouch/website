@@ -1,0 +1,99 @@
+'use client'
+
+import { FormInput } from "@/app/(Components)/(Form)/FormInput";
+import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
+import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
+import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea";
+import supabase from "@/lib/supabase";
+import {
+  Text,
+  Link,
+  Flex,
+  IconButton,
+  Stack,
+  Tooltip,
+  useToast,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
+  Button,
+  AspectRatio,
+} from "@chakra-ui/react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Formik } from "formik";
+import { SubmitButton } from "formik-chakra-ui";
+import { link } from "fs";
+import { useRouter } from "next/navigation";
+
+import * as Yup from 'yup'
+
+// TODO: Fix type safety for iconPrefix and iconName
+
+export const AddEmbed = () => {
+  // const embed = props
+  const toast = useToast();
+  const toastID = "toastID"
+  const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const onSubmit =  async (values: any, actions: any) => {
+    console.log("Button clicked")
+    const { status: supabaseStatus , error: supabaseError  } = await supabase.from("Embed").insert({ 
+      id: "embed"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
+      link: values.link,
+      title: values.title,
+      embedLink: values.embedLink,
+      addedOn: new Date(),
+      lastUpdatedOn: new Date()
+    })
+    console.log(supabaseStatus, supabaseError)
+    supabaseStatus && !toast.isActive(toastID) &&
+       toast({
+            id: toastID,
+            title: `${supabaseStatus === 201 ? "Added New Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+            description: `${supabaseStatus === 201 ? `You have successfully added a new link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+            status: `${supabaseStatus === 201 ? "success" : "error"}`,
+            duration: 9000,
+            isClosable: true,
+        })
+    actions.setSubmitting()
+  }
+  const initialValues = {}
+  const validationSchema = Yup.object({
+    embedLink: Yup.string().required("The Embed Link is Required"),
+    link: Yup.string().required("The Link is Required"),
+    title: Yup.string().required("The Title is Required"),
+    id: Yup.string().required("The ID is Required"),
+  })
+
+  return (
+    <>
+    <Button variant="primary" onClick={onOpen} background="primary" color="white" my="1rem !important" w="100%">Add New Embed</Button> 
+      <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">
+        <ModalContent background="blurredPurple">
+          <ModalHeader>Embed</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+              {({ handleSubmit }: any) => (
+                <Stack as="form" onSubmit={handleSubmit as any} gap="2rem">
+                  <FormInputReadOnly inputID="id" inputLabel="" inputType="hidden" />
+                  <FormInput inputID="title"  inputLabel="Title" inputType="text" />
+                  <Stack direction="row" alignItems="center" justify="center" spacing="2rem">
+                    <FormInputRow inputID="embedLink"  inputLabel="Embed Link"  inputType="text"  />
+                    <FormInputRow inputID="link" inputLabel="Link" inputType="text" />
+                  </Stack>
+                  <SubmitButton variant="blackFormButton" my="1rem !important">Add New Embed</SubmitButton> 
+                </Stack>
+              )}
+            </Formik> 
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  )
+};

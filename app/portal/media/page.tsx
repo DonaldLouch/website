@@ -15,11 +15,11 @@ import MediaManager from './MediaManager'
 // }
 
 type Props = {
-    params: { pg: string },
+    searchParams: { pg: string },
 }
 
-export default async function Media({params}: Props) {
-  let page = parseInt(params.pg) as number
+export default async function Media({searchParams}: Props) {
+  let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
 
   const postLimit = 15 as number

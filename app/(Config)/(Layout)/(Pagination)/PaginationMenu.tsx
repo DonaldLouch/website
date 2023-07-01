@@ -1,5 +1,5 @@
 'use client'
-import { Box, Link, Menu, MenuButton, MenuItem, MenuList, Stack } from '@chakra-ui/react'
+import { Link, Menu, MenuButton, MenuItem, MenuList, Stack } from '@chakra-ui/react'
     
 export const PaginationMenu = ( props: any ) => { 
   const { currentPage, pages, previousPages, nextPages } = props
@@ -12,7 +12,7 @@ export const PaginationMenu = ( props: any ) => {
               <MenuButton>...</MenuButton>
               <MenuList maxH="80vh !important" overflowY="scroll" background="black" border="none">
                 {previousPages?.map((number: any) => (
-                  <Link href={`?pg=${number}`} key={`prev_${number}`} _hover={{border: "none"}}>
+                  <Link href={`?pg=${number}`} key={`prev_${number}`} _hover={{textDecoration: "none"}}>
                     <MenuItem background="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>{number}</MenuItem>
                   </Link>
                 ))}
@@ -23,7 +23,7 @@ export const PaginationMenu = ( props: any ) => {
             <MenuButton>...</MenuButton>
             <MenuList maxH="80vh !important" overflowY="scroll" background="black" border="none">
               {nextPages?.map((number: any) => (
-                <Link href={`?pg=${number}`} key={`next_${number}`} _hover={{border: "none"}}>
+                <Link href={`?pg=${number}`} key={`next_${number}`} _hover={{textDecoration: "none"}}>
                   <MenuItem background="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>{number}</MenuItem>
                 </Link>
               ))}

@@ -9,39 +9,40 @@ import { Formik } from 'formik'
 import { SubmitButton } from 'formik-chakra-ui'
 import * as Yup from 'yup'
 
-export default function AddWork({ resumeID }: any) {
+export default function MODALEXAMPLE() {
     const toast = useToast()
     const toastID = "toastID"
+
+    const resumeID = ""
     
     const { isOpen, onOpen, onClose } = useDisclosure()
     const onSubmit =  async (values: any, actions: any) => {
-        const submitEducationData = {
-        id: "work"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
-        company: values.company,
-        position: values.position,
-        startDate: values.startDate,
-        endDate: values.endDate,
-        description: values.description
-        }
-    const { status: supabaseStatus , error: supabaseError  } = await supabase.from("ResumeWorkExperience").insert({ 
-        id: submitEducationData.id,
-        company: submitEducationData.company,
-        position: submitEducationData.position,
-        startDate: submitEducationData.startDate,
-        endDate: submitEducationData.endDate,
-        description: submitEducationData.description,
-    })
-    await supabase.from("Resume").update({lastUpdatedOn: new Date()}).match({ id: resumeID })
-    supabaseStatus && !toast.isActive(toastID) &&
-        toast({
-            id: toastID,
-            title: `${supabaseStatus === 201 ? "Added New Work Experience 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-            description: `${supabaseStatus === 201 ? `You have successfully updated the Resume page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-            status: `${supabaseStatus === 201 ? "success" : "error"}`,
-            duration: 9000,
-            isClosable: true,
-        })
-        actions.setSubmitting(false)
+        // const submitEducationData = {
+        // id: "work"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
+        // company: values.company,
+        // position: values.position,
+        // startDate: values.startDate,
+        // endDate: values.endDate,
+        // description: values.description
+        // }
+    // const { status: supabaseStatus , error: supabaseError  } = await supabase.from("Links").insert({ 
+        // id: submitEducationData.id,
+        // company: submitEducationData.company,
+        // position: submitEducationData.position,
+        // startDate: submitEducationData.startDate,
+        // endDate: submitEducationData.endDate,
+        // description: submitEducationData.description,
+    // })
+    // supabaseStatus && !toast.isActive(toastID) &&
+    //     toast({
+    //         id: toastID,
+    //         title: `${supabaseStatus === 201 ? "Added New Work Experience 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+    //         description: `${supabaseStatus === 201 ? `You have successfully updated the Resume page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+    //         status: `${supabaseStatus === 201 ? "success" : "error"}`,
+    //         duration: 9000,
+    //         isClosable: true,
+    //     })
+    //     actions.setSubmitting(false)
     }
     const initialValues = {}
     const validationSchema = Yup.object({})

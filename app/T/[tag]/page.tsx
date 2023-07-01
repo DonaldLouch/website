@@ -4,7 +4,8 @@ import { Metadata } from 'next'
 import TagContent from "./TagContent";
 import supabase from '@/lib/supabase';
 type Props = {
-    params: { tag: string, pg: string },
+    params: { tag: string }
+    searchParams: { pg: string }
 };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { tag } = params
@@ -23,10 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Tag({ params }: Props) {
+export default async function Tag({ params, searchParams }: Props) {
   const { tag } = params
 
-  let page = parseInt(params.pg) as number
+  let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
   const postLimit = 12 as number
   const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('tags', `%${tag}%`).match({ postStatus: 'Public' }) as any
