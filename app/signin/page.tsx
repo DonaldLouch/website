@@ -22,7 +22,7 @@ export default function Page() {
   return (
     // <Suspense fallback={<LoadingComponent />}>
     <Box w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsOrange" bg="white" overflow="hidden !Important">
-        <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.6" pos="absolute" backgroundSize="150% 150%"></Box>
+        <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
         <Box bg={`no-repeat url("https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg") #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
       <Stack alignItems="center" justifyContent="center" w="100%" h="100vh" zIndex="tooltip" position="absolute" top="0" left="0">
         <HomeButton />

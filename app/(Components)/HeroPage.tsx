@@ -53,19 +53,19 @@ export default function HeroPage(props: HeroProps) {
             <Box as="section" id="homeHero" w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsOrange" bg="white" overflow="hidden !Important">
                 <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
                 <Box bg={`no-repeat url(${imageLink ? imageLink : "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
-                <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "3rem"}} overflow="hidden">
-                    <Grid templateColumns={{base: "1fr", md: "1fr 2fr"}} gap={{base: 0.5, md: 10}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
+                <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "2rem", lg: "3rem", xl: "5rem"}} overflow="hidden">
+                    <Grid templateColumns={{base: "1fr", lg: "2.5fr 3fr", xl: "1fr 2fr"}} gap={{base: "2rem", lg: "1rem", xl: "2rem"}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
                         <Stack boxShadow="bsBigBoldBlue" borderRadius="0 2.5rem" align="center" justify="center" p={{base: "1rem"}} w={{base: "80%", md: "100%"}} m={{base: "auto", md: "initial"}}>
                             <Heading as="h1" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={0.1} textShadow="tsPrimary" color="white">Hello, I&apos;m</Heading>
                             <Heading as="h2" fontWeight={900} fontSize="8xl" lineHeight={0.85} textShadow="tsPrimary" color="white">{name}</Heading>
-                            <Heading as="h3" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={2} textShadow="tsPrimary" color="white">{tagLine}</Heading>
+                            <Heading as="h3" fontFamily="body" fontWeight="400" fontSize="1.1rem" lineHeight={2} textShadow="tsPrimary" color="white">and I am a Web Developer</Heading>
                             <Button as="a" href={cta?.[1]} variant="heroButton" w="80%" color="white">
                                 {cta?.[0]}
                             </Button>
                         </Stack>
-                        <Grid templateColumns={{base: "repeat(3, 1fr)", md: "repeat(2, 1fr)"}} gap={{base: 5, md: 10}} alignItems="center" justifyContent="center" p="1rem 2.5rem">
+                        <Grid templateColumns={{base: "repeat(3, 1fr)", md: "repeat(2, 1fr)"}} gap={{base: "2rem", md: "2rem"}} alignItems="center" justifyContent="center" p="1rem 2.5rem" w="100%">
                             {links.map((link:any) => (
-                                <Link as="a" href={link.linkUrl} key={link.linkTitle} color="white" boxShadow="bsMediumBoldBlue" py={{ base: "2rem", md: "5rem" }} borderRadius="0 2.5rem" textShadow="tsPrimary" _hover={{ boxShadow: "bsBigBoldOrange", fontWeight: 600, color: "white" }} fontWeight={900} fontSize={{base: "xl", md: "2xl"}} alignSelf="center">
+                                <Link as="a" href={link.linkUrl} key={link.linkTitle} color="white" boxShadow="bsMediumBoldBlue" py={{ base: "2rem", md: "4.5rem" }} px="1rem" borderRadius="0 2rem" textShadow="tsPrimary" _hover={{ boxShadow: "bsBigBoldOrange", fontWeight: 600, color: "white" }} fontWeight={900} fontSize={{base: "lg", md: "2xl"}} alignSelf="center">
                                     {link.linkTitle}
                                 </Link>
                             ))}
