@@ -2,8 +2,8 @@ import { InputControl } from 'formik-chakra-ui'
 
 interface FormProps {
     inputID: string
-    inputLabel: string
-    inputType: any|undefined|null
+    inputLabel?: string
+    inputType?: any|undefined|null
 }
 
 export const FormInputReadOnly = ( props: FormProps) => {

@@ -47,12 +47,12 @@ export const PortalSubNavigationItems: Array<PortalSubNavigationItemsProps> = [
         levelOfAccess: '0'
     },
 
-    { 
-        name: 'Terms of Service',
-        slug: '/portal/pagesTOS',
-        parentMenu: 1,
-        levelOfAccess: '0'
-    },
+    // { 
+    //     name: 'Terms of Service',
+    //     slug: '/portal/pagesTOS',
+    //     parentMenu: 1,
+    //     levelOfAccess: '0'
+    // },
 
     { 
         name: 'New Page',

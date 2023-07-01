@@ -41,7 +41,6 @@ export const AddEmbed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const onSubmit =  async (values: any, actions: any) => {
-    console.log("Button clicked")
     const { status: supabaseStatus , error: supabaseError  } = await supabase.from("Embed").insert({ 
       id: "embed"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
       link: values.link,
@@ -67,7 +66,6 @@ export const AddEmbed = () => {
     embedLink: Yup.string().required("The Embed Link is Required"),
     link: Yup.string().required("The Link is Required"),
     title: Yup.string().required("The Title is Required"),
-    id: Yup.string().required("The ID is Required"),
   })
 
   return (
@@ -81,7 +79,6 @@ export const AddEmbed = () => {
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
               {({ handleSubmit }: any) => (
                 <Stack as="form" onSubmit={handleSubmit as any} gap="2rem">
-                  <FormInputReadOnly inputID="id" inputLabel="" inputType="hidden" />
                   <FormInput inputID="title"  inputLabel="Title" inputType="text" />
                   <Stack direction="row" alignItems="center" justify="center" spacing="2rem">
                     <FormInputRow inputID="embedLink"  inputLabel="Embed Link"  inputType="text"  />

@@ -82,8 +82,8 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                             <LinkButton {...link} key={`link_${link.id}`}  />
                         ))} 
                     </TabPanel>
-                    <TabPanel>
-                        {/* {embeds.map((embed: any) => (
+                    {/* <TabPanel>
+                        {embeds.map((embed: any) => (
                             <AspectRatio
                                 key={`embed_$embed.id}`}
                                 ratio={16 / 9}
@@ -96,8 +96,8 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                             >
                                 <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                             </AspectRatio>
-                        ))} */}
-                    </TabPanel>
+                        ))}
+                    </TabPanel> */}
                 </TabPanels>
             </Tabs>
         </>

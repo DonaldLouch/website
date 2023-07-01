@@ -18,6 +18,7 @@ import { PrimaryLinkManager } from "./PrimaryLinkManager"
 import AddPrimaryLink from "./AddPrimaryLink"
 import { EmbedManager } from "./EmbedManager"
 import { AddEmbed } from "./AddEmbed"
+import { PinnedPostsManager } from "./PinnedPostsManager"
 
 export default async function EditLinksPage({ links, primaryLinks, embeds }: any) {
   const toast = useToast()
@@ -170,6 +171,9 @@ export default async function EditLinksPage({ links, primaryLinks, embeds }: any
               <AddEmbed />
               {embeds.map((embed: any) => ( <EmbedManager {...embed} /> ))} 
             </TabPanel>
+            {/* <TabPanel>
+              {pinnedPosts.map((post: any) => ( <PinnedPostsManager {...post} /> ))} 
+            </TabPanel> */}
           </TabPanels>
         </Tabs>
       </Box>
