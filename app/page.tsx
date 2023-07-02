@@ -53,7 +53,7 @@ export default function HomePageContent() {
       linkUrl: "about#links",
     },
     {
-      linkTitle: "Available For Freelance Jobs!",
+      linkTitle: "Hire Me!",
       linkUrl: "jobs",
     },
   ]
