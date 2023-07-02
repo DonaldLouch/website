@@ -15,8 +15,8 @@ export const SectionCard = (props: CardProps) => {
             as="section" 
             id={id} 
             filter="opacity(80%)" 
-            mx="-2rem"
-            my="2rem" 
+            mx={{base: "0rem", lg: "-2rem"}}
+            my={{base: "1rem", lg: "1rem"}}
             p="2rem" 
             borderRadius="0 2rem" 
             bg="none"
