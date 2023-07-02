@@ -38,11 +38,11 @@ export default function Portfolio() {
       linkUrl: "C/graphic",
     },
     {
-      linkTitle: "All Other Content",
+      linkTitle: "Blog",
       linkUrl: "blog",
     },
     {
-      linkTitle: "Available For Freelance Jobs!",
+      linkTitle: "Hire Me!",
       linkUrl: "jobs",
     },
   ];

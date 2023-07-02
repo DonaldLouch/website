@@ -18,7 +18,7 @@ export default function PinnedPostsCard(post: PinnedPostsProps) {
     return (
         <Link href={`/post/${post.slug}`}>
             <Card bg="none" boxShadow="bsBoldWhite" borderRadius="0 2rem" m={{base: "1.5rem 1rem", lg: "1rem 2rem"}} key={post.id} direction={{base: "column", md:"row"}} gap="1.5rem" alignItems="center" textAlign={{base: "center", md: "initial"}} pb={{base: "2rem", md: "0"}} pos="relative" p="0" _hover={{background: "backgroundGradient"}}>
-                <Box color="white" pos="absolute" w="2%" zIndex="2" top="-19%" left="-1%" transform="rotate(-25deg)" display={{base: "none", md: 'initial'}} fontSize="3xl"><FontAwesomeIcon icon={['fal', 'thumbtack']} color="currentColor"/></Box>
+                <Box color="white" pos="absolute" w="2%" zIndex="2" top={{base: "-4.5%", md: "-19%"}} left={{base: "-3%", md: "-1%" }}transform="rotate(-25deg)"  fontSize="3xl"><FontAwesomeIcon icon={['fal', 'thumbtack']} color="currentColor"/></Box>
                 <AspectRatio
                     ratio={16/9}
                     w={{base: "100%", md: "20vw", lg:"15%"}}
