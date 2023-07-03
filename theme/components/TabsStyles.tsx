@@ -11,7 +11,7 @@ const mainVariant = definePartsStyle(props => {
   return {
     root: {
       my: "1rem",
-      boxShadow: "bsBoldBlue",
+      boxShadow: "bsBoldPrimary",
       p: "2rem",
       borderRadius: "0 2rem",
     },

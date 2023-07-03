@@ -53,7 +53,7 @@ export const FormPassword = ( props: FormProps) => {
       inputProps={{
         variant: "unstyled",
         boxShadow: "bsBoldWhite",
-        _focus: { boxShadow: "bsBoldOrange" },
+        _focus: { boxShadow: "bsBoldSecondary" },
         _invalid: { boxShadow: "bsBoldRed" },
         p: "1.5rem 2rem",
         color: "white",

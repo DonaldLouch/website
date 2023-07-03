@@ -16,8 +16,8 @@ export const FormPhoneRow = ( props: FormProps) => {
             label={inputLabel}
             inputProps={{
                 variant: "unstyled",
-                boxShadow: 'bsBoldOrange',
-                _focus: {boxShadow: "bsBoldBlue"},
+                boxShadow: 'bsBoldSecondary',
+                _focus: {boxShadow: "bsBoldPrimary"},
                 _invalid: {boxShadow: "bsBoldRed"},
                 p: "1.5rem 2rem",
                 color: 'white',

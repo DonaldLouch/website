@@ -28,7 +28,7 @@ export const LinkButton = (link: LinkButtonProps) => {
     >
       <Flex
         color="white"
-        boxShadow="bsBoldOrange"
+        boxShadow="bsBoldSecondary"
         my="1.5rem"
         p="1.2rem 2rem"
         borderRadius="0 2rem"

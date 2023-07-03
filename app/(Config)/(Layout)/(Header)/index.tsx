@@ -30,7 +30,7 @@ export default function Header() {
       bg="blurredBackground"
       backdropFilter="blur(20px)"
       zIndex="docked"
-      boxShadow="bsBoldBlue"
+      boxShadow="bsBoldPrimary"
       borderRadius={{base: "0 0 1.5rem 1.5rem", lg: "0 1.5rem"}}
       top={{ base:"0", lg: "2%" }}
       left={{ base:"2%", lg: "2%" }}
@@ -73,7 +73,7 @@ export default function Header() {
             display={{ base: "flex", lg: "none" }}
             onClick={onOpen}
             variant="unstyled"
-            boxShadow="bsBoldBlue"
+            boxShadow="bsBoldPrimary"
             aria-label="open menu"
             w="5%"
             // h="auto"

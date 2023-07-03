@@ -102,7 +102,7 @@ const image = (props: any) => (
 
 const songInfo = (props: any) => (
     <>
-    <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center" boxShadow="bsBoldBlue" borderRadius="0 2rem">
+    <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center" boxShadow="bsBoldPrimary" borderRadius="0 2rem">
         <Image src={props.artworkSrc} alt={props.artworkTitle} w="100%" borderBottomLeftRadius="2rem"/>
         <Stack mr="2rem">
             {props.children}
@@ -119,7 +119,7 @@ const unorderedList = (props: any) => (
         {props.children.map((list: any) => ( 
             <>
             {list != "\n" && (
-                <ListItem key={list.index} boxShadow="bsBoldOrange" padding="1.5rem" borderRadius="0 2rem" my="1rem" ml="3rem">
+                <ListItem key={list.index} boxShadow="bsBoldSecondary" padding="1.5rem" borderRadius="0 2rem" my="1rem" ml="3rem">
                     {/* <ListIcon as={MinusIcon} color='green.500'/> */}
                     <Stack direction="row" alignItems="center" ml="-4rem" gap="3rem">
                         <Box color="primary" width={5}>
@@ -209,7 +209,7 @@ const lineBreak = () => (<Box as="br"></Box>)
 
 const tables = (props: any) => (
     <>
-        <Stack overflowX="auto" m="1rem" px="1rem" boxShadow="bsBoldOrange" padding="1rem !Important" borderRadius="0 2rem">
+        <Stack overflowX="auto" m="1rem" px="1rem" boxShadow="bsBoldSecondary" padding="1rem !Important" borderRadius="0 2rem">
             <Table variant='striped' colorScheme='purple' sx={{ borderCollapse: 'unset' }}>
                 <Thead w="auto">
                     <Tr>

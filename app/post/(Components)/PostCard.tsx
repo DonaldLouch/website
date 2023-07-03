@@ -9,7 +9,7 @@ interface CardProps {
 export const PostCard = (props: CardProps) => {
   const { children } = props
   return (
-    <Box as="article" id="post" boxShadow="bsBoldBlue" p="4rem 2rem" borderRadius="0 3rem">
+    <Box as="article" id="post" boxShadow="bsBoldPrimary" p="4rem 2rem" borderRadius="0 3rem">
       {children}
     </Box>
   )

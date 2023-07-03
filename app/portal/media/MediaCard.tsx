@@ -62,7 +62,7 @@ export const MediaCard = ({ mediaID, mediaPath, mediaTitle, mediaKind, mediaExte
         // })
     }
     return (
-    <Grid id={`media_${mediaID}`} gridTemplateColumns="repeat(5, 1fr)" p="5" boxShadow="bsBoldBlue" overflowX="scroll" my="5" borderRadius="0 2rem" gap="4" alignItems="center" justifyContent="baseline">
+    <Grid id={`media_${mediaID}`} gridTemplateColumns="repeat(5, 1fr)" p="5" boxShadow="bsBoldPrimary" overflowX="scroll" my="5" borderRadius="0 2rem" gap="4" alignItems="center" justifyContent="baseline">
         <Image src={mediaPath} alt={mediaTitle} gridRow="1" />
         <Heading as="h4" gridRow="1" gridColumn="2/6" color='white'>{mediaTitle}</Heading>
         <StatsCard startsTitle="Media Kind" startsDescription={mediaKind} />

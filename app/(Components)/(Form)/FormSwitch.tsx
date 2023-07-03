@@ -11,8 +11,8 @@ export const FormSwitch = ( props: FormProps) => {
     return (
         <Stack 
             direction="row"
-            boxShadow='bsBoldBlue'
-            _focus={{boxShadow: "bsBoldOrange"}}
+            boxShadow='bsBoldPrimary'
+            _focus={{boxShadow: "bsBoldSecondary"}}
             p="1.5rem 2rem"
             color='white'
             borderRadius="0 2rem"

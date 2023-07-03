@@ -23,7 +23,7 @@ export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
         alignItems="center"
         w="100%"
         direction={{base: "column", lg: "row"}}
-        boxShadow="bsBoldBlue"
+        boxShadow="bsBoldPrimary"
       >
         <Stack alignItems={{base: "center", lg: "initial"}} w="100%">
           <Stack

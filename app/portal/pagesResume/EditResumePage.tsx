@@ -176,8 +176,8 @@ export default async function EditResumePage({ resume }: any) {
               <FormTextAreaRow inputID="skills" inputLabel="Skills" textRows={10} />
 
               <Box
-                boxShadow="bsBoldOrange"
-                _focus={{boxShadow: "bsBoldOrange"}}
+                boxShadow="bsBoldSecondary"
+                _focus={{boxShadow: "bsBoldSecondary"}}
                 _invalid={{boxShadow: "bsBoldRed"}}
                 p="1.5rem 2rem"
                 color="white"

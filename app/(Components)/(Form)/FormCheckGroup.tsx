@@ -16,8 +16,8 @@ export const FormCheckGroup = ( props: FormProps) => {
         <CheckboxContainer 
             name={checkGroupID}
             label={checkGroupLabel}
-            boxShadow="bsBoldOrange"
-            _focus={{boxShadow: "bsBoldOrange"}}
+            boxShadow="bsBoldSecondary"
+            _focus={{boxShadow: "bsBoldSecondary"}}
             _invalid={{boxShadow: "bsBoldRed"}}
             color="white"
             borderRadius="0 2rem"

@@ -27,7 +27,7 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
             height="2rem"
             alignItems="center"
             bg="blurredBackground"
-            boxShadow="bsBlue"
+            boxShadow="bsPrimary"
             borderRadius="0 2rem 0 0"
             justifyContent={{ base: 'space-between', md: 'flex-end' }}
             {...rest}
@@ -58,7 +58,7 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
             {/* <VStack
                 alignItems="flex-end"
                 spacing="0.2rem"
-                boxShadow="bsBoldBlue"
+                boxShadow="bsBoldPrimary"
                 borderRadius="0 2rem"
                 p="0.5rem 1.5rem"
                 mr="2"

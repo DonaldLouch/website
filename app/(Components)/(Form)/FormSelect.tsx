@@ -21,8 +21,8 @@ export const FormSelect = ( props: FormProps) => {
                 name={selectID}
                 selectProps={{ 
                     placeholder: selectPlaceholder, 
-                    boxShadow: 'bsBoldOrange',
-                    _focus: {boxShadow: "bsBoldBlue"},
+                    boxShadow: 'bsBoldSecondary',
+                    _focus: {boxShadow: "bsBoldPrimary"},
                     _invalid: {boxShadow: "bsBoldRed"},
                     color: 'white',
                     borderRadius: "0 2rem",

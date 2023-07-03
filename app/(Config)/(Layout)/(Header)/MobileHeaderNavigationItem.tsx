@@ -40,7 +40,7 @@ export const MobileHeaderNavigationItem = ({
 }: HeaderNavigationItemProps) => {
   // const ChevronDownIcon = () => <FontAwesomeIcon icon={['fal', 'down']} color="currentColor" />
   // const blackWhiteColour = useColorModeValue("black", "black");
-  // const boxShadow = useColorModeValue("bsBoldBlue", "bsBoldBlue");
+  // const boxShadow = useColorModeValue("bsBoldPrimary", "bsBoldPrimary");
 
   return (
     <>
@@ -61,13 +61,13 @@ export const MobileHeaderNavigationItem = ({
             role="group"
             cursor="pointer"
             color="white"
-            boxShadow="bsBoldBlue"
+            boxShadow="bsBoldPrimary"
             background={"none"}
             _hover={{ bg: "secondary", boxShadow: "none"  }}
             _focus={{ boxShadow: "none" }}
             transition="all 0.3s"
             {...rest}
-            // boxShadow={{ base: "none", lg: "bsBoldBlue" }}
+            // boxShadow={{ base: "none", lg: "bsBoldPrimary" }}
             justifyContent={{ base: "initial", lg: "center" }}
           >
             <Box
@@ -103,11 +103,11 @@ export const MobileHeaderNavigationItem = ({
               cursor="pointer"
               color="white"
               bg={"none"}
-              boxShadow="bsBoldBlue"
+              boxShadow="bsBoldPrimary"
               _hover={{ bg: "secondary", boxShadow: "none" }}
               _focus={{ boxShadow: "none" }}
               transition="all 0.3s"
-              // boxShadow={{ base: "none", lg: "bsBoldBlue" }}
+              // boxShadow={{ base: "none", lg: "bsBoldPrimary" }}
               justifyContent={{ base: "initial", lg: "center" }}
               gap="0.8rem"
               {...rest}
@@ -143,7 +143,7 @@ export const MobileHeaderNavigationItem = ({
             >
               <Box
                 color="white"
-                boxShadow="bsBoldBlue"
+                boxShadow="bsBoldPrimary"
                 ml={{ base: "initial", lg: "0rem" }}
                 _hover={{ boxShadow: "none", color: "primary" }}
                 p={{ base: "0.9rem", lg: "0.5rem" }}

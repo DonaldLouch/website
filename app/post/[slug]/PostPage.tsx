@@ -121,7 +121,7 @@ export default function PostPage(props: any) {
                 )}
               </>
             ) : (
-              <Box boxShadow="bsBoldBlue" borderRadius="0 2rem" p="2rem">
+              <Box boxShadow="bsBoldPrimary" borderRadius="0 2rem" p="2rem">
                 <Text textAlign="center" fontSize="xl">
                   🚨 This post is listed as a private post and is not viewable
                   to the public. 🚨

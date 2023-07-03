@@ -23,12 +23,12 @@ export const ButtonStyles = {
           p: { base: "1rem", md: "2rem"} ,
           borderRadius: "0 2rem",
           wordBreak: "break-word",
-          boxShadow: "bsBoldBlue",
+          boxShadow: "bsBoldPrimary",
           fontWeight: "900",
           textShadow: "tsPrimary",
           _hover: { 
               bg: "none",
-              boxShadow: "bsBigBoldOrange",
+              boxShadow: "bsBigBoldSecondary",
               fontWeight: "600",
               color: "white"
           },
@@ -40,11 +40,11 @@ export const ButtonStyles = {
           py: "2.5rem",
           borderRadius: "0 1.5rem",
           wordBreak: "break-word",
-          boxShadow: "bsBoldOrange",
+          boxShadow: "bsBoldSecondary",
           fontWeight: "900",
           _hover: { 
               bg: "none",
-              boxShadow: "bsBigBoldOrange",
+              boxShadow: "bsBigBoldSecondary",
               fontWeight: "600",
               color: "primary"
           },
@@ -73,7 +73,7 @@ export const ButtonStyles = {
           p: "2rem",
           borderRadius: "0 3rem 0 3rem",
           wordBreak: "break-word",
-          boxShadow: "bsBlue",
+          boxShadow: "bsPrimary",
            _disabled: { 
               bg: "black",
               opacity: "0.2",

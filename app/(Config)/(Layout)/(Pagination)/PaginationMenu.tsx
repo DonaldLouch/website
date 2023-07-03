@@ -4,7 +4,7 @@ import { Link, Menu, MenuButton, MenuItem, MenuList, Stack } from '@chakra-ui/re
 export const PaginationMenu = ( props: any ) => { 
   const { currentPage, pages, previousPages, nextPages } = props
   return (
-    <Stack direction="row" justify="space-between" align="center" m="1rem" p="2rem" boxShadow="bsBoldBlue" borderRadius="0 2rem" color="white">
+    <Stack direction="row" justify="space-between" align="center" m="1rem" p="2rem" boxShadow="bsBoldPrimary" borderRadius="0 2rem" color="white">
       <Link href={`?pg=${currentPage - 1}`} variant="primary" color="white" _hover={{color: "primary"}}>Previous Page</Link>
         {pages.map((page: any) => (
           page === "...Prev" && (

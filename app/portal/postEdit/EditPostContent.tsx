@@ -270,8 +270,8 @@ export default function EditPostContent({post}: any) {
               <FormSwitch inputID="pinned" helperText="Is this posted pinned?" />
 
               <Box
-                boxShadow="bsBoldOrange"
-                _focus={{boxShadow: "bsBoldOrange"}}
+                boxShadow="bsBoldSecondary"
+                _focus={{boxShadow: "bsBoldSecondary"}}
                 _invalid={{boxShadow: "bsBoldRed"}}
                 p="1.5rem 2rem"
                 color="white"

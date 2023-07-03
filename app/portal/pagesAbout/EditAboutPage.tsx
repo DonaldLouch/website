@@ -169,8 +169,8 @@ export default async function EditAboutPage({ about }: any) {
 
               <FormInput inputID="email" inputLabel="Email Address" inputType="email" />
               <Box
-                boxShadow="bsBoldOrange"
-                _focus={{boxShadow: "bsBoldOrange"}}
+                boxShadow="bsBoldSecondary"
+                _focus={{boxShadow: "bsBoldSecondary"}}
                 _invalid={{boxShadow: "bsBoldRed"}}
                 p="1.5rem 2rem"
                 color="white"

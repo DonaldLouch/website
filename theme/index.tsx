@@ -76,26 +76,22 @@ export const theme = extendTheme({
     heading: playfairDisplay.style.fontFamily,
   },
   shadows: {
-    bsBlue: "5px 3px 8.37px rgba(118, 70, 136,.2)",
-    bsOrange: "5px 3px 8.37px rgba(231, 196, 98,.2)",
+    bsPrimary: "5px 3px 8.37px rgba(118, 70, 136,.2)",
+    bsSecondary: "5px 3px 8.37px rgba(231, 196, 98,.2)",
     bsWhite: "5px 3px 8.37px rgba(237, 237, 237,0.2)",
     
-    bsSmallBlue: "5px 3px 9px rgba(118, 70, 136,.2)",
-    
-    bsBoldBlueRev: "1px 1px 10px rgba(118, 70, 136,1)",
-    
-    bsBoldBlue: "1px 1px 10px rgba(118, 70, 136,1)",
-    bsBoldOrange: "1px 1px 10px rgba(231, 196, 98,1)",
+    bsBoldPrimary: "1px 1px 10px rgba(118, 70, 136,1)",
+    bsBoldSecondary: "1px 1px 10px rgba(231, 196, 98,1)",
     bsBoldWhite: "1px 1px 8.37px rgba(237, 237, 237,0.2)",
     bsBoldRed: "1px 1px 10px rgba(193, 39, 45,1)",
     
-    bsMediumBoldBlue: "1px 1px 10px 9px rgba(118, 70, 136,0.7)",
-    bsMediumBoldOrange: "1px 1px 10px 9px rgba(231, 196, 98,0.7)",
+    bsMediumBoldPrimary: "1px 1px 10px 9px rgba(118, 70, 136,0.7)",
+    bsMediumBoldSecondary: "1px 1px 10px 9px rgba(231, 196, 98,0.7)",
     bsMediumBoldWhite: "1px 1px 8.37px 9px rgba(237, 237, 237,0.2)",
     bsMediumBoldRed: "1px 1px 10px 9px rgba(193, 39, 45,1)",
     
-    bsBigBoldBlue: "1px 1px 10px 12px rgba(118, 70, 136,1)",
-    bsBigBoldOrange: "1px 1px 10px 12px rgba(231, 196, 98,1)",
+    bsBigBoldPrimary: "1px 1px 10px 12px rgba(118, 70, 136,1)",
+    bsBigBoldSecondary: "1px 1px 10px 12px rgba(231, 196, 98,1)",
     bsBigBoldWhite: "1px 1px 8.37px 12px rgba(237, 237, 237,0.2)",
     bsBigBoldRed: "1px 1px 10px 12px rgba(193, 39, 45,1)",
 

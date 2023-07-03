@@ -12,10 +12,11 @@ import {
   Link,
   Button,
   Grid,
-  Image,
   AspectRatio,
   Icon,
 } from "@chakra-ui/react";
+
+import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -68,14 +69,27 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               id="bio"
               display={{ base: "none", md: "initial" }}
             >
-              <AspectRatio ratio={1}>
+              <AspectRatio ratio={1/1}>
                 <Image
+                    src={resume.avatar}
+                    alt={`${resume.firstName} ${resume.lastName}`}
+                    // height="3840" 
+                    // width="2160"
+                    height="2100" 
+                    width="1500"
+                    // w={{ base: "50%", md: "100%" }}
+                    // m="0 auto"
+                    style={{ borderRadius: "0 2rem", objectPosition: "top"}}
+                    // borderRadius="0 2rem"
+
+                />
+                {/* <Image
                   src={resume.avatar}
                   alt="Donald Louch Avatar"
                   width="100%"
-                  boxShadow="bsBoldBlue"
+                  boxShadow="bsBoldPrimary"
                   borderRadius="0 2rem"
-                />
+                /> */}
               </AspectRatio>
               <Heading
                 as="h3"
@@ -230,7 +244,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                         history.workID === experience.id ? (
                           <Box
                             key={history.id}
-                            boxShadow="bsBoldBlue"
+                            boxShadow="bsBoldPrimary"
                             p="2rem"
                             borderRadius="0 2rem"
                             my="1rem"
@@ -433,7 +447,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               id="menu"
               display={{ base: "none", lg: "initial" }}
             >
-              <Stack gap="1.8rem" mx="1rem">
+              <Stack gap="2rem" mx="1rem">
                 <Button
                   as="a"
                   variant="portalButton"

@@ -58,7 +58,7 @@ export default function MessageCContent({ contactData }: any) {
             </Stack>
           </Stack>
           <Box
-            boxShadow="bsBoldOrange"
+            boxShadow="bsBoldSecondary"
             borderRadius="0 2rem"
             p="2rem"
             h="40vh"

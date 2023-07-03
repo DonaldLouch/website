@@ -18,7 +18,7 @@ export const FormRadio = ( props: FormProps) => {
                 children
             }}
             boxShadow="bsBoldWhite"
-            _focus={{boxShadow: "bsBoldOrange"}}
+            _focus={{boxShadow: "bsBoldSecondary"}}
             _invalid={{boxShadow: "bsBoldRed"}}
             color="white"
             borderRadius="0 2rem 0 2rem"

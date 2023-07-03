@@ -14,7 +14,7 @@ export default function AdminPostCard({ id, slug, title, thumbnail, categories, 
         w="100%"
         mb="2rem" 
         bg="blurredBackground"
-        boxShadow="bsBoldBlue"
+        boxShadow="bsBoldPrimary"
         _hover={{boxShadow: "bsBigBoldWhite"}}
         color="white"
     >

@@ -25,7 +25,7 @@ export const LinkStyles = {
       },
 
     // primaryButton: {
-    //   boxShadow: "bsBoldBlue",
+    //   boxShadow: "bsBoldPrimary",
     //   _hover: {
     //     boxShadow: "none",
     //     textDecoration: "none",
@@ -41,7 +41,7 @@ export const LinkStyles = {
     //   bg: "backgroundGradient",
     // },
     primaryButton: {
-        boxShadow: "bsBoldBlue",
+        boxShadow: "bsBoldPrimary",
         _hover: {boxShadow: "none", textDecoration: "none", color: "primary", bg: "none", fontWeight: "900"},
         p: "1rem 2rem",
         color: "white",
@@ -52,7 +52,7 @@ export const LinkStyles = {
       },
 
     primaryButton2: {
-      boxShadow: "bsBoldBlue",
+      boxShadow: "bsBoldPrimary",
       _hover: {
         boxShadow: "none",
         textDecoration: "none",
@@ -81,7 +81,7 @@ export const LinkStyles = {
       fontWeight: "bold",
       borderRadius: "0 3rem 0 3rem",
       wordBreak: "break-word",
-      boxShadow: "bsBlue",
+      boxShadow: "bsPrimary",
       _hover: {
         bg: "none",
         boxShadow: "none",

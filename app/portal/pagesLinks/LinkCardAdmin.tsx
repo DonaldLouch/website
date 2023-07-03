@@ -141,7 +141,7 @@ export const LinkCardAdmin = (link: {
         <Tooltip label={link.link}>
           <Flex
             color="white"
-            boxShadow="bsBlue"
+            boxShadow="bsPrimary"
             my="0.8rem"
             p="1.2rem 2rem"
             borderRadius="0 2rem"

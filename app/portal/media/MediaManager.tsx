@@ -134,7 +134,7 @@ export default function MediaManager({mediaData, pagination}: any) {
           <SectionCard styleType="primaryCard" id="mediaUpload"> 
           <SectionTitle headingTitle="Upload New Media" />
           <Text textAlign="center">Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.</Text> 
-          <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow="bsBoldBlue" p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" my="1rem"> 
+          <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow="bsBoldPrimary" p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" my="1rem"> 
             <InputGroup border="none" appearance="none" outline="none">
               <InputLeftElement pointerEvents='none'>
                 <FontAwesomeIcon icon={["fal", "cloud-arrow-up"]} width="100%" color='currentColor' />

@@ -23,8 +23,8 @@ export const FormInputRow = ( props: FormProps) => {
             mt="0.5rem"
             inputProps={{
                 variant: "unstyled",
-                boxShadow: 'bsBoldOrange',
-                _focus: {boxShadow: "bsBoldBlue"},
+                boxShadow: 'bsBoldSecondary',
+                _focus: {boxShadow: "bsBoldPrimary"},
                 _invalid: {boxShadow: "bsBoldRed"},
                 p: "1.5rem 2rem",
                 color: 'white',

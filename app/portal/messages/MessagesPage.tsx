@@ -31,7 +31,7 @@ export default function MessagesPage({contactData, jobData}: any) {
             justifyContent="center"
             align="center"
             m="1rem 2rem"
-            _hover={{ boxShadow: "bsBoldOrange" }}
+            _hover={{ boxShadow: "bsBoldSecondary" }}
           >
           <Text
             fontWeight={500}
@@ -76,7 +76,7 @@ export default function MessagesPage({contactData, jobData}: any) {
             justifyContent="center"
             align="center"
             m="1rem 2rem"
-            _hover={{ boxShadow: "bsBoldOrange" }}
+            _hover={{ boxShadow: "bsBoldSecondary" }}
           >
           <Text
           fontWeight={500}

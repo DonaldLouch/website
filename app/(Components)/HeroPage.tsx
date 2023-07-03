@@ -50,12 +50,12 @@ export default function HeroPage(props: HeroProps) {
 
     return (
         <>
-            <Box as="section" id="homeHero" w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsOrange" bg="white" overflow="hidden !Important">
+            <Box as="section" id="homeHero" w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsSecondary" bg="blurredBackground" overflow="hidden !Important">
                 <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
                 <Box bg={`no-repeat url(${imageLink ? imageLink : "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
                 <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "2rem", lg: "3rem", xl: "5rem"}} overflow="hidden">
                     <Grid templateColumns={{base: "1fr", lg: "2.5fr 3fr", xl: "1fr 2fr"}} gap={{base: "2rem", lg: "1rem", xl: "2rem"}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
-                        <Stack boxShadow={{base: "bsBoldBlue", md:"bsBigBoldBlue"}} borderRadius="0 2.5rem" align="center" justify="center" p={{base: "1rem"}} w={{base: "80%", md: "100%"}} m={{base: "auto", md: "initial"}}>
+                        <Stack boxShadow={{base: "bsBoldPrimary", md:"bsBigBoldPrimary"}} borderRadius="0 2.5rem" align="center" justify="center" p={{base: "1rem"}} w={{base: "80%", md: "100%"}} m={{base: "auto", md: "initial"}}>
                             <Heading as="h1" fontFamily="body" fontWeight="400" fontSize="1.1rem" textShadow="tsPrimary" color="white" m="0">Hello, I&apos;m</Heading>
                             <Heading as="h2" fontWeight={900} fontSize={{base: "4xl", md: "6xl", lg:"8xl"}} textShadow="tsPrimary" color="white" my={{base: "-0.5rem", md: "-0.5rem"}} lineHeight={{ base: "inherit", lg: "5rem"}}>{name}</Heading>
                             <Heading as="h3" fontFamily="body" fontWeight="400" fontSize="1.1rem" textShadow="tsPrimary" color="white" mt={{base: "0", md:"1rem"}}>and I am a Web Developer</Heading>
@@ -65,7 +65,7 @@ export default function HeroPage(props: HeroProps) {
                         </Stack>
                         <Grid templateColumns="repeat(2, 1fr)" gap={{base: "2rem", md: "2rem", xl: "4rem"}} alignItems="center" justifyContent="center" p="1rem 2.5rem" w="100%">
                             {links.map((link:any) => (
-                                <Link as="a" href={link.linkUrl} key={link.linkTitle} color="white" boxShadow={{base: "bsBoldBlue", md: "bsMediumBoldBlue"}} py={{ base: "2rem", md: "4.5rem" }} px="1rem" borderRadius="0 2rem" textShadow="tsPrimary" _hover={{ boxShadow: "bsBigBoldOrange", fontWeight: 600, color: "white" }} fontWeight={900} fontSize={{base: "lg", md: "2xl"}} alignSelf="center">
+                                <Link as="a" href={link.linkUrl} key={link.linkTitle} color="white" boxShadow={{base: "bsBoldPrimary", md: "bsMediumBoldPrimary"}} py={{ base: "2rem", md: "4.5rem" }} px="1rem" borderRadius="0 2rem" textShadow="tsPrimary" _hover={{ boxShadow: "bsBigBoldSecondary", fontWeight: 600, color: "white" }} fontWeight={900} fontSize={{base: "lg", md: "2xl"}} alignSelf="center">
                                     {link.linkTitle}
                                 </Link>
                             ))}
