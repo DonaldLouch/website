@@ -11,7 +11,7 @@ import { Formik } from "formik"
 import { SubmitButton } from "formik-chakra-ui"
 import * as Yup from 'yup'
 
-export default async function EditAboutPage({ about }: any) {
+export default function EditAboutPage({ about }: any) {
   const toast = useToast()
   const toastID = "toastID"
   

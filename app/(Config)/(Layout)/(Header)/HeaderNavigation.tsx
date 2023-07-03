@@ -7,13 +7,15 @@ import {
     Flex, 
     Image, 
     Stack,
-    BoxProps
+    BoxProps,
+    Text
   } from '@chakra-ui/react'
 
 import { HeaderNavigationItems } from '@/lib/HeaderNavigationItems'
 
 import { MobileHeaderNavigationItem } from './MobileHeaderNavigationItem'
 import { HeaderNavigationItem } from './HeaderNavigationItem'
+import Link from 'next/link'
 
 interface HeaderNavigationProps extends BoxProps {
     onClose: () => void;
@@ -32,6 +34,7 @@ interface HeaderNavigationProps extends BoxProps {
                 {link.name}
               </HeaderNavigationItem>
             ))}
+            <Link href="/jobs"><Text color="white" boxShadow="bsBoldSecondary" p="0.3rem 1rem" my="0" borderRadius="0 0.5rem" fontSize="1.2rem" fontWeight="900" _hover={{background: "blurredBackground", boxShadow: "none"}}>Hire Me!</Text></Link>
           </Stack>
           <Stack display={{ base: 'initial', lg: 'none' }} w="100%" p="1rem" background="blurredBackground" h="100vh">
             {HeaderNavigationItems.map((link) => (
