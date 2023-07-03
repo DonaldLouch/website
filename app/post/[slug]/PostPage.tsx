@@ -3,7 +3,7 @@
 import {
   Text,
   Box,
-  useToast,
+  // useToast,
 } from "@chakra-ui/react";
 
 import { VideoPostType } from "../(Components)/(PostType)/VideoPostType";
@@ -17,40 +17,40 @@ import { Photo3PostType } from "../(Components)/(PostType)/Photo3PostType";
 import { Photo4PostType } from "../(Components)/(PostType)/Photo4PostType";
 import { Photo5PostType } from "../(Components)/(PostType)/Photo5PostType";
 
-export default function PostPage(props: any) {
-  const toast = useToast();
-  const id = "toastID";
+export default function PostPage({post}: any) {
+  // const toast = useToast();
+  // const id = "toastID";
 
-  const post = props[0]
-  const {loggedIn} = props
+  // const post = props[0]
+  // const {loggedIn} = props
 
   // console.log(post)
 
-  if (post.postStatus === "Private" && loggedIn) {
-    if (!toast.isActive(id)) {
-      toast({
-        id,
-        title: "Private Blog Post",
-        description: `Note that the blog post "${post.title}" is a private post and is only viewable at an administrator level!`,
-        status: "error",
-        duration: null,
-        isClosable: false,
-      });
-    }
-  }
+  // if (post.postStatus === "Private" && loggedIn) {
+  //   if (!toast.isActive(id)) {
+  //     toast({
+  //       id,
+  //       title: "Private Blog Post",
+  //       description: `Note that the blog post "${post.title}" is a private post and is only viewable at an administrator level!`,
+  //       status: "error",
+  //       duration: null,
+  //       isClosable: false,
+  //     });
+  //   }
+  // }
 
-  if (post.postStatus === "Draft" && loggedIn) {
-    if (!toast.isActive(id)) {
-      toast({
-        id,
-        title: "Blog Post is Drafted",
-        description: `Note that this blog post is drafted! Don't forget to publish the post to the public when you are ready!`,
-        status: "warning",
-        duration: null,
-        isClosable: false,
-      });
-    }
-  }
+  // if (post.postStatus === "Draft" && loggedIn) {
+  //   if (!toast.isActive(id)) {
+  //     toast({
+  //       id,
+  //       title: "Blog Post is Drafted",
+  //       description: `Note that this blog post is drafted! Don't forget to publish the post to the public when you are ready!`,
+  //       status: "warning",
+  //       duration: null,
+  //       isClosable: false,
+  //     });
+  //   }
+  // }
 
   return (
     <>
@@ -90,7 +90,7 @@ export default function PostPage(props: any) {
           </>
         ) : (
           <>
-            {loggedIn ? (
+            {/* {loggedIn ? (
               <>
                 {post.blogType === "Video" && (
                   <VideoPostType {...post} />
@@ -120,14 +120,14 @@ export default function PostPage(props: any) {
                   <Photo4PostType {...post} />
                 )}
               </>
-            ) : (
+            ) : ( */}
               <Box boxShadow="bsBoldPrimary" borderRadius="0 2rem" p="2rem">
                 <Text textAlign="center" fontSize="xl">
                   🚨 This post is listed as a private post and is not viewable
                   to the public. 🚨
                 </Text>
               </Box>
-            )}
+            {/* )} */}
           </>
         )}
       </Box>

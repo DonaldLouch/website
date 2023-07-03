@@ -6,8 +6,6 @@ import { PortalNavigationItem } from "./PortalNavigationItem";
 
 import { PortalNavigationItems } from "@/lib/PortalNavigationItems"
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
 interface PortalNavigationProps extends BoxProps {
   onClose: () => void;
 }
@@ -27,7 +25,6 @@ export const PortalNavigation = ({
       pos="fixed"
       h={{base: "100vh", md: "auto"}}
       pb="6"
-      // top="9%"
       {...rest}
     >
       <Flex

@@ -3,9 +3,7 @@ import {
   Stack,
   Text,
   Link,
-  useToast,
-  useColorModeValue,
-  Heading,
+  useToast
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -15,8 +13,6 @@ import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 
 import { FormInput } from "@/app/(Components)/(Form)/FormInput";
-import { FormPhone } from "@/app/(Components)/(Form)/FormPhone";
-import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 
@@ -66,65 +62,7 @@ export default function Hire() {
       actions.setSubmitting(false)
     });
   };
-
-  // async function sendContact(contactData: any) {
-    // const response = await fetch("/api/mail/sendJob", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json, text/plain, */*",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(contactData),
-    // });
-
-  //   // const response = await fetch("/api/message/newJob", {
-  //   //   method: "POST",
-  //   //   body: JSON.stringify(contactData),
-  //   // });
-
-  //   // if (response.ok) {
-  //   //   const sendMail = await fetch("/api/mail/sendJob", {
-  //   //     method: "POST",
-  //   //     headers: {
-  //   //       Accept: "application/json, text/plain, */*",
-  //   //       "Content-Type": "application/json",
-  //   //     },
-  //   //     body: JSON.stringify(contactData),
-  //   //   });
-  //   //   if (sendMail.ok) {
-  //   //     toast({
-  //   //       title: "Submitted 🎉",
-  //   //       description: `You've successfully submitted a request for Donald Louch to do a job for you!`,
-  //   //       status: "success",
-  //   //       duration: 9000,
-  //   //       isClosable: true,
-  //   //     });
-  //   //   } else {
-  //   //     toast({
-  //   //       title: "An Error Occurred",
-  //   //       description:
-  //   //         "It seems like an error occurred while trying to send your request form to Donald Louch. Please try again.",
-  //   //       status: "error",
-  //   //       duration: 9000,
-  //   //       isClosable: true,
-  //   //     });
-  //   //   }
-  //   // }
-
-  //   // if (response.status === 500) {
-  //   //   toast({
-  //   //     title: "An Error Occurred",
-  //   //     description:
-  //   //       "It seems like an error occurred while trying to submit your request form to Donald Louch. Please try again.",
-  //   //     status: "error",
-  //   //     duration: 9000,
-  //   //     isClosable: true,
-  //   //   });
-  //   // }
-
-  //   return await response.json();
-  // }
-
+  
   const initialValues = {};
 
   const validationSchema = Yup.object({

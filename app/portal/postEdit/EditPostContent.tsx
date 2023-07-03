@@ -81,9 +81,6 @@ export default function EditPostContent({post}: any) {
     const pinned = values.pinned ? values.pinned : false
     const updatePostedOn = values.postedOn ? new Date(values.postedOn) : post.postedOn
 
-    // let updatePostedOn = post.postedOn
-    // if (values.postedOn) {updatePostedOn = new Date(values.postedOn)}
-
     const categoryValue = values.category.toString()
 
     const updateBlogPostData = {
@@ -158,7 +155,6 @@ export default function EditPostContent({post}: any) {
       }
     
       const validationSchema = Yup.object({
-        /*
         title: Yup.string().required('This field is required.'),
         slug: Yup.string().required('This field is required.'),
         blogType: Yup.string().required('This field is required.'),
@@ -169,7 +165,6 @@ export default function EditPostContent({post}: any) {
         tags: Yup.string().required('This field is required.'),
         thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
         sidebar: Yup.string().required('This field is required.')
-        */
       })
       const postedData = new Date(post.postedOn)
       const postedDay = postedData.toLocaleDateString()

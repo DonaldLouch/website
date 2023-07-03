@@ -1,8 +1,6 @@
 'use client'
-// import React from "react";
 import {
   Flex,
-  // useColorModeValue,
   Link,
   FlexProps,
   Menu,
@@ -15,8 +13,6 @@ import {
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// import { ChevronDownIcon } from "@chakra-ui/icons";
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
 
@@ -38,10 +34,6 @@ export const MobileHeaderNavigationItem = ({
   children,
   ...rest
 }: HeaderNavigationItemProps) => {
-  // const ChevronDownIcon = () => <FontAwesomeIcon icon={['fal', 'down']} color="currentColor" />
-  // const blackWhiteColour = useColorModeValue("black", "black");
-  // const boxShadow = useColorModeValue("bsBoldPrimary", "bsBoldPrimary");
-
   return (
     <>
       {isParent == false ? (
@@ -67,7 +59,6 @@ export const MobileHeaderNavigationItem = ({
             _focus={{ boxShadow: "none" }}
             transition="all 0.3s"
             {...rest}
-            // boxShadow={{ base: "none", lg: "bsBoldPrimary" }}
             justifyContent={{ base: "initial", lg: "center" }}
           >
             <Box
@@ -107,7 +98,6 @@ export const MobileHeaderNavigationItem = ({
               _hover={{ bg: "secondary", boxShadow: "none" }}
               _focus={{ boxShadow: "none" }}
               transition="all 0.3s"
-              // boxShadow={{ base: "none", lg: "bsBoldPrimary" }}
               justifyContent={{ base: "initial", lg: "center" }}
               gap="0.8rem"
               {...rest}
@@ -156,7 +146,6 @@ export const MobileHeaderNavigationItem = ({
             <MenuList
              bg="black" 
              border="none"
-              // m="-0.5rem 1.9rem"
             >
               {HeaderSubNavigationItems.map(
                   (subLink: any) =>

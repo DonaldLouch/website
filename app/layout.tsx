@@ -1,24 +1,5 @@
 import Context from "./(Config)/Context"
 
-// import createClient from "@/lib/supabase-server"
-
-// import { Playfair_Display, Lato } from "next/font/google"
-// const playfairDisplay = Playfair_Display({ 
-//   subsets: ["latin"], 
-//   style: ['normal', 'italic'], 
-//   display: 'swap', 
-//   preload: true,
-//   fallback: ['']
-// })
-// const lato = Lato({
-//     weight: ["100", "300", "400", "700", "900"], 
-//     style: ['normal', 'italic'],
-//     subsets: ["latin"],
-//     display: 'swap', 
-//     preload: true,
-//     fallback: ['']
-// })
-
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: process.env.WEBSITE_NAME,
@@ -35,7 +16,6 @@ export const metadata: Metadata = {
         { rel: "icon", sizes: "16x16", type: "image.png", url: "/favicon/favicon-16x16.png" }, 
         { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/favicon/apple-touch-icon.png" },
     ],
-    // manifest: "/favicon/site.webmanifest",
     openGraph: {
         type: "website",
         url: process.env.SITE_URL,
@@ -53,14 +33,10 @@ export const metadata: Metadata = {
 export const revalidate = 0;
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // const supabase = createClient()
-  // const { data: { user } } = await supabase.auth.getUser()
-  // const isLoggedIn = user ? true : false
-  const isLoggedIn = false
   return (
     <html>
       <body>
-        <Context isLoggedIn={isLoggedIn}>{children}</Context>
+        <Context>{children}</Context>
       </body>
     </html>
   )

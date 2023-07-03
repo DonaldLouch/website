@@ -1,4 +1,3 @@
-import { useColorModeValue } from '@chakra-ui/react'
 import { CheckboxContainer, CheckboxControl } from 'formik-chakra-ui'
 
 interface FormProps {

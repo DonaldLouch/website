@@ -2,7 +2,6 @@
 
 import { Button, Card, CardBody, CardHeader, Heading, Stack, Text } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -17,10 +16,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default function PortalHome() {
-  // <PortalHeader pageTitle="Portal Home" />
-  // const breadCrumbs = [
-  //     {"pageLink": "/projects", "pageName": "Projects"},
-  // ]
   return (
     <>
       <Card px="1rem" mt="0">
@@ -48,7 +43,6 @@ export default function PortalHome() {
           <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Number of Pages</Text>
           <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Total of Post Views</Text>
           <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Total of Page Views</Text> */}
-          {/* <Text textAlign="center">{process.env.DESCRIPTION}</Text> */}
           <Text textAlign="center" fontSize="3xl" fontWeight="900" color="secondary"><FontAwesomeIcon icon={["fal", "traffic-cone"]} color="currentColor" width="3%" shake  /> This section is being constructed</Text>
         </CardBody>
       </Card>

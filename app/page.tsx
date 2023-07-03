@@ -60,7 +60,7 @@ export default function HomePageContent() {
 
   return <HeroPage
     name="Donald Louch"
-    tagLine="and, I'm a Web Developer and Digital Content Creator"
+    tagLine="and I am a Web Developer"
     links={pageLinks}
     cta={["About Me", "about"]}
     imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg"

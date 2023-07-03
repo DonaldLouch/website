@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Box, Button, Code, Heading, Stack, useToast } from "@chakra-ui/react"
+import { Box, Code, Heading, Stack, useToast } from "@chakra-ui/react"
 
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
@@ -10,7 +10,6 @@ import * as Yup from 'yup'
 import { FormInput } from "@/app/(Components)/(Form)/FormInput";
 import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea";
 import { FormTextAreaRow } from "@/app/(Components)/(Form)/FormTextAreaRow";
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { FormCheckGroup } from "@/app/(Components)/(Form)/FormCheckGroup";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
@@ -64,9 +63,6 @@ export default function NewPostContent() {
     const pinned = values.pinned ? values.pinned : false
     const postedOn = values.postedOn ? new Date(values.postedOn) : new Date()
 
-    // let updatePostedOn = post.postedOn
-    // if (values.postedOn) {updatePostedOn = new Date(values.postedOn)}
-
     const categoryValue = values.category.toString()
 
     const newPostData = {
@@ -109,8 +105,6 @@ export default function NewPostContent() {
       postStatus: newPostData.postStatus, 
       lastUpdatedOn: newPostData.lastUpdatedOn 
     })
-    console.log(supabaseStatus)
-    // console.log(postUpdateError, data, count, status)
      supabaseStatus && !toast.isActive(toastID) &&
       toast({
           id: toastID,
@@ -133,10 +127,7 @@ export default function NewPostContent() {
     headingText: Yup.string().required('This field is required.'),
     body: Yup.string().required('This field is required.'),
     excerpt: Yup.string().max(300, 'The excerpt must not be more than 300 characters long.').required('This field is required.'),
-    // category: Yup.required('This field is required.'),
-    tags: Yup.string().required('This field is required.'),
-    // thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
-    // sidebar: Yup.string().required('This field is required.')
+    tags: Yup.string().required('This field is required.')
   })
   return (
     <>

@@ -1,31 +1,7 @@
-// import {
-//   Box,
-//   Text,
-//   Heading,
-//   Accordion,
-//   AccordionButton,
-//   AccordionItem,
-//   AccordionPanel,
-//   Stack,
-//   Link,
-//   Button,
-//   Grid,
-//   Image,
-//   AspectRatio,
-// } from "@chakra-ui/react";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
-// import { SectionTitle } from "@/app/(Components)/SectionTitle";
-
-// import createClient from "@/lib/supabase-server"
-
 import { Metadata } from 'next'
 import ResumePage from "./ResumePage";
 import supabase from '@/lib/supabase';
 export async function generateMetadata(): Promise<Metadata> {
-    // const supabase = createClient();
     const {data: resume} = await supabase.from('Resume').select() as any
     const resumeMeta = resume[0]
     return {

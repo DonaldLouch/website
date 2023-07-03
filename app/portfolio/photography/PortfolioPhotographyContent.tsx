@@ -3,13 +3,9 @@
 import {
   Box,
   Link,
-  // Image,
 } from "@chakra-ui/react";
-// import useSWR from "swr";
 
 import Image from "next/image"
-
-// import { Metadata } from "../../components/Metadata";
 
 export default function PortfolioPhotographyContent() {
   // const fetcher = (url: RequestInfo | URL) =>

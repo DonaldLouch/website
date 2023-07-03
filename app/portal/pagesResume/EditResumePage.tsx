@@ -3,7 +3,6 @@
 import { FormInput } from "@/app/(Components)/(Form)/FormInput"
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly"
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow"
-import { FormPhone } from "@/app/(Components)/(Form)/FormPhone"
 import { FormPhoneRow } from "@/app/(Components)/(Form)/FormPhoneRow"
 import { FormTextAreaRow } from "@/app/(Components)/(Form)/FormTextAreaRow"
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
@@ -21,9 +20,6 @@ export default function EditResumePage({ resume }: any) {
     {"pageLink": "/portal/pages", "pageName": "Page Manager"},
     {"pageLink": "/portal/pagesResume", "pageName": "Edit: Resume Page"}
   ]
-
-  // const { data: resume } = await supabase.from('Resume').select().single() as any
-  // const { data: resumeExperience } = await supabase.from('ResumeWorkExperience').select().order('startDate', {ascending: false}) as any
 
   const onSubmit =  async (values: any, actions: any) => {
     let avatar = resume.avatar

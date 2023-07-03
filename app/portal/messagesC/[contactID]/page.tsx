@@ -1,6 +1,5 @@
 import supabase from '@/lib/supabase';
 import MessageCContent from '../MessageCContent'
-// import createClient from "@/lib/supabase-server"
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -19,7 +18,6 @@ type Props = {
 
 export default async function MessageC({ params }: Props) {
   const { contactID } = params
-  // const supabase = createClient();
   const { data: contactData } = await supabase.from('Contact').select().match({ id: contactID }).single() as any
 
   return <MessageCContent contactData={contactData} />

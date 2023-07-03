@@ -1,25 +1,17 @@
 'use client'
 
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
-// import supabase from "@/lib/supabase";
 import {
-  Stack,
-  useToast,
+  Stack
 } from "@chakra-ui/react";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Formik } from "formik";
 import { SwitchControl } from "formik-chakra-ui";
-// import { useRouter } from "next/navigation";
 
 import * as Yup from 'yup'
 
-// TODO: Fix type safety for iconPrefix and iconName
-
 export const PinnedPostsManager = (props: any) => {
   const post = props
-  // const toast = useToast();
-  // const toastID = "toastID"
 
   const onSubmit =  async () => {
   // const onSubmit =  async (values: any, actions: any) => {

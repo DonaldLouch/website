@@ -1,15 +1,14 @@
-import { Grid, Heading, Stack, Text } from '@chakra-ui/react'
+// import { Grid, Heading, Stack, Text } from '@chakra-ui/react'
 import { InputControl } from 'formik-chakra-ui'
 
 interface FormProps {
     inputID: string
     inputLabel: string
     inputType?: any|undefined|null
-    inputDescription?: string
 }
 
 export const FormInputRow = ( props: FormProps) => {
-    const { inputID, inputLabel, inputType, inputDescription } = props
+    const { inputID, inputLabel, inputType } = props
     
     let theInputType = "text"
     if (inputType != undefined) {

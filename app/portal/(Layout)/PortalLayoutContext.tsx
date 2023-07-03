@@ -11,27 +11,9 @@ import { useEffect, useState } from 'react'
 import { useUser } from '@clerk/nextjs'
 
 export default function PortalLayoutContext({ children }: { children: React.ReactNode }) {
-    // const router = useRouter()
-    // const {user} = useUser();
     const { isOpen, onOpen, onClose } = useDisclosure()
-    // const [isAdmin, setIsAdmin] = useState<any>()
-
-    // useEffect(() => {
-    //     setIsAdmin(user?.publicMetadata.role === "ADMIN" ? true : false)
-    // })
-    // const isAdmin = user?.publicMetadata.role === "ADMIN" ? true : false
-    // console.log(isAdmin)
-    
-    // useEffect(() => {
-    //    isAdmin ? null : router.push("/?message=userLoginNotAllowed")
-    // }, [isAdmin])
-    
-   
-    // !isLoggedIn && router.push("../../../../../")
-
     return (
       <>
-      {/* {!isAdmin ? <LoadingComponent /> : (<> */}
         <Box
           minH="80vh"
           bg="none"
@@ -44,8 +26,6 @@ export default function PortalLayoutContext({ children }: { children: React.Reac
           <PortalNavigation
             onClose={() => onClose}
             display={{ base: "none", md: "block" }}
-            // pos="sticky"
-            // top="8%"
           />
           <Drawer
             autoFocus={false}
@@ -62,13 +42,11 @@ export default function PortalLayoutContext({ children }: { children: React.Reac
           </Drawer>
 
           <PortalHeader onOpen={onOpen} />
-          {/* <PortalHeader onOpen={onOpen} /> */}
 
           <Box ml={{ base: 0, md: "15rem" }} p={{base: "2rem 1rem", lg: "2.5rem 4rem"}} mb="0" maxH="80vh" overflow="scroll">
             {children}
           </Box>
         </Box>
-      {/* </>)} */}
       </>
     )
 }

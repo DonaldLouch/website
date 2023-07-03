@@ -3,15 +3,9 @@
 import { FormInput } from "@/app/(Components)/(Form)/FormInput";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
-import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea";
 import supabase from "@/lib/supabase";
 import {
-  Text,
-  Link,
-  Flex,
-  IconButton,
   Stack,
-  Tooltip,
   useToast,
   Modal,
   ModalContent,
@@ -23,15 +17,11 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
-import { link } from "fs";
 import { useRouter } from "next/navigation";
 
 import * as Yup from 'yup'
-
-// TODO: Fix type safety for iconPrefix and iconName
 
 export const EmbedManager = (props: any) => {
   const embed = props

@@ -1,9 +1,7 @@
 'use client'
 import { Box, Stack, keyframes, usePrefersReducedMotion } from "@chakra-ui/react";
 import { SignIn } from "@clerk/nextjs";
-import { Suspense } from "react";
 import HomeButton from "../(Components)/(Buttons)/HomeButton";
-// import LoadingComponent from "../../(Config)/ContentLoading";
 
 const spinningGradient = keyframes `
     0% { background-position: 0% 50%; }
@@ -13,14 +11,13 @@ const spinningGradient = keyframes `
 
 export default function Page() {
 
-      const prefersReducedMotion = usePrefersReducedMotion()
+    const prefersReducedMotion = usePrefersReducedMotion()
     const spinningGradientAnimation = prefersReducedMotion
     ? undefined
     : `${spinningGradient} infinite 10s`
 
 
   return (
-    // <Suspense fallback={<LoadingComponent />}>
     <Box w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsSecondary" bg="white" overflow="hidden !Important">
         <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
         <Box bg={`no-repeat url("https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg") #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
@@ -29,6 +26,5 @@ export default function Page() {
         <SignIn redirectUrl={"/portal"} />
       </Stack>
       </Box>
-    // </Suspense>
   )
 }

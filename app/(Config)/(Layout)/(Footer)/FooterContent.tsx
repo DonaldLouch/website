@@ -1,18 +1,15 @@
 'use client'
 
 import {
-Stack,
-Text,
-Image,
-Link,
+  Stack,
+  Text,
+  Image,
+  Link,
 } from "@chakra-ui/react";
 
 import { FooterIcon } from "./FooterIcon";
 
-import { useRouter } from "next/navigation"
-
-export default function FooterContent({ isLoggedIn }: { isLoggedIn: boolean}){
-  const router = useRouter()
+export default function FooterContent(){
   return (
       <Stack
         as="footer"

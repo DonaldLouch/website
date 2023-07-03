@@ -23,36 +23,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 
-import { useEffect, useState } from "react"
-
-import supabase from "@/lib/supabase"
-import LoadingComponent from "@/app/(Config)/ContentLoading";
-
 export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {
-    // const [resume, setResume] = useState<any>([])
-    // const [resumeExperience, setResumeExperience] = useState<any>([])
-    // const [resumeWorkExperienceHistory, setResumeWorkExperienceHistory] = useState<any>([])
-    // const [resumeEducation, setResumeEducation] = useState<any>([])
-    // const [isLoading, setIsLoading] = useState<boolean>(true)
-
-    // useEffect(() => {
-    //     const fetchSupabaseData = async () => {
-    //         const { data: resumeData } = await supabase.from('Resume').select() as any
-    //         const { data: experienceData } = await supabase.from('ResumeWorkExperience').select().order('startDate', { ascending: false }) as any
-    //         const { data: workExperienceHistoryData } = await supabase.from('ResumeWorkExperienceHistory').select().order('startDate', { ascending: false }) as any
-    //         const { data: educationData } = await supabase.from('ResumeEducation').select().order('startDate', { ascending: false }) as any
-    //         setResume(resumeData[0])
-    //         setResumeExperience(experienceData)
-    //         setResumeWorkExperienceHistory(workExperienceHistoryData)
-    //         setResumeEducation(educationData)
-    //     }
-    //     fetchSupabaseData()
-    //     setIsLoading(false)
-    // }, [])
     return (
         <>
-        {/* {isLoading ? <LoadingComponent /> : (
-            <> */}
       <Box as="main" color="white">
         <SectionCard id="resume" styleType="primaryCard">
           <Grid
@@ -73,23 +46,10 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                 <Image
                     src={resume.avatar}
                     alt={`${resume.firstName} ${resume.lastName}`}
-                    // height="3840" 
-                    // width="2160"
                     height="2100" 
                     width="1500"
-                    // w={{ base: "50%", md: "100%" }}
-                    // m="0 auto"
                     style={{ borderRadius: "0 2rem", objectPosition: "top"}}
-                    // borderRadius="0 2rem"
-
                 />
-                {/* <Image
-                  src={resume.avatar}
-                  alt="Donald Louch Avatar"
-                  width="100%"
-                  boxShadow="bsBoldPrimary"
-                  borderRadius="0 2rem"
-                /> */}
               </AspectRatio>
               <Heading
                 as="h3"
@@ -337,13 +297,10 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                             }: ${education.school}`}
                           </>
                         )}
-                        {/* {`${education.startDate} - ${education.endDate}: ${education.school}`} */}
                       </Box>
                       <Icon w="1.5rem" h="1.5rem">
                         <FontAwesomeIcon 
                             icon={["fal", "chevron-down"]}
-                            // height="100%"
-                            // fontSize="md"
                             color="currentColor"
                         />
                     </Icon>
@@ -507,7 +464,6 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
           </Grid>
         </SectionCard>
       </Box>
-      {/* </>)} */}
       </>
     )
 }

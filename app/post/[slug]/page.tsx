@@ -1,12 +1,5 @@
-// import createClient from "@/lib/supabase-server"
 import supabase from "@/lib/supabase";
 import PostPage from "./PostPage";
-
-{/* <Metadata
-        title={`${post.title} | ${process.env.WEBSITE_NAME}`}
-        keywords={`${process.env.KEYWORDS}, ${post.tags}`}
-        description={`${post.excerpt}`}
-      /> */}
 
 import { Metadata } from 'next';
 type Props = {
@@ -14,10 +7,7 @@ type Props = {
 };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = params
-    // const supabase = createClient();
-    const {data: post} = await supabase.from('BlogPost').select('title,excerpt,thumbnail,tags,categories,slug').match({ slug: slug }) as any
-    const postMeta = post[0]
-    // console.log("Metadata", excerpt)
+    const {data: postMeta} = await supabase.from('BlogPost').select('title,excerpt,thumbnail,tags,categories,slug').match({ slug: slug }).single() as any
     return {
       title: `${postMeta.title} | ${process.env.WEBSITE_NAME}`,
       description: postMeta.excerpt,
@@ -37,12 +27,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Post({ params }: Props) {
   const { slug } = params
-  // const supabase = createClient();
-  const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }) as any
-
-  const { data: { user } } = await supabase.auth.getUser();
-  let loggedIn = false
-  user ? loggedIn = true : false
-
-  return <PostPage {...post} loggedIn={loggedIn} />
+  const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
+  return <PostPage post={post} />
 }

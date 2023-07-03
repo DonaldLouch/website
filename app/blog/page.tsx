@@ -4,13 +4,6 @@ import HeroPage from "../(Components)/HeroPage";
 import Posts from "./Posts";
 import ViewPostButton from "./ViewPostButton";
 
-// import createClient from "@/lib/supabase-server"
-// import supabase from "@/lib/supabase";
-
-// type Props = {
-//     params: { pg: string }
-// };
-
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: `${process.env.WEBSITE_NAME}'s Blog Post's`,
@@ -77,12 +70,6 @@ export default async function Blog({searchParams}: any) {
       linkUrl: "/C/education",
     },
   ];
-  // const {data: posts} = await supabase.from('BlogPost').select().match({ postStatus: 'Public' })
-  // const {data: pinnedPosts} = await supabase.from('BlogPost').select().match({ postStatus: 'Public', pinned: true })
-  // const supabase = createClient()
-  // const { data: posts } = await supabase.from('BlogPost').select()
-  // .match({ postStatus: 'Public' });
-  // console.log("Blog Posts", posts)
 //   const fetcher = (url: RequestInfo | URL) =>
 //     fetch(url).then((res) => res.json());
 //   const pageID = "pageL4UBG4TUp4n" as string;
@@ -98,7 +85,7 @@ export default async function Blog({searchParams}: any) {
     <>
       <HeroPage
         name="Donald Louch"
-        tagLine="and, I'm a Web Developer and Digital Content Creator"
+        tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["About Me", "about"]}
         imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg"

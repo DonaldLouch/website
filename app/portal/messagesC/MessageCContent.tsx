@@ -1,6 +1,6 @@
 'use client'
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent";
-import { Stack, Link, Box, Text, useColorModeValue, Button } from "@chakra-ui/react";
+import { Stack, Link, Box, Text } from "@chakra-ui/react";
 
 export default function MessageCContent({ contactData }: any) {
   const contact = contactData;

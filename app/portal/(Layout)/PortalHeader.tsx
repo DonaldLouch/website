@@ -18,11 +18,9 @@ interface PortalHeaderProps extends FlexProps {
 
 export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
     const {user} = useUser();
-    // console.log(user?.publicMetadata.role)
     return (
         <Flex
             ml={{ base: 0, md: "15rem" }}
-            // px={{ base: 4, md: 4 }}
             p="2.2rem 1rem"
             height="2rem"
             alignItems="center"
@@ -55,16 +53,6 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
                 <Text fontWeight="700">{user?.fullName}</Text>
                 <UserButton afterSignOutUrl="/"/>
             </Stack>
-            {/* <VStack
-                alignItems="flex-end"
-                spacing="0.2rem"
-                boxShadow="bsBoldPrimary"
-                borderRadius="0 2rem"
-                p="0.5rem 1.5rem"
-                mr="2"
-            >
-                <Text fontSize="lg" m="0" color="white" fontWeight="bold">{pageTitle}</Text> 
-            </VStack> */}
         </Flex>
     )
 }

@@ -1,6 +1,5 @@
 import supabase from '@/lib/supabase';
 import MessageJContent from '../MessageJContent'
-// import createClient from "@/lib/supabase-server"
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -19,7 +18,6 @@ type Props = {
 
 export default async function MessageJ({ params }: Props) {
   const { jobID } = params
-  // const supabase = createClient();
   const { data: contactData } = await supabase.from('Job').select().match({ id: jobID }).single() as any
 
   return <MessageJContent contactData={contactData} />

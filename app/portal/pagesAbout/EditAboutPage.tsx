@@ -20,8 +20,6 @@ export default function EditAboutPage({ about }: any) {
     {"pageLink": "/portal/pagesAbout", "pageName": "Edit: About Me Page"}
   ]
 
-  // const { data: about } = await supabase.from('About').select().single() as any
-
   const onSubmit =  async (values: any, actions: any) => {
     let avatar = about.avatar
 

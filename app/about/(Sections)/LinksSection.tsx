@@ -43,7 +43,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                     <Tab>All</Tab>
                     <Tab>Posts</Tab>
                     <Tab>Links</Tab>
-                    {/* <Tab>Embed Content</Tab> */}
+                    <Tab>Embed Content</Tab>
                 </TabList>
                 <TabPanels>
                     <TabPanel>
@@ -52,7 +52,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                                 <PinnedPostsCard {...post} key={`allPinned_${post.id}`} />
                             ))}
                         </Box>
-                        {/* {embeds.map((embed: any) => (
+                        {embeds.map((embed: any) => (
                             <AspectRatio
                                 key={`allEmbed_$embed.id}`}
                                 ratio={16 / 9}
@@ -65,7 +65,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                             >
                                 <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                             </AspectRatio>
-                        ))} */}
+                        ))}
                         {links.map((link: any) => (
                             <LinkButton {...link} key={`allLink_${link.id}`}  />
                         ))} 
@@ -82,7 +82,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                             <LinkButton {...link} key={`link_${link.id}`}  />
                         ))} 
                     </TabPanel>
-                    {/* <TabPanel>
+                    <TabPanel>
                         {embeds.map((embed: any) => (
                             <AspectRatio
                                 key={`embed_$embed.id}`}
@@ -97,7 +97,7 @@ export default function LinksSection({about, posts, primaryLinks, links, embeds}
                                 <iframe src={`${embed.embedLink}`} allowFullScreen></iframe>
                             </AspectRatio>
                         ))}
-                    </TabPanel> */}
+                    </TabPanel>
                 </TabPanels>
             </Tabs>
         </>

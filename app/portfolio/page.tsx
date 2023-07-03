@@ -60,7 +60,7 @@ export default function Portfolio() {
   return (
       <HeroPage
         name="Donald Louch"
-        tagLine="and, I'm a Web Developer and Digital Content Creator"
+        tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["Resume", "portfolio/resume"]}
         imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"

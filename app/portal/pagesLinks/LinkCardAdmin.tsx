@@ -3,7 +3,6 @@
 import { FormInput } from "@/app/(Components)/(Form)/FormInput";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
-import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea";
 import supabase from "@/lib/supabase";
 import {
   Text,
@@ -28,8 +27,6 @@ import { useRouter } from "next/navigation";
 
 import * as Yup from 'yup'
 
-// TODO: Fix type safety for iconPrefix and iconName
-
 export const LinkCardAdmin = (link: {
   id: string;
   link: string;
@@ -42,33 +39,6 @@ export const LinkCardAdmin = (link: {
   const toastID = "toastID"
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-  // async function deleteLink() {
-  //   console.log(`Deleting link: ${link.id}`);
-  //   const id = link.id;
-
-  //   const response = await fetch(`/api/links/deleteLink/${id}`, {
-  //     method: "post",
-  //   });
-  //   if (response.ok) {
-  //     toast({
-  //       title: "Link deleted successfully 🎉",
-  //       description: `You have successfully deleted ${link.title}`,
-  //       status: "success",
-  //       duration: 9000,
-  //       isClosable: true,
-  //     });
-  //     router.reload();
-  //   } else {
-  //     toast({
-  //       title: "An error occurred while deleting the media",
-  //       description: `Please try again or contact support if the problem persists.`,
-  //       status: "error",
-  //       duration: 9000,
-  //       isClosable: true,
-  //     });
-  //   }
-  // }
 
   const deleteLink = async () => {
         const { status: deleteStatus, error: deleteError } = await supabase.from("Links").delete().eq('id', link.id);
@@ -101,7 +71,6 @@ export const LinkCardAdmin = (link: {
         link: submitData.link,
         lastUpdatedOn: new Date()
     }).match({ id: submitData.id })
-    // await supabase.from("Resume").update({lastUpdatedOn: new Date()}).match({ id: resumeID })
     supabaseStatus && !toast.isActive(toastID) &&
         toast({
             id: toastID,

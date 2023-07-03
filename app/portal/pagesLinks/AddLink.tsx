@@ -2,9 +2,8 @@
 
 import { FormInput } from '@/app/(Components)/(Form)/FormInput'
 import { FormInputRow } from '@/app/(Components)/(Form)/FormInputRow'
-import { FormTextArea } from '@/app/(Components)/(Form)/FormTextArea'
 import supabase from '@/lib/supabase'
-import { Modal, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Stack, HStack, ModalFooter, Button, useDisclosure, useToast } from '@chakra-ui/react'
+import { Modal, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Stack, Button, useDisclosure, useToast } from '@chakra-ui/react'
 import { Formik } from 'formik'
 import { SubmitButton } from 'formik-chakra-ui'
 import * as Yup from 'yup'
@@ -15,14 +14,6 @@ export default function AddLink() {
     
     const { isOpen, onOpen, onClose } = useDisclosure()
     const onSubmit =  async (values: any, actions: any) => {
-        // const submitEducationData = {
-        // id: "work"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
-        // company: values.company,
-        // position: values.position,
-        // startDate: values.startDate,
-        // endDate: values.endDate,
-        // description: values.description
-        // }
     const { status: supabaseStatus , error: supabaseError  } = await supabase.from("Links").insert({ 
         id: "link"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
         iconPrefix: values.iconPrefix,
