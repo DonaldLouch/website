@@ -12,7 +12,7 @@ import Contact from "./(Sections)/Contact";
 // import LoadingComponent from "../(Config)/ContentLoading";
 import HomeButton from "../(Components)/(Buttons)/HomeButton";
 
-export default function AboutGeneralLayout({about, posts, primaryLinks, links, embeds}: any) {
+export default function AboutGeneralLayout({about, posts, primaryLinks, links, embeds, mdxSource}: any) {
     // const [about, setAbout] = useState([])
     // const [posts, setPosts] = useState([])
     // const [primaryLinks, setPrimaryLinks] = useState([])
@@ -57,8 +57,8 @@ export default function AboutGeneralLayout({about, posts, primaryLinks, links, e
                         width="100%"
                         maxW="100%"
                     >
-                        <AboutMeBio {...about} />
-                        <LinksSection about={about} posts={...posts} primaryLinks={...primaryLinks} links={...links} embeds={...embeds}/> 
+                        <AboutMeBio about={about} mdxSource={mdxSource} />
+                        <LinksSection about={about} posts={posts} primaryLinks={primaryLinks} links={links} embeds={embeds}/> 
                         <Contact /> 
                     </Box>
                 </Box>

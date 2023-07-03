@@ -3,6 +3,9 @@
 import supabase from "@/lib/supabase";
 import AboutGeneralLayout from "./GeneralLayout";
 
+import { serialize } from 'next-mdx-remote/serialize'
+import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
+
 import { Metadata } from 'next'
 export async function generateMetadata(): Promise<Metadata> {
     // const supabase = createClient();
@@ -37,5 +40,9 @@ export default async function AboutMe() {
   const { data: linksData } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
   const { data: embedsData } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
 
-  return <AboutGeneralLayout  about={aboutMe} posts={pinnedPostsData} primaryLinks={primaryLinksData} links={linksData} embeds={embedsData}/>
+  const mdxSource = await serialize(aboutMe.bio!, {mdxOptions: {
+        development: process.env.NODE_ENV === 'development',
+    }}) as MDXRemoteSerializeResult
+
+  return <AboutGeneralLayout  about={aboutMe} posts={pinnedPostsData} primaryLinks={primaryLinksData} links={linksData} embeds={embedsData} mdxSource={mdxSource}/>
 }

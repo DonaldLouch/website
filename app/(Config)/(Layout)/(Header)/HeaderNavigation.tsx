@@ -23,7 +23,7 @@ interface HeaderNavigationProps extends BoxProps {
     return (
         <Stack transition="3s ease" direction={{base:"column", lg:"row"}} pos={{base: "fixed", lg:"initial"}} h={{ base:"100vh", lg:"initial"}} bg={{base: "black", lg:"none"}} backdropFilter={{base: "blur(20px)", lg:"none"}} pb={{base: "6", lg:"initial"}} w={{ base: "100%", lg:"initial"}} {...rest}>
           <Flex h="auto" alignItems="center" justifyContent="space-between" display={{ base: 'flex', lg: 'none' }}>
-            <Image src="/titleLogoPride.svg" alt="Donald Louch" width="50vw" p="0.8rem 1.5rem"/>
+            <Image src="/titleLogo.svg" alt="Donald Louch" width="50vw" p="0.8rem 1.5rem"/>
             <CloseButton onClick={onClose} />
           </Flex>
           <Stack display={{ base: 'none', lg: 'flex' }} alignItems="center" gap="0.6rem" direction="row">
