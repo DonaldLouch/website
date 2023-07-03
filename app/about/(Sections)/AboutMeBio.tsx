@@ -29,80 +29,59 @@ export default async function AboutMeBio(about: any) {
     const { mdxSource } = await getAboutBio(about.bio!)
     return (
         <>
-            {/* <Suspense fallback={<LoadingComponent />}> */}
-                <SectionCard id="aboutMe" styleType="primaryCard">
-                    <Box id="bio">
-                        {/* <Suspense fallback={<LoadingComponent />}> */}
-                            <Stack
-                                // display="stack"
-                                direction="row"
-                                // gridTemplateColumns={{ base: "100%", md: "25% 75%" }}
-                                gap="3rem"
-                                // justifyContent="center"
-                                justifyContent="flex-start"
-                                alignItems="center"
-                                mb="2rem"
-                                // p="0 5rem"
-                            >
-                                <AspectRatio 
-                                    // ratio={2/3}
-                                    ratio={1/1}
-                                    w={{base: "50%", md: "28%"}}
-                                    objectPosition="top !important"
-                                >
-                                    <Image
-                                        src={about.avatar}
-                                        alt={`${about.firstName} ${about.lastName}`}
-                                        // height="3840" 
-                                        // width="2160"
-                                        height="2100" 
-                                        width="1500"
-                                        // w={{ base: "50%", md: "100%" }}
-                                        // m="0 auto"
-                                        style={{ borderRadius: "0 2rem", objectPosition: "top"}}
-                                        // borderRadius="0 2rem"
-
-                                    />
-                                </AspectRatio>
-                                <Stack>
-                                    <Heading
-                                        as="h2"
-                                        fontSize={{ base: "3rem", md: "5rem" }}
-                                        textDecoration="underline"
-                                        textDecorationThickness="0.4rem"
-                                        textDecorationColor="primary"
-                                    >
-                                        {about.firstName} {about.middleName} {about.lastName}
-                                    </Heading>
-                                    <Text fontSize="2rem" m="0.5rem 0">
-                                        {about.pronouns}
-                                    </Text>
-                                {/* </Box> */}
-                                </Stack>
-                                </Stack>
-
+            <SectionCard id="aboutMe" styleType="primaryCard">
+                <Box id="bio">
+                    <Stack
+                        direction="row"
+                        gap="3rem"
+                        justifyContent="flex-start"
+                        alignItems="center"
+                        mb="2rem"
+                    >
+                        <AspectRatio 
+                            // ratio={2/3}
+                            ratio={1/1}
+                            w={{base: "50%", md: "28%"}}
+                            objectPosition="top !important"
+                        >
+                            <Image
+                                src={about.avatar}
+                                alt={`${about.firstName} ${about.lastName}`}
+                                height="2100" 
+                                width="1500"
+                                style={{ borderRadius: "0 2rem", objectPosition: "top"}}
+                            />
+                        </AspectRatio>
+                        <Stack>
                             <Heading
-                                as="h3"
-                                size="2xl"
-                                fontFamily="body"
-                                fontWeight="300"
-                                my="1rem"
-                                textDecor="underline"
-                                textDecorationThickness="0.2rem"
+                                as="h2"
+                                fontSize={{ base: "3rem", md: "5rem" }}
+                                textDecoration="underline"
+                                textDecorationThickness="0.4rem"
                                 textDecorationColor="primary"
-                                // textAlign="center"
                             >
-                                {about.tagLine}
+                            {about.firstName} {about.middleName} {about.lastName}
                             </Heading>
-                            {/* </Stack> */}
-                            {/* </Stack> */}
-                            {/* <Suspense fallback={<Loading />}> */}
-                                <MdxContent source={mdxSource} />
-                            {/* </Suspense>  */}
-                        {/* </Suspense> */}
-                    </Box>
-                </SectionCard>
-            {/* </Suspense> */}
+                            <Text fontSize="2rem" m="0.5rem 0">
+                                {about.pronouns}
+                            </Text>
+                        </Stack>
+                    </Stack>
+                    <Heading
+                        as="h3"
+                        size="2xl"
+                        fontFamily="body"
+                        fontWeight="300"
+                        my="1rem"
+                        textDecor="underline"
+                        textDecorationThickness="0.2rem"
+                        textDecorationColor="primary"
+                    >
+                        {about.tagLine}
+                    </Heading>
+                    <MdxContent source={mdxSource} />
+                </Box>
+            </SectionCard>
         </>
     )
 }
