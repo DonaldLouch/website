@@ -20,7 +20,7 @@ import { EmbedManager } from "./EmbedManager"
 import { AddEmbed } from "./AddEmbed"
 import { PinnedPostsManager } from "./PinnedPostsManager"
 
-export default async function EditLinksPage({ links, primaryLinks, embeds }: any) {
+export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
   const toast = useToast()
   const toastID = "toastID"
   

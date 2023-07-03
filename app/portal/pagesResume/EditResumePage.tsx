@@ -13,7 +13,7 @@ import { Formik } from "formik"
 import { SubmitButton } from "formik-chakra-ui"
 import * as Yup from 'yup'
 
-export default async function EditResumePage({ resume }: any) {
+export default function EditResumePage({ resume }: any) {
   const toast = useToast()
   const toastID = "toastID"
   

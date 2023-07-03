@@ -1,7 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 
 
-export default async function PortalLayout({ children }: { children: React.ReactNode }) {
+export default function SigninLayout({ children }: { children: React.ReactNode }) {
     // const supabase = createClient();
     // const { data: { user } } = await supabase.auth.getUser()
     // let isLoggedIn = false

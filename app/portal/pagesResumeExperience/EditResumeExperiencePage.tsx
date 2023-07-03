@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import AddEducation from "./AddEducation"
 import AddWork from "./AddWork"
 
-export default async function EditResumeExperiencePage({ resumeExperience, resumeEducation, resumeID }: any) {
+export default function EditResumeExperiencePage({ resumeExperience, resumeEducation, resumeID }: any) {
 
   const breadCrumbs = [
     {"pageLink": "/portal/pages", "pageName": "Page Manager"},

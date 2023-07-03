@@ -11,7 +11,7 @@ import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea"
 import { SubmitButton } from "formik-chakra-ui"
 import { useRouter } from "next/navigation"
 
-export default async function EditResumeEducationExperiencePage({ resumeExperience, resumeID }: any) {
+export default function EditResumeEducationExperiencePage({ resumeExperience, resumeID }: any) {
   const router = useRouter()
   const toast = useToast()
   const toastID = "toastID"

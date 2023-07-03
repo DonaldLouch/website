@@ -18,7 +18,7 @@ export const LinkStyles = {
         color: "currentColor",
         // pb: "0.1rem",
         _hover: {
-          borderColor: "currentColor",
+          borderColor: "white",
           textDecoration: "none",
           color: "primary",
         }

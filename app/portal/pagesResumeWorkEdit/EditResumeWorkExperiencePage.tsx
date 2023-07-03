@@ -14,7 +14,7 @@ import EditWorkHistory from "./editWorkHistory"
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard"
 import { useRouter } from "next/navigation"
 
-export default async function EditResumeWorkExperiencePage({ resumeExperience, resumeID, resumeHistory }: any) {
+export default function EditResumeWorkExperiencePage({ resumeExperience, resumeID, resumeHistory }: any) {
   const router = useRouter()
   const toast = useToast()
   const toastID = "toastID"
