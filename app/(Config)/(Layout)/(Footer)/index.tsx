@@ -1,5 +1,5 @@
 import FooterContent from "./FooterContent";
 
-export default async function Footer() {
+export default function Footer() {
   return <FooterContent />
 }
