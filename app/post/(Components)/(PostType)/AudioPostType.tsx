@@ -13,7 +13,7 @@ import { SidebarCard } from '../SidebarCard'
 import { MetaDataCard } from '../MetaDataCard'
 import PostContent from '../PostContent'
 
-export const AudioPostType = (post: any) => {
+export const AudioPostType = ({post, mdxSource}: any) => {
     return (
         <>
             <Box bg="white"pos="absolute" top="0" left="0" w="100vw" justifyContent="center" alignItems="center" h={{base: "60vw", md:"100vh"}} zIndex="banner"></Box>
@@ -36,15 +36,15 @@ export const AudioPostType = (post: any) => {
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)" textAlign="center" mt="4.5rem">{post.headingText}</Heading>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard {...post} />
-                        <MetaDataCard {...post} />
-                        <TagsCard {...post} />
+                        <SidebarCard post={post} mdxSource={mdxSource} />
+                        <MetaDataCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 ) : (
                     <>
-                        <PostContent {...post} />
-                        <MetaDataCard {...post} />
-                        <TagsCard {...post} />
+                        <PostContent mdxSource={mdxSource} />
+                        <MetaDataCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 )}
             </PostCard>

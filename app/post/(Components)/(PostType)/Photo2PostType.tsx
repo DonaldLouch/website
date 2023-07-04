@@ -13,7 +13,7 @@ import { SidebarCard } from '../SidebarCard'
 import PostContent from '../PostContent'
 import { ImageMetaDataCard } from '../ImageMetaDataCard'
 
-export const Photo2PostType = (post: any) => {
+export const Photo2PostType = ({post, mdxSource}: any) => {
     const gallerySplit = post?.media?.split(' || ')
     return (
         <>
@@ -34,17 +34,17 @@ export const Photo2PostType = (post: any) => {
             </Box>
 
             <PostCard>
-                <ImageMetaDataCard {...post} />
+                <ImageMetaDataCard post={post} />
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" pl="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)" borderLeft="0.1rem solid grey">{post.headingText}</Heading>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard {...post} />
-                        <TagsCard {...post} />
+                        <SidebarCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 ) : (
                     <>
-                        <PostContent {...post} />
-                        <TagsCard {...post} />
+                        <PostContent mdxSource={mdxSource} />
+                        <TagsCard post={post} />
                     </>
                 )}
             </PostCard>

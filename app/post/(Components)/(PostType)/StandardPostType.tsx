@@ -27,7 +27,7 @@ const meta = keyframes `
     }
 `
 
-export const StandardPostType = (post: any) => {
+export const StandardPostType = ({post, mdxSource}: any) => {
     const prefersReducedMotion = usePrefersReducedMotion()
     const metaAnimation = prefersReducedMotion ? undefined : `${meta} ease 2s`
 
@@ -72,13 +72,13 @@ export const StandardPostType = (post: any) => {
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{post.headingText}</Heading>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard {...post} />
-                        <TagsCard {...post} />
+                        <SidebarCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 ) : (
                     <>
-                        <PostContent {...post} />
-                        <TagsCard {...post} />
+                        <PostContent mdxSource={mdxSource} />
+                        <TagsCard post={post} />
                     </>
                 )}
             </PostCard>

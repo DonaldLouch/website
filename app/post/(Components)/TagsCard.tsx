@@ -8,7 +8,7 @@ import {
 
 import Link from 'next/link'
 
-export const TagsCard = (post: any) => {
+export const TagsCard = ({post}: any) => {
   const tagArray = post.tags.split(', ')
   return (
     <Box as="section" id="tags" boxShadow="bsBoldSecondary" p="0.5rem 1rem" borderRadius="0 1.5rem" m="1.5rem 0 0" overflowX="scroll" whiteSpace="nowrap">

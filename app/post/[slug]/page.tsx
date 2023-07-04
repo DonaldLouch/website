@@ -1,6 +1,9 @@
 import supabase from "@/lib/supabase";
 import PostPage from "./PostPage";
 
+import { serialize } from 'next-mdx-remote/serialize'
+import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
+
 import { Metadata } from 'next';
 type Props = {
     params: { slug: string }
@@ -28,5 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Post({ params }: Props) {
   const { slug } = params
   const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
-  return <PostPage post={post} />
+  const mdxSource = await serialize(post.body, {mdxOptions: {
+    development: process.env.NODE_ENV === 'development',
+  }}) as MDXRemoteSerializeResult
+  return <PostPage post={post} mdxSource={mdxSource} />
 }

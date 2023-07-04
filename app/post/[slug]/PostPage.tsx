@@ -17,7 +17,7 @@ import { Photo3PostType } from "../(Components)/(PostType)/Photo3PostType";
 import { Photo4PostType } from "../(Components)/(PostType)/Photo4PostType";
 import { Photo5PostType } from "../(Components)/(PostType)/Photo5PostType";
 
-export default function PostPage({post}: any) {
+export default function PostPage({post, mdxSource}: any) {
   // const toast = useToast();
   // const id = "toastID";
 
@@ -58,34 +58,34 @@ export default function PostPage({post}: any) {
         {post.postStatus === "Public" || post.postStatus === "Unlisted" ? (
           <>
             {post.blogType === "Video" && (
-              <VideoPostType {...post} />
+              <VideoPostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Audio" && (
-              <AudioPostType {...post} />
+              <AudioPostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Standard" && (
-              <StandardPostType {...post} />
+              <StandardPostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Special" && (
-              <SpecialPostType {...post} />
+              <SpecialPostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Gallery" && (
-              <GalleryPostType {...post} />
+              <GalleryPostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Photo 1" && (
-              <Photo1PostType {...post} />
+              <Photo1PostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Photo 2" && (
-              <Photo2PostType {...post} />
+              <Photo2PostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Photo 3" && (
-              <Photo3PostType {...post} />
+              <Photo3PostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Photo 4" && (
-              <Photo4PostType {...post} />
+              <Photo4PostType post={post} mdxSource={mdxSource} />
             )}
             {post.blogType === "Photo 5" && (
-              <Photo5PostType {...post} />
+              <Photo5PostType post={post} mdxSource={mdxSource} />
             )}
           </>
         ) : (
@@ -93,31 +93,31 @@ export default function PostPage({post}: any) {
             {/* {loggedIn ? (
               <>
                 {post.blogType === "Video" && (
-                  <VideoPostType {...post} />
+                  <VideoPostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Audio" && (
-                  <AudioPostType {...post} />
+                  <AudioPostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Standard" && (
-                  <StandardPostType {...post} />
+                  <StandardPostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Special" && (
-                  <SpecialPostType {...post} />
+                  <SpecialPostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Gallery" && (
-                  <GalleryPostType {...post} />
+                  <GalleryPostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Photo 1" && (
-                  <Photo1PostType {...post} />
+                  <Photo1PostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Photo 2" && (
-                  <Photo2PostType {...post} />
+                  <Photo2PostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Photo 3" && (
-                  <Photo3PostType {...post} />
+                  <Photo3PostType post={post} mdxSource={mdxSource} />
                 )}
                 {post.blogType === "Photo 4" && (
-                  <Photo4PostType {...post} />
+                  <Photo4PostType post={post} mdxSource={mdxSource} />
                 )}
               </>
             ) : ( */}

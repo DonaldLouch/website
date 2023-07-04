@@ -7,7 +7,7 @@ import {
     Link
 } from '@chakra-ui/react'
 
-export const ImageMetaDataCard = (post: any) => {
+export const ImageMetaDataCard = ({post}: any) => {
     const postedData = new Date(post.postedOn)
     const postedDay = postedData.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
     const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })

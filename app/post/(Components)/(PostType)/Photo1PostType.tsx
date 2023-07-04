@@ -34,17 +34,17 @@ export const Photo1PostType = (post: any, source: any) => {
             </Box>
 
             <PostCard>
-                <ImageMetaDataCard {...post} />
+                <ImageMetaDataCard post={post} />
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" pl="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)" borderLeft="0.1rem solid grey">{post.headingText}</Heading>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard {...post} {...source} />
-                        <TagsCard {...post} />
+                        <SidebarCard post={post} {...source} />
+                        <TagsCard post={post} />
                     </>
                 ) : (
                     <>
-                        <PostContent {...post} {...source} />
-                        <TagsCard {...post} />
+                        <PostContent post={post} {...source} />
+                        <TagsCard post={post} />
                     </>
                 )}
             </PostCard>

@@ -1,10 +1,11 @@
+// 'use client'
 // import { Suspense } from 'react'
 
 // import Loading from '@/app/(Config)/ContentLoading'
 
 import { MdxContent } from '@/app/mdx-content'
-import { serialize } from 'next-mdx-remote/serialize'
-import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
+// import { serialize } from 'next-mdx-remote/serialize'
+// import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
 // type Post = {
 //   mdxSource: MDXRemoteSerializeResult
 // }
@@ -17,11 +18,12 @@ import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
 //     mdxSource
 //   }
 // }
-export default async function PostContent(post: any) {
+export default function PostContent({mdxSource}: any) {
+  // console.log(mdxSource)
 // export const PostContent = async ( post: any ) => { 
-  const mdxSource = await serialize(post.body!, {mdxOptions: {
-    development: process.env.NODE_ENV === 'development',
-  }}) as MDXRemoteSerializeResult
+  // const mdxSource = await serialize(post.body!, {mdxOptions: {
+  //   development: process.env.NODE_ENV === 'development',
+  // }}) as MDXRemoteSerializeResult
   // const { mdxSource } = await getPostBody(post.body!)
   return (
     // <Suspense fallback={<Loading />}>

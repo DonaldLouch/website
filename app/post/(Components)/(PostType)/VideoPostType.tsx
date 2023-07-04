@@ -15,7 +15,7 @@ import { SidebarCard } from '../SidebarCard'
 import { MetaDataCard } from '../MetaDataCard'
 import PostContent from '../PostContent'
 
-export const VideoPostType = (post: any) => {
+export const VideoPostType = ({post, mdxSource}: any) => {
     const videoPath = post?.media?.split(" || ")?.[1]
     const mediaCreditSplit = post?.mediaCredit?.split(";;")
     return (
@@ -48,15 +48,15 @@ export const VideoPostType = (post: any) => {
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{post.headingText}</Heading>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard {...post} />
-                        <MetaDataCard {...post} />
-                        <TagsCard {...post} />
+                        <SidebarCard post={post} />
+                        <MetaDataCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 ) : (
                     <>
-                        <PostContent {...post} />
-                        <MetaDataCard {...post} />
-                        <TagsCard {...post} />
+                        <PostContent mdxSource={mdxSource} />
+                        <MetaDataCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 )}
             </PostCard>

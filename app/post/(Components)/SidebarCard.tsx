@@ -10,12 +10,12 @@ import {
 
 import PostContent from './PostContent'
 
-export const SidebarCard = (post: any) => {
+export const SidebarCard = ({post, mdxSource}: any) => {
     const sections = post.sections.split(',')
     return (
         <Grid templateColumns={{ base: "repeat(1, 1fr)", lg: "75% 25%" }} pos="relative">
         <Box>
-            <PostContent {...post} />
+            <PostContent mdxSource={mdxSource} />
         </Box>
         <Box as="aside" id="sidebar" pos="relative" mx="1rem" px="1rem" display={{base: "none", lg:"initial"}}>
             <Heading as="h3">Sections</Heading>

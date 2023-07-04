@@ -27,7 +27,7 @@ const meta = keyframes `
     }
 `
 
-export const SpecialPostType = (post: any) => {
+export const SpecialPostType = ({post, mdxSource}: any) => {
     const prefersReducedMotion = usePrefersReducedMotion()
     const metaAnimation = prefersReducedMotion ? undefined : `${meta} ease 2s`
 
@@ -77,13 +77,13 @@ export const SpecialPostType = (post: any) => {
             <PostCard>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard {...post} />
-                        <TagsCard {...post} />
+                        <SidebarCard post={post} />
+                        <TagsCard post={post} />
                     </>
                 ) : (
                     <>
-                        <PostContent {...post} />
-                        <TagsCard {...post} />
+                        <PostContent mdxSource={mdxSource} />
+                        <TagsCard post={post} />
                     </>
                 )}
             </PostCard>
