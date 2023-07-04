@@ -1,6 +1,6 @@
-import { Suspense } from 'react'
+// import { Suspense } from 'react'
 
-import Loading from '@/app/(Config)/ContentLoading'
+// import Loading from '@/app/(Config)/ContentLoading'
 
 import { MdxContent } from '@/app/mdx-content'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -24,8 +24,8 @@ export default async function PostContent(post: any) {
   }}) as MDXRemoteSerializeResult
   // const { mdxSource } = await getPostBody(post.body!)
   return (
-    <Suspense fallback={<Loading />}>
+    // <Suspense fallback={<Loading />}>
       <MdxContent source={mdxSource} />
-    </Suspense> 
+    // </Suspense> 
   )
 }
