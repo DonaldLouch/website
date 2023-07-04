@@ -41,6 +41,8 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               h="74vh"
               id="bio"
               display={{ base: "none", md: "initial" }}
+              // mb="6.6rem"
+              mb="1.5rem"
             >
               <AspectRatio ratio={1/1}>
                 <Image
@@ -402,6 +404,8 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               top="6rem"
               h="74vh"
               id="menu"
+              // mb="3.1rem"
+              mb="1.5rem"
               display={{ base: "none", lg: "initial" }}
             >
               <Stack gap="2rem" mx="1rem">
