@@ -38,7 +38,7 @@ export const GalleryPostType = ({post, mdxSource}: any) => {
                 <Heading as="h2" fontSize="2.5rem" fontWeight="300" m="0 0 2rem" pl="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)" borderLeft="0.1rem solid grey">{post.headingText}</Heading>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard post={post} />
+                        <SidebarCard post={post} mdxSource={mdxSource} />
                         <TagsCard post={post} />
                     </>
                 ) : (

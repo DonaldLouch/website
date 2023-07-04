@@ -77,7 +77,7 @@ export const SpecialPostType = ({post, mdxSource}: any) => {
             <PostCard>
                 {post.sidebar === true ? (
                     <>
-                        <SidebarCard post={post} />
+                        <SidebarCard post={post} mdxSource={mdxSource} />
                         <TagsCard post={post} />
                     </>
                 ) : (

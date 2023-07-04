@@ -18,6 +18,7 @@ import { Photo4PostType } from "../(Components)/(PostType)/Photo4PostType";
 import { Photo5PostType } from "../(Components)/(PostType)/Photo5PostType";
 
 export default function PostPage({post, mdxSource}: any) {
+  // console.log("markdown post", mdxSource)
   // const toast = useToast();
   // const id = "toastID";
 

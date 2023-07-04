@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Post({ params }: Props) {
   const { slug } = params
   const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
-  const mdxSource = await serialize(post.body, {mdxOptions: {
+  const mdxSource = await serialize(post.body!, {mdxOptions: {
     development: process.env.NODE_ENV === 'development',
   }}) as MDXRemoteSerializeResult
   return <PostPage post={post} mdxSource={mdxSource} />
