@@ -14,8 +14,8 @@ export default function AboutMeBio({about, mdxSource}: any) {
             <SectionCard id="aboutMe" styleType="primaryCard">
                 <Box id="bio">
                     <Stack
-                        direction="row"
-                        gap="3rem"
+                        direction={{base: "column", lg: "row"}}
+                        gap={{base: "0.5rem", lg: "2rem", xl: "3rem"}}
                         justifyContent="flex-start"
                         alignItems="center"
                         mb="2rem"
@@ -23,7 +23,8 @@ export default function AboutMeBio({about, mdxSource}: any) {
                         <AspectRatio 
                             // ratio={2/3}
                             ratio={1/1}
-                            w={{base: "50%", md: "28%"}}
+                            // w={{base: "50%", md: "28%"}}
+                            w={{base: "70%", lg: "30%", xl: "28%"}}
                             objectPosition="top !important"
                         >
                             <Image
@@ -34,10 +35,10 @@ export default function AboutMeBio({about, mdxSource}: any) {
                                 style={{ borderRadius: "0 2rem", objectPosition: "top"}}
                             />
                         </AspectRatio>
-                        <Stack>
+                        <Stack alignItems={{base: "center", lg: "flex-start"}} mt={{base: "1rem", lg: "0"}}>
                             <Heading
                                 as="h2"
-                                fontSize={{ base: "3rem", md: "5rem" }}
+                                fontSize={{ base: "7vw", md:"5vw" }}
                                 textDecoration="underline"
                                 textDecorationThickness="0.4rem"
                                 textDecorationColor="primary"
@@ -51,7 +52,7 @@ export default function AboutMeBio({about, mdxSource}: any) {
                     </Stack>
                     <Heading
                         as="h3"
-                        size="2xl"
+                        fontSize={{base: "5vw", lg: "4vw", xl: "3vw"}}
                         fontFamily="body"
                         fontWeight="300"
                         my="1rem"

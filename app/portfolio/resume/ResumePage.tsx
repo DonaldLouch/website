@@ -38,11 +38,12 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               as="aside"
               pos="sticky"
               top="6rem"
+              bottom="-6rem"
               h="74vh"
               id="bio"
               display={{ base: "none", md: "initial" }}
               // mb="6.6rem"
-              mb="1.5rem"
+              // mb="1.5rem"
             >
               <AspectRatio ratio={1/1}>
                 <Image

@@ -30,7 +30,7 @@ export default function PinnedPostsCard(post: PinnedPostsProps) {
                     <Image src={post.thumbnail} alt={post.title} width="3840" height="2160" />
                 </AspectRatio>
                 <Stack whiteSpace={{base: "initial", md: "nowrap"}} overflowX="scroll" w="60%">
-                    <Heading color="white" m="0">{post.title}</Heading>
+                    <Heading color="white" m="0" fontSize={{base: "1.5rem", lg: "3vw", xl: "2vw"}}>{post.title}</Heading>
                     <Text textShadow="3px 2px 4px rgb(193 93 79 / 20%)" fontSize="sm" color="gray.500" mt="-0.5rem" mb={{base: "2rem", md: "0"}}>Posted On: {`${new Date(post?.postedOn).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} at ${new Date(post?.postedOn).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`}</Text>
                 </Stack>
             </Card>
