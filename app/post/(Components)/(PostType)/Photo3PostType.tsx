@@ -43,7 +43,6 @@ export const Photo3PostType = (post: any) => {
                     </>
                 ) : (
                     <>
-                        {/* @ts-ignore */}
                         <PostContent {...post} />
                         <TagsCard {...post} />
                     </>

@@ -82,7 +82,6 @@ export const SpecialPostType = (post: any) => {
                     </>
                 ) : (
                     <>
-                        {/* @ts-ignore */}
                         <PostContent {...post} />
                         <TagsCard {...post} />
                     </>

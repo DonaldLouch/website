@@ -43,7 +43,6 @@ export const GalleryPostType = (post: any) => {
                     </>
                 ) : (
                     <>
-                    {/* @ts-ignore */}
                         <PostContent {...post} />
                         <TagsCard {...post} />
                     </>

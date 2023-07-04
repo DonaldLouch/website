@@ -20,7 +20,9 @@ async function getPostBody(postContent: string): Promise<Post> {
 
 export const PostContent = async ( post: any ) => { 
   const { mdxSource } = await getPostBody(post.body!)
-  return <Suspense fallback={<Loading />}>
-    <MdxContent source={mdxSource} />
-  </Suspense> 
+  return (
+    <Suspense fallback={<Loading />}>
+      <MdxContent source={mdxSource} />
+    </Suspense> 
+  )
 }

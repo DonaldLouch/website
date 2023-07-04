@@ -43,7 +43,6 @@ export const Photo4PostType = (post: any) => {
                     </>
                 ) : (
                     <>
-                        {/* @ts-ignore */}
                         <PostContent {...post} />
                         <TagsCard {...post} />
                     </>

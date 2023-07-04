@@ -54,7 +54,6 @@ export const VideoPostType = (post: any) => {
                     </>
                 ) : (
                     <>
-                        {/* @ts-ignore */}
                         <PostContent {...post} />
                         <MetaDataCard {...post} />
                         <TagsCard {...post} />

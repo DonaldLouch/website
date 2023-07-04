@@ -42,7 +42,6 @@ export const AudioPostType = (post: any) => {
                     </>
                 ) : (
                     <>
-                        {/* @ts-ignore */}
                         <PostContent {...post} />
                         <MetaDataCard {...post} />
                         <TagsCard {...post} />
