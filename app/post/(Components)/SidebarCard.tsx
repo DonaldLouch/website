@@ -8,7 +8,7 @@ import {
     Grid
 } from '@chakra-ui/react'
 
-import { PostContent } from './PostContent'
+import PostContent from './PostContent'
 
 export const SidebarCard = (post: any) => {
     const sections = post.sections.split(',')

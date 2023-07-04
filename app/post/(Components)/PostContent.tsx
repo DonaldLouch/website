@@ -17,8 +17,8 @@ import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
 //     mdxSource
 //   }
 // }
-
-export const PostContent = async ( post: any ) => { 
+export default async function PostContent(post: any) {
+// export const PostContent = async ( post: any ) => { 
   const mdxSource = await serialize(post.body!, {mdxOptions: {
     development: process.env.NODE_ENV === 'development',
   }}) as MDXRemoteSerializeResult

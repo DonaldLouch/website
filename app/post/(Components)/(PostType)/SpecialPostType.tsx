@@ -16,7 +16,7 @@ import Image from 'next/image'
 import { PostCard } from '../PostCard'
 import { TagsCard } from '../TagsCard'
 import { SidebarCard } from '../SidebarCard'
-import { PostContent } from '../PostContent'
+import PostContent from '../PostContent'
 
 const meta = keyframes `
     0% {

@@ -13,7 +13,7 @@ import { PostCard } from '../PostCard'
 import { TagsCard } from '../TagsCard'
 import { SidebarCard } from '../SidebarCard'
 import { MetaDataCard } from '../MetaDataCard'
-import { PostContent } from '../PostContent'
+import PostContent from '../PostContent'
 
 export const VideoPostType = (post: any) => {
     const videoPath = post?.media?.split(" || ")?.[1]

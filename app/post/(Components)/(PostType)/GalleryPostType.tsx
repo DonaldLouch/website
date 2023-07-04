@@ -10,7 +10,7 @@ Heading
 import { PostCard } from '../PostCard'
 import { TagsCard } from '../TagsCard'
 import { SidebarCard } from '../SidebarCard'
-import { PostContent } from '../PostContent'
+import PostContent from '../PostContent'
 import { ImageMetaDataCard } from '../ImageMetaDataCard'
 
 export const GalleryPostType = (post: any) => {
