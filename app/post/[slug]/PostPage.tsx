@@ -3,6 +3,7 @@
 import {
   Text,
   Box,
+  useToast,
   // useToast,
 } from "@chakra-ui/react";
 
@@ -17,42 +18,31 @@ import { Photo3PostType } from "../(Components)/(PostType)/Photo3PostType";
 import { Photo4PostType } from "../(Components)/(PostType)/Photo4PostType";
 import { Photo5PostType } from "../(Components)/(PostType)/Photo5PostType";
 
-export default function PostPage({post, mdxSource}: any) {
+export default function PostPage({post, mdxSource, isLoggedIn}: any) {
   // console.log("markdown post", mdxSource)
-  // const toast = useToast();
-  // const id = "toastID";
+  const toast = useToast();
+  const id = "toastID";
 
-  // const post = props[0]
-  // const {loggedIn} = props
-
-  // console.log(post)
-
-  // if (post.postStatus === "Private" && loggedIn) {
-  //   if (!toast.isActive(id)) {
-  //     toast({
-  //       id,
-  //       title: "Private Blog Post",
-  //       description: `Note that the blog post "${post.title}" is a private post and is only viewable at an administrator level!`,
-  //       status: "error",
-  //       duration: null,
-  //       isClosable: false,
-  //     });
-  //   }
-  // }
-
-  // if (post.postStatus === "Draft" && loggedIn) {
-  //   if (!toast.isActive(id)) {
-  //     toast({
-  //       id,
-  //       title: "Blog Post is Drafted",
-  //       description: `Note that this blog post is drafted! Don't forget to publish the post to the public when you are ready!`,
-  //       status: "warning",
-  //       duration: null,
-  //       isClosable: false,
-  //     });
-  //   }
-  // }
-
+  post.postStatus === "Private" && isLoggedIn && !toast.isActive(id) &&
+    toast({
+      id,
+      title: "Private Blog Post",
+      description: `Note that the blog post "${post.title}" is a private post and is only viewable at an administrator level!`,
+      status: "error",
+      duration: null,
+      isClosable: false,
+    })
+  
+  post.postStatus === "Draft" && isLoggedIn && !toast.isActive(id) &&
+    toast({
+      id,
+      title: "Blog Post is Drafted",
+      description: `Note that this blog post is drafted! Don't forget to publish the post to the public when you are ready!`,
+      status: "warning",
+      duration: null,
+      isClosable: false,
+    })
+    
   return (
     <>
       <Box>
@@ -91,7 +81,7 @@ export default function PostPage({post, mdxSource}: any) {
           </>
         ) : (
           <>
-            {/* {loggedIn ? (
+            {isLoggedIn ? (
               <>
                 {post.blogType === "Video" && (
                   <VideoPostType post={post} mdxSource={mdxSource} />
@@ -121,14 +111,14 @@ export default function PostPage({post, mdxSource}: any) {
                   <Photo4PostType post={post} mdxSource={mdxSource} />
                 )}
               </>
-            ) : ( */}
+            ) : ( 
               <Box boxShadow="bsBoldPrimary" borderRadius="0 2rem" p="2rem">
                 <Text textAlign="center" fontSize="xl">
                   🚨 This post is listed as a private post and is not viewable
                   to the public. 🚨
                 </Text>
               </Box>
-            {/* )} */}
+             )} 
           </>
         )}
       </Box>
