@@ -17,6 +17,7 @@ import { PostCard } from '../PostCard'
 import { TagsCard } from '../TagsCard'
 import { SidebarCard } from '../SidebarCard'
 import PostContent from '../PostContent'
+import DisplayDate from '@/lib/DisplayDate'
 
 const meta = keyframes `
     0% {
@@ -30,12 +31,6 @@ const meta = keyframes `
 export const SpecialPostType = ({post, mdxSource}: any) => {
     const prefersReducedMotion = usePrefersReducedMotion()
     const metaAnimation = prefersReducedMotion ? undefined : `${meta} ease 2s`
-
-    const postedData = new Date(post.postedOn)
-    const postedDay = postedData.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
-
-    const postedOn = postedDay +" at " + postedTime
     return (
         <>
             {/* <Box 
@@ -64,11 +59,12 @@ export const SpecialPostType = ({post, mdxSource}: any) => {
                     fontSize="0.8rem" 
                     bg="backgroundGradient"
                     color="white"
-                    p="1rem"
+                    p="2.5rem 2rem"
                     animation={metaAnimation}
+                    borderRadius="0 1.5rem"
                 >
-                    <Heading as="h1" fontSize="3rem" fontWeight="900" my="0.5rem">{post.title}</Heading>
-                    <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
+                    <Heading as="h1" fontSize="3rem" fontWeight="900">{post.title}</Heading>
+                    <Text fontSize="1rem" mt="0.5rem">By: <Link href="/about">{post.author}</Link> | Posted On: {<DisplayDate source={post.postedOn} />} | Filed Under: <Link href={`/C/${post.categories}`}>{post.categories}</Link></Text>
                 </Box>
             {/* </Box> */}
 

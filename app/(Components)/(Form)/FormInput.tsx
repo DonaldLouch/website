@@ -5,7 +5,7 @@ interface FormProps {
     inputID: string
     inputLabel: string
     inputType?: any|undefined|null
-    inputDescription?: string
+    inputDescription?: string|any
 }
 
 export const FormInput = ( props: FormProps) => {

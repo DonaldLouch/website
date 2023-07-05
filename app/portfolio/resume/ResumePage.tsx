@@ -22,6 +22,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
+import DisplayDate from "@/lib/DisplayDate";
 
 export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {
     return (
@@ -386,17 +387,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                 fontSize="sm"
                 color="gray.500"
                 mt="2rem"
-              >{`${new Date(resume?.lastUpdatedOn).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })} at ${new Date(resume?.lastUpdatedOn).toLocaleTimeString(
-                "en-US",
-                {
-                  hour: "numeric",
-                  minute: "2-digit",
-                }
-              )}`}</Text>
+              >Last Updated On: <DisplayDate source={resume.lastUpdatedOn} /></Text>
             </Box>
 
             <Box

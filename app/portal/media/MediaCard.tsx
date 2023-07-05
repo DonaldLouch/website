@@ -23,6 +23,7 @@ interface CardProps {
   
 import { StatsCard } from '../../(Components)/(Cards)/StatsCard'
 import { useState } from 'react'
+import DisplayDate from '@/lib/DisplayDate'
 // import supabase from '@/lib/supabase'
 // import { v2 as cloudinary } from 'cloudinary'
   
@@ -67,7 +68,7 @@ export const MediaCard = ({ mediaID, mediaPath, mediaTitle, mediaKind, mediaExte
         <Heading as="h4" gridRow="1" gridColumn="2/6" color='white'>{mediaTitle}</Heading>
         <StatsCard startsTitle="Media Kind" startsDescription={mediaKind} />
         <StatsCard startsTitle="Extension" startsDescription={mediaExtension} />
-        <StatsCard startsTitle="Uploaded On" startsDescription={date} />
+        <StatsCard startsTitle="Uploaded On" startsDescription={<DisplayDate source={uploadedOn} format="MM/DD/YY" />} />
         <Button onClick={onCopy} variant="portalButton" color="white">
             {hasCopied ? 'Copied Path' : 'Copy Path'}
         </Button>

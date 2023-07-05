@@ -7,7 +7,7 @@ import {
   
   interface CardProps {
     startsTitle: string
-    startsDescription: string
+    startsDescription: string|any
   }
   
   export const StatsCard = (props: CardProps) => {

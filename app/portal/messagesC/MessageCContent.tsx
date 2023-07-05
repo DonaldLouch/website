@@ -1,15 +1,16 @@
 'use client'
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent";
+import DisplayDate from "@/lib/DisplayDate";
 import { Stack, Link, Box, Text } from "@chakra-ui/react";
 
 export default function MessageCContent({ contactData }: any) {
   const contact = contactData;
 
-  const postedData = new Date(contact.sentOn);
-  const postedDay = postedData.toLocaleDateString();
-  const postedTime = postedData.toLocaleTimeString();
+  // const postedData = new Date(contact.sentOn);
+  // const postedDay = postedData.toLocaleDateString();
+  // const postedTime = postedData.toLocaleTimeString();
 
-  const postedOnString = postedDay + " at " + postedTime;
+  // const postedOnString = postedDay + " at " + postedTime;
 
   const breadCrumbs = [
     {"pageLink": "/portal/messages", "pageName": "Messages"},
@@ -53,7 +54,7 @@ export default function MessageCContent({ contactData }: any) {
                 Subject: <strong>{contact.subject}</strong>
               </Text>
               <Text fontSize="1rem" color="grey">
-                On: <strong>{postedOnString}</strong>
+                On: <strong>{<DisplayDate source={contact.sentOn} />}</strong>
               </Text>
             </Stack>
           </Stack>

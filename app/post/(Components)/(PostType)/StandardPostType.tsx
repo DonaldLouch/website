@@ -17,6 +17,7 @@ import { PostCard } from '../PostCard'
 import { TagsCard } from '../TagsCard'
 import { SidebarCard } from '../SidebarCard'
 import PostContent from '../PostContent'
+import DisplayDate from '@/lib/DisplayDate'
 
 const meta = keyframes `
     0% {
@@ -30,12 +31,6 @@ const meta = keyframes `
 export const StandardPostType = ({post, mdxSource}: any) => {
     const prefersReducedMotion = usePrefersReducedMotion()
     const metaAnimation = prefersReducedMotion ? undefined : `${meta} ease 2s`
-
-    const postedData = new Date(post.postedOn)
-    const postedDay = postedData.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    const postedTime = postedData.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
-
-    const postedOn = postedDay +" at " + postedTime
     const categorySplit = post.categories.split(",")
     return (
         <>
@@ -57,13 +52,13 @@ export const StandardPostType = ({post, mdxSource}: any) => {
                 fontSize="0.8rem" 
                 bg="backgroundGradient"
                 color="white"
-                p="1.5rem"
+                p="2.5rem 2rem"
                 animation={metaAnimation}
-                borderRadius="0 2rem"
+                borderRadius="0 1.5rem"
                 ml={{base: "-2rem", md:"-4rem"}}
             >
-                <Heading as="h1" fontSize="3rem" fontWeight="900" m="0.5rem">{post.title}</Heading>
-                <Text fontSize="1rem">By: <Link href="/about">{post.author}</Link> | Posted On: {postedOn} | Filed Under: {categorySplit.map((category: any) => (<Link key={category}href={`/C/${category}`} boxShadow="bsBoldWhite" p="0.5rem" borderRadius="0 0.5rem" mx="0.2rem" _hover={{boxShadow: "bsBoldSecondary"}}>{category}</Link>))}</Text>
+                <Heading as="h1" fontSize="3rem" fontWeight="900">{post.title}</Heading>
+                <Text fontSize="1rem" mt="0.5rem">By: <Link href="/about">{post.author}</Link> | Posted On: {<DisplayDate source={post.postedOn} />} | Filed Under: {categorySplit.map((category: any) => (<Link key={category}href={`/C/${category}`} boxShadow="bsBoldWhite" p="0.5rem" borderRadius="0 0.5rem" mx="0.2rem" _hover={{boxShadow: "bsBoldSecondary"}}>{category}</Link>))}</Text>
             </Box>
 
             <Box pt={{base: "43vh", md: "50vw"}}></Box>

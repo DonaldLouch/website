@@ -4,6 +4,7 @@ import { FormInput } from '@/app/(Components)/(Form)/FormInput'
 import { FormInputReadOnly } from '@/app/(Components)/(Form)/FormInputReadOnly'
 import { FormInputRow } from '@/app/(Components)/(Form)/FormInputRow'
 import { FormTextArea } from '@/app/(Components)/(Form)/FormTextArea'
+import DisplayDate from '@/lib/DisplayDate'
 import supabase from '@/lib/supabase'
 import { Modal, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Stack, Button, useDisclosure, useToast } from '@chakra-ui/react'
 import { Formik } from 'formik'
@@ -67,10 +68,10 @@ export default function EditWorkHistory({ resumeID, history, company }: any) {
     })
     return (
         <>
-            <Button onClick={onOpen} variant="sectionButton" justifyContent="left" pl="3rem" fontSize="1.2rem" fontWeight="500">{history.position} ({new Date(history.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' })})</Button> 
+            <Button onClick={onOpen} variant="sectionButton" justifyContent="left" pl="3rem" fontSize="1.2rem" fontWeight="500">{history.position} (<DisplayDate source={history.startDate} format="YYYY" />)</Button> 
             <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">
                 <ModalContent background="blurredPurple">
-                    <ModalHeader>Edit: ({company}) {history.position} ({new Date(history.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' })})</ModalHeader>
+                    <ModalHeader>Edit: ({company}) {history.position} (<DisplayDate source={history.startDate} format="YYYY" />)</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -87,11 +88,11 @@ export default function EditWorkHistory({ resumeID, history, company }: any) {
                                     
                                     <FormTextArea inputID="description" inputLabel="Description" textRows={4} />
 
-                                    <SubmitButton variant="blackFormButton" my="1rem !important">Update: ({company}) {history.position} ({new Date(history.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' })})</SubmitButton> 
+                                    <SubmitButton variant="blackFormButton" my="1rem !important">Update: ({company}) {history.position} (<DisplayDate source={history.startDate} format="YYYY" />)</SubmitButton> 
                                 </Stack>
                             )}
                         </Formik>
-                        <Button onClick={deleteHistory} variant="primary" background="red" justifyContent="left" fontSize="1.2rem" fontWeight="500" w="100%" py="2rem">DELETE: {history.position} ({new Date(history.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' })})</Button> 
+                        <Button onClick={deleteHistory} variant="primary" background="red" justifyContent="left" fontSize="1.2rem" fontWeight="500" w="100%" py="2rem">DELETE: {history.position} (<DisplayDate source={history.startDate} format="YYYY" />)</Button> 
                     </ModalBody>
                 </ModalContent>
             </Modal>

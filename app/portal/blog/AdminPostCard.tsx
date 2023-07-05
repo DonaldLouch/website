@@ -1,6 +1,7 @@
 import { AspectRatio, Heading, Box, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
+import DisplayDate from '@/lib/DisplayDate'
 
 export default function AdminPostCard({ id, slug, title, thumbnail, categories, postedOn, lastUpdatedOn }: any) {
   return (
@@ -32,7 +33,7 @@ export default function AdminPostCard({ id, slug, title, thumbnail, categories, 
         </AspectRatio>
         <Heading as="h2" size="md" fontWeight="bold" mt="2rem" textTransform="uppercase" color="primary">{categories}</Heading>
         <Heading as="h2" size="xl" fontWeight="bold" color="white">{title}</Heading>
-        <Text textShadow="3px 2px 4px rgb(193 93 79 / 20%)" fontSize="sm" color="gray.500">Posted On: {`${new Date(postedOn).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} at ${new Date(postedOn).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`} | Last Updated: {`${new Date(lastUpdatedOn).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} at ${new Date(lastUpdatedOn).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`}</Text>
+        <Text textShadow="3px 2px 4px rgb(193 93 79 / 20%)" fontSize="sm" color="gray.500">Posted On: {<DisplayDate source={postedOn} />} | Last Updated: {<DisplayDate source={lastUpdatedOn} />}</Text>
         </Link>
     </Box>
   )

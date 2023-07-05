@@ -17,6 +17,7 @@ import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import DisplayDate from "@/lib/DisplayDate";
 
 export default function EditPostContent({post}: any) {
   const toast = useToast()
@@ -166,11 +167,11 @@ export default function EditPostContent({post}: any) {
         thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
         sidebar: Yup.string().required('This field is required.')
       })
-      const postedData = new Date(post.postedOn)
-      const postedDay = postedData.toLocaleDateString()
-      const postedTime = postedData.toLocaleTimeString()
+      // const postedData = new Date(post.postedOn)
+      // const postedDay = postedData.toLocaleDateString()
+      // const postedTime = postedData.toLocaleTimeString()
 
-      const postedOnString = postedDay +" at " + postedTime
+      // const postedOnString = postedDay +" at " + postedTime
   
   return (
     <>
@@ -278,7 +279,7 @@ export default function EditPostContent({post}: any) {
               </Box>
               <FormTextAreaRow inputID="sections" inputLabel="Section Headers" textRows={4} inputDescription="Title#ID, Separate with comma"/>
               {/* <Code p={3} colorScheme='yellow'>Title#ID, Separate with comma</Code> */}
-              <FormInput inputID="postedOn" inputLabel={`Update Posted On`} inputDescription={postedOnString} inputType="datetime-local" />
+              <FormInput inputID="postedOn" inputLabel={`Update Posted On`} inputDescription={<DisplayDate source={post.postedOn} />} inputType="datetime-local" />
               <FormSelect selectLabel="Post Status" selectID="postStatus" selectPlaceholder={post.postStatus}>
                 <option>---</option>
                 <option value="Draft">Draft</option>
