@@ -124,7 +124,7 @@ export default function EditPostContent({post}: any) {
       postStatus: updateBlogPostData.postStatus, 
       lastUpdatedOn: updateBlogPostData.lastUpdatedOn 
     }).eq('id', updateBlogPostData.id)
-    console.log(supabaseStatus)
+    // console.log(supabaseStatus)
     supabaseStatus && !toast.isActive(toastID) &&
       toast({
           id: toastID,

@@ -90,7 +90,7 @@ export default function EditResumePage({ resume }: any) {
       avatar: updateResumeData.avatar,
       lastUpdatedOn: updateResumeData.lastUpdatedOn 
     }).eq('id', updateResumeData.id)
-    console.log(supabaseStatus)
+    // console.log(supabaseStatus)
     supabaseStatus && !toast.isActive(toastID) &&
       toast({
           id: toastID,

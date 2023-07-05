@@ -35,7 +35,7 @@ export const AddEmbed = () => {
       addedOn: new Date(),
       lastUpdatedOn: new Date()
     })
-    console.log(supabaseStatus, supabaseError)
+    // console.log(supabaseStatus, supabaseError)
     supabaseStatus && !toast.isActive(toastID) &&
        toast({
             id: toastID,

@@ -51,7 +51,7 @@ export default function MediaManager({mediaData, pagination}: any) {
       formData.append('file', file)
       formData.append('upload_preset', 'donaldlouch')
 
-      console.log(process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!)
+      // console.log(process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!)
 
       const data = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!}/image/upload`, {
         method: 'POST',

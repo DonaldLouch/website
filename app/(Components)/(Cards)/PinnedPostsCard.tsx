@@ -16,7 +16,7 @@ interface PinnedPostsProps {
 }
 
 export default function PinnedPostsCard(post: PinnedPostsProps) {
-    console.log("Date Type", post.postedOn)
+    // console.log("Date Type", post.postedOn)
     // moment(new Date(post.postedOn)).utcOffset(8).format("MMMM Do, YYYY [at] h:mma")
     return (
         <Link href={`/post/${post.slug}`}>

@@ -10,7 +10,6 @@ export default function HomePageContent() {
   const toast = useToast();
   const toastID = "toastID";
 
-
   //   const fetcher = (url: RequestInfo | URL) =>
 //     fetch(url).then((res) => res.json());
 //   const pageID = "pageL4UBF3Y5fn7" as string;
