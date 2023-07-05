@@ -92,15 +92,14 @@ export default function PortfolioPhotographyContent() {
         bg="mainGradient"
       >
         {media?.map((image: any) => (
-          <Link key={image.index} href={image} isExternal>
+          <Link key={image.index} href={image} isExternal _hover={{background: "blurredBackground", opacity: "0.6"}} transition="all 0.3s">
             <Image
               src={image}
               alt="portfolio image"
              width="3840" 
              height="2160"
-              // _hover={{ background: "backgroundGradient", opacity: "0.6" }}
               style={{display: "inherit"}}
-            ></Image>
+            />
           </Link>
         ))}
       </Box>

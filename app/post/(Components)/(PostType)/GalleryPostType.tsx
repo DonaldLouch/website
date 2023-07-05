@@ -2,10 +2,12 @@
 
 import { 
 Box,
-Image,
+// Image,
 Link,
 Heading
 } from '@chakra-ui/react'
+
+import Image from 'next/image'
 
 import { PostCard } from '../PostCard'
 import { TagsCard } from '../TagsCard'
@@ -27,9 +29,10 @@ export const GalleryPostType = ({post, mdxSource}: any) => {
                 bg="mainGradient"
             >
                 {gallerySplit?.map((image: any) => (
-                    <Link key={image.index} href={image.split(';;')?.[0]} isExternal>
-                        <Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} _hover={{background: "backgroundGradient", opacity: "0.6"}} display="inherit"></Image>
+                    <Link key={image.index} href={image.split(';;')?.[0]} isExternal _hover={{background: "blurredBackground", opacity: "0.6"}} transition="all 0.3s">
+                        <Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} width="3840" height="2160" style={{display: "inherit"}}/>
                     </Link>
+                    // _hover={{background: "backgroundGradient", opacity: "0.6"}}display="inherit"
                 ))}
             </Box>
 
