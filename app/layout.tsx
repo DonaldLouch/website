@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import Context from "./(Config)/Context"
 
 import type { Metadata } from 'next'
@@ -36,7 +37,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html>
       <body>
-        <Context>{children}</Context>
+        <ClerkProvider>
+          <Context>{children}</Context>
+        </ClerkProvider>
       </body>
     </html>
   )

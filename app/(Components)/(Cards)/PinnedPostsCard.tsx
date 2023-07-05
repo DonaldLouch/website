@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Link from 'next/link'
 import Image from 'next/image'
-import moment from 'moment'
 import DisplayDate from '@/lib/DisplayDate'
 
 interface PinnedPostsProps {
