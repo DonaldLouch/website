@@ -14,38 +14,27 @@ With this new era, I'm able to create a higher-level website and even deploy it 
 
 Even though I'm still optimizing and constructing features, I feel as, my website is loading faster and smoother!
 
-## Website Note:
-
-Please note that the website is still in a beta/construction phase. With this, all features will not be fully created and optimized and will be in a more functional state at a later time.
-
-With in saying that, I have constructed the website enough to where you'll be able to visit the website and get updates on myself and view my content!
-
-If you would like you may proceed to the beta version of the website by going to the link: [donaldlouch.ca](https://donaldlouch.ca) or you may go to the alpha version where features are not as develop at [beta.donaldlouch.ca](https://beta.donaldlouch.ca) or my Vercel link [donaldlouch.vercel.app](https://donaldlouch.vercel.app). Or if you would like you may visit the legacy version at [legacy.donaldlouch.ca](https://legacy.donaldlouch.ca).
-
-If you would you would like you may view the [Public Analytics via. SplitBee](https://app.splitbee.io/public/donaldlouch.ca)!
-
-## Tech Stack (Beta and Alpha Versions)
+## Tech Stack
 
 - [TypeScript](https://www.typescriptlang.org/): JavaScript Syntax
-- [NextJS](https://nextjs.org/): Website Framework
+- [NextJS App Router](https://nextjs.org/): Website Framework
 - [Vercel](https://vercel.com/): Hosting Platform
 - [Chakra UI](https://chakra-ui.com): CSS Framework
 - [Font Awesome / Font Awesome 6](https://fontawesome.com): Icons
-- [NextAuthJS](https://next-auth.js.org/): Auth Provider
-- [Prisma](https://www.prisma.io/): Database ORM
-- [PlanetScale](https://planetscale.com/): MySQL Provider
+- [Clerk *UPDATED*](https://clerk.com/): Auth Provider
+- [Supabase *UPDATED*](https://supabase.com/): Postgresql Provider
 - [Cloudinary](cloudinary.com): Image Storage
 - [MDX](https://mdxjs.com/): Markdown Blog Posts
 - [Formik](https://github.com/jaredpalmer/formik): Form Provider
 - [yup](https://github.com/jquense/yup): Form Validation
 - [Fontsource](https://fontsource.org/): Font Provider 
-- ~~[SplitBee](https://splitbee.io/): Public Analytics~~ NOW DISCONTINUED AND DONE ON SERVER
 
 ## Support The Production of Donald Louch
 
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
 ## Change Log
+- [Version 28.07.08: Upgraded Website Infrastructures, Updated User Interface (UI), Bug Fixes and More](https://github.com/DonaldLouch/website/releases/tag/version280708)
 - [Version 28.06.01: Happy Pride Month!, Visual Updates, and more](https://github.com/DonaldLouch/website/releases/tag/version280601)
 - [Version 28.03.18: Visual Updates, Sticky Bars, Bug Fixes, Backend Portal Updates, and more](https://github.com/DonaldLouch/website/releases/tag/version280318)
 - [Version 28: Brand and Website Update 12/03/22](https://donaldlouch.ca/post/12-03-22-Changes)
