@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import {MediaCard} from "./MediaCard"
+import supabase from "@/lib/supabase"
 
 export default function MediaManager({mediaData, pagination}: any) {
   const router = useRouter()
@@ -53,12 +54,12 @@ export default function MediaManager({mediaData, pagination}: any) {
 
       // console.log(process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!)
 
-      const data = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!}/image/upload`, {
+      const data = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`, {
         method: 'POST',
         body: formData
       }).then(response => response.json())
-
-      const submitMediaData = {
+      const { status: supabaseStatus , error: supabaseError } = await supabase.from("Media").insert({ 
+        mediaID: "media"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
         mediaPublicID: data.public_id,
         mediaSignature: data.signature,
         mediaKind: data.resource_type,
@@ -67,29 +68,50 @@ export default function MediaManager({mediaData, pagination}: any) {
         mediaPath: data.secure_url,
         mediaSize: data.bytes,
         mediaDimensions: `${data.width}px x ${data.height}px`,
-      }
-      const response = await fetch('/api/media/newMedia', {
-        method: 'POST',
-        body: JSON.stringify(submitMediaData),
+        uploadedOn: new Date()
       })
-      response.ok ? !toast.isActive(toastID) &&
+
+      supabaseStatus && !toast.isActive(toastID) &&
         toast({
             id: toastID,
-            title: "Media Uploaded 🎉",
-            description: `You have successfully uploaded ${submitMediaData.mediaTitle}!`,
-            status: "success",
+            title: `${supabaseStatus === 201 ? "Media Uploaded 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+            description: `${supabaseStatus === 201 ? `You have successfully uploaded ${data.original_filename}!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+            status: `${supabaseStatus === 201 ? "success" : "error"}`,
             duration: 9000,
             isClosable: true,
         })
-    : !toast.isActive(toastID) &&
-        toast({
-            id: toastID,
-            title: "An Error Occurred",
-            description: `${response.statusText}: when uploading ${submitMediaData.mediaTitle}.`,
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-        })
+    //   const submitMediaData = {
+    //     mediaPublicID: data.public_id,
+    //     mediaSignature: data.signature,
+    //     mediaKind: data.resource_type,
+    //     mediaTitle: data.original_filename,
+    //     mediaExtension: data.format,
+    //     mediaPath: data.secure_url,
+    //     mediaSize: data.bytes,
+    //     mediaDimensions: `${data.width}px x ${data.height}px`,
+    //   }
+    //   const response = await fetch('/api/media/newMedia', {
+    //     method: 'POST',
+    //     body: JSON.stringify(submitMediaData),
+    //   })
+    //   response.ok ? !toast.isActive(toastID) &&
+    //     toast({
+    //         id: toastID,
+    //         title: "Media Uploaded 🎉",
+    //         description: `You have successfully uploaded ${submitMediaData.mediaTitle}!`,
+    //         status: "success",
+    //         duration: 9000,
+    //         isClosable: true,
+    //     })
+    // : !toast.isActive(toastID) &&
+    //     toast({
+    //         id: toastID,
+    //         title: "An Error Occurred",
+    //         description: `${response.statusText}: when uploading ${submitMediaData.mediaTitle}.`,
+    //         status: "error",
+    //         duration: 9000,
+    //         isClosable: true,
+    //     })
     }
 
     setUploaded(true)

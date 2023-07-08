@@ -41,8 +41,8 @@ export default function NewPostContent() {
         method: 'POST',
         body: formData
       }).then(r => r.json())
-
-      const submitMediaData = {
+      const { status: supabaseMediaStatus , error: supabaseMediaError } = await supabase.from("Media").insert({ 
+        mediaID: "thumbnail"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
         mediaPublicID: thumbnailData.public_id,
         mediaSignature: thumbnailData.signature,
         mediaKind: thumbnailData.resource_type,
@@ -51,16 +51,23 @@ export default function NewPostContent() {
         mediaPath: thumbnailData.secure_url,
         mediaSize: thumbnailData.bytes,
         mediaDimensions: `${thumbnailData.width}px x ${thumbnailData.height}px`,
-      }
-      const response = await fetch('/api/media/newMedia', {
-        method: 'POST',
-        body: JSON.stringify(submitMediaData),
+        uploadedOn: new Date()
       })
-      thumbnail = response ? thumbnailData.secure_url : null
+      thumbnail = supabaseMediaStatus === 201 ? thumbnailData.secure_url : null
+
+      supabaseMediaStatus != 201 && !toast.isActive(toastID) &&
+        toast({
+            id: toastID,
+            title: `Error #${supabaseMediaError?.code} has Occurred`,
+            description: `An error has occurred: ${supabaseMediaError?.message}. ${supabaseMediaError?.hint && `${supabaseMediaError?.hint}.`}`,
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+        })
     }
 
-    const sidebar = values.sidebar ? values.sidebar : null
-    const pinned = values.pinned ? values.pinned : false
+    // const sidebar = values.sidebar ? values.sidebar : null
+    // const pinned = values.pinned ? values.pinned : false
     const postedOn = values.postedOn ? new Date(values.postedOn) : new Date()
 
     const categoryValue = values.category.toString()
@@ -78,11 +85,11 @@ export default function NewPostContent() {
       categories: categoryValue,
       tags: values.tags,
       thumbnail: thumbnail,
-      sidebar: sidebar,
-      pinned: pinned,
+      sidebar: values.sidebar,
+      pinned: values.pinned,
       sections: values.sections,
       postedOn: postedOn,
-      postStatus: values.postStatus,
+      postStatus: "Public",
       lastUpdatedOn: new Date()
     }
     const { status: supabaseStatus , error: supabaseError } = await supabase.from("BlogPost").insert({ 
@@ -108,8 +115,8 @@ export default function NewPostContent() {
      supabaseStatus && !toast.isActive(toastID) &&
       toast({
           id: toastID,
-          title: `${supabaseStatus === 201 ? "Post Edited 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-          description: `${supabaseStatus === 201 ? `You have successfully edited ${values.title}!` : supabaseStatus === 409 ?  "The chosen slug is already being used with another post, please try a new slug!" : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+          title: `${supabaseStatus === 201 ? "Post Added 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+          description: `${supabaseStatus === 201 ? `You have successfully added ${values.title}!` : supabaseStatus === 409 ?  "The chosen slug is already being used with another post, please try a new slug!" : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
           status: `${supabaseStatus === 201 ? "success" : "error"}`,
           duration: 9000,
           isClosable: true,
@@ -118,7 +125,10 @@ export default function NewPostContent() {
       actions.setSubmitting(false)
   }
   
-  const initialValues = {}
+  const initialValues = {
+    pinned: false,
+    sidebar: false,
+  }
 
   const validationSchema = Yup.object({
     title: Yup.string().required('This field is required.'),

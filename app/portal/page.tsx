@@ -36,16 +36,6 @@ export default function PortalHome() {
           </Stack>
         </CardBody>
       </Card>
-      <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="4xl" textDecoration="underline" fontWeight="900" mb="1rem">Current Stats</Heading></CardHeader>
-        <CardBody>
-          {/* <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Number of Posts</Text>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Number of Pages</Text>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Total of Post Views</Text>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Total of Page Views</Text> */}
-          <Text textAlign="center" fontSize="3xl" fontWeight="900" color="secondary"><FontAwesomeIcon icon={["fal", "traffic-cone"]} color="currentColor" width="3%" shake  /> This section is being constructed</Text>
-        </CardBody>
-      </Card>
     </>
   )
 }

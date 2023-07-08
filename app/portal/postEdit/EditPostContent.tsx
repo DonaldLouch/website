@@ -61,7 +61,8 @@ export default function EditPostContent({post}: any) {
         body: formData
       }).then(r => r.json())
 
-      const submitMediaData = {
+      const { status: supabaseMediaStatus , error: supabaseMediaError } = await supabase.from("Media").insert({ 
+        mediaID: "thumbnail"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase(),
         mediaPublicID: thumbnailData.public_id,
         mediaSignature: thumbnailData.signature,
         mediaKind: thumbnailData.resource_type,
@@ -70,12 +71,19 @@ export default function EditPostContent({post}: any) {
         mediaPath: thumbnailData.secure_url,
         mediaSize: thumbnailData.bytes,
         mediaDimensions: `${thumbnailData.width}px x ${thumbnailData.height}px`,
-      }
-      const response = await fetch('/api/media/newMedia', {
-        method: 'POST',
-        body: JSON.stringify(submitMediaData),
+        uploadedOn: new Date()
       })
-      thumbnail = response ? thumbnailData.secure_url : thumbnail
+      thumbnail = supabaseMediaStatus === 201 ? thumbnailData.secure_url : thumbnail
+
+      supabaseMediaStatus != 201 && !toast.isActive(toastID) &&
+        toast({
+            id: toastID,
+            title: `Error #${supabaseMediaError?.code} has Occurred`,
+            description: `An error has occurred: ${supabaseMediaError?.message}. ${supabaseMediaError?.hint && `${supabaseMediaError?.hint}.`}`,
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+        })
     }
 
     const sidebar = values.sidebar ? values.sidebar : null
@@ -124,7 +132,6 @@ export default function EditPostContent({post}: any) {
       postStatus: updateBlogPostData.postStatus, 
       lastUpdatedOn: updateBlogPostData.lastUpdatedOn 
     }).eq('id', updateBlogPostData.id)
-    // console.log(supabaseStatus)
     supabaseStatus && !toast.isActive(toastID) &&
       toast({
           id: toastID,
@@ -162,10 +169,10 @@ export default function EditPostContent({post}: any) {
         headingText: Yup.string().required('This field is required.'),
         body: Yup.string().required('This field is required.'),
         excerpt: Yup.string().max(300, 'The excerpt must not be more than 300 characters long.').required('This field is required.'),
-        category: Yup.string().required('This field is required.'),
+        category: Yup.array().required('This field is required.'),
         tags: Yup.string().required('This field is required.'),
-        thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
-        sidebar: Yup.string().required('This field is required.')
+        // thumbnail: Yup.string().matches(/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/, 'Enter correct url!').required('This field is required.'),
+        // sidebar: Yup.string().required('This field is required.')
       })
       // const postedData = new Date(post.postedOn)
       // const postedDay = postedData.toLocaleDateString()
