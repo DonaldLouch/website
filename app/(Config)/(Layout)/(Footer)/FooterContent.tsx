@@ -72,6 +72,11 @@ export default function FooterContent(){
                 linkIcon="instagram"
               />
               <FooterIcon
+                linkURL="https://www.threads.net/@donaldlouch"
+                socialMedia="Threads"
+                linkIcon="threads"
+              />
+              <FooterIcon
                 linkURL="https://youtube.donaldlouch.ca"
                 socialMedia="YouTube"
                 linkIcon="youtube"
