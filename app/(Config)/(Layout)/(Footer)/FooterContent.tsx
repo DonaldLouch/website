@@ -63,8 +63,8 @@ export default function FooterContent(){
               />
               <FooterIcon
                 linkURL="https://twitter.com/DonaldLouch"
-                socialMedia="Twitter"
-                linkIcon="twitter"
+                socialMedia="X (Twitter)"
+                linkIcon="x-twitter"
               />
               <FooterIcon
                 linkURL="https://instagram.com/donaldlouch"
