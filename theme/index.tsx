@@ -36,7 +36,9 @@ export const theme = extendTheme({
       },
       body: {
         background: "black",
-        color: "white"
+        color: "white",
+        height: "100%",
+        minHeight: "100%"
       },
       a: {
         color: "primary",
@@ -57,12 +59,17 @@ export const theme = extendTheme({
     secondary: "#e7c462",
     tertiary: "#6acc1b",
     black: "#0F111B",
+    blackRGBA: "rgba(15,17,27,0.7)",
     white: "#EDEDED",
+    whiteRGBA: "rgba(237,237,237,0.7)",
     blurredPurple: "#30243c",
+    blurredPurpleRGBA: "rgba(48,36,60,0.7)",
     whiteColourGradient:
       "radial-gradient(ellipse at center, #EDEDED 0%,#FAFAFA 36%,#EBEBEB 100%)",
     mainGradient:
-      "linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%)",
+      // "linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%)",
+      // "linear-gradient(-45deg, #2c3e50 0%, #3498db 100%, #e74c3c 100%)",
+      "linear-gradient(45deg, #D01318 0%, #3B5026 50%, #D6BD76 100%)",
     backgroundGradient:
       "linear-gradient(-135deg, rgba(59,103,217,0.8) 0%, rgba(67,12,140,0.95) 75%)",
     blurredBackground: "rgba(118 70 136 / 15%)",
@@ -110,13 +117,13 @@ export const theme = extendTheme({
     //     fontSize: "1.5rem",
     //   }
     // },
-    Input: {
-      variants: {
-        primary: {
-          bg: "mainGradient",
-        },
-      },
-    },
+    // FormInput: {
+    //   variants: {
+    //     primary: {
+    //       bg: "mainGradient",
+    //     },
+    //   },
+    // },
     FormLabel: {
       baseStyle: {
         fontFamily: "Playfair Display, Georgia, serif",

@@ -1,37 +1,49 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import Context from "./(Config)/Context"
 
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+
+export const viewport: Viewport = {
+  themeColor: '#30243c',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export const metadata: Metadata = {
-    title: process.env.WEBSITE_NAME,
-    description: process.env.DESCRIPTION,
-    applicationName: process.env.WEBSITE_NAME,
+    title: process.env.NEXT_PUBLIC_WEBSITE_NAME,
+    description: process.env.NEXT_PUBLIC_DESCRIPTION,
+    applicationName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
     authors: [{ name: "Donald Louch", url: "https://donaldlouch.ca" }],
-    keywords: process.env.KEYWORDS,
-    themeColor: "#30243c",
-    viewport: "width=device-width, initial-scale=1",
+    keywords: process.env.NEXT_PUBLIC_KEYWORDS,
     creator: "Donald Louch",
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
     icons:  [
-        { rel: "icon", sizes: "32x32", type: "image.png", url: "/favicon/favicon-32x32.png" }, 
-        { rel: "icon", sizes: "192x192", type: "image.png", url: "/favicon/favicon-192x192.png" }, 
-        { rel: "icon", sizes: "16x16", type: "image.png", url: "/favicon/favicon-16x16.png" }, 
-        { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/favicon/apple-touch-icon.png" },
+        { rel: "icon", sizes: "32x32", type: "image.png", url: "/faviconChristmas/favicon-32x32.png" }, 
+        { rel: "icon", sizes: "192x192", type: "image.png", url: "/faviconChristmas/favicon-192x192.png" }, 
+        { rel: "icon", sizes: "16x16", type: "image.png", url: "/faviconChristmas/favicon-16x16.png" }, 
+        { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/faviconChristmas/apple-touch-icon.png" },
     ],
     openGraph: {
         type: "website",
         url: process.env.SITE_URL,
-        title: process.env.WEBSITE_NAME,
-        description: process.env.DESCRIPTION,
-        siteName: process.env.WEBSITE_NAME,
+        title: process.env.NEXT_PUBLIC_WEBSITE_NAME,
+        description: process.env.NEXT_PUBLIC_DESCRIPTION,
+        siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://res.cloudinary.com/donaldlouch/image/upload/v1669225248/thumbnail/uv0fxdiue86dqkgwso98.jpg",
+            url: "https://sjc1.vultrobjects.com/donald-louch/thumbnail/uv0fxdiue86dqkgwso98.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://res.cloudinary.com/donaldlouch/image/upload/v1669225248/thumbnail/uv0fxdiue86dqkgwso98.jpg" },
-    appleWebApp: { capable: true, title: process.env.WEBSITE_NAME, statusBarStyle: "black-translucent" }
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/thumbnail/uv0fxdiue86dqkgwso98.jpg" },
+    appleWebApp: { capable: true, title: process.env.NEXT_PUBLIC_WEBSITE_NAME, statusBarStyle: "black-translucent" }
 }
 
-export const revalidate = 0;
+export const revalidate = 0
+
+// import '@mantine/core/styles.css';
+// import '@mantine/dropzone/styles.css'
+// crossOrigin="anonymous"
+import Script from "next/script";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -41,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Context>{children}</Context>
         </ClerkProvider>
       </body>
+      <Script src="https://kit.fontawesome.com/66b6e8c296.js" strategy="afterInteractive"/>
     </html>
   )
 }

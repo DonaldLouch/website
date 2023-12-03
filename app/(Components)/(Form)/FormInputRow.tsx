@@ -1,21 +1,25 @@
 // import { Grid, Heading, Stack, Text } from '@chakra-ui/react'
+import { Heading, Stack, Text } from '@chakra-ui/react'
 import { InputControl } from 'formik-chakra-ui'
 
 interface FormProps {
     inputID: string
     inputLabel: string
     inputType?: any|undefined|null
+    inputDescription?: string|any
 }
 
 export const FormInputRow = ( props: FormProps) => {
-    const { inputID, inputLabel, inputType } = props
+    const { inputID, inputLabel, inputType, inputDescription } = props
     
-    let theInputType = "text"
-    if (inputType != undefined) {
-        theInputType = inputType
-    }
+    const theInputType = inputType ? inputType : "text"
     
-    return (
+    return (<>
+    <Stack width="100%">
+        <Stack hidden={!inputDescription}>
+            <Heading size="lg" lineHeight="1" borderBottom="solid" borderBottomColor="primary" pb="0.5rem">{inputLabel}</Heading>
+            <Text fontSize="md" opacity="0.7">{inputDescription}</Text>
+        </Stack>
         <InputControl 
             name={inputID}
             label={inputLabel}
@@ -30,7 +34,10 @@ export const FormInputRow = ( props: FormProps) => {
                 borderRadius: "0 2rem",
                 type: theInputType
             }}
-            labelProps={{color: 'white'}}
+            labelProps={{
+                hidden: inputDescription,
+            }}
         />
-    )
+    </Stack>
+    </>)
 }

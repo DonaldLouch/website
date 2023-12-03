@@ -24,11 +24,19 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
         isParent: true,
         parentID: 1
     },
+    // { 
+    //     name: 'Blog',
+    //     slug: 'blog',
+    //     iconPre: 'fal', 
+    //     iconName: 'newspaper',
+    //     isParent: true,
+    //     parentID: 2
+    // },
     { 
-        name: 'Blog',
-        slug: 'blog',
+        name: 'Feeds',
+        slug: 'feed',
         iconPre: 'fal', 
-        iconName: 'newspaper',
+        iconName: 'rss',
         isParent: true,
         parentID: 2
     },

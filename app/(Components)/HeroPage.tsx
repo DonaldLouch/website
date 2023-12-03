@@ -28,6 +28,11 @@ interface HeroProps {
     
 //     100%{background: linear-gradient(0deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);}
 // `
+// const spinningGradient = keyframes `
+//     0% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+//   100% { background-position: 0% 50%; }
+// `
 const spinningGradient = keyframes `
     0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -52,8 +57,10 @@ export default function HeroPage(props: HeroProps) {
     return (
         <>
             <Box as="section" id="homeHero" w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsSecondary" bg="blurredBackground" overflow="hidden !Important">
-                <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
-                <Box bg={`no-repeat url(${imageLink ? imageLink : "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
+                <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" 
+                backgroundSize="150% 150%"
+                ></Box>
+                <Box bg={`no-repeat url(${imageLink ? imageLink : "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
                 <Flex id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "2rem", lg: "3rem", xl: "5rem"}} overflow="hidden">
                     <Grid templateColumns={{base: "1fr", lg: "2.5fr 3fr", xl: "1fr 2fr"}} gap={{base: "2rem", lg: "1rem", xl: "2rem"}} w="100%" h="90vh" alignContent="center" justifyContent="center" textAlign="center">
                         <Stack boxShadow={{base: "bsBoldPrimary", md:"bsBigBoldPrimary"}} borderRadius="0 2.5rem" align="center" justify="center" p={{base: "1rem"}} w={{base: "80%", md: "100%"}} m={{base: "auto", md: "initial"}}>

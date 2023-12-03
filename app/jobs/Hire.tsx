@@ -14,7 +14,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 
 import { FormInput } from "@/app/(Components)/(Form)/FormInput";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
-import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
+import { FormInputRow } from '../(Components)/(Form)/FormInputRow';
 
 import * as Yup from "yup";
 import { FormPhoneRow } from "../(Components)/(Form)/FormPhoneRow";
@@ -127,12 +127,14 @@ export default function Hire() {
             </FormSelect>
             <FormTextAreaRow
               inputID="description"
-              inputLabel="In As Much Detail Please Describe What You're Looking For"
+              inputLabel="Description of the Job"
+              inputDescription="Please describe what you're looking for, in as much detail as possible. This way it will help me understand the scope of the job and will allow me to give you a proper quote and timeline in a faster manner."
               textRows={8}
             />
             <FormInput
               inputID="budget"
               inputLabel="Estimated Budget"
+              inputDescription="If you are unsure what to put here, please type: I'm unsure OR $0.00"
               inputType="text"
             />
             <SubmitButton variant="blackFormButton">

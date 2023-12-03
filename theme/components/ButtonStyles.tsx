@@ -121,5 +121,18 @@ export const ButtonStyles = {
               color: "primary"
           },
       },
+      newFormButton: {
+        background: "blurredPurple",
+        p: "1.8rem 1.5rem",
+        _hover: { 
+            bg: "none",
+            boxShadow: "none",
+            color: "currentColor"
+        },
+        borderRadius: "0 1.5rem",
+        width: "100%",
+        wordBreak: "break-word",
+        whiteSpace: "break-spaces",
+      }
   },
 };

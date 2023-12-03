@@ -9,15 +9,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { tag } = params
     const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('tags', `%${tag}%`).match({ postStatus: 'Public' }) as any
     return {
-      title: `(${postCount}) ${tag} | ${process.env.WEBSITE_NAME}`,
+      title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: `Blog posts by Donald Louch that are flagged with the tag ${tag}`,
       openGraph: {
           url: `${process.env.SITE_URL}/T/${tag}`,
-          title: `(${postCount}) ${tag} | ${process.env.WEBSITE_NAME}`,
+          title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: `Blog posts by Donald Louch that are flagged with the tag ${tag}`,
       },
       twitter: { site: `${process.env.SITE_URL}/T/${tag}` },
-      appleWebApp: { title: `(${postCount}) ${tag} | ${process.env.WEBSITE_NAME}` }
+      appleWebApp: { title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }
 

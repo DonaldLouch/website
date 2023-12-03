@@ -100,7 +100,7 @@ export default function EditResumeEducationExperiencePage({ resumeExperience, re
                   <FormInputRow inputID="endDate" inputLabel="End Date" inputType="number" />
               </Stack>
 
-              <FormTextArea inputID="description" inputLabel="Description" textRows={4} />
+              <FormTextArea inputID="description" inputLabel="description" textRows={4} />
               
               <SubmitButton variant="blackFormButton">Update {resumeExperience.school}</SubmitButton> 
           </Stack>

@@ -14,7 +14,8 @@ module.exports = withMDX({
 
 module.exports = {
   experimental: {
-    serverActions: true,
+    // serverActions: true,
+    serverComponentsExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/s3-presigned-post'],
   },
   // typescript: {
   //   // !! WARN !!
@@ -24,6 +25,20 @@ module.exports = {
   //   ignoreBuildErrors: true,
   // },
   images: {
-    domains: ['res.cloudinary.com'],
+    // domains: ['res.cloudinary.com', 'sjc1.vultrobjects.com', 'donald-louch.sjc1.vultrobjects.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'sjc1.vultrobjects.com'
+      },
+      {
+        protocol: 'https',
+        hostname:'donald-louch.sjc1.vultrobjects.com'
+      }
+    ],
   },
 }

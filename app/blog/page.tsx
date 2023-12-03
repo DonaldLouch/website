@@ -6,20 +6,20 @@ import ViewPostButton from "./ViewPostButton";
 
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-    title: `${process.env.WEBSITE_NAME}'s Blog Post's`,
-    description: process.env.DESCRIPTION,
-    keywords: `${process.env.KEYWORDS}, blog. post, feed, photography, videography, audio, design, general, education`,
+    title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME}'s Blog Post's`,
+    description: process.env.NEXT_PUBLIC_DESCRIPTION,
+    keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, blog. post, feed, photography, videography, audio, design, general, education`,
     openGraph: {
         type: "website",
         url: process.env.SITE_URL,
-        title: `${process.env.WEBSITE_NAME} Blog Post's`,
-        description: process.env.DESCRIPTION,
-        siteName: process.env.WEBSITE_NAME,
+        title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} Blog Post's`,
+        description: process.env.NEXT_PUBLIC_DESCRIPTION,
+        siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
+            url: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
 export default async function Blog({searchParams}: any) {
@@ -47,28 +47,28 @@ export default async function Blog({searchParams}: any) {
   const pageLinks = [
     {
       linkTitle: "Photography",
-      linkUrl: "/C/photography",
+      linkUrl: "/feed/photography",
     },
     {
       linkTitle: "Videography",
-      linkUrl: "/C/videography",
+      linkUrl: "/feed/videography",
     },
-    {
-      linkTitle: "Audio",
-      linkUrl: "/C/audio",
-    },
-    {
-      linkTitle: "Graphic Design",
-      linkUrl: "/C/design",
-    },
+    // {
+    //   linkTitle: "Audio",
+    //   linkUrl: "/C/audio",
+    // },
+    // {
+    //   linkTitle: "Graphic Design",
+    //   linkUrl: "/C/design",
+    // },
     {
       linkTitle: "General",
       linkUrl: "/C/general",
     },
-    {
-      linkTitle: "Education",
-      linkUrl: "/C/education",
-    },
+    // {
+    //   linkTitle: "Education",
+    //   linkUrl: "/C/education",
+    // },
   ];
 //   const fetcher = (url: RequestInfo | URL) =>
 //     fetch(url).then((res) => res.json());
@@ -88,7 +88,7 @@ export default async function Blog({searchParams}: any) {
         tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["About Me", "about"]}
-        imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg"
+        imageLink="https://donald-louch.sjc1.vultrobjects.com/photography/photography_LO3NICOBz1pJVUysp"
       />
       <ViewPostButton />
       {/* @ts-ignore */}

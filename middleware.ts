@@ -10,6 +10,11 @@ export default authMiddleware({
     "/(T)(.*)",
     "/(C)(.*)",
     "/(api)(.*)",
+    "/(feed)(.*)",
+    "/(video)(.*)",
+    // "/(embed)(.*)",
+    "/(photo)(.*)",
+    "/(album)(.*)",
   ],
 });
 

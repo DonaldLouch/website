@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: `${resumeMeta.firstName} ${resumeMeta.lastName}'s Resume`,
       description: resumeMeta.bioExcerpt,
-      keywords: `${process.env.KEYWORDS}, ${resumeMeta.firstName} ${resumeMeta.lastName}, ${resumeMeta.firstName}, ${resumeMeta.lastName}, ${resumeMeta.middleName}, resume, ${resumeMeta.firstName} ${resumeMeta.middleName} ${resumeMeta.lastName}, canada, Canadian, photographer, videographer, web developer, devop`,
+      keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${resumeMeta.firstName} ${resumeMeta.lastName}, ${resumeMeta.firstName}, ${resumeMeta.lastName}, ${resumeMeta.middleName}, resume, ${resumeMeta.firstName} ${resumeMeta.middleName} ${resumeMeta.lastName}, canada, Canadian, photographer, videographer, web developer, devop`,
       openGraph: {
           url: `${process.env.SITE_URL}/portfolio/resume`,
           title: `${resumeMeta.firstName} ${resumeMeta.lastName}'s Resume`,

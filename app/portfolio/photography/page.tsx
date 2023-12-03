@@ -3,19 +3,19 @@ import PortfolioPhotographyContent from "./PortfolioPhotographyContent";
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: `Photography | Donald Louch Portfolio`,
-    description: process.env.DESCRIPTION,
-    keywords: `${process.env.KEYWORDS}, portfolio, Donald Louch, donald, louch, photography`,
+    description: process.env.NEXT_PUBLIC_DESCRIPTION,
+    keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, portfolio, Donald Louch, donald, louch, photography`,
     openGraph: {
         type: "website",
         url: process.env.SITE_URL,
         title: `Photography | Donald Louch Portfolio`,
-        description: process.env.DESCRIPTION,
-        siteName: process.env.WEBSITE_NAME,
+        description: process.env.NEXT_PUBLIC_DESCRIPTION,
+        siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
+            url: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
 export default function PortfolioPhotography() {

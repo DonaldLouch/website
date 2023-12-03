@@ -32,8 +32,8 @@ export default function HomePageContent() {
 
   const pageLinks = [
     {
-      linkTitle: "Blog",
-      linkUrl: "blog",
+      linkTitle: "Feeds",
+      linkUrl: "feed",
     },
     {
       linkTitle: "Portfolio",
@@ -62,6 +62,6 @@ export default function HomePageContent() {
     tagLine="and I am a Web Developer"
     links={pageLinks}
     cta={["About Me", "about"]}
-    imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg"
+    imageLink="https://donald-louch.sjc1.vultrobjects.com/photography/photography_LO4N2TU7n6rATOjcs"
   />
 }

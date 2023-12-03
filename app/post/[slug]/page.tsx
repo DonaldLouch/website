@@ -13,19 +13,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = params
     const {data: postMeta} = await supabase.from('BlogPost').select('title,excerpt,thumbnail,tags,categories,slug').match({ slug: slug }).single() as any
     return {
-      title: `${postMeta.title} | ${process.env.WEBSITE_NAME}`,
+      title: `${postMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: postMeta.excerpt,
-      keywords: `${process.env.KEYWORDS}, ${postMeta.tags}, ${postMeta.categories}`,
+      keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${postMeta.tags}, ${postMeta.categories}`,
       openGraph: {
           url: `${process.env.SITE_URL}/post/${postMeta.slug}`,
-          title: `${postMeta.title} | ${process.env.WEBSITE_NAME}`,
+          title: `${postMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: postMeta.excerpt,
           images: [{
               url: postMeta.thumbnail,
           }],
       },
       twitter: { site: `${process.env.SITE_URL}/post/${postMeta.slug}`, creator: "@DonaldLouch", images: postMeta.thumbnail },
-      appleWebApp: { title: `${postMeta.title} | ${process.env.WEBSITE_NAME}` }
+      appleWebApp: { title: `${postMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }
 

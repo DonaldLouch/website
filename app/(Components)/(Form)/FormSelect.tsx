@@ -3,7 +3,7 @@ import { Grid, Heading, Stack, Text } from '@chakra-ui/react'
 
 interface FormProps {
     selectID: string
-    selectPlaceholder: string
+    selectPlaceholder?: string
     selectLabel: string
     children: React.ReactNode
     inputDescription?: string

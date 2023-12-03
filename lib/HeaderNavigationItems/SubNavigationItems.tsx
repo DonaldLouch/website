@@ -32,32 +32,43 @@ export const HeaderSubNavigationItems: Array<HeaderSubNavigationItemsProps> = [
     },
     { 
         name: 'Photography',
-        slug: '/C/photography',
+        slug: '/feed/photography',
         parentMenu: 2
     },
     { 
         name: 'Videography',
-        slug: '/C/videography',
+        slug: '/feed/videography',
         parentMenu: 2
     },
     { 
-        name: 'Audio',
-        slug: '/C/audio',
+        name: 'LEGACY: Blog Feed',
+        slug: '/blog',
         parentMenu: 2
     },
+    // { 
+    //     name: 'LEGACY: Photography',
+    //     slug: '/C/photography',
+    //     parentMenu: 2
+    // },
+    // { 
+    //     name: 'LEGACY: Audio',
+    //     slug: '/C/audio',
+    //     parentMenu: 2
+    // },
+    // { 
+    //     name: 'LEGACY: Graphic Design',
+    //     slug: '/C/graphic',
+    //     parentMenu: 2
+    // },
+    // { 
+    //     name: 'LEGACY: Education',
+    //     slug: '/C/education',
+    //     parentMenu: 2
+    // },
     { 
-        name: 'Graphic Design',
-        slug: '/C/graphic',
-        parentMenu: 2
-    },
-    { 
-        name: 'Education',
-        slug: '/C/education',
-        parentMenu: 2
-    },
-    { 
-        name: 'General',
+        name: 'LEGACY: General',
         slug: '/C/General',
         parentMenu: 2
     },
+    
 ]

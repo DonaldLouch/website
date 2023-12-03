@@ -9,7 +9,7 @@ import { useSearchParams } from "next/navigation"
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     // const params = useSearchParams()
-    // const error = params.get('error_description') as string
+    // const error = params.get('description') as string
     // const toast = useToast()
     // const toastID = "toastID";
 

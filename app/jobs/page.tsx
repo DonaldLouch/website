@@ -3,11 +3,11 @@ import Hire from './Hire'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: `Request Freelance Job From Donald Louch`,
-    description: process.env.DESCRIPTION,
-    keywords: `${process.env.KEYWORDS}`,
+    description: process.env.NEXT_PUBLIC_DESCRIPTION,
+    keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}`,
     openGraph: {
         title: `Request Freelance Job From Donald Louch`,
-        description: process.env.DESCRIPTION,
+        description: process.env.NEXT_PUBLIC_DESCRIPTION,
     },
 }
 

@@ -1,24 +1,22 @@
 namespace NodeJS {
   interface ProcessEnv extends NodeJS.ProcessEnv {
-    EMAIL_SERVER: string
-    EMAIL_FROM: string
-    APPLE_ID: string
-    APPLE_ID: string
-    APPLE_TEAM_ID: string
-    APPLE_PRIVATE_KEY: string
-    APPLE_KEY_ID: string
-    AUTH0_ID: string
-    AUTH0_SECRET: string
-    AUTH0_DOMAIN: string
-    FACEBOOK_ID: string
-    FACEBOOK_SECRET: string
-    GITHUB_ID: string
-    GITHUB_SECRET: string
-    GOOGLE_ID: string
-    GOOGLE_SECRET: string
-    TWITTER_ID: string
-    TWITTER_SECRET: string
-    DATABASE_URL: string
-    SECRET: string
+    DATABASE_URL: string;
+    SECRET: string;
+    JWT_SIGNING_PUBLIC_KEY: string;
+    NEXT_PUBLIC_SITE_URL: string;
+    NEXT_PUBLIC_SUPABASE_URL: string;
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: string;
+    NEXT_PUBLIC_VULTR_HOST_NAME: string;
+    NEXT_PUBLIC_VULTR_BUCKET_NAME: string;
+    NEXT_PUBLIC_VULTR_SECRET_KEY: string;
+    NEXT_PUBLIC_VULTR_ACCESS_KEY: string;
+    EMAIL_SERVER_HOST: string;
+    EMAIL_SERVER_PORT: string;
+    EMAIL_SERVER_USER: string;
+    EMAIL_SERVER_PASSWORD: string;
+    EMAIL_FROM: string;
+    NEXT_PUBLIC_WEBSITE_NAME: string;
+    keywords: string;
+    description: string;
   }
 }

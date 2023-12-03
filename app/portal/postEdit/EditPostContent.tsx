@@ -211,9 +211,9 @@ export default function EditPostContent({post}: any) {
                   {values.blogType == "Photo 1" || values.blogType == "Photo 2" || values.blogType == "Photo 3" || values.blogType == "Photo 4" || values.blogType === "Gallery" && 
                     <FormTextAreaRow inputID="media" inputLabel="Media Embeds" inputDescription={
                       values.blogType == "Photo 1" || values.blogType == "Photo 2" || values.blogType == "Photo 3" || values.blogType == "Photo 4"  
-                        ? "LINKTOIMAGE;;LINKTOIMAGE;;singlePic;;IMAGEDESCRIPTION || " 
+                        ? "LINKTOIMAGE;;LINKTOIMAGE;;singlePic;;description || " 
                       : values.blogType === "Gallery" 
-                        ? "LINKTOIMAGE;;LINKTOIMAGE;;galleryPic;;IMAGEDESCRIPTION || "
+                        ? "LINKTOIMAGE;;LINKTOIMAGE;;galleryPic;;description || "
                       : null
                     } textRows={5} />
                   }

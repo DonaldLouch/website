@@ -86,11 +86,13 @@ const toggle = (props: any) => (
                     </Box>
                 </AccordionButton>
                 <AccordionPanel px="0.5rem" mx="1.5rem">
-                    {props.children}
+                    <Stack whiteSpace="break-spaces" gap="1.3rem">
+                        {props.children}
+                    </Stack>
                 </AccordionPanel>
             </ AccordionItem>
         </Accordion>
-        <Box hidden>{props.children}</Box>
+        {/* <Box hidden>{props.children}</Box> */}
     </>
 )
 

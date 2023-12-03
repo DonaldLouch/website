@@ -10,15 +10,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { category } = params
     const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('categories', `%${category}%`).match({ postStatus: 'Public' }) as any
     return {
-      title: `(${postCount}) ${category} | ${process.env.WEBSITE_NAME}`,
+      title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: `Blog posts by Donald Louch that are flagged with the category ${category}`,
       openGraph: {
           url: `${process.env.SITE_URL}/C/${category}`,
-          title: `(${postCount}) ${category} | ${process.env.WEBSITE_NAME}`,
+          title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: `Blog posts by Donald Louch that are flagged with the category ${category}`,
       },
       twitter: { site: `${process.env.SITE_URL}/C/${category}` },
-      appleWebApp: { title: `(${postCount}) ${category} | ${process.env.WEBSITE_NAME}` }
+      appleWebApp: { title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }
 

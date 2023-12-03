@@ -26,7 +26,7 @@ export default function NewPostContent() {
   ]
 
   const onSubmit =  async (values: any, actions: any) => {
-    let thumbnail = "https://res.cloudinary.com/donaldlouch/image/upload/v1669225248/thumbnail/uv0fxdiue86dqkgwso98.jpg"
+    let thumbnail = "https://sjc1.vultrobjects.com/donald-louch/thumbnail/uv0fxdiue86dqkgwso98.jpg"
     const findFileName = ({ name }: any) => name === 'file'
     const form = document.querySelector('form') as any
     const fileInput = Array.from(form.elements).find(findFileName) as any
@@ -167,9 +167,9 @@ export default function NewPostContent() {
                   {values.blogType == "Photo 1" || values.blogType == "Photo 2" || values.blogType == "Photo 3" || values.blogType == "Photo 4" || values.blogType === "Gallery" && 
                     <FormTextAreaRow inputID="media" inputLabel="Media Embeds" inputDescription={
                       values.blogType == "Photo 1" || values.blogType == "Photo 2" || values.blogType == "Photo 3" || values.blogType == "Photo 4"  
-                        ? "LINKTOIMAGE;;LINKTOIMAGE;;singlePic;;IMAGEDESCRIPTION || " 
+                        ? "LINKTOIMAGE;;LINKTOIMAGE;;singlePic;;description || " 
                       : values.blogType === "Gallery" 
-                        ? "LINKTOIMAGE;;LINKTOIMAGE;;galleryPic;;IMAGEDESCRIPTION || "
+                        ? "LINKTOIMAGE;;LINKTOIMAGE;;galleryPic;;description || "
                       : null
                     } textRows={5} />
                   }

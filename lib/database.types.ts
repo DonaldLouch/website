@@ -275,7 +275,7 @@ export interface Database {
       };
       Media: {
         Row: {
-          mediaDescription: string | null;
+          mediadescription: string | null;
           mediaDimensions: string;
           mediaExtension: string;
           mediaID: string;

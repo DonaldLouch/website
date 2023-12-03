@@ -49,10 +49,11 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
                     />
                 }
             />
-            <Stack alignItems="center" direction="row">
+            <UserButton afterSignOutUrl="/"/>
+            {/* <Stack alignItems="center" direction="row">
                 <Text fontWeight="700">{user?.fullName}</Text>
                 <UserButton afterSignOutUrl="/"/>
-            </Stack>
+            </Stack> */}
         </Flex>
     )
 }

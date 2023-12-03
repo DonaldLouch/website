@@ -4,7 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Link from 'next/link'
 
-export default function HomeButton() {
+interface propTypes {
+    colour?: string | null | undefined | unknown
+    hoverColour?: string | null | undefined | unknown
+    link?: string | null | undefined | unknown
+    icon?: string | null | undefined | unknown
+    helperText?: string | null | undefined | unknown
+}
+
+export default function HomeButton( props: propTypes ) {
+    const {colour, hoverColour, link, icon, helperText} = props
+
+    const iconColour = colour ? colour : "white"
+    const hoverIconColour = hoverColour ? hoverColour : "secondary"
+    const goToLink = link ? link : "/"
+    const iconName = icon ? icon : "house" as any
+    const theHelperText = helperText ? helperText : "Go Back to Home" as any
+
     return (
         <Box
             position="absolute"
@@ -13,17 +29,18 @@ export default function HomeButton() {
             zIndex="tooltip"
             color="white"
         >
-            <Link href="../" style={{color: "white"}}>
-                <Tooltip label="Go Back Home">
+            <Link href={goToLink} style={{color: "white"}}>
+                <Tooltip label={theHelperText}>
                     <IconButton
-                        aria-label="Go Back Home"
+                        aria-label={theHelperText}
                         variant="unstyled"
-                        _hover={{ color: "secondary" }}
+                        _hover={{ color: hoverIconColour }}
+                        color={iconColour}
                         // h="auto"
                         // w="100%"
                         // height="100%"
                         fontSize="3xl"
-                        icon={<FontAwesomeIcon icon={["fal", "house"]} />}
+                        icon={<FontAwesomeIcon icon={["fal", iconName]}/>}
                     />
                 </Tooltip>
             </Link>

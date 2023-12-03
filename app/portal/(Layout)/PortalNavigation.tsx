@@ -35,7 +35,7 @@ export const PortalNavigation = ({
         display={{ base: "flex", md: "none" }}
       >
         <Image
-          src="/titleLogo.svg"
+          src="/titleLogoChristmas.svg"
           alt="Donald Louch"
           width="25vw"
           m="0.5rem auto"
@@ -44,7 +44,7 @@ export const PortalNavigation = ({
       </Flex>
       <Box display={{ base: "none", md: "block" }} mt="0.8rem"></Box>
       {PortalNavigationItems.map((link) => (
-        <Box key={`port_${link.name}`}>
+        <Box key={`port_${link.name}`} as="nav">
          <PortalNavigationItem
             slug={link.slug}
             iconPre={link.iconPre}

@@ -3,11 +3,11 @@ import EditLinksPage from './EditLinksPage'
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
-//     title: `Edit: Links Page | ${process.env.WEBSITE_NAME}`,
+//     title: `Edit: Links Page | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
 //     description: 'The Donald Louch Links Page Edit. This area is restricted to access by Donald Louch ONLY!',
-//     keywords: `${process.env.KEYWORDS}, portal`,
+//     keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, portal`,
 //     openGraph: {
-//         title: `Edit: Resume Page | ${process.env.WEBSITE_NAME}`,
+//         title: `Edit: Resume Page | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
 //         description: 'The Donald Louch Links Page Edit. This area is restricted to access by Donald Louch ONLY!',
 //     },
 // }

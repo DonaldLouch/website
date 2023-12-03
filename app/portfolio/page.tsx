@@ -3,20 +3,20 @@ import HeroPage from "../(Components)/HeroPage";
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: "Donald Louch's Portfolio",
-    description: process.env.DESCRIPTION,
-    keywords: `${process.env.KEYWORDS}, portfolio, Donald Louch, donald, louch, web production, photography, videography, graphic design, audio, written work`,
-    // manifest: "/favicon/site.webmanifest",
+    description: process.env.NEXT_PUBLIC_DESCRIPTION,
+    keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, portfolio, Donald Louch, donald, louch, web production, photography, videography, graphic design, audio, written work`,
+    // manifest: "/faviconChristmas/site.webmanifest",
     openGraph: {
         type: "website",
         url: process.env.SITE_URL,
         title: "Donald Louch Portfolio",
-        description: process.env.DESCRIPTION,
-        siteName: process.env.WEBSITE_NAME,
+        description: process.env.NEXT_PUBLIC_DESCRIPTION,
+        siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg",
+            url: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/g4os77p6ityhxn0ki74v.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg" },
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/g4os77p6ityhxn0ki74v.jpg" },
 }
 
 export default function Portfolio() {
@@ -63,7 +63,7 @@ export default function Portfolio() {
         tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["Resume", "portfolio/resume"]}
-        imageLink="https://res.cloudinary.com/donaldlouch/image/upload/v1644189338/donaldlouch/g4os77p6ityhxn0ki74v.jpg"
+        imageLink="https://donald-louch.sjc1.vultrobjects.com/photography/photography_LOANPCWJe9jTCQ2fh"
       />
   );
 }

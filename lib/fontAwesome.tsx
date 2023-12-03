@@ -27,5 +27,5 @@ library.add(
     fas,
     fal,
     fad,
-    fat
+    fat,
 );

@@ -19,23 +19,33 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
     levelOfAccess: "0",
   },
 
-  {
-    name: "Test Page",
-    slug: "../portal/test",
-    iconPre: "fal",
-    iconName: "layer-group",
-    isParent: false,
-    parentID: null,
-    levelOfAccess: "0",
-  },
+  // {
+  //   name: "Test Page",
+  //   slug: "../portal/test",
+  //   iconPre: "fal",
+  //   iconName: "layer-group",
+  //   isParent: false,
+  //   parentID: null,
+  //   levelOfAccess: "0",
+  // },
 
   {
-    name: "Media Manger",
-    slug: "../portal/media",
+    name: "Photo Manger",
+    slug: null,
     iconPre: "fal",
     iconName: "images",
-    isParent: false,
-    parentID: null,
+    isParent: true,
+    parentID: 2,
+    levelOfAccess: "0",
+  },
+  
+  {
+    name: "Video Manger",
+    slug: null,
+    iconPre: "fal",
+    iconName: "films",
+    isParent: true,
+    parentID: 3,
     levelOfAccess: "0",
   },
 
