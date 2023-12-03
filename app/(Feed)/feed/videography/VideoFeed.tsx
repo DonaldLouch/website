@@ -64,15 +64,19 @@ export default function VideoFeed({ videoData }: { videoData: any }) {
   }
   
   return (<>
-  <Alert status='info' color="black" width="95vw" my="0.5rem" mx="-2rem">
+  {/* <Alert status='info' color="black" width="95vw" my="0.5rem" mx="-2rem">
       <Icon>
         <FontAwesomeIcon icon={["fal", "circle-info"]} color="currentColor"/>
       </Icon>
       <AlertDescription mx="1rem" fontSize="lg">
         Please note that this Videography Feed is in a alpha state right now, and things will change and may not work properly. Please further note, that in future iterations I will be modifying and completing all tags, chapters, credits, and complete and have proper meta data for all the videos. At this time, embeds and playlists are under construction and not ready to be functional features.
       </AlertDescription>
-    </Alert>
-    <Grid gridTemplateColumns="repeat(4, 1fr)" gap="1.5rem" ref={containerRef} w="calc(100% + (2rem * 2))" mx="-2rem">
+    </Alert> */}
+    {/* w="calc(100% + (2rem * 2))" mx="-2rem" */}
+    <Grid gridTemplateColumns={{base: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)"}} gap="1.5rem" ref={containerRef}
+       w={{base: "100%", lg:"calc(100% + (2rem * 2))"}}
+       mx={{base: "0", lg:"-2rem"}}
+    >
       {isLoading && !toast.isActive(toastID) &&
         toast({
           id: toastID,

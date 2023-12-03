@@ -8,9 +8,11 @@ import HomeButton from "@/app/(Components)/(Buttons)/HomeButton"
 import PostContent from "@/app/post/(Components)/PostContent"
 import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
+import { useUser } from "@clerk/nextjs"
 
 export default function PlayerPage({ videoData, mdxSource }: any) {
    const video = videoData
+    const {user} = useUser()
    
    const { isOpen, onOpen, onClose } = useDisclosure()
     const router = useRouter() as any
@@ -274,15 +276,6 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
     return (<>
         <Box background="blurredPurple" w="100vw" h="100vh" position={isFullscreenMode ? "fixed" : "absolute"} top="0" left="0" zIndex="banner" boxShadow="bsSecondary" color="white" overflowY={isFullscreenMode ? "hidden" : "auto"}>
             <Box hidden={hide || isFullscreenMode || isTheaterMode}><HomeButton icon="arrow-left" link="/feed/videography" helperText="Go Back to Video Feed" /></Box>
-            <Alert status='info' color="black" width="63%" pos="fixed" top={{ base: "1.4%", md: "1%" }}
-            left="4%" hidden={hide}>
-                <Icon>
-                    <FontAwesomeIcon icon={["fal", "circle-info"]} color="currentColor"/>
-                </Icon>
-                <AlertDescription mx="1rem" fontSize="lg">
-                    Please note that this Videography Player is in a alpha state right now, and things will change and may not work properly. Please further note, that in future iterations I will be modifying and completing all tags, chapters, credits, and complete and have proper meta data for all the videos. At this time, embeds and playlists are under construction and not ready to be functional features.
-                </AlertDescription>
-                </Alert>
             <Grid
                 gridTemplateColumns={{
                     base: "100%", 
@@ -343,9 +336,9 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                             hidden={hide}
                             // top="82%" left="5%"
                         >
-                            <Stack direction="row" gap="1rem">
+                            <Stack direction="row" gap={{base: "0.5rem", xl: "1rem"}}>
                                 {leftButtons.map((button: any) => (<>
-                                <Icon fontSize="1.8rem" p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID}>
+                                <Icon fontSize={{base: "1.2rem", xl: "1.8rem"}} p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID}>
                                     <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" />
                                 </Icon>
                                     {/* <Button key={button.index} variant="unstyled" _hover={{color: "secondary"}} onClick={button.buttonFunction} size="xs" width="15%" h="auto" p="0.1rem">
@@ -356,7 +349,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                 </>))}
                             </Stack>
 
-                            <Slider aria-label='scrubber' value={videoProgress} width="100%" onChange={seekVideo}>
+                            <Slider aria-label='scrubber' value={videoProgress} width={{base: "70%", md: "50%", lg: "70%", xl: "100%"}} onChange={seekVideo} mx="auto">
                                 <SliderTrack bg='secondary'>
                                     <SliderFilledTrack bg='primary' />
                                 </SliderTrack>
@@ -365,9 +358,9 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                 </SliderThumb>
                             </Slider>
 
-                            <Stack direction="row" gap="1rem" justifyContent="flex-end">
+                            <Stack direction="row" gap={{base: "0.5rem", xl: "1rem"}} justifyContent="flex-end">
                                 {rightButtons.map((button: any) => (<>
-                                <Icon fontSize="1.8rem" p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} >
+                                <Icon fontSize={{base: "1.2rem", xl: "1.8rem"}} p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} >
                                     <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" />
                                 </Icon>
                                     {/* <Button key={button.index} variant="unstyled" _hover={{color: "secondary"}} onClick={button.buttonFunction} size="xs" width="15%" h="auto" p="0.1rem">
@@ -401,7 +394,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
 
                                         <Text fontWeight="600" mt="2rem">Share via Embed</Text>
                                         <Text>Feature Coming Soon!</Text>
-                                            {/* <Input 
+                                            <Input 
                                                 value={`<iframe style="aspect-ratio: 16 / 9; width: 100%; overflow: hidden; z-index: 10000;" src="${process.env.NEXT_PUBLIC_SITE_URL}/embed/${video.id}" allowfullscreen></iframe>`} 
                                                 isReadOnly
                                                 mt="0.5rem"
@@ -413,7 +406,8 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                                 type="url"
                                                 fontStyle="italic"
                                                 fontWeight={300}
-                                            /> */}
+                                                hidden={!user}
+                                            />
                                     </ModalBody>
                                 </ModalContent>
                             </Modal>
