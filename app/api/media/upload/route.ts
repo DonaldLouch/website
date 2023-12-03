@@ -6,11 +6,11 @@ import supabase from "@/lib/supabase";
 import cuid from "cuid";
 import moment from "moment";
 
-export const config = {
-  api: {
-    responseLimit: false,
-  },
-}
+// export const config = {
+//   api: {
+//     responseLimit: false,
+//   },
+// }
 
 const Bucket = process.env.NEXT_PUBLIC_VULTR_BUCKET_NAME
 
