@@ -34,7 +34,7 @@ export default function FooterContent(){
           >
             <Link href="#">
               <Image
-                src="/titleLogoChristmas.svg"
+                src="/titleLogoWhite.svg"
                 alt="Donald Louch"
                 width={{base: "60vw", lg: "20vw !important"}}
                 height="auto"

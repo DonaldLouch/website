@@ -28,16 +28,16 @@ interface HeroProps {
     
 //     100%{background: linear-gradient(0deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);}
 // `
-// const spinningGradient = keyframes `
-//     0% { background-position: 0% 50%; }
-//   50% { background-position: 100% 50%; }
-//   100% { background-position: 0% 50%; }
-// `
 const spinningGradient = keyframes `
     0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 `
+// const spinningGradient = keyframes `
+//     0% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+//   100% { background-position: 0% 50%; }
+// `
 
 export default function HeroPage(props: HeroProps) {
     const { name, tagLine, links, cta, imageLink } = props

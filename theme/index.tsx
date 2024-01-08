@@ -67,9 +67,9 @@ export const theme = extendTheme({
     whiteColourGradient:
       "radial-gradient(ellipse at center, #EDEDED 0%,#FAFAFA 36%,#EBEBEB 100%)",
     mainGradient:
-      // "linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%)",
+      "linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%)",
       // "linear-gradient(-45deg, #2c3e50 0%, #3498db 100%, #e74c3c 100%)",
-      "linear-gradient(45deg, #D01318 0%, #3B5026 50%, #D6BD76 100%)",
+      // "linear-gradient(45deg, #D01318 0%, #3B5026 50%, #D6BD76 100%)",
     backgroundGradient:
       "linear-gradient(-135deg, rgba(59,103,217,0.8) 0%, rgba(67,12,140,0.95) 75%)",
     blurredBackground: "rgba(118 70 136 / 15%)",

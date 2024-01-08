@@ -46,7 +46,7 @@ export default function Header() {
         >
           <Link href="../../../">
             <Image
-              src="/titleLogoChristmas.svg"
+              src="/titleLogoWhite.svg"
               alt="Donald Louch"
               width={{ base: "30vw", lg: "12vw" }}
             />

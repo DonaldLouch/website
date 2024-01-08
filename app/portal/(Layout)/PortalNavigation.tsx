@@ -35,7 +35,7 @@ export const PortalNavigation = ({
         display={{ base: "flex", md: "none" }}
       >
         <Image
-          src="/titleLogoChristmas.svg"
+          src="/titleLogo.svg"
           alt="Donald Louch"
           width="25vw"
           m="0.5rem auto"
