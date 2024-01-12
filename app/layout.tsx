@@ -3,6 +3,8 @@ import Context from "./(Config)/Context"
 
 import type { Metadata, Viewport } from 'next'
 
+import { Analytics } from '@vercel/analytics/react'
+
 export const viewport: Viewport = {
   themeColor: '#30243c',
   width: 'device-width',
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClerkProvider>
           <Context>{children}</Context>
         </ClerkProvider>
+        <Analytics />
       </body>
       <Script src="https://kit.fontawesome.com/66b6e8c296.js" strategy="afterInteractive"/>
     </html>
