@@ -1,6 +1,6 @@
 {
     "name": "donaldlouch",
-    "version": "29.01.12.2",
+    "version": "29.01.12.3",
     "description": "Hi, my name is Donald Louch and I&#39;m a twenty-nine-year-old Canadian web developer and digital content creator.",
     "private": true,
     "scripts": {
@@ -49,6 +49,7 @@
         "@supabase/supabase-js": "^2.39.2",
         "@types/jquery": "^3.5.22",
         "@vercel/analytics": "^1.1.1",
+        "@vercel/speed-insights": "^1.0.3",
         "cloudinary": "^1.41.1",
         "crypto": "^1.0.1",
         "cuid": "^3.0.0",

@@ -4,6 +4,7 @@ import Context from "./(Config)/Context"
 import type { Metadata, Viewport } from 'next'
 
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const viewport: Viewport = {
   themeColor: '#30243c',
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Context>{children}</Context>
         </ClerkProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
       <Script src="https://kit.fontawesome.com/66b6e8c296.js" strategy="afterInteractive"/>
     </html>
