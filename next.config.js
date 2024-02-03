@@ -38,7 +38,19 @@ module.exports = {
       {
         protocol: 'https',
         hostname:'donald-louch.sjc1.vultrobjects.com'
-      }
+      },
+      {
+        protocol: 'https',
+        hostname:'donaldlouch.s3.us-west-004.backblazeb2.com'
+      },
+      {
+        protocol: 'https',
+        hostname:'f004.backblazeb2.com'
+      },
+      {
+        protocol: 'https',
+        hostname:'s3.us-west-004.backblazeb2.com'
+      },
     ],
   },
 }
