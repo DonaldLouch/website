@@ -15,6 +15,8 @@ import { HeaderNavigation } from "./HeaderNavigation";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// TODO: Look into usePathname() to get active page
+
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
