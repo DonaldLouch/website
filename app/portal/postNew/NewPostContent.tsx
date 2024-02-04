@@ -26,7 +26,7 @@ export default function NewPostContent() {
   ]
 
   const onSubmit =  async (values: any, actions: any) => {
-    let thumbnail = "https://sjc1.vultrobjects.com/donald-louch/thumbnail/uv0fxdiue86dqkgwso98.jpg"
+    let thumbnail = "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/uv0fxdiue86dqkgwso98.jpg"
     const findFileName = ({ name }: any) => name === 'file'
     const form = document.querySelector('form') as any
     const fileInput = Array.from(form.elements).find(findFileName) as any

@@ -16,12 +16,12 @@ export async function POST(request: Request) {
   const versionID = formData.get("versionID") as string
 
   const fileDelete = {
-    "Bucket": process.env.NEXT_PUBLIC_VULTR_BUCKET_NAME,
+    "Bucket": process.env.S3_BUCKET_NAME,
     "Delete": {
       "Objects": [
         {
           "Key": id,
-          "VersionId": versionID,
+          // "VersionId": versionID,
         }
       ],
       "Quiet": true
@@ -29,6 +29,8 @@ export async function POST(request: Request) {
   }
   const command = new DeleteObjectsCommand(fileDelete)
   const response = await s3.send(command);
+
+  console.log(response)
 
 
   return NextResponse.json({ response }, { status: 200 });

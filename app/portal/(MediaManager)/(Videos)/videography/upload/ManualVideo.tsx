@@ -31,7 +31,7 @@ export default function ManualVideo({ id }: {id: string}) {
                 fileKey: filePath,
                 fileTitle: values.fileName,
                 fileExtension: values.fileExtension,
-                filePath: `https://donald-louch.sjc1.vultrobjects.com/${filePath}`,
+                filePath: `https://donaldlouch.s3.us-west-004.backblazeb2.com/${filePath}`,
                 fileVersionID: values.fileVersionID,
                 capturedOn: moment(),
                 uploadedOn: moment(),

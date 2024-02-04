@@ -14,10 +14,10 @@ export const metadata: Metadata = {
         description: process.env.NEXT_PUBLIC_DESCRIPTION,
         siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
+            url: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
 export default async function PortfolioPhotography({searchParams}: any) {

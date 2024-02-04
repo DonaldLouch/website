@@ -52,21 +52,21 @@ export default function EditPhotoData({photoData, photographyAlbum, locations}: 
     formData.append("fileKey", fileKey)
     formData.append("versionID", fileVersionID)
     const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-    // console.log(deleteFile)
+    console.log(deleteFile)
 
     
     
-    const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
-    mediaDeleteStatus &&
-    toast({
-        // id: toastID,
-        // title: `${mediaDeleteStatus === 204 ? "Media Deleted  🗑️" : `Error #${mediaDeleteError?.code} has Occurred`}`,
-        description: `${mediaDeleteStatus === 204 ? `You have successfully deleted the media file ${fileTitle}!` : `An error has occurred: ${mediaDeleteError?.message}. ${mediaDeleteError?.hint && `${mediaDeleteError?.hint}.`}`}`,
-        status: `${mediaDeleteStatus === 204 ? "success" : "error"}`,
-        duration: 9000,
-        isClosable: true,
-    })
-    mediaDeleteStatus === 204 && router.back()
+    // const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
+    // mediaDeleteStatus &&
+    //     toast({
+    //         title: `${mediaDeleteStatus === 204 ? "Media Deleted  🗑️" : `Error #${mediaDeleteError?.code} has Occurred`}`,
+    //         description: `${mediaDeleteStatus === 204 ? `You have successfully deleted the media file ${fileTitle}!` : `An error has occurred: ${mediaDeleteError?.message}. ${mediaDeleteError?.hint && `${mediaDeleteError?.hint}.`}`}`,
+    //         status: `${mediaDeleteStatus === 204 ? "success" : "error"}`,
+    //         duration: 9000,
+    //         isClosable: true,
+    //     })
+    // mediaDeleteStatus === 204 && 
+    // router.back()
 //     const { error: deletePostError, status: deletePostStatus } = await supabase.from("BlogPost").delete().eq('id', post.id);
 //         deletePostStatus && !toast.isActive(toastID) &&
 //         toast({

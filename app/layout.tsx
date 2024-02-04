@@ -34,10 +34,10 @@ export const metadata: Metadata = {
         description: process.env.NEXT_PUBLIC_DESCRIPTION,
         siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://sjc1.vultrobjects.com/donald-louch/thumbnail/uv0fxdiue86dqkgwso98.jpg",
+            url: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/uv0fxdiue86dqkgwso98.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/thumbnail/uv0fxdiue86dqkgwso98.jpg" },
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/uv0fxdiue86dqkgwso98.jpg" },
     appleWebApp: { capable: true, title: process.env.NEXT_PUBLIC_WEBSITE_NAME, statusBarStyle: "black-translucent" }
 }
 

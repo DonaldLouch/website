@@ -1,6 +1,7 @@
 'use client'
 
 import { Button, Card, CardBody, CardHeader, Heading, Stack, Text } from "@chakra-ui/react";
+import { useSession, useUser } from "@clerk/nextjs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // import type { Metadata } from 'next'
@@ -16,6 +17,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default function PortalHome() {
+  // const userData = useSession()
+
+  // console.log(userData.session?.user.organizationMemberships?.[0].role)
   return (
     <>
       <Card px="1rem" mt="0">

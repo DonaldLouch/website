@@ -52,7 +52,7 @@ export const AlbumCard = ({ albumData }: any) => {
 
     // async function deleteMedia() {
     //     // const fileDelete = {
-    //     //     "Bucket": process.env.NEXT_PUBLIC_VULTR_BUCKET_NAME,
+    //     //     "Bucket": process.env.S3_BUCKET_NAME,
     //     //     "Delete": {
     //     //         "Objects": [{
     //     //             "Key": id

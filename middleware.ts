@@ -15,6 +15,7 @@ export default authMiddleware({
     // "/(embed)(.*)",
     "/(photo)(.*)",
     "/(album)(.*)",
+    "/(portal)(.*)",
   ],
 });
 

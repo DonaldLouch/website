@@ -13,10 +13,10 @@ export const metadata: Metadata = {
         description: process.env.NEXT_PUBLIC_DESCRIPTION,
         siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
-            url: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/g4os77p6ityhxn0ki74v.jpg",
+            url: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/g4os77p6ityhxn0ki74v.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://sjc1.vultrobjects.com/donald-louch/donaldlouch/g4os77p6ityhxn0ki74v.jpg" },
+    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/g4os77p6ityhxn0ki74v.jpg" },
 }
 
 export default function Portfolio() {
@@ -63,7 +63,7 @@ export default function Portfolio() {
         tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["Resume", "portfolio/resume"]}
-        imageLink="https://donald-louch.sjc1.vultrobjects.com/photography/photography_LOANPCWJe9jTCQ2fh"
+        imageLink="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOANPCWJe9jTCQ2fh"
       />
   );
 }

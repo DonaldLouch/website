@@ -92,7 +92,7 @@ export default function VideoManager({videoData}: {videoData: any}) {
                         _hover={{backgroundColor: "blurredPurpleRGBA !important", opacity: "0.5", color: "secondary"}} transition="all 0.1s"
                     >
                         <AspectRatio ratio={16/9}>
-                            <Image src={video.thumbnailFileID?.filePath ? video.thumbnailFileID.filePath : "https://donald-louch.sjc1.vultrobjects.com/photography/photography_LNQWG1JG9acW6G4b1"} alt={video.title} width="1920" height="1080" />
+                            <Image src={video.thumbnailFileID?.filePath ? video.thumbnailFileID.filePath : "https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQWG1JG9acW6G4b1"} alt={video.title} width="1920" height="1080" />
                         </AspectRatio>
                         <Stack p="1rem" pos="absolute" background="blurredPurpleRGBA" backdropBlur="10px" w="100%" boxShadow="tsPrimary">
                             <Heading as ="h2" fontSize="1.2rem" fontWeight={900}>{video.title}</Heading>
