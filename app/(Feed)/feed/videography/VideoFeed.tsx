@@ -66,7 +66,7 @@ export default function VideoFeed({ videoData }: { videoData: any }) {
   return (<>
   {/* <Alert status='info' color="black" width="95vw" my="0.5rem" mx="-2rem">
       <Icon>
-        <FontAwesomeIcon icon={["fal", "circle-info"]} color="currentColor"/>
+        <FontAwesomeIcon icon={["fas", "circle-info"]} color="currentColor"/>
       </Icon>
       <AlertDescription mx="1rem" fontSize="lg">
         Please note that this Videography Feed is in a alpha state right now, and things will change and may not work properly. Please further note, that in future iterations I will be modifying and completing all tags, chapters, credits, and complete and have proper meta data for all the videos. At this time, embeds and playlists are under construction and not ready to be functional features.

@@ -16,6 +16,7 @@ import { Suspense, useState } from 'react'
 import DisplayDate from '@/lib/DisplayDate'
 import CopyButton from '@/app/(Components)/(Buttons)/CopyButton'
 import { useUser } from '@clerk/nextjs'
+import { BsCalendar2, BsEye, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 export default function ViewPhotoAlbum({ imageData, isLoading }: any) {
     const {user} = useUser()
@@ -39,7 +40,7 @@ export default function ViewPhotoAlbum({ imageData, isLoading }: any) {
                     <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} width="3840" height="2160"/>
                 </Box>
             </Skeleton>
-            {/* <Button variant="portalButton" color="white" p="2rem" mb="1rem" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fal", "eye"]} width="100%" color="currentColor" />}>Preview Photo</Button>  */}
+            {/* <Button variant="portalButton" color="white" p="2rem" mb="1rem" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fas", "eye"]} width="100%" color="currentColor" />}>Preview Photo</Button>  */}
             {/* <Button variant="primary" onClick={onOpen} background="primary"color="white" my="1rem !important" w="100%" py="2rem">Add New {company} History</Button>  */}
             <Modal isOpen={isOpen} onClose={onClose} id={`viewPhoto${imageData.id}`} size="7xl" isCentered>
                 <ModalOverlay
@@ -75,16 +76,17 @@ export default function ViewPhotoAlbum({ imageData, isLoading }: any) {
                                             color: "primary"
                                         }}
                                     >
-                                        <Icon>
-                                            <FontAwesomeIcon icon={["fal", "eye"]} width="100%" color='currentColor' />
-                                        </Icon>
+                                        {/* <Icon>
+                                            <FontAwesomeIcon icon={["fas", "eye"]} width="100%" color='currentColor' />
+                                        </Icon> */}
+                                        <BsEye />
                                         <LinkOverlay href={`/photo/${imageData.id}`}>
                                             <Text fontSize="1.1rem" color="white">Open Photo Link</Text>
                                         </LinkOverlay>
                                     </LinkBox>
                                     <Box hidden={!user}><CopyButton copyValue={imageData.fileID.filePath} copyText="Copy Photo URI" copiedText="Copied Photo URI" /></Box>
-                                {/* <Button as="a" onClick={onCopy} variant="portalButton" color="white" leftIcon={<FontAwesomeIcon icon={["fal", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label="Copy Button" p="2rem" width="auto" my="2rem">Copy Photo Link</Button>
-                                <Button as="a" href={`/photo/${imageData.id}`} variant="portalButton" color="white" leftIcon={<FontAwesomeIcon icon={["fal", "eye"]} width="100%" color='currentColor' height="100%" />} aria-label="Open Button" p="2rem" width="auto" my="2rem">Open Photo Link</Button> */}
+                                {/* <Button as="a" onClick={onCopy} variant="portalButton" color="white" leftIcon={<FontAwesomeIcon icon={["fas", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label="Copy Button" p="2rem" width="auto" my="2rem">Copy Photo Link</Button>
+                                <Button as="a" href={`/photo/${imageData.id}`} variant="portalButton" color="white" leftIcon={<FontAwesomeIcon icon={["fas", "eye"]} width="100%" color='currentColor' height="100%" />} aria-label="Open Button" p="2rem" width="auto" my="2rem">Open Photo Link</Button> */}
                                 </Stack>
                             </Stack>
                             <Stack width={{base: "100%", lg: "50%"}}>
@@ -95,26 +97,30 @@ export default function ViewPhotoAlbum({ imageData, isLoading }: any) {
                                 <Text boxShadow="bsBoldPrimary" p="2rem" borderRadius="0 2rem" whiteSpace="break-spaces">{imageData.caption}</Text>
                                 <Stack direction="row" my="2rem" gap="0.8rem">
                                      {/* {imageData.album && <Link href="#" variant="unstyled"><Tag size='lg' colorScheme='purple' _hover={{background: "white"}} borderRadius='0 1rem' p="1rem" whiteSpace="normal" wordBreak="break-all" width="fit-content">
-                                        <FontAwesomeIcon icon={["fal", "images"]} color="currentColor" height="40%" />
+                                        <FontAwesomeIcon icon={["fas", "images"]} color="currentColor" height="40%" />
                                         <TagLabel pl="0.5rem">{albumData.albumName}</TagLabel>
                                     </Tag></Link>} */}
                                     {imageData.location && <Link href={`/feed/photography?search=location&value=${imageData.location}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='messenger' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                        <FontAwesomeIcon icon={["fal", "location-pin"]} color="currentColor" height="40%" />
+                                        {/* <FontAwesomeIcon icon={["fas", "location-pin"]} color="currentColor" height="40%" /> */}
+                                        <BsPinMap />
                                         <TagLabel pl="0.5rem">{imageData.location}</TagLabel>
                                     </Tag></Link>}
                                     <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                        <FontAwesomeIcon icon={["fal", "camera-viewfinder"]} color="currentColor" height="40%" />
+                                        {/* <FontAwesomeIcon icon={["fas", "camera-viewfinder"]} color="currentColor" height="40%" /> */}
+                                        <BsCalendar2 />
                                         <TagLabel pl="0.5rem"><DisplayDate source={imageData.fileID.takenOn} /></TagLabel>
                                     </Tag>
                                 </Stack>
                                 <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem">
-                                    <Box mr="0.3rem" color="secondary">
-                                       <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
-                                    </Box>
+                                    {/* <Box mr="0.3rem" color="secondary">
+                                       <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
+                                    </Box> */}
+                                    <BsTags />
                                     {imageData.tags.map((tag: any) => (
                                         <Link href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                                             <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={tag} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                                <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                                                {/* <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" /> */}
+                                                <BsTag />
                                                 <TagLabel pl="0.5rem">{tag}</TagLabel>
                                             </Tag>
                                         </Link>

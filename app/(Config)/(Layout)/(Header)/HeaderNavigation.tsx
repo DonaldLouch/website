@@ -19,6 +19,8 @@ import { HeaderNavigationItem } from './HeaderNavigationItem'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useUser } from '@clerk/nextjs'
+import HouseIcon from '@/app/(Components)/(Vectors)/house'
+import { BsHouseGear, BsSpeedometer, BsSpeedometer2 } from 'react-icons/bs'
 
 interface HeaderNavigationProps extends BoxProps {
     onClose: () => void;
@@ -39,7 +41,10 @@ interface HeaderNavigationProps extends BoxProps {
               </HeaderNavigationItem>
             ))}
             <Link href="/jobs"><Text color="white" boxShadow="bsBoldSecondary" p="0.3rem 1rem" my="0" borderRadius="0 0.5rem" fontSize="1.2rem" fontWeight="900" _hover={{background: "blurredBackground", boxShadow: "none"}}>Hire Me!</Text></Link>
-            <Box hidden={user?.id ? false : true}><Link href="/portal" style={{paddingLeft: "0.5rem"}}><Icon w="2em" h="2rem" color="white"><FontAwesomeIcon icon={["fal", "house-user"]} color="currentColor" /></Icon></Link></Box>
+            <Box hidden={user?.id ? false : true}><Link href="/portal" style={{paddingLeft: "0.5rem"}}>
+              <Icon as={BsHouseGear} boxSize="2rem" color="white" _hover={{color: "secondary"}}/>
+              {/* <BsSpeedometer2 size="2rem" /> */}
+              </Link></Box>
 
           </Stack>
           <Stack display={{ base: 'initial', lg: 'none' }} w="100%" p="1rem" background="blurredBackground" h="100vh">

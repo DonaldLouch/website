@@ -46,6 +46,7 @@ import { FormInput } from "@/app/(Components)/(Form)/FormInput";
 import { InputControl } from "formik-chakra-ui";
 
 import { useDebounce } from 'use-debounce'
+import { BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
 
 
 async function fetchPhotos(offset: number, limit: number, searchType?: string, searchValue?: string) {
@@ -144,7 +145,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
     <Box id="feed" pos="relative" w="100%" bg="blurredPurple" ref={containerRef} m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} width="100vw" pt={{base: "0.5rem", lg: "1.5rem"}}>
       <Alert status='info' color="black" width="95vw" m="4.5rem auto 0">
         <Icon>
-          <FontAwesomeIcon icon={["fal", "circle-info"]} color="currentColor"/>
+          <FontAwesomeIcon icon={["fas", "circle-info"]} color="currentColor"/>
         </Icon>
         <AlertDescription mx="1rem" fontSize="lg">
           Please note that this Photography Feed is in a alpha state right now, and things will change and may not work properly. Please further note, that in future iterations I will be modifying and completing all captions, tags and proper meta data for all the photos.
@@ -164,16 +165,17 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
         onClick={onOpen}
       >
         <Tooltip label="Filters">
-          <Icon w="2rem" h="auto">
-            <FontAwesomeIcon icon={["fal", "filter-list"]} width="100%" color="currentColor" />
-          </Icon>
+         <BsFilter size="2rem" />
+          {/* <Icon w="2rem" h="auto"> */}
+            {/* <FontAwesomeIcon icon={["fas", "filter-list"]} width="100%" color="currentColor" /> */}
+          {/* </Icon> */}
           {/* <IconButton
               aria-label="Filters"
               variant="unstyled"
               _hover={{ color: "secondary" }}
               color="white"
               fontSize="3xl"
-              icon={<FontAwesomeIcon icon={["fal", "filter-list"]} />}
+              icon={<FontAwesomeIcon icon={["fas", "filter-list"]} />}
               onClick={onOpen}
           /> */}
         </Tooltip>
@@ -204,14 +206,15 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
             <Text>Search</Text>
             <InputGroup variant="unstyled" boxShadow='bsBoldSecondary' _focus={{boxShadow: "bsBoldPrimary"}} _invalid={{boxShadow: "bsBoldRed"}} color='white' borderRadius="0 1rem" my="1rem">
             <InputLeftElement pointerEvents='none' m="1.2rem 1rem">
-              <Icon><FontAwesomeIcon icon={["fal", "magnifying-glass"]} /></Icon>
+              <BsSearch />
+              {/* <Icon><FontAwesomeIcon icon={["fas", "magnifying-glass"]} /></Icon> */}
             </InputLeftElement>
             <Input placeholder='Me' p="1rem 3rem" onFocus={() => {setFocused(true)}} onChange={(e: any) => {setSearch(e.target.value)}} onMouseOut={() => {setCompleted(true)}} />
             </InputGroup>
             <Divider m="1.5rem 0 0.5rem" />
             <Text>Go to:</Text>
             <Menu>
-              <MenuButton as={Button} rightIcon={<FontAwesomeIcon icon={["fal", "chevron-down"]} />} width="100%" background="black" color="white" my="0.5rem" _hover={{background: "secondary"}} _active={{background: "secondary"}} borderRadius="0 0.5rem">
+              <MenuButton as={Button} rightIcon={<BsChevronDown />} width="100%" background="black" color="white" my="0.5rem" _hover={{background: "secondary"}} _active={{background: "secondary"}} borderRadius="0 0.5rem">
                 Album Select
               </MenuButton>
               <MenuList background="black" outline="none" border="none" overflow="scroll" maxH="50vh">
@@ -223,7 +226,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
             <Divider my="0.5rem" />
             <Text>Filters:</Text>
             <Menu>
-              <MenuButton as={Button} rightIcon={<FontAwesomeIcon icon={["fal", "chevron-down"]} />} width="100%" background="black" color="white" my="0.5rem" _hover={{background: "secondary"}} _active={{background: "secondary"}} borderRadius="0 0.5rem">
+              <MenuButton as={Button} rightIcon={<BsChevronDown />} width="100%" background="black" color="white" my="0.5rem" _hover={{background: "secondary"}} _active={{background: "secondary"}} borderRadius="0 0.5rem">
                 Location Select
               </MenuButton>
               <MenuList background="black" outline="none" border="none" overflow="scroll" maxH="50vh">
@@ -234,7 +237,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
             </Menu>
             {/* <Text>Tags:</Text> */}
             <Menu>
-              <MenuButton as={Button} rightIcon={<FontAwesomeIcon icon={["fal", "chevron-down"]} />} width="100%" background="black" color="white" my="0.5rem" _hover={{background: "secondary"}} _active={{background: "secondary"}} borderRadius="0 0.5rem">
+              <MenuButton as={Button} rightIcon={<BsChevronDown />} width="100%" background="black" color="white" my="0.5rem" _hover={{background: "secondary"}} _active={{background: "secondary"}} borderRadius="0 0.5rem">
                 Tag Select
               </MenuButton>
               <MenuList background="black" outline="none" border="none" overflow="scroll" maxH="50vh">

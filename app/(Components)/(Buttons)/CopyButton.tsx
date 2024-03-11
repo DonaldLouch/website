@@ -1,9 +1,12 @@
 import { Box, Tooltip, IconButton, Button, useClipboard, Flex, Icon } from '@chakra-ui/react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { BsCopy } from 'react-icons/bs'
+
+import { FiCopy } from 'react-icons/fi'
 
 interface propTypes {
     copyValue: any
@@ -50,15 +53,17 @@ export default function CopyButton( props: propTypes ) {
             color: "primary"
         }}
     >
-        <Icon mr='1rem' w="1.5rem" h="1.5rem">
-            <FontAwesomeIcon
-                icon={["fal", "copy"]}
+        <Box mr="1rem"><BsCopy /></Box>
+        {/* <Icon mr='1rem' w="1.5rem" h="1.5rem">
+            {/* <FontAwesomeIcon
+                icon={["fas", "copy"]}
                 width="100%"
                 color="currentColor"
             />
-        </Icon>
+            <FiCopy />
+        </Icon> */}
         {!hasCopied ? theCopyText : theCopiedText}
     </Flex>
-        {/* <Button as="a" onClick={onCopy} variant={theStyle} color="white" leftIcon={<FontAwesomeIcon icon={["fal", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label={theCopyText} p="2rem" width="auto" my="2rem"></Button> */}
+        {/* <Button as="a" onClick={onCopy} variant={theStyle} color="white" leftIcon={<FontAwesomeIcon icon={["fas", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label={theCopyText} p="2rem" width="auto" my="2rem"></Button> */}
     </>)
 }

@@ -101,7 +101,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle }:
             <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow="bsBoldPrimary" p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" m="1.5rem 0 0.5rem"> 
               <InputGroup border="none" appearance="none" outline="none">
                 <InputLeftElement pointerEvents='none' fontSize="2xl">
-                  <FontAwesomeIcon icon={["fal", "cloud-arrow-up"]} height="100%" width="100%" color='currentColor' />
+                  <FontAwesomeIcon icon={["fas", "cloud-arrow-up"]} height="100%" width="100%" color='currentColor' />
                 </InputLeftElement>
                 <Input 
                   type='file' 

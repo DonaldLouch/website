@@ -88,7 +88,7 @@ export default async function Blog({searchParams}: any) {
         tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["About Me", "about"]}
-        imageLink="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LO3NICOBz1pJVUysp"
+        imageLink="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LO3NICOBz1pJVUysp.jpg"
       />
       <ViewPostButton />
       {/* @ts-ignore */}

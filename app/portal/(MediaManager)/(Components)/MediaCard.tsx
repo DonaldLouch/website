@@ -93,9 +93,9 @@ export const MediaCard = ({ media }: any) => {
                 {/* <StatsCard startsTitle="Media Kind" statsDescription={fileKind} /> */}
                 {/* <StatsCard startsTitle="Extension" statsDescription={fileExtension} /> */}
                 <StatsCard startsTitle="Uploaded On" startsDescription={<DisplayDate source={uploadedOn} format="MM/DD/YY" />} />
-                <IconButton as="a" onClick={onCopy} variant="portalButton" color="white" icon={<FontAwesomeIcon icon={["fal", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label="Copy Button"  fontSize="1.5rem" height="100%"></IconButton>
-                <IconButton as="a" variant="portalButton" color="white" href={`/portal/photography/${id}`} icon={<FontAwesomeIcon icon={["fal", "pen-to-square"]} width="100%" color='currentColor' height="100%" />} fontSize="1.5rem" aria-label="Edit Button" height="100%"></IconButton> 
-                <IconButton as="a" variant="portalButtonRed" onClick={deleteMedia} icon={<FontAwesomeIcon icon={["fal", "trash"]} width="100%" color='currentColor' height="100%" />} fontSize="1.5rem" aria-label="Delete Button" height="100%"></IconButton> 
+                <IconButton as="a" onClick={onCopy} variant="portalButton" color="white" icon={<FontAwesomeIcon icon={["fas", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label="Copy Button"  fontSize="1.5rem" height="100%"></IconButton>
+                <IconButton as="a" variant="portalButton" color="white" href={`/portal/photography/${id}`} icon={<FontAwesomeIcon icon={["fas", "pen-to-square"]} width="100%" color='currentColor' height="100%" />} fontSize="1.5rem" aria-label="Edit Button" height="100%"></IconButton> 
+                <IconButton as="a" variant="portalButtonRed" onClick={deleteMedia} icon={<FontAwesomeIcon icon={["fas", "trash"]} width="100%" color='currentColor' height="100%" />} fontSize="1.5rem" aria-label="Delete Button" height="100%"></IconButton> 
             </Grid>
         </Stack>
     </Grid>

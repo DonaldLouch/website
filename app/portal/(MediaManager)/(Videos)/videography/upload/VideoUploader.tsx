@@ -101,8 +101,8 @@ export default function VideoUploader({currentStep, categoryData}: {currentStep:
                 <Text m="2rem 0 1rem">Please note that before you start the video upload process, you will only have 30 minutes to complete the video and thumbnail upload steps (steps 2 and 3). It is ideal for videos to be in a .mp4 format and for the thumbnail in a .jpg/jpeg or .png file format. Once you are ready click the below button to start the process 🎉</Text>
             </SectionCard>
             <Stack direction="row" my="2rem" gap="2rem">
-                <Button type="button" variant="newFormButton" color="tertiary" leftIcon={<FontAwesomeIcon icon={["fal", "play"]} height="100%" width="100%" color='currentColor' />} onClick={startUploader} >Start The Upload Process</Button>
-                <Button type="button" variant="newFormButton" color="red" leftIcon={<FontAwesomeIcon icon={["fal", "trash"]} height="100%" width="100%" color='currentColor' />} onClick={refreshUploader}>Refresh ID and Start Over</Button>
+                <Button type="button" variant="newFormButton" color="tertiary" leftIcon={<FontAwesomeIcon icon={["fas", "play"]} height="100%" width="100%" color='currentColor' />} onClick={startUploader} >Start The Upload Process</Button>
+                <Button type="button" variant="newFormButton" color="red" leftIcon={<FontAwesomeIcon icon={["fas", "trash"]} height="100%" width="100%" color='currentColor' />} onClick={refreshUploader}>Refresh ID and Start Over</Button>
             </Stack>
         </Box>
         <Box hidden={activeStep != 1} m="2rem" color="white">
@@ -121,9 +121,9 @@ export default function VideoUploader({currentStep, categoryData}: {currentStep:
                 <Text m="2rem 0 1rem" textAlign="center">You have successfully uploaded your video!</Text>
             </SectionCard>
             <Stack direction="row" my="2rem" gap="2rem">
-                <Button as="a" variant="newFormButton" color="tertiary" leftIcon={<FontAwesomeIcon icon={["fal", "play"]} height="100%" width="100%" color='currentColor' />} href={`/video/${videoID}`} >Watch Video</Button>
-                <Button as="a" variant="newFormButton" color="yellow" leftIcon={<FontAwesomeIcon icon={["fal", "pen-to-square"]} height="100%" width="100%" color='currentColor' />} href={`/portal/videography/${videoID}`} >Edit Video</Button>
-                <Button type="button" variant="newFormButton" leftIcon={<FontAwesomeIcon icon={["fal", "square-dashed-circle-plus"]} height="100%" width="100%" color='currentColor' />} onClick={refreshUploader}>Start A New Upload</Button>
+                <Button as="a" variant="newFormButton" color="tertiary" leftIcon={<FontAwesomeIcon icon={["fas", "play"]} height="100%" width="100%" color='currentColor' />} href={`/video/${videoID}`} >Watch Video</Button>
+                <Button as="a" variant="newFormButton" color="yellow" leftIcon={<FontAwesomeIcon icon={["fas", "pen-to-square"]} height="100%" width="100%" color='currentColor' />} href={`/portal/videography/${videoID}`} >Edit Video</Button>
+                <Button type="button" variant="newFormButton" leftIcon={<FontAwesomeIcon icon={["fas", "square-dashed-circle-plus"]} height="100%" width="100%" color='currentColor' />} onClick={refreshUploader}>Start A New Upload</Button>
             </Stack>
         </Box>
     </>)

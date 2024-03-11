@@ -49,7 +49,7 @@ export default function EditPhotography({ fileID, fileTitle }: any) {
     })
     return (
         <>
-            <Button variant="portalButton" color="white" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fal", "pen-to-square"]} width="100%" color='currentColor' />}></Button> 
+            <Button variant="portalButton" color="white" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fas", "pen-to-square"]} width="100%" color='currentColor' />}></Button> 
             {/* <Button variant="primary" onClick={onOpen} background="primary"color="white" my="1rem !important" w="100%" py="2rem">Add New {company} History</Button>  */}
             <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">
                 <ModalContent background="blurredPurple">

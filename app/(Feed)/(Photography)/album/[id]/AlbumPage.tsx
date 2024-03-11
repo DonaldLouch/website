@@ -28,6 +28,7 @@ import DisplayDate from '@/lib/DisplayDate'
 import ViewPhotoAlbum from './ViewPhotoAlbum'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MdxContent } from '@/app/mdx-content'
+import { BsCalendar2, BsInfo, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 async function fetchPhotos(offset: number, limit: number, albumID: string) {
     const from = offset * limit
@@ -132,16 +133,17 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations}: an
                 onClick={onOpen}
             >
                 <Tooltip label="Open Details">
-                    <Icon w="2rem" h="auto">
-                        <FontAwesomeIcon icon={["fal", "circle-info"]} width="100%" color="currentColor" />
-                    </Icon>
+                    <BsInfo size="2rem" />
+                    {/* <Icon w="2rem" h="auto">
+                        <FontAwesomeIcon icon={["fas", "circle-info"]} width="100%" color="currentColor" />
+                    </Icon> */}
                 {/* <IconButton
                     aria-label="Go Details"
                     variant="unstyled"
                     _hover={{ color: "secondary" }}
                     color="white"
                     fontSize="3xl"
-                    icon={<FontAwesomeIcon icon={["fal", "circle-info"]} />}
+                    icon={<FontAwesomeIcon icon={["fas", "circle-info"]} />}
                     onClick={onOpen}
                 /> */}
                 </Tooltip>
@@ -156,12 +158,14 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations}: an
                         <Heading as="h2" size="3xl" textDecoration="underline" textDecorationColor="primary" textAlign="left" color="white" mb="1rem" mt="-0.5rem">{albumData.albumName}</Heading>
                     <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" my="1rem">
                         <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                            <FontAwesomeIcon icon={["fal", "calendar-image"]} color="currentColor" height="40%" />
+                            <BsCalendar2 />
+                            {/* <FontAwesomeIcon icon={["fas", "calendar-image"]} color="currentColor" height="40%" /> */}
                             <TagLabel pl="0.5rem"><DisplayDate source={albumData.uploadedOn} /></TagLabel>
                         </Tag>
                         {locations.map((location: any) => (
                             <Link href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='messenger' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                <FontAwesomeIcon icon={["fal", "location-pin"]} color="currentColor" height="40%" />
+                                <BsPinMap />
+                                {/* <FontAwesomeIcon icon={["fas", "location-pin"]} color="currentColor" height="40%" /> */}
                                 <TagLabel pl="0.5rem">{location}</TagLabel>
                             </Tag></Link>
                         ))}
@@ -173,13 +177,15 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations}: an
                     </Box>
 
                     <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" my="2rem">
-                        <Box mr="0.3rem" color="secondary">
-                            <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
-                        </Box>
+                        <BsTags />
+                        {/* <Box mr="0.3rem" color="secondary">
+                            <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
+                        </Box> */}
                         {tags.map((tag: any) => (
                             <Link href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                                 <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={tag} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                    <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                                    <BsTag />
+                                    {/* <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" /> */}
                                     <TagLabel pl="0.5rem">{tag}</TagLabel>
                                 </Tag>
                             </Link>

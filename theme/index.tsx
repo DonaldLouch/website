@@ -45,7 +45,10 @@ export const theme = extendTheme({
       },
       svg: {
         height: "initial",
-        // height: "100% !important",
+        // height: "auto",
+        // display: "inline",
+        // width: "100%",
+        // height: "100%",
       },
       p: {
         lineHeight: "1.25",

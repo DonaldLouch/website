@@ -12,7 +12,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Portal",
     slug: "../portal",
-    iconPre: "fal",
+    iconPre: "fas",
     iconName: "tachometer-alt",
     isParent: false,
     parentID: null,
@@ -22,7 +22,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   // {
   //   name: "Test Page",
   //   slug: "../portal/test",
-  //   iconPre: "fal",
+  //   iconPre: "fas",
   //   iconName: "layer-group",
   //   isParent: false,
   //   parentID: null,
@@ -32,7 +32,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Photo Manger",
     slug: null,
-    iconPre: "fal",
+    iconPre: "fas",
     iconName: "images",
     isParent: true,
     parentID: 2,
@@ -42,7 +42,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Video Manger",
     slug: null,
-    iconPre: "fal",
+    iconPre: "fas",
     iconName: "films",
     isParent: true,
     parentID: 3,
@@ -52,7 +52,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Blog Posts",
     slug: null,
-    iconPre: "fal",
+    iconPre: "fas",
     iconName: "blog",
     isParent: true,
     parentID: 0,
@@ -62,7 +62,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Pages",
     slug: null,
-    iconPre: "fal",
+    iconPre: "fas",
     iconName: "copy",
     isParent: true,
     parentID: 1,
@@ -72,7 +72,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Messages",
     slug: "../portal/messages",
-    iconPre: "fal",
+    iconPre: "fas",
     iconName: "inbox",
     isParent: false,
     parentID: null,
@@ -82,7 +82,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   // {
   //   name: "Sitemap",
   //   slug: "../sitemap",
-  //   iconPre: "fal",
+  //   iconPre: "fas",
   //   iconName: "map",
   //   isParent: false,
   //   parentID: null,

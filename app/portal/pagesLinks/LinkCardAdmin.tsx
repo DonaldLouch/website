@@ -162,7 +162,7 @@ export const LinkCardAdmin = (link: {
           variant="unstyled"
           onClick={deleteLink}
           color="red"
-          icon={<FontAwesomeIcon icon={["fal", "trash"]} />}
+          icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
         />
     </Flex>
     <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">

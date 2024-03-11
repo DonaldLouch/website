@@ -1,8 +1,9 @@
 'use client'
 
-import { Button, Card, CardBody, CardHeader, Heading, Stack, Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 import { useSession, useUser } from "@clerk/nextjs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HouseIcon from "../(Components)/(Vectors)/house";
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -27,6 +28,8 @@ export default function PortalHome() {
         <CardBody>
           <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Welcome to the Donald Louch Website</Text>
           <Text textAlign="center">{process.env.NEXT_PUBLIC_DESCRIPTION}</Text>
+          <Text>Vector Test</Text>
+          <Icon as={HouseIcon} color="red" boxSize="10%" />
           {/* <Text textAlign="center">Hi, my name is Donald Louch and I am a twenty-nine-year-old Canadian web developer and digital content creator.</Text> */}
         </CardBody>
       </Card>

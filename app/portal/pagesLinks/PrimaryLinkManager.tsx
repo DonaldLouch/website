@@ -107,7 +107,7 @@ export const PrimaryLinkManager = (props: any) => {
                         mt="3.5rem"
                         variant="unstyled"
                         color="white"
-                        icon={<FontAwesomeIcon icon={["fal", "save"]} />}
+                        icon={<FontAwesomeIcon icon={["fas", "save"]} />}
                     /></SubmitButton> 
                     <IconButton
                       aria-label={`${link.title} Link`}
@@ -118,7 +118,7 @@ export const PrimaryLinkManager = (props: any) => {
                       variant="unstyled"
                       onClick={deleteLink}
                       color="red"
-                      icon={<FontAwesomeIcon icon={["fal", "trash"]} />}
+                      icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
                     />
                     </Stack>
               </Stack>

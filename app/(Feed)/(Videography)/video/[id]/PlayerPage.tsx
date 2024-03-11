@@ -9,6 +9,7 @@ import PostContent from "@/app/post/(Components)/PostContent"
 import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
 import { useUser } from "@clerk/nextjs"
+import { BsChevronDown, BsPlay, BsPause, BsSkipForward, BsSkipBackward, BsVolumeOff, BsVolumeMute, BsArrowsAngleExpand, BsArrowsAngleContract, BsShare, BsFullscreen, BsFullscreenExit, BsAspectRatio, BsBoxArrowUp, BsHourglass, BsCameraReels, BsFilm, BsCollectionPlay, BsTags, BsTag, BsPersonBoundingBox, BsArrowUpRightSquare, BsBoxArrowUpRight } from "react-icons/bs"
 
 export default function PlayerPage({ videoData, mdxSource }: any) {
    const video = videoData
@@ -232,17 +233,17 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
 
     const leftButtons = [
         {
-            buttonIcon: "rotate-left",
+            buttonIcon: BsSkipBackward,
             buttonID: "skipBackButton",
             buttonFunction: skipBack
         },
         {
-            buttonIcon: playing == true ? ('play') : ('pause'),
+            buttonIcon: playing == true ? BsPlay : BsPause,
             buttonID: "playButton",
             buttonFunction: playClick
         },
         {
-            buttonIcon: "rotate-right",
+            buttonIcon: BsSkipForward,
             buttonID: "skipAheadButton",
             buttonFunction: skipAhead
         },
@@ -250,24 +251,24 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
     
     const rightButtons = [
         {
-            buttonIcon: muted == false ? ('volume-high') : ('volume-xmark'),
+            buttonIcon: muted == false ? BsVolumeOff : BsVolumeMute,
             buttonID: "muteButton",
             buttonFunction: videoMute
         },
          {
-            buttonIcon: isTheaterMode == false ? "expand" : "compress",
+            buttonIcon: BsAspectRatio,
             buttonID: "theaterModeButton",
             buttonFunction: isTheaterMode == false ? theaterMode : exitTheaterMode,
             hidden: video.videoType != "Vertical" ? false : true,
         },
         {
-            buttonIcon: isFullscreenMode == false ? "arrow-up-right-and-arrow-down-left-from-center" : "arrow-down-left-and-arrow-up-right-to-center",
+            buttonIcon: isFullscreenMode == false ? BsFullscreen : BsFullscreenExit,
             buttonID: "fullscreenButton",
             buttonFunction: isFullscreenMode == false ? fullscreenMode : exitFullscreenMode,
             hidden: video.videoType != "Vertical" ? false : true,
         },
         {
-            buttonIcon: "share-from-square",
+            buttonIcon: BsBoxArrowUp,
             buttonID: "shareButton",
             buttonFunction: shareVideo
         },
@@ -275,7 +276,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
 
     return (<>
         <Box background="blurredPurple" w="100vw" h="100vh" position={isFullscreenMode ? "fixed" : "absolute"} top="0" left="0" zIndex="banner" boxShadow="bsSecondary" color="white" overflowY={isFullscreenMode ? "hidden" : "auto"}>
-            <Box hidden={hide || isFullscreenMode || isTheaterMode}><HomeButton icon="arrow-left" link="/feed/videography" helperText="Go Back to Video Feed" /></Box>
+            <Box hidden={hide || isFullscreenMode || isTheaterMode}><HomeButton icon="BsArrowLeft" link="/feed/videography" helperText="Go Back to Video Feed" /></Box>
             <Grid
                 gridTemplateColumns={{
                     base: "100%", 
@@ -338,9 +339,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         >
                             <Stack direction="row" gap={{base: "0.5rem", xl: "1rem"}}>
                                 {leftButtons.map((button: any) => (<>
-                                <Icon fontSize={{base: "1.2rem", xl: "1.8rem"}} p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID}>
-                                    <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" />
-                                </Icon>
+                                <Icon fontSize={{base: "1.2rem", xl: "1.8rem"}} p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} as={button.buttonIcon} />
                                     {/* <Button key={button.index} variant="unstyled" _hover={{color: "secondary"}} onClick={button.buttonFunction} size="xs" width="15%" h="auto" p="0.1rem">
                                         <Icon w="100%" h="100%">
                                             <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" id="skipBackButton" />
@@ -354,15 +353,16 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                     <SliderFilledTrack bg='primary' />
                                 </SliderTrack>
                                 <SliderThumb boxSize={6} color="white">
-                                    <IconButton color='primary' variant="unstyled" icon={<FontAwesomeIcon icon={["fal", "timer"]} height="100%" width="100%" color='currentColor' />} aria-label={"Time Icon"} />
+                                    {/* <IconButton color='primary' variant="unstyled" icon={<BsHourglass />} aria-label={"Time Icon"} /> */}
+                                    <Box color="primary"><BsHourglass /></Box>
                                 </SliderThumb>
                             </Slider>
 
                             <Stack direction="row" gap={{base: "0.5rem", xl: "1rem"}} justifyContent="flex-end">
                                 {rightButtons.map((button: any) => (<>
-                                <Icon fontSize={{base: "1.2rem", xl: "1.8rem"}} p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} >
-                                    <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" />
-                                </Icon>
+                                <Icon fontSize={{base: "1.2rem", xl: "1.8rem"}} p="0.2rem" _hover={{color: "secondary"}} onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID}  as={button.buttonIcon} />
+                                    {/* <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" />
+                                </Icon> */}
                                     {/* <Button key={button.index} variant="unstyled" _hover={{color: "secondary"}} onClick={button.buttonFunction} size="xs" width="15%" h="auto" p="0.1rem">
                                         <Icon w="100%" h="100%">
                                             <FontAwesomeIcon icon={['fal', button.buttonIcon]} width="100%" color="currentColor" id="skipBackButton" />
@@ -471,9 +471,10 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                         <AccordionItem border="none" w="100%">
                                             <AccordionButton bg="primary" color="white" borderRadius="0 1.5rem" p="1.5rem 3rem" fontSize="1.2rem" fontWeight="600" fontFamily="body" _hover={{bg: "none", color: "primary"}} outline="none" _expanded={{bg: "primary", color: "white"}}>
                                                 <Box flex='1' textAlign='left'>Video Information</Box>
-                                                <Box color="white" width="2%">
+                                                <BsChevronDown />
+                                                {/* <Box color="white" width="2%">
                                                     <FontAwesomeIcon icon={['fas', 'chevron-down']} width="100%" color="currentColor"/>
-                                                </Box>
+                                                </Box> */}
                                             </AccordionButton>
                                             <AccordionPanel >
                                                 <Stack color="white" p="0rem">
@@ -482,7 +483,8 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                                 <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Uploaded On</Heading>
                                                     <Box as="section" id="category" pl="1rem">
                                                         <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                                                            <FontAwesomeIcon icon={["fal", "camera-movie"]} color="currentColor" height="40%" />
+                                                            {/* <FontAwesomeIcon icon={["fas", "camera-movie"]} color="currentColor" height="40%" /> */}
+                                                            <BsCameraReels />
                                                             <TagLabel pl="0.5rem"><DisplayDate source={video.uploadedOn} format="dddd, MMMM Do YYYY [at] h:mm a" /></TagLabel>
                                                         </Tag>
                                                     </Box>
@@ -491,28 +493,32 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                                     <Box as="section" id="category" pl="1rem">
                                                         {/* <Link href={`/C/${video.category.catName}`} variant="unstyled"> */}
                                                             <Tag size='lg' colorScheme='purple' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                                                            <FontAwesomeIcon icon={["fal", "album-collection"]} color="currentColor" height="40%" />
+                                                            {/* <FontAwesomeIcon icon={["fas", "album-collection"]} color="currentColor" height="40%" /> */}
+                                                            <BsCollectionPlay />
                                                             <TagLabel pl="0.5rem">{video.category.catName}</TagLabel>
                                                         </Tag>
                                                         {/* </Link> */}
                                                     </Box>
                                                 <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Tags</Heading>
                                                     <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" m="1rem 1rem 0">
-                                                        <Box mr="0.3rem" color="secondary">
-                                                            <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
-                                                        </Box>
+                                                        <BsTags />
+                                                        {/* <Box mr="0.3rem" color="secondary">
+                                                            <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
+                                                        </Box> */}
                                                         {video.tags && video.tags.map((tag: any, index: number) => (
                                                             <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={index} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                                                <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                                                                {/* <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" /> */}
+                                                                <BsTag />
                                                                 <TagLabel pl="0.5rem">{tag}</TagLabel>
                                                             </Tag>
                                                         ))}
                                                     </Stack>
                                                 {video.starring && video.starring.length > 0 && (<><Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Starring</Heading>
                                                     <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" m="1rem 1rem 0">
-                                                        <Box mr="0.3rem" color="secondary">
-                                                            <FontAwesomeIcon icon={["fal", "face-grin-stars"]} color="currentColor" height="40%" />
-                                                        </Box>
+                                                        {/* <Box mr="0.3rem" color="secondary">
+                                                            <FontAwesomeIcon icon={["fas", "face-grin-stars"]} color="currentColor" height="40%" />
+                                                        </Box> */}
+                                                        <BsPersonBoundingBox />
                                                         {video.starring && video.starring.map((star: any, index: number) => (
                                                             star.link ? <Link href={star.link} isExternal>
                                                                 <Tag size='lg' colorScheme='purple' borderRadius='0 1rem' p="1rem" key={index} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
@@ -560,7 +566,8 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                                                             {mCredit.artist && (<Text fontWeight={300} pb="1rem">By: {mCredit.artist}</Text>)}
                                                                             {mCredit.link && (<Divider borderColor="primary" />)}
                                                                             {mCredit.link && <Link key={index} href={mCredit.link} isExternal variant="unstyled" p="0" m="0.5rem auto"><Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={index} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" _hover={{background:"none"}}>
-                                                                                <FontAwesomeIcon icon={["fal", "arrow-up-right-from-square"]} color="currentColor" height="40%" />
+                                                                                <BsBoxArrowUpRight />
+                                                                                {/* <FontAwesomeIcon icon={["fas", "arrow-up-right-from-square"]} color="currentColor" height="40%" /> */}
                                                                                 <TagLabel pl="0.5rem">View Song</TagLabel>
                                                                             </Tag></Link>
                                                                             }

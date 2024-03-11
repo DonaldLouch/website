@@ -63,7 +63,7 @@ export default function Portfolio() {
         tagLine="and I am a Web Developer"
         links={pageLinks}
         cta={["Resume", "portfolio/resume"]}
-        imageLink="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOANPCWJe9jTCQ2fh"
+        imageLink="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOANPCWJe9jTCQ2fh.jpg"
       />
   );
 }

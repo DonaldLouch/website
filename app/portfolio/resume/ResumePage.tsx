@@ -23,6 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import DisplayDate from "@/lib/DisplayDate";
+import { BsChevronDown } from "react-icons/bs";
 
 export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {
     return (
@@ -189,14 +190,15 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                           </>
                         )}
                       </Box>
-                      <Icon w="1.5rem" h="1.5rem">
+                      <BsChevronDown />
+                      {/* <Icon w="1.5rem" h="1.5rem">
                           <FontAwesomeIcon 
-                              icon={["fal", "chevron-down"]}
+                              icon={["fas", "chevron-down"]}
                               // height="100%"
                               // fontSize="md"
                               color="currentColor"
                           />
-                      </Icon>
+                      </Icon> */}
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Heading as="h3" my="1rem">
@@ -302,12 +304,13 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                           </>
                         )}
                       </Box>
-                      <Icon w="1.5rem" h="1.5rem">
+                      <BsChevronDown />
+                      {/* <Icon w="1.5rem" h="1.5rem">
                         <FontAwesomeIcon 
-                            icon={["fal", "chevron-down"]}
+                            icon={["fas", "chevron-down"]}
                             color="currentColor"
                         />
-                    </Icon>
+                    </Icon> */}
                     </AccordionButton>
                     <AccordionPanel px="0.5rem" mx="1.5rem">
                       <Text>{education.description}</Text>

@@ -16,6 +16,7 @@ import { Suspense, useState } from 'react'
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser } from '@clerk/nextjs'
 import CopyButton from '@/app/(Components)/(Buttons)/CopyButton'
+import { BsCalendar2, BsEye, BsImages, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 export default function ViewPhotoFeed({ imageData, isLoading }: any) {
     const {user} = useUser()
@@ -37,7 +38,7 @@ export default function ViewPhotoFeed({ imageData, isLoading }: any) {
                     <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} width="3840" height="2160" />
                 </Box>
             </Skeleton>
-            {/* <Button variant="portalButton" color="white" p="2rem" mb="1rem" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fal", "eye"]} width="100%" color="currentColor" />}>Preview Photo</Button>  */}
+            {/* <Button variant="portalButton" color="white" p="2rem" mb="1rem" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fas", "eye"]} width="100%" color="currentColor" />}>Preview Photo</Button>  */}
             {/* <Button variant="primary" onClick={onOpen} background="primary"color="white" my="1rem !important" w="100%" py="2rem">Add New {company} History</Button>  */}
             <Modal isOpen={isOpen} onClose={onClose} id={`viewPhoto${imageData.id}`} size="7xl" isCentered>
                 <ModalOverlay
@@ -73,9 +74,10 @@ export default function ViewPhotoFeed({ imageData, isLoading }: any) {
                                             color: "primary"
                                         }}
                                     >
-                                        <Icon>
-                                            <FontAwesomeIcon icon={["fal", "eye"]} width="100%" color='currentColor' />
-                                        </Icon>
+                                        {/* <Icon>
+                                            <FontAwesomeIcon icon={["fas", "eye"]} width="100%" color='currentColor' />
+                                        </Icon> */}
+                                        <BsEye />
                                         <LinkOverlay href={`/photo/${imageData.id}`}>
                                             <Text fontSize="1.1rem" color="white">Open Photo Link</Text>
                                         </LinkOverlay>
@@ -88,26 +90,31 @@ export default function ViewPhotoFeed({ imageData, isLoading }: any) {
                                 <Text boxShadow="bsBoldPrimary" p="2rem" borderRadius="0 2rem" whiteSpace="break-spaces">{imageData.caption}</Text>
                                 <Stack direction="row" my="2rem" gap="0.8rem">
                                      {imageData.album && <Link href={`/album/${albumData.slug}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='purple' _hover={{background: "white"}} borderRadius='0 1rem' p="1rem" whiteSpace="normal" wordBreak="break-all" width="fit-content">
-                                        <FontAwesomeIcon icon={["fal", "images"]} color="currentColor" height="40%" />
+                                        {/* <FontAwesomeIcon icon={["fas", "images"]} color="currentColor" height="40%" /> */}
+                                        <BsImages />
                                         <TagLabel pl="0.5rem">{albumData.albumName}</TagLabel>
                                     </Tag></Link>}
                                     {imageData.location && <Link href={`/feed/photography?search=location&value=${imageData.location}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='messenger' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                        <FontAwesomeIcon icon={["fal", "location-pin"]} color="currentColor" height="40%" />
+                                        {/* <FontAwesomeIcon icon={["fas", "location-pin"]} color="currentColor" height="40%" /> */}
+                                        <BsPinMap />
                                         <TagLabel pl="0.5rem">{imageData.location}</TagLabel>
                                     </Tag></Link>}
                                 </Stack>
                                 <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" m="-1rem 0 1rem">
-                                    <FontAwesomeIcon icon={["fal", "camera-viewfinder"]} color="currentColor" height="40%" />
+                                    {/* <FontAwesomeIcon icon={["fas", "camera-viewfinder"]} color="currentColor" height="40%" /> */}
+                                    <BsCalendar2 />
                                     <TagLabel pl="0.5rem"><DisplayDate source={imageData.fileID.takenOn} /></TagLabel>
                                 </Tag>
                                 <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem">
-                                    <Box mr="0.3rem" color="secondary">
-                                       <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
-                                    </Box>
+                                    <BsTags />
+                                    {/* <Box mr="0.3rem" color="secondary">
+                                       <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
+                                    </Box> */}
                                     {imageData.tags.map((tag: any) => (
                                         <Link href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                                             <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={tag} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                                <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                                                {/* <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" /> */}
+                                                <BsTag />
                                                 <TagLabel pl="0.5rem">{tag}</TagLabel>
                                             </Tag>
                                         </Link>

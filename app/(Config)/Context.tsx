@@ -9,12 +9,8 @@ import AppLayout from "./(Layout)/AppLayout"
 
 export default function Context({ children }: { children: React.ReactNode }) {
     return (
-        // <ClerkProvider>
-            <ChakraProvider theme={theme} resetCSS={true}>
-                {/* <MantineProvider> */}
-                    <AppLayout>{children}</AppLayout>
-                {/* </MantineProvider> */}
-            </ChakraProvider>
-        // </ClerkProvider>
+        <ChakraProvider theme={theme} resetCSS={true}>
+            <AppLayout>{children}</AppLayout>
+        </ChakraProvider>
     )
 }

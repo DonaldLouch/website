@@ -18,6 +18,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Image from 'next/image'
+import { BsCalendar2, BsImages, BsPinMap, BsTag, BsTags } from "react-icons/bs";
 
 // import { VideoPostType } from "../(Components)/(PostType)/VideoPostType";
 // import { AudioPostType } from "../(Components)/(PostType)/AudioPostType";
@@ -58,25 +59,30 @@ export default function PhotoPage({photoData, mdxSource}: any) {
         <Box boxShadow="bsBoldPrimary" p="2rem" m="0.5rem 0.5rem 0" borderRadius="0 2rem" whiteSpace="break-spaces"><MdxContent source={mdxSource} /></Box>
         <Stack direction="row" my="2rem" gap="0.8rem">
               {photoData.album && <Link href="#" variant="unstyled"><Tag size='lg' colorScheme='purple' _hover={{background: "white"}} borderRadius='0 1rem' p="1rem" whiteSpace="normal" wordBreak="break-all" width="fit-content">
-                <FontAwesomeIcon icon={["fal", "images"]} color="currentColor" height="40%" />
+                <BsImages />
+                {/* <FontAwesomeIcon icon={["fas", "images"]} color="currentColor" height="40%" /> */}
                 <TagLabel pl="0.5rem">{albumData.albumName}</TagLabel>
             </Tag></Link>}
             {photoData.location && <Tag size='lg' colorScheme='messenger' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                <FontAwesomeIcon icon={["fal", "location-pin"]} color="currentColor" height="40%" />
+              <BsPinMap />
+                {/* <FontAwesomeIcon icon={["fas", "location-pin"]} color="currentColor" height="40%" /> */}
                 <TagLabel pl="0.5rem">{photoData.location}</TagLabel>
             </Tag>}
         </Stack>
         <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" m="-1rem 0 1rem">
-            <FontAwesomeIcon icon={["fal", "camera-viewfinder"]} color="currentColor" height="40%" />
+            {/* <FontAwesomeIcon icon={["fas", "camera-viewfinder"]} color="currentColor" height="40%" /> */}
+            <BsCalendar2 />
             <TagLabel pl="0.5rem"><DisplayDate source={photoData.fileID.takenOn} /></TagLabel>
         </Tag>
         <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem">
-            <Box mr="0.3rem" color="secondary">
-                <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
-            </Box>
+            {/* <Box mr="0.3rem" color="secondary">
+                <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
+            </Box> */}
+             <BsTags />
             {photoData.tags.map((tag: any) => (
                 <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={tag} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                    <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                    {/* <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" /> */}
+                     <BsTag />
                     <TagLabel pl="0.5rem">{tag}</TagLabel>
                 </Tag>
             ))}

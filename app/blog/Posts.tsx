@@ -17,7 +17,7 @@ export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any
             <Box as="main" color="white" mt="96vh"></Box>
             <Alert status='warning' color="black" m="-1rem 0 2rem">
                 <Icon>
-                    <FontAwesomeIcon icon={["fal", "bell"]} color="currentColor"/>
+                    <FontAwesomeIcon icon={["fas", "bell"]} color="currentColor"/>
                 </Icon>
                     <AlertDescription mx="1rem" fontSize="lg">
                         Please note that the <Code>Blog Feed</Code> is entering legacy stages and is now integrating into a <Link href="/feed" as={NextLink} color="secondary"><Code>Feeds Directory</Code></Link> with separate feeds for <Link href="/feed/photography" as={NextLink} color="secondary"><Code>Photography</Code></Link>,<Link href="/feed/videography" as={NextLink} color="secondary"><Code> Videography</Code></Link>, and the <Link href="/C/General" as={NextLink} color="secondary"><Code>Written Posts</Code></Link> will remain in the same Feed format.

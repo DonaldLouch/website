@@ -14,6 +14,7 @@ import {
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BsChevronDown } from "react-icons/bs";
 
 interface HeaderNavigationItemProps extends FlexProps {
   slug: any;
@@ -54,9 +55,10 @@ export const HeaderNavigationItem = ({ slug, isParent, parentID, children }: Hea
           <Menu>
             <Tooltip label="More Pages">
               <MenuButton as="button" color="white" _hover={{ color: "secondary" }} _active={{ color: "secondary" }}>
-                <Icon w="1.2rem" h="1.2rem">
-                  <FontAwesomeIcon icon={['fal', 'chevron-down']} color="currentColor" /> 
-                </Icon>
+                <BsChevronDown />
+                {/* <Icon w="1.2rem" h="1.2rem" as={BsChevronDown} /> */}
+                  {/* <FontAwesomeIcon icon={['fal', 'chevron-down']} color="currentColor" />  */}
+                {/* </Icon> */}
               </MenuButton>
             </Tooltip>
             <MenuList bg="black" border="none">

@@ -203,7 +203,7 @@ export default function EditPlaylist({playlistData, playlistVideos}: any) {
                 {({ handleSubmit }: any) => (
                     <Stack as="form" onSubmit={handleSubmit as any} rowGap="2.5rem" my="2rem">
                         <FormInputReadOnly inputID="id" inputLabel="" inputType="hidden" />
-                        <Button as="a" variant="newFormButton" color="white" leftIcon={<FontAwesomeIcon icon={["fal", "play"]} height="100%" width="100%" color='currentColor' />} href={`/playlist/${playlistData.slug}`} >View Playlist</Button>
+                        <Button as="a" variant="newFormButton" color="white" leftIcon={<FontAwesomeIcon icon={["fas", "play"]} height="100%" width="100%" color='currentColor' />} href={`/playlist/${playlistData.slug}`} >View Playlist</Button>
                         {/* <FormInput inputID="title" inputLabel="Video Title" inputType="text" inputDescription="Providing is a mandatory field so that it will help people see what they'll be watching before clicking play on the video." /> */}
                         {/* <FormTextArea inputID="description" inputLabel="description" textRows={10} helperText={`You may use markdown language on this field. For examples of Markdown please open this page from ${<Link href="https://www.markdownguide.org/basic-syntax/" variant="primary" isExternal>Markdown Guide</Link>}`} /> */}
                        

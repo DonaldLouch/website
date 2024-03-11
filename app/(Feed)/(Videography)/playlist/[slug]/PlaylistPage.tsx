@@ -10,6 +10,7 @@ import DisplayDate from "@/lib/DisplayDate"
 
 // import Image from "next/image"
 import FullDescription from "./FullDescription"
+import { BsChevronDown } from "react-icons/bs"
 
 
 // export default function PlaylistPage({ videoData, mdxSource }: any) {
@@ -343,7 +344,7 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                     <SliderFilledTrack bg='primary' />
                                 </SliderTrack>
                                 <SliderThumb boxSize={6} color="white">
-                                    <IconButton color='primary' variant="unstyled" icon={<FontAwesomeIcon icon={["fal", "timer"]} height="100%" width="100%" color='currentColor' />} aria-label={"Time Icon"} />
+                                    <IconButton color='primary' variant="unstyled" icon={<FontAwesomeIcon icon={["fas", "timer"]} height="100%" width="100%" color='currentColor' />} aria-label={"Time Icon"} />
                                 </SliderThumb>
                             </Slider>
 
@@ -490,9 +491,10 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                     <AccordionItem border="none" w="100%">
                                                         <AccordionButton bg="primary" color="white" borderRadius="0 1.5rem" p="1.5rem 3rem" fontSize="1.2rem" fontWeight="600" fontFamily="body" _hover={{bg: "none", color: "primary"}} outline="none" _expanded={{bg: "primary", color: "white"}}>
                                                             <Box flex='1' textAlign='left'>Video Information</Box>
-                                                            <Box color="white" width="2%">
+                                                            <BsChevronDown size="2%" />
+                                                            {/* <Box color="white" width="2%">
                                                                 <FontAwesomeIcon icon={['fas', 'chevron-down']} width="100%" color="currentColor"/>
-                                                            </Box>
+                                                            </Box> */}
                                                         </AccordionButton>
                                                         <AccordionPanel >
                                                             <Stack color="white" p="0rem">
@@ -501,7 +503,7 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                             <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Uploaded On</Heading>
                                                                 <Box as="section" id="category" pl="1rem">
                                                                     <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                                                                        <FontAwesomeIcon icon={["fal", "camera-movie"]} color="currentColor" height="40%" />
+                                                                        <FontAwesomeIcon icon={["fas", "camera-movie"]} color="currentColor" height="40%" />
                                                                         <TagLabel pl="0.5rem"><DisplayDate source={video.uploadedOn} format="dddd, MMMM Do YYYY [at] h:mm a" /></TagLabel>
                                                                     </Tag>
                                                                 </Box>
@@ -509,18 +511,18 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                             <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Category</Heading>
                                                                 <Box as="section" id="category" pl="1rem">
                                                                     <Link href={`/C/${video.category.catName}`} variant="unstyled"><Tag size='lg' colorScheme='purple' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                                                                        <FontAwesomeIcon icon={["fal", "album-collection"]} color="currentColor" height="40%" />
+                                                                        <FontAwesomeIcon icon={["fas", "album-collection"]} color="currentColor" height="40%" />
                                                                         <TagLabel pl="0.5rem">{video.category.catName}</TagLabel>
                                                                     </Tag></Link>
                                                                 </Box>
                                                             <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Tags</Heading>
                                                                 <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" m="1rem 1rem 0">
                                                                     <Box mr="0.3rem" color="secondary">
-                                                                        <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
+                                                                        <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
                                                                     </Box>
                                                                     {video.tags && video.tags.map((tag: any, index: number) => (
                                                                         <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={index} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                                                            <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                                                                            <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" />
                                                                             <TagLabel pl="0.5rem">{tag}</TagLabel>
                                                                         </Tag>
                                                                     ))}
@@ -528,7 +530,7 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                             {video.starring && video.starring.length > 0 && (<><Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Starring</Heading>
                                                                 <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" m="1rem 1rem 0">
                                                                     <Box mr="0.3rem" color="secondary">
-                                                                        <FontAwesomeIcon icon={["fal", "face-grin-stars"]} color="currentColor" height="40%" />
+                                                                        <FontAwesomeIcon icon={["fas", "face-grin-stars"]} color="currentColor" height="40%" />
                                                                     </Box>
                                                                     {video.starring && video.starring.map((star: any, index: number) => (
                                                                         star.link ? <Link href={star.link} isExternal>
@@ -621,7 +623,7 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                 <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Uploaded On</Heading>
                                                     <Box as="section" id="category" pl="1rem">
                                                         <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                                                            <FontAwesomeIcon icon={["fal", "camera-movie"]} color="currentColor" height="40%" />
+                                                            <FontAwesomeIcon icon={["fas", "camera-movie"]} color="currentColor" height="40%" />
                                                             <TagLabel pl="0.5rem"><DisplayDate source={video.uploadedOn} format="dddd, MMMM Do YYYY [at] h:mm a" /></TagLabel>
                                                         </Tag>
                                                     </Box>
@@ -629,18 +631,18 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                 <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Category</Heading>
                                                     <Box as="section" id="category" pl="1rem">
                                                         <Link href={`/C/${video.category.catName}`} variant="unstyled"><Tag size='lg' colorScheme='purple' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="1rem">
-                                                            <FontAwesomeIcon icon={["fal", "album-collection"]} color="currentColor" height="40%" />
+                                                            <FontAwesomeIcon icon={["fas", "album-collection"]} color="currentColor" height="40%" />
                                                             <TagLabel pl="0.5rem">{video.category.catName}</TagLabel>
                                                         </Tag></Link>
                                                     </Box>
                                                 <Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Tags</Heading>
                                                     <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" m="1rem 1rem 0">
                                                         <Box mr="0.3rem" color="secondary">
-                                                            <FontAwesomeIcon icon={["fal", "tags"]} color="currentColor" height="40%" />
+                                                            <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
                                                         </Box>
                                                         {video.tags && video.tags.map((tag: any, index: number) => (
                                                             <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={index} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
-                                                                <FontAwesomeIcon icon={["fal", "tag"]} color="currentColor" height="40%" />
+                                                                <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" />
                                                                 <TagLabel pl="0.5rem">{tag}</TagLabel>
                                                             </Tag>
                                                         ))}
@@ -648,7 +650,7 @@ export default function PlaylistPage({playlistData, currentVideoData, playlistDe
                                                 {video.starring && video.starring.length > 0 && (<><Heading as="h3" fontSize="1.8rem" fontWeight="700" color="white" textDecoration="underline" fontFamily="body">Starring</Heading>
                                                     <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem" m="1rem 1rem 0">
                                                         <Box mr="0.3rem" color="secondary">
-                                                            <FontAwesomeIcon icon={["fal", "face-grin-stars"]} color="currentColor" height="40%" />
+                                                            <FontAwesomeIcon icon={["fas", "face-grin-stars"]} color="currentColor" height="40%" />
                                                         </Box>
                                                         {video.starring && video.starring.map((star: any, index: number) => (
                                                             star.link ? <Link href={star.link} isExternal>

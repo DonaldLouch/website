@@ -28,6 +28,7 @@ import {
 } from "@chakra-ui/react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { BsChevronDown } from "react-icons/bs"
 
 const heading1 = (props: any) => (
     <Heading as="h1" size="4xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
@@ -77,12 +78,13 @@ const toggle = (props: any) => (
                     {props.toggleAlt}
                     </Box>
                     <Box w={{base: "4%", lg: "2%"}}>
-                        <FontAwesomeIcon 
-                            icon={["fal", "chevron-down"]}
+                        <BsChevronDown />
+                        {/* <FontAwesomeIcon 
+                            icon={["fas", "chevron-down"]}
                             height="100%"
                             fontSize="md"
                             color="currentColor"
-                        />
+                        /> */}
                     </Box>
                 </AccordionButton>
                 <AccordionPanel px="0.5rem" mx="1.5rem">

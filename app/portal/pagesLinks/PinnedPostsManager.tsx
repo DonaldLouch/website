@@ -71,7 +71,7 @@ export const PinnedPostsManager = (props: any) => {
               mt="3.5rem"
               variant="unstyled"
               color="white"
-              icon={<FontAwesomeIcon icon={["fal", "save"]} />}
+              icon={<FontAwesomeIcon icon={["fas", "save"]} />}
             /></SubmitButton> */}
           </Stack>
         )}

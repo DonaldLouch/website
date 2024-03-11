@@ -16,6 +16,7 @@ media.md
 /node_modules
 /.pnp
 .pnp.js
+/.yarn
 
 package-lock.json
 npmUpdate.md

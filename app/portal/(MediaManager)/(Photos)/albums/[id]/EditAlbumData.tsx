@@ -118,7 +118,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
                     />
                     {values.hideForm === true && (<>
                         <Grid gridTemplateColumns="20% 80%" gap="2rem" alignItems="baseline" width="calc(100% - (2rem * 2))">
-                            <IconButton as="a" variant="portalButton" color="white" p="2rem" mb="1rem" href={`/album/${slug}`} icon={<FontAwesomeIcon icon={["fal", "eye"]} height="100%" color="currentColor" />} aria-label={`view ${albumName}`}>Preview Photo</IconButton> 
+                            <IconButton as="a" variant="portalButton" color="white" p="2rem" mb="1rem" href={`/album/${slug}`} icon={<FontAwesomeIcon icon={["fas", "eye"]} height="100%" color="currentColor" />} aria-label={`view ${albumName}`}>Preview Photo</IconButton> 
                             <FormInputReadOnly inputID="albumID" inputLabel="" inputType="text" />
                         </Grid>
                         <FormInput inputID="albumName" inputLabel="Album Name" inputType="text" inputDescription="Please make sure to provide the name of the album" />

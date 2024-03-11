@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       "Objects": [
         {
           "Key": id,
-          // "VersionId": versionID,
+          "VersionId": versionID,
         }
       ],
       "Quiet": true

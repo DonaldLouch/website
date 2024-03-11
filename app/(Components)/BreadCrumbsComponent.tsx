@@ -1,5 +1,11 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon, Text } from '@chakra-ui/react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { BsHouse } from "react-icons/bs"
+import { BsChevronRight } from "react-icons/bs"
+// import { TbChevronRight } from "react-icons/tb";
+import HouseIcon from './(Vectors)/house';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface BreadComp {
     breads: any
@@ -8,17 +14,16 @@ interface BreadComp {
 export const BreadCrumb = (props: BreadComp) => {
     const { breads } = props
     const breadNumber = breads.length - 1
-    // const breadsItem = breads.split("||")
-    // console.log(breads)
+    
     return (
         <>
-            <Breadcrumb m={{base: "0 0 1.5rem", lg:"-1.5rem -2rem 1.5rem"}} separator={
-                <Icon>
-                    <FontAwesomeIcon icon={["fal", "chevron-right"]} color="currentColor"/>
-                </Icon>
-            }>
+            <Breadcrumb m={{base: "0 0 1.5rem", lg:"-1.5rem -2rem 1.5rem"}} separator={<BsChevronRight />}>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href='/portal' border="none" _hover={{color: "secondary"}}> <Icon><FontAwesomeIcon icon={["fal", "house"]} color="currentColor" /></Icon></BreadcrumbLink>
+                {/* mt="-0.2rem" */}
+                    <BreadcrumbLink href='/portal' _hover={{color: "white"}} color="secondary">
+                        <BsHouse />
+                        {/* <FontAwesomeIcon icon={["fal", "home"]} /> */}
+                    </BreadcrumbLink>
                 </BreadcrumbItem> 
                 {breads.map((bread:any, index: number) => (
                     <BreadcrumbItem key={index} isCurrentPage={index == breadNumber ? true : false}>

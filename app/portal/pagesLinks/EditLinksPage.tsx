@@ -14,6 +14,17 @@ export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
     {"pageLink": "/portal/pages", "pageName": "Page Manager"},
     {"pageLink": "/portal/pagesLinks", "pageName": "Links Manager"}
   ]
+
+  /*
+    import { Reorder } from 'framer-motion'
+
+    <Reorder.Group values={items} onReorder={setItems}>
+      {items.ma((item) => (
+        <Reorder.Item value={item} key={item}>
+        </Reorder.Item>
+      ))}
+    </Reorder.Group>
+  */
   
   return (
     <>

@@ -277,7 +277,7 @@ export default function PlayerPageEmbed({ videoData }: any) {
                                     <SliderFilledTrack bg='primary' />
                                 </SliderTrack>
                                 <SliderThumb boxSize={6} color="white">
-                                    <IconButton color='primary' variant="unstyled" icon={<FontAwesomeIcon icon={["fal", "timer"]} height="100%" width="100%" color='currentColor' />} aria-label={"Time Icon"} />
+                                    <IconButton color='primary' variant="unstyled" icon={<FontAwesomeIcon icon={["fas", "timer"]} height="100%" width="100%" color='currentColor' />} aria-label={"Time Icon"} />
                                 </SliderThumb>
                             </Slider>
                             <Stack w="7%">
