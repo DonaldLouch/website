@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Box, Button, Code, Heading, Stack, useDisclosure, useToast , Text, Grid} from "@chakra-ui/react"
+import { Box, Button, Code, Heading, Stack, useDisclosure, useToast , Text, Grid, Icon} from "@chakra-ui/react"
 
 import { Field, FieldArray, Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
@@ -25,6 +25,7 @@ import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import cuid from "cuid";
 import moment from "moment";
 import Link from "next/link";
+import { BsDashLg, BsLink45Deg, BsNodePlus, BsPencilSquare, BsPlus, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditPhotoData({photoData, photographyAlbum, locations}: any) {
     const {fileID, fileTitle, filePath, takenOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
@@ -273,7 +274,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations}: 
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-link-circle-xmark"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Link"
@@ -285,7 +286,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations}: 
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { link: '', name: '' })}
-                                                            ><i className="fa-kit fa-light-link-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -297,10 +298,10 @@ export default function EditPhotoData({photoData, photographyAlbum, locations}: 
                                                             w="auto"
                                                             color="secondary"
                                                             fontSize="3xl"
-                                                            // leftIcon={<i className="fa-kit fa-light-link-circle-xmark"></i>}
+                                                            leftIcon={<Icon as={BsLink45Deg} />}
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-link-circle-plus"></i> Add a Link</Button>
+                                                        >Add a Link</Button>
                                                     )
                                                 }
                                             </>
@@ -376,8 +377,8 @@ export default function EditPhotoData({photoData, photographyAlbum, locations}: 
                         </FormInputCard>
                         
                         <Stack direction="row" gap="2rem">
-                            <SubmitButton variant="blackFormButton" my="1rem !important" leftIcon={<i className="fa-kit fa-light-image-pen"></i>}>Edit Photo: {photoName}</SubmitButton> 
-                            <Button variant="blackFormButton" my="1rem !important" onClick={deletePhoto} background="red" leftIcon={<i className="fa-kit fa-light-image-slash"></i>}>Delete Photo</Button> 
+                            <SubmitButton variant="blackFormButton" my="1rem !important" leftIcon={<BsPencilSquare/>}>Edit Photo: {photoName}</SubmitButton> 
+                            <Button variant="blackFormButton" my="1rem !important" onClick={deletePhoto} background="red" leftIcon={<BsTrash2 />}>Delete Photo</Button> 
                         </Stack>
                     </Stack>
                 )}

@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react'
-import { BsChevronRight, BsHouse } from 'react-icons/bs'
+import { BsChevronRight, BsHouse, BsHouseFill } from 'react-icons/bs'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TbChevronRight, TbHome } from 'react-icons/tb'
 
@@ -15,7 +15,7 @@ export const BreadCrumbPublic = (props: BreadComp) => {
         <>
             <Breadcrumb m={{base: "0 0 1.5rem", lg:"-1.5rem -2rem 1.5rem"}} separator={<BsChevronRight />}>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href='/' border="none" _hover={{color: "white"}} color="secondary"><Icon as={BsHouse} m="0.25rem 0 0" /></BreadcrumbLink>
+                    <BreadcrumbLink href='/' border="none" _hover={{color: "white"}} color="secondary"><Icon as={BsHouseFill} m="0.25rem 0 0" /></BreadcrumbLink>
                 </BreadcrumbItem> 
                 {breads.map((bread:any, index: number) => (
                     <BreadcrumbItem key={index} isCurrentPage={index == breadNumber ? true : false}>

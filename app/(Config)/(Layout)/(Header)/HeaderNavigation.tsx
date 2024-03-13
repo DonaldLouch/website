@@ -49,7 +49,7 @@ interface HeaderNavigationProps extends BoxProps {
           </Stack>
           <Stack display={{ base: 'initial', lg: 'none' }} w="100%" p="1rem" background="blurredBackground" h="100vh">
             {HeaderNavigationItems.map((link) => (
-              <MobileHeaderNavigationItem key={`mobile_${link.name}`} slug={link.slug} iconPre={link.iconPre} iconName={link.iconName} isParent={link.isParent} parentID={link.parentID}>
+              <MobileHeaderNavigationItem key={`mobile_${link.name}`} slug={link.slug} icon={link.icon} isParent={link.isParent} parentID={link.parentID}>
                 {link.name}
               </MobileHeaderNavigationItem>
             ))}

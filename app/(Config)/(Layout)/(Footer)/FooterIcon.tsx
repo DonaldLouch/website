@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, IconButton, Link, Tooltip } from "@chakra-ui/react";
+import { Box, Icon, IconButton, Link, Tooltip } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -13,24 +13,18 @@ interface FooterProps {
 export const FooterIcon = (props: FooterProps) => {
   const { linkURL, socialMedia, linkIcon } = props
   return (
-    <Box>
       <Link
         href={linkURL}
         isExternal
         variant="unstyled"
-        _hover={{ color: "primary", border: "none" }}
-        px="0.2rem"
+        p="1rem 1rem 0.5rem"
+        background="blurredPurpleRGBA"
+        _hover={{ color: "primary", border: "none", background: "none" }}
+        borderRadius="0 1rem"
       >
         <Tooltip label={socialMedia}>
-          <IconButton
-            aria-label={`${socialMedia} Link`}
-            variant="unstyled"
-            h="auto"
-            fontSize="4xl"
-            icon={<FontAwesomeIcon icon={["fab", linkIcon]}/>}
-          />
+          <Icon as={linkIcon} boxSize="1.3rem" />
         </Tooltip>
       </Link>
-    </Box>
   )
 }

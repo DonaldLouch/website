@@ -5,9 +5,13 @@ import {
   Text,
   Image,
   Link,
+  Heading,
+  Grid,
+  Icon,
 } from "@chakra-ui/react";
 
 import { FooterIcon } from "./FooterIcon";
+import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
 
 export default function FooterContent(){
   return (
@@ -23,80 +27,73 @@ export default function FooterContent(){
         boxShadow="bsBoldPrimary"
       >
         <Stack alignItems={{base: "center", lg: "initial"}} w="100%">
-          <Stack
-            direction={{ base: "column", lg: "row" }}
-            // spacing="4"
-            alignItems="center"
-            // justifyCont="space-between"
-            // gap="0.5rem"
-            justifyContent={{base: "initial", lg: "space-between"}}
-            w="100%"
-          >
-            <Link href="#">
-              <Image
-                src="/titleLogoWhite.svg"
-                alt="Donald Louch"
-                width={{base: "60vw", lg: "20vw !important"}}
-                height="auto"
-              />
-            </Link>
-            <Stack
-              direction={{ base: "column", md: "row" }}
-              // gap="1rem"
-              // spacing="4"
-              alignItems="center"
-              // justifyContent="space-between"
-              // pb={{ base: "0", lg: "0" }}
-              // mx={{ base: "4rem", lg: "0" }}
-            >
-            <iframe
-              src="https://github.com/sponsors/DonaldLouch/button"
-              title="Sponsor DonaldLouch"
-              height="35"
-              width="116"
-            ></iframe>
-            <Stack direction="row" alignItems="baseline" mt="-0.5rem" mx="0">
-              <FooterIcon
-                linkURL="https://facebook.com/DonaldLouchProductions"
-                socialMedia="Facebook"
-                linkIcon="facebook"
-              />
-              <FooterIcon
-                linkURL="https://twitter.com/DonaldLouch"
-                socialMedia="X (Twitter)"
-                linkIcon="x-twitter"
-              />
-              <FooterIcon
-                linkURL="https://instagram.com/donaldlouch"
-                socialMedia="Instagram"
-                linkIcon="instagram"
-              />
-              <FooterIcon
-                linkURL="https://www.threads.net/@donaldlouch"
-                socialMedia="Threads"
-                linkIcon="threads"
-              />
-              <FooterIcon
-                linkURL="https://youtube.donaldlouch.ca"
-                socialMedia="YouTube"
-                linkIcon="youtube"
-              />
-              <FooterIcon
-                linkURL="https://github.com/DonaldLouch"
-                socialMedia="GitHub"
-                linkIcon="github"
-              />
+          <Grid gridTemplateColumns={{base: "100%", lg: "50% 25% 25%", xl: "60% 20% 20%"}}>
+            <Stack rowGap="1rem">
+              <Link href="#">
+                <Image
+                  src="/titleLogoWhite.svg"
+                  alt="Donald Louch"
+                  width={{base: "60vw", lg: "20vw !important"}}
+                  height="auto"
+                />
+              </Link>
+              <Stack direction="row">
+                <FooterIcon
+                  linkURL="https://facebook.com/DonaldLouchProductions"
+                  socialMedia="Facebook"
+                  linkIcon={BsFacebook}
+                />
+                <FooterIcon
+                  linkURL="https://twitter.com/DonaldLouch"
+                  socialMedia="X (Twitter)"
+                  linkIcon={BsTwitterX}
+                />
+                <FooterIcon
+                  linkURL="https://instagram.com/donaldlouch"
+                  socialMedia="Instagram"
+                  linkIcon={BsInstagram}
+                />
+                <FooterIcon
+                  linkURL="https://www.threads.net/@donaldlouch"
+                  socialMedia="Threads"
+                  linkIcon={BsThreads}
+                />
+                <FooterIcon
+                  linkURL="https://youtube.donaldlouch.ca"
+                  socialMedia="YouTube"
+                  linkIcon={BsYoutube}
+                />
+                <FooterIcon
+                  linkURL="https://github.com/DonaldLouch"
+                  socialMedia="GitHub"
+                  linkIcon={BsGithub}
+                />
+              </Stack>
+              <Text fontSize="sm" fontWeight="medium" p="0" lineHeight="auto" textAlign="left">&copy; 1994 - {new Date().getFullYear()} Donald Louch.</Text>
             </Stack>
+            <Stack background="blurredPurpleRGBA" p="1rem" borderRadius="0 2rem" height="100%" minHeight="16vh" maxH="16vh" overflowY="scroll" mb="-4rem" mx="2rem" display={{base: "none", lg: "initial"}}>
+              <Text fontFamily="heading" color="secondary"><Link href="/portfolio" _hover={{color: "white"}}>Portfolio</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="portfolio/resume">Resume</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="https://github.com/donaldlouch">Website <Icon as={BsBoxArrowInUpRight} ml="0.2rem" /></Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="portfolio/photography">Photography</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="portfolio/videography">Videography</Link></Text>
             </Stack>
-          </Stack>
-          {/* <Stack
-            // direction={{ base: "column", md: "row" }}
-            // alignItems="center"
-            // justifyContent={{ base: "center", md: "space-between" }}
-            justifyContent={{ base: "center", lg: "flex-start" }}
-          > */}
-            <Text fontSize="sm" fontWeight="medium" p="0" lineHeight="auto" textAlign="left">&copy; 1994 - {new Date().getFullYear()} Donald Louch.</Text>
-          {/* </Stack> */}
+            <Stack background="blurredPurpleRGBA" p="1rem" borderRadius="0 2rem" height="100%" minHeight="16vh" maxH="16vh" overflowY="scroll" mb="-4rem" mx="2rem" display={{base: "none", lg: "initial"}}>
+              <Text fontFamily="heading" color="secondary"><Link href="/feed" _hover={{color: "white"}}>Feeds</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="/about">About Me</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="/feed/photography">Photography</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="/feed/videography">Videography</Link></Text>
+               <Text fontSize="md" fontWeight="medium" p="0" lineHeight="auto" textAlign="left"><Link href="/blog">LEGACY: Blog Posts <Icon as={BsArchiveFill} ml="0.2rem" /></Link></Text>
+            </Stack>
+            {/* <Stack
+              // direction={{ base: "column", md: "row" }}
+              // alignItems="center"
+              // justifyContent={{ base: "center", md: "space-between" }}
+              justifyContent={{ base: "center", lg: "flex-start" }}
+            > */}
+              
+            {/* </Stack> */}
+          </Grid>
         </Stack>
       </Stack>
   );

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { BsCloudUpload } from "react-icons/bs";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string }) {
     const router = useRouter()
@@ -101,7 +102,8 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle }:
             <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow="bsBoldPrimary" p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" m="1.5rem 0 0.5rem"> 
               <InputGroup border="none" appearance="none" outline="none">
                 <InputLeftElement pointerEvents='none' fontSize="2xl">
-                  <FontAwesomeIcon icon={["fas", "cloud-arrow-up"]} height="100%" width="100%" color='currentColor' />
+                  <BsCloudUpload />
+                  {/* <FontAwesomeIcon icon={["fas", "cloud-arrow-up"]} height="100%" width="100%" color='currentColor' /> */}
                 </InputLeftElement>
                 <Input 
                   type='file' 

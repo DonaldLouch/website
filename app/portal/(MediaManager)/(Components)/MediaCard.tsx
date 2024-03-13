@@ -36,6 +36,7 @@ import { DeleteObjectsCommand } from '@aws-sdk/client-s3'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import EditPhotography from '../(Photos)/photography/EditPhotography'
 import supabase from '@/lib/supabase'
+import { BsCopy, BsPencilSquare, BsTrash2 } from 'react-icons/bs'
 // import { v2 as cloudinary } from 'cloudinary'
   
 export const MediaCard = ({ media }: any) => {
@@ -92,10 +93,10 @@ export const MediaCard = ({ media }: any) => {
             <Grid gridTemplateColumns="repeat(4, 1fr)" justifyContent="space-between" alignItems="center" gap="2rem" pr="1rem">
                 {/* <StatsCard startsTitle="Media Kind" statsDescription={fileKind} /> */}
                 {/* <StatsCard startsTitle="Extension" statsDescription={fileExtension} /> */}
-                <StatsCard startsTitle="Uploaded On" startsDescription={<DisplayDate source={uploadedOn} format="MM/DD/YY" />} />
-                <IconButton as="a" onClick={onCopy} variant="portalButton" color="white" icon={<FontAwesomeIcon icon={["fas", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label="Copy Button"  fontSize="1.5rem" height="100%"></IconButton>
-                <IconButton as="a" variant="portalButton" color="white" href={`/portal/photography/${id}`} icon={<FontAwesomeIcon icon={["fas", "pen-to-square"]} width="100%" color='currentColor' height="100%" />} fontSize="1.5rem" aria-label="Edit Button" height="100%"></IconButton> 
-                <IconButton as="a" variant="portalButtonRed" onClick={deleteMedia} icon={<FontAwesomeIcon icon={["fas", "trash"]} width="100%" color='currentColor' height="100%" />} fontSize="1.5rem" aria-label="Delete Button" height="100%"></IconButton> 
+                <StatsCard startsTitle="Uploaded" startsDescription={<DisplayDate source={uploadedOn} format="MM/DD/YYYY" />} />
+                <IconButton as="a" onClick={onCopy} variant="portalButton" color="white" icon={<BsCopy />} aria-label="Copy Button"  fontSize="1.5rem" height="100%"></IconButton>
+                <IconButton as="a" variant="portalButton" color="white" href={`/portal/photography/${id}`} icon={<BsPencilSquare />} fontSize="1.5rem" aria-label="Edit Button" height="100%"></IconButton> 
+                <IconButton as="a" variant="portalButtonRed" onClick={deleteMedia} icon={<BsTrash2 />} fontSize="1.5rem" aria-label="Delete Button" height="100%"></IconButton> 
             </Grid>
         </Stack>
     </Grid>

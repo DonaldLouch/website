@@ -14,6 +14,7 @@ import {
 import { HeaderNavigation } from "./HeaderNavigation";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BsList } from "react-icons/bs";
 
 // TODO: Look into usePathname() to get active page
 
@@ -87,13 +88,7 @@ export default function Header() {
               boxShadow: "none",
               color: "primary",
             }}
-            icon={
-              <FontAwesomeIcon
-                icon={"grip"}
-                height="100%"
-                width="100%"
-              />
-            }
+            icon={<BsList />}
           />
         </Stack>
       </Stack>

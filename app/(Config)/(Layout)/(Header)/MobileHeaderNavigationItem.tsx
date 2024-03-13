@@ -10,16 +10,18 @@ import {
   Box,
   Grid,
   Text,
+  Icon,
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
+import { BsMenuApp, BsPlus, BsPlusLg } from "react-icons/bs";
 
 interface HeaderNavigationItemProps extends FlexProps {
   slug: any;
-  iconName: any;
-  iconPre: any;
+  icon: any;
+  // iconPre: any;
   isParent: boolean;
   parentID: number | null;
   children: React.ReactNode;
@@ -27,8 +29,8 @@ interface HeaderNavigationItemProps extends FlexProps {
 
 export const MobileHeaderNavigationItem = ({
   slug,
-  iconName,
-  iconPre,
+  icon,
+  // iconPre,
   isParent,
   parentID,
   children,
@@ -62,12 +64,13 @@ export const MobileHeaderNavigationItem = ({
             justifyContent={{ base: "initial", lg: "center" }}
           >
             <Box
-              mr="4"
-              width="4%"
+              mr="0.5rem"
+              // width="4%"
               color="white"
               display={{ base: "flex", lg: "none" }}
+              // mr='1rem' boxSize="1.3rem"
             >
-              <FontAwesomeIcon icon={[iconPre, iconName]} width="100%" />
+              <Icon boxSize="1.3rem" as={icon} />
             </Box>
             <Text fontSize="1.3rem">{children}</Text>
           </Flex>
@@ -103,16 +106,14 @@ export const MobileHeaderNavigationItem = ({
               {...rest}
             >
               <Box
-                mr="0.3rem"
-                width="4%"
+                mr="0.5rem"
+                // width="4%"
                 color="white"
                 display={{ base: "flex", lg: "none" }}
+                // mr='1rem' boxSize="1.3rem"
               >
-                <FontAwesomeIcon
-                  icon={[iconPre, iconName]}
-                  width="100%"
-                />
-              </Box>
+              <Icon boxSize="1.3rem" as={icon} />
+            </Box>
               <Text fontSize="1.3rem">{children}</Text>
             </Flex>
           </Link>
@@ -140,7 +141,7 @@ export const MobileHeaderNavigationItem = ({
                 borderRadius={{ base: "0 1.5rem", lg: "0" }}
                 w="100%"
               > 
-              <Text>+</Text>
+              <Icon as={BsPlusLg} />
               </Box> 
             </MenuButton>
             <MenuList

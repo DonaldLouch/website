@@ -15,11 +15,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
 import { PortalSubNavigationItems } from "@/lib/PortalNavigationItems/PortalSubNavigationItems"
+// import { BsHouseGear } from "react-icons/bs"
 
 interface PortalNavigationItemProps extends FlexProps {
   slug: any;
-  iconName: any;
-  iconPre: any;
+  // iconName: any;
+  // iconPre: any;
+  icon: any;
   isParent: boolean;
   parentID: number | null;
   levelOfAccess: string;
@@ -28,14 +30,17 @@ interface PortalNavigationItemProps extends FlexProps {
 
 export const PortalNavigationItem = ({
   slug,
-  iconName,
-  iconPre,
+  // iconName,
+  // iconPre,
+  icon,
   isParent,
   parentID,
   levelOfAccess,
   children,
   ...rest
 }: PortalNavigationItemProps) => {
+
+  console.log(icon)
 
   return (
     <>
@@ -59,14 +64,10 @@ export const PortalNavigationItem = ({
             transition="all 0.3s"
             {...rest}
           >
-            {iconName && (
-              <Icon mr='1rem' w="1.5rem" h="1.5rem">
-                <FontAwesomeIcon
-                  icon={[iconPre, iconName]}
-                  width="100%"
-                />
-              </Icon>
-            )}
+            {/* mr='1rem' w="1.5rem" h="1.5rem"  */}
+            {/* {icon && ( */}
+              <Icon mr='1rem' boxSize="1.3rem" as={icon} />
+            {/* )} */}
             {children}
           </Flex>
         </Link>
@@ -90,13 +91,8 @@ export const PortalNavigationItem = ({
             fontWeight="900"
           >
             <Flex align="center" whiteSpace="nowrap" {...rest}>
-              {iconName && (
-                <Icon mr='1rem' w="1.5rem" h="1.5rem">
-                  <FontAwesomeIcon
-                    icon={[iconPre, iconName]}
-                    width="100%"
-                  />
-                </Icon>
+              {icon && (
+                <Icon mr='1rem' boxSize="1.3rem" as={icon} />
               )}
               {children}
             </Flex>

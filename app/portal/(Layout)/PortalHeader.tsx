@@ -10,6 +10,7 @@ import {
 import { UserButton, useUser } from '@clerk/nextjs'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BsList } from 'react-icons/bs'
 
 interface PortalHeaderProps extends FlexProps {
     onOpen: () => void
@@ -42,11 +43,7 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
                 color="white"
                 _hover={{boxShadow: "none", color: "primary"}}
                 icon={
-                    <FontAwesomeIcon 
-                        icon={'bars'} 
-                        width="100%"
-                        height="100%"
-                    />
+                    <BsList/>
                 }
             />
             <UserButton afterSignOutUrl="/"/>

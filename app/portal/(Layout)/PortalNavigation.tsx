@@ -47,8 +47,8 @@ export const PortalNavigation = ({
         <Box key={`port_${link.name}`} as="nav">
          <PortalNavigationItem
             slug={link.slug}
-            iconPre={link.iconPre}
-            iconName={link.iconName}
+            // iconPre={link.iconPre}
+            icon={link.icon}
             isParent={link.isParent}
             parentID={link.parentID}
             levelOfAccess={link.levelOfAccess}

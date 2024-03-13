@@ -1,8 +1,11 @@
+import { BsCopy, BsFilm, BsHouseGear, BsImages, BsInboxes, BsPostcard } from "react-icons/bs";
+
 interface PortalNavigationItemsProps {
   name: string;
   slug: any;
-  iconPre: any;
-  iconName: any;
+  // iconPre: any;
+  // icon: any;
+  icon: any;
   isParent: boolean;
   parentID: number | null;
   levelOfAccess: string;
@@ -12,8 +15,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Portal",
     slug: "../portal",
-    iconPre: "fas",
-    iconName: "tachometer-alt",
+    icon: BsHouseGear,
     isParent: false,
     parentID: null,
     levelOfAccess: "0",
@@ -23,7 +25,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   //   name: "Test Page",
   //   slug: "../portal/test",
   //   iconPre: "fas",
-  //   iconName: "layer-group",
+  //   icon: "layer-group",
   //   isParent: false,
   //   parentID: null,
   //   levelOfAccess: "0",
@@ -32,8 +34,8 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Photo Manger",
     slug: null,
-    iconPre: "fas",
-    iconName: "images",
+    // iconPre: "fas",
+    icon: BsImages,
     isParent: true,
     parentID: 2,
     levelOfAccess: "0",
@@ -42,8 +44,8 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Video Manger",
     slug: null,
-    iconPre: "fas",
-    iconName: "films",
+    // iconPre: "fas",
+    icon: BsFilm,
     isParent: true,
     parentID: 3,
     levelOfAccess: "0",
@@ -52,8 +54,8 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Blog Posts",
     slug: null,
-    iconPre: "fas",
-    iconName: "blog",
+    // iconPre: "fas",
+    icon: BsPostcard,
     isParent: true,
     parentID: 0,
     levelOfAccess: "0",
@@ -62,8 +64,8 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Pages",
     slug: null,
-    iconPre: "fas",
-    iconName: "copy",
+    // iconPre: "fas",
+    icon: BsCopy,
     isParent: true,
     parentID: 1,
     levelOfAccess: "0",
@@ -72,8 +74,8 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   {
     name: "Messages",
     slug: "../portal/messages",
-    iconPre: "fas",
-    iconName: "inbox",
+    // iconPre: "fas",
+    icon: BsInboxes,
     isParent: false,
     parentID: null,
     levelOfAccess: "0",
@@ -83,7 +85,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
   //   name: "Sitemap",
   //   slug: "../sitemap",
   //   iconPre: "fas",
-  //   iconName: "map",
+  //   icon: "map",
   //   isParent: false,
   //   parentID: null,
   //   levelOfAccess: "0",

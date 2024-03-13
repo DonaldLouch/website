@@ -1,7 +1,7 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon, Text } from '@chakra-ui/react'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { BsHouse } from "react-icons/bs"
+import { BsHouse, BsHouseFill } from "react-icons/bs"
 import { BsChevronRight } from "react-icons/bs"
 // import { TbChevronRight } from "react-icons/tb";
 import HouseIcon from './(Vectors)/house';
@@ -21,7 +21,7 @@ export const BreadCrumb = (props: BreadComp) => {
                 <BreadcrumbItem>
                 {/* mt="-0.2rem" */}
                     <BreadcrumbLink href='/portal' _hover={{color: "white"}} color="secondary">
-                        <BsHouse />
+                        <BsHouseFill />
                         {/* <FontAwesomeIcon icon={["fal", "home"]} /> */}
                     </BreadcrumbLink>
                 </BreadcrumbItem> 

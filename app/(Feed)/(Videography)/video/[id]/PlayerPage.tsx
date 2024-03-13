@@ -9,7 +9,7 @@ import PostContent from "@/app/post/(Components)/PostContent"
 import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
 import { useUser } from "@clerk/nextjs"
-import { BsChevronDown, BsPlay, BsPause, BsSkipForward, BsSkipBackward, BsVolumeOff, BsVolumeMute, BsArrowsAngleExpand, BsArrowsAngleContract, BsShare, BsFullscreen, BsFullscreenExit, BsAspectRatio, BsBoxArrowUp, BsHourglass, BsCameraReels, BsFilm, BsCollectionPlay, BsTags, BsTag, BsPersonBoundingBox, BsArrowUpRightSquare, BsBoxArrowUpRight } from "react-icons/bs"
+import { BsChevronDown, BsPlay, BsPause, BsSkipForward, BsSkipBackward, BsVolumeOff, BsVolumeMute, BsArrowsAngleExpand, BsArrowsAngleContract, BsShare, BsFullscreen, BsFullscreenExit, BsAspectRatio, BsBoxArrowUp, BsHourglass, BsCameraReels, BsFilm, BsCollectionPlay, BsTags, BsTag, BsPersonBoundingBox, BsArrowUpRightSquare, BsBoxArrowUpRight, BsArrowLeft } from "react-icons/bs"
 
 export default function PlayerPage({ videoData, mdxSource }: any) {
    const video = videoData
@@ -276,7 +276,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
 
     return (<>
         <Box background="blurredPurple" w="100vw" h="100vh" position={isFullscreenMode ? "fixed" : "absolute"} top="0" left="0" zIndex="banner" boxShadow="bsSecondary" color="white" overflowY={isFullscreenMode ? "hidden" : "auto"}>
-            <Box hidden={hide || isFullscreenMode || isTheaterMode}><HomeButton icon="BsArrowLeft" link="/feed/videography" helperText="Go Back to Video Feed" /></Box>
+            <Box hidden={hide || isFullscreenMode || isTheaterMode}><HomeButton icon={BsArrowLeft} link="/feed/videography" helperText="Go Back to Video Feed" /></Box>
             <Grid
                 gridTemplateColumns={{
                     base: "100%", 

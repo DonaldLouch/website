@@ -4,9 +4,14 @@ import {
   Flex,
   IconButton,
   Stack,
+  Icon,
 } from "@chakra-ui/react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import { BsBarChart, BsChat, BsEnvelopeAt, BsLink45Deg, BsSpotify, BsTwitterX, BsVimeo, BsXbox, BsYoutube } from 'react-icons/bs'
+import { IoShirtOutline, IoLogoSoundcloud } from 'react-icons/io5'
+import { SiApplemusic } from 'react-icons/si'
 
 interface LinkButtonProps {
   id: string
@@ -18,6 +23,20 @@ interface LinkButtonProps {
 }
 
 export const LinkButton = (link: LinkButtonProps) => {
+  const icon = 
+  link.iconName === "BsEnvelopeAt" ? BsEnvelopeAt : 
+  link.iconName === "BsTwitterX" ? BsTwitterX : 
+  link.iconName === "BsChat" ? BsChat : 
+  link.iconName === "BsXbox" ? BsXbox : 
+  link.iconName === "BsBarChart" ? BsBarChart : 
+  link.iconName === "BsSpotify" ? BsSpotify : 
+  link.iconName === "BsVimeo" ? BsVimeo : 
+  link.iconName === "BsYoutube" ? BsYoutube : 
+  link.iconName === "SiApplemusic" ? SiApplemusic : 
+  link.iconName === "IoShirtOutline" ? IoShirtOutline : 
+  link.iconName === "IoLogoSoundcloud" ? IoLogoSoundcloud : 
+  BsLink45Deg
+
   return (
     <Link
       key={link.id}
@@ -43,14 +62,7 @@ export const LinkButton = (link: LinkButtonProps) => {
           color: "white",
         }}
       >
-        <IconButton
-          aria-label={`${link.title} Link`}
-          h="auto"
-          w="auto"
-          fontSize="3xl"
-          variant="unstyled"
-          icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
-        />
+        <Icon as={icon} boxSize="2.3rem" mr="0.5rem" />
         <Stack>
           <Text
             m="0"
