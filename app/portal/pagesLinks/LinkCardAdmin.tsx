@@ -18,12 +18,16 @@ import {
   ModalCloseButton,
   ModalBody,
   useDisclosure,
+  Icon,
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 import { useRouter } from "next/navigation";
+import { BsEnvelopeAt, BsTwitterX, BsChat, BsXbox, BsBarChart, BsSpotify, BsVimeo, BsYoutube, BsLink45Deg } from "react-icons/bs";
+import { IoShirtOutline, IoLogoSoundcloud } from "react-icons/io5";
+import { SiApplemusic } from "react-icons/si";
 
 import * as Yup from 'yup'
 
@@ -97,7 +101,20 @@ export const LinkCardAdmin = (link: {
     title: Yup.string().required("Link Title is required"),
     linkForm: Yup.string().required("The Link is required"),
   })
-
+  const icon = 
+  link.iconName === "BsEnvelopeAt" ? BsEnvelopeAt : 
+  link.iconName === "BsTwitterX" ? BsTwitterX : 
+  link.iconName === "BsChat" ? BsChat : 
+  link.iconName === "BsXbox" ? BsXbox : 
+  link.iconName === "BsBarChart" ? BsBarChart : 
+  link.iconName === "BsSpotify" ? BsSpotify : 
+  link.iconName === "BsVimeo" ? BsVimeo : 
+  link.iconName === "BsYoutube" ? BsYoutube : 
+  link.iconName === "SiApplemusic" ? SiApplemusic : 
+  link.iconName === "IoShirtOutline" ? IoShirtOutline : 
+  link.iconName === "IoLogoSoundcloud" ? IoLogoSoundcloud : 
+  BsLink45Deg
+  
   return (
     <>
     <Flex gap="1.3rem" key={link.id}>
@@ -125,14 +142,15 @@ export const LinkCardAdmin = (link: {
               color: "white",
             }}
           >
-            <IconButton
+            {/* <IconButton
               aria-label={`${link.title} Link`}
               h="auto"
               w="auto"
               fontSize="3xl"
               variant="unstyled"
               icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
-            />
+            /> */}
+            <Icon as={icon} boxSize="2.3rem" mr="0.5rem" />
             <Stack>
               <Text
                 m="0"

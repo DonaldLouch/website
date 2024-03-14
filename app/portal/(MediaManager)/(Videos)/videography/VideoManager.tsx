@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { debounce } from "lodash"
 import DisplayDate from "@/lib/DisplayDate"
+import { BsCloudPlus } from "react-icons/bs"
 
 async function fetchVideos(offset: number, limit: number) {
   const from = offset * limit
@@ -69,7 +70,7 @@ export default function VideoManager({videoData}: {videoData: any}) {
 
     return (<>
         <BreadCrumb breads={breadCrumbs} />
-        <Button as="a" variant="blackFormButton" href="/portal/videography/upload">Upload New Video</Button>
+        <Button as="a" variant="blackFormButton" href="/portal/videography/upload" leftIcon={<BsCloudPlus />}>Upload New Video</Button>
         <Grid gridTemplateColumns="repeat(3, 1fr)" gap="2rem" my="2rem" ref={containerRef}>
             {isLoading && !toast.isActive(toastID) &&
                 toast({

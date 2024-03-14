@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Button, Code, Stack, useToast, Link} from "@chakra-ui/react"
+import { Button, Code, Stack, useToast, Link, Icon} from "@chakra-ui/react"
 
 import { Field, FieldArray, Formik } from "formik";
 import * as Yup from 'yup'
@@ -18,6 +18,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BsBookmarkDash, BsBookmarkPlus, BsCameraReels, BsLink45Deg, BsMusicNoteList, BsPencilSquare, BsPeople, BsPersonDash, BsPersonPlus, BsPlay, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditVideoData({videoData, categoryData}: any) {
     const video = videoData
@@ -191,7 +192,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                 {({ handleSubmit, values }: any) => (
                     <Stack as="form" onSubmit={handleSubmit as any} rowGap="2.5rem" my="2rem">
                         <FormInputReadOnly inputID="id" inputLabel="" inputType="hidden" />
-                        <Button as="a" variant="newFormButton" color="white" leftIcon={<FontAwesomeIcon icon={["fas", "play"]} height="100%" width="100%" color='currentColor' />} href={`/video/${videoData.id}`} >Watch Video</Button>
+                        <Button as="a" variant="newFormButton" color="white" leftIcon={<BsPlay />} href={`/video/${videoData.id}`} >Watch Video</Button>
                         <FormInput inputID="title" inputLabel="Video Title" inputType="text" inputDescription="Providing is a mandatory field so that it will help people see what they'll be watching before clicking play on the video." />
                         <FormTextArea inputID="excerpt" inputLabel="Excerpt" textRows={4} />
                         <FormTextArea inputID="description" inputLabel="description" textRows={10} helperText={`You may use markdown language on this field. For examples of Markdown please open this page from ${<Link href="https://www.markdownguide.org/basic-syntax/" variant="primary" isExternal>Markdown Guide</Link>}`} />
@@ -236,7 +237,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-book-blank-slash"></i></Button>
+                                                            ><BsBookmarkDash /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Chapter"
@@ -248,7 +249,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', title: '' })}
-                                                            ><i className="fa-kit fa-light-book-blank-circle-plus"></i></Button>
+                                                            ><BsBookmarkPlus /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -262,7 +263,8 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-book-blank-circle-plus"></i> Add a Chapter</Button>
+                                                            leftIcon={<Icon as={BsBookmarkPlus} /> }
+                                                        > Add a Chapter</Button>
                                                     )
                                                 }
                                             </>
@@ -304,7 +306,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-list-music-slash"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Music Credit"
@@ -316,7 +318,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', title: '', artist: '', link: '', info: '' })}
-                                                            ><i className="fa-kit fa-light-list-music-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -330,7 +332,8 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-list-music-circle-plus"></i> Add a Music Credit</Button>
+                                                            leftIcon={<Icon as={BsMusicNoteList} />}
+                                                        >Add a Music Credit</Button>
                                                     )
                                                 }
                                             </>
@@ -369,7 +372,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-info-slash"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Video Credit"
@@ -381,7 +384,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { title: '', value: '' })}
-                                                            ><i className="fa-kit fa-light-info-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -395,7 +398,8 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-info-circle-plus"></i> Add a Video Credit</Button>
+                                                            leftIcon={<Icon as={BsCameraReels} />}
+                                                        >Add a Video Credit</Button>
                                                     )
                                                 }
                                             </>
@@ -434,7 +438,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-user-slash"></i></Button>
+                                                            ><BsPersonDash /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Starring Credit"
@@ -446,7 +450,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', displayName: '', link: '' })}
-                                                            ><i className="fa-kit fa-light-user-circle-plus"></i></Button>
+                                                            ><BsPersonPlus /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -460,7 +464,8 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-user-circle-plus"></i> Add a Starring Credit</Button>
+                                                            leftIcon={<Icon as={BsPeople} />}
+                                                        >Add a Starring Credit</Button>
                                                     )
                                                 }
                                             </>
@@ -499,7 +504,7 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-link-slash"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Link"
@@ -511,11 +516,11 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { link: '', name: '' })}
-                                                            ><i className="fa-kit fa-light-link-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
-                                                        <Button
+                                                       <Button
                                                             aria-label="Add Link"
                                                             variant="unstyled"
                                                             _hover={{ color: "primary" }}
@@ -523,10 +528,10 @@ export default function EditVideoData({videoData, categoryData}: any) {
                                                             w="auto"
                                                             color="secondary"
                                                             fontSize="3xl"
-                                                            // leftIcon={<i className="fa-kit fa-light-link-circle-xmark"></i>}
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-link-circle-plus"></i> Add a Link</Button>
+                                                            leftIcon={<Icon as={BsLink45Deg} />}
+                                                        >Add a Link</Button>
                                                     )
                                                 }
                                             </>
@@ -558,8 +563,8 @@ export default function EditVideoData({videoData, categoryData}: any) {
                             />
                         </Stack>
                         <Stack direction="row" my="2rem">
-                            <Button type="submit" variant="blackFormButton" leftIcon={<i className="fa-kit fa-light-video-pen"></i>}>Edit Video: {video.title}</Button> 
-                            <Button variant="blackFormButton" onClick={deleteVideo} background="red" leftIcon={<i className="fa-kit fa-light-video-slash"></i>}>Delete Video</Button> 
+                            <Button type="submit" variant="blackFormButton" leftIcon={<BsPencilSquare/>}>Edit Video: {video.title}</Button> 
+                            <Button variant="blackFormButton" onClick={deleteVideo} background="red" leftIcon={<BsTrash2/>}>Delete Video</Button> 
                         </Stack>
                     </Stack>
                 )}

@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Button, Code, Stack, useToast, Grid, IconButton, Flex, Divider} from "@chakra-ui/react"
+import { Button, Code, Stack, useToast, Grid, IconButton, Flex, Divider, Icon} from "@chakra-ui/react"
 
 import { FieldArray, Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
@@ -20,6 +20,7 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
 import Masonry from "react-masonry-css";
+import { BsEye, BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditAlbumData({photoData, albumData, locations}: any) {
     const { id, albumName, slug, albumCaption, albumLinks, uploadedOn } = albumData
@@ -118,7 +119,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
                     />
                     {values.hideForm === true && (<>
                         <Grid gridTemplateColumns="20% 80%" gap="2rem" alignItems="baseline" width="calc(100% - (2rem * 2))">
-                            <IconButton as="a" variant="portalButton" color="white" p="2rem" mb="1rem" href={`/album/${slug}`} icon={<FontAwesomeIcon icon={["fas", "eye"]} height="100%" color="currentColor" />} aria-label={`view ${albumName}`}>Preview Photo</IconButton> 
+                            <IconButton as="a" variant="portalButton" color="white" p="2rem" mb="1rem" href={`/album/${slug}`} icon={<BsEye />} aria-label={`view ${albumName}`}>Preview Photo</IconButton> 
                             <FormInputReadOnly inputID="albumID" inputLabel="" inputType="text" />
                         </Grid>
                         <FormInput inputID="albumName" inputLabel="Album Name" inputType="text" inputDescription="Please make sure to provide the name of the album" />
@@ -152,7 +153,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-link-circle-xmark"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Link"
@@ -164,7 +165,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { link: '', name: '' })}
-                                                            ><i className="fa-kit fa-light-link-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -176,10 +177,10 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
                                                             w="auto"
                                                             color="secondary"
                                                             fontSize="3xl"
-                                                            // leftIcon={<i className="fa-kit fa-light-link-circle-xmark"></i>}
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-link-circle-plus"></i> Add a Link</Button>
+                                                            leftIcon={<Icon as={BsLink45Deg} />}
+                                                        >Add a Link</Button>
                                                     )
                                                 }
                                             </>
@@ -191,7 +192,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
                         
                         <FormInputRow inputID="uploadedOn" inputLabel="Uploaded On" inputType="datetime-local" />
                     
-                        <SubmitButton variant="blackFormButton" my="1rem !important" leftIcon={<i className="fa-kit fa-light-image-pen"></i>}>Edit Album: {albumName}</SubmitButton> 
+                        <SubmitButton variant="blackFormButton" my="1rem !important" leftIcon={<BsPencilSquare />}>Edit Album: {albumName}</SubmitButton> 
                         {/* <Button variant="blackFormButton" my="1rem !important" onClick={deletePhoto} background="red" leftIcon={<i className="fa-kit fa-light-image-slash"></i>}>Delete Photo</Button>  */}
                     </>)}
                 </Stack>

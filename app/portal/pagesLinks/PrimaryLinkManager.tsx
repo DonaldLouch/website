@@ -4,6 +4,7 @@ import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
 import {
+  Icon,
   IconButton,
   Stack,
   useToast
@@ -13,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 import { useRouter } from "next/navigation";
+import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsFloppy, BsFloppy2, BsTrash2 } from "react-icons/bs";
 
 import * as Yup from 'yup'
 
@@ -59,6 +61,16 @@ export const PrimaryLinkManager = (props: any) => {
     subTitle: link.subTitle
   }
   const validationSchema = Yup.object({})
+   const theIcon = 
+    link.icon === "BsFacebook" ? BsFacebook :
+    link.icon === "BsTwitterX" ? BsTwitterX :
+    link.icon === "BsLinkedin" ? BsLinkedin :
+    link.icon === "BsYoutube" ? BsYoutube :
+    link.icon === "BsThreads" ? BsThreads :
+    link.icon === "BsInstagram" ? BsInstagram :
+    link.icon === "BsTiktok" ? BsTiktok :
+    link.icon === "BsGithub" ? BsGithub :
+    BsLink45Deg
 
   return (
     <>
@@ -78,7 +90,7 @@ export const PrimaryLinkManager = (props: any) => {
                       justifyContent="space-between"
                       spacing="2rem"
                     >
-                      <IconButton
+                      {/* <IconButton
                         aria-label={`${link.title} Link`}
                         h="auto"
                         w="auto"
@@ -87,7 +99,8 @@ export const PrimaryLinkManager = (props: any) => {
                         variant="unstyled"
                         color="white"
                         icon={<FontAwesomeIcon icon={["fab", link.icon]} />}
-                      />
+                      /> */}
+                      <Icon as={theIcon} boxSize="3rem" mt="3.5rem" />
                       <FormInputRow
                         inputID={`subTitle`}
                         inputLabel="Account Name"
@@ -107,7 +120,7 @@ export const PrimaryLinkManager = (props: any) => {
                         mt="3.5rem"
                         variant="unstyled"
                         color="white"
-                        icon={<FontAwesomeIcon icon={["fas", "save"]} />}
+                        icon={<BsFloppy2 />}
                     /></SubmitButton> 
                     <IconButton
                       aria-label={`${link.title} Link`}
@@ -118,7 +131,7 @@ export const PrimaryLinkManager = (props: any) => {
                       variant="unstyled"
                       onClick={deleteLink}
                       color="red"
-                      icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
+                      icon={<BsTrash2 />}
                     />
                     </Stack>
               </Stack>

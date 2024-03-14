@@ -10,12 +10,13 @@ import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch"
 import { FormTextArea } from "@/app/(Components)/(Form)/FormTextArea"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
 import supabase from "@/lib/supabase"
-import { Badge, Box, Button, Code, IconButton, Link, Stack, Text, useToast } from "@chakra-ui/react"
+import { Badge, Box, Button, Code, Icon, IconButton, Link, Stack, Text, useToast } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FieldArray, Formik } from "formik"
 // import { SubmitButton } from "formik-chakra-ui"
 import moment from "moment"
 import { useRouter } from "next/navigation"
+import { BsBookmarkDash, BsBookmarkPlus, BsCameraReels, BsLink45Deg, BsMusicNoteList, BsPeople, BsPersonDash, BsPersonPlus, BsPlusLg, BsTrash2 } from "react-icons/bs"
 
 import * as Yup from 'yup'
 
@@ -169,7 +170,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-book-blank-slash"></i></Button>
+                                                            ><BsBookmarkDash /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Chapter"
@@ -181,7 +182,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', title: '' })}
-                                                            ><i className="fa-kit fa-light-book-blank-circle-plus"></i></Button>
+                                                            ><BsBookmarkPlus /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -195,7 +196,8 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-book-blank-circle-plus"></i> Add a Chapter</Button>
+                                                            leftIcon={<Icon as={BsBookmarkPlus} /> }
+                                                        > Add a Chapter</Button>
                                                     )
                                                 }
                                             </>
@@ -237,7 +239,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-list-music-slash"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Music Credit"
@@ -249,7 +251,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', title: '', artist: '', link: '', info: '' })}
-                                                            ><i className="fa-kit fa-light-list-music-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -263,7 +265,8 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-list-music-circle-plus"></i> Add a Music Credit</Button>
+                                                            leftIcon={<Icon as={BsMusicNoteList} />}
+                                                        >Add a Music Credit</Button>
                                                     )
                                                 }
                                             </>
@@ -302,7 +305,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-info-slash"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Video Credit"
@@ -314,7 +317,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { title: '', value: '' })}
-                                                            ><i className="fa-kit fa-light-info-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -328,7 +331,8 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-info-circle-plus"></i> Add a Video Credit</Button>
+                                                            leftIcon={<Icon as={BsCameraReels} />}
+                                                        >Add a Video Credit</Button>
                                                     )
                                                 }
                                             </>
@@ -367,7 +371,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-user-slash"></i></Button>
+                                                            ><BsPersonDash /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Starring Credit"
@@ -379,7 +383,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', displayName: '', link: '' })}
-                                                            ><i className="fa-kit fa-light-user-circle-plus"></i></Button>
+                                                            ><BsPersonPlus /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -393,7 +397,8 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                             fontSize="3xl"
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-user-circle-plus"></i> Add a Starring Credit</Button>
+                                                            leftIcon={<Icon as={BsPeople} />}
+                                                        >Add a Starring Credit</Button>
                                                     )
                                                 }
                                             </>
@@ -432,7 +437,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.remove(index)}
-                                                            ><i className="fa-kit fa-light-link-slash"></i></Button>
+                                                            ><BsTrash2 /></Button>
                                                         
                                                             <Button
                                                                 aria-label="Add Link"
@@ -444,7 +449,7 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                                 fontSize="3xl"
                                                                 mt="2rem"
                                                                 onClick={() => arrayHelpers.insert(index + 1, { link: '', name: '' })}
-                                                            ><i className="fa-kit fa-light-link-circle-plus"></i></Button>
+                                                            ><BsPlusLg /></Button>
                                                         </FormInputCard>
                                                     ))
                                                     ) : (
@@ -456,10 +461,10 @@ export default function VideoInformation({videoID, categoryData}: {videoID: stri
                                                             w="auto"
                                                             color="secondary"
                                                             fontSize="3xl"
-                                                            // leftIcon={<i className="fa-kit fa-light-link-circle-xmark"></i>}
                                                             mt="2rem"
                                                             onClick={() => arrayHelpers.push('')}
-                                                        ><i className="fa-kit fa-light-link-circle-plus"></i> Add a Link</Button>
+                                                            leftIcon={<Icon as={BsLink45Deg} />}
+                                                        >Add a Link</Button>
                                                     )
                                                 }
                                             </>
