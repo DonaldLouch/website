@@ -75,8 +75,9 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
             albumName: values.albumName,
             albumCaption: values.albumCaption ? values.albumCaption : photoData.albumCaption,
             uploadedOn: moment(values.uploadedOn),
-            lastUploadedOn: moment()
+            lastUpdatedOn: moment()
         }).eq('id', id)
+        console.log(supabaseStatus, supabaseError)
         supabaseStatus && !toast.isActive(toastID) &&
             toast({
                 id: toastID,
@@ -95,7 +96,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
         albumName,
         albumCaption,
         links: albumLinks ? true : false,
-        hideForm: false,
+        hideForm: true,
         uploadedOn: moment(uploadedOn).format("yyyy-MM-DDTkk:mm"),
         linksRow: albumLinks
     }
