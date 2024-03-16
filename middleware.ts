@@ -18,6 +18,7 @@ export default authMiddleware({
     "/(album)(.*)",
     "/(portal)(.*)",
   ],
+  debug: true,
 });
 
 export const config = {
