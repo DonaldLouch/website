@@ -33,11 +33,23 @@ export default function ViewPhotoFeed({ imageData, isLoading }: any) {
         {/* _hover={{background: "blurredBackground", opacity: "0.6"}} transition="all 0.3s" display="inherit" my="0.5rem" */}
          {/* height="2160" onClick={onOpen} _hover={{background: "blurredBackground", opacity: "0.6"}} transition="all 0.3s" */}
          {/* style={{display: "inherit"}} */}
-            <Skeleton isLoaded={!isLoading} my={isLoading ? "0.5rem" : "0"} startColor="primary" endColor="secondary" opacity={isLoading ? "0.6" : "1"}>
+            {/* <Skeleton isLoaded={!isLoading} my={isLoading ? "0.5rem" : "0"} startColor="primary" endColor="secondary" opacity={isLoading ? "0.6" : "1"}> */}
                 <Box onClick={onOpen} display="inline-block" _hover={{background: "blurredBackground", opacity: "0.6"}} transition="all 0.1s">
-                    <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} width="3840" height="2160" />
+                    {/* <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} width="3840" height="2160" /> */}
+                    <Image 
+                    src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} 
+                    quality={10} 
+                    sizes="10%"
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                    }}
+                    width={500}
+                    height={300}
+                    
+                />
                 </Box>
-            </Skeleton>
+            {/* </Skeleton> */}
             {/* <Button variant="portalButton" color="white" p="2rem" mb="1rem" onClick={onOpen} leftIcon={<FontAwesomeIcon icon={["fas", "eye"]} width="100%" color="currentColor" />}>Preview Photo</Button>  */}
             {/* <Button variant="primary" onClick={onOpen} background="primary"color="white" my="1rem !important" w="100%" py="2rem">Add New {company} History</Button>  */}
             <Modal isOpen={isOpen} onClose={onClose} id={`viewPhoto${imageData.id}`} size="7xl" isCentered>

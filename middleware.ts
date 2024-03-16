@@ -11,14 +11,12 @@ export default authMiddleware({
     "/(C)(.*)",
     "/(api)(.*)",
     "/(feed)(.*)",
-    "/feed/photography",
     "/(video)(.*)",
     // "/(embed)(.*)",
     "/(photo)(.*)",
     "/(album)(.*)",
     "/(portal)(.*)",
-  ],
-  debug: true,
+  ]
 });
 
 export const config = {
