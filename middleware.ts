@@ -21,7 +21,7 @@ export default authMiddleware({
 });
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api)(.*)", "/feed/photography"],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api)(.*)"],
 };
 // import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 // import { NextResponse } from "next/server";
