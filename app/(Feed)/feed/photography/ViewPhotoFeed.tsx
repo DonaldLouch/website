@@ -18,13 +18,14 @@ import { useUser } from '@clerk/nextjs'
 import CopyButton from '@/app/(Components)/(Buttons)/CopyButton'
 import { BsCalendar2, BsEye, BsImages, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
-export default function ViewPhotoFeed({ imageData, isLoading }: any) {
+export default function ViewPhotoFeed({ imageData }: any) {
     const {user} = useUser()
     const toast = useToast()
     const toastID = "toastID"
     // const albumData = photographyAlbum.find(({ id }: any) => id ===  imageData.album)
     const { album: albumData } = imageData
     const { isOpen, onOpen, onClose } = useDisclosure()
+    // isLoading
     
     //  const [ value ] = useState(`${process.env.NEXT_PUBLIC_SITE_URL}/photo/${imageData.id}`)
     // const { hasCopied, onCopy } = useClipboard(value)
@@ -46,7 +47,7 @@ export default function ViewPhotoFeed({ imageData, isLoading }: any) {
                     }}
                     width={500}
                     height={300}
-                    
+
                 />
                 </Box>
             {/* </Skeleton> */}
