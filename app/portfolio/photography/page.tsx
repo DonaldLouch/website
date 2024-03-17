@@ -1,6 +1,10 @@
-import PortfolioPhotographyContent from "./PortfolioPhotographyContent";
+import supabase from "@/lib/supabase";
 
 import type { Metadata } from 'next'
+import PortfolioPhotographyFeed from "./PortfolioPhotographyFeed";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export const metadata: Metadata = {
     title: `Photography | Donald Louch Portfolio`,
     description: process.env.NEXT_PUBLIC_DESCRIPTION,
@@ -18,11 +22,26 @@ export const metadata: Metadata = {
     twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
-export default function PortfolioPhotography() {
-  // const fetcher = (url: RequestInfo | URL) =>
-  //   fetch(url).then((res) => res.json());
-  // const pageID = "pageL4UBHBV1wlb" as string;
-  // useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+export default async function PortfolioPhotography() {
+  const postLimit = 20 as number
 
-  return <PortfolioPhotographyContent />
+  const { data: aboutMe } = await supabase.from('About').select().single()
+
+  const mdxSource = await serialize(aboutMe.bio!, {mdxOptions: {
+        development: process.env.NODE_ENV === 'development',
+    }}) as MDXRemoteSerializeResult
+
+  // const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('lastUpdatedOn', { ascending: false }) as any
+  // const { data: locationData } = await supabase.from('distinct_locations').select().order('location', { ascending: true }) as any
+
+  const { data: photos } = await supabase
+      .from('Photography')
+      .select(`*, fileID (*), album (*)`)
+      .limit(postLimit)
+      .order('uploadedOn', { ascending: false })
+      .match({ isPublic: true, isSetup: true, isPortfolio: true })
+
+  const { count: photosCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, isPortfolio: true })
+
+  return <PortfolioPhotographyFeed photos={photos} about={aboutMe} mdxSource={mdxSource} photosCount={photosCount} />
 }

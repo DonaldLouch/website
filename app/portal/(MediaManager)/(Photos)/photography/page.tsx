@@ -24,7 +24,7 @@ export default async function Media({searchParams}: Props) {
 
   const postLimit = 15 as number
   const {count: postLength} = await supabase.from('Photography').select("*", { count: 'exact'}) as any
-  let numberOfPages = (postLength / postLimit) as number;
+  let numberOfPages = (postLength / postLimit)as number;
 
   if (!Number.isInteger(numberOfPages)) {
     numberOfPages = Math.floor(numberOfPages) + 1;

@@ -38,7 +38,7 @@ import {
 
 import Masonry from 'react-masonry-css'
 
-import ViewPhotoFeed from "./ViewPhotoFeed";
+import ViewPhotoFeed from "../../../(Components)/ViewPhotoFeed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useRouter } from "next/navigation"
@@ -54,9 +54,9 @@ import DisplayDate from "@/lib/DisplayDate";
 import { useInView } from 'react-intersection-observer'
 
 
-async function fetchPhotos(offset: number, limit: number, searchType?: string, searchValue?: string) {
-  const from = offset * limit
-  const to = from + limit - 1
+async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: string, searchValue?: string) {
+  const from = nextPage * photoLimit
+  const to = from + photoLimit - 1
   console.log(from, to)
   const keyword = searchType === "tag" 
     && searchValue?.includes("HASHTAG") ? searchValue?.replace('HASHTAG', '#') 
@@ -79,34 +79,33 @@ async function fetchPhotos(offset: number, limit: number, searchType?: string, s
   return data
 }
 
-export default function PhotographyFeed({ photos, photographyAlbum, locationData, tagData, searchType, searchValue }: {photos: any, photographyAlbum: any, locationData: any, tagData: any, searchType?: string, searchValue?: string})  {
-  const PAGE_COUNT = 20 as number
+export default function PhotographyFeed({ photos, photographyAlbum, locationData, tagData, searchType, searchValue, photosCount}: {photos: any, photographyAlbum: any, locationData: any, tagData: any, searchType?: string, searchValue?: string, photosCount: any})  {
+  const photoLimit = 20 as number
   const initialRender = useRef(true)
   const [loadedPhotos, setLoadedPhotos] = useState(photos)
   const [page, setPage] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLastPage, setIsLastPage] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
   const [ref, inView] = useInView()
 
-  const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+  // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
   async function loadMorePhotos() {
-    setIsLoading(true)
-    sleep(1000).then(async () => {
+    // setIsLoading(true)
       const nextPage = page + 1
-      const newPhotos = await fetchPhotos(nextPage, PAGE_COUNT, searchType, searchValue) as any
-      console.log(nextPage)
+      const newPhotos = await fetchPhotos(nextPage, photoLimit, searchType, searchValue) as any
+      setIsLastPage(nextPage * photoLimit <= photosCount - photoLimit ? false : true)
 
-      if (loadedPhotos?.length) {
+      if (!isLastPage) {
         setPage(nextPage)
         setLoadedPhotos((prevPhotos: any) => [
           ...(prevPhotos?.length ? prevPhotos : []),
           ...newPhotos
         ])
       }
-      setIsLoading(false)
-    })
+      // setIsLoading(false)
   }
 
   useEffect(() => {
@@ -156,8 +155,9 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
         right={{ base: "4%", md: "1.5%" }}
         zIndex="overlay"
         color="white"
-        background="black"
+        background="primary"
         boxShadow="bsBoldWhite"
+        _hover={{background: "blurredPurpleRGBA", boxShadow: "none"}}
         // padding="0.5rem"
         borderRadius="0 1rem"
         p="1rem"
@@ -245,7 +245,6 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
           </DrawerBody>
         </DrawerContent>
       </Drawer> 
-      <Box>
         <Flex 
           as={Masonry}
           breakpointCols={breakpointColumnsObj}
@@ -255,11 +254,10 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
         >
           {loadedPhotos?.map((image: any, index: number) => (<>
             {/* <Text key={index} background="primary" p="2rem" my="1rem">(<DisplayDate source={image.fileID.takenOn} format="MM/DD/YY" />) {image.id}</Text> */}
-            <ViewPhotoFeed imageData={image} key={index} isLoading={isLoading} />
+            <ViewPhotoFeed imageData={image} key={index} />
           </>))}
         </Flex>
-      </Box>
-      <Stack  ref={ref} alignItems="center" p="2rem" color="white">
+      <Stack  ref={ref} alignItems="center" p="2rem" color="white" hidden={isLastPage}>
         <Divider />
           <Stack direction="row" gap="2rem" alignItems="center" pt="1rem" width="calc(100% * 4rem)">
               <Spinner color="white" size="xl" />

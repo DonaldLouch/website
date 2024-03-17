@@ -32,6 +32,8 @@ export default function CopyButton( props: propTypes ) {
     const { hasCopied, onCopy } = useClipboard(value)
     
     return (<>
+     <Button onClick={onCopy} leftIcon={<BsCopy />} aria-label={!hasCopied ? theCopyText : theCopiedText} variant="newFormButton" background="none" boxShadow="bsBoldSecondary" my="2rem" color="white" wordBreak="break-word"  whiteSpace="nowrap" p="2rem" width="auto">{!hasCopied ? theCopyText : theCopiedText}</Button>
+{/* 
     <Flex 
         align="center" 
         whiteSpace="nowrap" 
@@ -61,9 +63,9 @@ export default function CopyButton( props: propTypes ) {
                 color="currentColor"
             />
             <FiCopy />
-        </Icon> */}
+        </Icon>
         {!hasCopied ? theCopyText : theCopiedText}
-    </Flex>
+    </Flex> */}
         {/* <Button as="a" onClick={onCopy} variant={theStyle} color="white" leftIcon={<FontAwesomeIcon icon={["fas", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label={theCopyText} p="2rem" width="auto" my="2rem"></Button> */}
     </>)
 }

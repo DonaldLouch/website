@@ -16,9 +16,9 @@ import { Suspense, useState } from 'react'
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser } from '@clerk/nextjs'
 import CopyButton from '@/app/(Components)/(Buttons)/CopyButton'
-import { BsCalendar2, BsEye, BsImages, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
+import { BsCalendar2, BsEye, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
-export default function ViewPhotoFeed({ imageData }: any) {
+export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
     const {user} = useUser()
     const toast = useToast()
     const toastID = "toastID"
@@ -59,7 +59,7 @@ export default function ViewPhotoFeed({ imageData }: any) {
                     backdropFilter='blur(10px) hue-rotate(90deg)'
                 />
                 <ModalContent background="blurredPurple" mx="2rem" pb="2rem">
-                    <ModalHeader>{imageData.photoName}{user && ` ${imageData.id}`}</ModalHeader>
+                    <ModalHeader>{imageData.photoName}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         {/* gridTemplateColumns="50% 50%" */}
@@ -70,7 +70,8 @@ export default function ViewPhotoFeed({ imageData }: any) {
                                 </Box>
                                 <Stack direction="row" gap="2rem">
                                     <CopyButton copyValue={`${process.env.NEXT_PUBLIC_SITE_URL}/photo/${imageData.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" />
-                                    <LinkBox as="div" display="flex" gap="1rem" alignItems="center"
+                                     <Button as="a" href={`/photo/${imageData.id}`} leftIcon={<BsEye />} aria-label={'View Photo'} background="none" boxShadow="bsBoldSecondary" my="2rem" color="white" wordBreak="break-word"  whiteSpace="nowrap" p="2rem" width="auto" borderRadius="0 1.5rem" _hover={{background: "none", boxShadow: "none"}}>View Photo</Button>
+                                    {/* <LinkBox as="div" display="flex" gap="1rem" alignItems="center"
                                         p="1rem 2rem" 
                                         width="auto" 
                                         my="2rem"
@@ -87,22 +88,28 @@ export default function ViewPhotoFeed({ imageData }: any) {
                                             color: "primary"
                                         }}
                                     >
-                                        {/* <Icon>
-                                            <FontAwesomeIcon icon={["fas", "eye"]} width="100%" color='currentColor' />
-                                        </Icon> */}
                                         <BsEye />
                                         <LinkOverlay href={`/photo/${imageData.id}`}>
                                             <Text fontSize="1.1rem" color="white">Open Photo Link</Text>
                                         </LinkOverlay>
-                                    </LinkBox>
-                                    <Box hidden={!user}><CopyButton copyValue={imageData.fileID.filePath} copyText="Copy Photo URI" copiedText="Copied Photo URI" /></Box>
+                                    </LinkBox> */}
+                                    
                                 </Stack>
                             </Stack>
                             <Stack width={{base: "100%", lg: "50%"}}>
                                 {/* <Text boxShadow="bsBoldPrimary" p="2rem" borderRadius="0 2rem">{imageData.fileID.takenOn}</Text> */}
+                                <Stack direction="row" gap="2rem" hidden={!user}>
+                                    <CopyButton copyValue={imageData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
+                                    <Button as="a" href={`/portal/photography/${imageData.id}`} leftIcon={<BsPencilSquare />} aria-label={'Edit Photo'} background="none" boxShadow="bsBoldSecondary" my="2rem" color="white" wordBreak="break-word"  whiteSpace="nowrap" p="2rem" width="auto" borderRadius="0 1.5rem" _hover={{background: "none", boxShadow: "none"}}>Edit Photo</Button>
+
+                                    <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content" my="2rem">
+                                        <BsHash />
+                                        <TagLabel pl="0.5rem">{imageData.id}</TagLabel>
+                                    </Tag> 
+                                </Stack>
                                 <Text boxShadow="bsBoldPrimary" p="2rem" borderRadius="0 2rem" whiteSpace="break-spaces">{imageData.caption}</Text>
                                 <Stack direction="row" my="2rem" gap="0.8rem">
-                                     {imageData.album && <Link href={`/album/${albumData.slug}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='purple' _hover={{background: "white"}} borderRadius='0 1rem' p="1rem" whiteSpace="normal" wordBreak="break-all" width="fit-content">
+                                     {imageData.album && hideElement != "album" && <Link href={`/album/${albumData.slug}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='purple' _hover={{background: "white"}} borderRadius='0 1rem' p="1rem" whiteSpace="normal" wordBreak="break-all" width="fit-content">
                                         {/* <FontAwesomeIcon icon={["fas", "images"]} color="currentColor" height="40%" /> */}
                                         <BsImages />
                                         <TagLabel pl="0.5rem">{albumData.albumName}</TagLabel>

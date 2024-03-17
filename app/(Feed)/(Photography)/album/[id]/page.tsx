@@ -31,7 +31,7 @@ type Props = {
 export default async function Album({ params }: Props) {
   // const {userId, sessionId} = auth() 
   // const isLoggedIn = userId && sessionId ? true : false
-    const postLimit = 12 as number
+    const postLimit = 20 as number
     const { id } = params
     const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({ slug: id}).single() as any
     const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('uploadedOn', { ascending: false }) as any
@@ -51,6 +51,8 @@ export default async function Album({ params }: Props) {
         })
         !locations.includes(photoLocation) && locations.push(photoLocation)
     })
+    
+    const { count: photoCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
 
-    return <AlbumPage albumData={albumData} photoData={photoData} mdxSource={mdxSource} locations={locations} tags={tags} />
+    return <AlbumPage albumData={albumData} photoData={photoData} mdxSource={mdxSource} locations={locations} tags={tags} photoCount={photoCount} />
 }

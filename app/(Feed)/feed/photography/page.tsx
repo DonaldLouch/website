@@ -45,8 +45,21 @@ export default async function PortfolioPhotography({searchParams}: any) {
       searchType && searchValue && searchType === "tag" && query.contains("tags", [`${keyword}`]) 
       searchType && searchValue && searchType === "order" && searchValue === "old" ? query.order('uploadedOn', { ascending: true }) : query.order('uploadedOn', { ascending: false })
       searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true })
+  
+    const query2 =
+    supabase
+      .from('Photography')
+      .select("*", { count: 'exact'})
+      .limit(postLimit)
+      searchType && searchValue && searchType === "keyword" && query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%`) //TODO: Add Tags
+      searchType && searchValue && searchType === "location" && query.ilike('location', `%${keyword}%`) 
+      searchType && searchValue && searchType === "tag" && query.contains("tags", [`${keyword}`]) 
+      searchType && searchValue && searchType === "order" && searchValue === "old" ? query.order('uploadedOn', { ascending: true }) : query.order('uploadedOn', { ascending: false })
+      searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true })
 
   const { data: photos } = await query
 
-  return <PhotographyFeed photos={photos} photographyAlbum={photographyAlbum} locationData={locationData} tagData={tagData} searchType={searchType} searchValue={keyword} />
+  const { count: photosCount } = await query2
+
+  return <PhotographyFeed photos={photos} photographyAlbum={photographyAlbum} locationData={locationData} tagData={tagData} searchType={searchType} searchValue={keyword} photosCount={photosCount} />
 }

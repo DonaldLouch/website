@@ -17,7 +17,10 @@ Stack,
 Tag,
 TagLabel,
 Link,
-Icon
+Icon,
+Divider,
+Spinner,
+Text
 } from '@chakra-ui/react'
 
 import { useEffect, useRef, useState } from 'react'
@@ -29,10 +32,13 @@ import ViewPhotoAlbum from './ViewPhotoAlbum'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MdxContent } from '@/app/mdx-content'
 import { BsCalendar2, BsInfo, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
+import { useInView } from 'react-intersection-observer'
+import { useRouter } from 'next/router'
+import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 
-async function fetchPhotos(offset: number, limit: number, albumID: string) {
-    const from = offset * limit
-    const to = from + limit - 1
+async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
+    const from = nextPage * photoLimit
+    const to = from + photoLimit - 1
 
     let query = supabase
         .from('Photography')
@@ -46,49 +52,83 @@ async function fetchPhotos(offset: number, limit: number, albumID: string) {
     return data
 }
 
-export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations}: any) => {
+export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, photosCount}: any) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const toast = useToast()
-    const toastID = "toastID"
-    const containerRef = useRef(null)
+    // const toast = useToast()
+    // const toastID = "toastID"
+    // const containerRef = useRef(null)
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [loadedPhotos, setLoadedPhotos] = useState(photoData)
-    const [isInView, setIsInView] = useState(false)
-    const [offset, setOffset] = useState(1)
+    // const [isLoading, setIsLoading] = useState(false)
+    // const [loadedPhotos, setLoadedPhotos] = useState(photoData)
+    // const [isInView, setIsInView] = useState(false)
+    // const [offset, setOffset] = useState(1)
 
-    const PAGE_COUNT = 12 as number
+    // const photoLimit = 12 as number
 
-    // @ts-ignore
-    const handleScroll = (container) => {
-        if (containerRef.current && typeof window !== 'undefined') {
-        const container = containerRef.current
-        //@ts-ignore
-        const { bottom } = container.getBoundingClientRect()
-        const { innerHeight } = window
-        setIsInView(() => bottom <= innerHeight)
-        }
-    }
+    // // @ts-ignore
+    // const handleScroll = (container) => {
+    //     if (containerRef.current && typeof window !== 'undefined') {
+    //     const container = containerRef.current
+    //     //@ts-ignore
+    //     const { bottom } = container.getBoundingClientRect()
+    //     const { innerHeight } = window
+    //     setIsInView(() => bottom <= innerHeight)
+    //     }
+    // }
 
-    useEffect(() => {
-        debounce(() => handleScroll(containerRef), 200)
-        window.addEventListener('scroll', handleScroll)
-    }, [])
+    // useEffect(() => {
+    //     debounce(() => handleScroll(containerRef), 200)
+    //     window.addEventListener('scroll', handleScroll)
+    // }, [])
 
-    useEffect(() => {
-        isInView && loadMorePhotos(offset)
-    }, [isInView])
+    // useEffect(() => {
+    //     isInView && loadMorePhotos(offset)
+    // }, [isInView])
 
-    const loadMorePhotos = async (offset: number) => {
-        setIsLoading(true)
-        setOffset((prev: number) => prev + 1)
-        const newPhotos = await fetchPhotos(offset, PAGE_COUNT, albumData.id) as any
-        // setTimeout(()=>{
-        setLoadedPhotos((prevPhotos: any) => [...prevPhotos, ...newPhotos])
-        // }, 1000)
-        setIsLoading(false)
-    }
+    // const loadMorePhotos = async (offset: number) => {
+    //     setIsLoading(true)
+    //     setOffset((prev: number) => prev + 1)
+    //     const newPhotos = await fetchPhotos(offset, photoLimit, albumData.id) as any
+    //     // setTimeout(()=>{
+    //     setLoadedPhotos((prevPhotos: any) => [...prevPhotos, ...newPhotos])
+    //     // }, 1000)
+    //     setIsLoading(false)
+    // }
+
+    const photoLimit = 20 as number
+  const initialRender = useRef(true)
+  const [loadedPhotos, setLoadedPhotos] = useState(photoData)
+  const [page, setPage] = useState(0)
+  const [isLastPage, setIsLastPage] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
+//   const router = useRouter()
+
+  const [ref, inView] = useInView()
+
+  // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+  async function loadMorePhotos() {
+    // setIsLoading(true)
+    // sleep(1000).then(async () => {
+      const nextPage = page + 1
+      const newPhotos = await fetchPhotos(nextPage, photoLimit, albumData.id) as any
+    setIsLastPage(nextPage * photoLimit <= photosCount - photoLimit ? false : true)
+
+      if (!isLastPage) {
+        setPage(nextPage)
+        setLoadedPhotos((prevPhotos: any) => [
+          ...(prevPhotos?.length ? prevPhotos : []),
+          ...newPhotos
+        ])
+      }
+      // setIsLoading(false)
+    // })
+  }
+
+  useEffect(() => {
+    inView && loadMorePhotos()
+  }, [inView])
 
     const breakpointColumnsObj = {
 		default: 5,
@@ -97,7 +137,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations}: an
 	}
 
     return (<>
-        <Box id="photos" pos="relative" w="100%" bg="mainGradient" ref={containerRef} m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} width="100vw" pt={{base: "0.5rem", lg: "1.5rem"}}>
+        <Box id="photos" pos="relative" w="100%" bg="mainGradient" m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} width="100vw" pt={{base: "0.5rem", lg: "1.5rem"}}>
             <Flex 
                 as={Masonry}
                 breakpointCols={breakpointColumnsObj}
@@ -105,28 +145,28 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations}: an
                 // p="1rem 1rem 1rem"
                 gap="0.5rem"
             >
-                {isLoading && !toast.isActive(toastID) &&
-                    toast({
-                        id: toastID,
-                        title: "Photos Loading",
-                        description: "Additional photos are currently loading",
-                        status: "info",
-                        duration: 9000,
-                        isClosable: true,
-                    })}
                 {loadedPhotos?.map((image: any, index: number) => (<>
                     {/* <Text key={index} background="primary" p="2rem" my="1rem">(<DisplayDate source={image.fileID.takenOn} format="MM/DD/YY" />) {image.photoName}</Text> */}
-                    <ViewPhotoAlbum imageData={image} key={index} isLoading={isLoading} />
+                    <ViewPhotoFeed imageData={image} key={index} hideElement="album" />
                 </>))}
             </Flex>
+             <Stack  ref={ref} alignItems="center" p="2rem" color="white" hidden={isLastPage}>
+                <Divider />
+                <Stack direction="row" gap="2rem" alignItems="center" pt="1rem" width="calc(100% * 4rem)">
+                    <Spinner color="white" size="xl" />
+                    <Heading fontSize={{base: "2rem", md: "3rem", lg:"5rem"}}>Loading More Photos</Heading>
+                </Stack>
+                <Text pt="1rem" textAlign="center">If the content is still not loaded after a minute please contact Donald Louch at <Link href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Link> for further assistance.</Text>
+            </Stack>
             <Box 
                 position="fixed"
                 bottom={{ base: "1.4%", md: "2%" }}
                 right={{ base: "4%", md: "1.5%" }}
                 zIndex="overlay"
                 color="white"
-                background="black"
+                background="primary"
                 boxShadow="bsBoldWhite"
+                _hover={{background: "blurredPurpleRGBA", boxShadow: "none"}}
                 // padding="0.5rem 1rem"
                 borderRadius="0 1rem"
                 p="1rem"
