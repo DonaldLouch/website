@@ -27,7 +27,7 @@ export default function PortalLayoutContext({ children }: { children: React.Reac
     const router = useRouter()
 
     const user = useUser()
-    console.log(user)
+    
     const isInOrg = user.user?.organizationMemberships.length === 0 ? false : true
     const [isAdmin, setIsAdmin] = useState(false)
     

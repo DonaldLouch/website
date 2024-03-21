@@ -24,7 +24,7 @@ export async function POST(request: Request) {
           "VersionId": versionID,
         }
       ],
-      "Quiet": true
+      // "Quiet": true
     }
   }
   const command = new DeleteObjectsCommand(fileDelete)

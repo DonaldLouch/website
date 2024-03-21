@@ -39,9 +39,6 @@ export const PortalNavigationItem = ({
   children,
   ...rest
 }: PortalNavigationItemProps) => {
-
-  console.log(icon)
-
   return (
     <>
       {isParent == false ? (

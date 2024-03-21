@@ -66,21 +66,19 @@ export const MediaCard = ({ media }: any) => {
         formData.append("fileKey", fileKey)
         formData.append("versionID", fileVersionID)
         const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-        console.log(deleteFile)
-
+        // console.log(deleteFile)
         
-        
-        // const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
-        // mediaDeleteStatus &&
-        // toast({
-        //     // id: toastID,
-        //     // title: `${mediaDeleteStatus === 204 ? "Media Deleted  🗑️" : `Error #${mediaDeleteError?.code} has Occurred`}`,
-        //     description: `${mediaDeleteStatus === 204 ? `You have successfully deleted the media file ${fileTitle}!` : `An error has occurred: ${mediaDeleteError?.message}. ${mediaDeleteError?.hint && `${mediaDeleteError?.hint}.`}`}`,
-        //     status: `${mediaDeleteStatus === 204 ? "success" : "error"}`,
-        //     duration: 9000,
-        //     isClosable: true,
-        // })
-        // mediaDeleteStatus === 204 && router.refresh()
+        const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
+        mediaDeleteStatus &&
+        toast({
+            // id: toastID,
+            // title: `${mediaDeleteStatus === 204 ? "Media Deleted  🗑️" : `Error #${mediaDeleteError?.code} has Occurred`}`,
+            description: `${mediaDeleteStatus === 204 ? `You have successfully deleted the media file ${fileTitle}!` : `An error has occurred: ${mediaDeleteError?.message}. ${mediaDeleteError?.hint && `${mediaDeleteError?.hint}.`}`}`,
+            status: `${mediaDeleteStatus === 204 ? "success" : "error"}`,
+            duration: 9000,
+            isClosable: true,
+        })
+        mediaDeleteStatus === 204 && router.refresh()
     }
     return (
     <Grid id={`media_${fileID}-${fileExtension}`} gridTemplateColumns="30% 70%" p="5" boxShadow="bsBoldPrimary" overflowX="scroll" my="5" borderRadius="0 2rem" gap="4">
