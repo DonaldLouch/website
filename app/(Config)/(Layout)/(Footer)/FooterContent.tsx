@@ -8,12 +8,14 @@ import {
   Heading,
   Grid,
   Icon,
+  Box,
 } from "@chakra-ui/react";
 
 import { FooterIcon } from "./FooterIcon";
 import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
+import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 
-export default function FooterContent(){
+export default function FooterContent({isLoggedIn}: any){
   return (
       <Stack
         as="footer"
@@ -25,6 +27,7 @@ export default function FooterContent(){
         w="100%"
         direction={{base: "column", lg: "row"}}
         boxShadow="bsBoldPrimary"
+        pos="relative"
       >
         <Stack alignItems={{base: "center", lg: "initial"}} w="100%">
           <Grid gridTemplateColumns={{base: "100%", lg: "50% 25% 25%", xl: "60% 20% 20%"}}>
@@ -95,6 +98,7 @@ export default function FooterContent(){
             {/* </Stack> */}
           </Grid>
         </Stack>
+        <Box pos="absolute" top="5%" right="1%" zIndex="100000">{isLoggedIn ? <UserButton /> : <SignInButton mode="modal" afterSignInUrl="/portal"/>}</Box>
       </Stack>
   );
 }

@@ -102,7 +102,7 @@ export const ButtonStyles = {
           bg: "subtleBlurredBackground",
           color: "white",
         //   m: "1.5rem 1rem 0",
-          m: "0 3rem -1rem !important",
+          m: "0 3rem",
           p: "2rem 0",
           borderRadius: "0 2rem",
           wordBreak: "break-word",

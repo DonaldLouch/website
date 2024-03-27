@@ -55,7 +55,7 @@ export default async function Media() {
   // const paginationArray = new Array()
   // paginationArray.push(numberOfPages, currentPage)
 
-  const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('lastUpdatedOn', { ascending: false }) as any
+  const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('createdOn', { ascending: false }) as any
   
   return <AlbumManager photographyAlbum={photographyAlbum}/>
 }

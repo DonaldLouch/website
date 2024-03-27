@@ -10,6 +10,8 @@ import LoadingComponent from '@/app/(Config)/ContentLoading'
 import { Suspense, useEffect, useState } from 'react'
 import { OrganizationList, OrganizationSwitcher, Protect, SignOutButton, UserButton, useClerk, useOrganizationList, useSession, useUser } from '@clerk/nextjs'
 
+import { shadesOfPurple } from '@clerk/themes';
+
 {/* <Protect
         // permission="org:invoices:create"
         fallback={<>
@@ -20,26 +22,26 @@ import { OrganizationList, OrganizationSwitcher, Protect, SignOutButton, UserBut
         </>}
       ></Protect> */}
 
-export default function PortalLayoutContext({ children }: { children: React.ReactNode }) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+export default function PortalLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
     const { signOut } = useClerk()
     const router = useRouter()
 
     const user = useUser()
     
-    const isInOrg = user.user?.organizationMemberships.length === 0 ? false : true
-    const [isAdmin, setIsAdmin] = useState(false)
+    // const isInOrg = user.user?.organizationMemberships.length === 0 ? false : true
+    // const [isAdmin, setIsAdmin] = useState(false)
     
-    useEffect(() => {
-      if (isInOrg) {
-        user.user?.organizationMemberships.forEach((org: any) => {
-          if (org.organization.id === process.env.NEXT_PUBLIC_CLERK_ORG_ID) {
-              setIsAdmin(org.permissions.includes("org:portal:access"))
-          }
-        })
-      }
-    })
+    // useEffect(() => {
+    //   if (isInOrg) {
+    //     user.user?.organizationMemberships.forEach((org: any) => {
+    //       if (org.organization.id === process.env.NEXT_PUBLIC_CLERK_ORG_ID) {
+    //           setIsAdmin(org.permissions.includes("org:portal:access"))
+    //       }
+    //     })
+    //   }
+    // })
    
     return (
       <>
@@ -52,16 +54,25 @@ export default function PortalLayoutContext({ children }: { children: React.Reac
           w={{base: "100%", lg: "calc(100% + 6rem)"}}
           mx={{base: "0", lg: "-3rem"}}
         >
-          {!isAdmin ? (
+        {!isAdmin ? (
                 <Stack m="2rem">
                   <Text mb="2rem" textAlign="center" fontSize="1.5rem">It appears that you are not Donald Louch and thus, can't login to the website portal! Donald may implement a user portal at one point or another?!</Text>
-                  {/* <Stack direction="row"> */}
+                  <Stack direction="row"> 
                     {user.isSignedIn ? <Button variant="blackFormButton" onClick={() => signOut(() => router.push("/"))}>Sign Out and Go Home!</Button> : <Button variant="blackFormButton" as="a" href="/">Go Home!</Button>}
-                  {/* <Button variant="blackFormButton" as="a" href="/">Go Home!</Button> */}
-                  {/* </Stack> */}
-                  {/* <UserButton afterSignOutUrl="/"/> */}
+                  {/* <Button variant="blackFormButton" as="a" href="/">Go Home!</Button>  */}
+                  <OrganizationSwitcher 
+                    appearance={{
+                        elements: {
+                            rootBox: { background: "rgba(48,36,60,0.7)", padding: "0.5rem", borderRadius: "0 0.5rem" },
+                            organizationSwitcherTrigger: { color: "#EDEDED" },
+                        },
+                    }}
+                    hidePersonal
+                    organizationProfileMode='modal'
+                />
+                  </Stack>
+                  {/* <UserButton afterSignOutUrl="/"/>  */}
                 </Stack>
-              
               ) : (<>
                 <PortalNavigation
                   onClose={() => onClose}

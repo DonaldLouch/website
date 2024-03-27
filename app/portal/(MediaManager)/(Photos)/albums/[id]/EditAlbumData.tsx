@@ -96,7 +96,7 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
         albumName,
         albumCaption,
         links: albumLinks ? true : false,
-        hideForm: true,
+        hideForm: false,
         uploadedOn: moment(uploadedOn).format("yyyy-MM-DDTkk:mm"),
         linksRow: albumLinks
     }
@@ -202,16 +202,19 @@ export default function EditAlbumData({photoData, albumData, locations}: any) {
         
         <Divider m="2rem" width="calc(100% - 2rem * 2)" />
         <SectionTitle headingTitle="Photos in Album" />
-        <Flex 
+        {/* <Flex 
             as={Masonry}
             breakpointCols={breakpointColumnsObj}
             // p="4.5rem 1rem 1rem"
             m="2rem 1rem 1rem"
             gap="0.5rem"
-        >
+        > */}
+        <Grid templateColumns="repeat(4, 1fr)">
             {photoData.map((photo: any) => (
                 <ViewPhotoEditAlbum locations={locations} albumData={albumData} photoData={photo} />
-            ))}
-        </Flex>
+            ))
+            }
+        </Grid>
+        {/* </Flex> */}
     </>)
 }

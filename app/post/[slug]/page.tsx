@@ -5,7 +5,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 import { Metadata } from 'next';
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 type Props = {
     params: { slug: string }
 };
