@@ -69,6 +69,7 @@ import "@/app/(Config)/global.css"
 import noteClasses from "@/app/(Config)/Notifications.module.css"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // console.log()
   return (
     <html>
       <head>
