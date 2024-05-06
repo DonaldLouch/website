@@ -39,13 +39,15 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     </Group>
                 </Stack>
                 <Stack w={{base: "100%", md: "50%"}}> 
-                    <Group hidden={!user} gap="0.5rem">
-                        <ClipboardButton copyValue={imageData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
-                        <PrimaryLinkedButton link={`/admin/photography/${imageData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>
-                        <Badge color="white" leftSection={<GridIcon />}>
-                            {imageData.id}
-                        </Badge> 
-                    </Group>
+                    {user &&
+                        <Group gap="0.5rem">
+                            <ClipboardButton copyValue={imageData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
+                            <PrimaryLinkedButton link={`/admin/photography/${imageData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>
+                            <Badge color="white" leftSection={<GridIcon />}>
+                                {imageData.id}
+                            </Badge> 
+                        </Group>
+                    }
                     <Text style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "0 2rem", whiteSpace: "break-spaces"}} p="2rem">{imageData.caption}</Text>
                     <Group gap="0.5rem">
                             {imageData.album && hideElement != "album" && <Anchor href={`/album/${albumData.slug}`} style={{color: "currentColor"}}>
