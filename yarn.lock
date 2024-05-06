@@ -2528,15 +2528,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hugeicons/react-pro@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@hugeicons/react-pro@npm:0.3.0"
+"@hugeicons/react-pro@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@hugeicons/react-pro@npm:0.3.1"
   dependencies:
     js-base64: "npm:^3.7.7"
     js-md5: "npm:^0.8.3"
   peerDependencies:
     react: ">=16.0.0"
-  checksum: 10c0/aaf5df5c98f28104e3e7723b34fdf83e7f0854ef6e90f7b19c47bd93e380126cf9985f1e941994bed50b4d7c8a85e45ae41bf572d10508a3c4c3b15d973611fb
+  checksum: 10c0/0be4c6b31b9f768d89104aedbdf18a99e5429052436929333bce08217251989af6fb9fc8168894433105262bb771f3b50946daa442f860bd93685fe27c7c9609
   languageName: node
   linkType: hard
 
@@ -5910,7 +5910,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@hello-pangea/dnd": "npm:^16.6.0"
-    "@hugeicons/react-pro": "npm:^0.3.0"
+    "@hugeicons/react-pro": "npm:^0.3.1"
     "@mantine/carousel": "npm:^7.9.0"
     "@mantine/charts": "npm:^7.9.0"
     "@mantine/code-highlight": "npm:^7.9.0"

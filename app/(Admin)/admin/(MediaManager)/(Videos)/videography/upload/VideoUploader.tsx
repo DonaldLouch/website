@@ -17,9 +17,9 @@ import ManualVideo from "./ManualVideo"
 import { BsCloudPlus, BsPencilSquare, BsPlay, BsTrash2 } from "react-icons/bs"
     
 
-export default function VideoUploader({currentStep, categoryData}: {currentStep: number, categoryData:any}) {
+export default function VideoUploader({currentStep}: {currentStep: number}) {
     const id = cuid()
-
+// categoryData
     const cookies = parseCookies() as any
     const videoID = cookies.videoID as string
     const router = useRouter()
@@ -114,7 +114,8 @@ export default function VideoUploader({currentStep, categoryData}: {currentStep:
             <FileUploader mediaType="thumbnail" uploadTitle="Upload Thumbnail" helperText="For the best video player experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the thumbnail file." id={videoID} />
         </Box>
         <Box hidden={activeStep != 3} m="2rem" color="white">
-            <VideoInformation videoID={videoID} categoryData={categoryData} />
+            {/* categoryData={categoryData} */}
+            <VideoInformation videoID={videoID} />
         </Box>
         <Box hidden={activeStep != 4} m="2rem" color="white">
             <SectionCard styleType="primaryCard" id="start">

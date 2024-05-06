@@ -20,11 +20,13 @@ import { BsBookmarkDash, BsBookmarkPlus, BsCameraReels, BsLink45Deg, BsMusicNote
 
 import * as Yup from 'yup'
 
-export default function VideoInformation({videoID, categoryData}: {videoID: string, categoryData:any}) {
+export default function VideoInformation({videoID}: {videoID: string}) {
     const toast = useToast()
     const toastID = "toastID"
     const router = useRouter()
     
+    // categoryData
+
     const onSubmit =  async (values: any, actions: any) => {
         const tagArray =  values.tags.split(',')
 

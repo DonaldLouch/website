@@ -19,11 +19,13 @@ import { FormSelect } from '@/app/(Components)/(Form)/FormSelect'
 import ViewPhoto from '../../../(Components)/ViewPhoto'
 import { BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from 'react-icons/bs'
 
-export default function ViewPhotoEditAlbum({ locations, photoData }: any) {
+export default function ViewPhotoEditAlbum({ photoData }: any) {
     const toast = useToast()
     const toastID = "toastID"
     const { isOpen, onOpen, onClose } = useDisclosure()
     const router = useRouter()
+
+    // locations
     
     const {fileID, fileTitle, filePath, takenOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
     const { photoName, caption, tags, links, album, location, id: photoID, isPublic, isPortfolio, isPinned } = photoData as any

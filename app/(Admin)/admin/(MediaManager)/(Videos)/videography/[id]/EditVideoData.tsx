@@ -20,8 +20,10 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BsBookmarkDash, BsBookmarkPlus, BsCameraReels, BsLink45Deg, BsMusicNoteList, BsPencilSquare, BsPeople, BsPersonDash, BsPersonPlus, BsPlay, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
-export default function EditVideoData({videoData, categoryData}: any) {
+export default function EditVideoData({videoData}: any) {
     const video = videoData
+
+    // categoryData
 
     const toast = useToast()
     const toastID = "toastID"

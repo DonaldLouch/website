@@ -68,6 +68,10 @@ import "@/app/(Config)/global.css"
 
 import noteClasses from "@/app/(Config)/Notifications.module.css"
 
+// nse } from "@hugeicons/react-pro";
+// const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE!
+// hugeiconsLicense(iconLICENSE)
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // console.log()
   return (

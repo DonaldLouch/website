@@ -22,9 +22,9 @@ import moment from "moment";
 // import Masonry from "react-masonry-css";
 // import { BsEye, BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
-export default function EditAlbumData({photoData, albumData, locations}: any) {
+export default function EditAlbumData({albumData}: any) {
     const { id, albumName, slug, albumCaption, albumLinks, uploadedOn } = albumData
-
+// photoData, locations
     // const toast = useToast()
     // const toastID = "toastID"
     // const router = useRouter()
