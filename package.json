@@ -1,11 +1,11 @@
 {
     "name": "donaldlouch",
-    "version": "29.05.06.03",
+    "version": "29.05.06.04",
     "description": "Hi, my name is Donald Louch and I&#39;m a twenty-nine-year-old Canadian web developer and digital content creator.",
     "private": true,
     "scripts": {
         "dev": "next dev --experimental-https --turbo",
-        "build": "next build --turbo",
+        "build": "next build",
         "start": "next start",
         "prettier-fix": "prettier --write ."
     },
