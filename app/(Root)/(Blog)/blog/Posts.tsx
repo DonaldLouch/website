@@ -1,0 +1,36 @@
+
+'use client'
+
+import { Alert, Box, Code, Grid, Anchor, Space, SimpleGrid } from "@mantine/core"
+
+import { SectionCard } from "../../../(Components)/(Cards)/SectionCard";
+import { SectionTitle } from "../../../(Components)/SectionTitle";
+import PinnedPostsCard from "../../../(Components)/(Cards)/PinnedPostsCard";
+import BlogPostCard from "./BlogPostCard";
+
+import Pagination from "../../../(Config)/(Layout)/(Pagination)";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NextLink from "next/link";
+import { Alert02Icon } from "@hugeicons/react-pro";
+
+export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any){
+    return (
+        <>
+            <Space h="100vh" />
+            <Box component="main">
+                <SectionCard id="posts" styleType="primaryCard"><>
+                    <SectionTitle headingTitle={`Blog Posts (${postsNumber})`} />
+                    <PinnedPostsCard pinnedPosts={pinnedPosts} />
+                    <SimpleGrid
+                        cols={3}
+                        spacing={{ base: 0, sm: "2rem" }}
+                        w="100%"
+                    >
+                        { posts?.map((post: any) => ( <BlogPostCard {...post} /> )) }
+                    </SimpleGrid>
+                    <Pagination {...pagination} />
+                </></SectionCard>
+            </Box>
+        </>
+    );
+}

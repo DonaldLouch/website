@@ -27,6 +27,7 @@ const HostName = process.env.S3_HOST_NAME
 export async function POST(request: Request) {
     const formData = await request.formData()
     const file = formData.get("file") as File
+    const date = formData.get("date") as any
     const fileName = file.name
     const fileExtension = file.type.split("/")[1];
     const uploadDestination = formData.get("uploadDestination") as string
@@ -66,20 +67,21 @@ export async function POST(request: Request) {
           fileExtension: fileExtension,
           filePath: `${uploadEndpoint}/${filePath}`,
           fileVersionID: upload.VersionId,
-          takenOn: moment().utcOffset(8),
-          uploadedOn: moment().utcOffset(8),
+          takenOn: date ? moment(date) : moment(),
+          uploadedOn: moment(),
           photoMetadata: photoID,
         });
           await supabase.from("Photography").insert({
             id: photoID,
             fileID: fileID,
-            lastUpdatedOn: moment().utcOffset(8),
+            lastUpdatedOn: date ? moment(date) : moment(),
             photoName: file.name,
-            uploadedOn: moment().utcOffset(8),
+            takenOn: date ? moment(date) : moment(),
+            uploadedOn: moment(),
             isPublic: false,
             isSetup: false,
             isPortfolio: false,
-            isPinned: false
+            isPinned: false,
           });
           return NextResponse.json({ fileName, filePath, supabaseStatus, supabaseError }, { status: 200 });
     }
@@ -96,15 +98,15 @@ export async function POST(request: Request) {
           fileExtension: fileExtension,
           filePath: `${uploadEndpoint}/${filePath}`,
           fileVersionID: upload.VersionId,
-          capturedOn: moment().utcOffset(8),
-          uploadedOn: moment().utcOffset(8),
+          capturedOn: date ? moment(date) : moment(),
+          uploadedOn: moment(),
           videoMetadata: videoID,
         });
          await supabase
            .from("Videography")
            .update({
              videoFileID: fileID,
-             lastUpdatedOn: moment().utcOffset(8),
+             lastUpdatedOn: date ? moment(date) : moment(),
            })
            .eq("id", videoID);
           
@@ -133,15 +135,15 @@ export async function POST(request: Request) {
           fileExtension: fileExtension,
           filePath: `${uploadEndpoint}/${filePath}`,
           fileVersionID: upload.VersionId,
-          capturedOn: moment().utcOffset(8),
-          uploadedOn: moment().utcOffset(8),
+          capturedOn: date ? moment(date) : moment(),
+          uploadedOn: moment(),
           thumbnailMetadata: videoID,
         });
           await supabase
             .from("Videography")
             .update({
               thumbnailFileID: fileID,
-              lastUpdatedOn: moment().utcOffset(8),
+              lastUpdatedOn: date ? moment(date) : moment(),
             })
             .eq("id", videoID);
           return NextResponse.json(

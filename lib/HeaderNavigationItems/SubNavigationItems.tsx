@@ -6,9 +6,9 @@ interface HeaderSubNavigationItemsProps {
   
 export const HeaderSubNavigationItems: Array<HeaderSubNavigationItemsProps> = [
     { 
-        name: 'Contact Me',
-        slug: 'about#contact',
-        parentMenu: 0
+        name: 'Portfolio Home',
+        slug: 'portfolio',
+        parentMenu: 1
     },
     { 
         name: 'Resume',
@@ -27,48 +27,47 @@ export const HeaderSubNavigationItems: Array<HeaderSubNavigationItemsProps> = [
     },
     { 
         name: 'Videography',
-        slug: 'portfolio/videography',
+        slug: 'video/clv70b4iy00013b6rinrnxiz7',
         parentMenu: 1
     },
     { 
+        name: 'Feeds Home',
+        slug: 'feed',
+        parentMenu: 2
+    },
+    { 
         name: 'Photography',
-        slug: '/feed/photography',
+        slug: 'feed/photography',
         parentMenu: 2
     },
     { 
         name: 'Videography',
-        slug: '/feed/videography',
+        slug: 'feed/videography',
         parentMenu: 2
     },
     { 
-        name: 'LEGACY: Blog Feed',
-        slug: '/blog',
-        parentMenu: 2
+        name: 'Blog Posts',
+        slug: 'blog',
+        parentMenu: 3
     },
-    // { 
-    //     name: 'LEGACY: Photography',
-    //     slug: '/C/photography',
-    //     parentMenu: 2
-    // },
-    // { 
-    //     name: 'LEGACY: Audio',
-    //     slug: '/C/audio',
-    //     parentMenu: 2
-    // },
-    // { 
-    //     name: 'LEGACY: Graphic Design',
-    //     slug: '/C/graphic',
-    //     parentMenu: 2
-    // },
-    // { 
-    //     name: 'LEGACY: Education',
-    //     slug: '/C/education',
-    //     parentMenu: 2
-    // },
     { 
-        name: 'LEGACY: General',
-        slug: '/C/General',
-        parentMenu: 2
+        name: 'Life Updates',
+        slug: 'blog/C/life',
+        parentMenu: 3
     },
-    
+    { 
+        name: 'Website Updates',
+        slug: 'blog/C/website',
+        parentMenu: 3
+    },
+    { 
+        name: 'Travel',
+        slug: 'blog/C/travel',
+        parentMenu: 3
+    },
+    { 
+        name: 'Education',
+        slug: 'blog/C/education',
+        parentMenu: 3
+    }
 ]

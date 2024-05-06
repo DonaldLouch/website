@@ -98,13 +98,13 @@ export async function POST(request: Request) {
       </td>
       </tr>
       <tr>
-      <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px"><!--[if mso]><a href="https://donaldlouch.ca/portal/messages" target="_blank" hidden>
-      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://donaldlouch.ca/portal/messages" 
+      <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px"><!--[if mso]><a href="https://donaldlouch.ca/admin/messages" target="_blank" hidden>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://donaldlouch.ca/admin/messages" 
       style="height:44px; v-text-anchor:middle; width:136px" arcsize="14%" stroke="f"  fillcolor="#764688">
       <w:anchorlock></w:anchorlock>
       <center style='color:#ededed; font-family:lato, "helvetica neue", helvetica, arial, sans-serif; font-size:18px; font-weight:400; line-height:18px;  mso-text-raise:1px'>Read Message</center>
       </v:roundrect></a>
-      <![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#2CB543;background:#764688;border-width:0px;display:inline-block;border-radius:6px;width:auto;mso-hide:all"><a href="https://donaldlouch.ca/portal/messages" class="es-button es-button-1666494623734" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#EDEDED;font-size:20px;border-style:solid;border-color:#764688;border-width:10px 30px;display:inline-block;background:#764688;border-radius:6px;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center">Read Message</a></span><!--<![endif]--></td>
+      <![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#2CB543;background:#764688;border-width:0px;display:inline-block;border-radius:6px;width:auto;mso-hide:all"><a href="https://donaldlouch.ca/admin/messages" class="es-button es-button-1666494623734" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#EDEDED;font-size:20px;border-style:solid;border-color:#764688;border-width:10px 30px;display:inline-block;background:#764688;border-radius:6px;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center">Read Message</a></span><!--<![endif]--></td>
       </tr>
       <tr>
       <td align="left" class="es-m-p0r es-m-p0l" style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:40px;padding-right:40px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#EDEDED;font-size:14px">Thanks,<br>Donald Louch<br></p></td>

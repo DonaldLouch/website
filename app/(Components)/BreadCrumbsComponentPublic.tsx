@@ -1,7 +1,7 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react'
-import { BsChevronRight, BsHouse, BsHouseFill } from 'react-icons/bs'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { TbChevronRight, TbHome } from 'react-icons/tb'
+import { Anchor, Breadcrumbs } from '@mantine/core'
+import { ArrowRight01Icon, Home01Icon } from '@hugeicons/react-pro'
+
+import classes from "./Components.module.css"
 
 interface BreadComp {
     breads: any
@@ -9,20 +9,11 @@ interface BreadComp {
 
 export const BreadCrumbPublic = (props: BreadComp) => {
     const { breads } = props
-    const breadNumber = breads.length - 1
     
-    return (
-        <>
-            <Breadcrumb m={{base: "0 0 1.5rem", lg:"-1.5rem -2rem 1.5rem"}} separator={<BsChevronRight />}>
-                <BreadcrumbItem>
-                    <BreadcrumbLink href='/' border="none" _hover={{color: "white"}} color="secondary"><Icon as={BsHouseFill} m="0.25rem 0 0" /></BreadcrumbLink>
-                </BreadcrumbItem> 
-                {breads.map((bread:any, index: number) => (
-                    <BreadcrumbItem key={index} isCurrentPage={index == breadNumber ? true : false}>
-                        <BreadcrumbLink href={bread.pageLink}>{bread.pageName}</BreadcrumbLink>
-                    </BreadcrumbItem>
-                ))}
-            </Breadcrumb>
-        </>
-    )
+    return <Breadcrumbs m="1rem 0" separator={<ArrowRight01Icon />} fz="0.8rem">
+        <Anchor href='/' className={classes.breadHome}><Home01Icon variant="duotone" size="1.5rem" /></Anchor>
+        {breads.map((bread:any, index: number) => (
+            <Anchor key={index} href={bread.pageLink} c="white" fz="0.8rem">{bread.pageName}</Anchor>
+        ))}
+    </Breadcrumbs>
 }

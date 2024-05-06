@@ -1,34 +1,51 @@
-import { TextareaControl } from 'formik-chakra-ui'
-import { Code, Heading, Stack } from '@chakra-ui/react'
+import { Code, Title, Stack, Textarea } from '@mantine/core'
+import { BsAsterisk } from 'react-icons/bs'
 
-interface FormProps {
-    inputID: string
-    inputLabel: string
-    textRows: number
-    helperText?: any
-}
+// interface FormProps {
+//     inputID: string
+//     inputLabel: string
+//     textRows: number
+//     helperText?: any
+// }
 
-export const FormTextArea = ( props: FormProps) => {
-    const { inputID, inputLabel, textRows, helperText } = props
+import classes from "./Forms.module.css"
+
+export default function FormTextArea( props: any) {
+    const { inputID, inputLabel, textRows, helperText, isRequired, ...rest } = props
     
     return (
-        <Stack w="100%">
-            <Heading size="lg" mb={!helperText ? "1.5rem" : "0"}>{inputLabel}</Heading>
-            <Code p={3} colorScheme='whiteAlpha' m="0.5rem 0 1.5rem" hidden={!helperText}>{helperText}</Code>
-            <TextareaControl 
-                name={inputID}
-                mt="-1rem !important"
-                textareaProps={{
-                    variant: "unstyled",
-                    boxShadow: "bsBoldSecondary",
-                    _focus: {boxShadow: "bsBoldPrimary"},
-                    _invalid: {boxShadow: "bsBoldRed"},
-                    p: "1.5rem 2rem",
-                    color: "white",
-                    borderRadius: "0 2rem 0 2rem",
-                    rows: textRows
-                }}
-            />
+        <Stack w="100%" my="1rem">
+            <Title size="1.5rem">{inputLabel}</Title>
+            <Code p="1rem" color='var(--darkPurple)' hidden={!helperText} c="white">{helperText}</Code>
+            <Textarea
+                    mt="-0.5rem"
+                    withAsterisk={isRequired}
+                    // classNames={{input: classes.defaultInput}}
+                    styles={{
+                        root: {width: "100%"},
+                        label: {
+                            fontSize: "1.5rem",
+                            fontFamily: "heading",
+                        },
+                        error: {
+                            fontSize: "0.8rem",
+                            margin: "0 0 0.5rem",
+                            color: "var(--mantine-color-red-7)"
+                        },
+                        input: {
+                            padding: "1rem 1.5rem", 
+                            margin: "0.5rem 0 0",
+                            width: "100%",
+                            background: "none"
+                        }
+                    }}
+                    rows={textRows ? textRows : 5}
+                    // styles={{input: {padding: "1rem 1.5rem", margin: "0.5rem -0.5rem"}}}
+                    classNames={{input: classes.defaultInput}}
+                    name={inputID} 
+                    unstyled
+                    {...rest}
+             />
         </Stack>
     )
 }

@@ -1,0 +1,12 @@
+.description,
+.title {
+    color: var(--mantine-color-white) !important;
+}
+
+.closeButton {
+    color: var(--mantine-color-white);
+
+    &:hover {
+        background: var(--darkPurpleRGBA);
+    }
+}

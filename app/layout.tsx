@@ -6,6 +6,12 @@ import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+import { ColorSchemeScript, MantineProvider } from '@mantine/core'
+
+// import { hugeiconsLicense } from "@hugeicons/react-pro";
+// const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
+// hugeiconsLicense(iconLICENSE)
+
 export const viewport: Viewport = {
   themeColor: '#30243c',
   width: 'device-width',
@@ -47,18 +53,40 @@ export const revalidate = 0
 // import '@mantine/dropzone/styles.css'
 // crossOrigin="anonymous"
 import Script from "next/script";
+// import AppLayout from "./(Config)/(Layout)/AppLayout";
+import GeneralLayout from "./(Config)/(Layout)/GeneralLayout";
+import { MantineTheme } from "./(Config)/MantineTheme"
+
+import { Notifications } from '@mantine/notifications';
+
+import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
+import '@mantine/notifications/styles.css';
+import '@mantine/dropzone/styles.css';
+import '@mantine/carousel/styles.css';
+import "@/app/(Config)/global.css"
+
+import noteClasses from "@/app/(Config)/Notifications.module.css"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
         <ClerkProvider>
+          <MantineProvider theme={MantineTheme}>
+          <Notifications styles={{notification: {background: "var(--darkPurpleRGBA)"}}} classNames={noteClasses}/>
           <Context>{children}</Context>
+          {/* <MantineProvider> */}
+            {/* {children} */}
+          </MantineProvider> 
         </ClerkProvider>
         <Analytics />
         <SpeedInsights />
       </body>
-      <Script src="https://kit.fontawesome.com/66b6e8c296.js" strategy="afterInteractive"/>
+      {/* <Script src="https://kit.fontawesome.com/66b6e8c296.js" strategy="afterInteractive"/> */}
     </html>
   )
 }

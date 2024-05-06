@@ -1,10 +1,10 @@
 'use client'
 
-import { Box } from '@chakra-ui/react'
+import { Box } from '@mantine/core'
 
 interface CardProps {
     id: string
-    styleType: string
+    styleType?: string
     children: React.ReactNode
 }
 
@@ -12,20 +12,18 @@ export const SectionCard = (props: CardProps) => {
     const { id, styleType, children } = props
     return (
         <Box 
-            as="section" 
+            component="section" 
             id={id} 
-            filter="opacity(80%)" 
-            mx={{base: "0rem", lg: "-2rem"}}
+            style={{
+                filter: "opacity(80%)",
+                borderRadius: "var(--mantine-radius-lg)",
+                boxShadow: styleType == "primaryCard" ? "var(--mantine-shadow-bsBoldPrimary)" :  styleType == "secondaryCard" ? "var(--mantine-shadow-bsBoldSecondary)" : "var(--mantine-shadow-bsBoldWhite)"
+            }}
+            mx={{base: "0rem", lg: "-3rem"}}
             my={{base: "1rem", lg: "1rem"}}
             p="2rem" 
-            borderRadius="0 2rem" 
             bg="none"
-            boxShadow={
-                styleType == "primaryCard" ? "bsBoldPrimary" 
-                :  styleType == "secondaryCard" ? "bsBoldSecondary" 
-                : "bsBoldWhite"
-            }
-            color="white"
+            c="white"
         >
             {children}
         </Box>

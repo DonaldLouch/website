@@ -1,16 +1,16 @@
-
 'use client'
-import { Heading, Spinner, Stack, Text } from "@chakra-ui/react";
-import Link from "next/link"
+import { Title, Loader, Stack, Text, Paper, Group, Anchor, Center } from "@mantine/core";
 
 export default function loading() {
-    return (
-        <Stack alignItems="center" minH="100vh" maxH="100vh" pt="2rem" w="100%" background="none" color="white">
-            <Stack direction="row" gap={{base: "0.5rem", md: "2rem"}} alignItems="center">
-                <Spinner color="white" size="xl" />
-                <Heading  fontSize={{base: "2rem", md: "3rem", lg:"5rem"}}>Loading Content</Heading>
+    return (<Center mih="100vh" mah="100vh">
+        <Paper p="2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg">
+            <Stack align="center">
+            <Group gap="2rem" align="center">
+                <Loader color="white" size="md" />
+                <Title order={1} fz={{base: "2rem", md: "3rem"}}>Loading Content</Title>
+            </Group>
+            <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
             </Stack>
-            <Text pt="1rem">If the content is still not loaded after a minute please contact Donald Louch at <Link href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Link> for further assistance.</Text>
-        </Stack>
-    )
+        </Paper>
+    </Center> )
 }

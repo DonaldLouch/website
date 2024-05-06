@@ -1,0 +1,21 @@
+.defaultInput {
+    box-shadow: var(--mantine-shadow-bsBoldSecondary);
+    border-radius: var(--mantine-radius-md);
+    color: var(--mantine-color-white) !important;
+    border: none;
+    outline: none;
+    &:focus {
+        box-shadow: var(--mantine-shadow-bsBoldPrimary);
+        color: var(--mantine-color-white);
+    };
+        &[data-error] {
+        box-shadow: var(--mantine-shadow-bsBoldRed) !important;
+    }
+}
+
+.dateInput {
+    color: var(--mantine-color-white) !important;
+    &:hover {
+        background: var(--darkPurple) !important;
+    }
+}

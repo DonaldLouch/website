@@ -1,16 +1,9 @@
 'use client'
 
-import { theme } from "@/theme"
-import { ChakraProvider } from "@chakra-ui/react"
-
-import AppLayout from "./(Layout)/AppLayout"
-// import { MantineProvider } from "@mantine/core"
-// import { ClerkProvider } from "@clerk/nextjs";
+import { hugeiconsLicense } from "@hugeicons/react-pro";
+const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
+hugeiconsLicense(iconLICENSE)
 
 export default function Context({ children }: { children: React.ReactNode }) {
-    return (
-        <ChakraProvider theme={theme} resetCSS={true}>
-            <AppLayout>{children}</AppLayout>
-        </ChakraProvider>
-    )
+    return <>{children}</>
 }

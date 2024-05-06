@@ -1,3 +1,4 @@
+import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, Home01Icon, Link04Icon, NewsIcon } from "@hugeicons/react-pro"
 import { BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge } from "react-icons/bs"
 
 interface HeaderNavigationItemsProps {
@@ -11,43 +12,45 @@ interface HeaderNavigationItemsProps {
 
 export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     { 
-        name: 'About Me',
-        slug: 'about',
-        // iconPre: 'fal', 
-        icon: BsPersonBadge,
-        isParent: true,
+        name: 'Home',
+        slug: '/',
+        icon: <Home01Icon />,
+        isParent: false,
         parentID: 0
     },
     { 
         name: 'Portfolio',
         slug: 'portfolio',
-        // iconPre: 'fal', 
-        icon: BsFolder2Open,
+        icon: <Briefcase02Icon />,
         isParent: true,
         parentID: 1
     },
-    // { 
-    //     name: 'Blog',
-    //     slug: 'blog',
-    //     iconPre: 'fal', 
-    //     icon: 'newspaper',
-    //     isParent: true,
-    //     parentID: 2
-    // },
     { 
         name: 'Feeds',
         slug: 'feed',
-        // iconPre: 'fal', 
-        icon: BsImages,
+        icon: <DashboardSquare02Icon />,
         isParent: true,
         parentID: 2
     },
     { 
+        name: 'Blog',
+        slug: 'blog',
+        icon: <NewsIcon />,
+        isParent: true,
+        parentID: 3
+    },
+    { 
+        name: 'Contact Me',
+        slug: 'contact',
+        icon: <Chatting01Icon />,
+        isParent: false,
+        parentID: 4
+    },
+    { 
         name: 'Links',
         slug: 'about#links',
-        // iconPre: 'fal', 
-        icon: BsLink45Deg,
+        icon: <Link04Icon />,
         isParent: false,
-        parentID: 3
+        parentID: 5
     }
 ]

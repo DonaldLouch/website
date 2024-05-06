@@ -1,6 +1,4 @@
-import { Image, Tooltip } from "@chakra-ui/react"
-
-import Link from "next/link"
+import { Anchor, Image, Tooltip } from "@mantine/core"
 
 interface LinkedSVGButtonProps {
   link: string
@@ -10,10 +8,10 @@ interface LinkedSVGButtonProps {
 
 export const LinkedSVGButton = (buttonLink: LinkedSVGButtonProps) => {
   return (
-    <Link href={buttonLink.link}>
+    <Anchor href={buttonLink.link}>
       <Tooltip label={buttonLink.title}>
-        <Image src="/logoFull.svg" _hover={{ border: "solid" }} h="auto" w="4rem" fontSize="inherit" maxW="none !important" />
+        <Image src="/logoFull.svg" h="auto" w="4rem" fz="inherit" maw="none !important" />
       </Tooltip>
-    </Link>
+    </Anchor>
   )
 }

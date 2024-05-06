@@ -1,88 +1,45 @@
 'use client'
 
 import {
-  Link,
-  FlexProps,
+  Anchor,
+  Group,
+  // FlexProps,
   Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
+  NavLink,
+  // MenuButton,
+  // MenuList,
+  // MenuItem,
   Stack,
   Tooltip,
-  Icon,
-} from "@chakra-ui/react";
+  // Icon,
+} from "@mantine/core";
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BsChevronDown } from "react-icons/bs";
+import HeaderLink from "@/app/(Components)/(Buttons)/HeaderLink";
 
-interface HeaderNavigationItemProps extends FlexProps {
-  slug: any;
-  isParent: boolean;
-  parentID: number | null;
-  children: React.ReactNode;
+import classes from '@/app/(Components)/(Buttons)/Buttons.module.css'
+
+interface HeaderNavigationItemProps {
+  slug: any
+  isParent: boolean
+  parentID: number | null
+  linkName: string
+  icon?: any
 }
-
-export const HeaderNavigationItem = ({ slug, isParent, parentID, children }: HeaderNavigationItemProps) => {
+export default function HeaderNavigationItem( { slug, isParent, parentID, linkName, icon }: HeaderNavigationItemProps ) {
   return (
     <>
-      {isParent == false ? (
-        <Link
-          href={`/${slug}`}
-          textDecoration="none"
-          variant="primary"
-          mx="0.7rem"
-          fontSize="1.2rem"
-          color="white"
-          _hover={{ color: "secondary" }}
-        >
-          {children}
-        </Link>
+      {!isParent ? (
+        <HeaderLink linkName={linkName} href={`/${slug}`} icon={icon} />
       ) : (
         <>
-        <Stack direction="row" gap ="0">
-          <Link
-            href={`/${slug}`}
-            textDecoration="none"
-            variant="primary"
-            mx="0.3rem"
-            fontSize="1.2rem"
-            color="white"
-            _hover={{ color: "secondary" }}
-          >
-            {children}
-          </Link>
-          <Menu>
-            <Tooltip label="More Pages">
-              <MenuButton as="button" color="white" _hover={{ color: "secondary" }} _active={{ color: "secondary" }}>
-                <BsChevronDown />
-                {/* <Icon w="1.2rem" h="1.2rem" as={BsChevronDown} /> */}
-                  {/* <FontAwesomeIcon icon={['fal', 'chevron-down']} color="currentColor" />  */}
-                {/* </Icon> */}
-              </MenuButton>
-            </Tooltip>
-            <MenuList bg="black" border="none">
-                {HeaderSubNavigationItems.map( (subLink: any) =>subLink?.parentMenu == parentID && (
-                  <MenuItem key={`sub_${parentID}${subLink.slug}`} bg="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>
-                    {subLink.slug.includes("https://") ? (
-                      <Link
-                        href={subLink.slug}
-                        variant="unstyled"
-                        isExternal
-                        _hover={{border: "none"}}
-                      > {subLink.name}</Link>
-                    ) : (
-                      <Link
-                        href={`../../${subLink.slug}`}
-                        variant="unstyled"
-                        _hover={{border: "none"}}
-                      >{subLink.name}</Link>
-                    )}
-                  </MenuItem>
-                ))}
-            </MenuList>
-          </Menu>
-        </Stack>
+          <HeaderLink linkName={linkName} href={`/${slug}`} icon={icon}>
+            {HeaderSubNavigationItems.map((subLink: any) =>subLink?.parentMenu == parentID && (
+              <NavLink href={`/${subLink.slug}`} label={subLink.name} key={subLink.slug} classNames={{ root: classes.headerLink, label: classes.headerLinkSub_label }} />
+            ))}
+          </HeaderLink>
         </>
       )}
     </>

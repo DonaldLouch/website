@@ -1,43 +1,47 @@
 'use client'
-import { Link, Menu, MenuButton, MenuItem, MenuList, Stack } from '@chakra-ui/react'
+import { Anchor, Button, Group, Menu, Stack } from '@mantine/core'
     
+import classes from "@/app/(Components)/Components.module.css"
+import { MoreHorizontalIcon } from '@hugeicons/react-pro'
+
+//  _hover={{background: "blurredBackground", c:"secondary", fw: "900 !important"}
 export const PaginationMenu = ( props: any ) => { 
   const { currentPage, pages, previousPages, nextPages } = props
-  return (
-    <Stack direction="row" justify="space-between" align="center" m="1rem" p="2rem" boxShadow="bsBoldPrimary" borderRadius="0 2rem" color="white">
-      <Link href={`?pg=${currentPage - 1}`} variant="primary" color="white" _hover={{color: "primary"}}>Previous Page</Link>
+  return (<>
+    <Group justify="space-between" align="center" m="2rem 1rem 1rem" p="1rem 2rem" style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md"}} c="white">
+      <Anchor href={`?pg=${currentPage - 1}`} variant="primary" c="white">Previous Page</Anchor>
         {pages.map((page: any) => (
           page === "...Prev" && (
-            <Menu placement="top">
-              <MenuButton>...</MenuButton>
-              <MenuList maxH="80vh !important" overflowY="scroll" background="black" border="none">
+            <Menu position="top">
+              <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><MoreHorizontalIcon /></Button></Menu.Target>
+              <Menu.Dropdown style={{overflowY: "scroll", border:"none", maxHeight: "40vh"}} w="5%" bg="black">
                 {previousPages?.map((number: any) => (
-                  <Link href={`?pg=${number}`} key={`prev_${number}`} _hover={{textDecoration: "none"}}>
-                    <MenuItem background="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>{number}</MenuItem>
-                  </Link>
+                  <Anchor href={`?pg=${number}`} key={`${number}`} underline="never">
+                    <Menu.Item c="white" ta="center"className={classes.menuDropdown} w="100%">{number}</Menu.Item>
+                  </Anchor>
                 ))}
-              </MenuList>
+              </Menu.Dropdown>
             </Menu>
           ) || page === "...Nex" && (
-          <Menu placement="top">
-            <MenuButton>...</MenuButton>
-            <MenuList maxH="80vh !important" overflowY="scroll" background="black" border="none">
+          <Menu position="top">
+              <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><MoreHorizontalIcon /></Button></Menu.Target>
+              <Menu.Dropdown style={{overflowY: "scroll", border:"none", maxHeight: "40vh"}} w="5%" bg="black">
               {nextPages?.map((number: any) => (
-                <Link href={`?pg=${number}`} key={`next_${number}`} _hover={{textDecoration: "none"}}>
-                  <MenuItem background="black" _hover={{background: "blurredBackground", color:"secondary", fontWeight: "900 !important"}}>{number}</MenuItem>
-                </Link>
+                <Anchor href={`?pg=${number}`} key={`${number}`} underline="never">
+                    <Menu.Item c="white" ta="center"className={classes.menuDropdown} w="100%">{number}</Menu.Item>
+                  </Anchor>
               ))}
-            </MenuList>
+            </Menu.Dropdown>
           </Menu>
           ) || (
             page === currentPage ? (
-              <Link color="secondary" fontSize="1.4rem" fontWeight="900" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
+              <Anchor c="secondary" fz="1.4rem" fw="900" key={page?.index}>{page}</Anchor>
             ) : (
-              <Link href={`?pg=${page}`} variant="primary" color="white" _hover={{color: "primary"}} key={page?.index}>{page}</Link>
+              <Anchor href={`?pg=${page}`} c="white" key={page?.index}>{page}</Anchor>
             )
           )
         ))}
-      <Link href={`?pg=${currentPage + 1}`} variant="primary" color="white" _hover={{color: "primary"}}>Next Page</Link>
-    </Stack>
-  )
+      <Anchor href={`?pg=${currentPage + 1}`} c="white">Next Page</Anchor>
+    </Group>
+  </>)
 }

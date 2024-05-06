@@ -1,56 +1,55 @@
 import { 
-    Accordion, 
-    AccordionButton, 
-    AccordionItem, 
-    AccordionPanel, 
     Box, 
-    Heading, 
-    Stack, 
-    Tab, 
-    TabList, 
-    TabPanel, 
-    TabPanels, 
+    Title, 
+    Stack,
     Tabs,
     Image,
     Text,
     Divider,
     AspectRatio,
-    Link,
+    Anchor,
     Table,
-    Thead,
-    Tbody,
-    Tr,
-    Th,
-    Td,
     List,
-    ListItem,
-    Grid
-} from "@chakra-ui/react"
+    Tooltip,
+    Flex,
+    Code,
+    Blockquote
+} from "@mantine/core"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { BsChevronDown } from "react-icons/bs"
+import classes from "@/app/(Components)/Components.module.css"
+
+import SingleAccordion from "../(Components)/(Accordion)/SingleAccording"
+
+import Masonry from 'react-masonry-css'
+import { HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react-pro"
+
+ const breakpointColumnsObj = {
+    default: 5,
+    1500: 4,
+    800: 3,
+}
 
 const heading1 = (props: any) => (
-    <Heading as="h1" size="4xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title order={1} size="4rem" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading2 = (props: any) => (
-    <Heading as="h2" size="3xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title order={2} size="3rem" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading3 = (props: any) => (
-    <Heading as="h3" size="2xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title order={3} size="1.3rem" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading4 = (props: any) => (
-    <Heading as="h4" size="xl" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title order={4} size="4rem" ff="text" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading5 = (props: any) => (
-    <Heading as="h5" size="lg" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title order={5} size="3rem"ff="text"  my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading6 = (props: any) => (
-    <Heading as="h6" my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title order={6} size="1.3rem" ff="text" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 
 const heading = (props: any) => (
-    <Heading {...props} my="1rem" textShadow="3px 2px 4px rgb(193 93 79 / 20%)">{props.children}</Heading>
+    <Title {...props} my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 
 const newSection = (props: any) => (
@@ -65,155 +64,187 @@ const text = (props: any) => (
     <Text {...props}>{props.children}</Text>
 )
 
-const underline = () => (
-    <Divider borderColor="primary" w="95%" mx="auto" my="2rem" />
+const divider = (props: any) => (
+    props.children ? <Divider my="md" label={props.children} labelPosition="center" /> : <Divider my="md" />
 )
 
 const toggle = (props: any) => (
     <>
-        <Accordion allowToggle mt="2rem" mx="auto" w="100%" textDecoration="none" whiteSpace="break-spaces" wordBreak="break-word">
-            <AccordionItem border="none">
-                <AccordionButton bg="backgroundGradient" color="white" borderRadius="0 2rem" p="1.5rem 3rem" fontSize="1.2rem" fontWeight="600" fontFamily="body" _hover={{bg: "none", color: "primary"}} outline="none" _expanded={{bg: "primary", color: "white"}}>
-                    <Box flex='1' textAlign='left'>
-                    {props.toggleAlt}
-                    </Box>
-                    <Box w={{base: "4%", lg: "2%"}}>
-                        <BsChevronDown />
-                        {/* <FontAwesomeIcon 
-                            icon={["fas", "chevron-down"]}
-                            height="100%"
-                            fontSize="md"
-                            color="currentColor"
-                        /> */}
-                    </Box>
-                </AccordionButton>
-                <AccordionPanel px="0.5rem" mx="1.5rem">
-                    <Stack whiteSpace="break-spaces" gap="1.3rem">
-                        {props.children}
-                    </Stack>
-                </AccordionPanel>
-            </ AccordionItem>
-        </Accordion>
-        {/* <Box hidden>{props.children}</Box> */}
+        <SingleAccordion customMargin="0 -1rem" content={[{
+            id: props.toggleAlt,
+            label: props.toggleAlt
+        }]}>
+            <Stack style={{whiteSpace: "break-spaces"}} gap="1.3rem">
+                {props.children}
+            </Stack>
+        </SingleAccordion>
     </>
 )
 
-const image = (props: any) => (
-    <>
-        <Image src={props.src} alt={props.alt} w="100%" />
-    </>
-)
+const image = (props: any) => (<Image src={props.src} alt={props.alt} style={{boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} radius="md" />)
 
 const songInfo = (props: any) => (
     <>
-    <Grid as="section" id="songInfo" templateColumns={{base: "100%", md: "20% 80%"}} gap="1rem" mb="1rem" alignItems="center" boxShadow="bsBoldPrimary" borderRadius="0 2rem">
-        <Image src={props.artworkSrc} alt={props.artworkTitle} w="100%" borderBottomLeftRadius="2rem"/>
-        <Stack mr="2rem">
+     {/* <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center"> */}
+        <Box component="section" bg="var(--darkPurpleRGBA)" style={{
+            boxShadow: "var(--mantine-shadow-bsSMPrimary)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "var(--mantine-radius-lg)"
+        }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p="0 1rem" my="1rem">
+            <Flex
+            direction={{base: "row", sm: "row"}}
+            gap={{base: "0.5rem", sm: "2rem"}}
+            justify="flex-start"
+            align="center"
+            >
+                <AspectRatio ratio={1/1} 
+                    w="50%"
+                >
+                    <Image src={props.artworkSrc} alt={props.artworkTitle} />
+                </AspectRatio>               
+                <Flex direction="column" align={{base: "center", lg: "flex-start"}}>
+                     {props.children}
+                </Flex>
+            </Flex>
+        </Box>
+    {/* </Stack> */}
+    {/* <Grid component="section" id="songInfo" gutter="1rem" mb="1rem" align="center" style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "(--mantine-radius-md)"}}>
+        <Grid.Col span={3}><Image src={props.artworkSrc} alt={props.artworkTitle}  style={{borderBottomLeftRadius: "2rem"}}/></Grid.Col>
+        <Grid.Col span={9} mr="2rem">
             {props.children}
-        </Stack>
-    </Grid>
+        </Grid.Col>
+    </Grid> */}
     </>
 )
 
-const blockquote = (props: any) => (<Text as="blockquote" fontFamily="heading" fontSize="xl" my="1rem" ml="2rem" borderLeft="0.1rem solid" borderColor="primary" paddingLeft="1rem" fontWeight="700">{props.children}</Text>)
+const blockquote = (props: any) => (<Blockquote color="var(--primary)" icon={<QuoteDownIcon />} m="3rem 0 2rem" p="1rem 2rem">
+    {props.children}
+</Blockquote>)
 
-const unorderedList = (props: any) => (
-    <>
-    <List spacing={3}>
-        {props.children.map((list: any) => ( 
-            <>
-            {list != "\n" && (
-                <ListItem key={list.index} boxShadow="bsBoldSecondary" padding="1.5rem" borderRadius="0 2rem" my="1rem" ml="3rem">
-                    {/* <ListIcon as={MinusIcon} color='green.500'/> */}
-                    <Stack direction="row" alignItems="center" ml="-4rem" gap="3rem">
-                        <Box color="primary" width={5}>
-                            <FontAwesomeIcon icon={['fal', 'hand-point-right']} color="currentColor" />
-                        </Box>
-                        {list.props?.children}
-                    </Stack>
-                </ListItem>
-            )}
-            </>
-        ))} 
+const unorderedList = (props: any) => {
+    const listArray = new Array()
+    props.children.forEach((item: any) => {
+        item != "\n" && listArray.push(item)
+    })
+    return <List withPadding spacing="0" fw="300" type="unordered" icon={<HandPointingRight01Icon variant="duotone" color="var(--secondary)" />}>
+        {listArray.map((item: any, index: number) => {
+            return <List.Item key={index}>{item.props.children}</List.Item>
+        })}
     </List>
-    </>
-)
+}
 
-const links = (props: any) => (<Link href={props.href} variant="primary">{props.children}</Link>)
+const orderedList = (props: any) => {
+    const listArray = new Array()
+    props.children.forEach((item: any) => {
+        item != "\n" && listArray.push(item)
+    })
+    return <List withPadding spacing="0" fw="300" type="ordered">
+        {listArray.map((item: any, index: number) => {
+            return <List.Item key={index}>{item.props.children}</List.Item>
+        })}
+    </List>
+}
+// {list.props?.children}
+//     <>
+//     <List spacing={3}>
+//         {props.children.map((list: any) => ( 
+//             <>
+//             {list != "\n" && (
+//                 <ListItem key={list.index} boxShadow="bsBoldSecondary" padding="1.5rem" borderRadius="0 2rem" my="1rem" ml="3rem">
+//                     {/* <ListIcon as={MinusIcon} color='green.500'/> */}
+//                     <Stack direction="row" alignItems="center" ml="-4rem" gap="3rem">
+//                         <Box color="primary" width={5}>
+//                             <FontAwesomeIcon icon={['fal', 'hand-point-right']} color="currentColor" />
+//                         </Box>
+//                         {list.props?.children}
+//                     </Stack>
+//                 </ListItem>
+//             )}
+//             </>
+//         ))} 
+//     </List>
+//     </>
+// )
+
+const links = (props: any) => (<Tooltip label={props.href}><Anchor href={props.href} fw="700" style={{borderBottom: "solid 2px var(--mantine-color-white)"}} underline="never" className={classes.markdownLink}>{props.children}</Anchor></Tooltip>)
 
 const videoFrame = (props: any|boolean) => (
     <AspectRatio 
-                ratio={16/9}
-                w="calc(100% + 4rem)"
-                m="1rem 0 1rem -2rem"
-                overflow="hidden"
-                bg="mainGradient"
-                zIndex="banner"
-            >
-                <iframe  width={props.width} height={props.height} src={props.src} frameBorder="0" allow={props.options} allowFullScreen></iframe>
-            </AspectRatio>
+        ratio={16/9}
+        // w="calc(100% + 4rem)"
+        // m="1rem 0 1rem -2rem"
+        style={{
+            overflow: "hidden",
+            zIndex: "1000",
+            border: "none"
+        }}
+    
+        // bg="mainGradient"
+    >
+        <iframe width={props.width} height={props.height} src={props.src} allow={props.options} allowFullScreen style={{border: "none"}}></iframe>
+    </AspectRatio>
 )
 
-const tabSection = (props: any) => (
-    <>
-        <Tabs isFitted>
-            <TabList>
-                {props.tabTitles.map((tab: any) => (
-                    <Tab key={tab}>{tab}</Tab>
-                ))}
-            </TabList>
-            <TabPanels>
-                {props.children.map((tab: any) => (
-                    // console.log(tab)
-                    <TabPanel key={tab}>{tab}</TabPanel>
-                ))}
-            </TabPanels>
-        </Tabs>
-    </>
-)
+const tabSection = (props: any) => (<Tabs defaultValue="0">
+    <Tabs.List grow justify="center">
+        {props.tabTitles.map((tab: any, index: any) => (
+            <Tabs.Tab key={tab} value={index.toString()}>{tab}</Tabs.Tab>
+        ))}
+    </Tabs.List>
+    {props.children.map((tab: any, index: any) => (<Tabs.Panel key={index} value={index.toString()}>
+        {tab}
+    </Tabs.Panel>))}
+</Tabs>)
 
-{/* <>
-    <Tabs isFitted>
-        <TabList>
-            {props.tabTitles.map((tab: any) => (
-                <Tab key={tab}>{tab}</Tab>
-            ))}
-        </TabList>
-        <TabPanels>
-            {props.tabPanels.map((tab: any) => (
-                // console.log(tab)
-                <TabPanel key={tab}>{tab}</TabPanel>
-            ))}
-        </TabPanels>
-    </Tabs>
-     </> */}
+const inlinePhotoGallery = (props: any) => (<Flex 
+    component={Masonry}
+    breakpointCols={breakpointColumnsObj}
+    m={{base: "2rem -0.2rem", lg: "2rem -4rem"}}
+    w="calc(100vw - 1rem)"
+    p={{base: "0.5rem", sm: "0 0.5rem"}}
+    gap="0.5rem"
+    bg="var(--darkPurple)"
+    pos="relative"
+    style={{
+        zIndex: 2000
+    }}
+>
+    {props.content.split(" || ")?.map((image: any, index: number) => (<Box className={classes.imageCardView}><Anchor key={index} href={image.split(';;')?.[0]}><Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} /></Anchor></Box>))}
+</Flex>)
 
-const inlinePhotoGallery = (props: any) => (
-    <>
-          <Box 
-            as="section" 
-            id={props.id} 
-            padding="0.4rem"
-            w="100vw"
-            sx={{ columnCount: {base:"1", md: "2", lg: "4"}, gap: "0.4rem", columnWidth: {base: "100%", md: "50% 50%", lg: "25% 25% 25% 25%"}}}
-            m={{base: "1rem -3rem", lg: "1rem -7rem"}}
-            bg="mainGradient"
-            zIndex="tooltip"
-            pos="sticky"
-        >
-            {props.content.split(" || ")?.map((image: any) => (
-                <Link key={image.index} href={image.split(';;')?.[0]}>
-                    <Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} _hover={{background: "backgroundGradient", opacity: "0.6"}} display="inherit"></Image>
-                </Link>
-            ))}
-        </Box>
-    </>
-)
-const lineBreak = () => (<Box as="br"></Box>)
+const lineBreak = () => (<Box component="br"></Box>)
 
+const codeBlock = (props: any) => {
+    return <Code block bg="var(--blackRGBA)" c="white" style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem 2rem" fz="1rem" lh="2"><Text fz="0.8rem">// Code Type: .{props.children.props.className.split("-")[1]}</Text><Divider mb="1rem" color="var(--darkPurple)" />{props.children.props.children}</Code>
+}
+
+const code = (props: any) => {
+    console.log(props)
+    return <Code p="0.5rem" bg="var(--darkPurple)" c="white" fz="1rem" lh="2">{props.children}</Code>
+}
 const tables = (props: any) => (
     <>
-        <Stack overflowX="auto" m="1rem" px="1rem" boxShadow="bsBoldSecondary" padding="1rem !Important" borderRadius="0 2rem">
+    <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}}>
+      <Table.Thead bg="var(--darkPurple)" styles={{thead: {borderRadius: "0 2rem 0 0"}}}>
+        <Table.Tr>
+            {props.tableHeader.split(' | ').map((header: any) => (
+                <Table.Th key={header} tt="capitalize" fz="1rem" fw="300" c="var(--secondary)" ta="center" ff="heading">{header}</Table.Th>
+            ))}
+        </Table.Tr>
+      </Table.Thead>
+      <Table.Tbody>
+          {props.tableData.split(" ;; ").map((row: any) => (
+            <>
+                <Table.Tr key={row.index}>
+                        {row.split(' | ').map((cell: any) => (
+                            <Table.Td key={cell} ta="center" fz="1.2rem" py="1rem">{cell}</Table.Td>
+                        ))}
+                </Table.Tr>
+            </>
+            ))}
+      </Table.Tbody>
+    </Table>
+        {/* <Stack overflowX="auto" m="1rem" px="1rem" boxShadow="bsBoldSecondary" padding="1rem !Important" borderRadius="0 2rem">
             <Table variant='striped' colorScheme='purple' sx={{ borderCollapse: 'unset' }}>
                 <Thead w="auto">
                     <Tr>
@@ -234,9 +265,9 @@ const tables = (props: any) => (
                 ))}
                 </Tbody>
             </Table>
-        </Stack>
+        </Stack> */}
     </>
 )
 
 
-export { heading1, heading2, heading3, heading4, heading5, heading6, newSection, toggle, image, songInfo, blockquote, unorderedList, videoFrame, tabSection, paragraph, underline, links, inlinePhotoGallery, tables, lineBreak, text, heading }
+export { heading1, heading2, heading3, heading4, heading5, heading6, newSection, toggle, image, songInfo, blockquote, unorderedList, orderedList, videoFrame, tabSection, paragraph, divider, links, inlinePhotoGallery, tables, lineBreak, text, heading, codeBlock, code }
