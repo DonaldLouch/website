@@ -29,7 +29,9 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
                 }}
                 lineClamp={1}
                 style={{ whiteSpace: "nowrap", paddingLeft: `calc(${section.order} * var(--mantine-spacing-lg))` }}
-                className={cx(classes.tableOfContentsLink, { [classes.tableOfContentsActive]: active === index })}
+                className={classes.tableOfContentsLink}
+                c={active === index ? "var(--secondary)" : "white"}
+                fw={active === index ? 900 : 400}
             >{section.label}</Anchor>
         </Tooltip>
     ))

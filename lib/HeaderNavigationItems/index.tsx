@@ -48,7 +48,7 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     },
     { 
         name: 'Links',
-        slug: 'about#links',
+        slug: './#links',
         icon: <Link04Icon />,
         isParent: false,
         parentID: 5

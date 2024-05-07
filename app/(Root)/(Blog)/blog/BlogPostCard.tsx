@@ -13,8 +13,8 @@ export default function BlogPostCard(props: any) {
         // component="article"
         style={{
             filter: "opacity(98%)",
-            borderRadius: "var(--mantine-radius-lg",
-            boxShadow: "var(--mantine-shadow-bsBoldWhite)"
+            boxShadow: "var(--mantine-shadow-bsBoldWhite)",
+            borderRadius: "var(--mantine-radius-md)"
         }}
         // p="2rem"
         // w="100%"

@@ -27,7 +27,7 @@ export default async function Tag({ params, searchParams }: Props) {
   let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
   const postLimit = 12 as number
-  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('tags', `%${tag}%`).match({ postStatus: 'Public' }) as any
+  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).contains('tags', [tag]).match({ postStatus: 'Public' }) as any
   let numberOfPages = (postLength / postLimit) as number;
 
   if (!Number.isInteger(numberOfPages)) {
@@ -38,7 +38,7 @@ export default async function Tag({ params, searchParams }: Props) {
       currentPage = numberOfPages;
   }
   const pageCalc = currentPage * postLimit
-  const { data: postData } = await supabase.from('BlogPost').select().ilike('tags', `%${tag}%`).match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+  const { data: postData } = await supabase.from('BlogPost').select().contains('tags', [tag]).match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
   
   const paginationArray = new Array()
   paginationArray.push(numberOfPages, currentPage)
