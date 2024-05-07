@@ -35,7 +35,7 @@
 
 .tableOfContentsLink {
     /* display: block; */
-    text-decoration: none;
+    /* text-decoration: none;
     color: var(--mantine-color-white);
     line-height: var(--link-height);
     font-size: var(--mantine-font-size-sm);
@@ -43,11 +43,12 @@
     border-top-right-radius: var(--mantine-radius-md);
     border-bottom-right-radius: var(--mantine-radius-md);
     border-left: rem(2px) solid var(--secondary);
-    margin: "auto";
+    margin: "auto"; */
     &:hover {
         text-decoration: none;
         color: var(--mantine-color-black) !important;
         background-color: var(--secondary);
+        border-top-right-radius: 1rem;
     }
 }
 

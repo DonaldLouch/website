@@ -1,4 +1,4 @@
-import { Anchor, Button, Group, Stack, Text, Tooltip } from '@mantine/core'
+import { Anchor, Button, Group, Stack, Text, Tooltip, rem } from '@mantine/core'
 import React, { useState } from 'react'
 import { BsListNested } from 'react-icons/bs'
 
@@ -28,10 +28,23 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
                     router.push(section.link)
                 }}
                 lineClamp={1}
-                style={{ whiteSpace: "nowrap", paddingLeft: `calc(${section.order} * var(--mantine-spacing-lg))` }}
+                style={{ whiteSpace: "nowrap", paddingLeft: `calc(${section.order} * var(--mantine-spacing-lg))`, borderLeft: `${rem("2px")} solid var(--secondary)`}}
                 className={classes.tableOfContentsLink}
                 c={active === index ? "var(--secondary)" : "white"}
                 fw={active === index ? 900 : 400}
+                td="none"
+                lh="var(--link-height)"
+                fz="sm"
+                h="var(--link-height)"
+                // m="auto"
+
+    // // line-height: var(--link-height);
+    // font-size: var(--mantine-font-size-sm);
+    // height: var(--link-height);
+    // border-top-right-radius: var(--mantine-radius-md);
+    // border-bottom-right-radius: var(--mantine-radius-md);
+    // border-left: rem(2px) solid var(--secondary);
+    // margin: "auto";
             >{section.label}</Anchor>
         </Tooltip>
     ))
