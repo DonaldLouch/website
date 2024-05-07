@@ -70,7 +70,7 @@ const divider = (props: any) => (
 
 const toggle = (props: any) => (
     <>
-        <SingleAccordion customMargin="0 -1rem" content={[{
+        <SingleAccordion content={[{
             id: props.toggleAlt,
             label: props.toggleAlt
         }]}>

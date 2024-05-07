@@ -51,9 +51,9 @@ export const StandardPostType = ({post, mdxSource}: any) => {
                     boxShadow: "var(--mantine-shadow-bsSMPrimary)",
                     backdropFilter: "blur(20px)",
                     borderRadius: "var(--mantine-radius-lg)"
-                }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", sm: "2rem"}}>
+                }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", sm: "2rem"}} mx={{base: "0.5rem", sm: "0"}}>
                     <Flex
-                    direction={{base: "row", sm: "row"}}
+                    direction={{base: "column", sm: "row"}}
                     gap={{base: "0.5rem", sm: "2rem"}}
                     justify="flex-start"
                     align="center"

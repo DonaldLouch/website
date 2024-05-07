@@ -367,7 +367,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                 boxShadow: "bsBoldWhite"
                             }}
                         >
-                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement" />
+                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement" playsInline />
                         </AspectRatio>
                     )}
                     <Box 

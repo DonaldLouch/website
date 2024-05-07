@@ -20,8 +20,8 @@ export const SidebarCard = ({post, mdxSource}: any) => {
     })
 
     return (
-        <Grid pos="relative" gutter="5rem" my="5rem">
-        <Grid.Col span={{base: 11, sm: 9}} p="1rem 2rem" style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} mx={{base: "2rem", sm: "auto"}}>
+        <Grid pos="relative" gutter={{base: "0", sm: "5rem"}} my={{base: "1rem", sm: "5rem"}}>
+        <Grid.Col span={{base: 12, sm: 9}} p="1rem 2rem" style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}}>
             <PostContent mdxSource={mdxSource} />
         </Grid.Col>
         <Grid.Col span={3} top="3rem" bottom="-4rem" pos="sticky" h="74vh" visibleFrom="sm">
