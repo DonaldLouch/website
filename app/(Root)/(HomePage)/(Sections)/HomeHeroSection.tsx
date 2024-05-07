@@ -1,15 +1,19 @@
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
 import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, JobSearchIcon, Link01Icon, Link04Icon, NewsIcon, Passport01Icon, PassportIcon } from "@hugeicons/react-pro"
-import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text } from "@mantine/core"
+import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks";
 import { BsFolder2Open, BsImages, BsFilePerson, BsSend, BsPersonBadge, BsLink45Deg } from "react-icons/bs"
 
 export default function HomeHeroSection({aboutMe}: any) {
-  return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  
+  return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah={{base: "35%", sm: "100vh"}} pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
     <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
     <Box h="100%" w="100vw">
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
     </Box>
-    <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center">
+    <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "100%", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center">
       <Box bg="var(--darkPurpleRGBA)" style={{
         boxShadow: "var(--mantine-shadow-bsSMPrimary)",
         backdropFilter: "blur(20px)",
@@ -54,8 +58,7 @@ export default function HomeHeroSection({aboutMe}: any) {
             td="underline 0.2rem var(--primary)"
             display={{base: "none", sm: "initial"}}
           >{aboutMe.tagLine}</Title>
-          <Text display={{base: "none", sm: "initial"}} c="white">{aboutMe.bio}</Text>
-          <Text display={{base: "initial", sm: "none"}} c="white">{aboutMe.bio}</Text>
+          <Text c="white">{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
         </Stack>
       </Box>
       <Group justify="center" display={{base: "none", sm: "flex"}}>

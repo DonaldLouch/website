@@ -40,7 +40,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             top={{ base:"2%", lg: "2%" }}
             left={{ base:"2%", lg: "2%" }}
             right={{ base:"2%", lg: "2%" }}
-            styles={{header: {borderRadius: "0 1.5rem", boxShadow: "var(--mantine-shadow-bsBoldPrimary)", border: "none", background:"var(--blurredBackground)", backdropFilter: "blur(20px)"}}}
+            styles={{header: {borderRadius: "0 1.5rem", boxShadow: "var(--mantine-shadow-bsBoldPrimary)", border: "none", background:"var(--darkPurpleRGBA)", backdropFilter: "blur(20px)"}}}
             h="auto"
         >
             <Group gap="1rem" mx="auto" justify="space-between" h="auto">
@@ -54,7 +54,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
             </Group>
         </AppShell.Header>
-        <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--blurredBackground)", backdropFilter: "blur(20px)"}}}>
+        <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--darkPurpleRGBA)", backdropFilter: "blur(20px)"}}}>
             {HeaderNavigationItems.map((link) => (
                 <HeaderNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
             ))}

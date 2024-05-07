@@ -175,6 +175,11 @@ export const MantineTheme = createTheme({
             color: "grey",
             fontSize: "1rem",
           },
+          list: {
+            whiteSpace: "nowrap",
+            flexWrap: "nowrap",
+            overflowX: "scroll"
+          },
           panel: {
             padding: "0 2rem 1.5rem",
           },

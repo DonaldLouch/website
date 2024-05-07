@@ -271,7 +271,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
         {
             buttonIcon: <GoBackward10SecIcon />,
             buttonID: "skipBackButton",
-            buttonFunction: skipBack
+            buttonFunction: skipBack,
         },
         
         {
@@ -335,7 +335,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         <AspectRatio 
                             ratio={9/16} 
                             w={
-                                isTheaterMode ? "30%" : isFullscreenMode ? "100%" : "calc(50% - 4rem)"
+                                isTheaterMode ? "30%" : isFullscreenMode ? "100%" : {base: "100%", sm:"calc(50% - 4rem)"}
                                 // video.videoType === "Vertical" ? "50%" 
                                 // : video.videoType === "Vertical" && isTheaterMode || isFullscreenMode ? "100%"
                                 // : "100%"
@@ -356,7 +356,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         <AspectRatio 
                             ratio={16/9} 
                             w={
-                                isFullscreenMode ? "100%" : "calc(100% - 2rem)"
+                                isFullscreenMode ? "100%" : {base: "100%", sm: "calc(100% - 2rem)"}
                             }
                             // m="0 1rem"
                             bg="mainGradient"
@@ -377,6 +377,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         style={{borderRadius: "0 0 0 1rem", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "block" : "block"}} 
                         id="videoControls"
                         bottom="1rem" 
+                        visibleFrom="sm"
                         // {
                         //     video.videoType === "Vertical" ? "2.3%" : isTheaterMode || isFullscreenMode ? "calc(50% - 40vh)" : "calc(50% - 18rem)"
                         // }
@@ -419,6 +420,40 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                     {/* </Stack> */}
                     </Flex>
                     </Box>
+                    <Box hiddenFrom="sm" pos="absolute" color="white" 
+                        p="0rem 1rem" 
+                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "block" : "block"}} 
+                        id="videoControls"
+                        top="calc(50% - 1rem)"
+                        //  left={video.videoType === "Vertical" ? "25%" : "7%"}
+                        // {
+                        //     video.videoType === "Vertical" ? {base: "7%", sm: "25%"} : {base: "7%", sm: "5%"}
+                        // }
+                        // bg="var(--darkPurple)"
+                        // w={video.videoType === "Vertical" ? "50%" : "calc(100% - (7%*2))"}
+                    >
+                        {leftButtons.map((button: any) => (
+                            <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                        ))}
+                    </Box> 
+                    <Box hiddenFrom="sm" pos="absolute" color="white" 
+                        p="0rem 1rem" 
+                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "block" : "block"}} 
+                        id="videoControls"
+                        top="2%"
+                        right="2%"
+                        // bg="black"
+                        //  left={video.videoType === "Vertical" ? "25%" : "7%"}
+                        // {
+                        //     video.videoType === "Vertical" ? {base: "7%", sm: "25%"} : {base: "7%", sm: "5%"}
+                        // }
+                        // bg="var(--darkPurple)"
+                        // w={video.videoType === "Vertical" ? "50%" : "calc(100% - (7%*2))"}
+                    >
+                        {rightButtons.map((button: any) => (
+                            <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                        ))}
+                    </Box> 
                 </Stack></Grid.Col>
                 <Grid.Col span={{base: 12, sm: 12, md: 3.6}} p="1rem 2rem" mah="101vh" style={{overflow: "scroll"}} hidden={isTheaterMode || isFullscreenMode}>
                     <Title order={2} ta="center" fz="2rem" fw="900" c="white" my="0.5rem" style={{overflowX: "scroll", wordBreak: "keep-all", whiteSpace: "nowrap"}}>{video.title}</Title>

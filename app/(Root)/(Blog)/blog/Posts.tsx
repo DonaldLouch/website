@@ -22,8 +22,8 @@ export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any
                     <SectionTitle headingTitle={`Blog Posts (${postsNumber})`} />
                     <PinnedPostsCard pinnedPosts={pinnedPosts} />
                     <SimpleGrid
-                        cols={3}
-                        spacing={{ base: 0, sm: "2rem" }}
+                        cols={{base: 1, sm: 2, md: 3}}
+                        spacing="2rem"
                         w="100%"
                     >
                         { posts?.map((post: any) => ( <BlogPostCard {...post} /> )) }
