@@ -70,9 +70,9 @@ export const MantineTheme = createTheme({
     Anchor: Anchor.extend({
       defaultProps: {
         // c: "red",
-        classNames: {
-          root: classes.linkDefault,
-        },
+        // classNames: {
+        //   root: classes.linkDefault,
+        // },
       },
     }),
     ActionIcon: ActionIcon.extend({

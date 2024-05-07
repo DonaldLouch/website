@@ -117,11 +117,11 @@
 
 .markdownLink {
     border-bottom: solid 2px var(--mantine-color-white);
-    color: var(--secondary);
+    color: var(--secondary) !important;
     
     &:hover {
         border-bottom-color: var(--secondary) !important;
-        color: var(--primary);
+        color: var(--primary) !important;
     }
 }
 
