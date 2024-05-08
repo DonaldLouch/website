@@ -14,7 +14,8 @@ import {
     Flex,
     Stack,
     Group,
-    Badge
+    Badge,
+    useMantineTheme
 } from '@mantine/core'
 
 import { PostCard } from '../PostCard'
@@ -24,6 +25,7 @@ import PostContent from '../PostContent'
 import DisplayDate from '@/lib/DisplayDate'
 import { ArrowLeft02Icon, Calendar03Icon, ContactIcon, Folder01Icon, Tag01Icon, TagsIcon } from '@hugeicons/react-pro'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
+import { useMediaQuery } from '@mantine/hooks'
 
 // const meta = keyframes `
 //     0% {

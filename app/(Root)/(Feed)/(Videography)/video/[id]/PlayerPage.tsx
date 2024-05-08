@@ -1,6 +1,6 @@
 'use client'
 
-import { Anchor, Accordion, AspectRatio, Box, Button, Divider, Grid, Title, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Slider, Stack, Badge, Text, Avatar, Tabs, ActionIcon, Alert, Group, SimpleGrid, Center, Tooltip, Drawer, CopyButton, Flex } from "@mantine/core"
+import { Anchor, Accordion, AspectRatio, Box, Button, Divider, Grid, Title, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Slider, Stack, Badge, Text, Avatar, Tabs, ActionIcon, Alert, Group, SimpleGrid, Center, Tooltip, Drawer, CopyButton, Flex, useMantineTheme } from "@mantine/core"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton"
@@ -9,7 +9,7 @@ import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
 import { useUser } from "@clerk/nextjs"
 import { BsChevronDown, BsPlay, BsPause, BsSkipForward, BsSkipBackward, BsVolumeOff, BsVolumeMute, BsArrowsAngleExpand, BsArrowsAngleContract, BsShare, BsFullscreen, BsFullscreenExit, BsAspectRatio, BsBoxArrowUp, BsHourglass, BsCameraReels, BsFilm, BsCollectionPlay, BsTags, BsTag, BsPersonBoundingBox, BsArrowUpRightSquare, BsBoxArrowUpRight, BsArrowLeft } from "react-icons/bs"
-import { useDisclosure } from "@mantine/hooks"
+import { useDisclosure, useMediaQuery } from "@mantine/hooks"
 import { ArrowExpand01Icon, ArrowExpandIcon, ArrowHorizontalIcon, ArrowLeft01Icon, ArrowLeft02Icon, ArrowShrink01Icon, ArrowShrinkIcon, ArrowUpRight01Icon, ArrowUpRight02Icon, CameraVideoIcon, Copy01Icon, Database01Icon, Database02Icon, GoBackward10SecIcon, GoForward10SecIcon, LibraryIcon, LiverIcon, MaximizeScreenIcon, MinimizeScreenIcon, PauseIcon, PlayIcon, Share05Icon, Tag01Icon, TagsIcon, UserMultiple02Icon, VolumeMute01Icon, VolumeOffIcon } from "@hugeicons/react-pro"
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
@@ -17,6 +17,9 @@ import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording"
 
 
 export default function PlayerPage({ videoData, mdxSource }: any) {
+    const theme = useMantineTheme();
+    const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+
    const video = videoData
     const {user} = useUser()
    
@@ -76,6 +79,11 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
         theVideoElement?.addEventListener("mouseout", () => {
             !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
         })
+        
+        // theVideoElement?.addEventListener("click", () => {setHide(false)})
+        // theVideoElement?.addEventListener("click", () => {
+        //     !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
+        // })
 
         const controls = document.querySelector('#videoControls')
         controls?.addEventListener("mouseover", () => { setHide(false) })
@@ -302,7 +310,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
             buttonIcon: isFullscreenMode == false ? <ArrowExpand01Icon /> : <ArrowShrink01Icon />,
             buttonID: "fullscreenButton",
             buttonFunction: isFullscreenMode == false ? fullscreenMode : exitFullscreenMode,
-            hidden: video.videoType != "Vertical" ? false : true,
+            hidden: video.videoType != "Vertical" || mobile ? false : true,
         },
         {
             buttonIcon: <Share05Icon />,
@@ -329,7 +337,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                     bg={isFullscreenMode ? "black" : "var(--subtleBlurredBackground)"}
                     // pos="relative"
                     h={{base: "initial", md: "101vh"}}
-                    p={{base: "2rem", md: "initial"}}
+                    p={{base: "1rem", md: "initial"}}
                 ><Stack justify="center" align="center" pos="relative">
                     {video.videoType === "Vertical" && (
                         <AspectRatio 
@@ -349,7 +357,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                 boxShadow: "bsBoldWhite"
                             }}
                         >
-                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement" playsInline />
+                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement" playsInline={!isFullscreenMode} />
                         </AspectRatio>
                     )}
                     {video.videoType === "Horizontal" && (
@@ -367,14 +375,14 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                                 boxShadow: "bsBoldWhite"
                             }}
                         >
-                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement" playsInline />
+                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement" playsInline={!isFullscreenMode} />
                         </AspectRatio>
                     )}
                     <Box 
                         pos="absolute"
                         color="white" 
                         p="0rem 1rem" 
-                        style={{borderRadius: "0 0 0 1rem", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "block" : "block"}} 
+                        style={{borderRadius: "0 0 0 1rem", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "none" : "block"}} 
                         id="videoControls"
                         bottom="1rem" 
                         visibleFrom="sm"
@@ -422,7 +430,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                     </Box>
                     <Box hiddenFrom="sm" pos="absolute" color="white" 
                         p="0rem 1rem" 
-                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "block" : "block"}} 
+                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "none" : "block"}} 
                         id="videoControls"
                         top="calc(50% - 1rem)"
                         //  left={video.videoType === "Vertical" ? "25%" : "7%"}
@@ -438,7 +446,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                     </Box> 
                     <Box hiddenFrom="sm" pos="absolute" color="white" 
                         p="0rem 1rem" 
-                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "block" : "block"}} 
+                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "none" : "block"}} 
                         id="videoControls"
                         top="2%"
                         right="2%"
