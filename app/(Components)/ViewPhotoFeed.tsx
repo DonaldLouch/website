@@ -1,6 +1,6 @@
 'use client'
 
-import { Modal, Stack, Text, Box, Badge, Image, Group, Flex, Anchor } from '@mantine/core'
+import { Modal, Stack, Text, Box, Badge, Image, Group, Flex, Anchor, Skeleton } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser } from '@clerk/nextjs'
@@ -12,14 +12,29 @@ import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
 import ClipboardButton from '@/app/(Components)/(Buttons)/ClipboardButton'
 import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react-pro'
 
+import LazyLoad from 'react-lazyload';
+import { Suspense, useEffect, useState } from 'react'
+
 export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
     const {user} = useUser()
     const [opened, { open, close }] = useDisclosure(false)
     const { album: albumData } = imageData
+
+    // const [loaded, setIsLoading] = useState(false)
+
+    // useEffect(() => {
+    //     window.addEventListener("load", () => {
+    //         setIsLoading(true)
+    //     })
+    // })
     
     return (<>
         <Box className={classes.imageCardView} onClick={open}>
-            <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} />
+                <Suspense fallback={<Skeleton />}>
+                    <LazyLoad height={200}>
+                        <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} />
+                    </LazyLoad>
+                </Suspense>
         </Box>
 
         <Modal opened={opened} onClose={close} title={imageData.photoName} yOffset="2rem" xOffset="2rem" size="100%"  
@@ -32,7 +47,9 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
         >
             <Flex direction={{base: "column", md: "row"}} gap="2rem" px={{base: "1rem", md: "2rem"}} w={{base: "calc(100% - 1rem)", md: "calc(100% - 4rem)"}} justify="flex-start" py="2rem">
                 <Stack w={{base: "100%", md: "50%"}} justify="flex-start" align="flex-start">
-                    <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} radius="md" style={{boxShadow: "var(--mantine-shadow-bsWhite)" }} />
+                    <LazyLoad height={200}>
+                        <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} radius="md" style={{boxShadow: "var(--mantine-shadow-bsWhite)" }} />
+                    </LazyLoad>
                     <Group gap="0.5rem">
                         <ClipboardButton copyValue={`${process.env.NEXT_PUBLIC_SITE_URL}/photo/${imageData.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" />
                         <PrimaryLinkedButton link={`/photo/${imageData.id}`} icon={<ViewIcon />}>View Photo</PrimaryLinkedButton>
