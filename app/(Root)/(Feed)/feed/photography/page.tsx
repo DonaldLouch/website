@@ -24,7 +24,7 @@ export default async function PortfolioPhotography({searchParams}: any) {
   const searchType = searchParams.search as string
   const searchValue = searchParams.value as string
  
-  const postLimit = 20 as number
+  const postLimit = 15 as number
 
   const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('uploadedOn', { ascending: false }) as any
   const { data: locationData } = await supabase.from('distinct_locations').select().order('location', { ascending: true }) as any

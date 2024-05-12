@@ -1,6 +1,6 @@
 {
     "name": "donaldlouch",
-    "version": "29.05.11.03",
+    "version": "29.05.12",
     "description": "Hi, my name is Donald Louch and I&#39;m a twenty-nine-year-old Canadian web developer and digital content creator.",
     "private": true,
     "scripts": {
@@ -82,9 +82,11 @@
         "nodemailer": "^6.9.13",
         "nookies": "^2.5.2",
         "npm": "^10.7.0",
+        "probe-image-size": "^7.2.3",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-icons": "^5.2.0",
+        "react-image-size": "^2.3.2",
         "react-intersection-observer": "^9.10.2",
         "react-masonry-css": "^1.0.16",
         "recharts": "2.12.6",
@@ -96,6 +98,7 @@
         "@types/mdx": "^2.0.13",
         "@types/node": "^20.12.8",
         "@types/nodemailer": "^6.4.15",
+        "@types/probe-image-size": "^7",
         "@types/react": "^18.3.1",
         "@types/react-dom": "^18.3.0",
         "@types/react-lazyload": "^3",

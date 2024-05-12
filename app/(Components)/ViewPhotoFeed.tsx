@@ -14,12 +14,32 @@ import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, T
 
 import LazyLoad from 'react-lazyload';
 import Image from 'next/image'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+
+import { useImageSize } from 'react-image-size';
+
 
 export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
     const {user} = useUser()
     const [opened, { open, close }] = useDisclosure(false)
     const { album: albumData } = imageData
+
+    
+    const imageURL = imageData.fileID.filePath
+    const [dimensions, { loading, error }] = useImageSize(imageURL)
+    
+    const [photoWidth, setPhotoWidth] = useState(1920)
+    const [photoHeight, setPhotoHeight] = useState(1080)
+
+    useEffect(() => {
+        dimensions && !loading || error && setPhotoWidth(Number(dimensions?.width))
+        dimensions && !loading || error && setPhotoHeight(Number(dimensions?.height))
+    }, [dimensions])
+    // console.log(imageURL)
+
+//   useEffect(() => {
+    // console.log(dimensions,loading,error)
+//   })
 
     // const [loaded, setIsLoading] = useState(false)
 
@@ -34,15 +54,14 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                 <Suspense fallback={<Skeleton />}>
                     {/* <LazyLoad height={200}> */}
                         <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
-                        quality={1} 
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        // fill={true}
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                        }}
-                        width={500}
-                        height={300}
+                            quality={1} 
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }}
+                            width={photoWidth}
+                            height={photoHeight}
                         />
                     {/* </LazyLoad> */}
                 </Suspense>
@@ -59,16 +78,15 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
             <Flex direction={{base: "column", md: "row"}} gap="2rem" px={{base: "1rem", md: "2rem"}} w={{base: "calc(100% - 1rem)", md: "calc(100% - 4rem)"}} justify="flex-start" py="2rem">
                 <Stack w={{base: "100%", md: "50%"}} justify="flex-start" align="flex-start">
                     <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
-                        quality={1} 
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        // fill={true}
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                        }}
-                        width={500}
-                        height={300}
-                    />
+                            quality={1} 
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }}
+                            width={photoWidth}
+                            height={photoHeight}
+                        />
                     <Group gap="0.5rem">
                         <ClipboardButton copyValue={`${process.env.NEXT_PUBLIC_SITE_URL}/photo/${imageData.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" />
                         <PrimaryLinkedButton link={`/photo/${imageData.id}`} icon={<ViewIcon />}>View Photo</PrimaryLinkedButton>
@@ -113,3 +131,4 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
         </Modal>
     </>)
 }
+

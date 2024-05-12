@@ -64,9 +64,9 @@ async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: st
 }
 
 export default function PhotographyFeed({ photos, photographyAlbum, locationData, tagData, searchType, searchValue, photosCount}: {photos: any, photographyAlbum: any, locationData: any, tagData: any, searchType?: string, searchValue?: string, photosCount: any})  {
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { open, close }] = useDisclosure(false)
   
-  const photoLimit = 20 as number
+  const photoLimit = 15 as number
   const initialRender = useRef(true)
   const [loadedPhotos, setLoadedPhotos] = useState(photos)
   const [page, setPage] = useState(0)
