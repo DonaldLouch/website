@@ -31,10 +31,17 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
     const [photoWidth, setPhotoWidth] = useState(1920)
     const [photoHeight, setPhotoHeight] = useState(1080)
 
+    const [imageQuality, setImageQuality] = useState(1)
+
     useEffect(() => {
         dimensions && !loading || error && setPhotoWidth(Number(dimensions?.width))
         dimensions && !loading || error && setPhotoHeight(Number(dimensions?.height))
+        dimensions && !loading || error && setImageQuality(100)
     }, [dimensions])
+
+    // useEffect(() => {
+    //     console.log(imageURL.complete)
+    // }, [imageURL])
     // console.log(imageURL)
 
 //   useEffect(() => {
@@ -54,7 +61,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                 <Suspense fallback={<Skeleton />}>
                     {/* <LazyLoad height={200}> */}
                         <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
-                            quality={1} 
+                            quality={imageQuality} 
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             style={{
                                 width: '100%',
@@ -62,6 +69,8 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                             }}
                             width={photoWidth}
                             height={photoHeight}
+                            layout={"responsive"}
+                            // onLoad={(e) => e.nativeEvent.type && setImageQuality(100)}
                         />
                     {/* </LazyLoad> */}
                 </Suspense>
@@ -78,7 +87,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
             <Flex direction={{base: "column", md: "row"}} gap="2rem" px={{base: "1rem", md: "2rem"}} w={{base: "calc(100% - 1rem)", md: "calc(100% - 4rem)"}} justify="flex-start" py="2rem">
                 <Stack w={{base: "100%", md: "50%"}} justify="flex-start" align="flex-start">
                     <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
-                            quality={1} 
+                            quality={imageQuality} 
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             style={{
                                 width: '100%',
