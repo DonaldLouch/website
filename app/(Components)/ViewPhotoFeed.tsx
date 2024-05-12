@@ -34,8 +34,9 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                 <Suspense fallback={<Skeleton />}>
                     {/* <LazyLoad height={200}> */}
                         <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
-                        quality={10} 
-                        sizes="10%"
+                        quality={1} 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        // fill={true}
                         style={{
                             width: '100%',
                             height: 'auto',
