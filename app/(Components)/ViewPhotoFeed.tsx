@@ -58,9 +58,17 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
         >
             <Flex direction={{base: "column", md: "row"}} gap="2rem" px={{base: "1rem", md: "2rem"}} w={{base: "calc(100% - 1rem)", md: "calc(100% - 4rem)"}} justify="flex-start" py="2rem">
                 <Stack w={{base: "100%", md: "50%"}} justify="flex-start" align="flex-start">
-                    <LazyLoad height={200}>
-                        {/* <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`} radius="md" style={{boxShadow: "var(--mantine-shadow-bsWhite)" }} /> */}
-                    </LazyLoad>
+                    <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
+                        quality={1} 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        // fill={true}
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                        }}
+                        width={500}
+                        height={300}
+                    />
                     <Group gap="0.5rem">
                         <ClipboardButton copyValue={`${process.env.NEXT_PUBLIC_SITE_URL}/photo/${imageData.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" />
                         <PrimaryLinkedButton link={`/photo/${imageData.id}`} icon={<ViewIcon />}>View Photo</PrimaryLinkedButton>
