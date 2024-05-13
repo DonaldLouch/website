@@ -79,8 +79,10 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
         theVideoElement?.addEventListener("mouseout", () => {
             !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
         })
-        theVideoElement?.addEventListener("touchstart", () => {setHide(false)})
-        theVideoElement?.addEventListener("touchend", () => {
+        theVideoElement?.addEventListener("touchstart", () => { // Video Player is Clicked
+            setHide(false)
+        })
+        theVideoElement?.addEventListener("touchend", () => { // Video Player is Not Clicked
             !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
         })
         
@@ -110,12 +112,16 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
         theVideoElement?.addEventListener("play", () => {
             if (playing != true) {
                 setPlaying(false)
+                setHide(true)
             }
+            setHide(false)
         })
         theVideoElement?.addEventListener("pause", () => {
             if (playing != false) {
                 setPlaying(true)
+                setHide(false)
             }
+            setHide(true)
         })
         // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowRight") {theVideoElement.currentTime -= 10} })
         // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowLeft") {theVideoElement.currentTime += 10}  })
