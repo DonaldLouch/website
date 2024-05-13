@@ -128,7 +128,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
    {/* m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} pt={{base: "0.5rem", lg: "1.5rem"}} */}
     <Box id="feed" pos="relative" w="100%">
       <Alert icon={<Camera01Icon />} color="indigo">
-          Please note that this Photography Feed is in a alpha state right now, and things will change and may not work properly. Please further note, that in future iterations I will be modifying and completing all captions, tags and proper meta data for all the photos.
+        Please note that moving forward, all photos will have completed captions, tags, and accurate metadata for improved organization and searchability.
       </Alert>
 
       <Tooltip label="Filters">

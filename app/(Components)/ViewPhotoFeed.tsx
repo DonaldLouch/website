@@ -23,7 +23,6 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
     const {user} = useUser()
     const [opened, { open, close }] = useDisclosure(false)
     const { album: albumData } = imageData
-
     
     const imageURL = imageData.fileID.filePath
     const [dimensions, { loading, error }] = useImageSize(imageURL)
@@ -36,30 +35,14 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
     useEffect(() => {
         dimensions && !loading || error && setPhotoWidth(Number(dimensions?.width))
         dimensions && !loading || error && setPhotoHeight(Number(dimensions?.height))
-        dimensions && !loading || error && setImageQuality(100)
-    }, [dimensions])
-
-    // useEffect(() => {
-    //     console.log(imageURL.complete)
-    // }, [imageURL])
-    // console.log(imageURL)
-
-//   useEffect(() => {
-    // console.log(dimensions,loading,error)
-//   })
-
-    // const [loaded, setIsLoading] = useState(false)
-
-    // useEffect(() => {
-    //     window.addEventListener("load", () => {
-    //         setIsLoading(true)
-    //     })
-    // })
+        !loading || error && setImageQuality(100)
+    }, [imageURL, dimensions, loading, error])
     
     return (<>
         <Box className={classes.imageCardView} onClick={open}>
-                <Suspense fallback={<Skeleton />}>
+                {/* <Suspense fallback={<Skeleton />}> */}
                     {/* <LazyLoad height={200}> */}
+                    {/* <Anchor href={`/photo/${imageData.id}`}> */}
                         <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
                             quality={imageQuality} 
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -70,10 +53,10 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                             width={photoWidth}
                             height={photoHeight}
                             layout={"responsive"}
-                            // onLoad={(e) => e.nativeEvent.type && setImageQuality(100)}
                         />
+                    {/* </Anchor> */}
                     {/* </LazyLoad> */}
-                </Suspense>
+                {/* </Suspense> */}
         </Box>
 
         <Modal opened={opened} onClose={close} title={imageData.photoName} yOffset="2rem" xOffset="2rem" size="100%"  
@@ -87,7 +70,6 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
             <Flex direction={{base: "column", md: "row"}} gap="2rem" px={{base: "1rem", md: "2rem"}} w={{base: "calc(100% - 1rem)", md: "calc(100% - 4rem)"}} justify="flex-start" py="2rem">
                 <Stack w={{base: "100%", md: "50%"}} justify="flex-start" align="flex-start">
                     <Image src={imageData.fileID.filePath} alt={`${imageData.fileID.fileID}-${imageData.fileID.fileTitle}`}
-                            quality={imageQuality} 
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             style={{
                                 width: '100%',

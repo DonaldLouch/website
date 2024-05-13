@@ -79,6 +79,10 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
         theVideoElement?.addEventListener("mouseout", () => {
             !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
         })
+        theVideoElement?.addEventListener("touchstart", () => {setHide(false)})
+        theVideoElement?.addEventListener("touchend", () => {
+            !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
+        })
         
         // theVideoElement?.addEventListener("click", () => {setHide(false)})
         // theVideoElement?.addEventListener("click", () => {
