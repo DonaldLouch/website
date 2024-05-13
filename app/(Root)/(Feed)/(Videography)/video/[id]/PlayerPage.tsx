@@ -74,28 +74,37 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
             setVideoDuration(timeDurationTextString)
             setVideoDurationNUMBER(e.target.duration)
         })
+        
+        const controls = document.querySelector('#videoControls')
 
-        theVideoElement?.addEventListener("mouseover", () => {setHide(false)})
+        theVideoElement?.addEventListener("mouseover", () => { setHide(false) })
+        theVideoElement?.addEventListener("touchstart", () => { setHide(false) })
         theVideoElement?.addEventListener("mouseout", () => {
-            !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
+            theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
         })
-        theVideoElement?.addEventListener("touchstart", () => { // Video Player is Clicked
-            !theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : (setHide(true))
+        theVideoElement?.addEventListener("touchend", () => {
+            theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
         })
-        theVideoElement?.addEventListener("touchend", () => { // Video Player is Not Clicked
-            !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
+
+        controls?.addEventListener("mouseover", () => { setHide(false) })
+        controls?.addEventListener("touchstart", () => { setHide(false) })
+        controls?.addEventListener("mouseout", () => {
+            theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
         })
+        controls?.addEventListener("touchend", () => {
+            theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+        })
+
         
         // theVideoElement?.addEventListener("click", () => {setHide(false)})
         // theVideoElement?.addEventListener("click", () => {
         //     !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
         // })
 
-        const controls = document.querySelector('#videoControls')
-        controls?.addEventListener("mouseover", () => { setHide(false) })
-        controls?.addEventListener("mouseout", (theVideoElement: any) => {
-            !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
-        })
+        // controls?.addEventListener("mouseover", () => { setHide(false) })
+        // controls?.addEventListener("mouseout", (theVideoElement: any) => {
+        //     !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
+        // })
         // controls?.addEventListener("keydown", (e: any) => { e.key === "ArrowRight" && skipAhead })
         // controls?.addEventListener("keydown", (e: any) => { e.key === "ArrowLeft" && skipBack })
 
@@ -314,13 +323,12 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
             buttonIcon: isTheaterMode == false ? <MaximizeScreenIcon /> : <MinimizeScreenIcon />,
             buttonID: "theaterModeButton",
             buttonFunction: isTheaterMode == false ? theaterMode : exitTheaterMode,
-            hidden: video.videoType != "Vertical" ? false : true,
+            hidden: mobile ? true : false,
         },
         {
             buttonIcon: isFullscreenMode == false ? <ArrowExpand01Icon /> : <ArrowShrink01Icon />,
             buttonID: "fullscreenButton",
             buttonFunction: isFullscreenMode == false ? fullscreenMode : exitFullscreenMode,
-            hidden: video.videoType != "Vertical" || mobile ? false : true,
         },
         {
             buttonIcon: <Share05Icon />,
@@ -353,7 +361,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         <AspectRatio 
                             ratio={9/16} 
                             w={
-                                isTheaterMode ? "30%" : isFullscreenMode ? "100%" : {base: "100%", sm:"calc(50% - 4rem)"}
+                                isTheaterMode ? "35%" : isFullscreenMode ? "35%" : {base: "100%", sm:"45vw", md: "50%"}
                                 // video.videoType === "Vertical" ? "50%" 
                                 // : video.videoType === "Vertical" && isTheaterMode || isFullscreenMode ? "100%"
                                 // : "100%"
@@ -392,7 +400,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         pos="absolute"
                         color="white" 
                         p="0rem 1rem" 
-                        style={{borderRadius: "0 0 0 1rem", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "none" : "block"}} 
+                        style={{borderRadius: "0 0 0 1rem", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControls"
                         bottom="1rem" 
                         visibleFrom="sm"
@@ -417,7 +425,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                             {/* maw={video.videoType === "Vertical" ? "100%" : "75%"} */}
                             <Group>
                                 {leftButtons.map((button: any) => (
-                                    <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                                    !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
                                 ))}
                                 {/* <Box> */}
                                     <Text fz="1rem" fw="900" hidden={video.videoType === "Vertical"}>{timeLeft}</Text>
@@ -431,7 +439,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                             {/* maw={video.videoType === "Vertical" ? "100%" : "25%"} */}
                             <Group wrap="nowrap">
                                 {rightButtons.map((button: any) => (
-                                    <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                                    !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
                                 ))}
                             </Group>
                         {/* </Group> */}
@@ -440,9 +448,10 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                     </Box>
                     <Box hiddenFrom="sm" pos="absolute" color="white" 
                         p="0rem 1rem" 
-                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "none" : "block"}} 
+                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControls"
                         top="calc(50% - 1rem)"
+                        bg="var(--darkPurpleRGBA)"
                         //  left={video.videoType === "Vertical" ? "25%" : "7%"}
                         // {
                         //     video.videoType === "Vertical" ? {base: "7%", sm: "25%"} : {base: "7%", sm: "5%"}
@@ -451,15 +460,16 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         // w={video.videoType === "Vertical" ? "50%" : "calc(100% - (7%*2))"}
                     >
                         {leftButtons.map((button: any) => (
-                            <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                            !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
                         ))}
                     </Box> 
                     <Box hiddenFrom="sm" pos="absolute" color="white" 
                         p="0rem 1rem" 
-                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide ? "none" : "block"}} 
+                        style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControls"
                         top="2%"
                         right="2%"
+                        bg="var(--darkPurpleRGBA)"
                         // bg="black"
                         //  left={video.videoType === "Vertical" ? "25%" : "7%"}
                         // {
@@ -469,7 +479,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         // w={video.videoType === "Vertical" ? "50%" : "calc(100% - (7%*2))"}
                     >
                         {rightButtons.map((button: any) => (
-                            <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                            !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
                         ))}
                     </Box> 
                 </Stack></Grid.Col>

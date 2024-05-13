@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Grid, Group, Text } from '@mantine/core';
+import { Box, Grid, Group, SimpleGrid, Text } from '@mantine/core';
 
 import classes from './StatsGrid.module.css';
 import { BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
@@ -24,10 +24,10 @@ import { BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
 export default function StatsGroup({ statsData }: { statsData: [title: any, value: any, icon?: any, difference?: number, differenceText?: string]}) {
   const stats = statsData.map((stat: any) => {
     return (
-      <Grid.Col p="1rem" style={{borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)"}} key={stat.title} bg="none" span={3} m="0.5rem">
+      <Box p="1rem" style={{borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)"}} key={stat.title} bg="none" m="0.5rem">
         <Group justify="space-between" m="0" lh="0">
           <Text size="0.9rem" c="grey" tt="uppercase" fw="700" lh="0" ta={{base: "center", sm: "left"}}>{stat.title}</Text>
-          {stat.icon && <Box c="grey" display={{base: "none", sm: "initial"}}>{stat.icon}</Box>}
+          {stat.icon && <Box c="grey">{stat.icon}</Box>}
         </Group>
 
         <Group align="center" gap="0.5rem" justify="center">
@@ -40,13 +40,14 @@ export default function StatsGroup({ statsData }: { statsData: [title: any, valu
         }
         </Group>
         {stat.difference && stat.differenceText &&<Text fz="xs" c="grey" mt="0.5rem" ff="heading" display={{base: "none", sm: "initial"}}>{stat.differenceText}</Text>}
-      </Grid.Col>
+      </Box>
     );
   })
 
   return (
     <Box>
-      <Grid align="center" justify="center">{stats}</Grid>
+      {/* <Grid align="center" justify="center">{stats}</Grid> */}
+      <SimpleGrid cols={{base: 1, sm: 2, md: 3}}>{stats}</SimpleGrid>
     </Box>
   );
 }
