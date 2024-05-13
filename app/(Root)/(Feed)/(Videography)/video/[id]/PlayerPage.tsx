@@ -404,6 +404,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                         id="videoControls"
                         bottom="1rem" 
                         visibleFrom="sm"
+                        hidden={hide}
                         // {
                         //     video.videoType === "Vertical" ? "2.3%" : isTheaterMode || isFullscreenMode ? "calc(50% - 40vh)" : "calc(50% - 18rem)"
                         // }
@@ -446,7 +447,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                     {/* </Stack> */}
                     </Flex>
                     </Box>
-                    <Box hiddenFrom="sm" pos="absolute" color="white" 
+                    <Box hiddenFrom="sm" pos="absolute" color="white" hidden={hide}
                         p="0rem 1rem" 
                         style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControls"
@@ -463,7 +464,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
                             !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
                         ))}
                     </Box> 
-                    <Box hiddenFrom="sm" pos="absolute" color="white" 
+                    <Box hiddenFrom="sm" pos="absolute" color="white" hidden={hide}
                         p="0rem 1rem" 
                         style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControls"
