@@ -80,7 +80,7 @@ export default function PlayerPage({ videoData, mdxSource }: any) {
             !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
         })
         theVideoElement?.addEventListener("touchstart", () => { // Video Player is Clicked
-            setHide(false)
+            !theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : (setHide(true))
         })
         theVideoElement?.addEventListener("touchend", () => { // Video Player is Not Clicked
             !theVideoElement.paused || theVideoElement.currentTIme < 0 ? (setHide(true)) : (setHide(false))
