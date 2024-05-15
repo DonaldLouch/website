@@ -32,6 +32,6 @@ export default async function Player({ params }: Props) {
     const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*), videoPlaylist (*)`).match({ id: id }).single() as any
     // const { data: playlist } = await supabase.from('VideographyPlaylist').select().match({ id: videoData.videoPlaylist.id }).single() as any
     const mdxSource = await serialize({source: videoData.description})
-    return <PlayerPage videoData={videoData} mdxSource={mdxSource} />
+    return <PlayerPage videoData={videoData} mdxSource={mdxSource} playerType="page" />
     
 }

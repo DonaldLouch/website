@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import supabase from '@/lib/supabase';
-import PlayerPageEmbed from './PlayerPageEmbed';
+import { serialize } from 'next-mdx-remote-client/serialize';
+import PlayerPage from '../../video/[id]/PlayerPage';
 
 type Props = {
     params: { id: string }
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PlayerEmbed({ params }: Props) {
     const { id } = params
     const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*)`).match({ id: id }).single() as any
-    return <PlayerPageEmbed videoData={videoData} />
+    const mdxSource = await serialize({source: videoData.description})
+    return <PlayerPage videoData={videoData} mdxSource={mdxSource} playerType="embed" />
     
 }

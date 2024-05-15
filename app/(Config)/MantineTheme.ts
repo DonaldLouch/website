@@ -1,6 +1,6 @@
 'use client'
 
-import { Accordion, ActionIcon, Alert, Anchor, Badge, Button, Combobox, createTheme, Input, rem, Slider, Tabs, Text } from "@mantine/core"
+import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Button, Combobox, createTheme, Input, rem, Slider, Tabs, Text } from "@mantine/core"
 // import "@mantine/core/styles.css";
 
 import { Playfair_Display, Lato, Victor_Mono } from "next/font/google"
@@ -114,11 +114,20 @@ export const MantineTheme = createTheme({
         },
       },
     }),
+    AspectRatio: AspectRatio.extend({
+      classNames: { root: classes.AspectRatioRoot },
+    }),
     Slider: Slider.extend({
       defaultProps: {
         color: "primary",
         thumbSize: "1.5rem",
-        styles: { thumb: {borderRadius: "100%", background: "var(--darkPurple)"}, mark: {background: "var(--darkPurple)", borderColor: "var(--darkPurple)"}},
+        styles: {
+          thumb: { borderRadius: "100%", background: "var(--darkPurple)" },
+          mark: {
+            background: "var(--darkPurple)",
+            borderColor: "var(--darkPurple)",
+          },
+        },
         w: "calc(100% + 2rem)",
         radius: "0 1rem 0 0",
         classNames: {
@@ -126,8 +135,8 @@ export const MantineTheme = createTheme({
           track: classes.sliderTrack,
           // bar: classes.sliderTrack,
           // root: classes.sliderTrack,
-        }
-      }
+        },
+      },
     }),
     Badge: Badge.extend({
       defaultProps: {
@@ -178,7 +187,7 @@ export const MantineTheme = createTheme({
           list: {
             whiteSpace: "nowrap",
             flexWrap: "nowrap",
-            overflowX: "scroll"
+            overflowX: "scroll",
           },
           panel: {
             padding: "0 2rem 1.5rem",

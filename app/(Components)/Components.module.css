@@ -131,3 +131,11 @@
         box-shadow: var(--mantine-shadow-bsBoldSecondary);
     }
 }
+
+.AspectRatioRoot {
+    &> :where(img, video) {
+        position: relative !important;
+        height: 100%;
+        /* border: "solid green"; */
+    }
+}

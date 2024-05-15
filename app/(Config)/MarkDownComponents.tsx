@@ -196,6 +196,12 @@ const tabSection = (props: any) => (<Tabs defaultValue="0">
     </Tabs.Panel>))}
 </Tabs>)
 
+const internalEmbedVideo = (props: any) => (
+    <AspectRatio ratio={16/9}>
+        <iframe src={`/embed/${props.id}`} allowFullScreen style={{border: "none", borderRadius: "var(--mantine-radius-sm)", boxShadow: "var(--mantine-shadow-bsBoldWhite)", overflow: "hidden"}} />
+    </AspectRatio>
+)
+
 const inlinePhotoGallery = (props: any) => (<Flex 
     component={Masonry}
     breakpointCols={breakpointColumnsObj}
@@ -270,4 +276,4 @@ const tables = (props: any) => (
 )
 
 
-export { heading1, heading2, heading3, heading4, heading5, heading6, newSection, toggle, image, songInfo, blockquote, unorderedList, orderedList, videoFrame, tabSection, paragraph, divider, links, inlinePhotoGallery, tables, lineBreak, text, heading, codeBlock, code }
+export { heading1, heading2, heading3, heading4, heading5, heading6, newSection, toggle, image, songInfo, blockquote, unorderedList, orderedList, videoFrame, tabSection, paragraph, divider, links, inlinePhotoGallery, tables, lineBreak, text, heading, codeBlock, code, internalEmbedVideo }

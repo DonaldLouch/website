@@ -2,8 +2,7 @@
 
 import { MDXClient } from "next-mdx-remote-client/csr";
 
-import { heading1, heading2, heading3, heading4, heading5, heading6, newSection, toggle, image, songInfo, blockquote, unorderedList, orderedList, videoFrame, tabSection, paragraph, divider, links, inlinePhotoGallery, tables, lineBreak, text, heading, codeBlock, code } from "@/app/(Config)/MarkDownComponents"
-// import { heading1, heading2, heading3, heading4, heading5, heading6, paragraph, links, text, heading, newSection, toggle, image, inlinePhotoGallery, tabSection, videoFrame, unorderedList } from "@/app/(Config)/MarkDownComponents"
+import { heading1, heading2, heading3, heading4, heading5, heading6, newSection, toggle, image, songInfo, blockquote, unorderedList, orderedList, videoFrame, tabSection, paragraph, divider, links, inlinePhotoGallery, tables, lineBreak, text, heading, codeBlock, code, internalEmbedVideo } from "@/app/(Config)/MarkDownComponents"
 import { Suspense } from "react";
 import { Anchor, Group, Loader, Paper, Stack, Title, Text } from "@mantine/core";
 
@@ -22,6 +21,7 @@ const MdxComponents = {
     blockquote: blockquote,
     TabSection: tabSection,
     VideoFrame: videoFrame,
+    InternalEmbedVideo: internalEmbedVideo,
     ul: unorderedList,
     ol: orderedList,
     hr: divider,
