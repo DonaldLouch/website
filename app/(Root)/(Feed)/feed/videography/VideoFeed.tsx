@@ -85,7 +85,7 @@ export default function VideoFeed({ videoData, videosCount }: { videoData: any, 
   return (<>
   <Box id="feed" pos="relative" w="100%">
     {/* {loadedVideos?.map((video: any, index: number) => (<Text key={index}>{video.title}</Text>))} */}
-    <Grid gutter="1rem" m={{base: "1rem 0 0rem", md: "1rem -5rem 0rem"}} p={{base: "0.5rem", md: "0 0.5rem"}}>
+    <Grid gutter="1rem" m={{base: "1rem 0 0rem", md: "2rem -3rem 0rem"}} p={{base: "0.5rem", md: "0 0.5rem"}}>
       {loadedVideos?.map((video: any, index: number) => (<>
         <Grid.Col key={index} span={{base: 12, sm: 6, md: 4}} pos="relative">
           <Anchor href={`/video/${video.id}`} unstyled>

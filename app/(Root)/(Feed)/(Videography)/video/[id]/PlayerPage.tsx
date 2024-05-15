@@ -394,7 +394,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         // pos="relative" 
                     >
              
-                        <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} id="videoElement"/>
+                        <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} playsInline={!isFullscreenMode} id="videoElement"/>
                     </AspectRatio>
 
                     <Grid 
@@ -430,11 +430,11 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                     <Box 
                         pos="absolute"
                         color="white" 
-                        p="0rem 1rem" 
+                        p={{base: "0.2rem 1rem", sm: "0rem 1rem"}}
                         style={{borderRadius: "0 0 0 1rem", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControlsDesktop"
                         bottom="1rem" 
-                        // visibleFrom="sm"
+                        visibleFrom="sm"
                         hidden={hide || isVertical}
                         left="7%"
                         bg="var(--darkPurple)"
@@ -449,22 +449,22 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         <Flex justify="space-between" align="center">
                             <Group>
                                 {leftButtons.map((button: any) => (
-                                    !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                                    !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size={mobile ? "1.5rem" : "2.5rem"}>{button.buttonIcon}</ActionIcon>
                                 ))}
-                                    <Text fz="1rem" fw="900" hidden={isVertical}>{timeLeft}</Text>
-                                    <Text fz="1rem" fw="900" visibleFrom="sm">/</Text>
-                                    <Text fz="1rem" fw="900" hidden={isVertical} visibleFrom="sm">{videoDuration}</Text>
+                                    <Text fz="1rem" fw="900" hidden={isVertical || mobile}>{timeLeft}</Text>
+                                    <Text fz="1rem" fw="900" hidden={isVertical || mobile}>/</Text>
+                                    <Text fz="1rem" fw="900" hidden={isVertical || mobile} visibleFrom="sm">{videoDuration}</Text>
                             </Group>
                             <Group wrap="nowrap" justify="flex-end">
                                 {isEmbed &&  <Anchor href={`/video/${video.id}`} w={{base: "5%", sm: "25%"}} target="_blank"><Image src={mobile ? "/logoFull.svg" : "/titleLogoWhite.svg"} alt="Link to video" /></Anchor>}
                                 {rightButtons.map((button: any) => (
-                                    !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                                    !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size={mobile ? "1.5rem" : "2.5rem"}>{button.buttonIcon}</ActionIcon>
                                 ))}
                             </Group>
                         </Flex>
                     </Box>
 
-                    <Box pos="absolute" color="white" hidden={hide || isHorizontal}
+                    <Box pos="absolute" color="white" hidden={hide || !mobile}
                         p="0.5rem 1rem" 
                         style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControlsMobile"
@@ -472,6 +472,9 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         bg="var(--darkPurpleRGBA)"
                     >
                         {leftButtons.map((button: any) => (
+                            !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
+                        ))}
+                        {isHorizontal && rightButtons.map((button: any) => (
                             !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size="2.5rem">{button.buttonIcon}</ActionIcon>
                         ))}
                     </Box> 
