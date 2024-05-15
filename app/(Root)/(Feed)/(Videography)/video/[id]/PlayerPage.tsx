@@ -95,17 +95,17 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
             })
 
-            controlsMobile?.addEventListener("touchstart", () => { setHide(false) })
-            controlsMobile?.addEventListener("touchend", () => {
-                const videoElement = document.querySelector("#videoElement") as any
-                videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            })
+            // controlsMobile?.addEventListener("touchstart", () => { setHide(false) })
+            // controlsMobile?.addEventListener("touchend", () => {
+            //     const videoElement = document.querySelector("#videoElement") as any
+            //     videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+            // })
 
-            controlsMobileHeader?.addEventListener("touchstart", () => { setHide(false) })
-            controlsMobileHeader?.addEventListener("touchend", () => {
-                const videoElement = document.querySelector("#videoElement") as any
-                videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            })
+            // controlsMobileHeader?.addEventListener("touchstart", () => { setHide(false) })
+            // controlsMobileHeader?.addEventListener("touchend", () => {
+            //     const videoElement = document.querySelector("#videoElement") as any
+            //     videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+            // })
         } else {
             theVideoElement?.addEventListener("mouseover", () => { setHide(false) })
             theVideoElement?.addEventListener("mouseout", () => {

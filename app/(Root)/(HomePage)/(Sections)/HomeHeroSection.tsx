@@ -8,7 +8,7 @@ export default function HomeHeroSection({aboutMe}: any) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   
-  return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah={{base: "35%", sm: "100vh"}} pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
+  return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah={{base: "60%", sm: "100vh"}} pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
     <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
     <Box h="100%" w="100vw" visibleFrom="sm">
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
@@ -64,7 +64,7 @@ export default function HomeHeroSection({aboutMe}: any) {
           <Text c="white">{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
         </Stack>
       </Box>
-      <Group justify="center" display={{base: "none", sm: "flex"}}>
+      <Group justify="center">
         <PrimaryLinkedButton link="/portfolio" icon={<Briefcase02Icon />}>Portfolio</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/feed" icon={<DashboardSquare02Icon />}>Feed</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/blog" icon={<NewsIcon />}>Blog</PrimaryLinkedButton>
