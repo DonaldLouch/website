@@ -95,17 +95,21 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
             })
 
-            // controlsMobile?.addEventListener("touchstart", () => { setHide(false) })
-            // controlsMobile?.addEventListener("touchend", () => {
-            //     const videoElement = document.querySelector("#videoElement") as any
-            //     videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            // })
+            controlsMobile?.addEventListener("touchstart", () => { setHide(false) })
+            controlsMobile?.addEventListener("touchend", () => {
+                const videoElement = document.querySelector("#videoElement") as any
+                videoElement?.addEventListener("mouseout", () => {
+                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                })
+            })
 
-            // controlsMobileHeader?.addEventListener("touchstart", () => { setHide(false) })
-            // controlsMobileHeader?.addEventListener("touchend", () => {
-            //     const videoElement = document.querySelector("#videoElement") as any
-            //     videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            // })
+            controlsMobileHeader?.addEventListener("touchstart", () => { setHide(false) })
+            controlsMobileHeader?.addEventListener("touchend", () => {
+                const videoElement = document.querySelector("#videoElement") as any
+                videoElement?.addEventListener("mouseout", () => {
+                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                })
+            })
         } else {
             theVideoElement?.addEventListener("mouseover", () => { setHide(false) })
             theVideoElement?.addEventListener("mouseout", () => {
@@ -115,13 +119,25 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             controlsDesktop?.addEventListener("mouseover", () => { setHide(false) })
             controlsDesktop?.addEventListener("mouseout", () => {
                 const videoElement = document.querySelector("#videoElement") as any
-                videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                videoElement?.addEventListener("mouseout", () => {
+                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                })
+            })
+
+            isVertical && controlsMobile?.addEventListener("mouseover", () => { setHide(false) })
+            isVertical && controlsMobile?.addEventListener("mouseout", () => {
+                const videoElement = document.querySelector("#videoElement") as any
+                videoElement?.addEventListener("mouseout", () => {
+                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                })
             })
 
             controlsDesktopHeader?.addEventListener("mouseover", () => { setHide(false) })
             controlsDesktopHeader?.addEventListener("mouseout", () => {
                 const videoElement = document.querySelector("#videoElement") as any
-                videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                videoElement?.addEventListener("mouseout", () => {
+                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                })
             })
         }
     }, [theVideoElement])
@@ -464,7 +480,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         </Flex>
                     </Box>
 
-                    <Box pos="absolute" color="white" hidden={hide || !mobile}
+                    <Box pos="absolute" color="white" hidden={hide || isHorizontal && !mobile}
                         p="0.5rem 1rem" 
                         style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100}} 
                         id="videoControlsMobile"
