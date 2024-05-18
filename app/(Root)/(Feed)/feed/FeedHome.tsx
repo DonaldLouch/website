@@ -5,7 +5,7 @@ import PinnedPhotos from "../../(HomePage)/(Sections)/PinnedPhotos";
 import PinnedVideos from "../../(HomePage)/(Sections)/PinnedVideos";
 import PinnedPostsCard from "@/app/(Components)/(Cards)/PinnedPostsCard";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { ArrowLeft02Icon, NewsIcon } from "@hugeicons/react-pro";
+import { ArrowLeft02Icon, NewsIcon } from "@hugeicons/react";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
 
 export default function FeedHome({photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount}: any) {

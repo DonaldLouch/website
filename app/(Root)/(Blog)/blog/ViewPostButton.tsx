@@ -2,7 +2,7 @@
 
 import { Anchor, Box, Tooltip } from '@mantine/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Mouse01Icon } from '@hugeicons/react-pro'
+import { Mouse01Icon } from '@hugeicons/react'
 // import Link from 'next/link'
 
 import classes from "@/app/(Components)/Components.module.css"

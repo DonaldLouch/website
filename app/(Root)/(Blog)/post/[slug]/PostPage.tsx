@@ -21,7 +21,7 @@ import { Photo2PostType } from "../(Components)/(PostType)/Photo2PostType";
 import { Photo3PostType } from "../(Components)/(PostType)/Photo3PostType";
 import { Photo4PostType } from "../(Components)/(PostType)/Photo4PostType";
 import { Photo5PostType } from "../(Components)/(PostType)/Photo5PostType";
-import { Alert02Icon, ArrowLeft02Icon } from "@hugeicons/react-pro";
+import { Alert02Icon, ArrowLeft02Icon } from "@hugeicons/react";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 
 export default function PostPage({post, mdxSource, isLoggedIn}: any) {

@@ -7,7 +7,7 @@ import { Box, Anchor } from "@mantine/core"
 import {MediaCard} from "../../(Components)/MediaCard"
 import FileUploader from "../../(Components)/FileUploader"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
-import { Edit02Icon } from "@hugeicons/react-pro"
+import { Edit02Icon } from "@hugeicons/react"
 
 export default function PhotographyManager({mediaData, pagination, photographyAlbum}: any) {
   // const router = useRouter()

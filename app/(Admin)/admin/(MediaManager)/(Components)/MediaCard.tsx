@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import DisplayDate from '@/lib/DisplayDate'
 import supabase from '@/lib/supabase'
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
-import { Calendar03Icon, Delete02Icon, Edit02Icon } from "@hugeicons/react-pro"
+import { Calendar03Icon, Delete02Icon, Edit02Icon } from "@hugeicons/react"
   
 export const MediaCard = ({ media }: any) => {
     const router = useRouter()

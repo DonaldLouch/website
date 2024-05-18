@@ -1,4 +1,4 @@
-import { Calendar03Icon } from '@hugeicons/react-pro';
+import { Calendar03Icon } from '@hugeicons/react';
 import { DateTimePicker } from '@mantine/dates';
 
 import classes from "./Forms.module.css"

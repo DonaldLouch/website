@@ -1,4 +1,4 @@
-import { Album02Icon } from "@hugeicons/react-pro"
+import { Album02Icon } from "@hugeicons/react"
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
 import { BsImages } from "react-icons/bs"

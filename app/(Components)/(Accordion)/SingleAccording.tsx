@@ -1,4 +1,4 @@
-import { ArrowDown01Icon } from "@hugeicons/react-pro"
+import { ArrowDown01Icon } from "@hugeicons/react"
 import { Accordion, Avatar, Group, Text, Image, Stack, ActionIcon, Box } from "@mantine/core"
 import { BsChevronDown } from "react-icons/bs"
 

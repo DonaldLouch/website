@@ -1,7 +1,7 @@
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
-import { ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, LibraryIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react-pro";
+import { ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, LibraryIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
 import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider } from "@mantine/core";
 
 

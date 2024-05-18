@@ -19,7 +19,7 @@ import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { useUser } from "@clerk/nextjs";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
-import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from "@hugeicons/react-pro";
+import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from "@hugeicons/react";
 
 export default function PhotoPage({photoData, mdxSource}: any) {
   const {user} = useUser()

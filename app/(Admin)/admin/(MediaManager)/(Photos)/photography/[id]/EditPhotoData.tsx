@@ -18,7 +18,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import cuid from "cuid";
 import moment from "moment";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Delete02Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react-pro";
+import { Delete02Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import FormTags from "@/app/(Components)/(Form)/FormTags";

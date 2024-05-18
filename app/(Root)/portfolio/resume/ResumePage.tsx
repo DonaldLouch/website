@@ -21,7 +21,7 @@ import TableOfContents from "@/app/(Components)/TableOfContents";
 import { FooterIcon } from "@/app/(Config)/(Layout)/(Footer)/FooterIcon";
 import MultiAccordion from "@/app/(Components)/(Accordion)/MultiAccordion";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Album02Icon, Briefcase02Icon, Calendar03Icon, CameraVideoIcon, Chatting01Icon, ContactIcon, Github01Icon, GithubIcon, Linkedin02Icon, MailAtSign02Icon, MessageDownload01Icon, PinLocation03Icon } from "@hugeicons/react-pro";
+import { Album02Icon, Briefcase02Icon, Calendar03Icon, CameraVideoIcon, Chatting01Icon, ContactIcon, Github01Icon, GithubIcon, Linkedin02Icon, MailAtSign02Icon, MessageDownload01Icon, PinLocation03Icon } from "@hugeicons/react";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
 
 export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {

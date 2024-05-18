@@ -4,7 +4,7 @@ import { BsCopy } from 'react-icons/bs'
 
 import classes from "./Buttons.module.css"
 import { Button, CopyButton } from '@mantine/core'
-import { Copy01Icon } from '@hugeicons/react-pro'
+import { Copy01Icon } from '@hugeicons/react'
 
 interface propTypes {
     copyValue: any

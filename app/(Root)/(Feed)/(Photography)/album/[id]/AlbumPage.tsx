@@ -32,7 +32,7 @@ import { useRouter } from 'next/router'
 import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'
-import { Calendar03Icon, GridIcon, LicenseIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react-pro'
+import { Calendar03Icon, GridIcon, LicenseIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 
 async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
     const from = nextPage * photoLimit

@@ -8,7 +8,7 @@ import LinksSection from "./(Sections)/LinksSection";
 import PinnedPhotos from "./(Sections)/PinnedPhotos";
 import PinnedVideos from "./(Sections)/PinnedVideos";
 import StatsGroup from "@/app/(Components)/(Cards)/StatsGroup";
-import { Album02Icon, CameraVideoIcon, Cone01Icon, NewsIcon } from "@hugeicons/react-pro";
+import { Album02Icon, CameraVideoIcon, Cone01Icon, NewsIcon } from "@hugeicons/react";
 import PinnedPostsCard from "@/app/(Components)/(Cards)/PinnedPostsCard";
 
 export default function HomePageLayout({aboutMe, primaryLinksData, linksData, photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount}: any) {

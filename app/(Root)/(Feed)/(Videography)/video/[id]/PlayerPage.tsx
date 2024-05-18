@@ -9,7 +9,7 @@ import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
 import { useUser } from "@clerk/nextjs"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
-import { ArrowExpand01Icon, ArrowExpandIcon, ArrowHorizontalIcon, ArrowLeft01Icon, ArrowLeft02Icon, ArrowShrink01Icon, ArrowShrinkIcon, ArrowUpRight01Icon, ArrowUpRight02Icon, Bookmark01Icon, CameraVideoIcon, Copy01Icon, Database01Icon, Database02Icon, GoBackward10SecIcon, GoForward10SecIcon, InformationCircleIcon, LibraryIcon, LiverIcon, MaximizeScreenIcon, MinimizeScreenIcon, PauseIcon, PlayIcon, Share05Icon, Tag01Icon, TagsIcon, UserMultiple02Icon, VolumeMute01Icon, VolumeOffIcon } from "@hugeicons/react-pro"
+import { ArrowExpand01Icon, ArrowExpandIcon, ArrowHorizontalIcon, ArrowLeft01Icon, ArrowLeft02Icon, ArrowShrink01Icon, ArrowShrinkIcon, ArrowUpRight01Icon, ArrowUpRight02Icon, Bookmark01Icon, CameraVideoIcon, Copy01Icon, Database01Icon, Database02Icon, GoBackward10SecIcon, GoForward10SecIcon, InformationCircleIcon, LibraryIcon, LiverIcon, MaximizeScreenIcon, MinimizeScreenIcon, PauseIcon, PlayIcon, Share05Icon, Tag01Icon, TagsIcon, UserMultiple02Icon, VolumeMute01Icon, VolumeOffIcon } from "@hugeicons/react"
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording"

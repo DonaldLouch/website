@@ -35,7 +35,7 @@ import TagFilter from "./TagFilter";
 import AlbumFilter from "./AlbumFilter";
 import LocationFilter from "./LocationFilter";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Album02Icon, Briefcase02Icon, Camera01Icon, FilterIcon, PinIcon, Search01Icon, Sorting19Icon, Sorting91Icon } from "@hugeicons/react-pro";
+import { Album02Icon, Briefcase02Icon, Camera01Icon, FilterIcon, PinIcon, Search01Icon, Sorting19Icon, Sorting91Icon } from "@hugeicons/react";
 
 
 async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: string, searchValue?: string) {

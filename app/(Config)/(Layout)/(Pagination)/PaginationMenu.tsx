@@ -2,7 +2,7 @@
 import { Anchor, Button, Group, Menu, Stack } from '@mantine/core'
     
 import classes from "@/app/(Components)/Components.module.css"
-import { MoreHorizontalIcon } from '@hugeicons/react-pro'
+import { MoreHorizontalIcon } from '@hugeicons/react'
 
 //  _hover={{background: "blurredBackground", c:"secondary", fw: "900 !important"}
 export const PaginationMenu = ( props: any ) => { 

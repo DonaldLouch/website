@@ -25,7 +25,7 @@ import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 
 import { ActionIcon, Paper, Group, Loader, Title, Anchor } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Camera01Icon, ContactIcon, PassportIcon } from "@hugeicons/react-pro";
+import { Camera01Icon, ContactIcon, PassportIcon } from "@hugeicons/react";
 
 
 async function fetchPhotos(nextPage: number, photoLimit: number) {

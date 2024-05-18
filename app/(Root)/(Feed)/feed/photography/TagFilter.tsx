@@ -1,4 +1,4 @@
-import { TagsIcon } from "@hugeicons/react-pro"
+import { TagsIcon } from "@hugeicons/react"
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
 import { BsTags } from "react-icons/bs"

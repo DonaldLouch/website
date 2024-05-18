@@ -10,7 +10,7 @@ import PinnedPostsCard from '@/app/(Components)/(Cards)/PinnedPostsCard'
 import { Title } from '@mantine/core'
 import { FooterIcon } from '@/app/(Config)/(Layout)/(Footer)/FooterIcon'
 import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsSend, BsEnvelopeAt } from 'react-icons/bs'
-import { Chatting01Icon, MailAtSign02Icon } from '@hugeicons/react-pro'
+import { Chatting01Icon, MailAtSign02Icon } from '@hugeicons/react'
 
 export default function LinksSection({about, primaryLinks, links}: any) {
     return <Box component="section" id="links">

@@ -1,5 +1,5 @@
 import { Anchor, Breadcrumbs } from '@mantine/core';
-import { ArrowRight01Icon, Home01Icon } from '@hugeicons/react-pro';
+import { ArrowRight01Icon, Home01Icon } from '@hugeicons/react';
 
 import classes from "./Components.module.css"
 

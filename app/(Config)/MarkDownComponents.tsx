@@ -21,7 +21,7 @@ import classes from "@/app/(Components)/Components.module.css"
 import SingleAccordion from "../(Components)/(Accordion)/SingleAccording"
 
 import Masonry from 'react-masonry-css'
-import { HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react-pro"
+import { HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react"
 
  const breakpointColumnsObj = {
     default: 5,

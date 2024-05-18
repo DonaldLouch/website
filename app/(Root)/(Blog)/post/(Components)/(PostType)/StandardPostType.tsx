@@ -23,7 +23,7 @@ import { TagsCard } from '../TagsCard'
 import { SidebarCard } from '../SidebarCard'
 import PostContent from '../PostContent'
 import DisplayDate from '@/lib/DisplayDate'
-import { ArrowLeft02Icon, Calendar03Icon, ContactIcon, Folder01Icon, Tag01Icon, TagsIcon } from '@hugeicons/react-pro'
+import { ArrowLeft02Icon, Calendar03Icon, ContactIcon, Folder01Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
 import { useMediaQuery } from '@mantine/hooks'
 

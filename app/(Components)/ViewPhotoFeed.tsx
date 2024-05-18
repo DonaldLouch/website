@@ -10,7 +10,7 @@ import classes from "./Components.module.css"
 import { useDisclosure } from '@mantine/hooks'
 import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
 import ClipboardButton from '@/app/(Components)/(Buttons)/ClipboardButton'
-import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react-pro'
+import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react'
 
 import LazyLoad from 'react-lazyload';
 import Image from 'next/image'

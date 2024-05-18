@@ -6,7 +6,7 @@ import cx from 'clsx';
 
 import classes from "./Components.module.css"
 import { useRouter } from 'next/navigation';
-import { Book04Icon, LeftToRightBlockQuoteIcon } from '@hugeicons/react-pro';
+import { Book04Icon, LeftToRightBlockQuoteIcon } from '@hugeicons/react';
 
 type TableOfContentsProps = {
     // sections: [label: string, link: string|null, order: number]

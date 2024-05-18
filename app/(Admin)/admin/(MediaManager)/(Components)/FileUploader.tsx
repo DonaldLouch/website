@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { BsCloudUpload } from "react-icons/bs";
 
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
-import { Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react-pro";
+import { Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()

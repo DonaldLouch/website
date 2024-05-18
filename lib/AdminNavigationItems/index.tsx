@@ -1,4 +1,4 @@
-import { Album02Icon, CameraVideoIcon, ClipboardIcon, DashboardSpeed02Icon, Home01Icon, InboxIcon, NewsIcon } from "@hugeicons/react-pro";
+import { Album02Icon, CameraVideoIcon, ClipboardIcon, DashboardSpeed02Icon, Home01Icon, InboxIcon, NewsIcon } from "@hugeicons/react";
 
 interface AdminNavigationItemsProps {
   name: string;

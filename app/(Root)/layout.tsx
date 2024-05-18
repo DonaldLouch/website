@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
 
-// import {hugeiconsLicense} from "@hugeicons/react-pro";
+// import {hugeiconsLicense} from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
 // hugeiconsLicense(iconLICENSE)
 

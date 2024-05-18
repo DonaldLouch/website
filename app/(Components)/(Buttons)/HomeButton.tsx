@@ -2,7 +2,7 @@
 
 import { Anchor, Box, Tooltip } from '@mantine/core'
 
-import { Home01Icon } from '@hugeicons/react-pro'
+import { Home01Icon } from '@hugeicons/react'
 
 interface propTypes {
     colour?: string | null | undefined | unknown

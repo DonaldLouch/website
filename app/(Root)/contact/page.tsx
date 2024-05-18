@@ -12,7 +12,7 @@ import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
-import { MailAtSign02Icon, MailEdit02Icon, PassportIcon } from '@hugeicons/react-pro';
+import { MailAtSign02Icon, MailEdit02Icon, PassportIcon } from '@hugeicons/react';
 
 export default function ContactMe() {
     const initialValues = {

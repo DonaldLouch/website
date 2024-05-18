@@ -11,7 +11,7 @@ import BlogPostCard from "./BlogPostCard";
 import Pagination from "../../../(Config)/(Layout)/(Pagination)";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NextLink from "next/link";
-import { Alert02Icon } from "@hugeicons/react-pro";
+import { Alert02Icon } from "@hugeicons/react";
 
 export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any){
     return (

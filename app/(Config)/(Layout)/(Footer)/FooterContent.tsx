@@ -15,7 +15,7 @@ import { FooterIcon } from "./FooterIcon";
 import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
 import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import { Anchor, Group, Stack, Image, Text, Box } from "@mantine/core";
-import { Facebook02Icon, GithubIcon, InstagramIcon, ThreadsIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react-pro";
+import { Facebook02Icon, GithubIcon, InstagramIcon, ThreadsIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
 
 
 export default function FooterContent({isLoggedIn}: any){

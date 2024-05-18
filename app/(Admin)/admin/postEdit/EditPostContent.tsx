@@ -19,7 +19,7 @@ import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import DisplayDate from "@/lib/DisplayDate";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Delete02Icon, Delete03Icon, DragDropIcon, Link04Icon, PencilEdit01Icon, PlusSignIcon, PropertyEditIcon, ViewIcon } from "@hugeicons/react-pro";
+import { Delete02Icon, Delete03Icon, DragDropIcon, Link04Icon, PencilEdit01Icon, PlusSignIcon, PropertyEditIcon, ViewIcon } from "@hugeicons/react";
 
 import buttonClasses from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import { SectionTitle } from "@/app/(Components)/SectionTitle";

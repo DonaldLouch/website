@@ -7,7 +7,7 @@ import DisplayDate from "@/lib/DisplayDate"
 import classes from "@/app/(Components)/Components.module.css"
 import { BsPlayFill } from "react-icons/bs"
 import { useInView } from "react-intersection-observer"
-import { PlayIcon } from "@hugeicons/react-pro"
+import { PlayIcon } from "@hugeicons/react"
 
 async function fetchVideos(offset: number, limit: number) {
   const from = offset * limit

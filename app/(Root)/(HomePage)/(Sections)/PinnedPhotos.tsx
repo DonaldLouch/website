@@ -26,7 +26,7 @@ import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 import { ActionIcon, Paper, Group, Loader, Title, Anchor } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Album02Icon, PinIcon } from "@hugeicons/react-pro";
+import { Album02Icon, PinIcon } from "@hugeicons/react";
 
 
 // async function fetchPhotos(nextPage: number, photoLimit: number) {
