@@ -1,8 +1,10 @@
 'use client'
-import { Text } from "@chakra-ui/react"
+import { Home01Icon } from "@hugeicons/react"
+import { Text } from "@mantine/core"
 
 export default function page() {
-  return (
-    <Text>page</Text>
-  )
+  return (<>
+    <Text>There should be a home icon below!</Text>
+    <Home01Icon variant="twotone" size="4rem" />
+  </>)
 }
