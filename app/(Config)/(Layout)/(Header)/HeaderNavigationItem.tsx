@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+;
 import { BsChevronDown } from "react-icons/bs";
 import HeaderLink from "@/app/(Components)/(Buttons)/HeaderLink";
 

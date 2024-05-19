@@ -9,7 +9,7 @@ import PinnedPostsCard from "../../../(Components)/(Cards)/PinnedPostsCard";
 import BlogPostCard from "./BlogPostCard";
 
 import Pagination from "../../../(Config)/(Layout)/(Pagination)";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+;
 import NextLink from "next/link";
 import { Alert02Icon } from "@hugeicons/react";
 

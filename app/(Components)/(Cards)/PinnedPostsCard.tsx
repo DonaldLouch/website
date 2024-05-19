@@ -4,7 +4,7 @@
 'use client'
 
 // import { AspectRatio, Card, Heading, Stack, Text, Box } from '@chakra-ui/react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// 
 
 // import Link from 'next/link'
 // import Image from 'next/image'

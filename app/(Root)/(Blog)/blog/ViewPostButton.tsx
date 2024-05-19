@@ -1,7 +1,7 @@
 'use client'
 
 import { Anchor, Box, Tooltip } from '@mantine/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { Mouse01Icon } from '@hugeicons/react'
 // import Link from 'next/link'
 

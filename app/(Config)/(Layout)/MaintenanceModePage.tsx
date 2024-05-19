@@ -3,7 +3,7 @@ import { Heading, Link, Stack, Text } from "@chakra-ui/react"
 
 // import { useRouter } from "next/navigation"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 // import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
 export default function MaintenanceModePage() {

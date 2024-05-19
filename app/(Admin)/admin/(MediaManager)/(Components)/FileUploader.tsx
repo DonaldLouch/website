@@ -2,7 +2,7 @@ import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import supabase from "@/lib/supabase";
 import { Stack, Input, Button, Box, Text, Group, rem, Title } from "@mantine/core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+;
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

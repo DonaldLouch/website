@@ -52,6 +52,7 @@ export default async function Player({ params, searchParams }: Props) {
         playlistVideos.push({"videoIndex": videoIndexLoop, currentVideoData})
     }
 
-    return <PlaylistPage currentVideoIndex={currentVideo} playlistLength={playlistLength} playlistData={playlistData} currentVideoData={currentVideoData} playlistDescription={playlistDescription} videoDescription={videoDescription} playlistVideos={playlistVideos} />
+    // return <PlaylistPage currentVideoIndex={currentVideo} playlistLength={playlistLength} playlistData={playlistData} currentVideoData={currentVideoData} playlistDescription={playlistDescription} videoDescription={videoDescription} playlistVideos={playlistVideos} />
 // playlistVideos
+return
 }

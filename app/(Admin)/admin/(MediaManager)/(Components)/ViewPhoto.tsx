@@ -1,7 +1,7 @@
 'use client'
 
 import { Modal, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Stack, HStack, ModalFooter, Button, useDisclosure, useToast, IconButton, Box } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { Formik } from 'formik'
 import { SubmitButton } from 'formik-chakra-ui'
 import { BsEye } from 'react-icons/bs'

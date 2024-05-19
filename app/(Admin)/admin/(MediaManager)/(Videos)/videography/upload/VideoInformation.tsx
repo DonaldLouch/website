@@ -11,7 +11,7 @@ import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
 import supabase from "@/lib/supabase"
 import { Badge, Box, Button, Code, Icon, IconButton, Link, Stack, Text, useToast } from "@chakra-ui/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import { FieldArray, Formik } from "formik"
 // import { SubmitButton } from "formik-chakra-ui"
 import moment from "moment"

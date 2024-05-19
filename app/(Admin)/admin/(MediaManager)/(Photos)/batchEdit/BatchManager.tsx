@@ -5,7 +5,7 @@ import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
 import Pagination from "@/app/(Config)/(Layout)/(Pagination)"
 import { Box, Button, Grid, Input, Stack, Text } from "@mantine/core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import {MediaCard} from "../../(Components)/MediaCard"

@@ -1,6 +1,6 @@
 import { Icon, IconButton, Link, Tooltip } from "@chakra-ui/react"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import { BsFacebook, BsGithub, BsInstagram, BsLink45Deg, BsLinkedin, BsThreads, BsTiktok, BsTwitterX, BsYoutube } from "react-icons/bs"
 
 interface LinkedButtonProps {

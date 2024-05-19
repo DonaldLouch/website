@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+;
 
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 

@@ -13,7 +13,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+;
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
 import { BsMenuApp, BsPlus, BsPlusLg } from "react-icons/bs";

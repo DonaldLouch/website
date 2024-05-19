@@ -17,7 +17,7 @@ import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 // import { SectionTitle } from "@/app/(Components)/SectionTitle";
 // import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// ;
 // import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
 // import Masonry from "react-masonry-css";
 // import { BsEye, BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from "react-icons/bs";

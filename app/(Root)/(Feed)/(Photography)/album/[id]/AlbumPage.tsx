@@ -24,7 +24,7 @@ import { debounce } from 'lodash'
 import supabase from '@/lib/supabase'
 import DisplayDate from '@/lib/DisplayDate'
 import ViewPhotoAlbum from './ViewPhotoAlbum'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { MdxContent } from '@/app/mdx-content'
 import { Bs123, BsCalendar2, BsInfo, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 import { useInView } from 'react-intersection-observer'

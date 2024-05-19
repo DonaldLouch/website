@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { OrganizationSwitcher, UserButton, useUser } from '@clerk/nextjs'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { BsList } from 'react-icons/bs'
 
 interface PortalHeaderProps extends FlexProps {

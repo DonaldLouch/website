@@ -9,7 +9,7 @@ import { destroyCookie, parseCookies, setCookie } from 'nookies'
 import { useRouter } from "next/navigation"
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import supabase from "@/lib/supabase"
 import moment from "moment"
 import VideoInformation from "./VideoInformation"

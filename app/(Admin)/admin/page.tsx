@@ -2,7 +2,7 @@
 
 import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 import { OrganizationList, OrganizationProfile, OrganizationSwitcher, UserProfile, useSession, useUser } from "@clerk/nextjs";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+;
 import HouseIcon from "../../(Components)/(Vectors)/house";
 
 // import type { Metadata } from 'next'
