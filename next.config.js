@@ -18,6 +18,9 @@ module.exports = {
     serverComponentsExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/s3-presigned-post'],
     optimizePackageImports: ['@mantine/core', '@mantine/hooks', ],
   },
+  env: {
+    NPM_TOKEN: process.env.NPM_TOKEN
+  },
   // typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if
