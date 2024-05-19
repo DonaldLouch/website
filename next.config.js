@@ -19,7 +19,7 @@ module.exports = {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks', ],
   },
   env: {
-    NPM_TOKEN: process.env.NPM_TOKEN
+    NEXT_PUBLIC_NPM_TOKEN: process.env.NEXT_PUBLIC_NPM_TOKEN
   },
   // typescript: {
   //   // !! WARN !!
