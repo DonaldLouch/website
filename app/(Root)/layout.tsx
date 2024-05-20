@@ -21,9 +21,11 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
  
     
     // const attachedHeaderHeight = !isHero ? 190 : 800 
-    const disabled = path.includes("/video") && path.includes("feed/video") && path.includes("/embed") ? true : false
+    const disabled = path.includes("/video") && path != "/feed/videography" || path.includes("/embed") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
+
+    console.log("Layout is disabled?", disabled)
     // const [opened { open, close }] = useDisclosure(false)
 
     return <AppShell 

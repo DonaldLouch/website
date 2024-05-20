@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Notification, Button, Code, Stack , Text, Grid, Anchor, Box, Group, Combobox, PillsInput, Pill, CheckIcon, useCombobox, Input, ActionIcon, Select} from "@mantine/core"
+import { Notification, Button, Code, Stack , Text, Grid, Anchor, Box, Group, Combobox, PillsInput, Pill, CheckIcon, useCombobox, Input, ActionIcon, Select, Flex, AspectRatio, Image, Badge, Title} from "@mantine/core"
 
 import * as yup from 'yup';
 import { yupResolver } from 'mantine-form-yup-resolver';
@@ -18,7 +18,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import cuid from "cuid";
 import moment from "moment";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Delete02Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
+import { Calendar03Icon, Delete02Icon, GridIcon, Link04Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
@@ -32,6 +32,7 @@ import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import FormButton from "@/app/(Components)/(Form)/FormButton";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { notifications } from "@mantine/notifications";
+import DisplayDate from "@/lib/DisplayDate";
 // import { BsDashLg, BsLink45Deg, BsNodePlus, BsPencilSquare, BsPlus, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditPhotoData({photoData, photographyAlbum, locations, tagsData}: any) {
@@ -117,7 +118,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         takenOn: new Date(takenOn),
         uploadedOn: new Date(uploadedOn),
         caption: caption,
-        tags: tags,
+        tags: tags ? tags : [],
         albumSelect: album ? album : null,
         locationSelect: location ? location : "noLocation",
         newAlbumName: "",
@@ -257,9 +258,50 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         {/* <PrimaryLinkedButton link="/admin/bulkEdit" icon={<PencilEdit02Icon />}>Bulk Edit</PrimaryLinkedButton> */}
         <SectionTitle headingTitle={`Edit Photo: ${photoID}`} />
         <Text ta="center"></Text>
+        <Flex
+            direction={{base: "column", sm: "row"}}
+            gap={{base: "0.5rem", sm: "2rem"}}
+            justify="flex-start"
+            align="center"
+            style={{
+                boxShadow: "var(--mantine-shadow-bsBoldPrimary)",
+                borderRadius: "var(--mantine-radius-md)"
+            }}
+        >
+                {/* <AspectRatio ratio={16/9} 
+                    w="50%"
+                >
+                    <Image src={filePath} alt={fileID} />
+                </AspectRatio>                */}
+                <ViewFullPhoto photoData={photoData} />
+                <Flex direction="column" align={{base: "center", lg: "flex-start"}}>
+                    <Stack gap="0">
+                        <Title
+                            order={1}
+                            style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
+                            fz="3rem"
+                            td="underline 0.4rem var(--primary)"
+                        >
+                            {fileTitle}
+                        </Title>
+                        {/* <Text fz="1.3rem">
+                            {post.excerpt}
+                        </Text> */}
+                    </Stack>
+                    <Stack gap="1rem" my="1rem">
+                        <Group>
+                            <Badge color="var(--primary)" leftSection={<GridIcon />}>
+                                {fileID}
+                            </Badge>
+                            <Badge color="red" leftSection={<Calendar03Icon />}>
+                                <DisplayDate source={takenOn} />
+                            </Badge>
+                            <Anchor href={filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{filePath}</Badge></Anchor>
+                        </Group>
+                    </Stack>
+                </Flex>
+            </Flex>
         <Box p="2rem" component="form" onSubmit={form.onSubmit(onSubmit)}>
-            {/*  {...form.getInputProps('FIELD')} */}
-            {/* <ViewFullPhoto photoData={photoData} /> */}
             <FormInput inputID="photoName" inputLabel="Photo Title" inputDescription="If you would like the title of the photo to be a different title than what was uploaded; you can change that here." {...form.getInputProps('photoName')} />
             <FormTextArea inputID="caption" inputLabel="Caption" textRows={4} {...form.getInputProps('caption')} />
             <FormTags searchValues={tagsData} {...form.getInputProps('tags')} />
@@ -328,12 +370,6 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
                 <FormDatePicker dateLabel="Taken On" {...form.getInputProps('takenOn')} isJustRead/>
                 <FormDatePicker dateLabel="Uploaded On" datePlaceholder="When was this uploaded?" isClearable {...form.getInputProps('uploadedOn')}/>
             </Group>
-            {/* <FormSwitch 
-                inputID="albumOption" 
-                helperText="Toggle on if this photo is apart of an album"
-                onClick={(e: any) => setAlbumOption(e.target.checked)} 
-                checked={albumOption}
-            /> */}
             <FormSwitch 
                 inputID="isPublic" 
                 helperText="Toggle on if you want this photo to be seen publicly"

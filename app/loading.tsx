@@ -3,7 +3,7 @@ import { Title, Loader, Stack, Text, Paper, Group, Anchor, Center } from "@manti
 
 export default function loading() {
     return (<Center mih="100vh" mah="100vh">
-        <Paper p="2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg">
+        <Paper p="2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg" mx={{base: "2rem", sm: "0"}}>
             <Stack align="center">
             <Group gap="2rem" align="center">
                 <Loader color="white" size="md" />

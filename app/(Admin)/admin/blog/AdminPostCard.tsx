@@ -11,7 +11,7 @@ export default function AdminPostCard({ id, slug, title, thumbnail, category, po
     // component="article"
     style={{
         filter: "opacity(98%)",
-        borderRadius: "var(--mantine-radius-lg",
+        borderRadius: "var(--mantine-radius-lg)",
         boxShadow: "var(--mantine-shadow-bsBoldWhite)"
     }}
     // p="2rem"
