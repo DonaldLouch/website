@@ -172,7 +172,7 @@ export const LinkCardAdmin = (link: {
           </Flex>
         </Tooltip>
       </Link>
-      <IconButton
+      {/* <IconButton
           aria-label={`${link.title} Link`}
           h="auto"
           w="auto"
@@ -180,8 +180,8 @@ export const LinkCardAdmin = (link: {
           variant="unstyled"
           onClick={deleteLink}
           color="red"
-          icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
-        />
+          // icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
+        /> */}
     </Flex>
     <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">
       <ModalContent background="blurredPurple">

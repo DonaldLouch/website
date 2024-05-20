@@ -36,7 +36,7 @@ export const FormPassword = ( props: FormProps) => {
   return (
     <>
 <FormControl my="2rem">
-  <InputRightElement>
+  {/* <InputRightElement>
     <IconButton
       bg="transparent !important"
       variant="ghost"
@@ -45,7 +45,7 @@ export const FormPassword = ( props: FormProps) => {
       onClick={onClickReveal}
       pos="absolute"
     />
-  </InputRightElement>
+  </InputRightElement> */}
   
   <InputControl
       name={inputID}

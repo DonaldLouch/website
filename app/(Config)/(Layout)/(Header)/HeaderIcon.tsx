@@ -4,8 +4,6 @@ import {
     IconButton 
 } from '@chakra-ui/react'
 
-;
-
 interface HeaderProps {
     linkURL: string
     linkTitle: string
@@ -15,8 +13,8 @@ interface HeaderProps {
 export const HeaderIcon = (props:HeaderProps) => {
     const { linkURL, linkTitle, linkIcon } = props
 
-    return (
-        <Tooltip hasArrow label={linkTitle} placement="bottom">                        
+    return (<>
+        {/* <Tooltip hasArrow label={linkTitle} placement="bottom">                        
             <IconButton 
                 as="a" 
                 href={linkURL}
@@ -34,6 +32,6 @@ export const HeaderIcon = (props:HeaderProps) => {
             >
                 <FontAwesomeIcon icon={linkIcon} />
             </IconButton>
-        </Tooltip>
-    )
+        </Tooltip> */}
+    </>)
 }
