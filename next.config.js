@@ -17,6 +17,8 @@ module.exports = {
     // serverActions: true,
     serverComponentsExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/s3-presigned-post'],
     optimizePackageImports: ['@mantine/core', '@mantine/hooks', ],
+    reactCompiler: true,
+    // compilationMode: 'annotation',
   },
   // env: {
   //   NEXT_PUBLIC_NPM_TOKEN: process.env.NEXT_PUBLIC_NPM_TOKEN

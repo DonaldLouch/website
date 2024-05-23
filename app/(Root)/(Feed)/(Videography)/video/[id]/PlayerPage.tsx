@@ -1,6 +1,6 @@
 'use client'
 
-import { Anchor, AspectRatio, Box, Button, Divider, Title, Slider, Stack, Badge, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Grid, SimpleGrid } from "@mantine/core"
+import { Anchor, AspectRatio, Box, Button, Divider, Title, Slider, Stack, Badge, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Grid, SimpleGrid, rem } from "@mantine/core"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton"
@@ -377,21 +377,21 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     ] as any
 
     return (<>
-        <Box 
-            w="100vw" h="100%"
-            pos="fixed"
-            top="0%"
-            left="0%"
-            bg="var(--darkPurple)"
-            style={{zIndex: 100, boxShadow: "var(--mantine-shadow-bsSecondary)", overflowX: "hidden", overflowY: isEmbed ? "hidden" : "auto"}} 
-            c="white"
+        <Box
+            mt="-5.5rem" 
+            mx={{base: "-1rem", lg: "-5rem"}}
+            mb="-md" 
         >
             <Box hidden={hide || isFullscreenMode || isTheaterMode || isEmbed}><HomeButton icon={<ArrowLeft02Icon size="3rem" />} link="/feed/videography" helperText="Go Back to Video Feed" /></Box> 
             <Stack
-                style={{ backdropBlur: "60px", boxShadow: "var(--mantine-shadow-bsBoldWhite)" }}
+                style={{ 
+                    backdropBlur: "60px", 
+                    boxShadow: "var(--mantine-shadow-bsBoldWhite)",
+                    overflowX: "hidden", overflowY: isEmbed ? "hidden" : "auto"
+                }}
                 bg={isFullscreenMode ? "black" : "var(--blackRGBA)"}
-                h={isVertical ? "auto" : {base: "auto", md: "100%"}}
-                p={{base: "1rem", md: "initial"}}
+                h={isFullscreenMode || isEmbed ? "100vh" : "auto"}
+                p={isFullscreenMode || isEmbed ? "0" : "2rem"}
                 justify="center" align="center"
                 gap="0"
             > 
@@ -402,24 +402,26 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 >
                     {/* isVertical ? {base: "80%", sm: "50vw", lg: "40%", xl: "30%"} */}
                     <AspectRatio 
-                        ratio={isVertical ? 9 / 16 : 16 / 9} 
-                        w={isEmbed ? "100%" : isHorizontal ? "calc(100% - 2rem)" : {base: "60vw", sm: "35vw"}}
-                        m={isVertical ? {base: "0.5rem", md: "2rem"} : "inherit" }
-                        // h= {isVertical ? "200%" : "auto" }
+                        ratio={isVertical ? 9 / 16 : 16 / 9}
+                        // w={isEmbed ? "100%" : isHorizontal ? "calc(100% - 2rem)" : {base: "60vw", sm: "35vw"}}
+                        // m={isVertical ? {base: "0.5rem", md: "2rem"} : "inherit" }
+                        // w="100% !important"
+                        h= "100%"
                         style={{borderRadius: isFullscreenMode ? "0" : "0.5rem", boxShadow: "var(--mantine-shadow-bsBoldWhite)", overflow: "hidden"}}
                         // pos="relative" 
+                        // poster={video.thumbnailFileID.filePath
                     >
              
-                        <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} playsInline={!isFullscreenMode} id="videoElement"/>
+                        <video src={video.videoFileID.filePath} playsInline={!isFullscreenMode} id="videoElement" />
                     </AspectRatio>
 
                     <Grid 
                         pos="absolute"
                         color="white" 
-                        p={{base: "0.5vw 1rem", sm: "0rem 1rem"}}
+                        p={{base: "1rem 1rem", sm: "0rem 1rem"}}
                         style={{borderRadius: "var(--mantine-radius-md)", backdropFilter: "blur(3rem)", zIndex: 100, display: hide || isVertical ? "none" : "flex"}} 
                         id="videoControlsDesktopHeader"
-                        top="1%" 
+                        top="1.5%" 
                         left={{base: "3vw", md: "1.5%"}}
                         bg="var(--darkPurpleRGBA)"
                         w={{base: "calc(100% - (3vw * 2))", md: "calc(100% - (1.5% * 2))"}}
@@ -530,9 +532,11 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                     </Grid> 
                 </Stack> 
             </Stack>
-            <Box p={{base: "1rem", sm: "1rem 5rem"}}>
-                <FullDescription video={video} mdxSource={mdxSource} />
-            </Box>
+            {!isEmbed &&
+                <Box p={{base: "1rem", sm: "1rem 5rem"}}>
+                    <FullDescription video={video} mdxSource={mdxSource} />
+                </Box>
+            }
             <Drawer size="full" opened={openedShare} onClose={closeShare} title={`Share Video: "${video.title}"`} 
                 overlayProps={{
                 backgroundOpacity: 0.5, 

@@ -30,7 +30,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
             label: "Video Information",
             description: "The video metadata information",
         }]}>
-            <Box>
+            <Stack>
                 <Title order={3} ta="center" fz="1.8rem" fw="900" c="white" my="1rem" ff="text">Video Information</Title>
 
                 <Title order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Uploaded On</Title>
@@ -110,7 +110,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                     <Title key={index}  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text" m="0">{vCredit.title}</Title>
                     <Text p="1rem" fz="1.2rem">{vCredit.value}</Text>
                 </Box>))}
-            </Box>
+            </Stack>
         </SingleAccordion>
     </Box>
 }
