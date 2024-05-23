@@ -412,7 +412,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         // poster={video.thumbnailFileID.filePath
                     >
              
-                        <video src={video.videoFileID.filePath} playsInline={!isFullscreenMode} id="videoElement" />
+                        <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} playsInline={!isFullscreenMode} id="videoElement" />
                     </AspectRatio>
 
                     <Grid 
