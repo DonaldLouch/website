@@ -391,7 +391,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 }}
                 bg={isFullscreenMode ? "black" : "var(--blackRGBA)"}
                 h={isFullscreenMode || isEmbed ? "100vh" : "auto"}
-                p={isFullscreenMode || isEmbed ? "0" : "2rem"}
+                p={isFullscreenMode || isEmbed ? "0" : isVertical ? "1rem" : "2rem"}
                 justify="center" align="center"
                 gap="0"
             > 
@@ -406,7 +406,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         // w={isEmbed ? "100%" : isHorizontal ? "calc(100% - 2rem)" : {base: "60vw", sm: "35vw"}}
                         // m={isVertical ? {base: "0.5rem", md: "2rem"} : "inherit" }
                         // w="100% !important"
-                        h= "100%"
+                        w= {!isVertical ? "100%" : {base: "60vw", sm: "35vw"}}
                         style={{borderRadius: isFullscreenMode ? "0" : "0.5rem", boxShadow: "var(--mantine-shadow-bsBoldWhite)", overflow: "hidden"}}
                         // pos="relative" 
                         // poster={video.thumbnailFileID.filePath

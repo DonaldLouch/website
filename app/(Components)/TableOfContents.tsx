@@ -22,7 +22,7 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
             <Anchor 
                 key={section.label}
                 href={section.link}
-                onClick={(e) => {
+                onClick={(e: any) => {
                     e.preventDefault();
                     setActive(index)
                     router.push(section.link)
