@@ -35,7 +35,7 @@ export default function LocationFilter( {locationData}: any ) {
                 type="text"
                 placeholder="Filter photos by location"
                 value={value}
-                onChange={(event) => {
+                onChange={(event: any) => {
                     setValue(event.currentTarget.value);
                     // router.push(`/album/${value}`)
                     combobox.openDropdown();

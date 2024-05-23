@@ -35,7 +35,7 @@ export default function AlbumFilter( {photographyAlbum}: any ) {
                 type="text"
                 placeholder="Filter photos by album name"
                 value={value}
-                onChange={(event) => {
+                onChange={(event: any) => {
                     setValue(event.currentTarget.value);
                     // router.push(`/album/${value}`)
                     combobox.openDropdown();

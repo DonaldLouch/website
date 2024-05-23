@@ -36,7 +36,7 @@ export default function TagFilter( {tagData}: any ) {
                 type="text"
                 placeholder="Filter photos by tags"
                 value={value}
-                onChange={(event) => {
+                onChange={(event: any) => {
                     setValue(event.currentTarget.value);
                     combobox.openDropdown();
                     combobox.updateSelectedOptionIndex();
