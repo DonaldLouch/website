@@ -187,16 +187,21 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         )
     })
     
-    // const initialMusicCValues = new Array()
-    // videoData.musicCredits && videoData.musicCredits.forEach((chapter: any) => {
-    //     initialMusicCValues.push(
-    //         { 
-    //             key: randomId(),
-    //             title: chapter.title, 
-    //             timeCode: chapter.timeCode
-    //         }
-    //     )
-    // })
+    const initialMusicCValues = new Array()
+    videoData.musicCredits && videoData.musicCredits.forEach((musicC: any) => {
+        initialMusicCValues.push(
+            { 
+                key: randomId(),
+                timeCode: musicC.timeCode,
+                title: musicC.title,
+                link: musicC.link,
+                info: musicC.info
+            }
+        )
+    })
+
+    console.log(initialMusicCValues)
+
 
     const initialValues = { 
         id: video.id,
