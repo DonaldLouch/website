@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box} from "@mantine/core"
+import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio} from "@mantine/core"
 
 // import { Field, FieldArray, Formik } from "formik";
 // import * as Yup from 'yup'
@@ -41,6 +41,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
 
     const [linksOption, setLinksOption] = useState(videoData.links ? true : false)
     const [chaptersOption, setChaptersOption] = useState(videoData.chapters ? true : false)
+    const [musicCOption, setMusicCOption] = useState(videoData.musicCredits ? true : false)
 
     const breadCrumbs = [
         {"pageLink": "/admin/videography", "pageName": "Videography Manager"},
@@ -185,6 +186,17 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             }
         )
     })
+    
+    // const initialMusicCValues = new Array()
+    // videoData.musicCredits && videoData.musicCredits.forEach((chapter: any) => {
+    //     initialMusicCValues.push(
+    //         { 
+    //             key: randomId(),
+    //             title: chapter.title, 
+    //             timeCode: chapter.timeCode
+    //         }
+    //     )
+    // })
 
     const initialValues = { 
         id: video.id,
@@ -308,7 +320,9 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     borderRadius: "var(--mantine-radius-md)"
                 }}
             >
+                <AspectRatio ratio={16 / 9} w="50%">
                 <Image src={video.thumbnailFileID.filePath} />
+                </AspectRatio>
                 <Flex direction="column" align={{base: "center", lg: "flex-start"}}>
                     <Stack gap="0">
                         <Tooltip label={video.title}>
@@ -356,6 +370,31 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     checked={chaptersOption}
                 />
                 {chaptersOption && (
+                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                        <SectionTitle headingTitle="Chapters" />
+                        <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
+                            {chaptersFields.length > 0 ? (
+                            <Group justify="center">
+                                <Text>Title</Text>
+                                <Text>Time Code</Text>
+                            </Group>
+                            ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
+                        {chaptersFields}
+                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('chaptersRow', { 
+                            key: randomId(),
+                            title: null, 
+                            timeCode: null, 
+                        })}>Add More Chapter(s)</FormButton>
+                    </Stack>
+                )}
+                
+                <FormSwitch 
+                    inputID="musicCOption" 
+                    helperText="Toggle on if there are any music credit(s) associated with this video"
+                    onClick={(e: any) => setMusicCOption(e.target.checked)} 
+                    checked={musicCOption}
+                />
+                {musicCOption && (
                       <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
                         <SectionTitle headingTitle="Chapters" />
                         <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>

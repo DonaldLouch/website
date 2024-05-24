@@ -94,8 +94,8 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         // if (mobile) {
             theVideoElement?.addEventListener("touchstart", () => { 
                 setHide(false)
-                sleep(5000).then(() => {
-                    !theVideoElement.paused || theVideoElement.currentTIme > 0 && setHide(true)
+                sleep(3000).then(() => {
+                    !theVideoElement.paused || theVideoElement.currentTIme < 0 && setHide(true)
                 })
             })
             // theVideoElement?.addEventListener("touchend", () => {
@@ -156,7 +156,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 setHide(true)
             }
             setHide(false)
-            sleep(5000).then(() => {
+            sleep(3000).then(() => {
                 setHide(true)
             })
         })
