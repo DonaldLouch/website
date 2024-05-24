@@ -194,6 +194,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                 key: randomId(),
                 timeCode: musicC.timeCode,
                 title: musicC.title,
+                artist: musicC.artist,
                 link: musicC.link,
                 info: musicC.info
             }
@@ -231,6 +232,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         // starringRow: video.starring,
         linksRow: initialLinkValues,
         chaptersRow: initialChaptersValues,
+        musicCreditRow: initialMusicCValues,
         // linksRow: video.links
     }
 
@@ -292,7 +294,21 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             </ActionIcon>
         </Group>
     ));
-
+    
+    const musicCFields = form.getValues().musicCreditRow?.map((item: any, index: any) => (
+        <Group key={item.key} justify="center">
+            {/* timeCode: musicC.timeCode,
+                title: musicC.title,
+                link: musicC.link,
+                info: musicC.info */}
+            <FormInput inputID={`musicCreditRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.title`)} key={form.key(`musicCredit.${index}.title`)} />
+            <FormInput inputID={`musicCreditRow.${index}.artist`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.artist`)} key={form.key(`musicCredit.${index}.artist`)} />
+            <FormInput inputID={`musicCreditRow.${index}.timeCode`} inputLabel="Music Time Code" {...form.getInputProps(`musicCreditRow.${index}.timeCode`)} key={form.key(`musicCredit.${index}.timeCode`)} />
+            <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditRow', index)}>
+                <Delete02Icon size="1rem" />
+            </ActionIcon>
+        </Group>
+    ));
     const videoTypeOptions = [
         {
             value: "Horizontal",
@@ -401,19 +417,22 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                 />
                 {musicCOption && (
                       <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                        <SectionTitle headingTitle="Chapters" />
-                        <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
-                            {chaptersFields.length > 0 ? (
+                        <SectionTitle headingTitle="Music Credits" />
+                        {/* <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code> */}
+                            {musicCFields.length > 0 ? (
                             <Group justify="center">
                                 <Text>Title</Text>
                                 <Text>Time Code</Text>
                             </Group>
                             ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
-                        {chaptersFields}
+                        {musicCFields}
                         <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('chaptersRow', { 
                             key: randomId(),
-                            title: null, 
-                            timeCode: null, 
+                            timeCode: null,
+                            title: null,
+                            artist: null,
+                            link: null,
+                            info: null
                         })}>Add More Chapter(s)</FormButton>
                     </Stack>
                 )}

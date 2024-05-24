@@ -165,7 +165,10 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 setPlaying(true)
                 setHide(false)
             }
-            setHide(true)
+            sleep(3000).then(() => {
+                setHide(true)
+            })
+            // setHide(true)
         })
         // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowRight") {theVideoElement.currentTime -= 10} })
         // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowLeft") {theVideoElement.currentTime += 10}  })
