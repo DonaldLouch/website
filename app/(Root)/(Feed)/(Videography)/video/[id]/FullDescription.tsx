@@ -1,14 +1,21 @@
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
-import { ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, LibraryIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
+import { useUser } from "@clerk/nextjs";
+import { ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, Edit02Icon, LibraryIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
 import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider } from "@mantine/core";
 
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
+    const {user} = useUser()
     return <Box m="1rem">
         <Title order={1} fz="3rem">{video.title}</Title>
         <Group mb="1rem">
+            {user &&
+            <Anchor href={`/admin/videography/${video.id}`}><Badge color="white" leftSection={<Edit02Icon />}>
+                Edit Video
+            </Badge></Anchor>
+            }
             <Anchor href="/"><Badge color="var(--secondary)" leftSection={<ContactIcon />}>
                 Donald Louch
             </Badge></Anchor>
@@ -23,7 +30,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)", overflow: "scroll"}} p="1rem 2rem" mah="60vh">
             <PostContent mdxSource={mdxSource} />
         </Box>
-        <SingleAccordion customMargin="2rem 0rem" content={[{
+        <SingleAccordion customMargin="2rem 0rem" customPadding="1rem" content={[{
             id: "metadata",
             imageType: "Icon",
             image: <Database02Icon />,

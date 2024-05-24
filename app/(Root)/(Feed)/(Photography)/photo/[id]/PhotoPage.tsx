@@ -37,13 +37,15 @@ export default function PhotoPage({photoData, mdxSource}: any) {
     <Flex direction={{base:"column", sm:"row"}} m={{base: "1rem", lg: "1rem 0rem"}} align="space-between" gap="2rem">
       <ViewFullPhoto photoData={photoData} />
       <Stack w={{base: "100%", md: "50%"}}> 
-        <Group hidden={!user} gap="0.5rem">
-          <ClipboardButton copyValue={photoData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
-          <PrimaryLinkedButton link={`/admin/photography/${photoData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>
-          <Badge color="white" leftSection={<GridIcon />}>
-            {photoData.id}
-          </Badge> 
-        </Group>
+       {user &&
+          <Group gap="0.5rem">
+            <ClipboardButton copyValue={photoData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
+            <PrimaryLinkedButton link={`/admin/photography/${photoData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>
+            <Badge color="white" leftSection={<GridIcon />}>
+              {photoData.id}
+            </Badge> 
+          </Group>
+        }
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">
           {/* <Text>{photoData.caption}</Text> */}
           {/* source={photoData.caption} */}

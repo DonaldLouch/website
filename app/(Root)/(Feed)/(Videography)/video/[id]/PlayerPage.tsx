@@ -45,6 +45,8 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     const isHorizontal = video.videoType === "Horizontal" ? true : false
     const isEmbed = playerType === "embed" ? true : false
     const isPage = playerType === "page" ? true : false
+
+    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
     // const [hideTimeLeft, setHideTimeLeft] = useState(false)
 
     useEffect(() => {
@@ -90,7 +92,12 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         const controlsMobileHeader = document.querySelector('#videoControlsMobileHeader')
         
         // if (mobile) {
-            // theVideoElement?.addEventListener("touchstart", () => { setHide(false) })
+            theVideoElement?.addEventListener("touchstart", () => { 
+                setHide(false)
+                sleep(5000).then(() => {
+                    !theVideoElement.paused || theVideoElement.currentTIme > 0 && setHide(true)
+                })
+            })
             // theVideoElement?.addEventListener("touchend", () => {
             //     theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
             // })
@@ -149,6 +156,9 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 setHide(true)
             }
             setHide(false)
+            sleep(5000).then(() => {
+                setHide(true)
+            })
         })
         theVideoElement?.addEventListener("pause", () => {
             if (playing != false) {

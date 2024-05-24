@@ -25,13 +25,13 @@ function AccordionLabel({ label, image, description, imageType }: AccordionLabel
   </>);
 }
 
-export default function SingleAccordion({content, customMargin, children}: {content: any, customMargin?: string, children: React.ReactNode}) {
+export default function SingleAccordion({content, customMargin, children, customPadding}: {content: any, customMargin?: string, customPadding?: string, children: React.ReactNode}) {
     const items = content.map((item: any) => (
     <Accordion.Item value={item.id} key={item.label} bg="none" my="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)"}}>
       <Accordion.Control c="secondary">
         <AccordionLabel {...item} />
       </Accordion.Control>
-      <Accordion.Panel bg="none !important">
+      <Accordion.Panel bg="none !important" p={customPadding ? customPadding : "initial"}>
         {children}
       </Accordion.Panel>
     </Accordion.Item>

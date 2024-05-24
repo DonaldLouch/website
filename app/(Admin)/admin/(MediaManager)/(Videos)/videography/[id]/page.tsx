@@ -22,6 +22,7 @@ export default async function EditBlogPost({ params }: Props) {
 //   console.log(id)
   const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*)`).match({ id: id }).single() as any
   const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any
+  const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
   // const { data: locationsData } = await supabase.from('distinct_locations').select() as any
   
   // let locations = new Array()
@@ -31,5 +32,5 @@ export default async function EditBlogPost({ params }: Props) {
 
   // const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('lastUpdatedOn', { ascending: false }) as any
 
-  return <EditVideoData videoData={videoData} categoryData={categoryData} />
+  return <EditVideoData videoData={videoData} categoryData={categoryData} tagsData={tagsData} />
 }

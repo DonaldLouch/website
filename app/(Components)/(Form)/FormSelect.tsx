@@ -3,7 +3,7 @@ import { Code, Select, Stack, Title } from "@mantine/core"
 import classes from "@/app/(Components)/Components.module.css"
 
 export const FormSelect = ({inputID, inputData, inputLabel, inputHelperText, ...rest}: any) => {
-    return <><Stack>
+    return <><Stack my="1rem">
         <Title size="1.5rem">{inputLabel ? inputLabel : null}</Title>
         <Code p="1rem" color='var(--darkPurple)' hidden={!inputHelperText} c="white">{inputHelperText}</Code>
         <Select
