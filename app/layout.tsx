@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         type: "website",
-        url: process.env.SITE_URL,
+        url: process.env.NEXT_PUBLIC_SITE_URL,
         title: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         description: process.env.NEXT_PUBLIC_DESCRIPTION,
         siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
             url: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/uv0fxdiue86dqkgwso98.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/uv0fxdiue86dqkgwso98.jpg" },
+    twitter: { card: "summary_large_image", site: process.env.NEXT_PUBLIC_SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/uv0fxdiue86dqkgwso98.jpg" },
     appleWebApp: { capable: true, title: process.env.NEXT_PUBLIC_WEBSITE_NAME, statusBarStyle: "black-translucent" }
 }
 

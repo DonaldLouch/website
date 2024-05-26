@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio, SimpleGrid} from "@mantine/core"
+import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio, SimpleGrid, Grid} from "@mantine/core"
 
 // import { Field, FieldArray, Formik } from "formik";
 // import * as Yup from 'yup'
@@ -22,13 +22,14 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
-import { Calendar03Icon, Delete02Icon, GridIcon, Link04Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
+import { Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Link04Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
 import { randomId } from "@mantine/hooks";
 import { useState } from "react";
 import DisplayDate from "@/lib/DisplayDate";
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
 import FormButton from "@/app/(Components)/(Form)/FormButton";
+import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 
 export default function EditVideoData({videoData, categoryData, tagsData}: any) {
     const video = videoData
@@ -286,33 +287,55 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     ));
     
     const chaptersFields = form.getValues().chaptersRow?.map((item: any, index: any) => (
-        <Group key={item.key} justify="center">
-            <FormInput inputID={`chaptersRow.${index}.title`} inputLabel="Chapter Title" {...form.getInputProps(`chaptersRow.${index}.title`)} key={form.key(`links.${index}.title`)} />
-            <FormInput inputID={`chaptersRow.${index}.timeCode`} inputLabel="Chapter Time Code" {...form.getInputProps(`chaptersRow.${index}.timeCode`)} key={form.key(`links.${index}.timeCode`)} />
-            <ActionIcon color="red" onClick={() => form.removeListItem('chaptersRow', index)}>
-                <Delete02Icon size="1rem" />
-            </ActionIcon>
-        </Group>
-    ));
+        <Draggable key={item.key} index={index} draggableId={item.key}>
+            {(provided: any) => (
+                <Grid key={item.key}
+                    align="center"
+                    gutter="2rem"
+                    ref={provided.innerRef}
+                    {...provided.draggableProps} {...provided.dragHandleProps}
+                >
+                    <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
+                        <DragDropIcon />
+                    </Box></Grid.Col>
+                    <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.title`}  {...form.getInputProps(`chaptersRow.${index}.title`)} key={form.key(`links.${index}.title`)} /></Grid.Col>
+                    <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.timeCode`} {...form.getInputProps(`chaptersRow.${index}.timeCode`)} key={form.key(`links.${index}.timeCode`)} /></Grid.Col>
+                    <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('chaptersRow', index)}>
+                        <Delete02Icon size="1rem" />
+                    </ActionIcon></Grid.Col>
+                </Grid>
+            )}
+        </Draggable>
+    ))
     
     const musicCFields = form.getValues().musicCreditRow?.map((item: any, index: any) => (
-        <Stack key={item.key} justify="center" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem">
-            {/* timeCode: musicC.timeCode,
-                title: musicC.title,
-                link: musicC.link,
-                info: musicC.info */}
-            <Group>
-                <FormInput inputID={`musicCreditRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.title`)} key={form.key(`musicCredit.${index}.title`)} />
-                <FormInput inputID={`musicCreditRow.${index}.artist`} inputLabel="By" {...form.getInputProps(`musicCreditRow.${index}.artist`)} key={form.key(`musicCredit.${index}.artist`)} />
-            </Group>
-            <FormInput inputID={`musicCreditRow.${index}.timeCode`} inputLabel="Music Time Code" {...form.getInputProps(`musicCreditRow.${index}.timeCode`)} key={form.key(`musicCredit.${index}.timeCode`)} />
-            <FormTextArea inputID={`musicCreditRow.${index}.info`} inputLabel="Information" textRows={4}  {...form.getInputProps(`musicCreditRow.${index}.info`)} key={form.key(`musicCredit.${index}.info`)} />
-            <FormInput inputID={`musicCreditRow.${index}.link`} inputLabel="Link to Song" {...form.getInputProps(`musicCreditRow.${index}.link`)} key={form.key(`musicCredit.${index}.link`)} />
-            <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditRow', index)}>
-                <Delete02Icon size="1rem" />
-            </ActionIcon>
-        </Stack>
-    ));
+        // <Stack key={item.key} style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem">
+            <Draggable key={item.key} index={index} draggableId={item.key}>
+                {(provided: any) => (
+                    <Stack key={item.key} justify="center"
+                    // style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem"
+                        ref={provided.innerRef}
+                        {...provided.draggableProps} {...provided.dragHandleProps}
+                    >
+                        <Group>
+                            <Box {...provided.dragHandleProps} mt="1rem">
+                                <DragDropIcon />
+                            </Box>
+                            <FormInput inputID={`musicCreditRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.title`)} key={form.key(`musicCredit.${index}.title`)} />
+                            <FormInput inputID={`musicCreditRow.${index}.artist`} inputLabel="By" {...form.getInputProps(`musicCreditRow.${index}.artist`)} key={form.key(`musicCredit.${index}.artist`)} />
+                        </Group>
+                        <FormInput inputID={`musicCreditRow.${index}.timeCode`} inputLabel="Music Time Code" {...form.getInputProps(`musicCreditRow.${index}.timeCode`)} key={form.key(`musicCredit.${index}.timeCode`)} />
+                        <FormTextArea inputID={`musicCreditRow.${index}.info`} inputLabel="Information" textRows={4}  {...form.getInputProps(`musicCreditRow.${index}.info`)} key={form.key(`musicCredit.${index}.info`)} />
+                        <FormInput inputID={`musicCreditRow.${index}.link`} inputLabel="Link to Song" {...form.getInputProps(`musicCreditRow.${index}.link`)} key={form.key(`musicCredit.${index}.link`)} />
+                        <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditRow', index)}>
+                            <Delete02Icon size="1rem" />
+                        </ActionIcon> 
+                    </Stack>
+                )}
+            </Draggable>
+        // </Stack>
+    ))
+
     const videoTypeOptions = [
         {
             value: "Horizontal",
@@ -384,8 +407,12 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                 <FormInput inputID="title" inputLabel="Video Title" inputType="text" inputDescription="Providing is a mandatory field so that it will help people see what they'll be watching before clicking play on the video." {...form.getInputProps('title')}  />
                 <FormTextArea inputID="excerpt" inputLabel="Excerpt" textRows={4} {...form.getInputProps('excerpt')}  />
                 <FormTextArea inputID="description" inputLabel="Description" textRows={10} helperText={`You may use markdown language on this field. For examples of Markdown please open this page from`} {...form.getInputProps('description')} />
-                <FormSelect inputID="videoType" inputData={videoTypeOptions} inputLabel="Video Type" inputHelperText="Please select the video type" {...form.getInputProps('videoType')} />
-                <FormSelect inputID="category" inputData={categories} inputLabel="Category" inputHelperText="Please select the category" {...form.getInputProps('category')} />
+
+                <SimpleGrid cols={2} spacing="2rem">
+                    <FormSelect inputID="videoType" inputData={videoTypeOptions} inputLabel="Video Type" inputHelperText="Please select the video type" {...form.getInputProps('videoType')} />
+                    <FormSelect inputID="category" inputData={categories} inputLabel="Category" inputHelperText="Please select the category" {...form.getInputProps('category')} />
+                </SimpleGrid>
+
                 <FormTags searchValues={tagsData} {...form.getInputProps('tags')} />
 
                 <FormSwitch 
@@ -398,13 +425,30 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                       <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
                         <SectionTitle headingTitle="Chapters" />
                         <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
-                            {chaptersFields.length > 0 ? (
-                            <Group justify="center">
-                                <Text>Title</Text>
-                                <Text>Time Code</Text>
-                            </Group>
-                            ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
-                        {chaptersFields}
+                        {chaptersFields.length > 0 ? (
+                            <Grid gutter="2rem">
+                                <Grid.Col span={0.5}></Grid.Col>
+                                <Grid.Col span={5.25}><Text ta="center">Title</Text></Grid.Col>
+                                <Grid.Col span={5.25}><Text ta="center">Time Code</Text></Grid.Col>
+                                <Grid.Col span={0.5}></Grid.Col>
+                            </Grid>
+                        ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
+
+                        <DragDropContext
+                            onDragEnd={({ destination, source }: any) =>
+                                destination?.index !== undefined && form.reorderListItem('chaptersRow', { from: source.index, to: destination.index })
+                            }
+                        >
+                            <Droppable droppableId="chaptersDnD" direction="vertical">
+                                {(provided: any) => (
+                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                        {chaptersFields}
+                                        {provided.placeholder}
+                                    </Box>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
+
                         <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('chaptersRow', { 
                             key: randomId(),
                             title: null, 
@@ -429,9 +473,21 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                                 <Text>Time Code</Text>
                             </Group>
                             ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
-                            <SimpleGrid cols={2}>
-                                {musicCFields}
-                            </SimpleGrid>
+                           
+                                <DragDropContext
+                                    onDragEnd={({ destination, source }: any) =>
+                                        destination?.index !== undefined && form.reorderListItem('musicCreditRow', { from: source.index, to: destination.index })
+                                    }
+                                >
+                                    <Droppable droppableId="musicCDnD" direction="vertical">
+                                        {(provided: any) => (
+                                            <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                                {musicCFields}
+                                                {provided.placeholder}
+                                            </Box>
+                                        )}
+                                    </Droppable>
+                                </DragDropContext>
                         <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('musicCreditRow', { 
                             key: randomId(),
                             timeCode: null,
