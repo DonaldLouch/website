@@ -22,7 +22,7 @@ html {
     overscroll-behavior-inline: contain;
     overscroll-behavior: contain;
     scroll-snap-type: inline mandatory;
-    background: var(--blurredBackground);
+    background: var(--prideGradient);
 }
 
 body {

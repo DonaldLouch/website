@@ -59,7 +59,7 @@ export default function FooterContent({isLoggedIn}: any){
         align="baseline"
         justify="space-between"
         w="100%"
-        styles={{root: {boxShadow: "bsBoldPrimary"}}}
+        styles={{root: {boxShadow: "var(--mantine-shadow-bsSMPrimary)"}}}
         pos="relative"
         bg="black"
       >

@@ -31,6 +31,7 @@ export default function HomeButton( props: propTypes ) {
             left={{ base: "4%", md: "1%" }}
             style={{zIndex: "1000"}}
             c="white"
+            id="goHome"
         >
             {/* <IconButton
                         aria-label={theHelperText}

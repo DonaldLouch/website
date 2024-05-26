@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio} from "@mantine/core"
+import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio, SimpleGrid} from "@mantine/core"
 
 // import { Field, FieldArray, Formik } from "formik";
 // import * as Yup from 'yup'
@@ -296,18 +296,22 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     ));
     
     const musicCFields = form.getValues().musicCreditRow?.map((item: any, index: any) => (
-        <Group key={item.key} justify="center">
+        <Stack key={item.key} justify="center" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem">
             {/* timeCode: musicC.timeCode,
                 title: musicC.title,
                 link: musicC.link,
                 info: musicC.info */}
-            <FormInput inputID={`musicCreditRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.title`)} key={form.key(`musicCredit.${index}.title`)} />
-            <FormInput inputID={`musicCreditRow.${index}.artist`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.artist`)} key={form.key(`musicCredit.${index}.artist`)} />
+            <Group>
+                <FormInput inputID={`musicCreditRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.title`)} key={form.key(`musicCredit.${index}.title`)} />
+                <FormInput inputID={`musicCreditRow.${index}.artist`} inputLabel="By" {...form.getInputProps(`musicCreditRow.${index}.artist`)} key={form.key(`musicCredit.${index}.artist`)} />
+            </Group>
             <FormInput inputID={`musicCreditRow.${index}.timeCode`} inputLabel="Music Time Code" {...form.getInputProps(`musicCreditRow.${index}.timeCode`)} key={form.key(`musicCredit.${index}.timeCode`)} />
+            <FormTextArea inputID={`musicCreditRow.${index}.info`} inputLabel="Information" textRows={4}  {...form.getInputProps(`musicCreditRow.${index}.info`)} key={form.key(`musicCredit.${index}.info`)} />
+            <FormInput inputID={`musicCreditRow.${index}.link`} inputLabel="Link to Song" {...form.getInputProps(`musicCreditRow.${index}.link`)} key={form.key(`musicCredit.${index}.link`)} />
             <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditRow', index)}>
                 <Delete02Icon size="1rem" />
             </ActionIcon>
-        </Group>
+        </Stack>
     ));
     const videoTypeOptions = [
         {
@@ -425,15 +429,17 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                                 <Text>Time Code</Text>
                             </Group>
                             ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
-                        {musicCFields}
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('chaptersRow', { 
+                            <SimpleGrid cols={2}>
+                                {musicCFields}
+                            </SimpleGrid>
+                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('musicCreditRow', { 
                             key: randomId(),
                             timeCode: null,
                             title: null,
                             artist: null,
                             link: null,
                             info: null
-                        })}>Add More Chapter(s)</FormButton>
+                        })}>Add More Music Credit(s)</FormButton>
                     </Stack>
                 )}
             </Box>

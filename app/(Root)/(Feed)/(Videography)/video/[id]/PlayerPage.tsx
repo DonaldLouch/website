@@ -1,6 +1,6 @@
 'use client'
 
-import { Anchor, AspectRatio, Box, Button, Divider, Title, Slider, Stack, Badge, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Grid, SimpleGrid, rem } from "@mantine/core"
+import { Anchor, AspectRatio, Box, Button, Divider, Title, Slider, Stack, Badge, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Grid, SimpleGrid, rem, Space } from "@mantine/core"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton"
@@ -86,6 +86,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             setVideoDurationNUMBER(e.target.duration)
         })
         
+        const backButton = document.querySelector('#goHome')
         const controlsDesktop = document.querySelector('#videoControlsDesktop')
         const controlsDesktopHeader = document.querySelector('#videoControlsDesktopHeader')
         const controlsMobile = document.querySelector('#videoControlsMobile')
@@ -122,6 +123,11 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             theVideoElement?.addEventListener("mouseout", () => {
                 theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
             })
+
+            // backButton?.addEventListener("mouseover", () => { setHide(false) })
+            // backButton?.addEventListener("mouseout", () => {
+            //     setHide(true)
+            // })
             
             controlsDesktop?.addEventListener("mouseover", () => { setHide(false) })
             controlsDesktop?.addEventListener("mouseout", () => {
@@ -391,26 +397,29 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
 
     return (<>
         <Box
-            mt="-5.5rem" 
+            mt="-5.5rem"
             mx={{base: "-1rem", lg: "-5rem"}}
-            mb="-md" 
+            mb="-md"
         >
-            <Box hidden={hide || isFullscreenMode || isTheaterMode || isEmbed}><HomeButton icon={<ArrowLeft02Icon size="3rem" />} link="/feed/videography" helperText="Go Back to Video Feed" /></Box> 
             <Stack
                 style={{ 
                     backdropBlur: "60px", 
                     boxShadow: "var(--mantine-shadow-bsBoldWhite)",
-                    overflowX: "hidden", overflowY: isEmbed ? "hidden" : "auto"
+                    overflowX: "hidden", overflowY: isEmbed ? "hidden" : "auto",
+                    zIndex: isFullscreenMode ? 90000 : "auto"
                 }}
                 bg={isFullscreenMode ? "black" : "var(--blackRGBA)"}
                 h={isFullscreenMode || isEmbed ? "100vh" : "auto"}
                 p={isFullscreenMode || isEmbed ? "0" : isVertical ? "1rem" : "2rem"}
                 justify="center" align="center"
                 gap="0"
+                pt={isPage ? "6rem" : "initial"}
+                pos={isFullscreenMode ? "fixed" : "initial"}
             > 
                 <Stack 
                     justify="center" align="center" 
-                    pos="relative" 
+                    pos="relative"
+                    style={{zIndex: 90000}}
                     gap="0"
                 >
                     {/* isVertical ? {base: "80%", sm: "50vw", lg: "40%", xl: "30%"} */}
