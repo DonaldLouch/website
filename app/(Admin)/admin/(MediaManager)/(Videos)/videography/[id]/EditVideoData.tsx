@@ -42,12 +42,14 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     // const toastID = "toastID"
     const router = useRouter()
 
-    const [chaptersOption, setChaptersOption] = useState(video.chapters.length < 0 ? true : false)
-    const [musicCOption, setMusicCOption] = useState(video.musicCredits.length < 0 ? true : false)
-    const [videoCOption, setVideoCOption] = useState(video.videoCredits.length < 0 ? true : false)
-    const [starringCOption, setStarringCOption] = useState(video.starring.length < 0 ? true : false)
-    const [linkOption, setLinkOption] = useState(video.links.length < 0 ? true : false)
+    const [chaptersOption, setChaptersOption] = useState(video.chapters.length > 0 ? true : false)
+    const [musicCOption, setMusicCOption] = useState(video.musicCredits.length > 0 ? true : false)
+    const [videoCOption, setVideoCOption] = useState(video.videoCredits.length > 0 ? true : false)
+    const [starringCOption, setStarringCOption] = useState(video.starring.length >0 ? true : false)
+    const [linkOption, setLinkOption] = useState(video.links.length > 0 ? true : false)
     const [isPinnedOption, setIsPinnedOption] = useState(video.isPinned ? true : false)
+
+    console.log(video.musicCredits.length)
 
     const breadCrumbs = [
         {"pageLink": "/admin/videography", "pageName": "Videography Manager"},
@@ -88,14 +90,17 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     //     }
     // }
 
-    const onSubmit =  async (values: any) => {
+    const onSubmit = async (values: any) => {
+        console.log("Values", values)
+
         const subChapterValue = new Array()
             values.chaptersRow.forEach((chapter: any) => subChapterValue.push(
                 {
                     title: chapter.title,
                     timeCode: chapter.timeCode
                 }
-            )).sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1))
+            ))
+        const chaptersSorted = subChapterValue.sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1))
             
         const subMusicCreditValue = new Array()
             values.musicCreditsRow.forEach((mCredit: any) => subMusicCreditValue.push(
@@ -136,7 +141,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                 }
             ))
 
-            console.log(subChapterValue)
+        console.log(chaptersSorted, subMusicCreditValue, subVideoCreditValue, subStarringCreditValue, subLinkValue)
 
         // const tagArray =  values.tags.split(',')
 
@@ -306,12 +311,12 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     }
 
     const schema = yup.object().shape({
-        title: yup.string().required('A title is required'),
-        excerpt: yup.string().required('An excerpt is required'),
-        description: yup.string().required('A description is required'),
-        category: yup.string().required('A category is required'),
-        tags: yup.string().required('Tag(s) is(are) required'),
-        videoPrivacy: yup.string().required('A set video privacy is required'),
+        // title: yup.string().required('A title is required'),
+        // excerpt: yup.string().required('An excerpt is required'),
+        // description: yup.string().required('A description is required'),
+        // category: yup.string().required('A category is required'),
+        // tags: yup.string().required('Tag(s) is(are) required'),
+        // videoPrivacy: yup.string().required('A set video privacy is required'),
     })
 
     const form = useForm({
@@ -759,6 +764,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                         })}>Add More Link(s)</FormButton>
                     </Stack>
                 )}
+                
                 <SimpleGrid cols={2} my="1rem">
                     <FormDatePicker dateLabel="Captured On" datePlaceholder="When was this captured?" {...form.getInputProps('capturedOn')}/>
                     <FormDatePicker dateLabel="Uploaded On" datePlaceholder="When was this uploaded?" {...form.getInputProps('uploadedOn')}/>

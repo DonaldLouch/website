@@ -316,7 +316,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     }
 
     const chaptersPercentArray = new Array()
-    const chapterTimes = video.chapters.length < 0  && video?.chapters.map((chapter: any) => {
+    const chapterTimes = video.chapters.length > 0  && video?.chapters.map((chapter: any) => {
         const timeCode = chapter.timeCode
         let chapterPercent = 0
 
@@ -385,7 +385,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             buttonIcon: <Bookmark01Icon />,
             buttonID: "chapters",
             buttonFunction: chapterModal,
-            hidden: video.chapters.length < 0 ? false : true
+            hidden: video.chapters.length > 0 ? false : true
         },
         {
             buttonIcon: <InformationCircleIcon />,
@@ -483,7 +483,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         <Slider 
                             m="-0.5rem -1rem 0rem"
                             value={videoProgress} onChange={seekVideo} aria-label="scrubber"
-                            marks={video.chapters.length < 0  ? chaptersPercentArray : [{value: 0}]}
+                            marks={video.chapters.length > 0  ? chaptersPercentArray : [{value: 0}]}
                             label={null}
                         />
                         <Flex justify="space-between" align="center">
@@ -564,6 +564,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 backgroundOpacity: 0.5, 
                 blur: 4,
                 }}
+                zIndex={100000}
                 offset="2rem"
                 radius="0 0 0 2rem"
                 position="top"
@@ -605,11 +606,12 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 offset="2rem"
                 radius="0 0 0 2rem"
                 position="top"
+                zIndex={100000}
                 styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             >
                 <Stack w="100%" p="2rem 2rem">
                     <Title order={3} ta="center" fz="1.8rem" fw="900" c="white" mb="1rem">Chapters</Title>
-                    {video.chapters.length < 0 && video.chapters.map((chapter:any, index: number) => (<Button 
+                    {video.chapters.length > 0 && video.chapters.map((chapter:any, index: number) => (<Button 
                         key={index}
                         onClick={changeChapter}
                         value={chapter.timeCode} 
@@ -634,6 +636,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 offset="2rem"
                 radius="0 0 0 2rem"
                 position="top"
+                zIndex={100000}
                 styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             >
                 <FullDescription video={video} mdxSource={mdxSource} />
