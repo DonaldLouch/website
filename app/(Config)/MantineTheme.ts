@@ -1,6 +1,6 @@
 'use client'
 
-import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Button, Combobox, createTheme, Input, rem, Slider, Tabs, Text } from "@mantine/core"
+import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Button, Combobox, createTheme, Input, rem, Slider, Tabs, Text, Notification } from "@mantine/core"
 // import "@mantine/core/styles.css";
 
 import { Playfair_Display, Lato, Victor_Mono } from "next/font/google"
@@ -9,6 +9,7 @@ import { Playfair_Display, Lato, Victor_Mono } from "next/font/google"
 
 import classes from "@/app/(Components)/Components.module.css"
 import formStyles from "@/app/(Components)/(Form)/Forms.module.css"
+import notificationClasses from "@/app/(Config)/Notifications.module.css";
 
 const playfairDisplay = Playfair_Display({ 
   subsets: ["latin"], 
@@ -193,6 +194,15 @@ export const MantineTheme = createTheme({
             padding: "0 2rem 1.5rem",
           },
         },
+      },
+    }),
+    Notification: Notification.extend({
+      defaultProps: {
+        color: "black",
+        p: "1rem 2rem",
+        radius: "md",
+        styles: { root: { boxShadow: "var(--mantine-shadow-bsSMPrimary)" } },
+        classNames: notificationClasses,
       },
     }),
     Alert: Alert.extend({

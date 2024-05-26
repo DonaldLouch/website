@@ -22,7 +22,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
-import { Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Link04Icon, PencilEdit01Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
+import { AlertDiamondIcon, Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Image02Icon, Link04Icon, PencilEdit01Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
 import { randomId } from "@mantine/hooks";
 import { useState } from "react";
 import DisplayDate from "@/lib/DisplayDate";
@@ -32,6 +32,9 @@ import FormButton from "@/app/(Components)/(Form)/FormButton";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
+import { notifications } from "@mantine/notifications";
+
+// import notificationClasses from '@/app/(Config)/Notifications.module.css'
 
 export default function EditVideoData({videoData, categoryData, tagsData}: any) {
     const video = videoData
@@ -48,8 +51,6 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     const [starringCOption, setStarringCOption] = useState(video.starring.length >0 ? true : false)
     const [linkOption, setLinkOption] = useState(video.links.length > 0 ? true : false)
     const [isPinnedOption, setIsPinnedOption] = useState(video.isPinned ? true : false)
-
-    console.log(video.musicCredits.length)
 
     const breadCrumbs = [
         {"pageLink": "/admin/videography", "pageName": "Videography Manager"},
@@ -91,7 +92,13 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     // }
 
     const onSubmit = async (values: any) => {
-        console.log("Values", values)
+        // classNames: {root: notificationClasses.errorNotification}
+        // notifications.show({ 
+        //     title: 'Hello World!', 
+        //     message: 'CONTENT', 
+        //     icon: <Delete02Icon /> 
+        // })
+        // console.log("Values", values)
 
         const subChapterValue = new Array()
             values.chaptersRow.forEach((chapter: any) => subChapterValue.push(
@@ -107,7 +114,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                 {
                     title: mCredit.title,
                     artist: mCredit.artist,
-                    timeCode: mCredit.timeCode.includes(";;") ? mCredit.timeCode.split(";;").sort() : mCredit.timeCode,
+                    timeCode: mCredit.timeCode ? mCredit.timeCode.includes(";;") ? mCredit.timeCode.split(";;").sort() : mCredit.timeCode : null,
                     link: mCredit.link,
                     info: mCredit.info
                 }
@@ -124,7 +131,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         const subStarringCreditValue = new Array()
             values.starringCreditsRow.forEach((starringC: any) => subStarringCreditValue.push(
                 {
-                    timeCode: starringC.timeCode.includes(";;") ? starringC.timeCode.split(";;").sort() : starringC.timeCode,
+                    timeCode: starringC.timeCode ? starringC.timeCode.includes(";;") ? starringC.timeCode.split(";;").sort() : starringC.timeCode : null,
                     displayName: starringC.displayName,
                     link: starringC.link,
                 }
@@ -133,49 +140,14 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         const subLinkValue = new Array()
             values.linksRow.forEach((link: any) => subLinkValue.push(
                 {
-                    timeCode: link.timeCode.includes(";;") ? link.timeCode.split(";;").sort() : link.timeCode,
+                    timeCode: link.timeCode ? link.timeCode.includes(";;") ? link.timeCode.split(";;").sort() : link.timeCode : null,
                     linkType: link.linkType, 
                     icon: link.icon, 
                     link: link.link, 
                     name: link.name
                 }
             ))
-
-        console.log(chaptersSorted, subMusicCreditValue, subVideoCreditValue, subStarringCreditValue, subLinkValue)
-
-        // const tagArray =  values.tags.split(',')
-
-        // const chapterArray = values.chaptersOption? values.chaptersRow.sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1)) : null
-        
-        // const musicArray = new Array()
-        // if(values.musicCreditOption) {
-        //     values.musicRow.forEach((music: any) => {
-        //         const musicTimeCode = music.timeCode && 
-        //             music?.timeCode.includes(",") ? music?.timeCode.split(",").sort() 
-        //             : music?.timeCode.includes(";;") ? music?.timeCode.split(";;").sort() 
-        //             : music.timeCode ? music.timeCode 
-        //             : null
-        //         musicArray.push({"timeCode":  musicTimeCode, "title": music.title ? music.title : null, "artist": music.artist ? music.artist : null, "link": music.link ? music.link : null, "info": music.info ? music.info : null})
-        //     })
-        // }
-        
-        // const creditArray = values.videoRow ? values.videoRow : null
-        
-        // const starringArray = new Array()
-        // if(values.starringOption) {
-        //     values.starringRow.forEach((starring: any) => {
-        //         const starringTimeCode = starring.timeCode && 
-        //             starring?.timeCode.includes(",") ? starring?.timeCode.split(",").sort() 
-        //             : starring?.timeCode.includes(";;") ? starring?.timeCode.split(";;").sort() 
-        //             : starring.timeCode ? starring.timeCode 
-        //             : null
-        //         // const timeCode = timeCodeConvert.split(";;").sort() ? timeCodeConvert.split(";;").sort() : starring.timeCode as any
-        //         starringArray.push({"timeCode": starringTimeCode, "displayName": starring.displayName ? starring.displayName : null, "link": starring.link ? starring.link : null})
-        //     })
-        // }
-
-        // const linkArray = values.linksRow ? values.linksRow : null
-
+            
         if (values.capturedOn != video.videoFileID.capturedOn || values.uploadedOn != video.videoFileID.uploadedOn) {
             await supabase.from("VideographyMedia").update({ 
                 capturedOn: moment(values.capturedOn).utc(),
@@ -189,38 +161,35 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             }).eq('fileID', video.thumbnailFileID.fileID)
         }
 
-        // const { status: supabaseStatus , error: supabaseError } = await supabase.from("Videography").update({ 
-        //     title: values.title,
-        //     excerpt: values.excerpt,
-        //     description: values.description,
-        //     category: values.category,
-        //     videoPrivacy: values.videoPrivacy,
-        //     videoType: values.videoType,
+        const { status: supabaseStatus , error: supabaseError } = await supabase.from("Videography").update({ 
+            title: values.title,
+            excerpt: values.excerpt,
+            description: values.description,
+            category: values.category,
+            videoPrivacy: values.videoPrivacy,
+            videoType: values.videoType,
 
-        //     tags: tagArray,
-        //     chapters: chapterArray,
-        //     musicCredits: musicArray,
-        //     videoCredits: creditArray,
-        //     starring: starringArray,
-        //     links: linkArray,
+            tags: values.tags,
+            chapters: chaptersSorted,
+            musicCredits: subMusicCreditValue,
+            videoCredits: subVideoCreditValue,
+            starring: subStarringCreditValue,
+            links: subLinkValue,
 
-        //     uploadedOn: moment(values.uploadedOn).utc(),
-        //     lastUpdatedOn: moment().utc(),
+            uploadedOn: moment(values.uploadedOn).utc(),
+            lastUpdatedOn: moment().utc(),
 
-        //     isPortfolio: values.isPortfolio,
-        //     isPinned: values.isPinned
-        // }).eq('id', values.id)
-        // supabaseStatus && !toast.isActive(toastID) &&
-        //     toast({
-        //         id: toastID,
-        //         title: `${supabaseStatus === 204 ? `Video "${values.title}" Uploaded 🎉` : `Error #${supabaseError?.code} has Occurred`}`,
-        //         description: `${supabaseStatus === 204 ? `You have successfully uploaded your video!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-        //         status: `${supabaseStatus === 204 ? "success" : "error"}`,
-        //         duration: 9000,
-        //         isClosable: true,
-        //     })
+            isPortfolio: values.isPortfolio,
+            isPinned: values.isPinned
+        }).eq('id', values.id)
+        supabaseStatus && notifications.show({ 
+            title: `${supabaseStatus === 204 ? `Video "${values.title}" Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
+            message: `${supabaseStatus === 204 ? `You have successfully uploaded your video!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
+            color: supabaseStatus === 204 ? "black" : "red-6",
+            icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+        })
         // actions.setSubmitting(false)
-        // router.refresh()
+        supabaseStatus === 204 && router.refresh()
     }
 
     const initialChaptersValues = new Array()

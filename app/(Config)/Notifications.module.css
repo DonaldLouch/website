@@ -1,6 +1,21 @@
-.description,
+.root {
+    background-color: var(--notification-color);
+}
+
+.icon {
+    border-radius: 0;
+    background: none;
+    margin-left: -0.5rem;
+}
+
 .title {
-    color: var(--mantine-color-white) !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--mantine-color-white);
+}
+.description {
+    font-size: 0.9rem;
+    color: var(--mantine-color-white);
 }
 
 .closeButton {

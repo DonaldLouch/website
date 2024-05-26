@@ -66,7 +66,7 @@ import '@mantine/dropzone/styles.css';
 import '@mantine/carousel/styles.css';
 import "@/app/(Config)/global.css"
 
-import noteClasses from "@/app/(Config)/Notifications.module.css"
+import notificationClasses from "@/app/(Config)/Notifications.module.css"
 
 // nse } from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE!
@@ -82,7 +82,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ClerkProvider>
           <MantineProvider theme={MantineTheme}>
-          <Notifications styles={{notification: {background: "var(--darkPurpleRGBA)"}}} classNames={noteClasses}/>
+            {/* classNames={noteClasses}  */}
+          {/* <Notifications autoClose={false} classNames={{notification: notificationClasses.standardNotification}} styles={{notification: {borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsSMPrimary)", padding: "1rem 2rem"}}}/> */}
+          <Notifications />
           <Context>{children}</Context>
           {/* <MantineProvider> */}
             {/* {children} */}
