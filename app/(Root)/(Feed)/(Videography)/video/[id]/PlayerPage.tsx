@@ -316,7 +316,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     }
 
     const chaptersPercentArray = new Array()
-    const chapterTimes = video?.chapters && video?.chapters.map((chapter: any) => {
+    const chapterTimes = video.chapters.length < 0  && video?.chapters.map((chapter: any) => {
         const timeCode = chapter.timeCode
         let chapterPercent = 0
 
@@ -385,7 +385,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             buttonIcon: <Bookmark01Icon />,
             buttonID: "chapters",
             buttonFunction: chapterModal,
-            hidden: video.chapters ? false : true
+            hidden: video.chapters.length < 0 ? false : true
         },
         {
             buttonIcon: <InformationCircleIcon />,
@@ -483,7 +483,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         <Slider 
                             m="-0.5rem -1rem 0rem"
                             value={videoProgress} onChange={seekVideo} aria-label="scrubber"
-                            marks={video.chapters ? chaptersPercentArray : [{value: 0}]}
+                            marks={video.chapters.length < 0  ? chaptersPercentArray : [{value: 0}]}
                             label={null}
                         />
                         <Flex justify="space-between" align="center">
@@ -609,7 +609,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             >
                 <Stack w="100%" p="2rem 2rem">
                     <Title order={3} ta="center" fz="1.8rem" fw="900" c="white" mb="1rem">Chapters</Title>
-                    {video.chapters && video.chapters.map((chapter:any, index: number) => (<Button 
+                    {video.chapters.length < 0 && video.chapters.map((chapter:any, index: number) => (<Button 
                         key={index}
                         onClick={changeChapter}
                         value={chapter.timeCode} 

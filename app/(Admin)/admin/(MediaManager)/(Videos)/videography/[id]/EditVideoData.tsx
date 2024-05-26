@@ -22,7 +22,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
-import { Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Link04Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
+import { Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Link04Icon, PencilEdit01Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
 import { randomId } from "@mantine/hooks";
 import { useState } from "react";
 import DisplayDate from "@/lib/DisplayDate";
@@ -30,6 +30,8 @@ import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
 import FormButton from "@/app/(Components)/(Form)/FormButton";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
+import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
+import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 
 export default function EditVideoData({videoData, categoryData, tagsData}: any) {
     const video = videoData
@@ -40,82 +42,134 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     // const toastID = "toastID"
     const router = useRouter()
 
-    const [linksOption, setLinksOption] = useState(videoData.links ? true : false)
-    const [chaptersOption, setChaptersOption] = useState(videoData.chapters ? true : false)
-    const [musicCOption, setMusicCOption] = useState(videoData.musicCredits ? true : false)
+    const [chaptersOption, setChaptersOption] = useState(video.chapters.length < 0 ? true : false)
+    const [musicCOption, setMusicCOption] = useState(video.musicCredits.length < 0 ? true : false)
+    const [videoCOption, setVideoCOption] = useState(video.videoCredits.length < 0 ? true : false)
+    const [starringCOption, setStarringCOption] = useState(video.starring.length < 0 ? true : false)
+    const [linkOption, setLinkOption] = useState(video.links.length < 0 ? true : false)
+    const [isPinnedOption, setIsPinnedOption] = useState(video.isPinned ? true : false)
 
     const breadCrumbs = [
         {"pageLink": "/admin/videography", "pageName": "Videography Manager"},
         {"pageLink": `/admin/videography/${video.id}`, "pageName": `Edit Video: ${video.title}`},
     ]
 
-    async function deleteVideo() {
-        const { status: privacyUpdate } = await supabase.from("Videography").update({ videoPrivacy: "DELETING" }).eq('id', video.id)
-        if (privacyUpdate === 204) {
-            const videoFIleID = video.videoFileID.fileID.replace("_", "/");
-            const thumbnailFIleID = video.thumbnailFileID.fileID.replace("_", "/");
+    // async function deleteVideo() {
+    //     const { status: privacyUpdate } = await supabase.from("Videography").update({ videoPrivacy: "DELETING" }).eq('id', video.id)
+    //     if (privacyUpdate === 204) {
+    //         const videoFIleID = video.videoFileID.fileID.replace("_", "/");
+    //         const thumbnailFIleID = video.thumbnailFileID.fileID.replace("_", "/");
             
-            const formDataVideo = new FormData()
-            const formDataThumbnail = new FormData()
+    //         const formDataVideo = new FormData()
+    //         const formDataThumbnail = new FormData()
             
-            formDataVideo.append("fileKey", video.videoFileID.fileKey)
-            formDataVideo.append("versionID", video.videoFileID.fileVersionID)
+    //         formDataVideo.append("fileKey", video.videoFileID.fileKey)
+    //         formDataVideo.append("versionID", video.videoFileID.fileVersionID)
             
-            formDataThumbnail.append("fileKey", video.thumbnailFileID.fileKey)
-            formDataThumbnail.append("versionID", video.thumbnailFileID.fileVersionID)
+    //         formDataThumbnail.append("fileKey", video.thumbnailFileID.fileKey)
+    //         formDataThumbnail.append("versionID", video.thumbnailFileID.fileVersionID)
 
-            const deleteVideoFile = await fetch(`/api/media/delete/${video.videoFileID.fileID}`, {method: "POST", body: formDataVideo}).then(response => response.json())
-            const deleteThumbnailFile = await fetch(`/api/media/delete/${video.thumbnailFileID.fileID}`, {method: "POST", body: formDataThumbnail}).then(response => response.json())
-            // console.log(deleteVideoFile.response.$metadata.httpStatusCode, deleteThumbnailFile.response.$metadata.httpStatusCode)
-            if (deleteVideoFile.response.$metadata.httpStatusCode === 200, deleteThumbnailFile.response.$metadata.httpStatusCode === 200) {
-                const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("Videography").delete().eq('id', video.id)
-                // mediaDeleteStatus &&
-                //     toast({
-                //         // id: toastID,
-                //         title: `${mediaDeleteStatus === 204 ? "Video Deleted  🗑️" : `Error #${mediaDeleteError?.code} has Occurred`}`,
-                //         description: `${mediaDeleteStatus === 204 ? `You have successfully deleted the media file ${video.title}!` : `An error has occurred: ${mediaDeleteError?.message}. ${mediaDeleteError?.hint && `${mediaDeleteError?.hint}.`}`}`,
-                //         status: `${mediaDeleteStatus === 204 ? "success" : "error"}`,
-                //         duration: 9000,
-                //         isClosable: true,
-                //     })
-                // mediaDeleteStatus === 204 && router.back()
-            }
-        }
-    }
+    //         const deleteVideoFile = await fetch(`/api/media/delete/${video.videoFileID.fileID}`, {method: "POST", body: formDataVideo}).then(response => response.json())
+    //         const deleteThumbnailFile = await fetch(`/api/media/delete/${video.thumbnailFileID.fileID}`, {method: "POST", body: formDataThumbnail}).then(response => response.json())
+    //         // console.log(deleteVideoFile.response.$metadata.httpStatusCode, deleteThumbnailFile.response.$metadata.httpStatusCode)
+    //         if (deleteVideoFile.response.$metadata.httpStatusCode === 200, deleteThumbnailFile.response.$metadata.httpStatusCode === 200) {
+    //             const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("Videography").delete().eq('id', video.id)
+    //             // mediaDeleteStatus &&
+    //             //     toast({
+    //             //         // id: toastID,
+    //             //         title: `${mediaDeleteStatus === 204 ? "Video Deleted  🗑️" : `Error #${mediaDeleteError?.code} has Occurred`}`,
+    //             //         description: `${mediaDeleteStatus === 204 ? `You have successfully deleted the media file ${video.title}!` : `An error has occurred: ${mediaDeleteError?.message}. ${mediaDeleteError?.hint && `${mediaDeleteError?.hint}.`}`}`,
+    //             //         status: `${mediaDeleteStatus === 204 ? "success" : "error"}`,
+    //             //         duration: 9000,
+    //             //         isClosable: true,
+    //             //     })
+    //             // mediaDeleteStatus === 204 && router.back()
+    //         }
+    //     }
+    // }
 
-    const onSubmit =  async (values: any, actions: any) => {
-        const tagArray =  values.tags.split(',')
-
-        const chapterArray = values.chaptersOption? values.chaptersRow.sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1)) : null
+    const onSubmit =  async (values: any) => {
+        const subChapterValue = new Array()
+            values.chaptersRow.forEach((chapter: any) => subChapterValue.push(
+                {
+                    title: chapter.title,
+                    timeCode: chapter.timeCode
+                }
+            )).sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1))
+            
+        const subMusicCreditValue = new Array()
+            values.musicCreditsRow.forEach((mCredit: any) => subMusicCreditValue.push(
+                {
+                    title: mCredit.title,
+                    artist: mCredit.artist,
+                    timeCode: mCredit.timeCode.includes(";;") ? mCredit.timeCode.split(";;").sort() : mCredit.timeCode,
+                    link: mCredit.link,
+                    info: mCredit.info
+                }
+            ))
+            
+        const subVideoCreditValue = new Array()
+            values.videoCreditsRow.forEach((videoC: any) => subVideoCreditValue.push(
+                {
+                    title: videoC.title,
+                    value: videoC.value
+                }
+            ))
         
-        const musicArray = new Array()
-        if(values.musicCreditOption) {
-            values.musicRow.forEach((music: any) => {
-                const musicTimeCode = music.timeCode && 
-                    music?.timeCode.includes(",") ? music?.timeCode.split(",").sort() 
-                    : music?.timeCode.includes(";;") ? music?.timeCode.split(";;").sort() 
-                    : music.timeCode ? music.timeCode 
-                    : null
-                musicArray.push({"timeCode":  musicTimeCode, "title": music.title ? music.title : null, "artist": music.artist ? music.artist : null, "link": music.link ? music.link : null, "info": music.info ? music.info : null})
-            })
-        }
-        
-        const creditArray = values.videoRow ? values.videoRow : null
-        
-        const starringArray = new Array()
-        if(values.starringOption) {
-            values.starringRow.forEach((starring: any) => {
-                const starringTimeCode = starring.timeCode && 
-                    starring?.timeCode.includes(",") ? starring?.timeCode.split(",").sort() 
-                    : starring?.timeCode.includes(";;") ? starring?.timeCode.split(";;").sort() 
-                    : starring.timeCode ? starring.timeCode 
-                    : null
-                // const timeCode = timeCodeConvert.split(";;").sort() ? timeCodeConvert.split(";;").sort() : starring.timeCode as any
-                starringArray.push({"timeCode": starringTimeCode, "displayName": starring.displayName ? starring.displayName : null, "link": starring.link ? starring.link : null})
-            })
-        }
+        const subStarringCreditValue = new Array()
+            values.starringCreditsRow.forEach((starringC: any) => subStarringCreditValue.push(
+                {
+                    timeCode: starringC.timeCode.includes(";;") ? starringC.timeCode.split(";;").sort() : starringC.timeCode,
+                    displayName: starringC.displayName,
+                    link: starringC.link,
+                }
+            ))
 
-        const linkArray = values.linksRow ? values.linksRow : null
+        const subLinkValue = new Array()
+            values.linksRow.forEach((link: any) => subLinkValue.push(
+                {
+                    timeCode: link.timeCode.includes(";;") ? link.timeCode.split(";;").sort() : link.timeCode,
+                    linkType: link.linkType, 
+                    icon: link.icon, 
+                    link: link.link, 
+                    name: link.name
+                }
+            ))
+
+            console.log(subChapterValue)
+
+        // const tagArray =  values.tags.split(',')
+
+        // const chapterArray = values.chaptersOption? values.chaptersRow.sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1)) : null
+        
+        // const musicArray = new Array()
+        // if(values.musicCreditOption) {
+        //     values.musicRow.forEach((music: any) => {
+        //         const musicTimeCode = music.timeCode && 
+        //             music?.timeCode.includes(",") ? music?.timeCode.split(",").sort() 
+        //             : music?.timeCode.includes(";;") ? music?.timeCode.split(";;").sort() 
+        //             : music.timeCode ? music.timeCode 
+        //             : null
+        //         musicArray.push({"timeCode":  musicTimeCode, "title": music.title ? music.title : null, "artist": music.artist ? music.artist : null, "link": music.link ? music.link : null, "info": music.info ? music.info : null})
+        //     })
+        // }
+        
+        // const creditArray = values.videoRow ? values.videoRow : null
+        
+        // const starringArray = new Array()
+        // if(values.starringOption) {
+        //     values.starringRow.forEach((starring: any) => {
+        //         const starringTimeCode = starring.timeCode && 
+        //             starring?.timeCode.includes(",") ? starring?.timeCode.split(",").sort() 
+        //             : starring?.timeCode.includes(";;") ? starring?.timeCode.split(";;").sort() 
+        //             : starring.timeCode ? starring.timeCode 
+        //             : null
+        //         // const timeCode = timeCodeConvert.split(";;").sort() ? timeCodeConvert.split(";;").sort() : starring.timeCode as any
+        //         starringArray.push({"timeCode": starringTimeCode, "displayName": starring.displayName ? starring.displayName : null, "link": starring.link ? starring.link : null})
+        //     })
+        // }
+
+        // const linkArray = values.linksRow ? values.linksRow : null
 
         if (values.capturedOn != video.videoFileID.capturedOn || values.uploadedOn != video.videoFileID.uploadedOn) {
             await supabase.from("VideographyMedia").update({ 
@@ -130,27 +184,27 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             }).eq('fileID', video.thumbnailFileID.fileID)
         }
 
-        const { status: supabaseStatus , error: supabaseError } = await supabase.from("Videography").update({ 
-            title: values.title,
-            excerpt: values.excerpt,
-            description: values.description,
-            category: values.category,
-            videoPrivacy: values.videoPrivacy,
-            videoType: values.videoType,
+        // const { status: supabaseStatus , error: supabaseError } = await supabase.from("Videography").update({ 
+        //     title: values.title,
+        //     excerpt: values.excerpt,
+        //     description: values.description,
+        //     category: values.category,
+        //     videoPrivacy: values.videoPrivacy,
+        //     videoType: values.videoType,
 
-            tags: tagArray,
-            chapters: chapterArray,
-            musicCredits: musicArray,
-            videoCredits: creditArray,
-            starring: starringArray,
-            links: linkArray,
+        //     tags: tagArray,
+        //     chapters: chapterArray,
+        //     musicCredits: musicArray,
+        //     videoCredits: creditArray,
+        //     starring: starringArray,
+        //     links: linkArray,
 
-            uploadedOn: moment(values.uploadedOn).utc(),
-            lastUpdatedOn: moment().utc(),
+        //     uploadedOn: moment(values.uploadedOn).utc(),
+        //     lastUpdatedOn: moment().utc(),
 
-            isPortfolio: values.isPortfolio,
-            isPinned: values.isPinned
-        }).eq('id', values.id)
+        //     isPortfolio: values.isPortfolio,
+        //     isPinned: values.isPinned
+        // }).eq('id', values.id)
         // supabaseStatus && !toast.isActive(toastID) &&
         //     toast({
         //         id: toastID,
@@ -160,22 +214,9 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         //         duration: 9000,
         //         isClosable: true,
         //     })
-        actions.setSubmitting(false)
-        router.refresh()
+        // actions.setSubmitting(false)
+        // router.refresh()
     }
-
-    const initialLinkValues = new Array()
-    videoData.links && videoData.links.forEach((link: any) => {
-        initialLinkValues.push(
-            { 
-                key: randomId(),
-                linkType: link.linkType, 
-                icon: link.icon, 
-                link: link.link, 
-                name: link.name
-            }
-        )
-    })
 
     const initialChaptersValues = new Array()
     videoData.chapters && videoData.chapters.forEach((chapter: any) => {
@@ -201,9 +242,43 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             }
         )
     })
+    
+    const initialVideoCValues = new Array()
+    videoData.videoCredits && videoData.videoCredits.forEach((videoC: any) => {
+        initialVideoCValues.push(
+            { 
+                key: randomId(),
+                title: videoC.title,
+                value: videoC.value,
+            }
+        )
+    })
+    
+    const initialStarringCValues = new Array()
+    videoData.starringCredits && videoData.starringCredits.forEach((starringC: any) => {
+        initialStarringCValues.push(
+            { 
+                key: randomId(),
+                timeCode: starringC.timeCode,
+                displayName: starringC.displayName,
+                link: starringC.link,
+            }
+        )
+    })
 
-    console.log(initialMusicCValues)
-
+    const initialLinkValues = new Array()
+    videoData.links && videoData.links.forEach((link: any) => {
+        initialLinkValues.push(
+            { 
+                key: randomId(),
+                timeCode: link.timeCode, 
+                linkType: link.linkType, 
+                icon: link.icon, 
+                link: link.link, 
+                name: link.name
+            }
+        )
+    })
 
     const initialValues = { 
         id: video.id,
@@ -218,23 +293,16 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         videoPrivacy: video.videoPrivacy ? video.videoPrivacy : "Private",
         isPinned: video.isPinned ? video.isPinned : false,
         isPortfolio: video.isPortfolio ? video.isPortfolio : false,
-        capturedOn: moment(video.videoFileID.capturedOn).format("YYYY-MM-DDThh:mm"),
-        uploadedOn: moment(video.uploadedOn).format("YYYY-MM-DDThh:mm"),
+        
 
-        // chaptersOption: video.chapters && video.chapters.length > 0 ? true : false,
-        // musicCreditOption: video.musicCredits && video.musicCredits.length > 0 ? true : false,
-        // videoCreditOption: video.videoCredits && video.videoCredits.length > 0 ? true : false,
-        // starringOptions: video.starring && video.starring.length > 0 ? true : false,
-        // linksOptions: video.links && video.links.length > 0 ? true : false,
-       
-        // chaptersRow: video.chapters,
-        // musicRow: video.musicCredits,
-        // videoRow: video.videoCredits,
-        // starringRow: video.starring,
-        linksRow: initialLinkValues,
+        capturedOn: new Date(video.videoFileID.capturedOn),
+        uploadedOn: new Date(video.uploadedOn),
+
         chaptersRow: initialChaptersValues,
-        musicCreditRow: initialMusicCValues,
-        // linksRow: video.links
+        musicCreditsRow: initialMusicCValues,
+        videoCreditsRow: initialVideoCValues,
+        starringCreditsRow: initialStarringCValues,
+        linksRow: initialLinkValues,
     }
 
     const schema = yup.object().shape({
@@ -251,6 +319,116 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         initialValues,
         validate: yupResolver(schema)
     })
+
+    const chaptersFields = form.getValues().chaptersRow?.map((item: any, index: any) => (
+        <Draggable key={item.key} index={index} draggableId={item.key}>
+            {(provided: any) => (
+                <Grid key={item.key}
+                    align="center"
+                    gutter="2rem"
+                    ref={provided.innerRef}
+                    {...provided.draggableProps} {...provided.dragHandleProps}
+                >
+                    <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
+                        <DragDropIcon />
+                    </Box></Grid.Col>
+                    <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.title`}  {...form.getInputProps(`chaptersRow.${index}.title`)} key={form.key(`chaptersRow.${index}.title`)} /></Grid.Col>
+                    <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.timeCode`} {...form.getInputProps(`chaptersRow.${index}.timeCode`)} key={form.key(`chaptersRow.${index}.timeCode`)} /></Grid.Col>
+                    <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('chaptersRow', index)}>
+                        <Delete02Icon size="1rem" />
+                    </ActionIcon></Grid.Col>
+                </Grid>
+            )}
+        </Draggable>
+    ))
+    
+    const musicCFields = form.getValues().musicCreditsRow?.map((item: any, index: any) => (
+        // <Stack key={item.key} style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem">
+            <Draggable key={item.key} index={index} draggableId={item.key}>
+                {(provided: any) => (
+                    <Stack key={item.key} justify="center"
+                    ref={provided.innerRef}
+                    {...provided.draggableProps} {...provided.dragHandleProps}
+                    style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem" my="1rem"
+                    >
+                        <Group>
+                            <Box {...provided.dragHandleProps} mt="1rem">
+                                <DragDropIcon />
+                            </Box>
+                            <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditsRow', index)}>
+                                <Delete02Icon size="1rem" />
+                            </ActionIcon> 
+                        </Group>
+                        <SimpleGrid cols={2}>
+                            <FormInput inputID={`musicCreditsRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditsRow.${index}.title`)} key={form.key(`musicCreditsRow.${index}.title`)} />
+                            <FormInput inputID={`musicCreditsRow.${index}.artist`} inputLabel="By" {...form.getInputProps(`musicCreditsRow.${index}.artist`)} key={form.key(`musicCreditsRow.${index}.artist`)} />
+                        </SimpleGrid>
+                        <SimpleGrid cols={2}>
+                            <FormInput inputID={`musicCreditsRow.${index}.timeCode`} inputLabel="Music Time Code" {...form.getInputProps(`musicCreditsRow.${index}.timeCode`)} key={form.key(`musicCreditsRow.${index}.timeCode`)} />
+                            <FormInput inputID={`musicCreditsRow.${index}.link`} inputLabel="Link to Song" {...form.getInputProps(`musicCreditsRow.${index}.link`)} key={form.key(`musicCreditsRow.${index}.link`)} />
+                        </SimpleGrid>
+                        <FormTextArea inputID={`musicCreditsRow.${index}.info`} inputLabel="Information" textRows={4}  {...form.getInputProps(`musicCreditsRow.${index}.info`)} key={form.key(`musicCreditsRow.${index}.info`)} />
+                    </Stack>
+                )}
+            </Draggable>
+        // </Stack>
+    ))
+
+    const videoCreditsFields = form.getValues().videoCreditsRow?.map((item: any, index: any) => (
+        <Draggable key={item.key} index={index} draggableId={item.key}>
+            {(provided: any) => (
+                <Grid key={item.key}
+                    align="center"
+                    gutter="2rem"
+                    ref={provided.innerRef}
+                    {...provided.draggableProps} {...provided.dragHandleProps}
+                >
+                    <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
+                        <DragDropIcon />
+                    </Box></Grid.Col>
+                    <Grid.Col span={5.25}><FormInput inputID={`videoCreditsRow.${index}.title`}  {...form.getInputProps(`videoCreditsRow.${index}.title`)} key={form.key(`videoCreditsRow.${index}.title`)} /></Grid.Col>
+                    <Grid.Col span={5.25}><FormInput inputID={`videoCreditsRow.${index}.value`} {...form.getInputProps(`videoCreditsRow.${index}.value`)} key={form.key(`videoCreditsRow.${index}.value`)} /></Grid.Col>
+                    <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('videoCreditsRow', index)}>
+                        <Delete02Icon size="1rem" />
+                    </ActionIcon></Grid.Col>
+                </Grid>
+            )}
+        </Draggable>
+    ))
+    
+    const starringCreditsFields = form.getValues().starringCreditsRow?.map((item: any, index: any) => (
+        <Draggable key={item.key} index={index} draggableId={item.key}>
+            {(provided: any) => (
+                <Grid key={item.key}
+                    align="center"
+                    gutter="2rem"
+                    ref={provided.innerRef}
+                    {...provided.draggableProps} {...provided.dragHandleProps}
+                >
+                    <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
+                        <DragDropIcon />
+                    </Box></Grid.Col>
+                    <Grid.Col span={3.5}><FormInput inputID={`starringCreditsRow.${index}.timeCode`}  {...form.getInputProps(`starringCreditsRow.${index}.timeCode`)} key={form.key(`starringCreditsRow.${index}.timeCode`)} /></Grid.Col>
+                    <Grid.Col span={3.5}><FormInput inputID={`starringCreditsRow.${index}.displayName`}  {...form.getInputProps(`starringCreditsRow.${index}.displayName`)} key={form.key(`starringCreditsRow.${index}.displayName`)} /></Grid.Col>
+                    <Grid.Col span={3.5}><FormInput inputID={`starringCreditsRow.${index}.link`}  {...form.getInputProps(`starringCreditsRow.${index}.link`)} key={form.key(`starringCreditsRow.${index}.link`)} /></Grid.Col>
+                    <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('starringCreditsRow', index)}>
+                        <Delete02Icon size="1rem" />
+                    </ActionIcon></Grid.Col>
+                </Grid>
+            )}
+        </Draggable>
+    ))
+
+    const videoTypeOptions = [
+        {
+            value: "Horizontal",
+            label: "Horizontal (Best for Desktop)"
+        },
+        {
+            value: "Vertical",
+            label: "Vertical (Best for Mobile)"
+        }
+    ]
 
     const linkTypeOptions = [
         {
@@ -275,18 +453,6 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         },
     ]
     const linkFields = form.getValues().linksRow?.map((item: any, index: any) => (
-        <Group key={item.key} justify="center">
-            <FormSelect inputID={`linksRow.${index}.linkType`} inputData={linkTypeOptions} inputLabel="Link Type" inputHelperText="Please select link type" key={form.key(`links.${index}.linkType`)} {...form.getInputProps(`linksRow.${index}.linkType`)} />
-            <FormInput inputID={`linksRow.${index}.icon`} inputLabel="Link Icon" {...form.getInputProps(`linksRow.${index}.icon`)} key={form.key(`links.${index}.icon`)} />
-            <FormInput inputID={`linksRow.${index}.link`} inputLabel="Link URL" {...form.getInputProps(`linksRow.${index}.link`)} key={form.key(`links.${index}.link`)} />
-            <FormInput inputID={`linksRow.${index}.name`} inputLabel="Link Title" {...form.getInputProps(`linksRow.${index}.name`)} key={form.key(`links.${index}.name`)} />
-            <ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-                <Delete02Icon size="1rem" />
-            </ActionIcon>
-        </Group>
-    ));
-    
-    const chaptersFields = form.getValues().chaptersRow?.map((item: any, index: any) => (
         <Draggable key={item.key} index={index} draggableId={item.key}>
             {(provided: any) => (
                 <Grid key={item.key}
@@ -298,54 +464,18 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
                         <DragDropIcon />
                     </Box></Grid.Col>
-                    <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.title`}  {...form.getInputProps(`chaptersRow.${index}.title`)} key={form.key(`links.${index}.title`)} /></Grid.Col>
-                    <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.timeCode`} {...form.getInputProps(`chaptersRow.${index}.timeCode`)} key={form.key(`links.${index}.timeCode`)} /></Grid.Col>
-                    <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('chaptersRow', index)}>
+                    <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.timeCode`}  {...form.getInputProps(`linksRow.${index}.timeCode`)} key={form.key(`linksRow.${index}.timeCode`)} /></Grid.Col>
+                    <Grid.Col span={2.1}> <FormSelect inputID={`linksRow.${index}.linkType`} inputData={linkTypeOptions} key={form.key(`linksRow.${index}.linkType`)} {...form.getInputProps(`linksRow.${index}.linkType`)} /></Grid.Col>
+                    <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.icon`}  {...form.getInputProps(`linksRow.${index}.icon`)} key={form.key(`linksRow.${index}.icon`)} /></Grid.Col>
+                    <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.link`}  {...form.getInputProps(`linksRow.${index}.link`)} key={form.key(`linksRow.${index}.link`)} /></Grid.Col>
+                    <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.name`}  {...form.getInputProps(`linksRow.${index}.name`)} key={form.key(`linksRow.${index}.name`)} /></Grid.Col>
+                    <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
                         <Delete02Icon size="1rem" />
                     </ActionIcon></Grid.Col>
                 </Grid>
             )}
         </Draggable>
     ))
-    
-    const musicCFields = form.getValues().musicCreditRow?.map((item: any, index: any) => (
-        // <Stack key={item.key} style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem">
-            <Draggable key={item.key} index={index} draggableId={item.key}>
-                {(provided: any) => (
-                    <Stack key={item.key} justify="center"
-                    // style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem"
-                        ref={provided.innerRef}
-                        {...provided.draggableProps} {...provided.dragHandleProps}
-                    >
-                        <Group>
-                            <Box {...provided.dragHandleProps} mt="1rem">
-                                <DragDropIcon />
-                            </Box>
-                            <FormInput inputID={`musicCreditRow.${index}.title`} inputLabel="Music Title" {...form.getInputProps(`musicCreditRow.${index}.title`)} key={form.key(`musicCredit.${index}.title`)} />
-                            <FormInput inputID={`musicCreditRow.${index}.artist`} inputLabel="By" {...form.getInputProps(`musicCreditRow.${index}.artist`)} key={form.key(`musicCredit.${index}.artist`)} />
-                        </Group>
-                        <FormInput inputID={`musicCreditRow.${index}.timeCode`} inputLabel="Music Time Code" {...form.getInputProps(`musicCreditRow.${index}.timeCode`)} key={form.key(`musicCredit.${index}.timeCode`)} />
-                        <FormTextArea inputID={`musicCreditRow.${index}.info`} inputLabel="Information" textRows={4}  {...form.getInputProps(`musicCreditRow.${index}.info`)} key={form.key(`musicCredit.${index}.info`)} />
-                        <FormInput inputID={`musicCreditRow.${index}.link`} inputLabel="Link to Song" {...form.getInputProps(`musicCreditRow.${index}.link`)} key={form.key(`musicCredit.${index}.link`)} />
-                        <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditRow', index)}>
-                            <Delete02Icon size="1rem" />
-                        </ActionIcon> 
-                    </Stack>
-                )}
-            </Draggable>
-        // </Stack>
-    ))
-
-    const videoTypeOptions = [
-        {
-            value: "Horizontal",
-            label: "Horizontal (Best for Desktop)"
-        },
-        {
-            value: "Vertical",
-            label: "Vertical (Best for Mobile)"
-        }
-    ]
     
     const categories = new Array({value: "divider", label: "---", disabled: true}) as any
     categoryData.forEach((category: any) => {
@@ -354,7 +484,14 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             label: category.catName
         })
     })
-    
+
+    const privacyOptions = new Array(
+        {value: "divider", label: "---", disabled: true},
+        {value: "Public", label: "Public"},
+        {value: "Unlisted", label: "Unlisted"},
+        {value: "Private", label: "Private"},
+    ) as any
+
     return (
         <>
             <BreadCrumb breads={breadCrumbs} />
@@ -464,336 +601,178 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     checked={musicCOption}
                 />
                 {musicCOption && (
-                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                    <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
                         <SectionTitle headingTitle="Music Credits" />
-                        {/* <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code> */}
-                            {musicCFields.length > 0 ? (
-                            <Group justify="center">
-                                <Text>Title</Text>
-                                <Text>Time Code</Text>
-                            </Group>
-                            ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
-                           
-                                <DragDropContext
-                                    onDragEnd={({ destination, source }: any) =>
-                                        destination?.index !== undefined && form.reorderListItem('musicCreditRow', { from: source.index, to: destination.index })
-                                    }
-                                >
-                                    <Droppable droppableId="musicCDnD" direction="vertical">
-                                        {(provided: any) => (
-                                            <Box {...provided.droppableProps} ref={provided.innerRef}>
-                                                {musicCFields}
-                                                {provided.placeholder}
-                                            </Box>
-                                        )}
-                                    </Droppable>
-                                </DragDropContext>
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('musicCreditRow', { 
+                        {musicCFields.length === 0 && <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
+                        <DragDropContext
+                            onDragEnd={({ destination, source }: any) =>
+                                destination?.index !== undefined && form.reorderListItem('musicCreditsRow', { from: source.index, to: destination.index })
+                            }
+                        >
+                            <Droppable droppableId="musicCDnD" direction="vertical">
+                                {(provided: any) => (
+                                    <Box {...provided.droppableProps} ref={provided.innerRef} w="100%">
+                                        <Code p="0.5rem" color="white" ta="center">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
+                                        {musicCFields}
+                                        {provided.placeholder}
+                                    </Box>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
+                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('musicCreditsRow', { 
                             key: randomId(),
-                            timeCode: null,
                             title: null,
                             artist: null,
+                            timeCode: null,
                             link: null,
                             info: null
                         })}>Add More Music Credit(s)</FormButton>
                     </Stack>
                 )}
-            </Box>
-            {/* 
-                        
-                        <FormSwitch 
-                            inputID="musicCreditOption" 
-                            helperText={values.musicCreditOption ? "This video does not have any music credits" : "Does this video have music credits?"} 
-                        />
-                        {values.musicCreditOption === true && (
-                            <Stack boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="-1rem 0.5rem 1.5rem">
-                                <SectionTitle headingTitle="Music Credits" />
 
-                                <Code p={3} colorScheme='yellow' mt="1rem" color="primary" textAlign="center" m="0">For proper formatting of the credit, if you have a song playing multiple times and you would like to credit the song each time, please add double ";;" and space at the start and finish. As an example: &#34;0:00;;2:09;;8:10&#34;. For the links please format as LINK;;NAME. If there is more than one link please septate with double pipe "||" As an example: &#34;https://google.ca;;Google||https://donaldlouch.ca;;Donald Louch&#34;. </Code>
-                                <Stack id="theMusicSection">
-                                    <FieldArray
-                                        name="musicRow"
-                                        render={arrayHelpers => (
-                                            <>
-                                                {values.musicRow && values.musicRow.length > 0 ? (
-                                                    values.musicRow.map((music: any, index: number) => (
-                                                        <FormInputCard key={index} id={`${music.name}_${index}`}>
-                                                            <FormInputRow inputID={`musicRow.${index}.timeCode`} inputLabel="Time Code" inputType="text"/>
-                                                            <FormInputRow inputID={`musicRow.${index}.title`} inputLabel="Title" inputType="text" />
-                                                            <FormInputRow inputID={`musicRow.${index}.artist`} inputLabel="Artist" inputType="text" />
-                                                            <FormInputRow inputID={`musicRow.${index}.link`} inputLabel="Link To Song" inputType="text" />
-                                                            <FormInputRow inputID={`musicRow.${index}.info`} inputLabel="description" inputType="text" />
-                                                            <Button
-                                                                aria-label="Delete Music Credit"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="red"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.remove(index)}
-                                                            ><BsTrash2 /></Button>
-                                                        
-                                                            <Button
-                                                                aria-label="Add Music Credit"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="secondary"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', title: '', artist: '', link: '', info: '' })}
-                                                            ><BsPlusLg /></Button>
-                                                        </FormInputCard>
-                                                    ))
-                                                    ) : (
-                                                        <Button
-                                                            aria-label="Add Music Credit"
-                                                            variant="unstyled"
-                                                            _hover={{ color: "primary" }}
-                                                            h="auto"
-                                                            w="auto"
-                                                            color="secondary"
-                                                            fontSize="3xl"
-                                                            mt="2rem"
-                                                            onClick={() => arrayHelpers.push('')}
-                                                            leftIcon={<Icon as={BsMusicNoteList} />}
-                                                        >Add a Music Credit</Button>
-                                                    )
-                                                }
-                                            </>
-                                        )}
-                                    />
-                                </Stack>
-                            </Stack>
-                        )}
-                        
-                        <FormSwitch 
-                            inputID="videoCreditOption" 
-                            helperText={values.videoCreditOption ? "This video does not have any additional video credits" : "Does this video have additional video credits?"} 
-                        />
-                        {values.videoCreditOption === true && (
-                            <Stack boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="-1rem 0.5rem 1.5rem">
-                                <SectionTitle headingTitle="Video Credits" />
-                                <Stack id="theVideoSection">
-                                    <FieldArray
-                                        name="videoRow"
-                                        render={arrayHelpers => (
-                                            <>
-                                                {values.videoRow && values.videoRow.length > 0 ? (
-                                                    values.videoRow.map((video: any, index: number) => (
-                                                        <FormInputCard key={index} id={`${video.name}_${index}`}>
-                                                            <FormInputRow inputID={`videoRow.${index}.title`} inputLabel="Credit Title" inputType="text"/>
-                                                            <FormInputRow inputID={`videoRow.${index}.value`} inputLabel="Credit Value" inputType="text" />
-                                                            <Button
-                                                                aria-label="Delete Music Credit"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="red"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.remove(index)}
-                                                            ><BsTrash2 /></Button>
-                                                        
-                                                            <Button
-                                                                aria-label="Add Video Credit"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="secondary"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.insert(index + 1, { title: '', value: '' })}
-                                                            ><BsPlusLg /></Button>
-                                                        </FormInputCard>
-                                                    ))
-                                                    ) : (
-                                                        <Button
-                                                            aria-label="Add Video Credit"
-                                                            variant="unstyled"
-                                                            _hover={{ color: "primary" }}
-                                                            h="auto"
-                                                            w="auto"
-                                                            color="secondary"
-                                                            fontSize="3xl"
-                                                            mt="2rem"
-                                                            onClick={() => arrayHelpers.push('')}
-                                                            leftIcon={<Icon as={BsCameraReels} />}
-                                                        >Add a Video Credit</Button>
-                                                    )
-                                                }
-                                            </>
-                                        )}
-                                    />
-                                </Stack>
-                            </Stack>
-                        )}
-                        
-                        <FormSwitch 
-                            inputID="starringOptions" 
-                            helperText={values.starringOptions ? "This video does not have anyone that is starring in it" : "Does this video have anyone that is starring in it?"} 
-                        />
-                        {values.starringOptions === true && (
-                            <Stack boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="-1rem 0.5rem 1.5rem">
-                                <SectionTitle headingTitle="Starring Credits" />
-                                <Code p={3} colorScheme='yellow' mt="1rem" color="primary" textAlign="center" m="0">For proper formatting of the credit, if you have a song playing multiple times and you would like to credit the song each time, please add double ";;" and space at the start and finish. As an example: &#34;0:00;;2:09;;8:10&#34;. For the link please format as just as a single link, as an example: &#34;https://donaldlouch.ca/about&#34;. </Code>
-                                <Stack id="theStarringSection">
-                                    <FieldArray
-                                        name="starringRow"
-                                        render={arrayHelpers => (
-                                            <>
-                                                {values.starringRow && values.starringRow.length > 0 ? (
-                                                    values.starringRow.map((star: any, index: number) => (
-                                                        <FormInputCard key={index} id={`${star.name}_${index}`}>
-                                                            <FormInputRow inputID={`starringRow.${index}.timeCode`} inputLabel="Time Code" inputType="text"/>
-                                                            <FormInputRow inputID={`starringRow.${index}.displayName`} inputLabel="Display Name" inputType="text" />
-                                                            <FormInputRow inputID={`starringRow.${index}.link`} inputLabel="Profile Link" inputType="text" />
-                                                            <Button
-                                                                aria-label="Delete Starring Credit"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="red"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.remove(index)}
-                                                            ><BsPersonDash /></Button>
-                                                        
-                                                            <Button
-                                                                aria-label="Add Starring Credit"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="secondary"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.insert(index + 1, { timeCode: '', displayName: '', link: '' })}
-                                                            ><BsPersonPlus /></Button>
-                                                        </FormInputCard>
-                                                    ))
-                                                    ) : (
-                                                        <Button
-                                                            aria-label="Add Starring Credit"
-                                                            variant="unstyled"
-                                                            _hover={{ color: "primary" }}
-                                                            h="auto"
-                                                            w="auto"
-                                                            color="secondary"
-                                                            fontSize="3xl"
-                                                            mt="2rem"
-                                                            onClick={() => arrayHelpers.push('')}
-                                                            leftIcon={<Icon as={BsPeople} />}
-                                                        >Add a Starring Credit</Button>
-                                                    )
-                                                }
-                                            </>
-                                        )}
-                                    />
-                                </Stack>
-                            </Stack>
-                        )}
+                <FormSwitch 
+                    inputID="videoCOption" 
+                    helperText="Toggle on if there are any credit(s) associated with this video"
+                    onClick={(e: any) => setVideoCOption(e.target.checked)} 
+                    checked={videoCOption}
+                />
+                {videoCOption && (
+                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                        <SectionTitle headingTitle="Video Credits" />
+                        {videoCreditsFields.length > 0 ? (
+                            <Grid gutter="2rem">
+                                <Grid.Col span={0.5}></Grid.Col>
+                                <Grid.Col span={5.25}><Text ta="center">Title</Text></Grid.Col>
+                                <Grid.Col span={5.25}><Text ta="center">Value</Text></Grid.Col>
+                                <Grid.Col span={0.5}></Grid.Col>
+                            </Grid>
+                        ) : <Text ta="center">There is Currently No Credits For This Video! You can add one though!</Text>}
 
-                        <FormSwitch 
-                            inputID="linksOptions" 
-                            helperText={values.linksOptions ? "This video does not have any link(s) associated with it" : "Does this video have any link(s) associated with it?"} 
-                        />
-                        {values.linksOptions === true && (
-                            <Stack boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="-1rem 0.5rem 1.5rem">
-                                <SectionTitle headingTitle="Links" />
+                        <DragDropContext
+                            onDragEnd={({ destination, source }: any) =>
+                                destination?.index !== undefined && form.reorderListItem('videoCreditsRow', { from: source.index, to: destination.index })
+                            }
+                        >
+                            <Droppable droppableId="videoCreditsDnD" direction="vertical">
+                                {(provided: any) => (
+                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                        {videoCreditsFields}
+                                        {provided.placeholder}
+                                    </Box>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
 
-                                <Code p={3} colorScheme='yellow' mt="1rem" color="primary" textAlign="center" m="0">For proper formatting of the credit, please include the &#34;http(s)://&#34; in the inputting of the link.</Code>
-                                <Stack id="theLinksSection">
-                                    <FieldArray
-                                        name="linksRow"
-                                        render={arrayHelpers => (
-                                            <>
-                                                {values.linksRow && values.linksRow.length > 0 ? (
-                                                    values.linksRow.map((link: any, index: number) => (
-                                                        <FormInputCard key={index} id={`${link.name}_${index}`}>
-                                                            <FormInputRow inputID={`linksRow.${index}.link`} inputLabel="Link URL" inputType="text"/>
-                                                            <FormInputRow inputID={`linksRow.${index}.name`} inputLabel="Link Title" inputType="text" />
-                                                            <Button
-                                                                aria-label="Delete Link"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="red"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.remove(index)}
-                                                            ><BsTrash2 /></Button>
-                                                        
-                                                            <Button
-                                                                aria-label="Add Link"
-                                                                variant="unstyled"
-                                                                _hover={{ color: "primary" }}
-                                                                h="auto"
-                                                                w="auto"
-                                                                color="secondary"
-                                                                fontSize="3xl"
-                                                                mt="2rem"
-                                                                onClick={() => arrayHelpers.insert(index + 1, { link: '', name: '' })}
-                                                            ><BsPlusLg /></Button>
-                                                        </FormInputCard>
-                                                    ))
-                                                    ) : (
-                                                       <Button
-                                                            aria-label="Add Link"
-                                                            variant="unstyled"
-                                                            _hover={{ color: "primary" }}
-                                                            h="auto"
-                                                            w="auto"
-                                                            color="secondary"
-                                                            fontSize="3xl"
-                                                            mt="2rem"
-                                                            onClick={() => arrayHelpers.push('')}
-                                                            leftIcon={<Icon as={BsLink45Deg} />}
-                                                        >Add a Link</Button>
-                                                    )
-                                                }
-                                            </>
-                                        )}
-                                    />
-                                </Stack>
-                            </Stack>
-                        )} 
-
-                         <Stack direction="row" gap="2rem"  boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="1.5rem 0.5rem">
-                            <FormInputRow inputID="capturedOn" inputLabel="Captured On" inputType="datetime-local" inputDescription={video.videoFileID.capturedOn} />
-                            <FormInputRow inputID="uploadedOn" inputLabel="Uploaded On" inputType="datetime-local" inputDescription={video.uploadedOn} />
-                        </Stack>
-                        
-                        <FormSelect selectLabel="Video Privacy" selectID="videoPrivacy" selectPlaceholder="Select A Video Privacy">
-                            <option value="Public">Public</option>
-                            <option value="Unlisted">Unlisted</option>
-                            <option value="Private">Private</option>
-                        </FormSelect>
-                        <Stack direction="row" gap="2rem">
-                            <FormSwitch 
-                                inputID="isPinned" 
-                                helperText={values.isPinned ? "This video is pinned" : "Is this video pinned?"} 
-                            />
-
-                            <FormSwitch 
-                                inputID="isPortfolio" 
-                                helperText={values.isPortfolio ? "This video is apart of the portfolio" : "Is this video apart of the portfolio?"} 
-                            />
-                        </Stack>
-                        <Stack direction="row" my="2rem">
-                            <Button type="submit" variant="blackFormButton" leftIcon={<BsPencilSquare/>}>Edit Video: {video.title}</Button> 
-                            <Button variant="blackFormButton" onClick={deleteVideo} background="red" leftIcon={<BsTrash2/>}>Delete Video</Button> 
-                        </Stack>
+                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('videoCreditsRow', { 
+                            key: randomId(),
+                            title: null, 
+                            value: null, 
+                        })}>Add More Video Credit(s)</FormButton>
                     </Stack>
                 )}
-            </Formik> */}
+                
+                <FormSwitch 
+                    inputID="starringCOption" 
+                    helperText="Toggle on if there are any people that are starring in this video"
+                    onClick={(e: any) => setStarringCOption(e.target.checked)} 
+                    checked={starringCOption}
+                />
+                {starringCOption && (
+                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                        <SectionTitle headingTitle="Starring Credits" />
+                        {starringCreditsFields.length > 0 ? (
+                            <Grid gutter="2rem">
+                                <Grid.Col span={0.5}></Grid.Col>
+                                <Grid.Col span={3.5}><Text ta="center">Time Code</Text></Grid.Col>
+                                <Grid.Col span={3.5}><Text ta="center">Display Name</Text></Grid.Col>
+                                <Grid.Col span={3.5}><Text ta="center">Link</Text></Grid.Col>
+                                <Grid.Col span={0.5}></Grid.Col>
+                            </Grid>
+                        ) : <Text ta="center">There is Currently No Starring Credits For This Video! You can add one though!</Text>}
+
+                        <DragDropContext
+                            onDragEnd={({ destination, source }: any) =>
+                                destination?.index !== undefined && form.reorderListItem('starringCreditsRow', { from: source.index, to: destination.index })
+                            }
+                        >
+                            <Droppable droppableId="starringCreditsDnD" direction="vertical">
+                                {(provided: any) => (
+                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                        {starringCreditsFields}
+                                        {provided.placeholder}
+                                    </Box>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
+
+                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('starringCreditsRow', { 
+                            key: randomId(),
+                            timeCode: null, 
+                            displayName: null, 
+                            link: null, 
+                        })}>Add More Starring Credit(s)</FormButton>
+                    </Stack>
+                )}
+                
+                <FormSwitch 
+                    inputID="linkOption" 
+                    helperText="Toggle on if there are any link(s) associated with this video"
+                    onClick={(e: any) => setLinkOption(e.target.checked)} 
+                    checked={linkOption}
+                />
+                {linkOption && (
+                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                        <SectionTitle headingTitle="Links" />
+                        {linkFields.length > 0 ? (
+                            <Grid gutter="2rem">
+                                <Grid.Col span={0.5}></Grid.Col>
+                                <Grid.Col span={2.1}><Text ta="center">Time Code</Text></Grid.Col>
+                                <Grid.Col span={2.1}><Text ta="center">Link Type</Text></Grid.Col>
+                                <Grid.Col span={2.1}><Text ta="center">Icon</Text></Grid.Col>
+                                <Grid.Col span={2.1}><Text ta="center">Link</Text></Grid.Col>
+                                <Grid.Col span={2.1}><Text ta="center">Name</Text></Grid.Col>
+                                <Grid.Col span={0.5}></Grid.Col>
+                            </Grid>
+                        ) : <Text ta="center">There is Currently No Links For This Video! You can add one though!</Text>}
+
+                        <DragDropContext
+                            onDragEnd={({ destination, source }: any) =>
+                                destination?.index !== undefined && form.reorderListItem('linksRow', { from: source.index, to: destination.index })
+                            }
+                        >
+                            <Droppable droppableId="linksDnD" direction="vertical">
+                                {(provided: any) => (
+                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                        {linkFields}
+                                        {provided.placeholder}
+                                    </Box>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
+
+                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('linksRow', { 
+                            key: randomId(),
+                            linkType: "exLink", 
+                            icon: null, 
+                            link: null, 
+                            name: null
+                        })}>Add More Link(s)</FormButton>
+                    </Stack>
+                )}
+                <SimpleGrid cols={2} my="1rem">
+                    <FormDatePicker dateLabel="Captured On" datePlaceholder="When was this captured?" {...form.getInputProps('capturedOn')}/>
+                    <FormDatePicker dateLabel="Uploaded On" datePlaceholder="When was this uploaded?" {...form.getInputProps('uploadedOn')}/>
+                </SimpleGrid>
+                <FormSelect inputID="videoPrivacy" inputLabel="Video Privacy" inputData={privacyOptions} {...form.getInputProps(`videoPrivacy`)} />
+                <FormSwitch 
+                    inputID="isPinned" 
+                    helperText="Toggle on if you want this post to be pinned"
+                    {...form.getInputProps('isPinned')}
+                    onClick={(e: any) => setIsPinnedOption(e.target.checked)} 
+                    checked={isPinnedOption}
+                />
+                <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Video</FormSubmitButton>
+            </Box>
         </>
     )
 }
