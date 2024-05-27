@@ -9,7 +9,7 @@ import { Heading, Link, Stack, Text } from "@chakra-ui/react"
 export default function MaintenanceModePage() {
     // const router = useRouter()
     // const supabase = createClientComponentClient<Database>()
-    // const baseURL = process.env.NEXT_PUBLIC_VERCEL_URL ? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.SITE_URL
+    // const baseURL = process.env.NEXT_PUBLIC_VERCEL_URL ? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.NEXT_PUBLIC_SITE_URL
     // const signInWithGoogle = async () => {
     //     await supabase.auth.signInWithOAuth({
     //         provider: 'google',

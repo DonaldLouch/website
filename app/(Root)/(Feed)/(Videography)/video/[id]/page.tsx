@@ -16,14 +16,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: videoMeta.excerpt,
       keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${videoMeta.tags}`,
       openGraph: {
-          url: `${process.env.SITE_URL}/photo/${videoMeta.id}`,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/photo/${videoMeta.id}`,
           title: `${videoMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: videoMeta.excerpt,
           images: [{
               url: videoMeta.thumbnailFileID.filePath,
           }],
       },
-      twitter: { site: `${process.env.SITE_URL}/photo/${videoMeta.id}`, creator: "@DonaldLouch", images: videoMeta.thumbnailFileID.filePath },
+      twitter: { site: `${process.env.NEXT_PUBLIC_SITE_URL}/photo/${videoMeta.id}`, creator: "@DonaldLouch", images: videoMeta.thumbnailFileID.filePath },
       appleWebApp: { title: `${videoMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }

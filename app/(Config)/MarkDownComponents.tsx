@@ -13,7 +13,8 @@ import {
     Tooltip,
     Flex,
     Code,
-    Blockquote
+    Blockquote,
+    Center
 } from "@mantine/core"
 
 import classes from "@/app/(Components)/Components.module.css"
@@ -21,7 +22,7 @@ import classes from "@/app/(Components)/Components.module.css"
 import SingleAccordion from "../(Components)/(Accordion)/SingleAccording"
 
 import Masonry from 'react-masonry-css'
-import { HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react"
+import { ArrowUpRight01Icon, HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react"
 
  const breakpointColumnsObj = {
     default: 5,
@@ -71,7 +72,7 @@ const divider = (props: any) => (
 const toggle = (props: any) => (
     <>
         <SingleAccordion content={[{
-            id: props.toggleAlt,
+            id: props.id,
             label: props.toggleAlt
         }]}>
             <Stack style={{whiteSpace: "break-spaces"}} gap="1.3rem">
@@ -166,7 +167,7 @@ const orderedList = (props: any) => {
 //     </>
 // )
 
-const links = (props: any) => (<Tooltip label={props.href}><Anchor href={props.href} fw="700" style={{borderBottom: "solid 2px var(--mantine-color-white)"}} underline="never" className={classes.markdownLink}>{props.children}</Anchor></Tooltip>)
+const links = (props: any) => (<Tooltip label={props.href}><Anchor href={props.href} fw="700" style={{borderBottom: "solid 2px var(--mantine-color-white)"}} underline="never" className={classes.markdownLink}><Center inline>{props.children}<ArrowUpRight01Icon /></Center></Anchor></Tooltip>)
 
 const videoFrame = (props: any|boolean) => (
     <AspectRatio 

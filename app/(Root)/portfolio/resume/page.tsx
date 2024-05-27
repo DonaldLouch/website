@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
       description: resumeMeta?.bioExcerpt,
       keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${resumeMeta?.firstName} ${resumeMeta?.lastName}, ${resumeMeta?.firstName}, ${resumeMeta?.lastName}, ${resumeMeta?.middleName}, resume, ${resumeMeta?.firstName} ${resumeMeta?.middleName} ${resumeMeta?.lastName}, canada, Canadian, photographer, videographer, web developer, devop`,
       openGraph: {
-          url: `${process.env.SITE_URL}/portfolio/resume`,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/portfolio/resume`,
           title: `${resumeMeta?.firstName} ${resumeMeta?.lastName}'s Resume`,
           description: resumeMeta?.bioExcerpt,
           images: [{
               url: resumeMeta?.avatar,
           }],
       },
-      twitter: { site: `${process.env.SITE_URL}/portfolio/resume`, creator: "@DonaldLouch", images: resumeMeta?.avatar },
+      twitter: { site: `${process.env.NEXT_PUBLIC_SITE_URL}/portfolio/resume`, creator: "@DonaldLouch", images: resumeMeta?.avatar },
       appleWebApp: { title: `${resumeMeta?.firstName} ${resumeMeta?.lastName}'s Resume` }
     }
 }

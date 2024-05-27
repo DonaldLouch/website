@@ -13,11 +13,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: `Blog posts by Donald Louch that are flagged with the category ${category}`,
       openGraph: {
-          url: `${process.env.SITE_URL}/C/${category}`,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/C/${category}`,
           title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: `Blog posts by Donald Louch that are flagged with the category ${category}`,
       },
-      twitter: { site: `${process.env.SITE_URL}/C/${category}` },
+      twitter: { site: `${process.env.NEXT_PUBLIC_SITE_URL}/C/${category}` },
       appleWebApp: { title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }

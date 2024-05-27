@@ -2,30 +2,40 @@ import supabase from "@/lib/supabase";
 
 import { serialize } from "next-mdx-remote-client/serialize"
 
-import { Metadata } from 'next';
 import { AlbumPage } from "./AlbumPage";
+
+import { Metadata } from 'next';
 type Props = {
     params: { id: string }
 };
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//     const { id } = params
-//     const {data: photoMeta} = await supabase.from('PhotographyAlbum').select('id,albumName,albumCaption,fileID (filePath)').match({ slug: id }).single() as any
-//     return {
-//       title: `${photoMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
-//       description: photoMeta.albumCaption,
-//     //   keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${photoMeta.tags}`,
-//       openGraph: {
-//           url: `${process.env.SITE_URL}/photo/${photoMeta.id}`,
-//           title: `${photoMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
-//           description: photoMeta.albumCaption,
-//         //   images: [{
-//         //       url: photoMeta.fileID.filePath,
-//         //   }],
-//       },
-//       twitter: { site: `${process.env.SITE_URL}/album/${photoMeta.id}`, creator: "@DonaldLouch", images: photoMeta.fileID.filePath },
-//       appleWebApp: { title: `${photoMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
-//     }
-// }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { id } = params
+    const {data: postMeta} = await supabase.from('PhotographyAlbum').select('albumName,albumCaption, id, slug').match({ slug: id }).single() as any
+    const { data: allPhotoData } = await supabase.from('Photography').select(`*, fileID (*)`).match({ isPublic: true, isSetup: true, album: postMeta.id }) as any
+      let tags = new Array()
+        allPhotoData.forEach((photo: any) => {
+            const photoTags = photo.tags
+            
+            photoTags.forEach((tag: any) => {
+                !tags.includes(tag) && tags.push(tag)
+            })
+        })
+    return {
+      title: `${postMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
+      description: postMeta.albumCaption,
+      keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${tags}`,
+      openGraph: {
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/album/${postMeta.id}`,
+          title: `${postMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
+          description: postMeta.albumCaption,
+          images: [{
+              url: allPhotoData[0].fileID.filePath,
+          }],
+      },
+      twitter: { site: `${process.env.NEXT_PUBLIC_SITE_URL}/album/${postMeta.id}`, creator: "@DonaldLouch", images: allPhotoData[0].fileID.filePath },
+      appleWebApp: { title: `${postMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
+    }
+}
 
 export default async function Album({ params }: Props) {
   // const {userId, sessionId} = auth() 

@@ -15,14 +15,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: photoMeta.caption,
       keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, ${photoMeta.tags}`,
       openGraph: {
-          url: `${process.env.SITE_URL}/photo/${photoMeta.id}`,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/photo/${photoMeta.id}`,
           title: `${photoMeta.photoName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: photoMeta.caption,
           images: [{
               url: photoMeta.fileID.filePath,
           }],
       },
-      twitter: { site: `${process.env.SITE_URL}/photo/${photoMeta.id}`, creator: "@DonaldLouch", images: photoMeta.fileID.filePath },
+      twitter: { site: `${process.env.NEXT_PUBLIC_SITE_URL}/photo/${photoMeta.id}`, creator: "@DonaldLouch", images: photoMeta.fileID.filePath },
       appleWebApp: { title: `${photoMeta.photoName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }

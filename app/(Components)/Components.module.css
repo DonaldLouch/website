@@ -120,7 +120,7 @@
     color: var(--secondary) !important;
     
     &:hover {
-        border-bottom-color: var(--secondary) !important;
+        border: none !important;
         color: var(--primary) !important;
     }
 }

@@ -1,23 +1,22 @@
 import supabase from "@/lib/supabase";
-
-import type { Metadata } from 'next'
 import PhotographyFeed from "./PhotographyFeed";
 
+import type { Metadata } from 'next'
 export const metadata: Metadata = {
-    title: `Photography Feed | Donald Louch`,
-    description: process.env.NEXT_PUBLIC_DESCRIPTION,
-    keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, Donald Louch, donald, louch, photography`,
+    title: `Photography Feed | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
+    description: "Donald Louch's Photography Feed!",
+    keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, feed, photography`,
     openGraph: {
         type: "website",
-        url: process.env.SITE_URL,
-        title: `Photography Feed | Donald Louch`,
-        description: process.env.NEXT_PUBLIC_DESCRIPTION,
+        url: process.env.NEXT_PUBLIC_SITE_URL,
+        title: `Videography Feed | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
+        description: "Donald Louch's Photography Feed!",
         siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
         images: [{
             url: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpg",
         }],
     },
-    twitter: { card: "summary_large_image", site: process.env.SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
+    twitter: { card: "summary_large_image", site: process.env.NEXT_PUBLIC_SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
 export default async function PortfolioPhotography({searchParams}: any) {

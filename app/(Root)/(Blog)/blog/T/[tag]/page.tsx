@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: `Blog posts by Donald Louch that are flagged with the tag ${tag}`,
       openGraph: {
-          url: `${process.env.SITE_URL}/T/${tag}`,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/T/${tag}`,
           title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
           description: `Blog posts by Donald Louch that are flagged with the tag ${tag}`,
       },
-      twitter: { site: `${process.env.SITE_URL}/T/${tag}` },
+      twitter: { site: `${process.env.NEXT_PUBLIC_SITE_URL}/T/${tag}` },
       appleWebApp: { title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }
