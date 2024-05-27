@@ -14,7 +14,7 @@ interface AdminNavigationItemsProps {
 export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
    { 
         name: 'Home',
-        slug: '/',
+        slug: '',
         icon: <Home01Icon />,
         isParent: false,
         parentID: 0,

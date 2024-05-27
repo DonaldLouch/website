@@ -2,12 +2,13 @@ import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
 import { useUser } from "@clerk/nextjs";
-import { ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, Edit02Icon, LibraryIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
+import { Album02Icon, ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, Edit02Icon, LibraryIcon, Link04Icon, LinkSquare02Icon, NewsIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
 import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider } from "@mantine/core";
 
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
     const {user} = useUser()
+
     return <Box m="1rem">
         <Title order={1} fz="3rem">{video.title}</Title>
         <Group mb="1rem">
@@ -25,6 +26,18 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
             <Badge color="primary" leftSection={<LibraryIcon />}>
                 {video.category.catName}
             </Badge>
+            {video.links.length > 0 && video.links.map((link: any) => {
+                console.log("Icon", link.icon)
+                const linkIcon = link.icon === "album02" ? <Album02Icon />
+                : link.icon === "news" ? <NewsIcon />
+                : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                : <Link04Icon />
+
+                return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                    {link.name}
+                </Badge></Anchor>
+            })} 
         </Group>
 
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)", overflow: "scroll"}} p="1rem 2rem" mah="60vh">
@@ -51,7 +64,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                 </Badge>
                 
                 <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Tags</Title>
-                <Group align="center" gap="1rem" m="">
+                <Group align="center" gap="1rem">
                     <TagsIcon />
                     {video.tags && video.tags.map((tag: any, index: number) => (
                         <Badge color ="white" leftSection={<Tag01Icon />} key={index}>
@@ -59,6 +72,22 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                         </Badge>
                     ))}
                 </Group>
+                
+                {video.links.length > 0 && (<>
+                    <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>
+                    <Group align="center" gap="1rem">{video.links.length > 0 && video.links.map((link: any) => {
+                        const linkIcon = link.icon === "album02" ? <Album02Icon />
+                        : link.icon === "news" ? <NewsIcon />
+                        : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                        : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                        : <Link04Icon />
+
+                        return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                            {link.name}
+                        </Badge></Anchor>
+                    })
+                    }</Group>
+                </>)}
 
                 {video.starring && video.starring.length > 0 && (<><Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Starring</Title>
                     <Group align="center" wrap="wrap" gap="0.8rem" m="1rem 1rem 0">
@@ -85,7 +114,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                             </Badge>
                         ))}
                     </Group>
-                </>)}
+                </>)} 
 
                 {video.musicCredits && video.musicCredits.length > 0 && (<><Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" my="1rem" ff="text">Music Credits</Title>
                     <SimpleGrid spacing="1.5rem" cols={{base: 1, sm: 2, md: 3}}>
