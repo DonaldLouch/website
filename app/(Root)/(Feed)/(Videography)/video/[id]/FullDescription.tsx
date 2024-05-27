@@ -3,7 +3,7 @@ import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
 import { useUser } from "@clerk/nextjs";
 import { Album02Icon, ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, Edit02Icon, LibraryIcon, Link04Icon, LinkSquare02Icon, NewsIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
-import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider } from "@mantine/core";
+import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button } from "@mantine/core";
 
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
@@ -94,18 +94,18 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                         <UserMultiple02Icon />
                         {video.starring && video.starring.map((star: any, index: number) => (
                             star.link ? <Anchor href={star.link}>
-                            <Badge color="purple" leftSection={<Avatar
+                            <Badge color="orange" leftSection={<Avatar
                                 src=''
-                                size='xs'
+                                size='sm'
                                 alt={star.displayName}
                                 ml={-1}
                                 mr={2}
                             />} key={index}>
                                 {star.displayName}    
                             </Badge>
-                            </Anchor> : <Badge color="purple" leftSection={<Avatar
+                            </Anchor> : <Badge color="orange" leftSection={<Avatar
                                 src=''
-                                size='xs'
+                                size='sm'
                                 alt={star.displayName}
                                 ml={-1}
                                 mr={2}
@@ -128,15 +128,21 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                             mah="100%"
                             key={index}
                         >
-                            <Stack justify="flex-start !Important" align="flex-start !Important" p="1.5rem">
-                                <Title order={4}>{mCredit.title}</Title>
-                                {mCredit.artist && (<Text fw={300} pb="1rem">By: {mCredit.artist}</Text>)}
-                                {mCredit.link && (<Divider />)}
-                                {mCredit.link && <Anchor key={index} href={mCredit.link}  p="0" m="0.5rem auto"><Badge color ="blue" leftSection={<ArrowUpRight01Icon />}>
-                                    View Song
-                                </Badge></Anchor>}
-                                {mCredit.link && (<Divider />)}
-                                {mCredit.info && (<Text p="1rem">{mCredit.info}</Text>)}
+                            <Stack p="1.5rem">
+                                <Group justify="space-between" m="0">
+                                    <Stack m="0" gap="0" w={mCredit.link ? "80%" : "100%"}>
+                                        <Tooltip label={mCredit.title}>
+                                            <Title order={4} ff="text" fz="1.5rem" lineClamp={1} my="0">{mCredit.title}</Title>
+                                        </Tooltip>
+                                        {mCredit.artist && (
+                                        <Tooltip label={mCredit.artist}><Text fw={300} m="-0.5rem 0 1rem" lineClamp={1}>By: {mCredit.artist}</Text></Tooltip>)}
+                                    </Stack>
+                                    {mCredit.link && <Tooltip label="View Song"><Button component="a" href={mCredit.link} target="_blank" unstyled c="white"><ArrowUpRight01Icon variant="twotone" size="2rem" /></Button></Tooltip>}
+                                </Group>
+                                
+                                {mCredit.info && (<><Divider opacity="0.2"/><Text lineClamp={8}>
+                                    {mCredit.info}
+                                </Text></>)}
                             </Stack>
                         </AspectRatio>)))}
                     </SimpleGrid>
