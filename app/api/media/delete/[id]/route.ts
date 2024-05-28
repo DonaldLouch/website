@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   const command = new DeleteObjectsCommand(fileDelete)
   const response = await s3.send(command);
 
-  console.log(response)
+  // console.log(response)
 
 
   return NextResponse.json({ response }, { status: 200 });

@@ -61,7 +61,7 @@ export default async function Album({ params }: Props) {
     
     const { count: photoCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
 
-    // console.log(photoCount)
+    // // console.log(photoCount)
 
     return <AlbumPage albumData={albumData} photoData={photoData} mdxSource={mdxSource} locations={locations} tags={tags} getPhotoCount={photoCount} />
 }

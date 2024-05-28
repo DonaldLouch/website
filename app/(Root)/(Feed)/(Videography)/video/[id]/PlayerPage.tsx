@@ -193,8 +193,8 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     }, [])
 
     function keyPress(e: KeyboardEvent) {
-        console.log(e.key)
-        if(e.key === "ArrowRight") {console.log(theVideoElement.currentTime)}
+        // console.log(e.key)
+        if(e.key === "ArrowRight") {// console.log(theVideoElement.currentTime)}
         // if(e.key === "ArrowLeft") {theVideoElement.currentTime -= 10}
     }
    
@@ -206,12 +206,12 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         if (theVideoElement.paused) {
             theVideoElement.play()
             setPlaying(false)
-            console.log("You played the video");
+            // console.log("You played the video");
         } else {
             theVideoElement.pause(); // Once button is clicked it will pause the video
             setPlaying(true)
             // playBTNImage.data = vectorPath + "playButton.svg"; // Changes the button to the "play" image
-            console.log("You paused the video");
+            // console.log("You paused the video");
         }
     }
 
@@ -223,21 +223,21 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         if (theVideoElement.muted) {
             theVideoElement.muted = false; // Video audio is NOT muted
             setMuted(false)
-            console.log("You unmuted the video");
+            // console.log("You unmuted the video");
           } else {
             theVideoElement.muted = true; // Video audio IS muted
             setMuted(true)
-            console.log("You muted the video");
+            // console.log("You muted the video");
           }
     }
 
     // function theaterMode () {
     //     setIsTheaterMode(true)
-    //     console.log("Entering Theater Mode")
+    //     // console.log("Entering Theater Mode")
     // }
     // function exitTheaterMode() {
     //     setIsTheaterMode(false)
-    //     console.log("Exiting Theater Mode")
+    //     // console.log("Exiting Theater Mode")
     // }
 
     function fullscreenMode () {
@@ -257,7 +257,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         // document.addEventListener("keydown", (e: any) => {
         //     e.key === "Escape" && setIsFullscreenMode(false)
         // })
-        // console.log("Entering Fullscreen Mode")
+        // // console.log("Entering Fullscreen Mode")
     }
     function exitFullscreenMode() {
         // const elem = document.documentElement.
@@ -274,7 +274,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         //     e.key === "Escape" && setIsFullscreenMode(false)
         // })
         setIsFullscreenMode(false)
-        // console.log("Exiting Fullscreen Mode")
+        // // console.log("Exiting Fullscreen Mode")
     }
 
     // useEffect(() => {
@@ -334,7 +334,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             chapterPercent = Number(chapterMinutes) + Number(chapterSeconds) as number
         }
         chaptersPercentArray.push({ value: chapterPercent / videoDurationNUMBER * 100})
-        // console.log(chapterTitle, chapterPercent / videoDurationNUMBER)
+        // // console.log(chapterTitle, chapterPercent / videoDurationNUMBER)
     })
 
     const leftButtons = [

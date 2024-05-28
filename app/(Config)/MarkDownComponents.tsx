@@ -226,7 +226,7 @@ const codeBlock = (props: any) => {
 }
 
 const code = (props: any) => {
-    console.log(props)
+    // console.log(props)
     return <Code p="0.5rem" bg="var(--darkPurple)" c="white" fz="1rem" lh="2">{props.children}</Code>
 }
 const tables = (props: any) => (

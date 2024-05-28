@@ -5,6 +5,6 @@ import FooterContent from "./FooterContent";
 export default function Footer() {
   const {user} = useUser()
   const isLoggedIn = user ? true : false
-  // console.log(user)
+  // // console.log(user)
   return <FooterContent isLoggedIn={isLoggedIn} />
 }

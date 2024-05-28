@@ -44,9 +44,9 @@ export default clerkMiddleware({
 
   // Restrict admin route to users with specific role
   // const { orgId, orgPermissions, orgRole, orgSlug } = auth();
-  // console.log(auth);
+  // // console.log(auth);
   // && orgId === process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID;
-  // console.log(orgId === process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID);
+  // // console.log(orgId === process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID);
   // const { has } =auth();
   // if (isAdminRoute(req))auth().has({ permission: "org:portal:access" });
   // if (isAdminRoute(req)) auth().protect();

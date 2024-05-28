@@ -15,7 +15,7 @@ export default function PhotographyManager({mediaData, pagination, photographyAl
 
   // const [isUploading, setUploading] = useState(false)
   // const [isUploaded, setUploaded] = useState(false)
-  // console.log(mediaData)
+  // // console.log(mediaData)
 
   const breadCrumbs = [
     {"pageLink": "/admin/photography", "pageName": "Photography Manager"},

@@ -41,6 +41,8 @@ export const StandardPostType = ({post, mdxSource}: any) => {
     // const metaAnimation = prefersReducedMotion ? undefined : `${meta} ease 2s`
     // const categorySplit = post.categories.split(",")
     // const tagsSplit = post.tags.split(', ')
+
+    // TODO: Implement <Spoiler maxHeight={120} showLabel="Show more" hideLabel="Hide">?
     return (<>
         <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
             <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>

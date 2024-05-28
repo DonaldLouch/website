@@ -20,7 +20,7 @@ import HouseIcon from "../../(Components)/(Vectors)/house";
 export default function PortalHome() {
   // const userData = useSession()
 
-  // console.log(userData.session?.user.organizationMemberships?.[0].role)
+  // // console.log(userData.session?.user.organizationMemberships?.[0].role)
   return (
     <>
       <Card px="1rem" mt="0">

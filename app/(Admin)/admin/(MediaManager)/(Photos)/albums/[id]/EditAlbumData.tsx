@@ -42,7 +42,7 @@ export default function EditAlbumData({albumData}: any) {
 //     formData.append("fileKey", fileKey)
 //     formData.append("versionID", fileVersionID)
 //     const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-//     console.log(deleteFile)
+//     // console.log(deleteFile)
 
     
     
@@ -77,7 +77,7 @@ export default function EditAlbumData({albumData}: any) {
     //         uploadedOn: moment(values.uploadedOn),
     //         lastUpdatedOn: moment()
     //     }).eq('id', id)
-    //     console.log(supabaseStatus, supabaseError)
+    //     // console.log(supabaseStatus, supabaseError)
     //     supabaseStatus && !toast.isActive(toastID) &&
     //         toast({
     //             id: toastID,

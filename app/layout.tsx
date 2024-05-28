@@ -73,7 +73,7 @@ import notificationClasses from "@/app/(Config)/Notifications.module.css"
 // hugeiconsLicense(iconLICENSE)
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // console.log()
+  // // console.log()
   return (
     <html>
       <head>

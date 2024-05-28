@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     const fileUploaded = upload.$metadata.httpStatusCode === 200 ? true : false
     const uploadEndpoint = `https://${Bucket}.${HostName}`;
     
-    console.log(upload)
+    // console.log(upload)
 
     if (uploadDestination === "photography") {
       const photoID = cuid()
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
     }
     if (uploadDestination === "videography") {
       const videoID = formData.get("mediaID") as string;
-      // console.log(videoID)
+      // // console.log(videoID)
   
       const { status: supabaseStatus, error: supabaseError } = await supabase
         .from("VideographyMedia")

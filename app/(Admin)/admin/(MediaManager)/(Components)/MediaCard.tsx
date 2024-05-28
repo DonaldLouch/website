@@ -36,7 +36,7 @@ export const MediaCard = ({ media }: any) => {
         formData.append("fileKey", fileKey)
         formData.append("versionID", fileVersionID)
         const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-        // console.log(deleteFile)
+        // // console.log(deleteFile)
         
         const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
         // mediaDeleteStatus &&

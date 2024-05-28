@@ -27,7 +27,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                 {video.category.catName}
             </Badge>
             {video.links.length > 0 && video.links.map((link: any) => {
-                console.log("Icon", link.icon)
+                // console.log("Icon", link.icon)
                 const linkIcon = link.icon === "album02" ? <Album02Icon />
                 : link.icon === "news" ? <NewsIcon />
                 : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />

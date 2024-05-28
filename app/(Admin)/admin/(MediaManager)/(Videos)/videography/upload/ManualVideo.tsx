@@ -41,7 +41,7 @@ export default function ManualVideo({ id }: {id: string}) {
             videoFileID: fileID,
             lastUpdatedOn: moment(),
         }).eq("id", id)
-        console.log(supabaseError1 || supabaseError2 ? {supabaseError1, supabaseError2} : "No errors!" )
+        // console.log(supabaseError1 || supabaseError2 ? {supabaseError1, supabaseError2} : "No errors!" )
         actions.setSubmitting(false)
         supabaseStatus1 === 201 && supabaseStatus2 === 204 && router.push('/admin/videography/upload?step=3')
     }

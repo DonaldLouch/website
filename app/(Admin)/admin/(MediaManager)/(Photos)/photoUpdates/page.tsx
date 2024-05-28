@@ -6,7 +6,7 @@ export default async function PhotoUpgrade() {
         const takenDate = data.fileID.takenOn
         const photoID = data.id
         const { status: supabaseStatus , error: supabaseError } = await supabase.from("Photography").update({ takenOn: takenDate }).eq('id', photoID)
-        console.log(supabaseStatus, supabaseError)
+        // console.log(supabaseStatus, supabaseError)
     })
     return (
        <></>

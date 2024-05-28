@@ -26,7 +26,7 @@ export async function POST(request: Request) {
         pass: process.env.EMAIL_SERVER_PASSWORD,
       },
     }) as any;
-    // console.log(supData, supStatus);
+    // // console.log(supData, supStatus);
     const mailData = {
       from: `New Job Request<no-reply@donaldlouch.ca>`,
       replyTo: `${name}<${email}>`,
@@ -145,6 +145,6 @@ export async function POST(request: Request) {
     ];
     return NextResponse.json(contactData);
   } catch (error) {
-    console.log("The error", error);
+    // console.log("The error", error);
   }
 }

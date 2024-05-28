@@ -45,7 +45,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
     const [isPortfolioOption, setIsPortfolioOption] = useState(isPortfolio ? true : false)
     const [isPinnedOption, setIsPinnedOption] = useState(isPinned ? true : false)
 
-    // console.log(photographyAlbum)
+    // // console.log(photographyAlbum)
 
     // const toast = useToast()
     const toastID = "toastID"
@@ -53,7 +53,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
     // const { fileID, fileTitle, filePath } = media
     // const { isOpen, onOpen, onClose } = useDisclosure()
     // const [linkIndex, setLinkIndex] = useState(links ? links.length : 1)
-    // console.log(photoData.photoMetadata)
+    // // console.log(photoData.photoMetadata)
 
     const breadCrumbs = [
         {"pageLink": "/admin/photography", "pageName": "Photography Manager"},
@@ -66,7 +66,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
     formData.append("fileKey", fileKey)
     formData.append("versionID", fileVersionID)
     const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-    console.log(deleteFile)
+    // console.log(deleteFile)
 
     // const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
     // mediaDeleteStatus &&

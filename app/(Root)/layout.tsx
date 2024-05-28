@@ -26,7 +26,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
 
-    console.log("Layout is disabled?", disabled)
+    // console.log("Layout is disabled?", disabled)
     // const [opened { open, close }] = useDisclosure(false)
 
     return <AppShell 

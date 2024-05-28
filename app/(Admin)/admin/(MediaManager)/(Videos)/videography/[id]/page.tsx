@@ -19,7 +19,7 @@ type Props = {
 
 export default async function EditBlogPost({ params }: Props) {
   const { id } = params
-//   console.log(id)
+//   // console.log(id)
   const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*)`).match({ id: id }).single() as any
   const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any
   const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any

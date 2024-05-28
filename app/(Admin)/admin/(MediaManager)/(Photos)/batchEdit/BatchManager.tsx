@@ -58,13 +58,13 @@ export default function BatchManager({mediaData}: any) {
       //   createdOn: moment(),
       //   lastUpdatedOn: moment(),
       // })
-      // console.log("Add New Album: ", supabaseStatus, supabaseError)
+      // // console.log("Add New Album: ", supabaseStatus, supabaseError)
     } 
     if (values.albumSelect != "newAlbum") { //Update album
       // const { status: supabaseStatus , error: supabaseError } = await supabase.from("PhotographyAlbum").update({ 
       //   lastUpdatedOn: moment()
       // }).eq('id', values.albumSelect)
-      // console.log("Edit Album: ", supabaseStatus, supabaseError)
+      // // console.log("Edit Album: ", supabaseStatus, supabaseError)
     }
 
     photoIDs.forEach(async (photoID: any) => {
@@ -78,7 +78,7 @@ export default function BatchManager({mediaData}: any) {
       //     takenOn: moment(values.takenOn),
       //     uploadedOn: moment(values.uploadedOn)
       //   }).eq('fileID', fileID)
-      //   // console.log("Update Datetime Info: ", supabaseStatus, supabaseError)
+      //   // // console.log("Update Datetime Info: ", supabaseStatus, supabaseError)
       // }
 
       // const { status: supabaseStatus , error: supabaseError } = await supabase.from("Photography").update({ 
@@ -101,7 +101,7 @@ export default function BatchManager({mediaData}: any) {
       //     duration: 9000,
       //     isClosable: true,
       //   })
-      // console.log(`Photography (${photoID}) Update: `, supabaseStatus, supabaseError)
+      // // console.log(`Photography (${photoID}) Update: `, supabaseStatus, supabaseError)
     })
     router.refresh()
     actions.setSubmitting(false)

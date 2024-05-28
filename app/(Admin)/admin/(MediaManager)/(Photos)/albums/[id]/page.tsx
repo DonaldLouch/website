@@ -20,7 +20,7 @@ type Props = {
 
 export default async function EditBlogPost({ params }: Props) {
   const { id } = params
-//   console.log(id)
+//   // console.log(id)
 
   const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
   const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).order('photoName', { ascending: true }) as any

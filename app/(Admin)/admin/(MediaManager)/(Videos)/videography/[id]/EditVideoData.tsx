@@ -74,7 +74,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
 
     //         const deleteVideoFile = await fetch(`/api/media/delete/${video.videoFileID.fileID}`, {method: "POST", body: formDataVideo}).then(response => response.json())
     //         const deleteThumbnailFile = await fetch(`/api/media/delete/${video.thumbnailFileID.fileID}`, {method: "POST", body: formDataThumbnail}).then(response => response.json())
-    //         // console.log(deleteVideoFile.response.$metadata.httpStatusCode, deleteThumbnailFile.response.$metadata.httpStatusCode)
+    //         // // console.log(deleteVideoFile.response.$metadata.httpStatusCode, deleteThumbnailFile.response.$metadata.httpStatusCode)
     //         if (deleteVideoFile.response.$metadata.httpStatusCode === 200, deleteThumbnailFile.response.$metadata.httpStatusCode === 200) {
     //             const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("Videography").delete().eq('id', video.id)
     //             // mediaDeleteStatus &&
@@ -98,7 +98,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         //     message: 'CONTENT', 
         //     icon: <Delete02Icon /> 
         // })
-        // console.log("Values", values)
+        // // console.log("Values", values)
 
         const subChapterValue = new Array()
             values.chaptersRow.forEach((chapter: any) => subChapterValue.push(

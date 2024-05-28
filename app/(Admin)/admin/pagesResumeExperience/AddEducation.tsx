@@ -12,7 +12,7 @@ export default function AddEducation({ resumeID }: any) {
     const toast = useToast()
     const toastID = "toastID"
 
-    // console.log("id", resumeID)
+    // // console.log("id", resumeID)
     
     const { isOpen, onOpen, onClose } = useDisclosure()
     const onSubmit =  async (values: any, actions: any) => {

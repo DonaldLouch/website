@@ -23,7 +23,7 @@ import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 
 export default function EditPlaylist({playlistData, playlistVideos}: any) {
     // const video = videoData
-    // console.log(playlistVideos)
+    // // console.log(playlistVideos)
     const toast = useToast()
     const toastID = "toastID"
     const router = useRouter()
@@ -51,7 +51,7 @@ export default function EditPlaylist({playlistData, playlistVideos}: any) {
 
     //         const deleteVideoFile = await fetch(`/api/media/delete/${video.videoFileID.fileID}`, {method: "POST", body: formDataVideo}).then(response => response.json())
     //         const deleteThumbnailFile = await fetch(`/api/media/delete/${video.thumbnailFileID.fileID}`, {method: "POST", body: formDataThumbnail}).then(response => response.json())
-    //         // console.log(deleteVideoFile.response.$metadata.httpStatusCode, deleteThumbnailFile.response.$metadata.httpStatusCode)
+    //         // // console.log(deleteVideoFile.response.$metadata.httpStatusCode, deleteThumbnailFile.response.$metadata.httpStatusCode)
     //         if (deleteVideoFile.response.$metadata.httpStatusCode === 200, deleteThumbnailFile.response.$metadata.httpStatusCode === 200) {
     //             const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("Videography").delete().eq('id', video.id)
     //             mediaDeleteStatus &&
@@ -69,7 +69,7 @@ export default function EditPlaylist({playlistData, playlistVideos}: any) {
     // }
 
     const onSubmit =  async (values: any, actions: any) => {
-        console.log(values)
+        // console.log(values)
         // const tagArray =  values.tags.split(',')
 
         // const chapterArray = values.chaptersOption? values.chaptersRow.sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1)) : null

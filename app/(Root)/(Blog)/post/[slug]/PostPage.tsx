@@ -25,7 +25,7 @@ import { Alert02Icon, ArrowLeft02Icon } from "@hugeicons/react";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 
 export default function PostPage({post, mdxSource, isLoggedIn}: any) {
-  // console.log("markdown post", mdxSource)
+  // // console.log("markdown post", mdxSource)
   // const toast = useToast();
   // const id = "toastID";
 

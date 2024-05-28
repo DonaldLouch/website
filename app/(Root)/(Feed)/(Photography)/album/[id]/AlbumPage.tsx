@@ -63,7 +63,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
 
     const [ref, inView] = useInView()
 
-    console.log(Math.ceil(getPhotoCount / photoLimit))
+    // console.log(Math.ceil(getPhotoCount / photoLimit))
 
     async function loadMorePhotos() {
         const nextPage = page + 1

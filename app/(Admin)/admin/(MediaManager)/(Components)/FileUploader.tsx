@@ -15,7 +15,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
     const router = useRouter()
     // const toast = useToast()
 
-    // console.log(id)
+    // // console.log(id)
 
     const [isUploading, setUploading] = useState(false)
     const [isUploaded, setUploaded] = useState(false)
@@ -35,12 +35,12 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
       // e.preventDefault()
 
-      // console.log("Event", e)
+      // // console.log("Event", e)
 
       const files = e
       const uploadDestination = mediaType
 
-      // console.log(moment())
+      // // console.log(moment())
 
       e.forEach(async (file: any) => {
           // const date = new Date(file.lastModified) as any
@@ -90,10 +90,10 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
         // setUploaded(true)
     }
 
-    // console.log(isVideoUploaded, isThumbnailUploaded, fileID, videoID, thumbnailID)
+    // // console.log(isVideoUploaded, isThumbnailUploaded, fileID, videoID, thumbnailID)
     
     // useEffect(() => {
-    //     console.log("Hello from use effect!")
+    //     // console.log("Hello from use effect!")
     //     async ({isVideoUploaded, isThumbnailUploaded, fileID, videoID, thumbnailID}: {isVideoUploaded: boolean, isThumbnailUploaded: boolean, fileID: string, videoID: string, thumbnailID: string}) => {
     //         if (isVideoUploaded && isThumbnailUploaded) {
     //             const { status: supabaseStatus, error: supabaseError } = await supabase.from("Videography").insert({
@@ -126,7 +126,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
             {/* <SectionTitle headingTitle={uploadTitle ? uploadTitle : "Upload Media"} /> */}
             <Dropzone
               onDrop={(files) => handleOnSubmit(files)}
-              onReject={(files) => console.log('rejected files', files)}
+              onReject={(files) => // console.log('rejected files', files)}
               // maxSize={5 * 1024 ** 2}
               // accept={IMAGE_MIME_TYPE}
               bg="none"

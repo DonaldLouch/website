@@ -88,7 +88,7 @@ export default function EditAboutPage({ about }: any) {
       bioExcerpt: updateAboutData.bioExcerpt,
       lastUpdatedOn: updateAboutData.lastUpdatedOn 
     }).eq('id', updateAboutData.id)
-    // console.log(supabaseStatus)
+    // // console.log(supabaseStatus)
     supabaseStatus && !toast.isActive(toastID) &&
       toast({
           id: toastID,

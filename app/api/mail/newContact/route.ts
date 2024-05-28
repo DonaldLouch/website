@@ -131,6 +131,6 @@ export async function POST(request: Request) {
     ]
     return NextResponse.json(contactData);
   } catch (error) {
-    console.log("The error", error)
+    // console.log("The error", error)
   }
 }

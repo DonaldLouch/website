@@ -36,7 +36,7 @@ export default function ViewPhotoEditAlbum({ photoData }: any) {
         formData.append("fileKey", fileKey)
         formData.append("versionID", fileVersionID)
         const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-        // console.log(deleteFile)
+        // // console.log(deleteFile)
 
         const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
         mediaDeleteStatus &&
@@ -62,7 +62,7 @@ export default function ViewPhotoEditAlbum({ photoData }: any) {
                 takenOn: moment(values.takenOn),
                 uploadedOn: moment(values.uploadedOn)
             }).eq('fileID', fileID)
-            // console.log("Update Datetime Info: ", supabaseStatus, supabaseError)
+            // // console.log("Update Datetime Info: ", supabaseStatus, supabaseError)
         }
 
         const { status: supabaseStatus , error: supabaseError } = await supabase.from("Photography").update({ 

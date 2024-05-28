@@ -41,7 +41,7 @@ import { Album02Icon, Briefcase02Icon, Camera01Icon, FilterIcon, PinIcon, Search
 async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: string, searchValue?: string) {
   const from = nextPage * photoLimit
   const to = from + photoLimit - 1
-  console.log(from, to)
+  // console.log(from, to)
   const keyword = searchType === "tag" 
     && searchValue?.includes("HASHTAG") ? searchValue?.replace('HASHTAG', '#') 
     : searchValue?.includes("%20") ? searchValue?.replace('%20', ' ') 

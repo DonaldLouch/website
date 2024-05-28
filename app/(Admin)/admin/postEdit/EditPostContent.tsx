@@ -87,7 +87,7 @@ export default function EditPostContent({post, tagsData}: any) {
         }
       ))
     
-    // console.log(values, subLinkValue, subSectionValue)
+    // // console.log(values, subLinkValue, subSectionValue)
 
 
     // let thumbnail = post.thumbnail
@@ -289,7 +289,7 @@ export default function EditPostContent({post, tagsData}: any) {
 //     key={form.key(`sections.${index}.title`)}
 // key={form.key(`sections.${index}.slug`)} 
     // const [state, handlers] = useListState(form.values.sectionsRow)
-    // console.log(state)
+    // // console.log(state)
 
     const sectionFields = form.values.sectionsRow.map((item: any, index: any) => (
       <Draggable key={item.key} index={index} draggableId={item.key}>
