@@ -185,18 +185,18 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             // if (document.fullscreenElement) {}
             setIsFullscreenMode(Boolean(document.fullscreenElement))
         })
-        document.addEventListener("keydown", keyPress)
+        // document.addEventListener("keydown", keyPress)
         // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowLeft") {theVideoElement.currentTime += 10}  })
         // document?.addEventListener("keydown", (e: KeyboardEvent) => {
         //     e.key === "Escape" && setIsFullscreenMode(false)
         // }, true)
     }, [])
 
-    function keyPress(e: KeyboardEvent) {
+    // function keyPress(e: KeyboardEvent) {
         // console.log(e.key)
-        if(e.key === "ArrowRight") {// console.log(theVideoElement.currentTime)}
+        // if(e.key === "ArrowRight") {// console.log(theVideoElement.currentTime)}
         // if(e.key === "ArrowLeft") {theVideoElement.currentTime -= 10}
-    }
+    // }
    
     function skipBack() {
         theVideoElement.currentTime -= 10;

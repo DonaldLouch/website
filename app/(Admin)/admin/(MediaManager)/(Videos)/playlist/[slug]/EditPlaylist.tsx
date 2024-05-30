@@ -69,7 +69,7 @@ export default function EditPlaylist({playlistData, playlistVideos}: any) {
     // }
 
     const onSubmit =  async (values: any, actions: any) => {
-        // console.log(values)
+        console.log(values)
         // const tagArray =  values.tags.split(',')
 
         // const chapterArray = values.chaptersOption? values.chaptersRow.sort((a: any,b: any)=> (a.timeCode > b.timeCode ? 1 : -1)) : null

@@ -126,7 +126,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
             {/* <SectionTitle headingTitle={uploadTitle ? uploadTitle : "Upload Media"} /> */}
             <Dropzone
               onDrop={(files) => handleOnSubmit(files)}
-              onReject={(files) => // console.log('rejected files', files)}
+              onReject={(files) => console.log('rejected files', files)}
               // maxSize={5 * 1024 ** 2}
               // accept={IMAGE_MIME_TYPE}
               bg="none"
