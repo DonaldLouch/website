@@ -19,9 +19,9 @@
 }
 
 .imageCardView {
-    display: inline-block;
+    /* display: inline-block; */
     &:hover {
-        background: var(--secondary) !important;
+        background: black !important;
         transition: all 0.1s;
     }
 }

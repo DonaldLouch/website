@@ -12,6 +12,7 @@ import { IoShirtOutline, IoLogoSoundcloud } from 'react-icons/io5'
 import { SiApplemusic } from 'react-icons/si'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
+import { Chatting01Icon, GameController01Icon, MailAtSign02Icon, MusicNoteSquare02Icon, NewTwitterIcon, Shirt01Icon, SoundcloudIcon, SpotifyIcon, VimeoIcon, WifiConnected02Icon, YoutubeIcon } from "@hugeicons/react"
 
 interface LinkButtonProps {
   id: string
@@ -24,17 +25,17 @@ interface LinkButtonProps {
 
 export const LinkButton = (link: LinkButtonProps) => {
   const icon = 
-  link.iconName === "BsEnvelopeAt" ? <BsEnvelopeAt size="3rem" /> : 
-  link.iconName === "BsTwitterX" ? <BsTwitterX size="3rem" /> : 
-  link.iconName === "BsChat" ? <BsChat size="3rem" /> : 
-  link.iconName === "BsXbox" ? <BsXbox size="3rem" /> : 
-  link.iconName === "BsBarChart" ? <BsBarChart size="3rem" /> : 
-  link.iconName === "BsSpotify" ? <BsSpotify size="3rem" /> : 
-  link.iconName === "BsVimeo" ? <BsVimeo size="3rem" /> : 
-  link.iconName === "BsYoutube" ? <BsYoutube size="3rem" /> : 
-  link.iconName === "SiApplemusic" ? <SiApplemusic size="3rem" /> : 
-  link.iconName === "IoShirtOutline" ? <IoShirtOutline size="3rem" /> : 
-  link.iconName === "IoLogoSoundcloud" ? <IoLogoSoundcloud size="3rem" /> : 
+  link.iconName === "mail-at-sign-02" ? <MailAtSign02Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "new-twitter" ? <NewTwitterIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "chatting-01" ? <Chatting01Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "game-controller-01" ? <GameController01Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "wifi-connect-02" ? <WifiConnected02Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "spotify" ? <SpotifyIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "vimeo" ? <VimeoIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "youtube" ? <YoutubeIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
   BsLink45Deg as any
 
   return <Anchor

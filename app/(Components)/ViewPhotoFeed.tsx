@@ -38,8 +38,9 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
         !loading || error && setImageQuality(100)
     }, [imageURL, dimensions, loading, error])
     
+    // className={classes.imageCardView}
     return (<>
-        <Box className={classes.imageCardView} onClick={open}>
+        <Box  onClick={open} display="inline-block">
                 {/* <Suspense fallback={<Skeleton />}> */}
                     {/* <LazyLoad height={200}> */}
                     {/* <Anchor href={`/photo/${imageData.id}`}> */}
@@ -53,6 +54,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                             width={photoWidth}
                             height={photoHeight}
                             layout={"responsive"}
+                            className={classes.imageCardView}
                         />
                     {/* </Anchor> */}
                     {/* </LazyLoad> */}
