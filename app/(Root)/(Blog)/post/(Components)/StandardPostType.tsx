@@ -20,7 +20,7 @@ import {
 
 import { SidebarCard } from '../(Components)/SidebarCard'
 import PostContent from '../(Components)/PostContent'
-import { ArrowLeft02Icon, Calendar03Icon, ContactIcon, Folder01Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
+import { Album02Icon, ArrowLeft02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, ContactIcon, Edit02Icon, Folder01Icon, GithubIcon, Link04Icon, LinkSquare02Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
 import DisplayDate from '@/lib/DisplayDate'
 
@@ -33,7 +33,7 @@ import DisplayDate from '@/lib/DisplayDate'
 //     }
 // `
 
-export const StandardPostType = ({post, mdxSource}: any) => {
+export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
     // const prefersReducedMotion = usePrefersReducedMotion()
     // const metaAnimation = prefersReducedMotion ? undefined : `${meta} ease 2s`
     // const categorySplit = post.categories.split(",")
@@ -80,6 +80,11 @@ export const StandardPostType = ({post, mdxSource}: any) => {
                             </Stack>
                             <Stack gap="1rem" m="0">
                                 <Group>
+                                    {isLoggedIn &&
+                                        <Anchor href={`/admin/postEdit/${post.slug}`}><Badge color="white" leftSection={<Edit02Icon />}>
+                                            Edit Post
+                                        </Badge></Anchor>
+                                    }
                                     <Anchor href="/"><Badge color="primary" leftSection={<ContactIcon />}>
                                         {post.author}
                                     </Badge></Anchor>
@@ -93,6 +98,19 @@ export const StandardPostType = ({post, mdxSource}: any) => {
                                             </Badge></Anchor>
                                         ))}
                                     </Group>
+                                    {post.links.length > 0 && post.links.map((link: any) => {
+                                        // console.log("Icon", link.icon)
+                                        const linkIcon = link.icon === "album02" ? <Album02Icon />
+                                        : link.icon === "CameraVideo" ? <CameraVideoIcon />
+                                        : link.icon === "Github" ? <GithubIcon />
+                                        : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                                        : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                                        : <Link04Icon />
+
+                                        return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                                            {link.name}
+                                        </Badge></Anchor>
+                                    })} 
                                 </Group>
                             </Stack>
                         </Flex>

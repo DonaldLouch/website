@@ -10,7 +10,7 @@ import classes from "./Components.module.css"
 import { useDisclosure } from '@mantine/hooks'
 import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
 import ClipboardButton from '@/app/(Components)/(Buttons)/ClipboardButton'
-import { Album02Icon, Calendar03Icon, Edit02Icon, GridIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react'
+import { Album02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, Edit02Icon, GithubIcon, GridIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react'
 
 import LazyLoad from 'react-lazyload';
 import Image from 'next/image'
@@ -111,6 +111,21 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     <Badge color="red" leftSection={<Calendar03Icon />}>
                         <DisplayDate source={imageData.fileID.takenOn} />
                     </Badge>
+                    <Group gap="0.5rem">
+                         {imageData.links.length > 0 && imageData.links.map((link: any) => {
+                            // console.log("Icon", link.icon)
+                            const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
+                            : link.icon === "Github" ? <GithubIcon />
+                            : link.icon === "news" ? <NewsIcon />
+                            : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                            : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                            : <Link04Icon />
+
+                            return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                                {link.name}
+                            </Badge></Anchor>
+                        })} 
+                    </Group>
                     <Group gap="0.5rem">
                         <TagsIcon />
                         {imageData.tags.map((tag: any) => (<Anchor href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>

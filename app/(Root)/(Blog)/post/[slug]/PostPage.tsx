@@ -41,8 +41,8 @@ export default function PostPage({post, mdxSource, isLoggedIn}: any) {
   return (
     <>
       <Box>
-        {post.postStatus === "Public" || post.postStatus === "Unlisted" ?  <StandardPostType post={post} mdxSource={mdxSource} /> : 
-        isLoggedIn ? <StandardPostType post={post} mdxSource={mdxSource} /> : ( 
+        {post.postStatus === "Public" || post.postStatus === "Unlisted" ?  <StandardPostType post={post} mdxSource={mdxSource} isLoggedIn={isLoggedIn} /> : 
+        isLoggedIn ? <StandardPostType post={post} mdxSource={mdxSource} isLoggedIn={isLoggedIn} /> : ( 
               <Paper p="2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg">
                 <Stack align="center">
                 <Group gap="2rem" align="center">

@@ -12,6 +12,7 @@ export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, 
         label={dateLabel}
         placeholder={datePlaceholder ? datePlaceholder : "Pick date and time"}
         c="white"
+        settings={{ timezone: 'America/Vancouver' }}
         popoverProps={{
             withinPortal: true, 
             styles: {
