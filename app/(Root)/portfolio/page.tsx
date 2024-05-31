@@ -31,12 +31,12 @@ export default async function Portfolio() {
     },
     {
       linkTitle: "Photography",
-      linkUrl: "portfolio/photography",
+      linkUrl: "/portfolio/photography",
       linkIcon: <Album02Icon />
     },
     {
       linkTitle: "Videography",
-      linkUrl: "video/clv70b4iy00013b6rinrnxiz7",
+      linkUrl: "/video/clv70b4iy00013b6rinrnxiz7",
       linkIcon: <CameraVideoIcon />
     },
     // {
@@ -45,7 +45,7 @@ export default async function Portfolio() {
     // },
     {
       linkTitle: "Blog",
-      linkUrl: "blog",
+      linkUrl: "/blog",
       linkIcon: <NewsIcon />
     },
     // {
