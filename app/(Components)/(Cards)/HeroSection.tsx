@@ -72,7 +72,7 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkURL} link={link.linkURL} icon={link.linkIcon ? link.linkIcon : null}>{link.linkTitle}</PrimaryLinkedButton>)}
+        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkUrl} link={link.linkUrl} icon={link.linkIcon ? link.linkIcon : null}>{link.linkTitle}</PrimaryLinkedButton>)}
         {/* <PrimaryLinkedButton link="/portfolio" icon={<Briefcase02Icon />}>Portfolio</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/feed" icon={<DashboardSquare02Icon />}>Feed</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/blog" icon={<NewsIcon />}>Blog</PrimaryLinkedButton>
