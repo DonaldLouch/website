@@ -21,6 +21,7 @@ export default function ViewPostButton() {
           className={classes.mouseIcon}
           // c="var(--darkPurple)"
           fz="1.5rem"
+          c="white"
         >
           <Anchor href="/blog#posts" c="currentColor">
             <Mouse01Icon size="3rem" variant="duotone" />

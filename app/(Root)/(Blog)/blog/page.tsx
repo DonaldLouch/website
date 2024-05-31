@@ -5,6 +5,8 @@ import Posts from "./Posts";
 import ViewPostButton from "./ViewPostButton";
 
 import type { Metadata } from 'next'
+import HeroSection from "@/app/(Components)/(Cards)/HeroSection";
+import { Album01Icon, CameraVideoIcon, ContactIcon, DeskIcon, Globe02Icon, PassportIcon, PinLocation03Icon } from "@hugeicons/react";
 export const metadata: Metadata = {
     title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME}'s Blog Post's`,
     description: process.env.NEXT_PUBLIC_DESCRIPTION,
@@ -44,36 +46,30 @@ export default async function Blog({searchParams}: any) {
   const paginationArray = new Array()
   paginationArray.push(numberOfPages, currentPage)
 
-  const pageLinks = [
+  const links = [
     // {
     //   linkTitle: "Photography",
     //   linkUrl: "/feed/photography",
     // }
-    {linkUrl: "/blog/C/life", linkTitle: "Life Updates"},
-    {linkUrl: "/blog/C/website", linkTitle: "Website Updates"},
-    {linkUrl: "/blog/C/travel", linkTitle: "Travel"},
-    {linkUrl: "/blog/C/education", linkTitle: "Education"},
-    {linkUrl: "/feed/photography", linkTitle: "Photography Feed"},
-    {linkUrl: "/feed/videography", linkTitle: "Videography Feed"},
+    {linkUrl: "/blog/C/life", linkTitle: "Life Updates", linkIcon: <ContactIcon /> },
+    {linkUrl: "/blog/C/website", linkTitle: "Website Updates", linkIcon: <Globe02Icon />},
+    {linkUrl: "/blog/C/travel", linkTitle: "Travel", linkIcon: <PinLocation03Icon />},
+    {linkUrl: "/blog/C/education", linkTitle: "Education", linkIcon: <DeskIcon />},
+    {linkUrl: "/feed/photography", linkTitle: "Photography Feed", linkIcon: <Album01Icon />},
+    {linkUrl: "/feed/videography", linkTitle: "Videography Feed", linkIcon: <CameraVideoIcon />},
   ];
-//   const fetcher = (url: RequestInfo | URL) =>
-//     fetch(url).then((res) => res.json());
-//   const pageID = "pageL4UBG4TUp4n" as string;
-//   useSWR(`/api/pages/viewUpdate/${pageID}`, fetcher);
+  const cta = [
+    { ctaTitle: "About Me", ctaLink: "/", ctaVector: <ContactIcon /> }
+  ]
 
-   // https://res.cloudinary.com/donaldlouch/image/upload/v1645167967/portfolio/hpqfin6z4olakfiso0pv.jpg
-    // https://res.cloudinary.com/donaldlouch/image/upload/v1645167811/portfolio/kley3bouwow9kls6ifqh.jpg
-    // https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg
-    // https://res.cloudinary.com/donaldlouch/image/upload/v1668983119/donaldlouch/mob0k3krwkotmw3axkvt.jpg
-
-    
+  const { data: aboutMe } = await supabase.from('About').select().single()
+  
   return (
     <>
-      <HeroPage
-        name="Donald Louch"
-        tagLine="and I am a Web Developer"
-        links={pageLinks}
-        cta={["About Me", "/"]}
+      <HeroSection
+        links={links}
+        aboutMe={aboutMe}
+        cta= {cta}
         imageLink="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LO3NICOBz1pJVUysp.jpg"
       />
       <ViewPostButton />

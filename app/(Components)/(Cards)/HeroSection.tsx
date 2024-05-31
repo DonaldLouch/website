@@ -1,23 +1,23 @@
-import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
-import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, JobSearchIcon, Link01Icon, Link04Icon, NewsIcon, Passport01Icon, PassportIcon } from "@hugeicons/react"
-import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks";
-import { BsFolder2Open, BsImages, BsFilePerson, BsSend, BsPersonBadge, BsLink45Deg } from "react-icons/bs"
+'use client'
 
-export default function HomeHeroSection({aboutMe}: any) {
+import PrimaryLinkedButton from "../(Buttons)/PrimaryLinkedButton"
+import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, JobSearchIcon, Link01Icon, Link04Icon, NewsIcon, Passport01Icon, PassportIcon } from "@hugeicons/react"
+import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Anchor, Badge } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks";
+
+
+export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+
+  console.log(cta)
   
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah={{base: "60%", sm: "100vh"}} pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
     <Box bg="var(--prideGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
-    <Box h="100%" w="100vw" visibleFrom="sm">
-      <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
-    </Box>
-    <Box hiddenFrom="sm" bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOALIC887xh5HW4rj.jpg") #333 40% 40%`} bgsz="cover" h="100%" w="100vw"></Box>
-
-    {/* <Box h="100%" w="100%" hiddenFrom="sm" bg="url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg)" bgp="center" bgsz="cover">
-      <Image src="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg" alt="Home Hero" />
+    {/* <Box h="100%" w="100%">
+      <Image src={`${imageLink}`} alt="Home Hero" style={{objectPosition: "centre", objectFit: "cover"}} />
     </Box> */}
+    <Box bg={`no-repeat url(${imageLink ? imageLink : "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} bgsz="cover" h="100%" w="100vw"></Box>
     <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "100%", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center">
       <Box bg="var(--darkPurpleRGBA)" style={{
         boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -52,6 +52,11 @@ export default function HomeHeroSection({aboutMe}: any) {
                 {aboutMe.pronouns}
               </Text>
             </Stack>
+            {cta && <Anchor href={cta[0].ctaLink} style={{color: "currentColor"}}>
+                <Badge color="var(--secondary)" leftSection={cta[0].ctaVector}>
+                    {cta[0].ctaTitle}
+                </Badge>
+            </Anchor>}
           </Flex>
         </Flex>
         <Stack>
@@ -67,13 +72,14 @@ export default function HomeHeroSection({aboutMe}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        <PrimaryLinkedButton link="/portfolio" icon={<Briefcase02Icon />}>Portfolio</PrimaryLinkedButton>
+        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkURL} link={link.linkURL} icon={link.linkIcon ? link.linkIcon : null}>{link.linkTitle}</PrimaryLinkedButton>)}
+        {/* <PrimaryLinkedButton link="/portfolio" icon={<Briefcase02Icon />}>Portfolio</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/feed" icon={<DashboardSquare02Icon />}>Feed</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/blog" icon={<NewsIcon />}>Blog</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/portfolio/resume" icon={<PassportIcon />}>Resume</PrimaryLinkedButton>
         <PrimaryLinkedButton link="#links" icon={<Link04Icon />}>Links</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/contact" icon={<Chatting01Icon />}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact" icon={<JobSearchIcon />}>Hire Me!</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/contact" icon={<JobSearchIcon />}>Hire Me!</PrimaryLinkedButton> */}
       </Group>
     </Stack>
   </Box>

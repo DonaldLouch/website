@@ -18,6 +18,7 @@ import {
   Loader,
   Anchor,
   Paper,
+  Code,
 } from "@mantine/core";
 
 import Masonry from 'react-masonry-css'
@@ -173,6 +174,13 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
             {/* TO DO: Make Random Sorting Function*/}
           </Stack>
       </Drawer>
+        {searchType && searchValue && <Box m="1rem -4rem">
+          <Anchor href="/feed/photography" underline="never">
+            <Tooltip label="Click to Remove Filter">
+              <Code p="0.8rem" bg="var(--darkPurple)" c="white" fz="1rem" lh="2" tt="capitalize">Filtering {searchType}: "{searchValue}"</Code>
+            </Tooltip>
+          </Anchor>
+        </Box>}
      
       <Flex 
         component={Masonry}
