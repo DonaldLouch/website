@@ -1,3 +1,4 @@
+import supabase from '@/lib/supabase'
 import NewPostContent from './NewPostContent'
 
 // import type { Metadata } from 'next'
@@ -12,5 +13,6 @@ import NewPostContent from './NewPostContent'
 // }
 
 export default async function EditBlogPost() {
-  return <NewPostContent />
+  const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
+  return <NewPostContent tagsData={tagsData} />
 }

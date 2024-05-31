@@ -21,7 +21,7 @@ export default async function PortalBlog({searchParams}: Props) {
   let currentPage = (((page) - 1) as number) || 0
 
   const postLimit = 9 as number
-  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).match({ postStatus: 'Public' }) as any
+  const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).neq('postStatus', 'Unlisted') as any
   let numberOfPages = (postLength / postLimit) as number;
 
   if (!Number.isInteger(numberOfPages)) {
@@ -32,7 +32,7 @@ export default async function PortalBlog({searchParams}: Props) {
     currentPage = numberOfPages;
   }
   const pageCalc = currentPage * postLimit
-  const { data: theBlogData } = await supabase.from('BlogPost').select().match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
+  const { data: theBlogData } = await supabase.from('BlogPost').select().neq('postStatus', 'Unlisted').order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
 
   const paginationArray = new Array();
   paginationArray.push(numberOfPages, currentPage);

@@ -21,9 +21,9 @@ export const SidebarCard = ({post, mdxSource}: any) => {
 
     const shadow = mobile ? "none" : "var(--mantine-shadow-bsBoldPrimary)"
     
-    const sections = new Array({label: post.title, link: "#hero", order: 1})
-    post.sections.forEach((section: any) => {
-        sections.push({label: section.title, link: `#${section.slug}`, order: 1})
+    const toc = new Array({label: post.title, link: "#hero", order: 1})
+    post.toc.forEach((section: any) => {
+        toc.push({label: section.title, link: `#${section.slug}`, order: 1})
     })
 
     return (
@@ -33,7 +33,7 @@ export const SidebarCard = ({post, mdxSource}: any) => {
         </Grid.Col>
         <Grid.Col span={3} top="3rem" bottom="-4rem" pos="sticky" h="74vh" visibleFrom="sm">
             <Box component="aside" id="sidebar">
-                <TableOfContents sections={sections} />
+                <TableOfContents sections={toc} />
             </Box>
         </Grid.Col>
         </Grid>

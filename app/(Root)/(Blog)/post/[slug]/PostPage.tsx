@@ -11,24 +11,13 @@ import {
   // useToast,
 } from "@mantine/core";
 
-import { VideoPostType } from "../(Components)/(PostType)/VideoPostType";
-import { AudioPostType } from "../(Components)/(PostType)/AudioPostType";
-import { StandardPostType } from "../(Components)/(PostType)/StandardPostType";
-import { SpecialPostType } from "../(Components)/(PostType)/SpecialPostType";
-import { GalleryPostType } from "../(Components)/(PostType)/GalleryPostType";
-import { Photo1PostType } from "../(Components)/(PostType)/Photo1PostType";
-import { Photo2PostType } from "../(Components)/(PostType)/Photo2PostType";
-import { Photo3PostType } from "../(Components)/(PostType)/Photo3PostType";
-import { Photo4PostType } from "../(Components)/(PostType)/Photo4PostType";
-import { Photo5PostType } from "../(Components)/(PostType)/Photo5PostType";
+import { StandardPostType } from "../(Components)/StandardPostType";
 import { Alert02Icon, ArrowLeft02Icon } from "@hugeicons/react";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
+import { useUser } from "@clerk/nextjs";
 
 export default function PostPage({post, mdxSource, isLoggedIn}: any) {
-  // // console.log("markdown post", mdxSource)
-  // const toast = useToast();
-  // const id = "toastID";
-
+  
   // post.postStatus === "Private" && isLoggedIn && !toast.isActive(id) &&
   //   toast({
   //     id,
@@ -52,13 +41,8 @@ export default function PostPage({post, mdxSource, isLoggedIn}: any) {
   return (
     <>
       <Box>
-        {post.postStatus === "Public" || post.postStatus === "Unlisted" ? (
-          <StandardPostType post={post} mdxSource={mdxSource} />
-        ) : (
-          <>
-            {isLoggedIn ? (
-              <StandardPostType post={post} mdxSource={mdxSource} />
-            ) : ( 
+        {post.postStatus === "Public" || post.postStatus === "Unlisted" ?  <StandardPostType post={post} mdxSource={mdxSource} /> : 
+        isLoggedIn ? <StandardPostType post={post} mdxSource={mdxSource} /> : ( 
               <Paper p="2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg">
                 <Stack align="center">
                 <Group gap="2rem" align="center">
@@ -69,9 +53,7 @@ export default function PostPage({post, mdxSource, isLoggedIn}: any) {
                   to the public. 🚨</Text>
                   <PrimaryLinkedButton link="/blog" icon={<ArrowLeft02Icon />}>Go Back To The Blog Feed</PrimaryLinkedButton>
                 </Stack>
-            </Paper>
-             )} 
-          </>
+            </Paper>    
         )}
       </Box>
     </>

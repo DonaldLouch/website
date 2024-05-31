@@ -19,7 +19,7 @@ import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import DisplayDate from "@/lib/DisplayDate";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Delete02Icon, Delete03Icon, DragDropIcon, Link04Icon, PencilEdit01Icon, PlusSignIcon, PropertyEditIcon, ViewIcon } from "@hugeicons/react";
+import { AlertDiamondIcon, Delete02Icon, Delete03Icon, DragDropIcon, Link04Icon, PencilEdit01Icon, PlusSignIcon, PropertyEditIcon, ViewIcon } from "@hugeicons/react";
 
 import buttonClasses from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
@@ -39,6 +39,7 @@ import FormButton from "@/app/(Components)/(Form)/FormButton";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
+import { notifications } from "@mantine/notifications";
 
 export default function EditPostContent({post, tagsData}: any) {
   // const toast = useToast()
@@ -50,8 +51,8 @@ export default function EditPostContent({post, tagsData}: any) {
     {"pageLink": `/admin/postEdit/${post.slug}`, "pageName": `Edit Post: ${post.title}`},
   ]
 
-  const [isSidebarOption, setIsSidebarOption] = useState(post.isSidebar ? true : false)
-  const [isLinksOption, setIsLinksOption] = useState(post.links ? true : false)
+  const [isTOCOption, setIsTOOption] = useState(post.toc.length > 0 ? true : false)
+  const [isLinksOption, setIsLinksOption] = useState(post.links.length > 0 ? true : false)
   const [isPinnedOption, setIsPinnedOption] = useState(post.isPinned ? true : false)
 
   async function deletePost() {
@@ -79,15 +80,15 @@ export default function EditPostContent({post, tagsData}: any) {
           name: link.name
         }
       ))
-    const subSectionValue = new Array()
-      values.sectionsRow.forEach((section: any) => subSectionValue.push(
+    const subTOCValue = new Array()
+      values.tocRow.forEach((section: any) => subTOCValue.push(
         {
           title: section.title, 
           slug: section.slug
         }
       ))
     
-    // // console.log(values, subLinkValue, subSectionValue)
+    // // console.log(values, subLinkValue, subTOCValue)
 
 
     // let thumbnail = post.thumbnail
@@ -172,27 +173,23 @@ export default function EditPostContent({post, tagsData}: any) {
       // thumbnail: values.thumbnail, 
       isSidebar: values.isSidebar, 
       isPinned: values.isPinned, 
-      sections: subSectionValue, 
+      toc: subTOCValue, 
       links: subLinkValue, 
       postedOn: new Date(values.postedOn), 
       // author: values.author, 
       postStatus: values.postStatus, 
       lastUpdatedOn: new Date() 
     }).eq('id', post.id)
-    // supabaseStatus && !toast.isActive(toastID) &&
-    //   toast({
-    //       id: toastID,
-    //       title: `${supabaseStatus === 204 ? "Post Edited 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-    //       description: `${supabaseStatus === 204 ? `You have successfully edited ${values.title}!` : supabaseStatus === 23505 ?  "The chosen slug is already being used with another post, please try a new slug!" : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-    //       status: `${supabaseStatus === 204 ? "success" : "error"}`,
-    //       duration: 9000,
-    //       isClosable: true,
-    //   })
-    //   actions.setSubmitting(false)
+    supabaseStatus && notifications.show({ 
+        title: `${supabaseStatus === 204 ? "Post Edited 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+        message:`${supabaseStatus === 204 ? `You have successfully edited ${values.title}!` : supabaseStatus === 23505 ?  "The chosen slug is already being used with another post, please try a new slug!" : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+        color: supabaseStatus === 204 ? "black" : "red",
+        icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+    })
   }
-  const initialSectionValues = new Array()
-    post.sections && post.sections.forEach((section: any) => {
-        initialSectionValues.push(
+  const initialTOCValues = new Array()
+    post.toc && post.toc.forEach((section: any) => {
+        initialTOCValues.push(
             { 
                 key: randomId(),
                 title: section.title, 
@@ -226,10 +223,10 @@ export default function EditPostContent({post, tagsData}: any) {
         excerpt: post.excerpt,
         category: post.category,
         tags: post.tags,
-        // isSidebarOption: post.isSidebar,
+        // isTOCOption: post.isSidebar,
         // pinned: post.isPinned,
         // sections: post.sections,
-        sectionsRow: initialSectionValues,
+        tocRow: initialTOCValues,
         linksRow: initialLinksValues,
         postedOn: new Date(post.postedOn),
         postStatus: post.postStatus,
@@ -273,11 +270,11 @@ export default function EditPostContent({post, tagsData}: any) {
       {value: "general", label: "General"},
     )
 
-    // const sectionFields = form.getValues().sectionsRow?.map((item: any, index: any) => (
+    // const tocFields = form.getValues().tocRow?.map((item: any, index: any) => (
     //     <Grid key={item.key} gutter="2rem">
-    //         <Grid.Col span={5.5}><FormInput inputID={`sectionsRow.${index}.title`} {...form.getInputProps(`sectionsRow.${index}.title`)} key={form.key(`sections.${index}.title`)} /></Grid.Col>
-    //         <Grid.Col span={5.5}><FormInput inputID={`sectionsRow.${index}.slug`} {...form.getInputProps(`sectionsRow.${index}.slug`)} key={form.key(`sections.${index}.slug`)} /></Grid.Col>
-    //         <Grid.Col span={1}><ActionIcon color="red" onClick={() => form.removeListItem('sectionsRow', index)}>
+    //         <Grid.Col span={5.5}><FormInput inputID={`tocRow.${index}.title`} {...form.getInputProps(`tocRow.${index}.title`)} key={form.key(`sections.${index}.title`)} /></Grid.Col>
+    //         <Grid.Col span={5.5}><FormInput inputID={`tocRow.${index}.slug`} {...form.getInputProps(`tocRow.${index}.slug`)} key={form.key(`sections.${index}.slug`)} /></Grid.Col>
+    //         <Grid.Col span={1}><ActionIcon color="red" onClick={() => form.removeListItem('tocRow', index)}>
     //             <Delete02Icon size="1rem" />
     //         </ActionIcon></Grid.Col>
     //     </Grid>
@@ -288,10 +285,10 @@ export default function EditPostContent({post, tagsData}: any) {
 
 //     key={form.key(`sections.${index}.title`)}
 // key={form.key(`sections.${index}.slug`)} 
-    // const [state, handlers] = useListState(form.values.sectionsRow)
+    // const [state, handlers] = useListState(form.values.tocRow)
     // // console.log(state)
 
-    const sectionFields = form.values.sectionsRow.map((item: any, index: any) => (
+    const tocFields = form.values.tocRow.map((item: any, index: any) => (
       <Draggable key={item.key} index={index} draggableId={item.key}>
         {(provided) => (
           <Grid gutter="2rem"
@@ -301,9 +298,9 @@ export default function EditPostContent({post, tagsData}: any) {
              <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
               <DragDropIcon />
             </Box></Grid.Col>
-            <Grid.Col span={5.25}><FormInput inputID={`sectionsRow.${index}.title`} {...form.getInputProps(`sectionsRow.${index}.title`)} key={form.key(`sections.${index}.title`)} /></Grid.Col>
-            <Grid.Col span={5.25}><FormInput inputID={`sectionsRow.${index}.slug`} {...form.getInputProps(`sectionsRow.${index}.slug`)} key={form.key(`sections.${index}.slug`)}  /></Grid.Col>
-            <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('sectionsRow', index)}>
+            <Grid.Col span={5.25}><FormInput inputID={`tocRow.${index}.title`} {...form.getInputProps(`tocRow.${index}.title`)} key={form.key(`sections.${index}.title`)} /></Grid.Col>
+            <Grid.Col span={5.25}><FormInput inputID={`tocRow.${index}.slug`} {...form.getInputProps(`tocRow.${index}.slug`)} key={form.key(`sections.${index}.slug`)}  /></Grid.Col>
+            <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('tocRow', index)}>
             <Delete02Icon size="1rem" />
             </ActionIcon></Grid.Col>
           </Grid>
@@ -397,7 +394,6 @@ export default function EditPostContent({post, tagsData}: any) {
             <Button leftSection={<Delete03Icon />} color="red" variant="filled" size="lg" classNames={{root: buttonClasses.primaryButton}}>Delete Blog Post</Button>
           </Group>
           <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
-            {/* {...form.getInputProps('ID')} */}
             <FormInput inputID="title" inputLabel="Title" {...form.getInputProps('title')} inputDescription="The title of the blog post so the users will now at a glance what the blog article will be about." isRequired />
             <FormInput inputID="headingText" inputLabel="Heading Text"  {...form.getInputProps('headingText')} inputDescription="This heading will display after the meta information and before the article. This will describe what the article will be about in a one line sentence." />
             <FormTextArea inputID="body" inputLabel="Body (MDX Enabled)" textRows={10} {...form.getInputProps('body')} helperText="Please note that this section is equipped with the ability to write in the Mark Down language. Please refer to this MDX (COMING SOON) for more information." />
@@ -407,44 +403,44 @@ export default function EditPostContent({post, tagsData}: any) {
               <FormTags searchValues={tagsData} {...form.getInputProps('tags')} />
             </SimpleGrid>
             <FormSwitch 
-                inputID="isSidebar" 
-                helperText="Toggle on if this post has a sidebar"
-                {...form.getInputProps('isSidebar')}
-                onClick={(e: any) => setIsSidebarOption(e.target.checked)} 
-                checked={isSidebarOption}
+                inputID="isTOCOption" 
+                helperText="Toggle on if this post has Table of Contents"
+                {...form.getInputProps('isTOCOption')}
+                onClick={(e: any) => setIsTOOption(e.target.checked)} 
+                checked={isTOCOption}
             />
-             {isSidebarOption && (<>
+             {isTOCOption && (<>
               <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                <SectionTitle headingTitle="Sidebar Sections" />
-                {sectionFields.length > 0 ? (
+                <SectionTitle headingTitle="Table of Contents" />
+                {tocFields.length > 0 ? (
                   <Grid my="0">
                     <Grid.Col span={0.5}><></></Grid.Col>
-                    <Grid.Col span={5.25} ta="center"><Text>Section Title</Text></Grid.Col>
-                    <Grid.Col span={5.25} ta="center"><Text>Section Slug</Text></Grid.Col>
+                    <Grid.Col span={5.25} ta="center"><Text>Table of Contents Title</Text></Grid.Col>
+                    <Grid.Col span={5.25} ta="center"><Text>Table of Contents Slug</Text></Grid.Col>
                     <Grid.Col span={0.5}><></></Grid.Col>
                   </Grid>
-                ) : <Text ta="center" my="0">There is Currently No Sections! You can add one though!</Text>}
+                ) : <Text ta="center" my="0">There is Currently No Sections In The Table of Contents! You can add one though!</Text>}
 
                 <DragDropContext
-                  onDragEnd={({ destination, source }) =>
-                    destination?.index !== undefined && form.reorderListItem('sectionsRow', { from: source.index, to: destination.index })
+                  onDragEnd={({ destination, source }: any) =>
+                    destination?.index !== undefined && form.reorderListItem('tocRow', { from: source.index, to: destination.index })
                   }
                 >
-                  <Droppable droppableId="sectionsDnD" direction="vertical">
-                    {(provided) => (
+                  <Droppable droppableId="tocDnD" direction="vertical">
+                    {(provided: any) => (
                       <Box {...provided.droppableProps} ref={provided.innerRef}>
-                        {sectionFields}
+                        {tocFields}
                         {provided.placeholder}
                       </Box>
                     )}
                   </Droppable>
                 </DragDropContext>
 
-                <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('sectionsRow', { 
+                <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('tocRow', { 
                   key: randomId(),
                   title: null, 
                   slug: null,
-                })}>Add More Section(s)</FormButton>
+                })}>Add More Section(s) In The Table of Contents</FormButton>
               </Stack>
              </>)}
             
@@ -458,7 +454,7 @@ export default function EditPostContent({post, tagsData}: any) {
              {isLinksOption && (<>
               <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
                 <SectionTitle headingTitle="Links" />
-                {sectionFields.length > 0 ? (
+                {tocFields.length > 0 ? (
                   <Grid my="0">
                     <Grid.Col span={0.5}><></></Grid.Col>
                     <Grid.Col span={2.75} ta="center"><Text>Link Type</Text></Grid.Col>

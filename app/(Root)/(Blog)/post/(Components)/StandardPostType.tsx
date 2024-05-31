@@ -18,14 +18,11 @@ import {
     useMantineTheme
 } from '@mantine/core'
 
-import { PostCard } from '../PostCard'
-import { TagsCard } from '../TagsCard'
-import { SidebarCard } from '../SidebarCard'
-import PostContent from '../PostContent'
-import DisplayDate from '@/lib/DisplayDate'
+import { SidebarCard } from '../(Components)/SidebarCard'
+import PostContent from '../(Components)/PostContent'
 import { ArrowLeft02Icon, Calendar03Icon, ContactIcon, Folder01Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
-import { useMediaQuery } from '@mantine/hooks'
+import DisplayDate from '@/lib/DisplayDate'
 
 // const meta = keyframes `
 //     0% {
@@ -115,7 +112,7 @@ export const StandardPostType = ({post, mdxSource}: any) => {
         <Box component="article" id="post">
         {/* <PostCard> */}
             <Title order={2} fz="2.5rem" fw="300" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}} m="0">{post.headingText}</Title>
-            {post.isSidebar === true ?
+            {post.toc.length > 0 ?
             (<SidebarCard post={post} mdxSource={mdxSource}/>) 
             : (<PostContent mdxSource={mdxSource} />)}
         </Box>

@@ -71,7 +71,7 @@ export default function HomeHeroSection({aboutMe}: any) {
         <PrimaryLinkedButton link="/portfolio/resume" icon={<PassportIcon />}>Resume</PrimaryLinkedButton>
         <PrimaryLinkedButton link="#links" icon={<Link04Icon />}>Links</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/contact" icon={<Chatting01Icon />}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="#" icon={<JobSearchIcon />}>Hire Me!</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/contact" icon={<JobSearchIcon />}>Hire Me!</PrimaryLinkedButton>
       </Group>
     </Stack>
   </Box>
