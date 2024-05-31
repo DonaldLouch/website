@@ -59,14 +59,14 @@ export default function FooterContent({isLoggedIn}: any){
         align="baseline"
         justify="space-between"
         w="100%"
-        styles={{root: {boxShadow: "var(--mantine-shadow-bsSMPrimary)"}}}
+        styles={{root: {boxShadow: "var(--mantine-shadow-bsBoldPrimary)"}}}
         pos="relative"
-        bg="black"
+        bg="var(--darkPurple)"
       >
       <Stack gap="0">
         <Anchor href="/">
           <Image
-            src="/titleLogoWhite.svg"
+            src="/titleLogoPride.svg"
             alt="Donald Louch"
             w={{base: "60vw", lg: "20vw !important"}}
             height="auto"

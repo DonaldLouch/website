@@ -127,9 +127,9 @@ const unorderedList = (props: any) => {
     props.children.forEach((item: any) => {
         item != "\n" && listArray.push(item)
     })
-    return <List withPadding spacing="0" fw="300" type="unordered" icon={<HandPointingRight01Icon variant="duotone" color="var(--secondary)" />}>
+    return <List withPadding fw="300" type="unordered" icon={<HandPointingRight01Icon variant="duotone" color="var(--secondary)" />} styles={{itemWrapper: {alignItems: "flex-start"}}}>
         {listArray.map((item: any, index: number) => {
-            return <List.Item key={index}>{item.props.children}</List.Item>
+            return <List.Item key={index} m="1rem">{item.props.children}</List.Item>
         })}
     </List>
 }
@@ -139,9 +139,9 @@ const orderedList = (props: any) => {
     props.children.forEach((item: any) => {
         item != "\n" && listArray.push(item)
     })
-    return <List withPadding spacing="0" fw="300" type="ordered">
+    return <List withPadding spacing="0" fw="300" type="ordered" center={false}>
         {listArray.map((item: any, index: number) => {
-            return <List.Item key={index}>{item.props.children}</List.Item>
+            return <List.Item key={index} m="1rem">{item.props.children}</List.Item>
         })}
     </List>
 }
