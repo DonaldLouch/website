@@ -15,7 +15,8 @@ import {
     Stack,
     Group,
     Badge,
-    useMantineTheme
+    useMantineTheme,
+    Tooltip
 } from '@mantine/core'
 
 import { SidebarCard } from '../(Components)/SidebarCard'
@@ -66,34 +67,37 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                         </AspectRatio>               
                         <Flex direction="column" align={{base: "center", lg: "flex-start"}}>
                             <Stack gap="0">
+                                <Tooltip label={post.title}>
                                 <Title
                                     order={1}
                                     style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
                                     fz="3rem"
                                     td="underline 0.4rem var(--primary)"
+                                    lineClamp={1}
                                 >
                                     {post.title}
                                 </Title>
+                                </Tooltip>
                                 <Text fz="1.3rem">
                                     {post.excerpt}
                                 </Text>
                             </Stack>
-                            <Stack gap="1rem" m="0">
+                            <Stack gap="1rem" m="1rem 0">
                                 <Group>
                                     {isLoggedIn &&
-                                        <Anchor href={`/admin/postEdit/${post.slug}`}><Badge color="white" leftSection={<Edit02Icon />}>
+                                        <Anchor href={`/admin/postEdit/${post.slug}`} m="0"><Badge color="white" leftSection={<Edit02Icon />}>
                                             Edit Post
                                         </Badge></Anchor>
                                     }
-                                    <Anchor href="/"><Badge color="primary" leftSection={<ContactIcon />}>
+                                    <Anchor href="/" m="0"><Badge color="primary" leftSection={<ContactIcon />}>
                                         {post.author}
                                     </Badge></Anchor>
-                                    <Badge color="red" leftSection={<Calendar03Icon />}>
+                                    <Badge color="red" leftSection={<Calendar03Icon />} m="0">
                                         <DisplayDate source={post.postedOn} />
                                     </Badge>
                                     <Group>
                                         {post.category.map((category: any) => (
-                                            <Anchor key={category} href={`/blog/C/${category}`}><Badge color="blue" leftSection={<Folder01Icon />}>
+                                            <Anchor key={category} href={`/blog/C/${category}`} m="0"><Badge color="blue" leftSection={<Folder01Icon />}>
                                                 {category}
                                             </Badge></Anchor>
                                         ))}
@@ -115,7 +119,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                             </Stack>
                         </Flex>
                     </Flex>
-                    <Group gap="1rem" m="1rem" mah="30vh" style={{overflow: "scroll"}}>
+                    <Group gap="1rem" m="1rem" mah="20vh" style={{overflow: "scroll"}}>
                         <TagsIcon />
                         {post.tags.map((tag: any) => (
                             <Anchor key={tag} href={`/blog/T/${tag}`} m="0"><Badge color="white" leftSection={<Tag01Icon />}>
