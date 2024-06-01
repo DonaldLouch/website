@@ -19,7 +19,7 @@ export default function HomePageLayout({aboutMe, primaryLinksData, linksData, ph
   ] as any
   return (<>
       <HomeHeroSection aboutMe={aboutMe} />
-      <Space h="90vh" />
+      <Space h="calc(90vh + 1rem)" />
       <Box component="main">
           <Title order={2} fz="3rem" fw="300" ta="center" mt="2rem">Donald Louch's Stats</Title>
           <Box my="2rem">
