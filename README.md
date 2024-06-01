@@ -19,21 +19,20 @@ Even though I'm still optimizing and constructing features, I feel as, my websit
 - [TypeScript](https://www.typescriptlang.org/): JavaScript Syntax
 - [NextJS App Router](https://nextjs.org/): Website Framework
 - [Vercel](https://vercel.com/): Hosting Platform
-- [Chakra UI](https://chakra-ui.com): CSS Framework
-- [Font Awesome / Font Awesome 6](https://fontawesome.com): Icons
-- [Clerk *UPDATED*](https://clerk.com/): Auth Provider
-- [Supabase *UPDATED*](https://supabase.com/): Postgresql Provider
-- [Cloudinary](cloudinary.com): Image Storage
+- [Mantine *UPDATED*](https://mantine.dev): CSS Framework
+- [Hugeicons *UPDATED*](https://hugeicons.com): Icons
+- [Clerk](https://clerk.com/): Auth Provider
+- [Supabase](https://supabase.com/): Postgresql Provider
+- [Backblaze B2 *UPDATED*](https://www.backblaze.com/): Image Storage
 - [MDX](https://mdxjs.com/): Markdown Blog Posts
-- [Formik](https://github.com/jaredpalmer/formik): Form Provider
 - [yup](https://github.com/jquense/yup): Form Validation
-- [Fontsource](https://fontsource.org/): Font Provider 
 
 ## Support The Production of Donald Louch
 
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
 ## Change Log
+- [Version 29.06.01: Overhauled UI, improvements to the Feeds, restructuring of the Blog content, and changes to my About Me and Home Pages.](https://github.com/DonaldLouch/website/releases/tag/version290601)
 - [Version 28.07.08: Upgraded Website Infrastructures, Updated User Interface (UI), Bug Fixes and More](https://github.com/DonaldLouch/website/releases/tag/version280708)
 - [Version 28.06.01: Happy Pride Month!, Visual Updates, and more](https://github.com/DonaldLouch/website/releases/tag/version280601)
 - [Version 28.03.18: Visual Updates, Sticky Bars, Bug Fixes, Backend Portal Updates, and more](https://github.com/DonaldLouch/website/releases/tag/version280318)
