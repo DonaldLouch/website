@@ -10,7 +10,7 @@ import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
 
 export default function FeedHome({photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount}: any) {
     return <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
-        <Box bg="var(--prideGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
+        <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
             <Box w="100vw" h="100vh">
                 <Image src="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LO3NHZ0Zy76ZCIifx.jpg" alt="Blog Feed Hero Image" w="100vw" h="100vh"/>
             </Box>

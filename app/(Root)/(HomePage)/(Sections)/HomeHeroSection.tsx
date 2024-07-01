@@ -9,7 +9,7 @@ export default function HomeHeroSection({aboutMe}: any) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
-    <Box bg="var(--prideGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
+    <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
     <Box h="100%" w="100vw" visibleFrom="sm">
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
     </Box>

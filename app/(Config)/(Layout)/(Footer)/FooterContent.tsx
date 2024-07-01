@@ -66,7 +66,7 @@ export default function FooterContent({isLoggedIn}: any){
       <Stack gap="0">
         <Anchor href="/">
           <Image
-            src="/titleLogoPride.svg"
+            src="/titleLogo.svg"
             alt="Donald Louch"
             w={{base: "60vw", lg: "20vw !important"}}
             height="auto"

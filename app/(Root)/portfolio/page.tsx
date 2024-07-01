@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Donald Louch's Portfolio",
     description: process.env.NEXT_PUBLIC_DESCRIPTION,
     keywords: `${process.env.NEXT_PUBLIC_KEYWORDS}, portfolio, Donald Louch, donald, louch, web production, photography, videography, graphic design, audio, written work`,
-    // manifest: "/faviconPride/site.webmanifest",
+    // manifest: "/favicon/site.webmanifest",
     openGraph: {
         type: "website",
         url: process.env.NEXT_PUBLIC_SITE_URL,

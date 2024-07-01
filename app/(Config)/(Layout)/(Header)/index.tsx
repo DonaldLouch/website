@@ -40,7 +40,7 @@ export default function Header() {
         {/* <Group align="center" w="100%" justify="space-between" px={{ base: "5rem", lg: "inherit" }} > */}
           <Anchor href="/" m="0" p="0">
             <Image
-              src="/titleLogoPride.svg"
+              src="/titleLogoWhite.svg"
               alt="Donald Louch"
               w={{ base: "30vw", lg: "12vw" }}
             />

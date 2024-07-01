@@ -49,7 +49,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <Group gap="1rem" mx="auto" justify="space-between" h="auto">
                 <Anchor href="/" m="0" p="0">
                     <Image
-                        src="/titleLogoPride.svg"
+                        src="/titleLogoWhite.svg"
                         alt="Donald Louch"
                         w={{ base: "30vw", lg: "12vw" }}
                     />

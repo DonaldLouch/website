@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     creator: "Donald Louch",
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
     icons:  [
-        { rel: "icon", sizes: "32x32", type: "image.png", url: "/faviconPride/favicon-32x32.png" }, 
-        { rel: "icon", sizes: "192x192", type: "image.png", url: "/faviconPride/favicon-192x192.png" }, 
-        { rel: "icon", sizes: "16x16", type: "image.png", url: "/faviconPride/favicon-16x16.png" }, 
-        { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/faviconPride/apple-touch-icon.png" },
+        { rel: "icon", sizes: "32x32", type: "image.png", url: "/favicon/favicon-32x32.png" }, 
+        { rel: "icon", sizes: "192x192", type: "image.png", url: "/favicon/favicon-192x192.png" }, 
+        { rel: "icon", sizes: "16x16", type: "image.png", url: "/favicon/favicon-16x16.png" }, 
+        { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/favicon/apple-touch-icon.png" },
     ],
     openGraph: {
         type: "website",

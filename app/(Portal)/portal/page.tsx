@@ -4,6 +4,8 @@ import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "
 import { OrganizationList, OrganizationProfile, OrganizationSwitcher, UserProfile, useSession, useUser } from "@clerk/nextjs";
 ;
 import HouseIcon from "../../(Components)/(Vectors)/house";
+import { Cone01Icon } from "@hugeicons/react";
+import { Box } from "@mantine/core";
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -24,20 +26,19 @@ export default function PortalHome() {
   return (
     <>
       <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="4xl" textDecoration="underline" fontWeight="900" mb="1rem">Welcome!</Heading></CardHeader>
+        <CardHeader><Heading textAlign="center" size="4xl" textDecoration="underline" fontWeight="900" mb="1rem"><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor"/></Box>UNDER CONSTRUCTION!</Heading></CardHeader>
         <CardBody>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Welcome to the Donald Louch Website</Text>
-          <Text textAlign="center">{process.env.NEXT_PUBLIC_DESCRIPTION}</Text>
+          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
           {/* <Text textAlign="center">Hi, my name is Donald Louch and I am a twenty-nine-year-old Canadian web developer and digital content creator.</Text> */}
         </CardBody>
       </Card>
-      <Card px="1rem" mt="0">
+      {/* <Card px="1rem" mt="0">
         <CardHeader><Heading textAlign="center" size="3xl" textDecoration="underline" fontWeight="900" mb="1rem">Quick Actions!</Heading></CardHeader>
         <CardBody>
           <Stack direction="row" justifyContent="center">
           </Stack>
         </CardBody>
-      </Card>
+      </Card> */}
     </>
   )
 }
