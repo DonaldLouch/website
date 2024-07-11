@@ -30,7 +30,7 @@ import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
         </>}
       ></Protect> */}
 
-export default function PortalLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
+export default function PortalLayoutContext({ children, isAdmin, userID }: { children: React.ReactNode, isAdmin: any, userID: any }) {  
   const path = usePathname()
     const [windowHeight, setWindowHeight] = useState() as any
     const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
@@ -80,7 +80,7 @@ export default function PortalLayoutContext({ children, isAdmin }: { children: R
             >
               <Center h="100vh">
               <Stack m="2rem">
-                <Text mb="2rem" ta="center" fz="1.5rem">It appears that you are not Donald Louch and thus, can't login to the website admin dashboard! Donald may implement a user portal at one point or another?!</Text>
+                <Text mb="2rem" ta="center" fz="1.5rem">{userID} It appears that you are not Donald Louch and thus, can't login to the website admin dashboard! Donald may implement a user portal at one point or another?!</Text>
                 <Group justify="center"> 
                   {user.isSignedIn && <Button
                     onClick={() => signOut(() => router.push("/"))}

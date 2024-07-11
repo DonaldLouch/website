@@ -22,5 +22,5 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     // // console.log(isAdmin, userId)
 
     // auth().protect()
-    return <PortalLayoutContext isAdmin={isAdmin}>{children}</PortalLayoutContext>
+    return <PortalLayoutContext isAdmin={isAdmin} userID={userId ? userId : "none"}>{children}</PortalLayoutContext>
 }
