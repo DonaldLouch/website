@@ -14,13 +14,14 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     // { role: "org:administration:admin" }
     // auth().protect({ role: 'org:admin' })
     const { orgRole, orgId, userId, has } = auth()
+
     // const isAdmin = has({ permission:"org:portal:access" }) && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID
-    const isAdmin = false
+    const isUser = userId ? true : false
     // if(!canManage) return <OrganizationSwitcher />;
     // const isAdmin = orgRole == "admin" && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID ? true : false
     // userId && isAdmin && auth().protect().has({ role: 'admin' })
     // // console.log(isAdmin, userId)
 
     // auth().protect()
-    return <PortalLayoutContext isAdmin={isAdmin}>{children}</PortalLayoutContext>
+    return <PortalLayoutContext isUser={isUser}>{children}</PortalLayoutContext>
 }

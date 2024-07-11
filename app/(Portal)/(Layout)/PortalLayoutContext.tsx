@@ -30,7 +30,7 @@ import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
         </>}
       ></Protect> */}
 
-export default function PortalLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
+export default function PortalLayoutContext({ children, isUser }: { children: React.ReactNode, isUser: any }) {  
   const path = usePathname()
     const [windowHeight, setWindowHeight] = useState() as any
     const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
@@ -71,7 +71,7 @@ export default function PortalLayoutContext({ children, isAdmin }: { children: R
           // w={{base: "100%", lg: "calc(100% + 6rem)"}}
           // mx={{base: "0", lg: "-3rem"}}
         >
-          {!isAdmin ? (
+          {!isUser ? (
             <Box
               px={{base: "1rem", lg: "5rem"}}  
               style={{overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", background: "var(--darkPurpleRGBA)"}} 
