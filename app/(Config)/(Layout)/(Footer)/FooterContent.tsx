@@ -18,7 +18,7 @@ import { Anchor, Group, Stack, Image, Text, Box } from "@mantine/core";
 import { Facebook02Icon, GithubIcon, InstagramIcon, ThreadsIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
 
 
-export default function FooterContent({isLoggedIn}: any){
+export default function FooterContent(){
   const footerLinks = [
     {
       linkURL: "https://facebook.com/DonaldLouchProductions",
@@ -79,7 +79,6 @@ export default function FooterContent({isLoggedIn}: any){
           <FooterIcon key={link.socialMedia} linkURL={link.linkURL} socialMedia={link.socialMedia} linkIcon={link.linkIcon} />
         ))}
       </Group>
-      <Box pos="absolute" top="5%" right="1%" opacity="0.02" fz="sm">{isLoggedIn ? <UserButton /> : <SignInButton mode="modal"/>}</Box> 
     </Group>
   );
 }

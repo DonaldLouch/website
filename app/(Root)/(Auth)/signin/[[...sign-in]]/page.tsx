@@ -1,30 +1,17 @@
 'use client'
-import { Box, Stack, keyframes, usePrefersReducedMotion } from "@chakra-ui/react";
+import { Box, Stack } from "@mantine/core";
 import { SignIn } from "@clerk/nextjs";
 import HomeButton from "../../../../(Components)/(Buttons)/HomeButton";
 
-const spinningGradient = keyframes `
-    0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-`
+export default function Signin() {
+  const imageLink = "https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LWEIJJ2O4srNRK7or.jpeg"
 
-export default function Page() {
-
-    const prefersReducedMotion = usePrefersReducedMotion()
-    const spinningGradientAnimation = prefersReducedMotion
-    ? undefined
-    : `${spinningGradient} infinite 10s`
-
-
-  return (
-    <Box w="100vw" h="100vh" maxW="100vw" maxH="100vh" pos="absolute" top="0" left="0" zIndex="overlay" boxShadow="bsSecondary" bg="white" overflow="hidden !Important">
-        <Box bg='mainGradient' animation={spinningGradientAnimation} w="100vw" h="100%" opacity="0.7" pos="absolute" backgroundSize="150% 150%"></Box>
-        <Box bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpg") #333 40% 40%`} backgroundSize="cover" h="100%" w="100vw"></Box>
-      <Stack alignItems="center" justifyContent="center" w="100%" h="100vh" zIndex="tooltip" position="absolute" top="0" left="0">
-        <HomeButton />
-        <SignIn redirectUrl={"/portal"} />
-      </Stack>
-      </Box>
-  )
+  return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflow: "hidden !Important"}} bg="var(--blurredBackground)">
+    <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.7" pos="absolute" bgsz="150% 150%"></Box>
+    <Box bg={`no-repeat url(${imageLink ? imageLink : "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} bgsz="cover" h="100%" w="100vw"></Box>
+    <Stack id="hero" pos="absolute" top="0" left="0" align="center" justify="center" w="100%" h="100%" px={{base: "0", md: "2rem", lg: "3rem", xl: "5rem"}} style={{overflow: "hidden"}}>
+      <HomeButton />
+      <SignIn />
+    </Stack>  
+  </Box>
 }
