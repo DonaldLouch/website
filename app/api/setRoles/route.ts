@@ -1,5 +1,7 @@
 // "use server";
 
+import { NextResponse } from "next/server";
+
 // import { checkRole } from "@/lib/roles";
 // import { clerkClient } from "@clerk/nextjs/server";
 
@@ -21,3 +23,6 @@
 //     return { message: err };
 //   }
 // }
+export async function POST(request: Request) {
+  return NextResponse.json({ status: 200 });
+}
