@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import LoadingComponent from '@/app/(Config)/ContentLoading'
 import { Suspense, useEffect, useState } from 'react'
-import { OrganizationList, OrganizationSwitcher, Protect, SignOutButton, UserButton, useClerk, useOrganizationList, useSession, useUser } from '@clerk/nextjs'
+import { UserButton, useClerk, useUser } from '@clerk/nextjs'
 
 import { shadesOfPurple } from '@clerk/themes';
 import { useDisclosure, useHeadroom } from '@mantine/hooks'
@@ -19,16 +19,6 @@ import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButto
 import { Home01Icon, Logout01Icon } from '@hugeicons/react'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-
-{/* <Protect
-        // permission="org:invoices:create"
-        fallback={<>
-          <Stack m="2rem">
-            <Text mb="2rem" textAlign="center" fontSize="1.5rem">It appears that you are not Donald Louch and thus, can't login to the website portal! Donald may implement a user portal at one point or another?!</Text>
-            <Button variant="blackFormButton" as="a" href="/">Go Home!</Button>
-          </Stack>
-        </>}
-      ></Protect> */}
 
 export default function PortalLayoutContext({ children, isUser }: { children: React.ReactNode, isUser: any }) {  
   const path = usePathname()
@@ -94,16 +84,6 @@ export default function PortalLayoutContext({ children, isUser }: { children: Re
                     Sign Out and Go Home!
                   </Button>}
                   <PrimaryLinkedButton link="/" icon={<Home01Icon />}>Go Home</PrimaryLinkedButton>
-                  <OrganizationSwitcher 
-                    appearance={{
-                      elements: {
-                        rootBox: { background: "rgba(48,36,60,0.7)", padding: "0.5rem", borderRadius: "0 0.5rem" },
-                        organizationSwitcherTrigger: { color: "#EDEDED" },
-                      },
-                    }}
-                    // hidePersonal
-                    organizationProfileMode='modal'
-                  />
                 </Group>
                 {/* <UserButton afterSignOutUrl="/"/>  */}
               </Stack>
@@ -135,19 +115,7 @@ export default function PortalLayoutContext({ children, isUser }: { children: Re
                             />
                         </Anchor>
                         <Group>
-                          <OrganizationSwitcher 
-                              appearance={{
-                                  elements: {
-                                      rootBox: { background: "rgba(48,36,60,0.7)", padding: "0.5rem", borderRadius: "0 0.5rem" },
-                                      organizationSwitcherTrigger: { color: "#EDEDED" },
-                                  },
-                              }}
-                              hidePersonal
-                              organizationProfileMode='modal'
-                          />
-                          
-                          {/* <OrganizationSwitcher organizationProfileMode='modal' hidePersonal /> */}
-                          <UserButton afterSignOutUrl="/" />
+                          <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>
                     </Group>

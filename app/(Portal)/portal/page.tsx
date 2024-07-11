@@ -1,8 +1,6 @@
 'use client'
 
 import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
-import { OrganizationList, OrganizationProfile, OrganizationSwitcher, UserProfile, useSession, useUser } from "@clerk/nextjs";
-;
 import HouseIcon from "../../(Components)/(Vectors)/house";
 import { Cone01Icon } from "@hugeicons/react";
 import { Box } from "@mantine/core";

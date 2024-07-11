@@ -7,7 +7,7 @@ import {
   Stack,
   Text
 } from '@chakra-ui/react'
-import { OrganizationSwitcher, UserButton, useUser } from '@clerk/nextjs'
+import { UserButton, useUser } from '@clerk/nextjs'
 
 
 import { BsList } from 'react-icons/bs'
@@ -46,19 +46,8 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
                     <BsList/>
                 }
             />
-            <OrganizationSwitcher 
-                appearance={{
-                    elements: {
-                        rootBox: { background: "rgba(48,36,60,0.7)", padding: "0.5rem", borderRadius: "0 0.5rem" },
-                        organizationSwitcherTrigger: { color: "#EDEDED" },
-                    },
-                }}
-                hidePersonal
-                organizationProfileMode='modal'
-            />
             
-            {/* <OrganizationSwitcher organizationProfileMode='modal' hidePersonal /> */}
-            <UserButton afterSignOutUrl="/" />
+            <UserButton />
             {/* <Stack alignItems="center" direction="row">
                 <Text fontWeight="700">{user?.fullName}</Text>
                 <UserButton afterSignOutUrl="/"/>
