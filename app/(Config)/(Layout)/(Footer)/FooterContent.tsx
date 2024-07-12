@@ -13,12 +13,14 @@
 
 import { FooterIcon } from "./FooterIcon";
 import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
-import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignInButton, SignedOut, UserButton, useAuth, useSession } from "@clerk/nextjs";
 import { Anchor, Group, Stack, Image, Text, Box } from "@mantine/core";
-import { Facebook02Icon, GithubIcon, InstagramIcon, ThreadsIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
+import { DashboardSpeed02Icon, Facebook02Icon, GithubIcon, InstagramIcon, Login01Icon, ThreadsIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
+import { checkRole } from "@/lib/roles";
 
 
 export default function FooterContent(){
+  const { isSignedIn } = useAuth()
   const footerLinks = [
     {
       linkURL: "https://facebook.com/DonaldLouchProductions",
@@ -50,6 +52,11 @@ export default function FooterContent(){
       socialMedia: "GitHub",
       linkIcon: <GithubIcon />,
     },
+    {
+      linkURL: !isSignedIn ? "/signin" : "/portal",
+      socialMedia: !isSignedIn ? "Signin/Signup" : "Portal",
+      linkIcon: !isSignedIn ? <Login01Icon /> : <DashboardSpeed02Icon />,
+    },
   ]
   return (
       <Group
@@ -66,7 +73,7 @@ export default function FooterContent(){
       <Stack gap="0">
         <Anchor href="/">
           <Image
-            src="/titleLogo.svg"
+            src="/titleLogoWhite.svg"
             alt="Donald Louch"
             w={{base: "60vw", lg: "20vw !important"}}
             height="auto"

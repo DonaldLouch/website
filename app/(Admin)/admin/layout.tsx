@@ -1,10 +1,10 @@
 // import { SignedOut, auth, useSession } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
-import PortalLayoutContext from "../(Layout)/PortalLayoutContext";
+import AdminLayoutContext from "../(Layout)/AdminLayoutContext";
 
 import { checkRole } from "@/lib/roles";
 
-export default function PortalLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
     // const userData = useSession()
     // const orgRole = auth();
     // // console.log("Org", orgRole.orgPermissions)
@@ -23,5 +23,5 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     // // console.log(isAdmin, userId)
 
     // auth().protect()
-    return <PortalLayoutContext isAdmin={isAdmin}>{children}</PortalLayoutContext>
+    return <AdminLayoutContext isAdmin={isAdmin}>{children}</AdminLayoutContext>
 }

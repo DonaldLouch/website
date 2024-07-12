@@ -16,11 +16,11 @@ import PortalNavigationItem from './PortalNavigationItem'
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import HeaderNavigationItem from '@/app/(Config)/(Layout)/(Header)/HeaderNavigationItem'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
-import { Home01Icon, Logout01Icon } from '@hugeicons/react'
+import { DashboardBrowsingIcon, Home01Icon, Logout01Icon } from '@hugeicons/react'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 
-export default function PortalLayoutContext({ children, isUser }: { children: React.ReactNode, isUser: any }) {  
+export default function PortalLayoutContext({ children, isUser, isAdmin }: { children: React.ReactNode, isUser: any, isAdmin: any }) {  
   const path = usePathname()
     const [windowHeight, setWindowHeight] = useState() as any
     const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
@@ -115,6 +115,7 @@ export default function PortalLayoutContext({ children, isUser }: { children: Re
                             />
                         </Anchor>
                         <Group>
+                          {isAdmin && <PrimaryLinkedButton link="/admin" icon={<DashboardBrowsingIcon />}>Admin Dashboard</PrimaryLinkedButton>}
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>

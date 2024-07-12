@@ -29,7 +29,7 @@ interface HeaderNavigationItemProps {
   linkName: string
   icon?: any
 }
-export default function PortalNavigationItem( { slug, isParent, parentID, linkName, icon }: HeaderNavigationItemProps ) {
+export default function AdminNavigationItem( { slug, isParent, parentID, linkName, icon }: HeaderNavigationItemProps ) {
   return (
     <>
       {!isParent ? (

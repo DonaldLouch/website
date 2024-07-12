@@ -1,6 +1,7 @@
 // import { SignedOut, auth, useSession } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import PortalLayoutContext from "../(Layout)/PortalLayoutContext";
+import { checkRole } from "@/lib/roles";
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
     // const userData = useSession()
@@ -16,10 +17,11 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
 
     // const isAdmin = has({ permission:"org:portal:access" }) && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID
     const isUser = userId ? true : false
+    const isAdmin = checkRole("admin") ? true : false
     // const isAdmin = orgRole == "admin" && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID ? true : false
     // userId && isAdmin && auth().protect().has({ role: 'admin' })
     // // console.log(isAdmin, userId)
 
     // auth().protect()
-    return <PortalLayoutContext isUser={isUser}>{children}</PortalLayoutContext>
+    return <PortalLayoutContext isUser={isUser} isAdmin={isAdmin}>{children}</PortalLayoutContext>
 }

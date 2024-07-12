@@ -12,15 +12,15 @@ import { shadesOfPurple } from '@clerk/themes';
 import { useDisclosure, useHeadroom } from '@mantine/hooks'
 import Footer from '@/app/(Config)/(Layout)/(Footer)'
 import { AdminNavigationItems } from '@/lib/AdminNavigationItems'
-import PortalNavigationItem from './PortalNavigationItem'
+import AdminNavigationItem from './AdminNavigationItem'
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import HeaderNavigationItem from '@/app/(Config)/(Layout)/(Header)/HeaderNavigationItem'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
-import { Home01Icon, Logout01Icon } from '@hugeicons/react'
+import { DashboardSpeed02Icon, Home01Icon, Logout01Icon } from '@hugeicons/react'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 
-export default function PortalLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
+export default function AdminLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
   const path = usePathname()
     const [windowHeight, setWindowHeight] = useState() as any
     const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
@@ -104,6 +104,7 @@ export default function PortalLayoutContext({ children, isAdmin }: { children: R
                             />
                         </Anchor>
                         <Group>
+                          <PrimaryLinkedButton link="/portal" icon={<DashboardSpeed02Icon />}>Portal</PrimaryLinkedButton>
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>
@@ -111,7 +112,7 @@ export default function PortalLayoutContext({ children, isAdmin }: { children: R
                 </AppShell.Header>
                 <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--darkPurpleRGBA)", backdropFilter: "blur(20px)", overflow: "scroll"}}}>
                       {AdminNavigationItems.map((link) => (
-                        <PortalNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
+                        <AdminNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
                     ))}
                 </AppShell.Navbar>
                 <AppShell.Main pt={`calc(${rem(80)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}}  styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}} mx="auto">

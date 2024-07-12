@@ -17,7 +17,7 @@ interface PortalHeaderProps extends FlexProps {
 }
 
 
-export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
+export default function AdminHeader({ onOpen, ...rest }: PortalHeaderProps) {
     // const {user} = useUser();
     return (
         <Flex
