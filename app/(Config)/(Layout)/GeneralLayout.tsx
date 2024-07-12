@@ -6,6 +6,7 @@ import Header from "./(Header)"
 import Footer from "./(Footer)"
 import { AppShell, Group, Image, Box, rem, Text, Title } from "@mantine/core"
 import { useHeadroom } from "@mantine/hooks"
+import { useAuth } from "@clerk/nextjs"
 
 export default function GeneralLayout({ children }: { children: React.ReactNode }) {
     const pinned = useHeadroom({ fixedAt: 120 })

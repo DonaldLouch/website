@@ -104,7 +104,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                             />
                         </Anchor>
                         <Group>
-                          <PrimaryLinkedButton link="/portal" icon={<DashboardSpeed02Icon />}>Portal</PrimaryLinkedButton>
+                          <PrimaryLinkedButton link="/portal" icon={<DashboardSpeed02Icon />}>The Client Portal</PrimaryLinkedButton>
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>

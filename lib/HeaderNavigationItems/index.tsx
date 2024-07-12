@@ -1,4 +1,5 @@
-import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, Home01Icon, Link04Icon, NewsIcon } from "@hugeicons/react"
+import { auth } from "@clerk/nextjs/server"
+import { Briefcase02Icon, Chatting01Icon, DashboardSpeed02Icon, DashboardSquare02Icon, Folder01Icon, Home01Icon, Link04Icon, Login01Icon, NewsIcon } from "@hugeicons/react"
 import { BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge } from "react-icons/bs"
 
 interface HeaderNavigationItemsProps {

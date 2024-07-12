@@ -8,6 +8,8 @@ import Footer from "../(Config)/(Layout)/(Footer)";
 import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { DashboardSpeed02Icon, Login01Icon } from "@hugeicons/react";
 
 // import {hugeiconsLicense} from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
@@ -25,6 +27,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const disabled = path.includes("/embed") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
+
+    const { isSignedIn } = useAuth()
 
     // console.log("Layout is disabled?", disabled)
     // const [opened { open, close }] = useDisclosure(false)
@@ -61,6 +65,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             {HeaderNavigationItems.map((link) => (
                 <HeaderNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
             ))}
+            <HeaderNavigationItem key={`nav_portalButton`} slug={!isSignedIn ? './signin' : './portal'} isParent={false} parentID={7} linkName={!isSignedIn ? 'Signin/Signup' : 'The Client Portal'} icon={!isSignedIn ? <Login01Icon /> : <DashboardSpeed02Icon /> } />
         </AppShell.Navbar>
         <AppShell.Main pt={`calc(${rem(70)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}} styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}}>
             {children}
