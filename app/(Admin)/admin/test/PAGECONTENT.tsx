@@ -1,7 +1,8 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Box } from "@chakra-ui/react"
+import { Box } from "@mantine/core"
+
 
 export default function PAGECONTENT() {
   const breadCrumbs = [
@@ -10,7 +11,7 @@ export default function PAGECONTENT() {
   return (
     <>
         <BreadCrumb breads={breadCrumbs} />
-        <Box as="main" id="homeWrapper" color="white">
+        <Box component="main" color="white">
             {/* CONTENT GOES HERE! */}
         </Box>
     </>

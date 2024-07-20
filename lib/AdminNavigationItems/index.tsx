@@ -1,4 +1,4 @@
-import { Album02Icon, CameraVideoIcon, ClipboardIcon, DashboardSpeed02Icon, Home01Icon, InboxIcon, NewsIcon } from "@hugeicons/react";
+import { Album02Icon, AlertDiamondIcon, CameraVideoIcon, ClipboardIcon, DashboardSpeed02Icon, Home01Icon, InboxIcon, NewsIcon } from "@hugeicons/react";
 
 interface AdminNavigationItemsProps {
   name: string;
@@ -73,4 +73,13 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
     parentID: 6,
     levelOfAccess: "0",
   },
+
+  {
+    name: "Alerts Manager",
+    slug: "admin/alerts",
+    icon: <AlertDiamondIcon />,
+    isParent: false,
+    parentID: 7,
+    levelOfAccess: "0",
+  }
 ]

@@ -25,8 +25,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                 backdropFilter: "blur(20px)",
                 borderRadius: "var(--mantine-radius-lg)"
               }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", md: "1.5rem 3rem 2rem"}} gap="0.5rem">
-                <Alert variant="light" color="var(--secondary)" title="The Client Portal" icon={<Cone01Icon variant="twotone" />}>
-                  Please note that the Client Portal is very well much not constructed yet and at this time no functions have been created. The Portal is just being setup and will be released at a later time.
+                <Alert variant="light" color="var(--secondary)" title="Client Portal Coming Soon!" icon={<Cone01Icon variant="twotone" />}>
+                  <Text c="white">Please note that the Client Portal is very well much not constructed yet and at this time no functions have been created. The Portal is just being setup and will be released at a later time.</Text>
                 </Alert>
                   <Anchor href="/" underline="never">
                     <Group align="center">

@@ -1,6 +1,6 @@
 'use client'
 
-import { Anchor, AppShell, Group, rem, Image, Burger } from "@mantine/core";
+import { Anchor, AppShell, Group, rem, Image, Burger, Text, Tooltip, Modal } from "@mantine/core";
 import { useDisclosure, useHeadroom } from "@mantine/hooks";
 import { HeaderNavigationItems } from "@/lib/HeaderNavigationItems";
 import HeaderNavigationItem from "../(Config)/(Layout)/(Header)/HeaderNavigationItem";
@@ -9,7 +9,9 @@ import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
-import { DashboardSpeed02Icon, Login01Icon } from "@hugeicons/react";
+import { AlertDiamondIcon, DashboardSpeed02Icon, Login01Icon, Notification03Icon } from "@hugeicons/react";
+import WebsiteAlerts from "../(Components)/WebsiteAlerts";
+import Notifications from "../(Components)/Notifications";
 
 // import {hugeiconsLicense} from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
@@ -58,7 +60,12 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                         w={{ base: "30vw", lg: "12vw" }}
                     />
                 </Anchor>
-                <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
+                <Group>
+                    <WebsiteAlerts />
+                    {isSignedIn && <Notifications /> }
+                    {!isSignedIn ? <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/signin"><Login01Icon /></Anchor> : <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/portal"><DashboardSpeed02Icon /></Anchor>}
+                    <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
+                </Group>
             </Group>
         </AppShell.Header>
         <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--darkPurple)", backdropFilter: "blur(20px)"}}}>

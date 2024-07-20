@@ -210,10 +210,19 @@ export const MantineTheme = createTheme({
         styles: {
           root: {
             boxShadow: "var(--mantine-shadow-bsSMSecondary)",
+            padding: "1.5rem",
           },
           message: {
             fontSize: "1.2rem",
-            marginTop: "-0.1rem",
+            // marginTop: "-0.1rem",
+          },
+          title: {
+            fontFamily: "heading",
+            fontSize: "1.5rem",
+            fontWeight: "500",
+          },
+          body: {
+            my: "0.5rem",
           },
         },
         radius: "md",

@@ -19,6 +19,8 @@ import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButto
 import { DashboardSpeed02Icon, Home01Icon, Logout01Icon } from '@hugeicons/react'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
+import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
+import Notifications from '@/app/(Components)/Notifications'
 
 export default function AdminLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
   const path = usePathname()
@@ -104,6 +106,8 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                             />
                         </Anchor>
                         <Group>
+                          <WebsiteAlerts />
+                          <Notifications />
                           <PrimaryLinkedButton link="/portal" icon={<DashboardSpeed02Icon />}>The Client Portal</PrimaryLinkedButton>
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
