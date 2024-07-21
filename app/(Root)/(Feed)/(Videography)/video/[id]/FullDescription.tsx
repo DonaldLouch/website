@@ -8,11 +8,12 @@ import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Titl
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
     const {user} = useUser()
+    const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
 
     return <Box m="1rem">
         <Title order={1} fz="3rem">{video.title}</Title>
         <Group mb="1rem">
-            {user &&
+            {user && isAdmin &&
             <Anchor href={`/admin/videography/${video.id}`}><Badge color="white" leftSection={<Edit02Icon />}>
                 Edit Video
             </Badge></Anchor>

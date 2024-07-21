@@ -21,7 +21,9 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
    const video = videoData
-    const {user} = useUser()
+   
+    // const {user} = useUser()
+    // const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
    
     const [openedShare, { open: openShare, close: closeShare }] = useDisclosure(false)
     const [openedChapter, { open: openChapter, close: closeChapter }] = useDisclosure(false)
@@ -595,7 +597,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         type="url"
                         fontStyle="italic"
                         fontWeight={300}
-                        hidden={!user}
+                        hidden={!user && isAdmin}
                     /> */}
             </Drawer>
             <Drawer size="full" opened={openedChapter} onClose={closeChapter} title={`Video Chapters: "${video.title}"`} 

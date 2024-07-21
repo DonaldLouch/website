@@ -3,7 +3,7 @@
 import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Skeleton } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
-import { useUser } from '@clerk/nextjs'
+import { useUser, useAuth, useSession } from '@clerk/nextjs'
 import { BsCalendar2, BsEye, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 import classes from "./Components.module.css"
@@ -17,10 +17,14 @@ import Image from 'next/image'
 import { Suspense, useEffect, useState } from 'react'
 
 import { useImageSize } from 'react-image-size';
+// import { checkRole } from '@/lib/roles'
 
 
 export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
-    const {user} = useUser()
+    const {user} = useUser() as any
+    // const {has} = useAuth() as any
+    const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
+
     const [opened, { open, close }] = useDisclosure(false)
     const { album: albumData } = imageData
     
@@ -86,7 +90,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     </Group>
                 </Stack>
                 <Stack w={{base: "100%", md: "50%"}}> 
-                    {user &&
+                    {user && isAdmin &&
                         <Group gap="0.5rem">
                             <ClipboardButton copyValue={imageData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
                             <PrimaryLinkedButton link={`/admin/photography/${imageData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>

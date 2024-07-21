@@ -72,7 +72,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             {HeaderNavigationItems.map((link) => (
                 <HeaderNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
             ))}
-            <HeaderNavigationItem key={`nav_portalButton`} slug={!isSignedIn ? './signin' : './portal'} isParent={false} parentID={7} linkName={!isSignedIn ? 'Signin/Signup' : 'The Client Portal'} icon={!isSignedIn ? <Login01Icon /> : <DashboardSpeed02Icon /> } />
+            <HeaderNavigationItem key={`nav_portalButton`} slug={!isSignedIn ? './signin' : './portal'} isParent={false} parentID={7} linkName={!isSignedIn ? 'Signin/Signup' : 'Client Portal'} icon={!isSignedIn ? <Login01Icon /> : <DashboardSpeed02Icon /> } />
         </AppShell.Navbar>
         <AppShell.Main pt={`calc(${rem(70)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}} styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}}>
             {children}

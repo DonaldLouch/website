@@ -10,6 +10,7 @@ import { BsCalendar2, BsEye, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 export default function ViewPhotoAlbum({ imageData }: any) {
     const {user} = useUser()
+    const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
     const toast = useToast()
     const toastID = "toastID"
     // const albumData = photographyAlbum.find(({ id }: any) => id ===  imageData.album)
@@ -89,7 +90,7 @@ export default function ViewPhotoAlbum({ imageData }: any) {
                                             <Text fontSize="1.1rem" color="white">Open Photo Link</Text>
                                         </LinkOverlay>
                                     </LinkBox>
-                                    <Box hidden={!user}><CopyButton copyValue={imageData.fileID.filePath} copyText="Copy Photo URI" copiedText="Copied Photo URI" /></Box>
+                                    <Box hidden={!user && isAdmin}><CopyButton copyValue={imageData.fileID.filePath} copyText="Copy Photo URI" copiedText="Copied Photo URI" /></Box>
                                 {/* <Button as="a" onClick={onCopy} variant="portalButton" color="white" leftIcon={<FontAwesomeIcon icon={["fas", "copy"]} width="100%" color='currentColor' height="100%" />} aria-label="Copy Button" p="2rem" width="auto" my="2rem">Copy Photo Link</Button>
                                 <Button as="a" href={`/photo/${imageData.id}`} variant="portalButton" color="white" leftIcon={<FontAwesomeIcon icon={["fas", "eye"]} width="100%" color='currentColor' height="100%" />} aria-label="Open Button" p="2rem" width="auto" my="2rem">Open Photo Link</Button> */}
                                 </Stack>
