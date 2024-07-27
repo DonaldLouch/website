@@ -24,6 +24,7 @@ import PostContent from '../(Components)/PostContent'
 import { Album02Icon, ArrowLeft02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, ContactIcon, Edit02Icon, Folder01Icon, GithubIcon, Link04Icon, LinkSquare02Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
 import DisplayDate from '@/lib/DisplayDate'
+import { useUser } from '@clerk/nextjs'
 
 // const meta = keyframes `
 //     0% {
@@ -41,6 +42,9 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
     // const tagsSplit = post.tags.split(', ')
 
     // TODO: Implement <Spoiler maxHeight={120} showLabel="Show more" hideLabel="Hide">?
+    const { user } = useUser()
+    const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
+
     return (<>
         <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
             <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
@@ -72,7 +76,9 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                                     order={1}
                                     style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
                                     fz="3rem"
-                                    td="underline 0.4rem var(--primary)"
+                                    fw="200"
+                                    mb="-0.5rem"
+                                    // td="underline 0.4rem var(--primary)"
                                     lineClamp={1}
                                 >
                                     {post.title}
@@ -84,7 +90,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                             </Stack>
                             <Stack gap="1rem" m="1rem 0">
                                 <Group>
-                                    {isLoggedIn &&
+                                    {isLoggedIn && isAdmin &&
                                         <Anchor href={`/admin/postEdit/${post.slug}`} m="0"><Badge color="white" leftSection={<Edit02Icon />}>
                                             Edit Post
                                         </Badge></Anchor>

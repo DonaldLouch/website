@@ -31,22 +31,22 @@ import { ArrowUpRight01Icon, HandPointingRight01Icon, QuoteDownIcon } from "@hug
 }
 
 const heading1 = (props: any) => (
-    <Title order={1} size="4rem" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
+    <Title order={1} size="3rem" fw="600" my="0.5rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading2 = (props: any) => (
-    <Title order={2} size="3rem" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
+    <Title order={2} size="2rem" fw="600" my="0.5rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading3 = (props: any) => (
-    <Title order={3} size="1.3rem" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
+    <Title order={3} size="1.2rem" fw="600" my="0.5rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading4 = (props: any) => (
-    <Title order={4} size="4rem" ff="text" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
+    <Title order={4} size="3rem" ff="text" fw="600" my="0.5rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading5 = (props: any) => (
-    <Title order={5} size="3rem"ff="text"  my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
+    <Title order={5} size="2rem"ff="text"  fw="600" my="0.5rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 const heading6 = (props: any) => (
-    <Title order={6} size="1.3rem" ff="text" my="1rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
+    <Title order={6} size="1.2rem" ff="text" fw="600" my="0.5rem" style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}>{props.children}</Title>
 )
 
 const heading = (props: any) => (

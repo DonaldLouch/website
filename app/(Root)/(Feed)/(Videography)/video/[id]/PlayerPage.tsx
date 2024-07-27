@@ -21,7 +21,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
    const video = videoData
-   
+
     // const {user} = useUser()
     // const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
    
@@ -498,7 +498,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                                     <Text fz="1rem" fw="900" hidden={isVertical || mobile} visibleFrom="sm">{videoDuration}</Text>
                             </Group>
                             <Group wrap="nowrap" justify="flex-end">
-                                {isEmbed &&  <Anchor href={`/video/${video.id}`} w={{base: "5%", sm: "25%"}} target="_blank"><Image src={mobile ? "/logoWhite.svg" : "/titleLogoWhite.svg"} alt="Link to video" /></Anchor>}
+                                {isEmbed &&  <Anchor href={`/video/${video.id}`} w={{base: "5%", sm: "35%"}} target="_blank"><Image src={mobile ? "/logoWhite.svg" : "/titleLogo/titleLogoWhiteColoured.svg"} alt="Link to video" /></Anchor>}
                                 {rightButtons.map((button: any) => (
                                     !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size={mobile ? "1.5rem" : "2.5rem"}>{button.buttonIcon}</ActionIcon>
                                 ))}
@@ -612,21 +612,22 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                 styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             >
                 <Stack w="100%" p="2rem 2rem">
-                    <Title order={3} ta="center" fz="1.8rem" fw="900" c="white" mb="1rem">Chapters</Title>
+                    <Title order={3} ta="center" fz="1.8rem" fw="500" c="white" mb="1rem">Chapters</Title>
                     {video.chapters.length > 0 && video.chapters.map((chapter:any, index: number) => (<Button 
                         key={index}
                         onClick={changeChapter}
                         value={chapter.timeCode} 
                         className={classes.chaptersButton}
                         color="var(--blackRGBA)" 
+                        c="white"
                         p="1.5rem 1rem" 
                         radius="md" 
-                        fz="1rem"
-                        fw="900"
+                        fz="0rem"
+                        fw="500"
                         ta="left"
                         justify="flex-start"
-                        leftSection={<Text fw="300" fz="0.8rem">{chapter.timeCode} </Text>}
-                        rightSection={<Text fw="300" ff="heading" fz="1rem">{chapter.title}</Text>}
+                        leftSection={<Text fw="300" fz="1rem"ml="0.5rem">{chapter.timeCode} </Text>}
+                        rightSection={<Text fw="300" ff="heading" fz="1.2rem">{chapter.title}</Text>}
                     >|</Button> ))}
                 </Stack>
             </Drawer>

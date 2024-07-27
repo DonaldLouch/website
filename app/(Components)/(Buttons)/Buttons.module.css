@@ -22,12 +22,13 @@
 
 .headerLink {
     border-radius: var(--mantine-radius-md);
-    transition: all 0.3s;
+    transition: all 0.5s;
     &:hover, &:active {
         background: var(--secondary);
         color: var(--mantine-color-black);
         text-decoration: none;
         border: none !important;
+        font-weight: 600 !important;
     }
     &:focus {
         box-shadow: "none";

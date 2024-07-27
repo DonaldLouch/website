@@ -24,9 +24,9 @@ export default function PortalHome() {
   return (
     <>
       <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="4xl" textDecoration="underline" fontWeight="900" mb="1rem"><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor"/></Box>UNDER CONSTRUCTION!</Heading></CardHeader>
+        <CardHeader><Heading textAlign="center" size="5ren" fontWeight="900" mb="1rem"><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>UNDER CONSTRUCTION!</Heading></CardHeader>
         <CardBody>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
+          <Text textAlign="center" fontSize="4xl" mb="0.7rem">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
           {/* <Text textAlign="center">Hi, my name is Donald Louch and I am a twenty-nine-year-old Canadian web developer and digital content creator.</Text> */}
         </CardBody>
       </Card>

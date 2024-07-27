@@ -1,7 +1,6 @@
-import { ActionIcon, NavLink } from '@mantine/core'
+import { NavLink } from '@mantine/core'
 
 import classes from './Buttons.module.css'
-import { Bs123, BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge, BsSend } from 'react-icons/bs'
 
 interface propTypes {
     linkName: string
@@ -31,6 +30,8 @@ export default function HeaderLink( props: propTypes ) {
         label={linkName}
         my="0.5rem"
         p="1rem"
+        fw="300"
+        fz="1rem"
         leftSection={icon}
     >{children}</NavLink>
 }

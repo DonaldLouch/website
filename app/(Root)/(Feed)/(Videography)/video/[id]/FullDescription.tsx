@@ -11,7 +11,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
     const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
 
     return <Box m="1rem">
-        <Title order={1} fz="3rem">{video.title}</Title>
+        <Title order={1} fz="3rem" fw="300">{video.title}</Title>
         <Group mb="1rem">
             {user && isAdmin &&
             <Anchor href={`/admin/videography/${video.id}`}><Badge color="white" leftSection={<Edit02Icon />}>

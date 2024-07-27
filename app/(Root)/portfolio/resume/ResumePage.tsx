@@ -135,7 +135,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                     >
                       {resume.firstName} {resume.middleName} {resume.lastName}
                     </Title>
-                    <Text fz="2rem">
+                    <Text fz="1.3rem" fw="200" m="0">
                         {resume.pronouns}
                     </Text>
                   </Stack>
@@ -166,6 +166,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                   ff="text"
                   fw="300"
                   td="underline 0.2rem var(--primary)"
+                  mb="-2rem"
                 >Profile</Title>
                 <Text>{resume.profile}</Text>
               </Stack>

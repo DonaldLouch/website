@@ -3,7 +3,7 @@
 import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Button, Combobox, createTheme, Input, rem, Slider, Tabs, Text, Notification } from "@mantine/core"
 // import "@mantine/core/styles.css";
 
-import { Playfair_Display, Lato, Victor_Mono } from "next/font/google"
+import { Playfair_Display, Lato, Victor_Mono, Noto_Sans, Noto_Serif, Noto_Sans_Mono, Noto_Emoji } from "next/font/google"
 
 // import "@/app/(Config)/global.css";
 
@@ -17,6 +17,33 @@ const playfairDisplay = Playfair_Display({
   display: 'swap', 
   preload: true,
   fallback: ['Georgia', 'serif']
+})
+const notoBase = Noto_Sans({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial", "sans-serif"],
+})
+const notoSerif = Noto_Serif({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+  preload: true,
+  fallback: ["Georgia", "serif"],
+})
+const notoMono = Noto_Sans_Mono({
+  subsets: ["latin"],
+  style: ["normal"],
+  display: "swap",
+  preload: true,
+  fallback: ["SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+})
+const notoEmoji = Noto_Emoji({
+  subsets: ["emoji"],
+  style: ["normal"],
+  display: "swap",
+  preload: true
 })
 const lato = Lato({
     weight: ["100", "300", "400", "700", "900"], 
@@ -40,6 +67,7 @@ export const MantineTheme = createTheme({
   components: {
     Text: Text.extend({
       defaultProps: {
+        fw: "300",
         style: { whiteSpace: "break-spaces", margin: "1rem 0" },
       },
     }),
@@ -237,7 +265,7 @@ export const MantineTheme = createTheme({
     md: "1.5rem",
   },
   fontSizes: {
-    md: "1.3rem",
+    md: "1.2rem",
   },
   scale: 1,
   radius: {
@@ -253,10 +281,10 @@ export const MantineTheme = createTheme({
   //   fontSizes: {
   //     text: "1.3rem",
   //   },
-  fontFamily: lato.style.fontFamily,
-  fontFamilyMonospace: victorMono.style.fontFamily,
+  fontFamily: notoBase.style.fontFamily,
+  fontFamilyMonospace: notoMono.style.fontFamily,
   headings: {
-    fontFamily: playfairDisplay.style.fontFamily,
+    fontFamily: notoSerif.style.fontFamily,
   },
   shadows: {
     bsSMPrimary: "0px 1px 10px rgba(118, 70, 136,.2)",
@@ -372,6 +400,30 @@ export const MantineTheme = createTheme({
       "#b31220",
       "#9e0419",
     ],
+    newPurple: [
+      "#30243c",
+      "#44394f",
+      "#594f62",
+      "#6e6576",
+      "#827b8a",
+      "#97919d",
+      "#aca7b1",
+      "#c0bdc4",
+      "#d5d3d8",
+      "#eae9eb"
+    ],
+    newBlack: [
+      "#1e192a",
+      "#342f3f",
+      "#4a4654",
+      "#615e69",
+      "#78757f",
+      "#8e8c94",
+      "#a5a3a9",
+      "#bbbabf",
+      "#d2d1d4",
+      "#e8e8e9"
+    ]
   },
   other: {
     // whiteColourGradient: "radial-gradient(ellipse at center, #EDEDED 0%,#FAFAFA 36%,#EBEBEB 100%)",
