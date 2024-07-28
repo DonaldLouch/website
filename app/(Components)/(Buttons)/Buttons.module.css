@@ -23,8 +23,9 @@
 .headerLink {
     border-radius: var(--mantine-radius-md);
     transition: all 0.5s;
+    font-weight: 300;
     &:hover, &:active {
-        background: var(--secondary);
+        background: var(--secondary) !important;
         color: var(--mantine-color-black);
         text-decoration: none;
         border: none;

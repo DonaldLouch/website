@@ -21,7 +21,7 @@ export default function HeaderLink( props: propTypes ) {
     //     <BsLink45Deg />
 
     return <NavLink href={href}
-        color="secondary"
+        // color="secondary"
         variant="subtle"
         classNames={{
             root: classes.headerLink,
@@ -30,7 +30,7 @@ export default function HeaderLink( props: propTypes ) {
         label={linkName}
         my="0.5rem"
         p="1rem"
-        fw="300"
+        // fw="300"
         // fz="1rem"
         leftSection={icon}
     >{children}</NavLink>

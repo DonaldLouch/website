@@ -7,9 +7,9 @@ export default function loading() {
             <Stack align="center">
             <Group gap="2rem" align="center">
                 <Loader color="white" size="md" />
-                <Title order={1} fz={{base: "2rem", md: "3rem"}}>Loading Content</Title>
+                <Title order={1} fz={{base: "2rem", md: "3rem"}} fw="900">Loading Content</Title>
             </Group>
-            <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
+            <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca" c="var(--secondary)" underline="hover">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
             </Stack>
         </Paper>
     </Center> )
