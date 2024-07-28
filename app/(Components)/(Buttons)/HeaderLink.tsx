@@ -31,7 +31,7 @@ export default function HeaderLink( props: propTypes ) {
         my="0.5rem"
         p="1rem"
         fw="300"
-        fz="1rem"
+        // fz="1rem"
         leftSection={icon}
     >{children}</NavLink>
 }
