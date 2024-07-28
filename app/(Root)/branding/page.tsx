@@ -9,8 +9,8 @@ import { useMediaQuery } from "@mantine/hooks";
 export default function BrandingPage() {
     const theToc = [
         {
-            "slug": "overview",
-            "title": "Overview"
+            "slug": "pdf",
+            "title": "PDF Version"
         },
     ]
     
@@ -77,7 +77,7 @@ export default function BrandingPage() {
             <Grid pos="relative" gutter={{base: "0", sm: "5rem"}} my={{base: "1rem", sm: "5rem"}}>
                 <Grid.Col span={{base: 12, sm: 9}} p={{base: "1rem", sm: "1rem 2rem"}} style={{boxShadow: shadow, borderRadius: "var(--mantine-radius-md)"}}>
                     <Box my="2rem">
-                        <Title order={2} my="0.5rem" fw="500">Website Title</Title>
+                        {/* <Title order={2} my="0.5rem" fw="500">Website Title</Title>
                         <Image
                             src="/titleLogo/titleLogoWhiteColoured.svg"
                             alt="Donald Louch"
@@ -104,8 +104,8 @@ export default function BrandingPage() {
                                     height="auto"
                                 />
                             </Box>
-                        </SimpleGrid>
-                        <Title order={2} my="0.5rem" fw="500">PDF Version of "Branding Version 5.0"</Title>
+                        </SimpleGrid> */}
+                        <Title order={2} my="0.5rem" fw="500" id="pdf">PDF Version of "Branding Version 5.0"</Title>
                         <AspectRatio ratio={8/11.5}>
                             <iframe src="/DonaldLouchBranding5.pdf" width="100%" height="800" />
                             <Anchor href="/DonaldLouchBranding5.pdf">If Unsupported: Download the PDF</Anchor>
