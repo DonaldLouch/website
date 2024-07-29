@@ -44,11 +44,11 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
     })
 
     const iconImage = experience.company === "McDonald's" 
-    ? "https://logo.clearbit.com/mcdonalds.ca" 
-    : experience.company === "Donald Louch Productions" ? "/DonaldLouchLogoSmallSquare.svg" 
-    : experience.company === "Vancouver Island University" ? "https://logo.clearbit.com/viu.ca" 
-    : experience.company === "Royal Roads University" ? "https://logo.clearbit.com/royalroads.ca" 
-    : experience.company === "Antica Productions" ? "https://logo.clearbit.com/anticaproductions.com" 
+    ? "https://cdn.brandfetch.io/mcdonalds.ca" 
+    : experience.company === "Donald Louch Productions" ? "/logo/logo.svg" 
+    : experience.company === "Vancouver Island University" ? "https://cdn.brandfetch.io/viu.ca" 
+    : experience.company === "Royal Roads University" ? "https://cdn.brandfetch.io/royalroads.ca" 
+    : experience.company === "Antica Productions" ? "https://cdn.brandfetch.io/anticaproductions.com" 
     : experience.company === "Westshore Centre for Learning and Training" ? "https://logo.clearbit.com/sd62.bc.ca" 
     : null
 
@@ -81,8 +81,8 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
 
   const educationArray = new Array()
   resumeEducation.forEach((education: any) => {
-    const iconImage = education.school === "Vancouver Island University" ? "https://logo.clearbit.com/viu.ca" 
-    : education.school === "Camosun College" ? "https://logo.clearbit.com/camosun.ca" 
+    const iconImage = education.school === "Vancouver Island University" ? "https://cdn.brandfetch.io/viu.ca" 
+    : education.school === "Camosun College" ? "https://cdn.brandfetch.io/camosun.ca" 
     : education.school === "Westshore Centre for Learning and Training" ? "https://logo.clearbit.com/sd62.bc.ca" 
     : education.school === "Dunsmuir Middle School" ? "https://logo.clearbit.com/sd62.bc.ca" 
     : null
@@ -129,13 +129,14 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                       style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
                       fz={{ base: "7vw", md:"5vw" }}
                       ta="center"
+                      fw="800"
                       td="underline 0.4rem var(--primary)"
                       // textDecorationThickness="0.4rem"
                       // textDecorationColor="primary"
                     >
                       {resume.firstName} {resume.middleName} {resume.lastName}
                     </Title>
-                    <Text fz="1.3rem" fw="200" m="0">
+                    <Text fz="1.3rem" fw="300" m="0">
                         {resume.pronouns}
                     </Text>
                   </Stack>
@@ -162,9 +163,9 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               <Stack gap="1rem" m="1rem" mah="30vh" style={{overflow: "scroll"}}>
                 <Title 
                   order={3} 
-                  fz={{base: "5vw", lg: "4vw", xl: "3vw"}}
-                  ff="text"
-                  fw="300"
+                  fz={{base: "4.5vw", lg: "3.5vw", xl: "2.5vw"}}
+                  ff="heading"
+                  fw="400"
                   td="underline 0.2rem var(--primary)"
                   mb="-2rem"
                 >Profile</Title>

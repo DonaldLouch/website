@@ -42,13 +42,14 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
               <Title
                 order={1}
                 style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
-                fz={{ base: "5vw", sm:"5vw" }}
+                fz="5vw"
+                fw="800"
                 ta="center"
                 td="underline 0.4rem var(--primary)"
               >
                 {aboutMe.firstName} {aboutMe.middleName} {aboutMe.lastName}
               </Title>
-              <Text fz={{base: "1.1rem", sm: "1.5rem"}} fw="300" m="0" display={{base: "none", sm: "initial"}}>
+              <Text fz={{base: "1.1rem", sm: "1.3rem"}} fw="300" m="0" display={{base: "none", sm: "initial"}}>
                 {aboutMe.pronouns}
               </Text>
             </Stack>
@@ -62,11 +63,12 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
         <Stack>
           <Title 
             order={3} 
-            fz="3vw"
-            ff="text"
-            fw="300"
+            fz="2.5vw"
+            ff="heading"
+            fw="400"
             td="underline 0.2rem var(--primary)"
             display={{base: "none", sm: "initial"}}
+             mb="-2rem"
           >{aboutMe.tagLine}</Title>
           <Text c="white">{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
         </Stack>

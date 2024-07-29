@@ -82,7 +82,7 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
    {/* m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} pt={{base: "0.5rem", lg: "1.5rem"}} */}
     <Box id="feed" pos="relative" w="100%">
       <Alert icon={<Camera01Icon />} color="indigo">
-          Please note that this Photography Feed is in a alpha state right now, and things will change and may not work properly. Please further note, that in future iterations I will be modifying and completing all captions, tags and proper meta data for all the photos.
+          Please note that moving forward, all photos will have completed captions, tags, and accurate metadata for improved organization and searchability.
       </Alert>
 
       <Tooltip label={`About ${about.firstName} ${about.lastName}`}>
@@ -124,10 +124,11 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
               />
             </AspectRatio>
             
-            <Stack mt={{base: "1rem", lg: "0"}}>
+            <Stack mt={{base: "1rem", lg: "0"}} gap="0">
               <Title
                 order={1}
-                fz="3rem"
+                fz="4rem"
+                fw="800"
                 styles={{root: {
                   textDecoration: "underline",
                   textDecorationThickness: "0.4rem",
@@ -136,12 +137,12 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
               >
                 {about.firstName} {about.middleName} {about.lastName}
               </Title>
-              <Text fz="2rem" m="0.5rem 0">
+              <Text fz="1.5rem" fw="300" m="0">
                 {about.pronouns}
               </Text>
             </Stack>
           </Flex>
-          <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem" my="1rem">
+          <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="0.5rem 1.5rem" my="1rem">
             <Text>{about.bio}</Text>
           </Box>
         </Box>

@@ -44,12 +44,12 @@ export default function HomeHeroSection({aboutMe}: any) {
                 style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
                 fz="5vw"
                 ta="center"
-                fw="500"
+                fw="800"
                 td="underline 0.4rem var(--primary)"
               >
                 {aboutMe.firstName} {aboutMe.middleName} {aboutMe.lastName}
               </Title>
-              <Text fz={{base: "1.1rem", sm: "1.3rem"}} fw="200" m="0" display={{base: "none", sm: "initial"}}>
+              <Text fz={{base: "1.1rem", sm: "1.3rem"}} fw="300" m="0" display={{base: "none", sm: "initial"}}>
                 {aboutMe.pronouns}
               </Text>
             </Stack>
@@ -58,9 +58,9 @@ export default function HomeHeroSection({aboutMe}: any) {
         <Stack>
           <Title 
             order={3} 
-            fz="3vw"
+            fz="2.5vw"
             ff="heading"
-            fw="100"
+            fw="400"
             td="underline 0.2rem var(--primary)"
             display={{base: "none", sm: "initial"}}
             mb="-2rem"

@@ -1,7 +1,7 @@
 'use client'
 
 import supabase from "@/lib/supabase"
-import { AspectRatio, Grid, Title, Stack, Text, Image, Anchor, Box, Paper, Group, Loader } from "@mantine/core"
+import { AspectRatio, Grid, Title, Stack, Text, Image, Anchor, Box, Paper, Group, Loader, Tooltip } from "@mantine/core"
 import { useEffect, useState } from "react"
 import DisplayDate from "@/lib/DisplayDate"
 import classes from "@/app/(Components)/Components.module.css"
@@ -104,8 +104,10 @@ export default function VideoFeed({ videoData, videosCount }: { videoData: any, 
               <Image src={video.thumbnailFileID.filePath} alt={video.title} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
             </AspectRatio>   
             <Box p="1rem" pos="absolute" w="calc(100% - 1rem)" bg="var(--darkPurpleRGBA)" style={{backdropBlur: "10px", boxShadow: "tsPrimary", zIndex: 100, borderRadius: "0 1rem 0 0"}} top="0.5rem" c="white">
-              <Title order={2} fz="1.2rem" fw={900} c="currentColor">{video.title}</Title>
-              <Text fw={300} fz="1rem" lh="0" c="currentColor"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
+              <Tooltip label={video.title}>
+                            <Title order={2} fz="1.2rem" fw={700} c="currentColor" lineClamp={1}>{video.title}</Title>
+                        </Tooltip>
+                        <Text fw={200} fz="1rem" lh="0" c="currentColor" mt="0.5rem"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
             </Box>
             <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><PlayIcon variant="duotone" size="5rem" /></Box>
           </Box>

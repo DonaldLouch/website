@@ -26,7 +26,7 @@ export default function StatsGroup({ statsData }: { statsData: [title: any, valu
     return (
       <Box p="1rem" style={{borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)"}} key={stat.title} bg="none" m="0.5rem">
         <Group justify="space-between" m="0" lh="0">
-          <Text size="0.9rem" c="grey" tt="uppercase" fw="700" lh="0" ta={{base: "center", sm: "left"}}>{stat.title}</Text>
+          <Text size="0.9rem" c="grey" tt="uppercase" fw="300" lh="0" ta={{base: "center", sm: "left"}}>{stat.title}</Text>
           {stat.icon && <Box c="grey">{stat.icon}</Box>}
         </Group>
 
