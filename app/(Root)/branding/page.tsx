@@ -270,7 +270,7 @@ export default function BrandingPage() {
                         </Box>
                         <Title order={2} my="0.5rem" fw="500" id="pdf">PDF Version of "Branding Version 5.0"</Title>
                         <AspectRatio ratio={8/11.5}>
-                            <iframe src="/DonaldLouchBranding5.pdf" width="100%" height="800" />
+                            <iframe src="/DonaldLouchBranding5.pdf" width="auto" height="800" />
                             <Anchor href="/DonaldLouchBranding5.pdf">If Unsupported: Download/View the PDF</Anchor>
                         </AspectRatio>
                     </Box>
