@@ -121,7 +121,7 @@ export default function BrandingPage() {
             rgb: "230, 206, 132",
         },
         {
-            title: "UPDATED/NEW: White Sand",
+            title: "UPDATED: White Sand",
             rgb: "244, 244, 244",
         }
     ]
@@ -208,22 +208,26 @@ export default function BrandingPage() {
                         </Box>
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="gradients" mb="2rem">Gradients</Title>
-                            <SimpleGrid spacing="1rem" cols={2}>
+                            <SimpleGrid spacing="1rem" cols={{base: 2, md: 4}}>
                                 {gradients.map((gradient: any, index: number) => (
-                                    <Stack key={`gradient${index}`} bg={`linear-gradient(90deg, ${gradient?.from}, ${gradient?.to})`} h="15vh" justify="center" align="center" p="1rem" style={{ boxShadow: "var(--mantine-shadow-bsBoldWhite)", borderRadius: "var(--mantine-radius-md)" }}>
-                                        <Text fw="900" style={{ textShadow: "var(--mantine-shadow-bsPrimary)" }} ta="center">{gradient.description}</Text>
-                                    </Stack>
+                                    <AspectRatio ratio={1/1} key={`gradient${index}`} bg={`linear-gradient(90deg, ${gradient?.from}, ${gradient?.to})`} p="1rem" style={{ boxShadow: "var(--mantine-shadow-bsBoldWhite)", borderRadius: "var(--mantine-radius-md)" }}>
+                                        <Center>
+                                            <Text fw="900" style={{ textShadow: "var(--mantine-shadow-bsPrimary)" }} ta="center">{gradient.description}</Text>
+                                        </Center>
+                                    </AspectRatio>
                                 ))}
                             </SimpleGrid>
                              <Alert variant="light" color="red" icon={<Delete04Icon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">The Lima (#6acc1b) green hue has been phased out from the main gradient.</Text></Alert>
                         </Box>
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="theShadows" mb="2rem">Box/Drop Shadows</Title>
-                            <SimpleGrid spacing="1rem" cols={2}>
+                            <SimpleGrid spacing="1rem" cols={{base: 2, md: 4}}>
                                 {shadows.map((shadow: any, index: number) => (
-                                    <Stack key={`shadow${index}`} h="10vh" justify="center" align="center" p="1rem" style={{ boxShadow: `1px 1px 10px rgba(${shadow.rgb},0.6)`, borderRadius: "var(--mantine-radius-md)" }}>
-                                        <Text fw="900" style={{ textShadow: "var(--mantine-shadow-bsPrimary)" }} ta="center">{shadow.title}</Text>
-                                    </Stack>
+                                    <AspectRatio ratio={1/1}  key={`shadow${index}`} p="1rem" style={{ boxShadow: `1px 1px 10px rgba(${shadow.rgb},0.6)`, borderRadius: "var(--mantine-radius-md)" }}>
+                                        <Center>
+                                            <Text fw="900" style={{ textShadow: "var(--mantine-shadow-bsPrimary)" }} ta="center">{shadow.title}</Text>
+                                        </Center>
+                                    </AspectRatio>
                                 ))}
                             </SimpleGrid>
                             <Alert variant="light" color="var(--secondary)" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">Note that there is also a new shadow for the "Mirage (##1d1929)" colour; however, it's not visible on this particular page since the background is the Mirage colour!</Text></Alert>
