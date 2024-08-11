@@ -360,7 +360,8 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
                     (
                          <FormInput inputID="location" inputLabel="Location" {...form.getInputProps('location')} inputDescription="If you would like you can add a general location chip to the photo; you can add that here" />
                     ) 
-                    : form.values.locationSelect ? <Text ta="center">You have selected the location: "{form.values.locationSelect }"</Text> 
+                    // TODO: Add locations
+                    : form.values.locationSelect ? <Text ta="center">You have selected the location: "LOCATION OPTION COMING SOON!"</Text> 
                     : <Text ta="center">Optional: Please select a location from an excising photo or Create a New Location!</Text>
                 }
                <FormSelect inputID="locationSelect" inputData={locationOptions} {...form.getInputProps(`locationSelect`)} />

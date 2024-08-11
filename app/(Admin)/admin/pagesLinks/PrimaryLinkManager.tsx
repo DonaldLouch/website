@@ -9,13 +9,13 @@ import {
   Stack,
   useToast
 } from "@chakra-ui/react";
-import { Facebook02Icon, GithubIcon, Home01Icon, InstagramIcon, Linkedin02Icon, NewTwitterIcon, ThreadsIcon, TiktokIcon, YoutubeIcon } from "@hugeicons/react";
+import { Delete01Icon, Facebook02Icon, GithubIcon, Home01Icon, InstagramIcon, LaptopCheckIcon, Linkedin02Icon, NewTwitterIcon, ThreadsIcon, TiktokIcon, YoutubeIcon } from "@hugeicons/react";
 
 ;
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 import { useRouter } from "next/navigation";
-import { BsFloppy2, BsTrash2 } from "react-icons/bs";
+// import { BsFloppy2, BsTrash2 } from "react-icons/bs";
 // import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsFloppy, BsFloppy2, BsTrash2 } from "react-icons/bs";
 
 import * as Yup from 'yup'
@@ -122,7 +122,7 @@ export const PrimaryLinkManager = (props: any) => {
                         mt="3.5rem"
                         variant="unstyled"
                         color="white"
-                        icon={<BsFloppy2 />}
+                        icon={<LaptopCheckIcon />}
                     /></SubmitButton> 
                     <IconButton
                       aria-label={`${link.title} Link`}
@@ -133,7 +133,7 @@ export const PrimaryLinkManager = (props: any) => {
                       variant="unstyled"
                       onClick={deleteLink}
                       color="red"
-                      icon={<BsTrash2 />}
+                      icon={<Delete01Icon />}
                     />
                     </Stack>
               </Stack>
