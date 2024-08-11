@@ -134,7 +134,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         mode: 'controlled',
         initialValues,
         validate: yupResolver(schema)
-    })
+    }) as any
 
     const linkTypeOptions = [
         {

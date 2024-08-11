@@ -261,7 +261,7 @@ export default function EditPostContent({post, tagsData}: any) {
         mode: 'controlled',
         initialValues,
         validate: yupResolver(schema)
-    })
+    }) as any
     const categoryOptions = new Array(
       {value: "life", label: "Life"},
       {value: "travel", label: "Travel"},

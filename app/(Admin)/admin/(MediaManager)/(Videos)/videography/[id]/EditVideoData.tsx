@@ -292,7 +292,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         mode: 'controlled',
         initialValues,
         validate: yupResolver(schema)
-    })
+    }) as any
 
     const chaptersFields = form.getValues().chaptersRow?.map((item: any, index: any) => (
         <Draggable key={item.key} index={index} draggableId={item.key}>
