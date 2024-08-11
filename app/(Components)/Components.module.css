@@ -9,12 +9,28 @@
     }
 }
 
+.selectInput {
+    &:disabled {
+        color: var(--mantine-color-secondary-0) !important;
+        background: none !important;
+    }
+}
+
+.selectSection {
+    &:disabled {
+        color: var(--mantine-color-secondary-0) !important;
+    }
+}
+
 .comboboxOption {
     word-break: keep-all;
     white-space: nowrap;
     &:hover {
         background: var(--blurredBackground) !important;
         color: var(--secondary);
+    }
+    &:disabled {
+        color: var(--mantine-color-secondary-0) !important;
     }
 }
 

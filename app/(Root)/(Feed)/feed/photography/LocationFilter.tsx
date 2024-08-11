@@ -1,7 +1,7 @@
 import { MapsSearchIcon } from "@hugeicons/react"
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
-import { BsPinMap } from "react-icons/bs"
+// import { BsPinMap } from "react-icons/bs"
 
 export default function LocationFilter( {locationData}: any ) {
     const combobox = useCombobox()

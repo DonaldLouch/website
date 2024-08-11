@@ -4,7 +4,7 @@ import { Modal, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Stack, H
 
 import { Formik } from 'formik'
 import { SubmitButton } from 'formik-chakra-ui'
-import { BsEye } from 'react-icons/bs'
+// import { BsEye } from 'react-icons/bs'
 import * as Yup from 'yup'
 
 import Image from 'next/image'

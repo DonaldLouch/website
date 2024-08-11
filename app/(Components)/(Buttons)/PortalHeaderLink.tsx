@@ -1,7 +1,7 @@
 import { ActionIcon, NavLink } from '@mantine/core'
 
 import classes from './Buttons.module.css'
-import { Bs123, BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge, BsSend } from 'react-icons/bs'
+// import { Bs123, BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge, BsSend } from 'react-icons/bs'
 
 interface propTypes {
     linkName: string

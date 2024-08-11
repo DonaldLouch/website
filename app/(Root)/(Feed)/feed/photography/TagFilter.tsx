@@ -1,7 +1,7 @@
 import { TagsIcon } from "@hugeicons/react"
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
-import { BsTags } from "react-icons/bs"
+// import { BsTags } from "react-icons/bs"
 
 export default function TagFilter( {tagData}: any ) {
     const combobox = useCombobox()

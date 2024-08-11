@@ -19,3 +19,27 @@
         background: var(--darkPurple) !important;
     }
 }
+
+.checkColour {
+    border-color: var(--mantine-color-white);
+    background: none;
+    &:disabled:checked{
+        background: var(--primary) !important;
+        border: none;
+    }
+    &:disabled{
+        background: none !important;
+        color: var(--mantine-color-white);
+    }
+    &:checked > label {
+        text-decoration: line-through !important;
+        color: var(--mantine-color-green-0);
+    }
+}
+
+.checkLabel {
+    &:checked {
+        text-decoration: line-through !important;
+        color: var(--mantine-color-green-0);
+    }
+}

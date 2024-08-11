@@ -1,5 +1,6 @@
+import { ArrowDown01Icon } from "@hugeicons/react"
 import { Accordion, Avatar, Group, Text, Image, Stack, ActionIcon } from "@mantine/core"
-import { BsChevronDown } from "react-icons/bs"
+// import { BsChevronDown } from "react-icons/bs"
 
 interface AccordionLabelProps {
   label: string
@@ -35,7 +36,7 @@ export default function MultiAccordion({content}: any) {
       </Accordion.Panel>
     </Accordion.Item>
   ));
-  return<Accordion chevron={<BsChevronDown />}>
+  return<Accordion chevron={<ArrowDown01Icon />}>
       {items}
     </Accordion>
 }

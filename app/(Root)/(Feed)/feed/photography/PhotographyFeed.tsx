@@ -27,7 +27,7 @@ import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 import React from "react";
 import { useRouter } from "next/navigation"
 
-import { BsArrowDown, BsArrowUp, BsCamera, BsFilter, BsFolder2Open, BsImages, BsPinAngle, BsSearch } from "react-icons/bs";
+// import { BsArrowDown, BsArrowUp, BsCamera, BsFilter, BsFolder2Open, BsImages, BsPinAngle, BsSearch } from "react-icons/bs";
 
 
 import { useInView } from 'react-intersection-observer'

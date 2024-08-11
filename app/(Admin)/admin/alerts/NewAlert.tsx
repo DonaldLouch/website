@@ -107,7 +107,7 @@ export default function NewAlert() {
     
     const colourOptions = new Array(
         {value: "blue", label: "Default (Blue): Best for information", disabled: true},
-        {value: "tertiary", label: "Green: Best for success"},
+        {value: "green", label: "Green: Best for success"},
         {value: "secondary", label: "Orange: Best for warning"},
         {value: "red", label: "Red: Best for alert"},
         {value: "var(--darkPurple)", label: "Dark Purple: Best for ended alerts"},

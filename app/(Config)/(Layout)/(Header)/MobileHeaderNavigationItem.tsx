@@ -16,7 +16,7 @@ import {
 ;
 
 import { HeaderSubNavigationItems } from "@/lib/HeaderNavigationItems/SubNavigationItems";
-import { BsMenuApp, BsPlus, BsPlusLg } from "react-icons/bs";
+// import { BsMenuApp, BsPlus, BsPlusLg } from "react-icons/bs";
 
 interface HeaderNavigationItemProps extends FlexProps {
   slug: any;
@@ -141,7 +141,7 @@ export const MobileHeaderNavigationItem = ({
                 borderRadius={{ base: "0 1.5rem", lg: "0" }}
                 w="100%"
               > 
-              <Icon as={BsPlusLg} />
+              {/* <Icon as={BsPlusLg} /> */}
               </Box> 
             </MenuButton>
             <MenuList

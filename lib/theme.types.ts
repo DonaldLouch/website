@@ -10,7 +10,7 @@ export interface Theme {
   public: {
     primary: string;
     secondary: string;
-    tertiary: string;
+    green: string;
     black: string;
     white: string;
     blurredPurple: string;

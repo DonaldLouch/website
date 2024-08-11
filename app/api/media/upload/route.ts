@@ -3,7 +3,7 @@ import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 // import cuid from "cuid";
 import s3 from "@/lib/s3";
 import supabase from "@/lib/supabase";
-import cuid from "cuid";
+// import cuid from "cuid";
 import moment from "moment";
 
 // export const config = {
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     // console.log(upload)
 
     if (uploadDestination === "photography") {
-      const photoID = cuid()
+      const photoID = "photo"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
   
       const { status: supabaseStatus, error: supabaseError } = await supabase
         .from("PhotographyMedia")

@@ -2,7 +2,7 @@
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { Box, Button, Stack, Step, StepDescription, StepIcon, StepIndicator, StepNumber, StepSeparator, StepStatus, StepTitle, Stepper, Text, useSteps } from "@chakra-ui/react"
 import FileUploader from "../../../(Components)/FileUploader"
-import cuid from "cuid"
+// import cuid from "cuid"
 import { useEffect, useState } from "react"
 
 import { destroyCookie, parseCookies, setCookie } from 'nookies'
@@ -14,11 +14,12 @@ import supabase from "@/lib/supabase"
 import moment from "moment"
 import VideoInformation from "./VideoInformation"
 import ManualVideo from "./ManualVideo"
-import { BsCloudPlus, BsPencilSquare, BsPlay, BsTrash2 } from "react-icons/bs"
+import { Home01Icon } from "@hugeicons/react"
+// import { BsCloudPlus, BsPencilSquare, BsPlay, BsTrash2 } from "react-icons/bs"
     
 
 export default function VideoUploader({currentStep}: {currentStep: number}) {
-    const id = cuid()
+    const id = "video"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
 // categoryData
     const cookies = parseCookies() as any
     const videoID = cookies.videoID as string
@@ -102,8 +103,8 @@ export default function VideoUploader({currentStep}: {currentStep: number}) {
                 <Text m="2rem 0 1rem">Please note that before you start the video upload process, you will only have 30 minutes to complete the video and thumbnail upload steps (steps 2 and 3). It is ideal for videos to be in a .mp4 format and for the thumbnail in a .jpg/jpeg or .png file format. Once you are ready click the below button to start the process 🎉</Text>
             </SectionCard>
             <Stack direction="row" my="2rem" gap="2rem">
-                <Button type="button" variant="newFormButton" color="tertiary" leftIcon={<BsPlay />} onClick={startUploader} >Start The Upload Process</Button>
-                <Button type="button" variant="newFormButton" color="red" leftIcon={<BsTrash2 />} onClick={refreshUploader}>Refresh ID and Start Over</Button>
+                <Button type="button" variant="newFormButton" color="green" leftIcon={<Home01Icon />} onClick={startUploader} >Start The Upload Process</Button>
+                <Button type="button" variant="newFormButton" color="red" leftIcon={<Home01Icon />} onClick={refreshUploader}>Refresh ID and Start Over</Button>
             </Stack>
         </Box>
         <Box hidden={activeStep != 1} m="2rem" color="white">
@@ -123,9 +124,9 @@ export default function VideoUploader({currentStep}: {currentStep: number}) {
                 <Text m="2rem 0 1rem" textAlign="center">You have successfully uploaded your video!</Text>
             </SectionCard>
             <Stack direction="row" my="2rem" gap="2rem">
-                <Button as="a" variant="newFormButton" color="tertiary" leftIcon={<BsPlay />} href={`/video/${videoID}`} >Watch Video</Button>
-                <Button as="a" variant="newFormButton" color="yellow" leftIcon={<BsPencilSquare />} >Edit Video</Button>
-                <Button type="button" variant="newFormButton" leftIcon={<BsCloudPlus />} onClick={refreshUploader}>Start A New Upload</Button>
+                <Button as="a" variant="newFormButton" color="green" leftIcon={<Home01Icon />} href={`/video/${videoID}`} >Watch Video</Button>
+                <Button as="a" variant="newFormButton" color="yellow" leftIcon={<Home01Icon />} >Edit Video</Button>
+                <Button type="button" variant="newFormButton" leftIcon={<Home01Icon />} onClick={refreshUploader}>Start A New Upload</Button>
             </Stack>
         </Box>
     </>)

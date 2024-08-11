@@ -33,26 +33,27 @@ export default function EditAboutPage({ about }: any) {
       formData.append('file', file)
       formData.append('upload_preset', 'thumbnail')
 
-      const thumbnailData = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!}/image/upload`, {
-        method: 'POST',
-        body: formData
-      }).then(r => r.json())
+      // const thumbnailData = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!}/image/upload`, {
+      //   method: 'POST',
+      //   body: formData
+      // }).then(r => r.json())
 
-      const submitMediaData = {
-        mediaPublicID: thumbnailData.public_id,
-        mediaSignature: thumbnailData.signature,
-        mediaKind: thumbnailData.resource_type,
-        mediaTitle: thumbnailData.original_filename,
-        mediaExtension: thumbnailData.format,
-        mediaPath: thumbnailData.secure_url,
-        mediaSize: thumbnailData.bytes,
-        mediaDimensions: `${thumbnailData.width}px x ${thumbnailData.height}px`,
-      }
-      const response = await fetch('/api/media/newMedia', {
-        method: 'POST',
-        body: JSON.stringify(submitMediaData),
-      })
-      avatar = response ? thumbnailData.secure_url : avatar
+      // const submitMediaData = {
+      //   mediaPublicID: thumbnailData.public_id,
+      //   mediaSignature: thumbnailData.signature,
+      //   mediaKind: thumbnailData.resource_type,
+      //   mediaTitle: thumbnailData.original_filename,
+      //   mediaExtension: thumbnailData.format,
+      //   mediaPath: thumbnailData.secure_url,
+      //   mediaSize: thumbnailData.bytes,
+      //   mediaDimensions: `${thumbnailData.width}px x ${thumbnailData.height}px`,
+      // }
+      // const response = await fetch('/api/media/newMedia', {
+      //   method: 'POST',
+      //   body: JSON.stringify(submitMediaData),
+      // })
+      // avatar = response ? thumbnailData.secure_url : avatar
+      avatar
     }
 
     const updateAboutData = {

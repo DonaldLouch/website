@@ -340,7 +340,7 @@ export const MantineTheme = createTheme({
       "#b08810",
       "#987500",
     ],
-    tertiary: [
+    green: [
       "#68c81b",
       "#f1fee7",
       "#e4f9d3",

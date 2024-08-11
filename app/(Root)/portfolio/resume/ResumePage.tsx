@@ -16,7 +16,7 @@ import {
 } from "@mantine/core";
 
 import DisplayDate from "@/lib/DisplayDate";
-import { BsCalendar2, BsCamera2, BsCameraReels, BsDownload, BsEnvelopeAt, BsGithub, BsLinkedin, BsPersonBadge, BsPinMap, BsSend } from "react-icons/bs";
+// import { BsCalendar2, BsCamera2, BsCameraReels, BsDownload, BsEnvelopeAt, BsGithub, BsLinkedin, BsPersonBadge, BsPinMap, BsSend } from "react-icons/bs";
 import TableOfContents from "@/app/(Components)/TableOfContents";
 import { FooterIcon } from "@/app/(Config)/(Layout)/(Footer)/FooterIcon";
 import MultiAccordion from "@/app/(Components)/(Accordion)/MultiAccordion";
@@ -101,7 +101,8 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
     <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
       <Box bg="var(--darkPurple)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
       <Box w="100vw" h="100vh">
-          <Image src="https://res.cloudinary.com/donaldlouch/image/upload/v1668982688/donaldlouch/jan0tedmtlyt0sv4klsw.jpg" w="100vw" h="100vh"/>
+          {/* TO DO: CHANGE IMAGE! */}
+          <Image src={resume.avatar} w="100vw" h="100vh"/>
       </Box>
       <Box><HomeButton icon={<Briefcase02Icon size="3rem" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box> 
       <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">

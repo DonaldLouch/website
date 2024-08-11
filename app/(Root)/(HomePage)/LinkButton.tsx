@@ -7,12 +7,12 @@ import {
   Group,
 } from "@mantine/core"
 
-import { BsBarChart, BsChat, BsEnvelopeAt, BsLink45Deg, BsSpotify, BsTwitterX, BsVimeo, BsXbox, BsYoutube } from 'react-icons/bs'
+// import { BsBarChart, BsChat, BsEnvelopeAt, BsLink45Deg, BsSpotify, BsTwitterX, BsVimeo, BsXbox, BsYoutube } from 'react-icons/bs'
 import { IoShirtOutline, IoLogoSoundcloud } from 'react-icons/io5'
 import { SiApplemusic } from 'react-icons/si'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import { Chatting01Icon, GameController01Icon, MailAtSign02Icon, MusicNoteSquare02Icon, NewTwitterIcon, Shirt01Icon, SoundcloudIcon, SpotifyIcon, VimeoIcon, WifiConnected02Icon, YoutubeIcon } from "@hugeicons/react"
+import { ArrowUpRight01Icon, Chatting01Icon, GameController01Icon, MailAtSign02Icon, MusicNoteSquare02Icon, NewTwitterIcon, Shirt01Icon, SoundcloudIcon, SpotifyIcon, VimeoIcon, WifiConnected02Icon, YoutubeIcon } from "@hugeicons/react"
 
 interface LinkButtonProps {
   id: string
@@ -36,7 +36,7 @@ export const LinkButton = (link: LinkButtonProps) => {
   link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
   link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
   link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
-  BsLink45Deg as any
+  <ArrowUpRight01Icon variant="twotone" size="3rem" /> as any
 
   return <Anchor
     key={link.id}

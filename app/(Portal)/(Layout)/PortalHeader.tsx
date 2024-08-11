@@ -8,9 +8,10 @@ import {
   Text
 } from '@chakra-ui/react'
 import { UserButton } from '@clerk/nextjs'
+import { Home01Icon } from '@hugeicons/react'
 
 
-import { BsList } from 'react-icons/bs'
+// import { BsList } from 'react-icons/bs'
 
 interface PortalHeaderProps extends FlexProps {
     onOpen: () => void
@@ -43,7 +44,7 @@ export default function PortalHeader({ onOpen, ...rest }: PortalHeaderProps) {
                 color="white"
                 _hover={{boxShadow: "none", color: "primary"}}
                 icon={
-                    <BsList/>
+                    <Home01Icon />
                 }
             />
             <UserButton />

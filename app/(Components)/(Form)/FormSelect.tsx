@@ -17,11 +17,12 @@ export const FormSelect = ({inputID, inputData, inputLabel, inputHelperText, ...
                 dropdown: {background: "var(--mantine-color-black)", color: "var(--mantine-color-white)", border: "none", fontSize: "1.1rem"},
                 root: {boxShadow: "var(--mantine-shadow-bsBoldSecondary)", padding: "0.3rem 1rem", borderRadius: "var(--mantine-radius-md)"},
                 input: {color: "var(--mantine-color-white)", fontSize: "1.1rem"},
-                option: {fontSize: "1.1rem"},
-
+                option: {fontSize: "1.1rem"}
             }}
             classNames={{
                 option: classes.comboboxOption,
+                input: classes.selectInput,
+                section: classes.selectSection
             }}
             {...rest} 
         />

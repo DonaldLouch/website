@@ -12,7 +12,7 @@
 // } from "@chakra-ui/react";
 
 ;
-import { BsList } from "react-icons/bs";
+// import { BsList } from "react-icons/bs";
 import { AppShell, Group, Image, Anchor, Burger } from "@mantine/core";
 import { HeaderNavigationItems } from "@/lib/HeaderNavigationItems";
 import HeaderNavigationItem from "./HeaderNavigationItem";

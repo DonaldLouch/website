@@ -18,7 +18,7 @@ import {
 import Masonry from 'react-masonry-css'
 import React from "react";
 
-import { BsCamera, BsPersonBadge } from "react-icons/bs";
+// import { BsCamera, BsPersonBadge } from "react-icons/bs";
 
 import { useInView } from 'react-intersection-observer'
 import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";

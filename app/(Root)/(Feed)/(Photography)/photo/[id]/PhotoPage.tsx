@@ -14,7 +14,7 @@ import {
   Text
 } from "@mantine/core";
 
-import { BsCalendar2, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from "react-icons/bs";
+// import { BsCalendar2, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from "react-icons/bs";
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { useUser } from "@clerk/nextjs";

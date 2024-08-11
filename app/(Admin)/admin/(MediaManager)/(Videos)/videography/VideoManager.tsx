@@ -8,9 +8,10 @@ import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 
 import Image from "next/image"
-import { debounce } from "lodash"
+// import { debounce } from "lodash"
 import DisplayDate from "@/lib/DisplayDate"
-import { BsCloudPlus } from "react-icons/bs"
+import { Home01Icon } from "@hugeicons/react"
+// import { BsCloudPlus } from "react-icons/bs"
 
 async function fetchVideos(offset: number, limit: number) {
   const from = offset * limit
@@ -48,10 +49,10 @@ export default function VideoManager({videoData}: {videoData: any}) {
         }
     }
 
-    useEffect(() => {
-        debounce(() => handleScroll(containerRef), 200)
-        window.addEventListener('scroll', handleScroll)
-    }, [])
+    // useEffect(() => {
+    //     debounce(() => handleScroll(containerRef), 200)
+    //     window.addEventListener('scroll', handleScroll)
+    // }, [])
 
     useEffect(() => {
         isInView && loadMoreVideos(offset)
@@ -70,7 +71,7 @@ export default function VideoManager({videoData}: {videoData: any}) {
 
     return (<>
         <BreadCrumb breads={breadCrumbs} />
-        <Button as="a" variant="blackFormButton" href="/admin/videography/upload" leftIcon={<BsCloudPlus />}>Upload New Video</Button>
+        <Button as="a" variant="blackFormButton" href="/admin/videography/upload" leftIcon={<Home01Icon />}>Upload New Video</Button>
         <Grid gridTemplateColumns="repeat(3, 1fr)" gap="2rem" my="2rem" ref={containerRef}>
             {isLoading && !toast.isActive(toastID) &&
                 toast({

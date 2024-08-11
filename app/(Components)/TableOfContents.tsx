@@ -1,8 +1,6 @@
 import { Anchor, Button, Group, Stack, Text, Tooltip, rem } from '@mantine/core'
 import React, { useState } from 'react'
-import { BsListNested } from 'react-icons/bs'
-
-import cx from 'clsx';
+// import { BsListNested } from 'react-icons/bs'
 
 import classes from "./Components.module.css"
 import { useRouter } from 'next/navigation';

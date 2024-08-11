@@ -6,7 +6,8 @@ import { useState } from 'react'
 import DisplayDate from '@/lib/DisplayDate'
 import CopyButton from '@/app/(Components)/(Buttons)/ClipboardButton'
 import { useUser } from '@clerk/nextjs'
-import { BsCalendar2, BsEye, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
+import { Home01Icon } from '@hugeicons/react'
+// import { BsCalendar2, BsEye, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 export default function ViewPhotoAlbum({ imageData }: any) {
     const {user} = useUser()
@@ -85,7 +86,7 @@ export default function ViewPhotoAlbum({ imageData }: any) {
                                         {/* <Icon>
                                             <FontAwesomeIcon icon={["fas", "eye"]} width="100%" color='currentColor' />
                                         </Icon> */}
-                                        <BsEye />
+                                        <Home01Icon />
                                         <LinkOverlay href={`/photo/${imageData.id}`}>
                                             <Text fontSize="1.1rem" color="white">Open Photo Link</Text>
                                         </LinkOverlay>
@@ -108,12 +109,12 @@ export default function ViewPhotoAlbum({ imageData }: any) {
                                     </Tag></Link>} */}
                                     {imageData.location && <Link href={`/feed/photography?search=location&value=${imageData.location}`} style={{color: "currentColor"}}><Tag size='lg' colorScheme='messenger' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
                                         {/* <FontAwesomeIcon icon={["fas", "location-pin"]} color="currentColor" height="40%" /> */}
-                                        <BsPinMap />
+                                        <Home01Icon />
                                         <TagLabel pl="0.5rem">{imageData.location}</TagLabel>
                                     </Tag></Link>}
                                     <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
                                         {/* <FontAwesomeIcon icon={["fas", "camera-viewfinder"]} color="currentColor" height="40%" /> */}
-                                        <BsCalendar2 />
+                                        <Home01Icon />
                                         <TagLabel pl="0.5rem"><DisplayDate source={imageData.fileID.takenOn} /></TagLabel>
                                     </Tag>
                                 </Stack>
@@ -121,12 +122,12 @@ export default function ViewPhotoAlbum({ imageData }: any) {
                                     {/* <Box mr="0.3rem" color="secondary">
                                        <FontAwesomeIcon icon={["fas", "tags"]} color="currentColor" height="40%" />
                                     </Box> */}
-                                    <BsTags />
+                                    <Home01Icon />
                                     {imageData.tags.map((tag: any) => (
                                         <Link href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                                             <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" key={tag} whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
                                                 {/* <FontAwesomeIcon icon={["fas", "tag"]} color="currentColor" height="40%" /> */}
-                                                <BsTag />
+                                                <Home01Icon />
                                                 <TagLabel pl="0.5rem">{tag}</TagLabel>
                                             </Tag>
                                         </Link>

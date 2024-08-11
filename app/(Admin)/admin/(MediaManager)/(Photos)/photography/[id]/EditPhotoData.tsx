@@ -15,7 +15,7 @@ import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import ViewPhoto from "../../../(Components)/ViewPhoto";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
-import cuid from "cuid";
+// import cuid from "cuid";
 import moment from "moment";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { Calendar03Icon, Delete02Icon, GridIcon, Link04Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
@@ -194,7 +194,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         
         const albumID = values.albumSelect && values.albumSelect != "newAlbum" ? values.albumSelect 
         : values.albumSelect && values.albumSelect === "newAlbum" 
-        ? cuid()
+        ? "album"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
         : !values.albumSelect && null
     
         // values.photoName

@@ -20,14 +20,16 @@ import {
   useDisclosure,
   Icon,
 } from "@chakra-ui/react";
+import { MailAtSign02Icon, NewTwitterIcon, Chatting01Icon, GameController01Icon, WifiConnected02Icon, SpotifyIcon, VimeoIcon, YoutubeIcon, MusicNoteSquare02Icon, Shirt01Icon, SoundcloudIcon, Home01Icon } from "@hugeicons/react";
 
 ;
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 import { useRouter } from "next/navigation";
-import { BsEnvelopeAt, BsTwitterX, BsChat, BsXbox, BsBarChart, BsSpotify, BsVimeo, BsYoutube, BsLink45Deg } from "react-icons/bs";
-import { IoShirtOutline, IoLogoSoundcloud } from "react-icons/io5";
-import { SiApplemusic } from "react-icons/si";
+// import { BsLink45Deg } from "react-icons/bs";
+// import { BsEnvelopeAt, BsTwitterX, BsChat, BsXbox, BsBarChart, BsSpotify, BsVimeo, BsYoutube, BsLink45Deg } from "react-icons/bs";
+// import { IoShirtOutline, IoLogoSoundcloud } from "react-icons/io5";
+// import { SiApplemusic } from "react-icons/si";
 
 import * as Yup from 'yup'
 
@@ -102,18 +104,18 @@ export const LinkCardAdmin = (link: {
     linkForm: Yup.string().required("The Link is required"),
   })
   const icon = 
-  link.iconName === "BsEnvelopeAt" ? BsEnvelopeAt : 
-  link.iconName === "BsTwitterX" ? BsTwitterX : 
-  link.iconName === "BsChat" ? BsChat : 
-  link.iconName === "BsXbox" ? BsXbox : 
-  link.iconName === "BsBarChart" ? BsBarChart : 
-  link.iconName === "BsSpotify" ? BsSpotify : 
-  link.iconName === "BsVimeo" ? BsVimeo : 
-  link.iconName === "BsYoutube" ? BsYoutube : 
-  link.iconName === "SiApplemusic" ? SiApplemusic : 
-  link.iconName === "IoShirtOutline" ? IoShirtOutline : 
-  link.iconName === "IoLogoSoundcloud" ? IoLogoSoundcloud : 
-  BsLink45Deg
+  link.iconName === "mail-at-sign-02" ? <MailAtSign02Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "new-twitter" ? <NewTwitterIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "chatting-01" ? <Chatting01Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "game-controller-01" ? <GameController01Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "wifi-connect-02" ? <WifiConnected02Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "spotify" ? <SpotifyIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "vimeo" ? <VimeoIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "youtube" ? <YoutubeIcon variant="twotone" size="3rem" /> : 
+  link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
+  link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
+  <Home01Icon /> as any
   
   return (
     <>

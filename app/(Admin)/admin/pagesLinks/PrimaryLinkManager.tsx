@@ -9,12 +9,14 @@ import {
   Stack,
   useToast
 } from "@chakra-ui/react";
+import { Facebook02Icon, GithubIcon, Home01Icon, InstagramIcon, Linkedin02Icon, NewTwitterIcon, ThreadsIcon, TiktokIcon, YoutubeIcon } from "@hugeicons/react";
 
 ;
 import { Formik } from "formik";
 import { SubmitButton } from "formik-chakra-ui";
 import { useRouter } from "next/navigation";
-import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsFloppy, BsFloppy2, BsTrash2 } from "react-icons/bs";
+import { BsFloppy2, BsTrash2 } from "react-icons/bs";
+// import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsFloppy, BsFloppy2, BsTrash2 } from "react-icons/bs";
 
 import * as Yup from 'yup'
 
@@ -62,15 +64,15 @@ export const PrimaryLinkManager = (props: any) => {
   }
   const validationSchema = Yup.object({})
    const theIcon = 
-    link.icon === "BsFacebook" ? BsFacebook :
-    link.icon === "BsTwitterX" ? BsTwitterX :
-    link.icon === "BsLinkedin" ? BsLinkedin :
-    link.icon === "BsYoutube" ? BsYoutube :
-    link.icon === "BsThreads" ? BsThreads :
-    link.icon === "BsInstagram" ? BsInstagram :
-    link.icon === "BsTiktok" ? BsTiktok :
-    link.icon === "BsGithub" ? BsGithub :
-    BsLink45Deg
+    link.icon === "facebook-02" ? <Facebook02Icon size="2rem" /> :
+    link.icon === "new-twitter" ? <NewTwitterIcon size="2rem" /> :
+    link.icon === "linkedin-02" ? <Linkedin02Icon size="2rem" /> :
+    link.icon === "youtube" ? <YoutubeIcon size="2rem" /> :
+    link.icon === "threads" ? <ThreadsIcon size="2rem" /> :
+    link.icon === "instagram" ? <InstagramIcon size="2rem" /> :
+    link.icon === "tiktok" ? <TiktokIcon size="2rem" /> :
+    link.icon === "github" ? <GithubIcon size="2rem" /> :
+    <Home01Icon />
 
   return (
     <>
@@ -100,7 +102,7 @@ export const PrimaryLinkManager = (props: any) => {
                         color="white"
                         icon={<FontAwesomeIcon icon={["fab", link.icon]} />}
                       /> */}
-                      <Icon as={theIcon} boxSize="3rem" mt="3.5rem" />
+                      {/* <Icon as={theIcon} boxSize="3rem" mt="3.5rem" /> */}
                       <FormInputRow
                         inputID={`subTitle`}
                         inputLabel="Account Name"

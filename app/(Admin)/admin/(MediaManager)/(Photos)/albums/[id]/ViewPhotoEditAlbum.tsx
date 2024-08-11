@@ -17,7 +17,7 @@ import { SectionTitle } from '@/app/(Components)/SectionTitle'
 import { FormInputCard } from '@/app/(Components)/(Form)/FormInputCard'
 import { FormSelect } from '@/app/(Components)/(Form)/FormSelect'
 import ViewPhoto from '../../../(Components)/ViewPhoto'
-import { BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from 'react-icons/bs'
+// import { BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from 'react-icons/bs'
 
 export default function ViewPhotoEditAlbum({ photoData }: any) {
     const toast = useToast()

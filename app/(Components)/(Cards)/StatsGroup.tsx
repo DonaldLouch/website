@@ -3,7 +3,8 @@
 import { Box, Grid, Group, SimpleGrid, Text } from '@mantine/core';
 
 import classes from './StatsGrid.module.css';
-import { BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
+import { ArrowDownRight01Icon, ArrowUpRight01Icon } from '@hugeicons/react';
+// import { BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
 
 // const icons = {
 //   user: IconUserPlus,
@@ -35,7 +36,7 @@ export default function StatsGroup({ statsData }: { statsData: [title: any, valu
           {stat.difference &&
             <Text c={stat.difference > 0 ? 'teal' : 'red'} fz="sm" fw={500} ff="monospace" lh={1} display={{base: "none", sm: "initial"}}>
                 <span style={{paddingRight: "0.2rem"}}>{stat.difference}%</span>
-                {stat.difference > 0 ? <BsArrowUpRight /> : <BsArrowDownRight />}
+                {stat.difference > 0 ? <ArrowUpRight01Icon /> : <ArrowDownRight01Icon />}
             </Text>
         }
         </Group>

@@ -60,7 +60,7 @@ export const theme = extendTheme({
   colors: {
     primary: "#764688",
     secondary: "#e7c462",
-    tertiary: "#6acc1b",
+    green: "#6acc1b",
     black: "#0F111B",
     blackRGBA: "rgba(15,17,27,0.7)",
     white: "#EDEDED",

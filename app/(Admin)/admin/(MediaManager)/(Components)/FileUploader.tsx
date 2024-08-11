@@ -6,7 +6,7 @@ import { Stack, Input, Button, Box, Text, Group, rem, Title } from "@mantine/cor
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BsCloudUpload } from "react-icons/bs";
+// import { BsCloudUpload } from "react-icons/bs";
 
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";

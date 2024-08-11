@@ -2,7 +2,7 @@
 
 import { AspectRatio, Box, Flex, Stack, Image, Title, Text, Center, Group, Space, Tabs } from "@mantine/core";
 import PrimaryLinkedButton from "../../(Components)/(Buttons)/PrimaryLinkedButton";
-import { BsCameraReels, BsCode, BsConeStriped, BsFilePerson, BsFolder2Open, BsImages, BsPersonBadge, BsPostcard, BsSend } from "react-icons/bs";
+// import { BsCameraReels, BsCode, BsConeStriped, BsFilePerson, BsFolder2Open, BsImages, BsPersonBadge, BsPostcard, BsSend } from "react-icons/bs";
 import HomeHeroSection from "./(Sections)/HomeHeroSection";
 import LinksSection from "./(Sections)/LinksSection";
 import PinnedPhotos from "./(Sections)/PinnedPhotos";

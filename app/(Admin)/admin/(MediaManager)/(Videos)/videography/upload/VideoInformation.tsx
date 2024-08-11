@@ -16,7 +16,7 @@ import { FieldArray, Formik } from "formik"
 // import { SubmitButton } from "formik-chakra-ui"
 import moment from "moment"
 import { useRouter } from "next/navigation"
-import { BsBookmarkDash, BsBookmarkPlus, BsCameraReels, BsLink45Deg, BsMusicNoteList, BsPeople, BsPersonDash, BsPersonPlus, BsPlusLg, BsTrash2 } from "react-icons/bs"
+// import { BsBookmarkDash, BsBookmarkPlus, BsCameraReels, BsLink45Deg, BsMusicNoteList, BsPeople, BsPersonDash, BsPersonPlus, BsPlusLg, BsTrash2 } from "react-icons/bs"
 
 import * as Yup from 'yup'
 

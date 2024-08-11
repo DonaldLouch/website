@@ -12,7 +12,7 @@
 // } from "@chakra-ui/react";
 
 import { FooterIcon } from "./FooterIcon";
-import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
+// import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
 import { SignInButton, SignedOut, UserButton, useAuth, useSession } from "@clerk/nextjs";
 import { Anchor, Group, Stack, Image, Text, Box } from "@mantine/core";
 import { DashboardSpeed02Icon, Facebook02Icon, GithubIcon, InstagramIcon, Login01Icon, ThreadsIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";

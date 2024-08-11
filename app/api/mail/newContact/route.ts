@@ -2,14 +2,17 @@ import nodemailer from "nodemailer";
 
 import { NextResponse } from "next/server";
 
-import { createId } from "@paralleldrive/cuid2";
+// import { createId } from "@paralleldrive/cuid2";
 import supabase from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   const { name, email, subject, message } = (await request.json()) as any;
-  const id = createId();
+  const id =
+    "contact" +
+    Date.now().toString(36).toUpperCase() +
+    Math.random().toString(36).substring(2, 5).toLowerCase();
   try { 
     const { data: supData, status: supStatus } = (await supabase
       .from("Contact")

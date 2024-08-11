@@ -1,6 +1,6 @@
 'use client'
 
-import { BsCopy } from 'react-icons/bs'
+// import { BsCopy } from 'react-icons/bs'
 
 import classes from "./Buttons.module.css"
 import { AspectRatio, Button, CopyButton, Stack, Title, Text, Tooltip } from '@mantine/core'

@@ -1,7 +1,7 @@
 'use client'
 import { Anchor, Box, Group, Text, Notification } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { BsEnvelopeAt, BsEnvelopeExclamation, BsPersonBadge, BsSend, BsSendCheck, BsSendDash } from 'react-icons/bs'
+// import { BsEnvelopeAt, BsEnvelopeExclamation, BsPersonBadge, BsSend, BsSendCheck, BsSendDash } from 'react-icons/bs'
 
 import * as yup from 'yup';
 import { yupResolver } from 'mantine-form-yup-resolver';
@@ -12,7 +12,8 @@ import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
-import { MailAtSign02Icon, MailEdit02Icon, PassportIcon } from '@hugeicons/react';
+import { AlertDiamondIcon, MailAtSign02Icon, MailEdit02Icon, PassportIcon, PencilEdit01Icon } from '@hugeicons/react';
+import { notifications } from '@mantine/notifications';
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -62,11 +63,12 @@ export default function ContactMePage() {
             method: 'POST',
             body: JSON.stringify(values),
         })
-        if (response.ok) {
-            return <Notification icon={<BsSendCheck />} color="green" title="Sent 🎉">You've successfully sent a message to Donald Louch!</Notification>
-        } else {
-            return <Notification icon={<BsSendDash />} color="red" title="An Error Occurred">It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.</Notification>
-        }
+        notifications.show({ 
+            title: response.ok ? "Sent 🎉" : "An Error Occurred", 
+            message: response.ok ? "You've successfully sent a message to Donald Louch!" : "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.", 
+            color: response.ok ? "black" : "red-6",
+            icon: response.ok ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+        })
     }
 
     return (<>

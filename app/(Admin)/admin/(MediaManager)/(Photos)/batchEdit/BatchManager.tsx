@@ -22,7 +22,7 @@ import {MediaCard} from "../../(Components)/MediaCard"
 
 import Image from "next/image"
 import moment from "moment"
-import cuid from "cuid"
+// import cuid from "cuid"
 import supabase from "@/lib/supabase"
 
 export default function BatchManager({mediaData}: any) {
@@ -47,7 +47,7 @@ export default function BatchManager({mediaData}: any) {
     
     const albumID = values.albumSelect && values.albumSelect != "newAlbum" ? values.albumSelect 
       : values.albumSelect && values.albumSelect === "newAlbum" 
-      ? cuid()
+      ? "album"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
       : !values.albumSelect && null
 
     if (values.albumSelect === "newAlbum") { //Add new album

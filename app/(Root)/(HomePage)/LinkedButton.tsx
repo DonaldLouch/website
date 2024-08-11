@@ -1,7 +1,8 @@
 import { Icon, IconButton, Link, Tooltip } from "@chakra-ui/react"
+import { Facebook02Icon, NewTwitterIcon, Linkedin02Icon, YoutubeIcon, ThreadsIcon, InstagramIcon, TiktokIcon, GithubIcon, ArrowUpRight01Icon } from "@hugeicons/react"
 
 
-import { BsFacebook, BsGithub, BsInstagram, BsLink45Deg, BsLinkedin, BsThreads, BsTiktok, BsTwitterX, BsYoutube } from "react-icons/bs"
+// import { BsFacebook, BsGithub, BsInstagram, BsLink45Deg, BsLinkedin, BsThreads, BsTiktok, BsTwitterX, BsYoutube } from "react-icons/bs"
 
 interface LinkedButtonProps {
   id: string
@@ -13,15 +14,15 @@ interface LinkedButtonProps {
 
 export const LinkedButton = (buttonLink: LinkedButtonProps) => {
   const icon = 
-  buttonLink.icon === "BsFacebook" ? BsFacebook :
-  buttonLink.icon === "BsTwitterX" ? BsTwitterX :
-  buttonLink.icon === "BsLinkedin" ? BsLinkedin :
-  buttonLink.icon === "BsYoutube" ? BsYoutube :
-  buttonLink.icon === "BsThreads" ? BsThreads :
-  buttonLink.icon === "BsInstagram" ? BsInstagram :
-  buttonLink.icon === "BsTiktok" ? BsTiktok :
-  buttonLink.icon === "BsGithub" ? BsGithub :
-BsLink45Deg
+  buttonLink.icon === "facebook-02" ? <Facebook02Icon size="2rem" /> :
+  buttonLink.icon === "new-twitter" ? <NewTwitterIcon size="2rem" /> :
+  buttonLink.icon === "linkedin-02" ? <Linkedin02Icon size="2rem" /> :
+  buttonLink.icon === "youtube" ? <YoutubeIcon size="2rem" /> :
+  buttonLink.icon === "threads" ? <ThreadsIcon size="2rem" /> :
+  buttonLink.icon === "instagram" ? <InstagramIcon size="2rem" /> :
+  buttonLink.icon === "tiktok" ? <TiktokIcon size="2rem" /> :
+  buttonLink.icon === "github" ? <GithubIcon size="2rem" /> :
+  <ArrowUpRight01Icon size="2rem" />
   return (
     <Link
       key={buttonLink.id}
@@ -39,7 +40,8 @@ BsLink45Deg
           _hover={{ color: "primary" }}
           icon={<FontAwesomeIcon icon={["fab", buttonLink.icon]} />}
         /> */}
-        <Icon as={icon} boxSize="3rem" />
+        {icon}
+        {/* <Icon as={icon} boxSize="3rem" /> */}
       </Tooltip>
     </Link>
   )

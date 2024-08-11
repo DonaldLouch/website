@@ -4,7 +4,7 @@ import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Skeleton } from '@
 
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser, useAuth, useSession } from '@clerk/nextjs'
-import { BsCalendar2, BsEye, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
+// import { BsCalendar2, BsEye, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 import classes from "./Components.module.css"
 import { useDisclosure } from '@mantine/hooks'
@@ -12,7 +12,7 @@ import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
 import ClipboardButton from '@/app/(Components)/(Buttons)/ClipboardButton'
 import { Album02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, Edit02Icon, GithubIcon, GridIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react'
 
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import Image from 'next/image'
 import { Suspense, useEffect, useState } from 'react'
 
