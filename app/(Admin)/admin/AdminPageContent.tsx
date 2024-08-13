@@ -61,14 +61,14 @@ export default function AdminPageContent({users}: any) {
   return <>
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0">
       <Group align="center" justify="center" c="var(--primary)">
-        <WavingHand01Icon size="2.5rem" color="currentColor" />
+        <WavingHand01Icon size="2.5rem" color="currentColor" variant="twotone" />
         <Title ta="center" size="2.5rem" fw="900" order={1}>Welcome!</Title>
       </Group>
         <Text ta="center" fz="1.5rem" fw="600" mb="0">Welcome to the Donald Louch Website</Text>
         <Text ta="center">{process.env.NEXT_PUBLIC_DESCRIPTION}</Text>
     </Stack>
     <Group align="center" justify="center" c="green">
-      <ZapIcon size="2.5rem" color="currentColor" />
+      <ZapIcon size="2.5rem" color="currentColor" variant="twotone" />
       <Title ta="center" size="2.5rem" fw="900">Quick Actions</Title>
     </Group>
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem 0.5rem" my="2rem" gap="0">

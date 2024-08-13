@@ -25,13 +25,13 @@ export default function PortalHome() {
   return <>
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0">
       <Group align="center" justify="center" c="var(--secondary)">
-        <Cone01Icon size="2.5rem" color="currentColor" />
+        <Cone01Icon size="2.5rem" color="currentColor" variant="twotone" />
         <Title ta="center" size="2.5rem" fw="900" order={2}>UNDER CONSTRUCTION!</Title>
       </Group>
         <Text ta="center">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
     </Stack>
     <Group align="center" justify="center" c="green">
-      <Tick01Icon size="2.5rem" color="currentColor" />
+      <Tick01Icon size="2.5rem" color="currentColor" variant="twotone" />
       <Title ta="center" size="2.5rem" fw="900" order={2}>Currently Available</Title>
     </Group>
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem" my="2rem" gap="0">
