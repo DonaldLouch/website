@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 // import { BsCloudUpload } from "react-icons/bs";
 
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
-import { Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";
+import { AlertDiamondIcon, Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";
+import { notifications } from "@mantine/notifications";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()
@@ -50,7 +51,14 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
           body.append('date', file.lastModifiedDate)
           id && body.append('mediaID', id)
           const upload = await fetch('/api/media/upload', { method: "POST", body }).then(response => response.json())
-          mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
+          upload.supabaseStatus && notifications.show({ 
+            title: `${upload.supabaseStatus === 201 ? "File Uploaded!" : `Error #${upload.supabaseError?.code} has Occurred`}`, 
+            message:`${upload.supabaseStatus === 201 ? `You have successfully uploaded your ${mediaType} file titled "${upload.fileName}"` : `An error has occurred: ${upload.supabaseError?.message}. ${upload.supabaseError?.hint && `${upload.supabaseError?.hint}.`}`}`, 
+            color: upload.supabaseStatus === 201 ? "black" : "red",
+            icon: upload.supabaseStatus === 201 ? <FileUploadIcon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />
+        })
+
+        mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
           // upload.videoUploaded && router.push('/admin/videography/upload?step=3')
           // upload.thumbnailUploaded && router.push('/admin/videography/upload?step=4')
           

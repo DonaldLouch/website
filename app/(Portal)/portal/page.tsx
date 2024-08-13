@@ -1,9 +1,10 @@
 'use client'
 
-import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
+// import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 import HouseIcon from "../../(Components)/(Vectors)/house";
-import { Cone01Icon } from "@hugeicons/react";
-import { Box } from "@mantine/core";
+import { Cone01Icon, Files01Icon, Tick01Icon } from "@hugeicons/react";
+import { Box, Button, Card, Group, Stack, Text, Title } from "@mantine/core";
+import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -21,22 +22,21 @@ export default function PortalHome() {
   // const userData = useSession()
 
   // // console.log(userData.session?.user.organizationMemberships?.[0].role)
-  return (
-    <>
-      <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="5ren" fontWeight="900" mb="1rem"><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>UNDER CONSTRUCTION!</Heading></CardHeader>
-        <CardBody>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
-          {/* <Text textAlign="center">Hi, my name is Donald Louch and I am a twenty-nine-year-old Canadian web developer and digital content creator.</Text> */}
-        </CardBody>
-      </Card>
-      {/* <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="3xl" textDecoration="underline" fontWeight="900" mb="1rem">Quick Actions!</Heading></CardHeader>
-        <CardBody>
-          <Stack direction="row" justifyContent="center">
-          </Stack>
-        </CardBody>
-      </Card> */}
-    </>
-  )
+  return <>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0">
+      <Group align="center" justify="center" c="var(--secondary)">
+        <Cone01Icon size="2.5rem" color="currentColor" />
+        <Title ta="center" size="2.5rem" fw="900" order={2}>UNDER CONSTRUCTION!</Title>
+      </Group>
+        <Text ta="center">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
+    </Stack>
+    <Group align="center" justify="center" c="green">
+      <Tick01Icon size="2.5rem" color="currentColor" />
+      <Title ta="center" size="2.5rem" fw="900" order={2}>Currently Available</Title>
+    </Group>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem" my="2rem" gap="0">
+        <Text>I am pleased to announce the launch of the initial phase of “Projects” accessible within the Donald Louch Client Portal. This platform enables clients to initiate new projects and access and modify project details. Further enhancements and functionalities are planned for future development. </Text>
+        <PrimaryLinkedButton link="/portal/projects" icon={<Files01Icon />}>Project Manager</PrimaryLinkedButton>
+    </Stack>
+  </>
 }

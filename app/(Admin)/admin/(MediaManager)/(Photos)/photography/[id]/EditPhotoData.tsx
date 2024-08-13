@@ -18,7 +18,7 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 // import cuid from "cuid";
 import moment from "moment";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Calendar03Icon, Delete02Icon, GridIcon, Link04Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
+import { AlertDiamondIcon, Calendar03Icon, Delete02Icon, FileEditIcon, GridIcon, Link04Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
@@ -242,6 +242,13 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
             isPortfolio: values.isPortfolio,
             isPinned: values.isPinned
         }).eq('id', photoID)
+        supabaseStatus && notifications.show({ 
+            title: `${supabaseStatus === 204 ? `Photo ${photoName} Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
+            message:`${supabaseStatus === 204 ? `You have successfully edited the selected photos!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
+            color: supabaseStatus === 204 ? "black" : "red",
+            icon: supabaseStatus === 204 ? <FileEditIcon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />
+        })
+        supabaseStatus === 204 && router.refresh()
         // supabaseStatus && !toast.isActive(toastID) &&
         //     toast({
         //         id: toastID,

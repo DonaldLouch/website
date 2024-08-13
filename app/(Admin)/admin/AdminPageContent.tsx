@@ -1,7 +1,5 @@
 'use client'
 
-import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
-import HouseIcon from "../../(Components)/(Vectors)/house";
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -17,6 +15,9 @@ import HouseIcon from "../../(Components)/(Vectors)/house";
 
 import { SearchUsers } from "./(Components)/SearchUsers";
 import { clerkClient } from "@clerk/nextjs/server";
+import { Album02Icon, AlertDiamondIcon, CameraVideoIcon, Chatting01Icon, Files02Icon, NewsIcon, WavingHand01Icon, ZapIcon } from "@hugeicons/react";
+import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
+import { Group, Stack, Text, Title } from "@mantine/core";
 // import { setRole } from "./_actions";
 
 export default function AdminPageContent({users}: any) {
@@ -24,29 +25,61 @@ export default function AdminPageContent({users}: any) {
 
   // // console.log(userData.session?.user.organizationMemberships?.[0].role)
   //  const setRole = await fetch('/api/media/upload', { method: "POST", body }).then(response => response.json())
-  console.log(users)
-  return (
-    <>
-      <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="4xl" textDecoration="underline" fontWeight="900" mb="1rem">Welcome!</Heading></CardHeader>
-        <CardBody>
-          <Text textAlign="center" fontSize="4xl" mb="0.7rem" fontWeight="900">Welcome to the Donald Louch Website</Text>
-          <Text textAlign="center">{process.env.NEXT_PUBLIC_DESCRIPTION}</Text>
-          {/* <Text textAlign="center">Hi, my name is Donald Louch and I am a twenty-nine-year-old Canadian web developer and digital content creator.</Text> */}
-        </CardBody>
-      </Card>
-      <Card px="1rem" mt="0">
-        <CardHeader><Heading textAlign="center" size="3xl" textDecoration="underline" fontWeight="900" mb="1rem">Quick Actions!</Heading></CardHeader>
-        <CardBody>
-          <Stack direction="row" justifyContent="center">
-            <Button as="a" href={`/admin/photography`} variant="primary" background="primary" color="white" p="1.8rem 2rem" my="1rem !important">Photography Feed Manager</Button>
-            <Button as="a" href={`/admin/videography`} variant="primary" background="primary" color="white" p="1.8rem 2rem" my="1rem !important">Videography Feed Manager</Button>
-            <Button as="a" href={`/admin/blog`} variant="primary" background="primary" color="white" p="1.8rem 2rem" my="1rem !important">Blog Manager</Button>
-            <Button as="a" href={`/admin/pages`} variant="primary" background="primary" color="white" p="1.8rem 2rem" my="1rem !important">Page Manager</Button>
-            <Button as="a" href={`/admin/media`} variant="primary" background="primary" color="white" p="1.8rem 2rem" my="1rem !important">Media Manager</Button>
-            <Button as="a" href={`/admin/messages`} variant="primary" background="primary" color="white" p="1.8rem 2rem" my="1rem !important">Messages</Button>
-          </Stack>
-          {/* <SearchUsers /> */}
+  
+  const quickActions = [
+    {
+      link: "photography",
+      title: "Photography Manager",
+      icon: <Album02Icon />
+    },
+    {
+      link: "videography",
+      title: "Videography Manager",
+      icon: <CameraVideoIcon />
+    },
+    {
+      link: "blog",
+      title: "Blog Manager",
+      icon: <NewsIcon />
+    },
+    {
+      link: "pages",
+      title: "Pages Manager",
+      icon: <Files02Icon />
+    },
+    {
+      link: "messages",
+      title: "Messages",
+      icon: <Chatting01Icon />
+    },
+    {
+      link: "alerts",
+      title: "Website Alerts",
+      icon: <AlertDiamondIcon />
+    },
+  ]
+  return <>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0">
+      <Group align="center" justify="center" c="var(--primary)">
+        <WavingHand01Icon size="2.5rem" color="currentColor" />
+        <Title ta="center" size="2.5rem" fw="900" order={1}>Welcome!</Title>
+      </Group>
+        <Text ta="center" fz="1.5rem" fw="600" mb="0">Welcome to the Donald Louch Website</Text>
+        <Text ta="center">{process.env.NEXT_PUBLIC_DESCRIPTION}</Text>
+    </Stack>
+    <Group align="center" justify="center" c="green">
+      <ZapIcon size="2.5rem" color="currentColor" />
+      <Title ta="center" size="2.5rem" fw="900">Quick Actions</Title>
+    </Group>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem 0.5rem" my="2rem" gap="0">
+        <Group justify="center" my="1rem" gap="0.5rem">
+            {quickActions.map((action: any) => (
+              <PrimaryLinkedButton icon={action.icon} link={`/admin/${action.link}`} key={action.link}>{action.title}</PrimaryLinkedButton>
+            ))}
+          </Group>
+    </Stack>
+
+     {/* <SearchUsers /> */}
 
       {/* {users.map((user: any) => {
         return (
@@ -79,8 +112,5 @@ export default function AdminPageContent({users}: any) {
           </div>
         );
       })} */}
-        </CardBody>
-      </Card>
-    </>
-  )
+  </>
 }
