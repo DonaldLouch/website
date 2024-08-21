@@ -139,7 +139,7 @@ export default async function GetProject({project, projectDescription, isStaff, 
                 </Group>
                 <Group align="center" justify="center">
                     {/* <Badge color="gray" m="0 auto">{projectType?.fullText ? projectType?.fullText : projectType?.smallText}</Badge> */}
-                    <Badge color="gray" leftSection={<Book02Icon />} p="1.5rem">
+                    <Badge color="gray" leftSection={<Book02Icon />}>
                         {projectType?.smallText}
                     </Badge>
                     <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <Loading03Icon variant="twotone" />}>

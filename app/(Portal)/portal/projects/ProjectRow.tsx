@@ -30,7 +30,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
             <Text fz="sm" lh="1" lineClamp={1} fw="600">{project.name}</Text>
           </Tooltip>
           <Tooltip label={projectType?.fullText ? projectType?.fullText : projectType?.smallText}>
-            <Badge color="gray" leftSection={<Book02Icon />} p="1.5rem" mb="1rem" mt="-1rem">
+            <Badge color="gray" leftSection={<Book02Icon />} mb="1rem" mt="-1rem">
                 {projectType?.smallText}
             </Badge>
           </Tooltip>

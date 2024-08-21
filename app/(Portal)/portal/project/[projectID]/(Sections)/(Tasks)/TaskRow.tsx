@@ -45,7 +45,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
             <Text fz="sm">#{task.taskOrderNumber}</Text>
         </Table.Td>
 
-        <Table.Td w="35%">
+        <Table.Td w="32.5%">
             <Tooltip label={task.title}>
                 <Text fz="sm" fw={!task.isCompleted ? "900" : "600"} lineClamp={1} td={task.isCompleted && "line-through"}>{task.title}</Text>
             </Tooltip>
@@ -78,7 +78,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
             </Text>
         </Table.Td>
 
-        <Table.Td w="10%" ta="right">
+        <Table.Td w="12.5%" ta="right">
             <PriorityBadge priority={task.priority} />
         </Table.Td>
 
