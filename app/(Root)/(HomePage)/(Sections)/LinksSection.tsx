@@ -36,7 +36,7 @@ export default function LinksSection({about, primaryLinks, links}: any) {
                     buttonLink.icon === "youtube" ? <YoutubeIcon size="2rem" /> :
                     buttonLink.icon === "threads" ? <ThreadsIcon size="2rem" /> :
                     buttonLink.icon === "instagram" ? <InstagramIcon size="2rem" /> :
-                    buttonLink.icon === "tiktok" ? <TiktokIcon size="2rem" /> :
+                    buttonLink.icon === "tiktok" ? <TiktokIcon variant='twotone' size="2rem" /> :
                     buttonLink.icon === "github" ? <GithubIcon size="2rem" /> :
                     <ArrowUpRight01Icon size="2rem" />
                 return <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={icon} iconPadding="0.6rem"/>

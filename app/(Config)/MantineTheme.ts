@@ -170,8 +170,10 @@ export const MantineTheme = createTheme({
     Badge: Badge.extend({
       defaultProps: {
         size: "lg",
+        autoContrast: true,
         radius: "md",
-        p: "1.5rem",
+        p: "1rem 1.2rem",
+        h: "auto",
         styles: {
           root: { whiteSpace: "nowrap", wordBreak: "keep-all" },
           label: { marginLeft: "0.5rem" },
