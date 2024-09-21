@@ -11,7 +11,7 @@ export const BreadCrumb = (props: BreadComp) => {
     const { breads } = props
     
      return <Breadcrumbs m="-0.5rem 0 1rem" separator={<ArrowRight01Icon />} fz="0.8rem">
-        <Anchor href='/portal' className={classes.breadHome}><Home01Icon variant="duotone" size="1.5rem" /></Anchor>
+        <Anchor href='/portal' className={classes.breadHome} c="var(--secondary)"><Home01Icon variant="duotone" size="1.5rem" /></Anchor>
         {breads.map((bread:any, index: number) => (
             <Anchor key={index} href={bread.pageLink} c="white" fz="0.8rem">{bread.pageName}</Anchor>
         ))}

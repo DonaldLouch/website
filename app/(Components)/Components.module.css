@@ -111,9 +111,9 @@
 }
 
 .breadHome {
-    color: var(--secondary);
+    /* color: var(--secondary); */
     &:hover {
-        color: var(--mantine-color-white);
+        color: var(--mantine-color-white) !important;
     }
 }
 
