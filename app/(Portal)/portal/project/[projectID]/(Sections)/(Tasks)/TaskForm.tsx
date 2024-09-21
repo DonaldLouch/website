@@ -7,7 +7,7 @@ import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
 import { ProjectStatus } from "@/lib/Project/projectStatus"
 import { TaskPriority } from "@/lib/Project/taskPriority"
 import supabase from "@/lib/supabase"
-import { AlertDiamondIcon, PencilEdit01Icon } from "@hugeicons/react"
+import { AlertDiamondIcon, PencilEdit01Icon, TaskDone01Icon, TaskEdit01Icon } from "@hugeicons/react"
 import { Box, SimpleGrid, Title } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
@@ -26,6 +26,42 @@ export default function TaskForm({task, isStaff}: any) {
 
     useEffect(() => {
         console.log(startTime && startTime != new Date(task.startDate))
+
+         if (statusSelected != task.status  && statusSelected === "COMPLETED") {
+            (async () => {
+                const { status: supabaseStatus , error: supabaseError } = await supabase.from("Tasks").update({ 
+                    isCompleted: true,
+                    status: statusSelected,
+                    completedOn: new Date(),
+                    lastUpdated: new Date()
+                }).eq('id', task.id)
+                supabaseStatus && notifications.show({ 
+                    title: `${supabaseStatus === 204 ? `"${task.title}" Completed 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
+                    message: `${supabaseStatus === 204 ? `You have successfully completed the task!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
+                    color: supabaseStatus === 204 ? "black" : "red-6",
+                    icon: supabaseStatus === 204 ? <TaskDone01Icon /> : <AlertDiamondIcon />
+                })
+                supabaseStatus === 204 && router.refresh()
+            })()
+        }
+        
+        if (statusSelected != task.status  && task.status === "COMPLETED") {
+            (async () => {
+                const { status: supabaseStatus , error: supabaseError } = await supabase.from("Tasks").update({ 
+                    isCompleted: false,
+                    status: statusSelected,
+                    completedOn: null,
+                    lastUpdated: new Date()
+                }).eq('id', task.id)
+                supabaseStatus && notifications.show({ 
+                    title: `${supabaseStatus === 204 ? `"${task.title}" Not Completed 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
+                    message: `${supabaseStatus === 204 ? `You have successfully marked the task as uncompleted!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
+                    color: supabaseStatus === 204 ? "black" : "red-6",
+                    icon: supabaseStatus === 204 ? <TaskEdit01Icon /> : <AlertDiamondIcon />
+                })
+                supabaseStatus === 204 && router.refresh()
+            })()
+        }
 
         if (statusSelected != task.status || prioritySelected != task.priority || startTime && startTime != new Date(task.startDate) || deadline && deadline != new Date(task.deadline)) {
             (async () => {
@@ -62,7 +98,7 @@ export default function TaskForm({task, isStaff}: any) {
     //     // })
     // }
 
-     const initialValues= {
+    const initialValues= {
     }
 
     const validationSchema = yup.object({})

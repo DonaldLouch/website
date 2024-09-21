@@ -83,7 +83,11 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
         </Table.Td>
 
         <Table.Td w="15%" ta="left">
-            <StatusBadge status={task.status} />
+            {task.isCompleted ? <Tooltip label={`Task Completed On ${moment(task.completedOn).format("MMMM Do, YYYY [at] h:mma")}`}>
+                <Badge color="green" leftSection={<CheckmarkBadge03Icon variant="twotone" />}>
+                    Completed!
+                </Badge>
+            </Tooltip> : <StatusBadge status={task.status} />}
         </Table.Td>
         
         <Table.Td>
@@ -110,13 +114,13 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
                     <Title ff="body" fw="900" style={{ wordBreak: "break-all" }}>{task.title}</Title>
                 </Group>
                 <Group align="center" justify="center">
-                    {task.isCompleted && <Tooltip label={`Task Completed On ${moment(task.completedOn).format("MMMM Do, YYYY [at] h:mma")}`}>
+                    <PriorityBadge priority={task.priority} />
+                    {/* <StatusBadge status={task.status} /> */}
+                    {task.isCompleted ? <Tooltip label={`Task Completed On ${moment(task.completedOn).format("MMMM Do, YYYY [at] h:mma")}`}>
                         <Badge color="green" leftSection={<CheckmarkBadge03Icon variant="twotone" />}>
                            Completed!
                         </Badge>
-                    </Tooltip>}
-                    <PriorityBadge priority={task.priority} />
-                    <StatusBadge status={task.status} />
+                    </Tooltip> : <StatusBadge status={task.status} />}
                 </Group>
             </Group>
             <Divider />
