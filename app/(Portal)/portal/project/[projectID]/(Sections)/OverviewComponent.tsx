@@ -67,25 +67,25 @@ export default async function OverviewComponent({project, projectDescription}: a
                                 <Tooltip label={`${project.client.firstName} ${project.client.lastName}`}>
                                     <Text fz="2xl" fw="900" lineClamp={1}>{project.client.firstName} {project.client.lastName}</Text>
                                 </Tooltip>
-                                <Group c="white">
+                                <Group c="white" wrap="nowrap">
                                     <ContactIcon />
                                     <Tooltip label={project.client.id}>
                                         <Text lineClamp={1}>{project.client.id}</Text>
                                     </Tooltip>
                                 </Group>
-                                <Group c="white">
+                                <Group c="white" wrap="nowrap">
                                     <MailAtSign01Icon />
                                     <Tooltip label={`Send an Email to ${project.client.email}`}>
                                         <Anchor href={`mailto:${project.client.firstName} ${project.client.lastName}<${project.client.email}>?subject=RE: Donald Louch Project ${project.id}`} c="var(--secondary)" underline="hover"><Text lineClamp={1}>{project.client.email}</Text></Anchor>
                                     </Tooltip>
                                 </Group>
-                                <Group c="white">
+                                <Group c="white" wrap="nowrap">
                                     <SmartPhone01Icon />
                                     <Tooltip label={`Client Phone Number ${project.client.phoneNumber}`}>
                                         <Text lineClamp={1}>{project.client.phoneNumber}</Text>
                                     </Tooltip>
                                 </Group>
-                                <Group c="white">
+                                <Group c="white" wrap="nowrap">
                                     <Time02Icon />
                                     <Tooltip label={`It's ${moment().tz(project.client.timezone).format("MMMM Do, YYYY")} for the client right now!; ${project.client.timezone}`}>
                                         {/* MMMM Do, YYYY; h:mma */}

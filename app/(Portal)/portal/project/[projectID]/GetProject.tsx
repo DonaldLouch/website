@@ -15,8 +15,9 @@ import TasksComponent from "./(Sections)/(Tasks)/TasksComponent";
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import { ProjectType } from "@/lib/Project/projectType";
 import { Book02Icon, Cone01Icon, Loading03Icon } from "@hugeicons/react";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import NotesSection from "./(Sections)/NotesSection";
+import { useUser } from "@clerk/nextjs";
 
 // import { Metadata } from 'next';
 
@@ -29,6 +30,11 @@ import NotesSection from "./(Sections)/NotesSection";
 // }
 
 export default async function GetProject({project, projectDescription, isStaff, tasks}: any) {
+    const { user } = useUser()
+    const router = useRouter()
+    // console.log(user.id)
+    !isStaff && project.client.id != user.id && router.push("/portal/projects?error=unauthorized")
+    
     // const projectID = props.projectID
     // const {response: project} = await getProjectData(projectID)
     // const {data: session} = useSession()
