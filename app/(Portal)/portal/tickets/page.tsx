@@ -13,7 +13,7 @@ import supabase from '@/lib/supabase';
 import Tickets from './Tickets';
  
 export const metadata: Metadata = {
-  title: `Projects | ${process.env.WEBSITE_NAME}`
+  title: `Tickets | ${process.env.WEBSITE_NAME}`
 };
 
 export default async function TicketsPage() {
