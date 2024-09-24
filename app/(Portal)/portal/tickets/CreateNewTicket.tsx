@@ -97,7 +97,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
 
         const theSubject = subjectSelected === "Other" ? values.otherSubject : subjectSelected
 
-        const relatedArray = relatedSelected.split(";;")
+        const relatedArray = relatedSelected ?relatedSelected.split(";;") : []
         const relatedTo = {type: relatedArray[0], id: relatedArray[1]}
 
         const { status: supabaseStatus , error: supabaseError } = await supabase.from("Tickets").insert({ 
