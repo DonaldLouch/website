@@ -18,6 +18,7 @@ import { Book02Icon, Cone01Icon, Loading03Icon } from "@hugeicons/react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import NotesSection from "./(Sections)/NotesSection";
 import { useUser } from "@clerk/nextjs";
+import ProjectTickets from "./(Sections)/(Tickets)/ProjectTickets";
 
 // import { Metadata } from 'next';
 
@@ -186,7 +187,8 @@ export default async function GetProject({project, projectDescription, isStaff, 
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="tickets" py="2rem"><>
-                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Tickets" section is currently under constriction.</Text></Stack>
+                    <ProjectTickets id={project.id} isStaff={isStaff} />
+                 {/* <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Tickets" section is currently under constriction.</Text></Stack> */}
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="timeSheets" py="2rem"><>

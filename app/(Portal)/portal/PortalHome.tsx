@@ -35,7 +35,7 @@ export default function PortalHome( {isStaff}: any ) {
     </Stack>
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem" my="2rem" gap="0">
         <Text>Coming very soon is the ability to create and manage tickets within the Donald Louch Client Portal. This platform enables clients to initiate new tickets and access and modify ticket details. Further enhancements and functionalities are planned for future development. This will also be the new way of requesting further information for my resume and help with my website and accounts on my website.</Text>
-        <PrimaryButton component="a" href={isStaff ?"/portal/tickets" : "#"} icon={<Ticket01Icon />} disabled={!isStaff}>Ticket Manager</PrimaryButton>
+        <PrimaryLinkedButton link="/portal/tickets" icon={<Ticket01Icon />}>Ticket Manager</PrimaryLinkedButton>
     </Stack>
     <Group align="center" justify="center" c="green">
       <Tick01Icon size="2.5rem" color="currentColor" variant="twotone" />

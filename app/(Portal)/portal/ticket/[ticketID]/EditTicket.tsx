@@ -17,7 +17,7 @@ import { ProjectType } from "@/lib/Project/projectType";
 import { Box, Stack, Modal, SimpleGrid } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { useDisclosure } from "@mantine/hooks";
-import { AlertDiamondIcon, SaveMoneyDollarIcon, SentIcon, SeoIcon, SmartPhone01Icon, TextFontIcon } from "@hugeicons/react";
+import { AlertDiamondIcon, PencilEdit01Icon, SaveMoneyDollarIcon, SentIcon, SeoIcon, SmartPhone01Icon, TextFontIcon, Ticket01Icon } from "@hugeicons/react";
 import { useForm } from "@mantine/form";
 
 import * as yup from 'yup';
@@ -40,6 +40,8 @@ import { Timezones } from "@/lib/Timezones";
 import moment from 'moment-timezone';
 import { TaskPriority } from "@/lib/Project/taskPriority";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
+import { ProjectStatus } from "@/lib/Project/projectStatus";
+import { clerkClient } from "@clerk/nextjs/server";
 
 // type ProjectProps = {
 //     isAdmin: boolean
@@ -60,76 +62,65 @@ import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
 //     return adminProjects
 // }
 
-export default function CreateNewTicket({isStaff, relatedID}: any) {
-    const prams = useSearchParams()
-    const openID = prams.get("openID") as string
-
+export default function EditTicket({isStaff, ticket}: any) {
     const router = useRouter()
     const [opened, { open, close }] = useDisclosure(false)
+    const [statusSelected, setStatusSelected] = useState(ticket.status ? ticket.status : null)
 
-    // const guessTimezone =  moment.tz.guess()
+    const [prioritySelected, setPrioritySelected] = useState(ticket.priority)
+    const [fromSelected, setFromSelected] = useState(ticket.from.type ? `client;;${ticket.from.id}` : null)
+    const [relatedSelected, setRelatedSelected] = useState(ticket.relatedTo.id ? `${ticket.relatedTo.type};;${ticket.relatedTo.id}` : null)
+    const [internalOptions, setInternalOptions] = useState(ticket.internalONLY)
+    const [users, setUsers] = useState<any>([])
 
-    const [prioritySelected, setPrioritySelected] = useState("LOW")
-    const [relatedSelected, setRelatedSelected] = useState(relatedID ? relatedID : null)
-    const [subjectSelected, setSubjectSelected] = useState(null)
-    const [internalOptions, setInternalOptions] = useState(false)
-    // const [timezoneSelected, setTimezoneSelected] = useState(guessTimezone)
-    console.log(relatedID)
     const { user } = useUser()
     const userID = user?.id
-    
-    const isOpenedID = openID === "newTicket" ? true : false
 
-    function forceClose() {
-        router.push(`/portal/tickets`)
-    }
+    useEffect(() => {
+        async function getUsers() {
+            const { users } = await fetch('/api/users/getAllUsers').then((res) => res.json())
+            setUsers(users)
+        }
+        getUsers()
+    }, [])
 
     const onSubmit = async (values: any) => {
-        const id = "ticket"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
-
-        const from = isStaff ? {type: "admin"} : !isStaff && user?.id ? {
-            type: "client",
-            id: user?.id,
-            firstName: user?.firstName,
-            lastName: user?.lastName,
-            email: user?.emailAddresses[0].emailAddress,
-        } : {type: "user"}
-
-        const theSubject = subjectSelected === "Other" ? values.otherSubject : subjectSelected
-
+        const fromArray = fromSelected.split(";;")
+        const userData = users.find(({ id }) => id === fromArray[1])
+        const from = fromArray[0] === "admin" ? {type: "admin"} 
+            : fromArray[0] === "client" ? {
+                type: "client",
+                id: userData.id,
+                firstName: userData.firstName,
+                lastName: userData.lastName,
+                email: userData.emailAddresses[0].emailAddress,
+            } 
+            : {type: "user"}
         const relatedArray = relatedSelected.split(";;")
         const relatedTo = {type: relatedArray[0], id: relatedArray[1]}
 
-        const { status: supabaseStatus , error: supabaseError } = await supabase.from("Tickets").insert({ 
-            id,
+        const { status: supabaseStatus , error: supabaseError } = await supabase.from("Tickets").update({ 
             from,
-            subject: theSubject,
+            subject: values.subject,
             body: values.body,
             relatedTo: relatedSelected ? relatedTo : null,
             internalONLY: internalOptions,
             priority: prioritySelected,
-            // status: "SUBMITTED",
-            createdOn: new Date(),
+            status: statusSelected,
             lastUpdatedOn: new Date()
-        })
+        }).eq('id', ticket.id)
         supabaseStatus && notifications.show({ 
-            title: `${supabaseStatus === 201 ? "Ticket Created 🎉" : `Error #${supabaseError?.code} has Occurred`}`, 
-            message:`${supabaseStatus === 201 ? `You have successfully created a ticket!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
-            color: supabaseStatus === 201 ? "black" : "red",
-            icon: supabaseStatus === 201 ? <SentIcon /> : <AlertDiamondIcon />
+            title: `${supabaseStatus === 204 ? `"${ticket.id}" Updated 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
+            message: `${supabaseStatus === 204 ? `You have successfully updated the ticket!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
+            color: supabaseStatus === 204 ? "black" : "red-6",
+            icon: supabaseStatus === 204 ? <Ticket01Icon /> : <AlertDiamondIcon />
         })
-        supabaseStatus === 201 && router.push(`/portal/ticket/${id}`)
+        supabaseStatus === 204 && router.refresh()
     }
 
     const initialValues = {
-        otherSubject: null,
-        body: null,
-        // description: null, 
-        // startDate: null, 
-        // deadline: null, 
-        // budget: null, 
-        // type: null,
-        // phone: null
+        subject: ticket.subject,
+        body: ticket.body,
     }
     const schema = yup.object().shape({})
     const form = useForm({
@@ -138,22 +129,20 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
         validate: yupResolver(schema)
     })
 
+    const statusOptions = new Array()
+    ProjectStatus.forEach((type: any) => {
+        statusOptions.push({label: type.fullText ? type.fullText : type.smallText, value: type.id})
+    })
+    
     const priorityOptions = new Array()
-    // const taskPriority = TaskPriority.find(({ id }) => id === priority)
     TaskPriority.forEach((priority: any) => {
         priorityOptions.push({label: priority.text, value: priority.id})
     })
-
-    const subjectOptions = new Array(
-        {label: "Project Help", value: "Project Help"},
-        {label: "Task Issue", value: "Task Issue"},
-        {label: "Question About Invoice", value: "Question About Invoice"},
-        {label: "Issue With Payment", value: "Issue With Payment"},
-        {label: "Website Help", value: "Website Help"},
-        {label: "Account Help", value: "Account Help"},
-        {label: "Resume Request", value: "Resume Request"},
-        {label: "Other", value: "Other"},
-    )
+    
+    const userOptions = new Array({label: "ADMIN", value: "admin"})
+    users.forEach((user: any) => {
+        userOptions.push({label: `${user.firstName} ${user.lastName}`, value: `client;;${user.id}`})
+    })
 
     const [clientProjects, setClientProjects] = useState<any>([])
     const [adminProjects, setAdminProjects] = useState<any>([])
@@ -178,6 +167,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
         {group: "Invoice", items: []},
         {group: "Payment", items: []},
     ) as any
+
     clientProjects.forEach((project: any) => {
         project.client.id === userID && relatedOptions[0].items.push({"value": `Project;;${project.id}`, "label": `${project.name} (${project.id})`})
     })
@@ -186,8 +176,8 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
     })
 
     return <>
-        <PrimaryButton onClick={open}>Create New Ticket</PrimaryButton>
-        <Modal opened={isOpenedID ? true : opened} onClose={isOpenedID ? forceClose : close} title="Create New Ticket" yOffset="2rem" xOffset="2rem" size="100%"  
+        <PrimaryButton onClick={open}>Edit Ticket</PrimaryButton>
+        <Modal opened={opened} onClose={close} title={`Edit Ticket: ${ticket.id}`} yOffset="2rem" xOffset="2rem" size="100%"  
             overlayProps={{
                 backgroundOpacity: 0.5, 
                 blur: 4,
@@ -197,14 +187,14 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
         >
             <Box component="main" id="newTicket" color="white">
                 <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
-                    <FormSelect inputID="subject" inputLabel="Ticket Subject" inputData={subjectOptions} {...form.getInputProps(`subject`)} onChange={setSubjectSelected} value={subjectSelected} />
-                    {subjectSelected === "Other" &&
-                        <FormInput inputID="otherSubject" inputLabel="Other Subject" {...form.getInputProps('otherSubject')} inputDescription="Please use a subject to describe the ticket" icon={<TextFontIcon variant="twotone" />} isRequired={subjectSelected === "Other" ? true : false} />
-                    }
+                   <FormInput inputID="subject" inputLabel="Subject" {...form.getInputProps('subject')} inputDescription="Please use a subject to describe the ticket" icon={<TextFontIcon variant="twotone" />} isRequired />
+                    
                     <FormTextArea inputID="body" inputLabel="Ticket Body" helperText="MDX Enabled!" textRows={10} {...form.getInputProps('body')} isRequired />
+                    {relatedOptions[0].items.length > 0 || relatedOptions[1].items.length > 0 ? <FormSelect inputID="relatedTo" inputLabel="Related To" inputData={relatedOptions} {...form.getInputProps(`relatedTo`)} onChange={setRelatedSelected} value={relatedSelected} searchable clearable /> : null}
+                    <FormSelect inputID="from" inputLabel="From" inputData={userOptions} {...form.getInputProps(`from`)} onChange={setFromSelected} value={fromSelected} searchable clearable />
                     <SimpleGrid cols={2} my="2rem">
-                        {relatedOptions[0].items.length > 0 || relatedOptions[1].items.length > 0 ? <FormSelect inputID="relatedTo" inputLabel="Related To" inputData={relatedOptions} {...form.getInputProps(`relatedTo`)} onChange={setRelatedSelected} value={relatedSelected} searchable clearable /> : null}
                         <FormSelect inputID="priority" inputLabel="Priority" inputData={priorityOptions} {...form.getInputProps(`priority`)} onChange={setPrioritySelected} value={prioritySelected} />
+                        <FormSelect inputID="status" inputLabel="Task Status" inputData={statusOptions} {...form.getInputProps(`status`)} onChange={setStatusSelected} value={statusSelected} disabled={!isStaff} />
                     </SimpleGrid>
                     {isStaff &&
                         <FormSwitch 
@@ -214,7 +204,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
                             checked={internalOptions}
                         />
                     }
-                    <FormSubmitButton icon={<SentIcon />}>Create Ticket</FormSubmitButton>
+                    <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Ticket</FormSubmitButton>
                 </Box>
             </Box>
         </Modal>

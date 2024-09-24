@@ -5,7 +5,7 @@ import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponentPortal"
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import DisplayDate from "@/lib/DisplayDate";
-import { Cone01Icon, ContactIcon, Loading03Icon, MailAtSign01Icon, SmartPhone01Icon, Time02Icon, UserIcon, UserShield01Icon } from "@hugeicons/react";
+import { Cone01Icon, ContactIcon, Files01Icon, Loading03Icon, MailAtSign01Icon, SmartPhone01Icon, Time02Icon, UserIcon, UserShield01Icon } from "@hugeicons/react";
 import { serialize } from "next-mdx-remote-client/serialize"
 import { MdxContent } from "@/app/mdx-content";
 import GetReply from "./GetReply";
@@ -13,6 +13,9 @@ import moment from "moment";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import AddReply from "./AddReply";
+import StatusBadge from "../../project/(Components)/StatusBadge";
+import PriorityBadge from "../../project/(Components)/PriorityBadge";
+import EditTicket from "./EditTicket";
 
 // import { Metadata } from 'next';
 
@@ -31,11 +34,8 @@ async function getBody(body: string) {
 }
 
 export default async function GetTicket({ticket, isStaff, replies }: any) {
-    const { user } = useUser()
-    const router = useRouter()
-    
-    !isStaff && ticket.internalONLY && router.push("/portal/tickets?error=unauthorized")
-    !isStaff && ticket.from.id != user?.id && router.push("/portal/tickets?error=unauthorized")
+    // const { user } = useUser()
+
 
     const ticketBody = await getBody(ticket.body)
     
@@ -55,9 +55,10 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
                 <Title order={1} mt="3rem" lh="0.2">{ticket.subject}</Title>
                 <Text fz="sm" c="gray">Ticket ID: <Anchor href={`/portal/ticket/${ticket.id}`} c="var(--secondary)" fz="inherit">{ticket.id}</Anchor> created on <DisplayDate source={ticket.createdOn} /></Text>
             </Stack>
-             <Badge color={ticketStatus?.colorScheme ? ticketStatus?.colorScheme : "blue"} leftSection={ticketStatus?.icon ? ticketStatus?.icon : <Loading03Icon variant="twotone" />}>
-                {ticketStatus?.fullText ? ticketStatus?.fullText : ticketStatus?.smallText}
-            </Badge>
+            <Group>
+                <StatusBadge status={ticket.status} />
+                <PriorityBadge priority={ticket.priority} />
+            </Group>
         </Group>
         <Divider m="1rem 2rem" color="gray" />
         <Grid gutter="2rem" m="3rem 2rem">
@@ -115,21 +116,22 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
                             </Stack>
                         </AspectRatio>
                     : <Text>No information available.</Text>}
-                    {ticket.relatedTo &&
+                    {ticket.relatedTo && <>
+                        <Title size="2xl" td="underline" fw="900" order={2} ta="center" mt="2rem">Ticket is Related To</Title>
                         <Tooltip label={`Go to the project page for this ticket`}>
-                            <Anchor unstyled href="#">
-                                <Badge color="gray" leftSection={<UserIcon />} my="2rem">
-                                    PROJECT ID
+                            <Anchor unstyled href={`/portal/project/${ticket.relatedTo.id}`}>
+                                <Badge color="gray" leftSection={<Files01Icon />}>
+                                    {ticket.relatedTo.id}
                                 </Badge>
                             </Anchor>
                         </Tooltip>
-                    }
+                    </>}
+                    {<EditTicket ticket={ticket} isStaff={isStaff} />}
                 </Stack>
             </Grid.Col>
         </Grid>
         <Box style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldWhite)" }} p="2rem" mt="3rem">
             <AddReply ticket={ticket} isStaff={isStaff} />
-            {/* <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>Ticket replies are currently under constriction.</Text></Stack> */}
         </Box>
     </>
     )
