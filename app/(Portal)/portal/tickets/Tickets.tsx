@@ -1,7 +1,7 @@
 'use client'
 import { BreadCrumb } from '@/app/(Components)/BreadCrumbsComponentPortal'
 import { Alert, Box, Modal, Stack, Table, Tabs, Title, Text } from '@mantine/core'
-import GetProjects from './GetProjects'
+// import GetProjects from './GetProjects'
 import { useDisclosure } from '@mantine/hooks'
 import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
 import RequestNewProject from './CreateNewTicket'

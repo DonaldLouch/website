@@ -105,7 +105,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
             from,
             subject: theSubject,
             body: values.body,
-            relatedTo: relatedSelected ? relatedTo : null,
+            relatedTo: relatedSelected ? relatedTo : [],
             internalONLY: internalOptions,
             priority: prioritySelected,
             // status: "SUBMITTED",
