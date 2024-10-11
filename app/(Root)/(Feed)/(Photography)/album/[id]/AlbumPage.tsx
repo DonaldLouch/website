@@ -32,7 +32,7 @@ import { useRouter } from 'next/router'
 import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'
-import { Calendar03Icon, GridIcon, LicenseIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
+import { ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, GithubIcon, GridIcon, LicenseIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 
 async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
     const from = nextPage * photoLimit
@@ -129,6 +129,19 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     <Badge color="teal" leftSection={<GridIcon />}>
                         Contains {getPhotoCount} Photos
                     </Badge>
+                    {albumData.links?.length > 0 && albumData.links.map((link: any) => {
+                            // console.log("Icon", link.icon)
+                            const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
+                            : link.icon === "Github" ? <GithubIcon />
+                            : link.icon === "news" ? <NewsIcon />
+                            : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                            : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                            : <Link04Icon />
+
+                            return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                                {link.name}
+                            </Badge></Anchor>
+                        })}
                 </Group>
 
                 <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">

@@ -31,6 +31,7 @@ Even though I'm still optimizing and constructing features, I feel as, my websit
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
 ## Change Log
+- [Version 29.09.23I am pleased to launch the initial phase of "Tickets"](https://github.com/DonaldLouch/website/releases/tag/version290923)
 - [Version 29.08.11: Initial introduction of the Donald Louch Client Portal and the initial construction of Projects](https://github.com/DonaldLouch/website/releases/tag/version290811)
 - [Version 29.07.29: In this version I have made the initial rebrand changes!](https://github.com/DonaldLouch/website/releases/tag/version290729)
 - [Version 29.07.20: In this release I have made some initial changes to how I implement Auth through Clerk! I have further began implementing website wide alerts, and the ground work for notifications!](https://github.com/DonaldLouch/website/releases/tag/version290720)
