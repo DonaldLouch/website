@@ -39,7 +39,7 @@ export default function LinksSection({about, primaryLinks, links}: any) {
                     buttonLink.icon === "tiktok" ? <TiktokIcon variant='twotone' size="2rem" /> :
                     buttonLink.icon === "github" ? <GithubIcon size="2rem" /> :
                     <ArrowUpRight01Icon size="2rem" />
-                return <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={icon} iconPadding="0.6rem"/>
+                return <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={icon} iconPadding="0.6rem" key={buttonLink.title}/>
             })}
             <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon={<Chatting01Icon size="2rem" />}  iconPadding="0.6rem"/>
             <FooterIcon linkURL={`mailto:${about.email}`} socialMedia="Direct Email Me" linkIcon={<MailAtSign02Icon size="2rem" />} iconPadding="0.6rem" />

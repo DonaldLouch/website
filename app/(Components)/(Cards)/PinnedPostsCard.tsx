@@ -65,7 +65,7 @@ export default function PinnedPostsCard({pinnedPosts}: any) {
     // const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
     const posts = pinnedPosts.map((post: any) => (
         // <Box key={post.id}>
-            <CardPost {...post} />
+            <CardPost {...post} key={post.id} />
         // </Box>
     ));
     return (<>

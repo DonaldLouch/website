@@ -33,7 +33,7 @@ export default function BlogContent({ posts, pagination}: any) {
               w="100%"
               my="1rem"
           >
-              { posts?.map((post: any) => ( <AdminPostCard {...post} /> )) }
+              { posts?.map((post: any) => ( <AdminPostCard {...post} key={post.id} /> )) }
           </SimpleGrid>
           <Pagination {...pagination} />
         {/* </></SectionCard> */}

@@ -41,15 +41,15 @@ export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
           <TabPanels>
             <TabPanel>
               <AddLink />
-              {links.map((link: any) => ( <LinkCardAdmin {...link} /> ))}
+              {links.map((link: any) => ( <LinkCardAdmin {...link} key={link.id} /> ))}
             </TabPanel>
             <TabPanel>
               <AddPrimaryLink primaryLength={primaryLinks.length} />
-              {primaryLinks.map((link: any) => ( <PrimaryLinkManager {...link} /> ))}
+              {primaryLinks.map((link: any) => ( <PrimaryLinkManager {...link} key={link.id} /> ))}
             </TabPanel>
             <TabPanel>
               <AddEmbed />
-              {embeds.map((embed: any) => ( <EmbedManager {...embed} /> ))} 
+              {embeds.map((embed: any) => ( <EmbedManager {...embed} key={embed.id} /> ))} 
             </TabPanel>
             {/* <TabPanel>
               {pinnedPosts.map((post: any) => ( <PinnedPostsManager {...post} /> ))} 

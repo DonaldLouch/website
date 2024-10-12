@@ -116,7 +116,7 @@ export default function EditResumeWorkExperiencePage({ resumeExperience, resumeI
           <SectionTitle headingTitle={`${resumeExperience.company} Work History`} />
           <AddWorkHistory resumeID={resumeID} workID={resumeExperience.id} company={resumeExperience.company} />
           <Stack gap="1rem">
-            {resumeHistory?.map((history: any) => ( <EditWorkHistory history={history} resumeID={resumeID} company={resumeExperience.company} />))}
+            {resumeHistory?.map((history: any) => ( <EditWorkHistory history={history} resumeID={resumeID} company={resumeExperience.company} key={history.id} /> ))}
           </Stack>
         </SectionCard>
       </Box>

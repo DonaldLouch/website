@@ -57,7 +57,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                             }}
                             width={photoWidth}
                             height={photoHeight}
-                            layout={"responsive"}
+                            // layout={"responsive"}
                             className={classes.imageCardView}
                         />
                     {/* </Anchor> */}
@@ -132,7 +132,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     </Group>
                     <Group gap="0.5rem">
                         <TagsIcon />
-                        {imageData.tags.map((tag: any) => (<Anchor href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
+                        {imageData.tags.map((tag: any, index: number) => (<Anchor key={index} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                             <Badge color="white" leftSection={<Tag01Icon />}>
                                 {tag}
                             </Badge>

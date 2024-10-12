@@ -122,7 +122,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                         <DisplayDate source={albumData.uploadedOn} />
                     </Badge>
                     {locations.map((location: any) => (
-                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}}><Badge color="blue" leftSection={<PinLocation03Icon />}>
+                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}} key={`location_${location}`}><Badge color="blue" leftSection={<PinLocation03Icon />}>
                             {location}
                         </Badge></Anchor>
                     ))}
@@ -149,7 +149,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                 </Box>
                 <Group gap="0.5rem" m="2rem 1rem 1rem">
                     <TagsIcon />
-                    {tags.map((tag: any) => (<Anchor href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
+                    {tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                         <Badge color="white" leftSection={<Tag01Icon />}>
                             {tag}
                         </Badge>

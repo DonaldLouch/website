@@ -22,7 +22,7 @@ export default function TagContent({posts, pagination, postsNumber, tag}: any) {
         w="100%"
         my="1rem"
       >
-        {posts?.map((post: any) => ( <BlogPostCard {...post} /> ))}
+        {posts?.map((post: any) => ( <BlogPostCard {...post} key={post.id} /> ))}
       </SimpleGrid>
       <Pagination {...pagination} />
     </SectionCard>

@@ -71,8 +71,8 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
                     <MdxContent source={ticketBody} />
                 </Box>
                 <Divider m="2rem 2rem 1rem" color="gray" label="Replies" labelPosition="center" />
-                {replies.map((reply: any) => (
-                    <GetReply ticket={ticket} isStaff={isStaff} reply={reply} />
+                {replies.map((reply: any, index: number) => (
+                    <GetReply key={index} ticket={ticket} isStaff={isStaff} reply={reply} />
                 ))}
             </Grid.Col>
             <Grid.Col span={{base: 12, sm: 4}}>

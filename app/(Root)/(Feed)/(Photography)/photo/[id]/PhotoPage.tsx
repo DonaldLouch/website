@@ -85,7 +85,7 @@ export default function PhotoPage({photoData, mdxSource}: any) {
         </Group>
         <Group gap="0.5rem">
           <TagsIcon />
-          {photoData.tags.map((tag: any) => (<Anchor href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
+          {photoData.tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
             <Badge color="white" leftSection={<Tag01Icon />}>
               {tag}
             </Badge>

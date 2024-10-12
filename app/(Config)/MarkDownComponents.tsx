@@ -216,7 +216,7 @@ const inlinePhotoGallery = (props: any) => (<Flex
         zIndex: 2000
     }}
 >
-    {props.content.split(" || ")?.map((image: any, index: number) => (<Box className={classes.imageCardView}><Anchor key={index} href={image.split(';;')?.[0]}><Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} /></Anchor></Box>))}
+    {props.content.split(" || ")?.map((image: any, index: number) => (<Box key={index} className={classes.imageCardView}><Anchor href={image.split(';;')?.[0]}><Image src={image.split(';;')?.[0]} alt={image.split(';;')?.[1]} /></Anchor></Box>))}
 </Flex>)
 
 const lineBreak = () => (<Box component="br"></Box>)

@@ -34,7 +34,7 @@ export default function ViewFullPhoto({photoData}: any) {
                 }}
                 width={photoWidth}
                 height={photoHeight}
-                layout={"responsive"}
+                // layout={"responsive"}
             />
             {/* <Image src={photoData.fileID.filePath} alt={`${photoData.fileID.fileID}-${photoData.fileID.fileTitle}`} radius="md" style={{boxShadow: "var(--mantine-shadow-bsWhite)" }} /> */}
         </Stack>
@@ -54,7 +54,7 @@ export default function ViewFullPhoto({photoData}: any) {
                 }}
                 width={photoWidth}
                 height={photoHeight}
-                layout={"responsive"}
+                // layout={"responsive"}
             />
         </Modal>
     </>)
