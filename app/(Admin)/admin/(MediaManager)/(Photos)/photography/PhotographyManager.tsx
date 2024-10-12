@@ -91,7 +91,7 @@ export default function PhotographyManager({mediaData, pagination, photographyAl
           </SectionCard>
         </Box> */}
 
-        <FileUploader mediaType={"photography"} />
+        <Box m="2rem 5rem 0rem"><FileUploader mediaType={"photography"} /></Box>
 
         <Box px="2rem" color="white" m="2rem 0">
           <SectionTitle headingTitle="Uploaded Media" />

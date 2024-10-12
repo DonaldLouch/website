@@ -12,7 +12,8 @@ export const dynamic = 'force-dynamic'
 
 export default async function VideoUploaderPage({ searchParams }: Props) {
     const currentStep = parseInt(searchParams.step) as number
-    // const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any
+    const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any
+    const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
     // const id = cuid()
 //     destroyCookie({}, 'videoID')
 //     setCookie({}, 'videoID', id, {
@@ -20,5 +21,5 @@ export default async function VideoUploaderPage({ searchParams }: Props) {
 //       path: '/',
 //   })
 // categoryData={categoryData} 
-    return <VideoUploader currentStep={currentStep} />
+    return <VideoUploader currentStep={currentStep} tagsData={tagsData} categoryData={categoryData} />
 }

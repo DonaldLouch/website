@@ -59,8 +59,8 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
         })
 
         mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
-          // upload.videoUploaded && router.push('/admin/videography/upload?step=3')
-          // upload.thumbnailUploaded && router.push('/admin/videography/upload?step=4')
+        upload.supabaseStatus === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
+        upload.supabaseStatus === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
           
           // upload.videoUploaded && setVideoUploaded(true), setVideoID(upload.fileID), setFileID(upload.videoID), setThumbnailUploaded(isThumbnailUploaded)
           // upload.thumbnailUploaded && setThumbnailUploaded(true), setThumbnailID(upload.fileID), setFileID(upload.videoID), setVideoUploaded(isVideoUploaded)
@@ -129,7 +129,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
     return (<>
         {/* <Box as="main" color="white"> */}
-        <Box m="2rem 2rem 0rem" color="white">
+        {/* <Box m="2rem 2rem 0rem" color="white"> */}
           <SectionCard styleType="primaryCard" id="mediaUpload"> 
             {/* <SectionTitle headingTitle={uploadTitle ? uploadTitle : "Upload Media"} /> */}
             <Dropzone
@@ -137,33 +137,37 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
               onReject={(files) => console.log('rejected files', files)}
               // maxSize={5 * 1024 ** 2}
               // accept={IMAGE_MIME_TYPE}
+              loading={isUploading}
               bg="none"
               radius="md"
               c="white"
               {...props}
             >
-              <Group justify="center" gap="xl" mih={220} style={{ pointerEvents: 'none' }}>
+              <Group justify="center" gap="2rem" style={{ pointerEvents: 'none' }} py="4rem">
                 <Dropzone.Accept>
-                  <FileUploadIcon
+                  <FileUploadIcon variant="twotone" />
+                  {/* <FileUploadIcon
                     style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
-                  />
+                  /> */}
                 </Dropzone.Accept>
                 <Dropzone.Reject>
-                  <Cancel01Icon
+                  <Cancel01Icon variant="twotone" />
+                  {/* <Cancel01Icon
                     style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-red-6)' }}
-                  />
+                  /> */}
                 </Dropzone.Reject>
                 <Dropzone.Idle>
-                  <CloudUploadIcon
+                  <CloudUploadIcon variant="twotone" size="5rem" />
+                  {/* <CloudUploadIcon
                     style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-dimmed)' }}
-                  />
+                  /> */}
                 </Dropzone.Idle>
 
-                <Stack gap="0">
-                  <Title c="white">
+                <Stack gap="0" m="0" p="0">
+                  <Title c="white" lh="1" fw="900" ff="text">
                     {uploadTitle ? uploadTitle : "Upload Media"} 
                   </Title>
-                  <Text size="sm" c="grey">
+                  <Text size="sm" c="grey" lh="1">
                     {helperText ? helperText : `Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.`}
                   </Text>
                 </Stack>
@@ -193,6 +197,6 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
               <Button variant="newFormButton" type="submit" isLoading={isUploading === true} width="60%">{isUploaded ? "Previous Files Uploaded! Reload to See or Select New FIles" : "Confirm Media Upload"}</Button>
             </Stack>  */}
           </SectionCard>
-        </Box>
+        {/* </Box> */}
     </>)
 }
