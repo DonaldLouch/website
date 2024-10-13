@@ -45,13 +45,14 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
       e.forEach(async (file: any) => {
           // const date = new Date(file.lastModified) as any
+          console.log("Going to start the upload!")
           const body = new FormData()
           body.append("file", file)
           body.append('uploadDestination', uploadDestination)
           body.append('date', file.lastModifiedDate)
           id && body.append('mediaID', id)
           const upload = await fetch('/api/media/upload', { method: "POST", body }).then(response => response.json())
-          console.log("UPLOADED", upload)
+          console.log("Upload Process Done", upload)
           upload.supabaseStatus && notifications.show({ 
             title: `${upload.supabaseStatus === 201 ? "File Uploaded!" : `Error #${upload.supabaseError?.code} has Occurred`}`, 
             message:`${upload.supabaseStatus === 201 ? `You have successfully uploaded your ${mediaType} file titled "${upload.fileName}"` : `An error has occurred: ${upload.supabaseError?.message}. ${upload.supabaseError?.hint && `${upload.supabaseError?.hint}.`}`}`, 
