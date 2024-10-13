@@ -22,8 +22,16 @@ export default async function EditBlogPost({ params }: Props) {
   const { id } = params
 //   // console.log(id)
 
+  const postLimit = 15 as number
+  
+  // .limit(postLimit)
+  
+  // searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true })
+  
   const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
-  const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).order('photoName', { ascending: true }) as any
+
+  const { count: photosCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
+  const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('photoName', { ascending: true }) as any
   // const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).order('takenOn', { ascending: true }) as any
   // options:{
   //   development: process.env.NODE_ENV === 'development',
@@ -39,5 +47,5 @@ export default async function EditBlogPost({ params }: Props) {
 
   // const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('lastUpdatedOn', { ascending: false }) as any
 
-  return <EditAlbumData photoData={photoData} albumData={albumData} locations={locations} mdxSource={mdxSource} />
+  return <EditAlbumData photoData={photoData} albumData={albumData} locations={locations} mdxSource={mdxSource} photosCount={photosCount} />
 }

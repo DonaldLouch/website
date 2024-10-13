@@ -12,8 +12,8 @@ import moment from "moment";
 //   },
 // }
 
-const Bucket = process.env.S3_BUCKET_NAME
-const HostName = process.env.S3_HOST_NAME
+const Bucket = process.env.NEXT_PUBLIC_S3_BUCKET_NAME
+const HostName = process.env.NEXT_PUBLIC_S3_HOST_NAME
 
 // const s3 = new S3Client({
 //     endpoint: `https://${process.env.NEXT_PUBLIC_VULTR_HOST_NAME!}:443`,

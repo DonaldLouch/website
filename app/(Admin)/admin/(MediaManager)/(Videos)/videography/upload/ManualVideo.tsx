@@ -1,8 +1,11 @@
 // import { FormInput } from '@/app/(Components)/(Form)/FormInput'
+import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
 import { FormInputReadOnly } from '@/app/(Components)/(Form)/FormInputReadOnly'
 import { FormInputRow } from '@/app/(Components)/(Form)/FormInputRow'
 import supabase from '@/lib/supabase'
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, useDisclosure } from '@chakra-ui/react'
+import { Attachment02Icon } from '@hugeicons/react'
+import { Modal } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { Formik } from 'formik'
 import moment from 'moment'
 import { useRouter } from 'next/navigation'
@@ -11,7 +14,7 @@ import React from 'react'
 import * as Yup from 'yup'
 
 export default function ManualVideo({ id }: {id: string}) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [opened, { open, close }] = useDisclosure(false)
     const router = useRouter()
 
     const fileID = `videography_${
@@ -23,50 +26,52 @@ export default function ManualVideo({ id }: {id: string}) {
 
     const filePath = `videography/${fileID}`
 
-    const onSubmit =  async (values: any, actions: any) => {
-        const { status: supabaseStatus1, error: supabaseError1 } = await supabase
-            .from("VideographyMedia")
-            .insert({
-                fileID,
-                fileKey: filePath,
-                fileTitle: values.fileName,
-                fileExtension: values.fileExtension,
-                filePath: `https://donaldlouch.s3.us-west-004.backblazeb2.com/${filePath}`,
-                fileVersionID: values.fileVersionID,
-                capturedOn: moment(),
-                uploadedOn: moment(),
-                videoMetadata: id
-            })
-         const { status: supabaseStatus2, error: supabaseError2 } = await supabase.from("Videography").update({
-            videoFileID: fileID,
-            lastUpdatedOn: moment(),
-        }).eq("id", id)
-        // console.log(supabaseError1 || supabaseError2 ? {supabaseError1, supabaseError2} : "No errors!" )
-        actions.setSubmitting(false)
-        supabaseStatus1 === 201 && supabaseStatus2 === 204 && router.push('/admin/videography/upload?step=3')
-    }
+    // const onSubmit =  async (values: any, actions: any) => {
+    //     const { status: supabaseStatus1, error: supabaseError1 } = await supabase
+    //         .from("VideographyMedia")
+    //         .insert({
+    //             fileID,
+    //             fileKey: filePath,
+    //             fileTitle: values.fileName,
+    //             fileExtension: values.fileExtension,
+    //             filePath: `https://donaldlouch.s3.us-west-004.backblazeb2.com/${filePath}`,
+    //             fileVersionID: values.fileVersionID,
+    //             capturedOn: moment(),
+    //             uploadedOn: moment(),
+    //             videoMetadata: id
+    //         })
+    //      const { status: supabaseStatus2, error: supabaseError2 } = await supabase.from("Videography").update({
+    //         videoFileID: fileID,
+    //         lastUpdatedOn: moment(),
+    //     }).eq("id", id)
+    //     // console.log(supabaseError1 || supabaseError2 ? {supabaseError1, supabaseError2} : "No errors!" )
+    //     actions.setSubmitting(false)
+    //     supabaseStatus1 === 201 && supabaseStatus2 === 204 && router.push('/admin/videography/upload?step=3')
+    // }
 
-    const initialValues = { 
-        id: id,
-        fileID: fileID,
-        fileType: "video/mp4",
-        fileExtension: "mp4",
-        capturedOn: moment().format("yyyy-MM-DDTkk:mm"),
-        uploadedOn: moment().format("yyyy-MM-DDTkk:mm"),
-    }
+    // const initialValues = { 
+    //     id: id,
+    //     fileID: fileID,
+    //     fileType: "video/mp4",
+    //     fileExtension: "mp4",
+    //     capturedOn: moment().format("yyyy-MM-DDTkk:mm"),
+    //     uploadedOn: moment().format("yyyy-MM-DDTkk:mm"),
+    // }
 
-    const validationSchema = Yup.object({ })
-    return (<>
-        <Button onClick={onOpen} variant="newFormButton">Add a Manual Video</Button>
-         <Modal isOpen={isOpen} onClose={onClose} id={`manualVideo${id}`} size="7xl" isCentered>
-            <ModalOverlay
-                bg='blackAlpha.300'
-                backdropFilter='blur(10px) hue-rotate(90deg)'
-            />
-            <ModalContent background="blurredPurple" mx="2rem" pb="2rem">
-                <ModalHeader>Add a manual video for {id}</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
+    // const validationSchema = Yup.object({ })
+    
+    return <>
+        <PrimaryButton onClick={open} icon={<Attachment02Icon />} isFullWidth m="3rem 0 0">Add a Manual Video</PrimaryButton>
+        {/* <Button onClick={open} variant="newFormButton">Add a Manual Video</Button> */}
+        <Modal opened={opened} onClose={close} title={`Add a manual video for ${id}`} yOffset="2rem" xOffset="2rem" size="100%"  
+            overlayProps={{
+                backgroundOpacity: 0.5, 
+                blur: 4,
+            }} 
+            styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
+            radius="lg"
+             id={`manualVideo${id}`}
+        >
                     {/* <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                         {({ handleSubmit }: any) => (
                             <Stack as="form" onSubmit={handleSubmit as any} gap="2rem">
@@ -88,8 +93,6 @@ export default function ManualVideo({ id }: {id: string}) {
                             </Stack>
                         )}
                     </Formik> */}
-                </ModalBody>
-                </ModalContent>
             </Modal>
-    </>)
+    </>
 }

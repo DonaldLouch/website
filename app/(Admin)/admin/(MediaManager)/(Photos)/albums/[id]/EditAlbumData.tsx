@@ -1,7 +1,8 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-// import { Button, Code, Stack, useToast, Grid, IconButton, Flex, Divider, Icon} from "@chakra-ui/react"
+import { SectionTitle } from "@/app/(Components)/SectionTitle";
+import { Divider, Group, Loader, Paper, SimpleGrid, Stack, Title, Text, Anchor, Flex } from "@mantine/core";
 
 // import { FieldArray, Formik } from "formik";
 // import { SubmitButton } from "formik-chakra-ui";
@@ -17,17 +18,86 @@ import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 // import { SectionTitle } from "@/app/(Components)/SectionTitle";
 // import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
+import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
+import { useEffect, useRef, useState } from "react";
+import { useDebouncedValue, useDisclosure } from "@mantine/hooks";
+import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/navigation";
+import supabase from "@/lib/supabase";
+import Masonry from "react-masonry-css";
 // ;
 // import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
 // import Masonry from "react-masonry-css";
 // import { BsEye, BsLink45Deg, BsPencilSquare, BsPlusLg, BsTrash2 } from "react-icons/bs";
+async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
+  const from = nextPage * photoLimit
+  const to = from + photoLimit - 1
 
-export default function EditAlbumData({albumData}: any) {
+  const { data } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).range(from, to).order('uploadedOn', { ascending: false }).match({ isPublic: true, isSetup: true, album: albumID })
+
+  return data
+}
+
+export default function EditAlbumData({albumData, locations, photoData, photosCount}: any) {
     const { id, albumName, slug, albumCaption, albumLinks, uploadedOn } = albumData
-// photoData, locations
-    // const toast = useToast()
-    // const toastID = "toastID"
-    // const router = useRouter()
+
+    const [opened, { open, close }] = useDisclosure(false)
+    const photoLimit = 15 as number
+    const initialRender = useRef(true)
+    const [loadedPhotos, setLoadedPhotos] = useState(photoData)
+    const [page, setPage] = useState(0)
+    const [isLastPage, setIsLastPage] = useState(false)
+    const router = useRouter()
+
+    const [ref, inView] = useInView()
+
+    // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+    async function loadMorePhotos() {
+        // setIsLoading(true)
+        const nextPage = page + 1
+        const newPhotos = await fetchPhotos(nextPage, photoLimit, albumData.id) as any
+        setIsLastPage(nextPage <= Math.ceil(photosCount / photoLimit) - 1 ? false : true)
+
+        if (!isLastPage) {
+            setPage(nextPage)
+            setLoadedPhotos((prevPhotos: any) => [
+            ...(prevPhotos?.length ? prevPhotos : []),
+            ...newPhotos
+            ])
+        }
+        // setIsLoading(false)
+    }
+
+    useEffect(() => {
+        inView && loadMorePhotos()
+    }, [inView])
+
+    const breakpointColumnsObj = {
+        default: 5,
+        1500: 4,
+        800: 3,
+    }
+  
+
+//   const [ search, setSearch ] = useState(searchValue)
+//   const [ focused, setFocused] = useState(false)
+//   const [ completed, setCompleted] = useState(false)
+//   const [ prevSearch ] = useState(searchValue)
+  
+//   const [debounced] = useDebouncedValue(search, 1000);
+
+//   useEffect(() => {
+//     if (initialRender.current) {
+//       initialRender.current = false
+//       return
+//     }
+//     focused && completed && router.push(`/feed/photography?search=keyword&value=${debounced}`)
+//   }, [focused, completed, debounced]);
+
+//   useEffect(() => {
+//     if (prevSearch != search && window && window.location) window.location.reload();
+//   }, [photos])
 
     const breadCrumbs = [
         {"pageLink": "/admin/photography", "pageName": "Photography Manager"},
@@ -103,11 +173,6 @@ export default function EditAlbumData({albumData}: any) {
 
     // const validationSchema = Yup.object({})
 
-    const breakpointColumnsObj = {
-        default: 7,
-        1500: 5,
-        800: 4,
-    }
   
     return (<>
         <BreadCrumb breads={breadCrumbs} />
@@ -200,8 +265,8 @@ export default function EditAlbumData({albumData}: any) {
             )}
         </Formik> */}
         
-        {/* <Divider m="2rem" width="calc(100% - 2rem * 2)" /> */}
-        {/* <SectionTitle headingTitle="Photos in Album" /> */}
+        <Divider label="Photos in Album" labelPosition="center" mx="3rem" my="2rem" />
+
         {/* <Flex 
             as={Masonry}
             breakpointCols={breakpointColumnsObj}
@@ -209,12 +274,31 @@ export default function EditAlbumData({albumData}: any) {
             m="2rem 1rem 1rem"
             gap="0.5rem"
         > */}
-        {/* <Grid templateColumns="repeat(4, 1fr)">
-            {photoData.map((photo: any) => (
-                <ViewPhotoEditAlbum locations={locations} albumData={albumData} photoData={photo} />
-            ))
-            }
-        </Grid> */}
+        {/* <Flex 
+            // component={Masonry}
+            // breakpointCols={breakpointColumnsObj}
+            w="100%"
+            // p="4.5rem 1rem 1rem"
+            // m="4.5rem auto 0" w="95vw" 
+            // m={{base: "0rem -1rem 2rem", sm: "0 -5rem 2rem"}} 
+            // p={{base: "0.5rem", sm: "0 0.5rem"}}
+            // p="1rem 1rem 1rem"
+            gap="0.5rem"
+        > */}
+            <SimpleGrid cols={4} spacing="1rem">
+                {loadedPhotos.map((photo: any) => (
+                    <ViewPhotoEditAlbum key={photo.id} locations={locations} albumData={albumData} imageData={photo} />
+                ))}
+            </SimpleGrid>
         {/* </Flex> */}
+        <Paper ref={ref} p="2rem" color="white" style={{display: isLastPage ? "none" : "block"}} bg="none" shadow="bsBoldSecondary" radius="lg">
+            <Stack align="center">
+            <Group gap="2rem" align="center">
+                <Loader color="white" size="md" type="bars" />
+                <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
+            </Group>
+            <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
+            </Stack>
+        </Paper>
     </>)
 }

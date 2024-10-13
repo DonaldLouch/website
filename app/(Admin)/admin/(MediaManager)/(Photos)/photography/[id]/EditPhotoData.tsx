@@ -13,7 +13,6 @@ import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
-import ViewPhoto from "../../../(Components)/ViewPhoto";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 // import cuid from "cuid";
 import moment from "moment";

@@ -1,6 +1,5 @@
 'use client'
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-// import { Box, Button, Stack, Step, StepDescription, StepIcon, StepIndicator, StepNumber, StepSeparator, StepStatus, StepTitle, Stepper, Text, useSteps } from "@chakra-ui/react"
 import { Text, Image, Anchor, Stepper, Box, Group } from "@mantine/core"
 import FileUploader from "../../../(Components)/FileUploader"
 // import cuid from "cuid"
