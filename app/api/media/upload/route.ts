@@ -25,6 +25,7 @@ const HostName = process.env.NEXT_PUBLIC_S3_HOST_NAME
 // })
 
 export async function POST(request: Request) {
+    console.log("Hello from the upload API!")
     const formData = await request.formData()
     const file = formData.get("file") as File
     const date = formData.get("date") as any
@@ -53,7 +54,7 @@ export async function POST(request: Request) {
     const fileUploaded = upload.$metadata.httpStatusCode === 200 ? true : false
     const uploadEndpoint = `https://${Bucket}.${HostName}`;
     
-    // console.log(upload)
+    console.log("Upload RES", upload)
 
     if (uploadDestination === "photography") {
       const photoID = "photo"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
