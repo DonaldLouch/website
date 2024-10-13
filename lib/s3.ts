@@ -4,7 +4,7 @@ export default new S3Client({
   endpoint: `https://${process.env.NEXT_PUBLIC_S3_HOST_NAME!}:443`,
   region: "sjc1",
   credentials: {
-    accessKeyId: process.env.S3_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
+    accessKeyId: process.env.NEXT_PUBLIC_S3_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.NEXT_PUBLIC_S3_SECRET_ACCESS_KEY!,
   },
 });

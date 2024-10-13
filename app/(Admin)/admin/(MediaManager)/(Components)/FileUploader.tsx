@@ -165,10 +165,10 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                 </Dropzone.Idle>
 
                 <Stack gap="0" m="0" p="0">
-                  <Title c="white" lh="1" fw="900" ff="text">
+                  <Title c="white" lh="1" fw="900" ff="text" ta={{base: "center", md: "left"}}>
                     {uploadTitle ? uploadTitle : "Upload Media"} 
                   </Title>
-                  <Text size="sm" c="grey" lh="1">
+                  <Text size="sm" c="grey" lh="1" ta={{base: "center", md: "left"}}>
                     {helperText ? helperText : `Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.`}
                   </Text>
                 </Stack>
