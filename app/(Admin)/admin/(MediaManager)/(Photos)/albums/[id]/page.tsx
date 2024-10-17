@@ -19,7 +19,7 @@ import EditAlbumData from "./EditAlbumData";
 // };
 
 export default async function EditBlogPost({ params }: { params: { id: string } }) {
-  const { id } = params
+  // const { id } = params
 //   // console.log(id)
 
   const postLimit = 15 as number
@@ -28,7 +28,7 @@ export default async function EditBlogPost({ params }: { params: { id: string } 
   
   // searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true })
   
-  const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
+  const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: params.id}).single() as any
 
   const { count: photosCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
   const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('photoName', { ascending: true }) as any
