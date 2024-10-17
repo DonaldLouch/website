@@ -15,7 +15,7 @@ import supabase from "@/lib/supabase";
 import EditAlbumData from "./EditAlbumData";
 
 type Props = {
-    params: { id: string }
+    params: { id: any }
 };
 
 export default async function EditBlogPost({ params }: Props) {
