@@ -18,7 +18,7 @@ import EditAlbumData from "./EditAlbumData";
 //     params: { id: any }
 // };
 
-export default async function EditBlogPost({ params }: { params: { id: string } }) {
+export default async function EditAlbum({ params }: { params: { id: string } }) {
   // const { id } = params
 //   // console.log(id)
 
