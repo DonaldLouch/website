@@ -14,11 +14,11 @@ import { serialize } from "next-mdx-remote-client/serialize"
 import supabase from "@/lib/supabase";
 import EditAlbumData from "./EditAlbumData";
 
-type Props = {
-    params: { id: any }
-};
+// type Props = {
+//     params: { id: any }
+// };
 
-export default async function EditBlogPost({ params }: Props) {
+export default async function EditBlogPost({ params }: { params: { id: string } }) {
   const { id } = params
 //   // console.log(id)
 
