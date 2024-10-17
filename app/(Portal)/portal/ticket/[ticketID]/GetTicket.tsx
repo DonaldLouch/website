@@ -28,7 +28,7 @@ import EditTicket from "./EditTicket";
 // }
 
 async function getBody(body: string) {
-    "use sever"
+    "use server"
     const ticketBody = await serialize({source: body})
     return ticketBody
 }
