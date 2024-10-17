@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { AlertDiamondIcon, Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";
 import { notifications } from "@mantine/notifications";
+import { uploadFileToS3 } from "@/app/actions/backblaze";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()
@@ -21,52 +22,83 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
     const [isUploading, setUploading] = useState(false)
     const [isUploaded, setUploaded] = useState(false)
     
-    function handleOnChange(changeEvent: any) {
-      const reader = new FileReader();
+    // function handleOnChange(changeEvent: any) {
+    //   const reader = new FileReader();
 
-      reader.onload = function() {
-        setUploaded(false);
-      }
+    //   reader.onload = function() {
+    //     setUploaded(false);
+    //   }
 
-      reader.readAsDataURL(changeEvent.target.files[0]);
-    }
+    //   reader.readAsDataURL(changeEvent.target.files[0]);
+    // }
     
     async function handleOnSubmit(e: any) {
       setUploading(true)
 
-      // e.preventDefault()
-
-      // // console.log("Event", e)
-
       const files = e
       const uploadDestination = mediaType
 
-      // // console.log(moment())
+      try {
+        const formData = new FormData()
 
-      e.forEach(async (file: any) => {
-          // const date = new Date(file.lastModified) as any
-          console.log("Going to start the upload!")
-          const body = new FormData()
-          body.append("file", file)
-          body.append('uploadDestination', uploadDestination)
-          body.append('date', file.lastModifiedDate)
-          id && body.append('mediaID', id)
-          const upload = await fetch('/api/media/upload', { method: "POST", body }).then(response => response.json())
-          console.log("Upload Process Done", upload)
-          upload.supabaseStatus && notifications.show({ 
-            title: `${upload.supabaseStatus === 201 ? "File Uploaded!" : `Error #${upload.supabaseError?.code} has Occurred`}`, 
-            message:`${upload.supabaseStatus === 201 ? `You have successfully uploaded your ${mediaType} file titled "${upload.fileName}"` : `An error has occurred: ${upload.supabaseError?.message}. ${upload.supabaseError?.hint && `${upload.supabaseError?.hint}.`}`}`, 
-            color: upload.supabaseStatus === 201 ? "black" : "red",
-            icon: upload.supabaseStatus === 201 ? <FileUploadIcon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />
+        files.forEach((file: string | Blob) => formData.append("file", file))
+
+        const upload = await uploadFileToS3(formData, {
+          uploadDestination,
+          mediaID: id,
+          bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
+          uploadEndpoint: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME!}.${process.env.NEXT_PUBLIC_S3_HOST_NAME!}`
+        }) as any
+        console.log(upload)
+
+        upload.forEach((u: any) => {
+          u.fileSetup && notifications.show({ 
+            title: "File Uploaded!",
+            message:`You have successfully uploaded your ${mediaType} file titled "${u.fileName}"`,
+            color: "black",
+            icon: <FileUploadIcon variant="twotone" />
+          })
+          u.fileDatabase != 201 && notifications.show({ 
+            title: `Error #${u.fileDatabaseError?.code} has Occurred`,
+            message:`An error has occurred: ${u.supabaseError?.message}. ${u.supabaseError?.hint && `${u.supabaseError?.hint}.`}`,
+            color: "red",
+            icon: <AlertDiamondIcon variant="twotone" />
+          })
         })
-
+        setUploading(false)
+        setUploaded(true)
         mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
-        upload.supabaseStatus === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
-        upload.supabaseStatus === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
+        upload.fileDatabase === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
+        upload.fileDatabase === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
+      } catch (error) {
+        console.error("File(s) couldn't be uploaded to S3", error)
+      }
+
+    
+      // e.forEach(async (file: any) => {
+      //     // const date = new Date(file.lastModified) as any
+      //     console.log("Going to start the upload!")
+      //     const body = new FormData()
+      //     body.append("file", file)
+      //     body.append('uploadDestination', uploadDestination)
+      //     body.append('date', file.lastModifiedDate)
+      //     id && body.append('mediaID', id)
+      //     const upload = await fetch('/api/media/upload2', { method: "POST", body }).then(response => response.json())
+      //     console.log("Upload Process Done", upload)
+      //   //   upload.supabaseStatus && notifications.show({ 
+      //   //     title: `${upload.supabaseStatus === 201 ? "File Uploaded!" : `Error #${upload.supabaseError?.code} has Occurred`}`, 
+      //   //     message:`${upload.supabaseStatus === 201 ? `You have successfully uploaded your ${mediaType} file titled "${upload.fileName}"` : `An error has occurred: ${upload.supabaseError?.message}. ${upload.supabaseError?.hint && `${upload.supabaseError?.hint}.`}`}`, 
+      //   //     color: upload.supabaseStatus === 201 ? "black" : "red",
+      //   //     icon: upload.supabaseStatus === 201 ? <FileUploadIcon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />
+      //   // })
+
+      //   // mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
+      //   // upload.supabaseStatus === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
+      //   // upload.supabaseStatus === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
           
-          // upload.videoUploaded && setVideoUploaded(true), setVideoID(upload.fileID), setFileID(upload.videoID), setThumbnailUploaded(isThumbnailUploaded)
-          // upload.thumbnailUploaded && setThumbnailUploaded(true), setThumbnailID(upload.fileID), setFileID(upload.videoID), setVideoUploaded(isVideoUploaded)
-      })
+      //     // upload.videoUploaded && setVideoUploaded(true), setVideoID(upload.fileID), setFileID(upload.videoID), setThumbnailUploaded(isThumbnailUploaded)
+      //     // upload.thumbnailUploaded && setThumbnailUploaded(true), setThumbnailID(upload.fileID), setFileID(upload.videoID), setVideoUploaded(isVideoUploaded)
+      // })
       
       // const findFileName = ({ name }: any) => name === 'file[]'
       // const form = e.currentTarget
@@ -129,7 +161,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
     //     }
     // }, [isVideoUploaded, isThumbnailUploaded])
 
-    return (<>
+    return <>
         {/* <Box as="main" color="white"> */}
         {/* <Box m="2rem 2rem 0rem" color="white"> */}
           <SectionCard styleType="primaryCard" id="mediaUpload"> 
@@ -166,11 +198,11 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                 </Dropzone.Idle>
 
                 <Stack gap="0" m="0" p="0">
-                  <Title c="white" lh="1" fw="900" ff="text" ta={{base: "center", md: "left"}}>
+                  <Title c="white" lh="1" fw="900" ff="text" ta={{base: "center", lg: "left"}}>
                     {uploadTitle ? uploadTitle : "Upload Media"} 
                   </Title>
-                  <Text size="sm" c="grey" lh="1" ta={{base: "center", md: "left"}}>
-                    {helperText ? helperText : `Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.`}
+                  <Text size="sm" c="grey" lh="1" ta={{base: "center", lg: "left"}}>
+                    {helperText ? helperText : ``}
                   </Text>
                 </Stack>
               </Group>
@@ -200,5 +232,5 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
             </Stack>  */}
           </SectionCard>
         {/* </Box> */}
-    </>)
+    </>
 }

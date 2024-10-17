@@ -68,7 +68,7 @@ export async function POST(request: Request) {
           fileExtension: fileExtension,
           filePath: `${uploadEndpoint}/${filePath}`,
           fileVersionID: upload.VersionId,
-          takenOn: date ? moment(date) : moment(),
+          capturedOn: date ? moment(date) : moment(),
           uploadedOn: moment(),
           photoMetadata: photoID,
         });
@@ -77,7 +77,7 @@ export async function POST(request: Request) {
             fileID: fileID,
             lastUpdatedOn: date ? moment(date) : moment(),
             photoName: file.name,
-            takenOn: date ? moment(date) : moment(),
+            capturedOn: date ? moment(date) : moment(),
             uploadedOn: moment(),
             isPublic: false,
             isSetup: false,

@@ -43,7 +43,7 @@ export default async function Album({ params }: Props) {
     const postLimit = 20 as number
     const { id } = params
     const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({ slug: id}).single() as any
-    const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('takenOn', { ascending: true }) as any
+    const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('capturedOn', { ascending: true }) as any
     const mdxSource = await serialize({source: albumData.albumCaption ? albumData.albumCaption : "No caption has been posted yet."})
 
     const { data: allPhotoData } = await supabase.from('Photography').select(`*, fileID (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).order('uploadedOn', { ascending: true }) as any

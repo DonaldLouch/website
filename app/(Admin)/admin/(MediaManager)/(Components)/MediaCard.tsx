@@ -9,6 +9,8 @@ import DisplayDate from '@/lib/DisplayDate'
 import supabase from '@/lib/supabase'
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { Calendar03Icon, Delete02Icon, Edit02Icon } from "@hugeicons/react"
+import { deleteFileFromS3 } from "@/app/actions/backblaze"
+import { notifications } from "@mantine/notifications"
   
 export const MediaCard = ({ media }: any) => {
     const router = useRouter()
@@ -31,14 +33,30 @@ export const MediaCard = ({ media }: any) => {
         //     }
         // }
         // new DeleteObjectsCommand(fileDelete)
-        const id = fileID.replace("_", "/");
-        const formData = new FormData()
-        formData.append("fileKey", fileKey)
-        formData.append("versionID", fileVersionID)
-        const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
-        // // console.log(deleteFile)
+        // const id = fileID.replace("_", "/");
+        // const formData = new FormData()
+        // formData.append("fileKey", fileKey)
+        // formData.append("versionID", fileVersionID)
+
+        const deleteFile = await deleteFileFromS3({
+            bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
+            filePath: fileKey,
+            getFileID: fileID
+        })
+
+        const isFileDeleted = deleteFile.$metadata.httpStatusCode === 204 ? true : false
+
+        isFileDeleted && notifications.show({ 
+            title: "File Deleted!",
+            message:`You have successfully deleted your ${fileExtension} file titled "${fileTitle}"`,
+            color: "red",
+            icon: <Delete02Icon variant="twotone" />
+          })
+
+        // const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
+        // console.log(deleteFile.$metadata.httpStatusCode === 204)
         
-        const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
+        // const { error: mediaDeleteError, status: mediaDeleteStatus } = await supabase.from("PhotographyMedia").delete().eq('fileID', fileID);
         // mediaDeleteStatus &&
         // toast({
         //     // id: toastID,
@@ -48,7 +66,7 @@ export const MediaCard = ({ media }: any) => {
         //     duration: 9000,
         //     isClosable: true,
         // })
-        mediaDeleteStatus === 204 && router.refresh()
+        // mediaDeleteStatus === 204 && router.refresh()
     }
 
     return (<>

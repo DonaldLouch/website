@@ -35,7 +35,7 @@ import DisplayDate from "@/lib/DisplayDate";
 // import { BsDashLg, BsLink45Deg, BsNodePlus, BsPencilSquare, BsPlus, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditPhotoData({photoData, photographyAlbum, locations, tagsData}: any) {
-    const {fileID, fileTitle, filePath, takenOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
+    const {fileID, fileTitle, filePath, capturedOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
     const { photoName, caption, tags, links, album, location, id: photoID, isPublic, isPortfolio, isPinned } = photoData as any
 
     const [linksOption, setLinksOption] = useState(links ? true : false)
@@ -114,7 +114,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         isPublic: isPublic ? true : false,
         isPortfolio: isPortfolio ? true : false,
         isPinned: isPinned ? true : false,
-        takenOn: new Date(takenOn),
+        capturedOn: new Date(capturedOn),
         uploadedOn: new Date(uploadedOn),
         caption: caption,
         tags: tags ? tags : [],
@@ -200,7 +200,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         // values.isPublic
         // values.isPortfolio
         // values.isPinned
-        // values.takenOn
+        // values.capturedOn
         // values.uploadedOn
         // values.caption
         // values.tags
@@ -220,9 +220,9 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         }).eq('id', values.albumSelect)
         }
 
-        if (values.takenOn || values.uploadedOn) {
+        if (values.capturedOn || values.uploadedOn) {
             const { status: supabaseStatus , error: supabaseError } = await supabase.from("PhotographyMedia").update({ 
-                takenOn: new Date(values.takenOn),
+                capturedOn: new Date(values.capturedOn),
                 uploadedOn: new Date(values.uploadedOn)
             }).eq('fileID', fileID)
         }
@@ -234,10 +234,10 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
             album: albumID,
             location: locationName,
             links: subLinkValue,
-            takenOn: new Date(values.takenOn),
+            capturedOn: new Date(values.capturedOn),
             uploadedOn: new Date(values.uploadedOn),
             isPublic: values.isPublic,
-            isSetup: values.takenOn && values.uploadedOn && values.caption && values.tags ? true : false,
+            isSetup: values.capturedOn && values.uploadedOn && values.caption && values.tags ? true : false,
             isPortfolio: values.isPortfolio,
             isPinned: values.isPinned
         }).eq('id', photoID)
@@ -300,7 +300,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
                                 {fileID}
                             </Badge>
                             <Badge color="red" leftSection={<Calendar03Icon />}>
-                                <DisplayDate source={takenOn} />
+                                <DisplayDate source={capturedOn} />
                             </Badge>
                             <Anchor href={filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{filePath}</Badge></Anchor>
                         </Group>
@@ -374,7 +374,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
             </Stack>
 
             <Group w="100%" wrap="nowrap">
-                <FormDatePicker dateLabel="Taken On" {...form.getInputProps('takenOn')} isJustRead/>
+                <FormDatePicker dateLabel="Taken On" {...form.getInputProps('capturedOn')} isJustRead/>
                 <FormDatePicker dateLabel="Uploaded On" datePlaceholder="When was this uploaded?" isClearable {...form.getInputProps('uploadedOn')}/>
             </Group>
             <FormSwitch 

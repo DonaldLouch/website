@@ -33,7 +33,7 @@ export default function ViewPhotoEditAlbum({ imageData, albumData, locations }: 
 
     // locations
     
-    // const {fileID, fileTitle, filePath, takenOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
+    // const {fileID, fileTitle, filePath, capturedOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
     // const { photoName, caption, tags, links, album, location, id: photoID, isPublic, isPortfolio, isPinned } = photoData as any
 
     // async function deletePhoto() {
@@ -63,9 +63,9 @@ export default function ViewPhotoEditAlbum({ imageData, albumData, locations }: 
     //         lastUploadedOn: moment()
     //     }).eq('id', album)
 
-    //     if (values.takenOn || values.uploadedOn) {
+    //     if (values.capturedOn || values.uploadedOn) {
     //         const { status: supabaseStatus , error: supabaseError } = await supabase.from("PhotographyMedia").update({ 
-    //             takenOn: moment(values.takenOn),
+    //             capturedOn: moment(values.capturedOn),
     //             uploadedOn: moment(values.uploadedOn)
     //         }).eq('fileID', fileID)
     //         // // console.log("Update Datetime Info: ", supabaseStatus, supabaseError)
@@ -76,10 +76,10 @@ export default function ViewPhotoEditAlbum({ imageData, albumData, locations }: 
     //         caption: values.caption ? values.caption : photoData.caption,
     //         tags: tagArray ? tagArray : photoData.tags,
     //         location: values.locationSelect === "noLocation" ? null : values.locationSelect === "newLocation" ? values.location : values.locationSelect,
-    //         takenOn: moment(values.takenOn),
+    //         capturedOn: moment(values.capturedOn),
     //         uploadedOn: moment(values.uploadedOn),
     //         isPublic: values.isPublic,
-    //         isSetup: values.takenOn && values.uploadedOn && values.caption && values.tags ? true : false,
+    //         isSetup: values.capturedOn && values.uploadedOn && values.caption && values.tags ? true : false,
     //         isPortfolio: values.isPortfolio,
     //         isPinned: values.isPinned
     //     }).eq('id', photoID)
@@ -106,7 +106,7 @@ export default function ViewPhotoEditAlbum({ imageData, albumData, locations }: 
     //     isPublic: isPublic ? true : false,
     //     isPortfolio: isPortfolio ? true : false,
     //     isPinned: isPinned ? true : false,
-    //     takenOn: moment(takenOn).format("yyyy-MM-DDTkk:mm"),
+    //     capturedOn: moment(capturedOn).format("yyyy-MM-DDTkk:mm"),
     //     uploadedOn: moment(uploadedOn).format("yyyy-MM-DDTkk:mm"),
     //     caption: caption,
     //     locationSelect: location ? location : "noLocation",
@@ -256,7 +256,7 @@ export default function ViewPhotoEditAlbum({ imageData, albumData, locations }: 
                         
 
                         <Stack direction="row" gap="2rem"  boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="1.5rem 0.5rem">
-                            <FormInputRow inputID="takenOn" inputLabel="Taken On" inputType="datetime-local" />
+                            <FormInputRow inputID="capturedOn" inputLabel="Taken On" inputType="datetime-local" />
                             <FormInputRow inputID="uploadedOn" inputLabel="Uploaded On" inputType="datetime-local" />
                         </Stack>
                     {!hiddenElement && (<>

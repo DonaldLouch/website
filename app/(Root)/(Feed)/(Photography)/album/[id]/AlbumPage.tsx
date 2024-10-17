@@ -42,7 +42,7 @@ async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string
         .from('Photography')
         .select(`*, fileID (*), album (*)`)
         .range(from, to)
-        .order('takenOn', { ascending: true })
+        .order('capturedOn', { ascending: true })
         .match({ isPublic: true, isSetup: true, album: albumID })
 
     const { data } = await query

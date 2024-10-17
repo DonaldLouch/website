@@ -15,6 +15,9 @@
 module.exports = {
   experimental: {
     // serverActions: true,
+    serverActions: {
+      bodySizeLimit: '20000mb',
+    },
     serverComponentsExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/s3-presigned-post'],
     optimizePackageImports: ['@mantine/core', '@mantine/hooks', ],
     // reactCompiler: true,

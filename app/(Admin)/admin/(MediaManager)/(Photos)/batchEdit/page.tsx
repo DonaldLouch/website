@@ -42,7 +42,7 @@ export default async function Media() {
   // clnm4drg60008nnfk4mea2slp
   // clnm4kjxy002rnnfkhk7kdbl8 
 
-  // const { data: theMediaData } = await supabase.from('Photography').select(`*, fileID ( * )`).order('fileID.takenON', { ascending: true }).match({ isSetup: false }) as any
+  // const { data: theMediaData } = await supabase.from('Photography').select(`*, fileID ( * )`).order('fileID.capturedOn', { ascending: true }).match({ isSetup: false }) as any
   // const { data: theMediaData } = await supabase.from('Photography').select(`*, fileID ( * )`).order('photoName', { ascending: true }).match({ location: "Vancouver, British Columbia, Canada" }) as any
 
    const { data: locationsData } = await supabase.from('distinct_locations').select() as any

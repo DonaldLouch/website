@@ -97,7 +97,7 @@ export default function ViewPhotoAlbum({ imageData }: any) {
                                 </Stack>
                             </Stack>
                             <Stack width={{base: "100%", lg: "50%"}}>
-                                {/* <Text boxShadow="bsBoldPrimary" p="2rem" borderRadius="0 2rem">{imageData.fileID.takenOn}</Text> */}
+                                {/* <Text boxShadow="bsBoldPrimary" p="2rem" borderRadius="0 2rem">{imageData.fileID.capturedOn}</Text> */}
                                 {/* <Box whiteSpace="break-spaces" p="1rem" mb="1rem">
                                     <MdxContent source={mdxSource} />
                                 </Box> */}
@@ -115,7 +115,7 @@ export default function ViewPhotoAlbum({ imageData }: any) {
                                     <Tag size='lg' colorScheme='whiteAlpha' borderRadius='0 1rem' p="1rem" whiteSpace="nowrap" wordBreak="keep-all" width="fit-content">
                                         {/* <FontAwesomeIcon icon={["fas", "camera-viewfinder"]} color="currentColor" height="40%" /> */}
                                         <Home01Icon />
-                                        <TagLabel pl="0.5rem"><DisplayDate source={imageData.fileID.takenOn} /></TagLabel>
+                                        <TagLabel pl="0.5rem"><DisplayDate source={imageData.fileID.capturedOn} /></TagLabel>
                                     </Tag>
                                 </Stack>
                                 <Stack direction="row" alignItems="center" flexWrap="wrap" gap="0.8rem">

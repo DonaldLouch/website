@@ -73,9 +73,9 @@ export default function BatchManager({mediaData}: any) {
 
       const fileID = photoData.fileID.fileID
 
-      // if (values.takenOn || values.uploadedOn) {
+      // if (values.capturedOn || values.uploadedOn) {
       //   const { status: supabaseStatus , error: supabaseError } = await supabase.from("PhotographyMedia").update({ 
-      //     takenOn: moment(values.takenOn),
+      //     capturedOn: moment(values.capturedOn),
       //     uploadedOn: moment(values.uploadedOn)
       //   }).eq('fileID', fileID)
       //   // // console.log("Update Datetime Info: ", supabaseStatus, supabaseError)
@@ -87,7 +87,7 @@ export default function BatchManager({mediaData}: any) {
       //   tags: tagArray ? tagArray : photoData.tags,
       //   album: albumID,
       //   location: values.locationSelect === "noLocation" ? null : values.locationSelect === "newLocation" ? values.location : values.locationSelect,
-      //   takenOn: moment(values.takenOn),
+      //   capturedOn: moment(values.capturedOn),
       //   uploadedOn: moment(values.uploadedOn),
       //   isPublic: true,
       //   isSetup: true
@@ -169,7 +169,7 @@ export default function BatchManager({mediaData}: any) {
                 </FormSelect>
                 </Stack>
                 <Stack direction="row" gap="2rem"  boxShadow="bsBoldWhite" p="2rem 2rem 3rem" borderRadius="0 2rem" m="1.5rem 0.5rem">
-                  <FormInputRow inputID="takenOn" inputLabel="Taken On" inputType="datetime-local" />
+                  <FormInputRow inputID="capturedOn" inputLabel="Taken On" inputType="datetime-local" />
                   <FormInputRow inputID="uploadedOn" inputLabel="Uploaded On" inputType="datetime-local" />
                 </Stack>
                 <FormSwitch 

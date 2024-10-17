@@ -113,7 +113,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                         </Anchor>}
                     </Group>
                     <Badge color="red" leftSection={<Calendar03Icon />}>
-                        <DisplayDate source={imageData.fileID.takenOn} />
+                        <DisplayDate source={imageData.fileID.capturedOn} />
                     </Badge>
                     <Group gap="0.5rem">
                          {imageData.links.length > 0 && imageData.links.map((link: any) => {

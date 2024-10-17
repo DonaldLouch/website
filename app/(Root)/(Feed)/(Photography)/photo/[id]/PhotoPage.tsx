@@ -66,7 +66,7 @@ export default function PhotoPage({photoData, mdxSource}: any) {
           </Anchor>}
         </Group>
         <Badge color="red" leftSection={<Calendar03Icon />}>
-          <DisplayDate source={photoData.fileID.takenOn} />
+          <DisplayDate source={photoData.fileID.capturedOn} />
         </Badge>
         <Group gap="0.5rem">
           {photoData.links.length > 0 && photoData.links.map((link: any) => {
