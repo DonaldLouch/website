@@ -27,17 +27,19 @@ import EditTicket from "./EditTicket";
 //   return res.json();
 // }
 
-async function getBody(body: string) {
-    "use server"
-    const ticketBody = await serialize({source: body})
-    return ticketBody
-}
+// async function getBody(body: string) {
+//     "use server"
+//     const ticketBody = await serialize({source: body})
+//     return ticketBody
+// }
 
 export default async function GetTicket({ticket, isStaff, replies }: any) {
     // const { user } = useUser()
 
 
-    const ticketBody = await getBody(ticket.body)
+    // const ticketBody = await getBody(ticket.body) //TO DO: Fix this
+
+    const ticketBody = ticket.body
     
     const breadCrumbs = [
         {"pageLink": "/portal/tickets", "pageName": "Tickets"},
