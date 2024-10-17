@@ -33,7 +33,7 @@ import EditTicket from "./EditTicket";
 //     return ticketBody
 // }
 
-export default async function GetTicket({ticket, isStaff, replies }: any) {
+export default function GetTicket({ticket, isStaff, replies }: any) {
     // const { user } = useUser()
 
 

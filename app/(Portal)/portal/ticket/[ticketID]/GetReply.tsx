@@ -19,15 +19,16 @@ import { MdxContent } from "@/app/mdx-content";
 //   return res.json();
 // }
 
-async function getBody(body: string) {
-    "use sever"
-    const replyBody = await serialize({source: body})
-    return replyBody
-}
+// async function getBody(body: string) {
+//     "use sever"
+//     const replyBody = await serialize({source: body})
+//     return replyBody
+// }
 
-export default async function GetReply({ticket, isStaff, reply }: any) {
-    const replyBody = await getBody(reply.body)
-   
+export default function GetReply({ticket, isStaff, reply }: any) {
+    // const replyBody = await getBody(reply.body) //TO DO: Fix this
+
+   const replyBody = reply.body
     // UserShield01Icon
     // UserIcon
 
