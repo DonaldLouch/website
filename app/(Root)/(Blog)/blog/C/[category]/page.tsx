@@ -5,7 +5,7 @@ import supabase from "@/lib/supabase";
 type Params = Promise<{ category: string }>
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
-export async function generateMetadata(params: Params): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
     const { category } = await params
 
     const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('category', `%${category}%`).match({ postStatus: 'Public' }) as any

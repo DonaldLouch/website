@@ -18,7 +18,6 @@ module.exports = {
     serverActions: {
       bodySizeLimit: '20000mb',
     },
-    serverComponentsExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/s3-presigned-post'],
     optimizePackageImports: ['@mantine/core', '@mantine/hooks', ],
     // reactCompiler: true,
     // compilationMode: 'annotation',
@@ -33,6 +32,7 @@ module.exports = {
   //   // !! WARN !!
   //   ignoreBuildErrors: true,
   // },
+  serverExternalPackages: ['@aws-sdk/client-s3', '@aws-sdk/s3-presigned-post'],
   images: {
     // domains: ['res.cloudinary.com', 'sjc1.vultrobjects.com', 'donald-louch.sjc1.vultrobjects.com'],
     remotePatterns: [
