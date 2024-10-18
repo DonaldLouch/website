@@ -1,7 +1,7 @@
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import supabase from "@/lib/supabase";
-import { Stack, Input, Button, Box, Text, Group, rem, Title } from "@mantine/core";
+import { Stack, Input, Button, Box, Text, Group, rem, Title, Progress } from "@mantine/core";
 ;
 import moment from "moment";
 import { useRouter } from "next/navigation";
@@ -21,6 +21,9 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
     const [isUploading, setUploading] = useState(false)
     const [isUploaded, setUploaded] = useState(false)
+    // const [uploadProgress, setUploadProgress] = useState(0)
+
+    
     
     // function handleOnChange(changeEvent: any) {
     //   const reader = new FileReader();
@@ -31,25 +34,38 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
     //   reader.readAsDataURL(changeEvent.target.files[0]);
     // }
-    
+  
     async function handleOnSubmit(e: any) {
       setUploading(true)
 
+      const xhr = new XMLHttpRequest()
+
       const files = e
       const uploadDestination = mediaType
-
+      
       try {
         const formData = new FormData()
-
+        
         files.forEach((file: string | Blob) => formData.append("file", file))
+        
+// useEffect(() => {
+//           xhr.upload.addEventListener('progress', (event: { loaded: number; total: number; }) => {
+//             // updateStatusMessage(`⏳ Uploaded ${event.loaded} bytes of ${event.total}`);
+//             setUploadProgress(event.loaded / event.total)
+//             // updateProgressBar(event.loaded / event.total);
+//           })
+//         }, [xhr])
+  //         xhr.open(method, url);
+      
+      const upload = await uploadFileToS3(formData, {
+        uploadDestination,
+        mediaID: id,
+        bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
+        uploadEndpoint: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME!}.${process.env.NEXT_PUBLIC_S3_HOST_NAME!}`
+      }) as any
+      // xhr.send(upload)
 
-        const upload = await uploadFileToS3(formData, {
-          uploadDestination,
-          mediaID: id,
-          bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
-          uploadEndpoint: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME!}.${process.env.NEXT_PUBLIC_S3_HOST_NAME!}`
-        }) as any
-        console.log(upload)
+      //   console.log(upload)
 
         upload.forEach((u: any) => {
           u.fileSetup && notifications.show({ 
@@ -202,11 +218,12 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                     {uploadTitle ? uploadTitle : "Upload Media"} 
                   </Title>
                   <Text size="sm" c="grey" lh="1" ta={{base: "center", lg: "left"}}>
-                    {helperText ? helperText : ``}
+                    {helperText ? helperText : `Darg and Drop or Click to Upload File(s)`}
                   </Text>
                 </Stack>
               </Group>
             </Dropzone>
+            {/* <Progress radius="0 0 0 1rem" size="xl" value={uploadProgress} color="primary" mt="0.5rem" animated /> */}
             {/* <Text ta="center">{helperText ? helperText : `Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.`}</Text>  */}
             {/* <Text ta="center">{helperText ? helperText : `THE MEDIA UPLOADER IS CURRENTLY DISABLED!`}</Text>  */}
             {/* <Stack component="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow="bsBoldPrimary" p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" m="1.5rem 0 0.5rem"> 

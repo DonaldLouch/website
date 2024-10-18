@@ -8,7 +8,7 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
     const { category } = await params
 
-    const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('category', `%${category}%`).match({ postStatus: 'Public' }) as any
+     const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).contains('category', [category]).match({ postStatus: 'Public' }) as any
     return {
       title: `(${postCount}) ${category} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: `Blog posts by Donald Louch that are flagged with the category ${category}`,
@@ -25,8 +25,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function Category(props: {params: Params, searchParams: SearchParams}) {
     const { category } = await props.params
     const { pg } = await props.searchParams as any
-
-
 
     let page = parseInt(pg) as number
     let currentPage = (((page) - 1) as number) || 0

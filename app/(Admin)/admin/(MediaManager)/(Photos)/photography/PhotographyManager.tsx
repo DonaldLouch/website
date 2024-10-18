@@ -63,35 +63,7 @@ export default function PhotographyManager({mediaData, pagination, photographyAl
       <BreadCrumb breads={breadCrumbs} />
       <PrimaryLinkedButton link="/admin/batchEdit" icon={<Edit02Icon />} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
       <Box component="main" color="white">
-        {/* <Box m="2rem 0 0rem">
-          <SectionCard styleType="primaryCard" id="mediaUpload"> 
-            <SectionTitle headingTitle="Upload New Media" />
-            <Text textAlign="center">Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.</Text> 
-            <Stack as="form" method="post" onChange={handleOnChange} onSubmit={handleOnSubmit} boxShadow="bsBoldPrimary" p="2rem" direction="row" alignItems="center" borderRadius="0 2rem" m="1.5rem 0 0.5rem"> 
-              <InputGroup border="none" appearance="none" outline="none">
-                <InputLeftElement pointerEvents='none' fontSize="2xl">
-                  <FontAwesomeIcon icon={["fas", "cloud-arrow-up"]} height="100%" width="100%" color='currentColor' />
-                </InputLeftElement>
-                <Input 
-                  type='file' 
-                  name="file[]" 
-                  id="file"
-                  multiple 
-                  sx={{
-                    "::file-selector-button": {
-                      display: "none",
-                    }
-                  }}
-                  p="0.4rem 3rem"
-                  border="none"
-                ></Input>
-              </InputGroup>
-              <Button variant="blackFormButton" type="submit" isLoading={isUploading === true} p="1.6rem 2rem" m="0">{isUploaded ? "Previous Files Uploaded! Reload to See or Select New FIles" : "Confirm Media Upload"}</Button>
-            </Stack> 
-          </SectionCard>
-        </Box> */}
-
-        <Box m="2rem 5rem 0rem"><FileUploader mediaType={"photography"} /></Box>
+        <Box m="2rem 5rem 0rem"><FileUploader mediaType={"photography"} uploadTitle="Upload Photo(s)" helperText="For the best photography experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the photo file. You can drag and drop or click to upload the photo(s)." /></Box>
 
         <Box px="2rem" color="white" m="2rem 0">
           <SectionTitle headingTitle="Uploaded Media" />

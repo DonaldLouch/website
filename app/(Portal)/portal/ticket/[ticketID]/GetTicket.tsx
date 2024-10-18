@@ -17,6 +17,8 @@ import StatusBadge from "../../project/(Components)/StatusBadge";
 import PriorityBadge from "../../project/(Components)/PriorityBadge";
 import EditTicket from "./EditTicket";
 
+import { MDXBody } from "@/app/actions/mdxBody"
+
 // import { Metadata } from 'next';
 
 // async function getProjectData(projectID: string) {
@@ -33,13 +35,12 @@ import EditTicket from "./EditTicket";
 //     return ticketBody
 // }
 
-export default function GetTicket({ticket, isStaff, replies }: any) {
+export default async function GetTicket({ticket, isStaff, replies }: any) {
     // const { user } = useUser()
 
 
     // const ticketBody = await getBody(ticket.body) //TO DO: Fix this
-
-    const ticketBody = ticket.body
+    // const ticketBody = ticket.body
     
     const breadCrumbs = [
         {"pageLink": "/portal/tickets", "pageName": "Tickets"},
@@ -48,6 +49,8 @@ export default function GetTicket({ticket, isStaff, replies }: any) {
 
 
     const ticketStatus = ProjectStatus.find(({ id }) => id === ticket.status)
+
+    const ticketBody = await MDXBody(ticket.body)
 
     return (
     <>

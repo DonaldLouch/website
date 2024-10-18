@@ -12,7 +12,7 @@ export const PaginationMenu = ( props: any ) => {
       <Anchor href={`?pg=${currentPage - 1}`} variant="primary" c="white">Previous Page</Anchor>
         {pages.map((page: any) => (
           page === "...Prev" && (
-            <Menu position="top">
+            <Menu position="top" key={`prev`}>
               <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><MoreHorizontalIcon /></Button></Menu.Target>
               <Menu.Dropdown style={{overflowY: "scroll", border:"none", maxHeight: "40vh"}} w="5%" bg="black">
                 {previousPages?.map((number: any) => (
@@ -23,7 +23,7 @@ export const PaginationMenu = ( props: any ) => {
               </Menu.Dropdown>
             </Menu>
           ) || page === "...Nex" && (
-          <Menu position="top">
+          <Menu position="top" key={`next`}>
               <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><MoreHorizontalIcon /></Button></Menu.Target>
               <Menu.Dropdown style={{overflowY: "scroll", border:"none", maxHeight: "40vh"}} w="5%" bg="black">
               {nextPages?.map((number: any) => (
