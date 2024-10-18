@@ -16,7 +16,7 @@ type Props = {
     params: { id: string }
 };
 
-export default async function EditBlogPost({ params }: Props) {
+export default async function EditPhoto({ params }: Props) {
   const { id } = params
 //   // console.log(id)
   const { data: photoData } = await supabase.from('Photography').select(`*, fileID ( * )`).match({ id: id }).single() as any

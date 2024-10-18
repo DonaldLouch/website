@@ -13,7 +13,12 @@ import EditAlbumData from "./EditAlbumData"
 //     },
 // }
 
-export default async function EditAlbum({ params }: { params: { id: any } }) {
+type Props = {
+    params: { id: string }
+}
+
+export default async function EditAlbum({ params }: Props) {
+// export default async function EditAlbum({ params }: Props) {
     const { id } = params
     const postLimit = 15 as number
     const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
