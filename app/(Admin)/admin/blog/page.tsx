@@ -16,7 +16,8 @@ type Props = {
     searchParams: { pg: string },
 }
 
-export default async function PortalBlog({searchParams}: Props) {
+export default async function PortalBlog(props: Props) {
+  const searchParams = await props.searchParams;
   let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
 

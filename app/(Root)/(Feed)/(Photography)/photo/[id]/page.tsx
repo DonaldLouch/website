@@ -7,7 +7,8 @@ import PhotoPage from "./PhotoPage";
 type Props = {
     params: { id: string }
 };
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+    const params = await props.params;
     const { id } = params
     const {data: photoMeta} = await supabase.from('Photography').select('id,photoName,caption,tags,fileID (filePath)').match({ id: id }).single() as any
     return {
@@ -27,13 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Photo({ params }: Props) {
-  // const {userId, sessionId} = auth() 
-  // const isLoggedIn = userId && sessionId ? true : false
+export default async function Photo(props: Props) {
+    const params = await props.params;
+    // const {userId, sessionId} = auth() 
+    // const isLoggedIn = userId && sessionId ? true : false
 
-  const { id } = params
-  const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ id: id }).single() as any
-  const mdxSource = await serialize({source: photoData.caption})
+    const { id } = params
+    const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ id: id }).single() as any
+    const mdxSource = await serialize({source: photoData.caption})
 
-  return <PhotoPage photoData={photoData} mdxSource={mdxSource} />
+    return <PhotoPage photoData={photoData} mdxSource={mdxSource} />
 }

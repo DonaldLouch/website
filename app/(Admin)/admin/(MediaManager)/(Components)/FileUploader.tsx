@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { AlertDiamondIcon, Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";
 import { notifications } from "@mantine/notifications";
-import { uploadFileToS3 } from "@/app/actionsOLD/backblaze";
+import { uploadFileToS3 } from "@/app/actions/backblaze";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()

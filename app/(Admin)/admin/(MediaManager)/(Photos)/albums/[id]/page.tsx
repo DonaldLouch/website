@@ -17,19 +17,20 @@ type Props = {
     params: { id: string }
 }
 
-export default async function EditAlbum({ params }: Props) {
-// export default async function EditAlbum({ params }: Props) {
-    const { id } = params
-    const postLimit = 15 as number
-    const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
+export default async function EditAlbum(props: Props) {
+  const params = await props.params;
+  // export default async function EditAlbum({ params }: Props) {
+  const { id } = params
+  const postLimit = 15 as number
+  const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
 
   const { count: photosCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
   const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('photoName', { ascending: true }) as any
-  
+
   const mdxSource = await serialize({source: albumData.albumCaption ? albumData.albumCaption : "No caption has been posted yet."})
-  
+
   const { data: locationsData } = await supabase.from('distinct_locations').select() as any
-  
+
   let locations = new Array()
   locationsData.forEach((location: any) => {
     locations!.push(location.location)

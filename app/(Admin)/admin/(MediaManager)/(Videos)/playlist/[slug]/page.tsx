@@ -17,10 +17,11 @@ type Props = {
     params: { slug: string }
 };
 
-export default async function EditPlaylistPage({ params }: Props) {
+export default async function EditPlaylistPage(props: Props) {
+  const params = await props.params;
   const { slug } = params
   const { data: playlistData } = await supabase.from('VideographyPlaylist').select().match({ slug: slug }).single() as any
-  
+
   const playlistVideos = new Array().sort((a: any,b: any)=> (a.videoIndex > b.videoIndex ? 1 : -1))
   const playlistVideosIDs = playlistData.videoIDs
   const playlistLength = playlistVideosIDs.length

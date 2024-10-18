@@ -24,10 +24,11 @@ export const metadata: Metadata = {
     twitter: { card: "summary_large_image", site: process.env.NEXT_PUBLIC_SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
-export default async function Blog({searchParams}: any) {
+export default async function Blog(props: any) {
+  const searchParams = await props.searchParams;
   let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
- 
+
   const postLimit = 9 as number
   const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).match({ postStatus: 'Public' }) as any
   let numberOfPages = (postLength / postLimit) as number;
@@ -42,7 +43,7 @@ export default async function Blog({searchParams}: any) {
   const pageCalc = currentPage * postLimit
   const { data: postData } = await supabase.from('BlogPost').select().match({ postStatus: 'Public' }).order('postedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1))
   const { data: pinnedPosts } = await supabase.from('BlogPost').select().match({ postStatus: 'Public', isPinned: true }).order('postedOn', { ascending: false })
-  
+
   const paginationArray = new Array()
   paginationArray.push(numberOfPages, currentPage)
 
@@ -63,7 +64,7 @@ export default async function Blog({searchParams}: any) {
   ]
 
   const { data: aboutMe } = await supabase.from('About').select().single()
-  
+
   return (
     <>
       <HeroSection

@@ -8,18 +8,19 @@ import { Metadata } from 'next';
 type Props = {
     params: { id: string }
 };
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+    const params = await props.params;
     const { id } = params
     const {data: postMeta} = await supabase.from('PhotographyAlbum').select('albumName,albumCaption, id, slug').match({ slug: id }).single() as any
     const { data: allPhotoData } = await supabase.from('Photography').select(`*, fileID (*)`).match({ isPublic: true, isSetup: true, album: postMeta.id }) as any
-      let tags = new Array()
-        allPhotoData.forEach((photo: any) => {
-            const photoTags = photo.tags
-            
-            photoTags.forEach((tag: any) => {
-                !tags.includes(tag) && tags.push(tag)
-            })
+    let tags = new Array()
+    allPhotoData.forEach((photo: any) => {
+        const photoTags = photo.tags
+        
+        photoTags.forEach((tag: any) => {
+            !tags.includes(tag) && tags.push(tag)
         })
+    })
     return {
       title: `${postMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: postMeta.albumCaption,
@@ -37,9 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Album({ params }: Props) {
-  // const {userId, sessionId} = auth() 
-  // const isLoggedIn = userId && sessionId ? true : false
+export default async function Album(props: Props) {
+    const params = await props.params;
+    // const {userId, sessionId} = auth() 
+    // const isLoggedIn = userId && sessionId ? true : false
     const postLimit = 20 as number
     const { id } = params
     const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({ slug: id}).single() as any
@@ -58,7 +60,7 @@ export default async function Album({ params }: Props) {
         })
         !locations.includes(photoLocation) && locations.push(photoLocation)
     })
-    
+
     const { count: photoCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
 
     // // console.log(photoCount)

@@ -8,7 +8,8 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 type Props = {
     params: { slug: string }
 };
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+    const params = await props.params;
     const { slug } = params
     const {data: postMeta} = await supabase.from('BlogPost').select('title,excerpt,thumbnail,tags,category,slug').match({ slug: slug }).single() as any
     return {
@@ -28,14 +29,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Post({ params }: Props) {
-  const {userId, sessionId} = auth() 
+export default async function Post(props: Props) {
+    const params = await props.params;
+    const {userId, sessionId} = auth()
 
-  const isLoggedIn = userId && sessionId ? true : false
+    const isLoggedIn = userId && sessionId ? true : false
 
-  const { slug } = params
-  const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
-  const mdxSource = await serialize({source: post?.body})
+    const { slug } = params
+    const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
+    const mdxSource = await serialize({source: post?.body})
 
-  return <PostPage post={post} mdxSource={mdxSource} isLoggedIn={isLoggedIn} />
+    return <PostPage post={post} mdxSource={mdxSource} isLoggedIn={isLoggedIn} />
 }

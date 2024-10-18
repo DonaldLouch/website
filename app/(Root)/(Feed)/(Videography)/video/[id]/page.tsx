@@ -8,7 +8,8 @@ type Props = {
     params: { id: string }
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+    const params = await props.params;
     const { id } = params
     const {data: videoMeta} = await supabase.from('Videography').select('id,title,excerpt,tags,thumbnailFileID (filePath)').match({ id: id }).single() as any
     return {
@@ -27,11 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       appleWebApp: { title: `${videoMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}` }
     }
 }
-export default async function Player({ params }: Props) {
+export default async function Player(props: Props) {
+    const params = await props.params;
     const { id } = params
     const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*), videoPlaylist (*)`).match({ id: id }).single() as any
     // const { data: playlist } = await supabase.from('VideographyPlaylist').select().match({ id: videoData.videoPlaylist.id }).single() as any
     const mdxSource = await serialize({source: videoData.description})
     return <PlayerPage videoData={videoData} mdxSource={mdxSource} playerType="page" />
-    
 }

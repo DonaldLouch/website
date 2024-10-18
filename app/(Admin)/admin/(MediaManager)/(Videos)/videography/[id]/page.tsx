@@ -17,14 +17,15 @@ type Props = {
     params: { id: string }
 };
 
-export default async function EditBlogPost({ params }: Props) {
+export default async function EditBlogPost(props: Props) {
+  const params = await props.params;
   const { id } = params
-//   // console.log(id)
+  //   // console.log(id)
   const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*)`).match({ id: id }).single() as any
   const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any
   const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
   // const { data: locationsData } = await supabase.from('distinct_locations').select() as any
-  
+
   // let locations = new Array()
   // locationsData.forEach((location: any) => {
   //   locations!.push(location.location)

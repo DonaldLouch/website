@@ -1,4 +1,5 @@
-'use client'
+'use client';
+import { use } from "react";
 
 // import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 // import HouseIcon from "../../(Components)/(Vectors)/house";
@@ -22,10 +23,11 @@ import AdminPageContent from "./AdminPageContent";
 // import { redirect } from "next/navigation";
 // import { checkRole } from "@/lib/roles";
 
-export default async function AdminHome(params: { searchParams: { search?: string } }) {
+export default async function AdminHome(params: { searchParams: Promise<{ search?: string }> }) {
+  const searchParams = use(params.searchParams);
   // !checkRole("admin") && redirect("/")
   // const query = params.searchParams.search;
-  const users = params.searchParams.search;
+  const users = searchParams.search;
   // const users = query ? (await clerkClient().users.getUserList({ query })).data : [];
   return <AdminPageContent users={users} />
 }

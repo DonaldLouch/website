@@ -16,7 +16,8 @@ type Props = {
     params: { jobID: string }
 };
 
-export default async function MessageJ({ params }: Props) {
+export default async function MessageJ(props: Props) {
+  const params = await props.params;
   const { jobID } = params
   const { data: contactData } = await supabase.from('Job').select().match({ id: jobID }).single() as any
 

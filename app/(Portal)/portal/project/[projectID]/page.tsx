@@ -21,7 +21,8 @@ import { checkRole } from '@/lib/roles';
 // }
 
 
-export default async function ProjectOverview({params}: any) {
+export default async function ProjectOverview(props: any) {
+    const params = await props.params;
     const { projectID } = params
 
     const isAdmin = checkRole("admin") ? true : false
@@ -37,5 +38,5 @@ export default async function ProjectOverview({params}: any) {
     // const {response: project} = await getProjectData(projectID)
     // const {data: session} = useSession()
 
-    return <GetProject project={project} projectDescription={projectDescription} isStaff={isStaff} tasks={tasks} /> 
+    return <GetProject project={project} projectDescription={projectDescription} isStaff={isStaff} tasks={tasks} />
 }

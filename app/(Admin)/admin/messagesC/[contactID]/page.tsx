@@ -16,7 +16,8 @@ type Props = {
     params: { contactID: string }
 };
 
-export default async function MessageC({ params }: Props) {
+export default async function MessageC(props: Props) {
+  const params = await props.params;
   const { contactID } = params
   const { data: contactData } = await supabase.from('Contact').select().match({ id: contactID }).single() as any
 

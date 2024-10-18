@@ -16,7 +16,8 @@ type Props = {
     params: { experienceID: string }
 };
 
-export default async function PortalResumeEducationExperiencePage({ params }: Props) {
+export default async function PortalResumeEducationExperiencePage(props: Props) {
+  const params = await props.params;
   const { experienceID } = params
 
   const { data: resumeExperience } = await supabase.from('ResumeEducation').select().match({ id: experienceID }).single() as any

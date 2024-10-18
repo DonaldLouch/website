@@ -18,7 +18,8 @@ type Props = {
     searchParams: { pg: string },
 }
 
-export default async function Media({searchParams}: Props) {  
+export default async function Media(props: Props) {
+  const searchParams = await props.searchParams;
   let page = parseInt(searchParams.pg) as number
   let currentPage = (((page) - 1) as number) || 0
 
@@ -36,11 +37,11 @@ export default async function Media({searchParams}: Props) {
   const pageCalc = currentPage * postLimit
   const { data: theMediaData } = await supabase.from('Photography').select(`*, fileID ( * )`).order('lastUpdatedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1)) as any
 
-  
+
   const paginationArray = new Array()
   paginationArray.push(numberOfPages, currentPage)
 
   const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('lastUpdatedOn', { ascending: false }) as any
-  
+
   return <PhotographyManager mediaData={theMediaData} pagination={paginationArray} photographyAlbum={photographyAlbum}/>
 }
