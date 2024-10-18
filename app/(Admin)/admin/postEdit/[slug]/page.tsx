@@ -13,13 +13,10 @@ import EditPostContent from '../EditPostContent'
 //     },
 // }
 
-type Props = {
-    params: { slug: string }
-};
+type Params = Promise<{ slug: string }>
 
-export default async function EditBlogPost(props: Props) {
-  const params = await props.params;
-  const { slug } = params
+export default async function EditBlogPost({ params }: { params: Params }) {
+  const { slug } = await params
   const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
   const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
 

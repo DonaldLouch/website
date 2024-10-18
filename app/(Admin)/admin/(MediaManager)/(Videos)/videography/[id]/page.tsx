@@ -13,13 +13,10 @@ import supabase from "@/lib/supabase";
 // import EditPhotoData from "./EditVideoData";
 import EditVideoData from "./EditVideoData";
 
-type Props = {
-    params: { id: string }
-};
+type Params = Promise<{ id: string }>
 
-export default async function EditBlogPost(props: Props) {
-  const params = await props.params;
-  const { id } = params
+export default async function EditBlogPost({ params }: { params: Params }) {
+  const { id } = await params
   //   // console.log(id)
   const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*)`).match({ id: id }).single() as any
   const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any

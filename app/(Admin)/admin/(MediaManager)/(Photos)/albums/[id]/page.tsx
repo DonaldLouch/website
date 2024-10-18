@@ -16,9 +16,8 @@ import EditAlbumData from "./EditAlbumData"
 type Params = Promise<{ id: string }>
 
 export default async function EditAlbum({ params }: { params: Params }) {
-  // const params = await props.params
-  // export default async function EditAlbum({ params }: Props) {
   const { id } = await params
+
   const postLimit = 15 as number
   const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
 

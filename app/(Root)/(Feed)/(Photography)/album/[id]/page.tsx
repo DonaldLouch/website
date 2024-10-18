@@ -5,12 +5,11 @@ import { serialize } from "next-mdx-remote-client/serialize"
 import { AlbumPage } from "./AlbumPage";
 
 import { Metadata } from 'next';
-type Props = {
-    params: { id: string }
-};
-export async function generateMetadata(props: Props): Promise<Metadata> {
-    const params = await props.params;
-    const { id } = params
+
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { id } = await params
     const {data: postMeta} = await supabase.from('PhotographyAlbum').select('albumName,albumCaption, id, slug').match({ slug: id }).single() as any
     const { data: allPhotoData } = await supabase.from('Photography').select(`*, fileID (*)`).match({ isPublic: true, isSetup: true, album: postMeta.id }) as any
     let tags = new Array()
@@ -38,12 +37,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     }
 }
 
-export default async function Album(props: Props) {
-    const params = await props.params;
+export default async function Album({ params }: { params: Params }) {
     // const {userId, sessionId} = auth() 
     // const isLoggedIn = userId && sessionId ? true : false
     const postLimit = 20 as number
-    const { id } = params
+    const { id } = await params
     const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({ slug: id}).single() as any
     const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('capturedOn', { ascending: true }) as any
     const mdxSource = await serialize({source: albumData.albumCaption ? albumData.albumCaption : "No caption has been posted yet."})

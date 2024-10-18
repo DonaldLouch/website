@@ -12,13 +12,10 @@ import MessageJContent from '../MessageJContent'
 //     },
 // }
 
-type Props = {
-    params: { jobID: string }
-};
+type Params = Promise<{ jobID: string }>
 
-export default async function MessageJ(props: Props) {
-  const params = await props.params;
-  const { jobID } = params
+export default async function MessageJ({ params }: { params: Params }) {
+  const { jobID } = await params
   const { data: contactData } = await supabase.from('Job').select().match({ id: jobID }).single() as any
 
   return <MessageJContent contactData={contactData} />

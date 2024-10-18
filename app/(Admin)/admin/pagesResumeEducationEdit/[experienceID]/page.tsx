@@ -12,13 +12,11 @@ import EditResumeWorkExperiencePage from '../EditResumeEducationPage'
 //     },
 // }
 
-type Props = {
-    params: { experienceID: string }
-};
 
-export default async function PortalResumeEducationExperiencePage(props: Props) {
-  const params = await props.params;
-  const { experienceID } = params
+type Params = Promise<{ experienceID: string }>
+
+export default async function PortalResumeEducationExperiencePage({ params }: { params: Params }) {
+  const { experienceID } = await params
 
   const { data: resumeExperience } = await supabase.from('ResumeEducation').select().match({ id: experienceID }).single() as any
   const { data: resume } = await supabase.from('Resume').select("id").single() as any

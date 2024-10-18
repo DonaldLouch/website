@@ -19,10 +19,12 @@ export const metadata: Metadata = {
     twitter: { card: "summary_large_image", site: process.env.NEXT_PUBLIC_SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
-export default async function PortfolioPhotography(props: any) {
-  const searchParams = await props.searchParams;
-  const searchType = searchParams.search as string
-  const searchValue = searchParams.value as string
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function PortfolioPhotography(props: {searchParams: SearchParams}) {
+  const { search: searchType,  value: searchValue  } = await props.searchParams as any
+  // const searchType = searchParams.search as string
+  // const searchValue = searchParams.value as string
 
   const postLimit = 15 as number
 

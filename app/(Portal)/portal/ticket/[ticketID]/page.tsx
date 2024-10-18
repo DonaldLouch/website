@@ -16,10 +16,10 @@ import { auth } from '@clerk/nextjs/server';
 //     }
 // }
 
+type Params = Promise<{ ticketID: string }>
 
-export default async function TicketOverview(props: any) {
-    const params = await props.params;
-    const { ticketID } = params
+export default async function TicketOverview({ params }: { params: Params }) {
+    const { ticketID } = await params
     const { userId } = auth()
     const isAdmin = checkRole("admin") ? true : false
     const isMod = checkRole("moderator") ? true : false

@@ -20,10 +20,10 @@ import { checkRole } from '@/lib/roles';
 //     }
 // }
 
+type Params = Promise<{ projectID: string }>
 
-export default async function ProjectOverview(props: any) {
-    const params = await props.params;
-    const { projectID } = params
+export default async function ProjectOverview({ params }: { params: Params }) {
+    const { projectID } = await params
 
     const isAdmin = checkRole("admin") ? true : false
     const isMod = checkRole("moderator") ? true : false

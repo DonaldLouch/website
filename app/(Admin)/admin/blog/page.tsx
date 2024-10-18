@@ -12,13 +12,12 @@ import BlogContent from './BlogContent'
 //     },
 // }
 
-type Props = {
-    searchParams: { pg: string },
-}
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
-export default async function PortalBlog(props: Props) {
-  const searchParams = await props.searchParams;
-  let page = parseInt(searchParams.pg) as number
+export default async function PortalBlog(props: {searchParams: SearchParams}) {
+  const { pg } = await props.searchParams as any
+
+  let page = parseInt(pg) as number
   let currentPage = (((page) - 1) as number) || 0
 
   const postLimit = 9 as number

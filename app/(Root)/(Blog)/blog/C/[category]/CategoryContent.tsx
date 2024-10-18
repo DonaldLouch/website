@@ -9,7 +9,7 @@ import Pagination from "@/app/(Config)/(Layout)/(Pagination)"
 
 export default function CategoryContent({posts, pagination, postsNumber, category}: any) {
   let capitalizedCategoryTitle = category.charAt(0).toUpperCase() + category.slice(1) as string
-
+// let capitalizedCategoryTitle = category
   return <Box component="main">
     <SectionCard id="posts" styleType="primaryCard">
       <SectionTitle headingTitle={posts.length === 0 ? (`It seems that there is no blog posts under the category "${capitalizedCategoryTitle}".`) : (`"${capitalizedCategoryTitle}" has ${postsNumber} ${postsNumber === 1 ? ("post") : ("posts")} in it's category`)} />

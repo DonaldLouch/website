@@ -12,14 +12,11 @@
 import supabase from "@/lib/supabase";
 import EditPhotoData from "./EditPhotoData";
 
-type Props = {
-    params: { id: string }
-};
+type Params = Promise<{ id: string }>
 
-export default async function EditPhoto(props: Props) {
-  const params = await props.params;
-  const { id } = params
-  //   // console.log(id)
+export default async function EditPhoto({ params }: { params: Params }) {
+  const { id } = await params
+  
   const { data: photoData } = await supabase.from('Photography').select(`*, fileID ( * )`).match({ id: id }).single() as any
   const { data: locationsData } = await supabase.from('distinct_locations').select() as any
   const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any

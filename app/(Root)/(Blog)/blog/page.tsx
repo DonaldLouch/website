@@ -7,6 +7,9 @@ import ViewPostButton from "./ViewPostButton";
 import type { Metadata } from 'next'
 import HeroSection from "@/app/(Components)/(Cards)/HeroSection";
 import { Album01Icon, CameraVideoIcon, ContactIcon, DeskIcon, Globe02Icon, PassportIcon, PinLocation03Icon } from "@hugeicons/react";
+
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
 export const metadata: Metadata = {
     title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME}'s Blog Post's`,
     description: process.env.NEXT_PUBLIC_DESCRIPTION,
@@ -24,9 +27,10 @@ export const metadata: Metadata = {
     twitter: { card: "summary_large_image", site: process.env.NEXT_PUBLIC_SITE_URL, creator: "@DonaldLouch", images: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpgg" },
 }
 
-export default async function Blog(props: any) {
-  const searchParams = await props.searchParams;
-  let page = parseInt(searchParams.pg) as number
+export default async function Blog(props: {searchParams: SearchParams}) {
+  const { pg } = await props.searchParams as any
+
+  let page = parseInt(pg) as number
   let currentPage = (((page) - 1) as number) || 0
 
   const postLimit = 9 as number

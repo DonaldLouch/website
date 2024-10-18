@@ -1,13 +1,12 @@
 import { Metadata } from 'next'
 import TagContent from "./TagContent";
 import supabase from '@/lib/supabase';
-type Props = {
-    params: { tag: string }
-    searchParams: { pg: string }
-};
-export async function generateMetadata(props: Props): Promise<Metadata> {
-    const params = await props.params;
-    const { tag } = params
+
+type Params = Promise<{ tag: string }>
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { tag } = await params
     const {count: postCount} = await supabase.from('BlogPost').select("*", { count: 'exact'}).ilike('tags', `%${tag}%`).match({ postStatus: 'Public' }) as any
     return {
       title: `(${postCount}) ${tag} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
@@ -22,12 +21,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     }
 }
 
-export default async function Tag(props: Props) {
-    const searchParams = await props.searchParams;
-    const params = await props.params;
-    const { tag } = params
+export default async function Tag(props: {params: Params, searchParams: SearchParams}) {
+    const { tag } = await props.params
+    const { pg } = await props.searchParams as any
 
-    let page = parseInt(searchParams.pg) as number
+    let page = parseInt(pg) as number
     let currentPage = (((page) - 1) as number) || 0
     const postLimit = 12 as number
     const {count: postLength} = await supabase.from('BlogPost').select("*", { count: 'exact'}).contains('tags', [tag]).match({ postStatus: 'Public' }) as any

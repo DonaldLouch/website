@@ -13,13 +13,11 @@ import supabase from "@/lib/supabase";
 // import EditPhotoData from "./EditVideoData";
 import EditPlaylist from "./EditPlaylist";
 
-type Props = {
-    params: { slug: string }
-};
+type Params = Promise<{ slug: string }>
 
-export default async function EditPlaylistPage(props: Props) {
-  const params = await props.params;
-  const { slug } = params
+export default async function EditPlaylistPage({ params }: { params: Params }) {
+
+  const { slug } = await params
   const { data: playlistData } = await supabase.from('VideographyPlaylist').select().match({ slug: slug }).single() as any
 
   const playlistVideos = new Array().sort((a: any,b: any)=> (a.videoIndex > b.videoIndex ? 1 : -1))
