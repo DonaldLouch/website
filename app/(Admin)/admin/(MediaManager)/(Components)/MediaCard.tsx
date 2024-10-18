@@ -9,7 +9,7 @@ import DisplayDate from '@/lib/DisplayDate'
 import supabase from '@/lib/supabase'
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { Calendar03Icon, Delete02Icon, Edit02Icon } from "@hugeicons/react"
-import { deleteFileFromS3 } from "@/app/actions/backblaze"
+import { deleteFileFromS3 } from "@/app/actionsOLD/backblaze"
 import { notifications } from "@mantine/notifications"
   
 export const MediaCard = ({ media }: any) => {
