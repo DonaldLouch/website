@@ -13,12 +13,8 @@ import EditAlbumData from "./EditAlbumData"
 //     },
 // }
 
-type Props = {
-    params: { id: string }
-}
-
-export default async function EditAlbum(props: Props) {
-  const params = await props.params;
+export default async function EditAlbum(props: { params: any }) {
+  const params = await props.params
   // export default async function EditAlbum({ params }: Props) {
   const { id } = params
   const postLimit = 15 as number
