@@ -87,7 +87,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* classNames={noteClasses}  */}
           {/* <Notifications autoClose={false} classNames={{notification: notificationClasses.standardNotification}} styles={{notification: {borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsSMPrimary)", padding: "1rem 2rem"}}}/> */}
           <Notifications />
-          <Context>{children}</Context>
+          <Context>
+            {children}
+          </Context>
           {/* <MantineProvider> */}
             {/* {children} */}
           </MantineProvider> 

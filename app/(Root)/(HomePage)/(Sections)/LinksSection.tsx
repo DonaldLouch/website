@@ -30,13 +30,13 @@ export default function LinksSection({about, primaryLinks, links}: any) {
         >
             {primaryLinks.map((buttonLink: any) => {
                 const icon = 
-                    buttonLink.icon === "facebook-02" ? <Facebook02Icon size="2rem" /> :
-                    buttonLink.icon === "new-twitter" ? <NewTwitterIcon size="2rem" /> :
-                    buttonLink.icon === "linkedin-02" ? <Linkedin02Icon size="2rem" /> :
-                    buttonLink.icon === "youtube" ? <YoutubeIcon size="2rem" /> :
+                    buttonLink.icon === "facebook-02" ? <Facebook02Icon variant="duotone" size="2rem" /> :
+                    buttonLink.icon === "new-twitter" ? <NewTwitterIcon variant="duotone" size="2rem" /> :
+                    buttonLink.icon === "linkedin-02" ? <Linkedin02Icon variant="duotone" size="2rem" /> :
+                    buttonLink.icon === "youtube" ? <YoutubeIcon variant="duotone" size="2rem" /> :
                     buttonLink.icon === "threads" ? <ThreadsIcon size="2rem" /> :
                     buttonLink.icon === "instagram" ? <InstagramIcon size="2rem" /> :
-                    buttonLink.icon === "tiktok" ? <TiktokIcon variant='twotone' size="2rem" /> :
+                    buttonLink.icon === "tiktok" ? <TiktokIcon variant="duotone" size="2rem" /> :
                     buttonLink.icon === "github" ? <GithubIcon size="2rem" /> :
                     <ArrowUpRight01Icon size="2rem" />
                 return <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={icon} iconPadding="0.6rem" key={buttonLink.title}/>
