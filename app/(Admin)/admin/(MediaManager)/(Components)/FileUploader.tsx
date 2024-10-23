@@ -4,8 +4,8 @@ import supabase from "@/lib/supabase";
 import { Stack, Input, Button, Box, Text, Group, rem, Title, Progress } from "@mantine/core";
 ;
 import moment from "moment";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useActionState, useEffect, useState } from "react";
 // import { BsCloudUpload } from "react-icons/bs";
 
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
@@ -13,17 +13,19 @@ import { AlertDiamondIcon, Cancel01Icon, CloudUploadIcon, FileUploadIcon } from 
 import { notifications } from "@mantine/notifications";
 import { uploadFileToS3 } from "@/app/actions/backblaze";
 
-// import axios from "axios"
+import axios from "axios"
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()
+    const pathname = mediaType === "videography" ? "/admin/videography/upload?step=2" : mediaType === "thumbnail" ? "/admin/videography/upload?step3" : `/admin/photography`
+
     // const toast = useToast()
 
     // // console.log(id)
 
     const [isUploading, setUploading] = useState(false)
     const [isUploaded, setUploaded] = useState(false)
-    // const [uploadProgress, setUploadProgress] = useState(0)
+    const [uploadProgress, setUploadProgress] = useState(0)
 
 
     // let upload = null
@@ -39,7 +41,9 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
     //   reader.readAsDataURL(changeEvent.target.files[0]);
     // }
-  
+    const initialState = {
+      message: null
+    }
     async function handleOnSubmit(e: any) {
       setUploading(true)
 
@@ -47,11 +51,60 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
       const files = e
       const uploadDestination = mediaType
+
+      const s3Payload = {
+        uploadDestination,
+        mediaID: id,
+        bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
+        uploadEndpoint: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME!}.${process.env.NEXT_PUBLIC_S3_HOST_NAME!}`,
+        redirectPath: pathname
+      }
       
       try {
         const formData = new FormData()
-        
-        files.forEach((file: string | Blob) => formData.append("file", file))
+        const url = uploadFileToS3(formData, s3Payload) as any
+        // files.forEach((file: string | Blob) => formData.append("file", file))
+        files.forEach((file: string | Blob) => {
+          // const [state, formAction] = useActionState(uploadFileToS3, initialState);
+          const { pending } = useFormStatus()
+          console.log(pending)
+          // console.log(pending)
+          
+          
+          formData.append("file", file)
+          // formData.append('s3Payload', s3Payload)
+          axios
+            .post(url,
+              {
+                headers: {
+                  'x-ms-blob-type': 'BlockBlob',
+                  // 'Content-Type': file.type
+                },
+                maxContentLength: 2e10,
+                maxBodyLength: 2e10,
+                onUploadProgress: (event: any) => {
+                  // if (event.lengthComputable) {
+                    console.log("Hello from event", event)
+                    setUploadProgress(Math.round((event.loaded / event.total) * 100))
+                  // }
+                }
+              }
+            ).then((response) => {
+              console.log(response)
+            })
+            .catch((error) => {
+              if (error.response) {
+                console.log(error.response)
+                console.log("server responded")
+              } else if (error.request) {
+                console.log("network error")
+              } else {
+                console.log(error)
+              }
+            })
+            setUploading(pending)
+          setUploaded(pending ? true : false)
+        })
         
 // useEffect(() => {
 //           xhr.upload.addEventListener('progress', (event: { loaded: number; total: number; }) => {
@@ -70,12 +123,12 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
     //   }))
 
     // console.log(response);
-      const upload = await uploadFileToS3(formData, {
-        uploadDestination,
-        mediaID: id,
-        bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
-        uploadEndpoint: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME!}.${process.env.NEXT_PUBLIC_S3_HOST_NAME!}`
-      }) as any
+      // const upload = await uploadFileToS3(formData, {
+      //   uploadDestination,
+      //   mediaID: id,
+      //   bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
+      //   uploadEndpoint: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME!}.${process.env.NEXT_PUBLIC_S3_HOST_NAME!}`
+      // }) as any
 
       // var formData = new FormData();
       // var imagefile = document.querySelector('#file');
@@ -94,27 +147,26 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
       //   console.log(upload)
 
-        upload.forEach((u: any) => {
-          u.fileSetup && notifications.show({ 
-            id: `fileUploaded${u.fileName}`,
-            title: "File Uploaded!",
-            message:`You have successfully uploaded your ${mediaType} file titled "${u.fileName}"`,
-            color: "black",
-            icon: <FileUploadIcon variant="twotone" />
-          })
-          u.fileDatabase != 201 && notifications.show({ 
-            id: `fileUploaded${u.fileName}`,
-            title: `Error #${u.fileDatabaseError?.code} has Occurred`,
-            message:`An error has occurred: ${u.supabaseError?.message}. ${u.supabaseError?.hint && `${u.supabaseError?.hint}.`}`,
-            color: "red",
-            icon: <AlertDiamondIcon variant="twotone" />
-          })
-        })
-        setUploading(false)
-        setUploaded(true)
-        mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
-        upload.fileDatabase === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
-        upload.fileDatabase === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
+        // upload.forEach((u: any) => {
+        //   u.fileSetup && notifications.show({ 
+        //     id: `fileUploaded${u.fileName}`,
+        //     title: "File Uploaded!",
+        //     message:`You have successfully uploaded your ${mediaType} file titled "${u.fileName}"`,
+        //     color: "black",
+        //     icon: <FileUploadIcon variant="twotone" />
+        //   })
+        //   u.fileDatabase != 201 && notifications.show({ 
+        //     id: `fileUploaded${u.fileName}`,
+        //     title: `Error #${u.fileDatabaseError?.code} has Occurred`,
+        //     message:`An error has occurred: ${u.supabaseError?.message}. ${u.supabaseError?.hint && `${u.supabaseError?.hint}.`}`,
+        //     color: "red",
+        //     icon: <AlertDiamondIcon variant="twotone" />
+        //   })
+        // })
+        
+        // mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
+        // upload.fileDatabase === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
+        // upload.fileDatabase === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
       } catch (error) {
         console.error("File(s) couldn't be uploaded to S3", error)
       }
@@ -216,7 +268,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
               onReject={(files) => console.log('rejected files', files)}
               // maxSize={5 * 1024 ** 2}
               // accept={IMAGE_MIME_TYPE}
-              loading={isUploading}
+              // loading={isUploading}
               bg="none"
               radius="md"
               c="white"
@@ -253,9 +305,9 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
               </Group>
             </Dropzone>
             <Text>Is Uploading: <strong>{isUploading ? "Yes" : "No"}</strong> | Is Uploaded: <strong>{isUploaded ? "Yes" : "No"}</strong></Text>
+            <Text>{uploadProgress}% Uploaded!</Text>
             {/* <Progress radius="0 0 0 1rem" size="xl" value={uploadProgress} color="primary" mt="0.5rem" animated /> */}
             {/* {upload?.status && (
-                  <Text>({upload?.status}) {upload?.message}</Text>
               )} */}
             {/* <Text ta="center">{helperText ? helperText : `Please note that once you have selected your media or media's you MUST click on the "<strong>Confirm Media Upload</strong>" Button to upload your media.`}</Text>  */}
             {/* <Text ta="center">{helperText ? helperText : `THE MEDIA UPLOADER IS CURRENTLY DISABLED!`}</Text>  */}
@@ -283,4 +335,8 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
           </SectionCard>
         {/* </Box> */}
     </>
+}
+
+function useFormStatus(): { pending: any; } {
+  throw new Error("Function not implemented.");
 }

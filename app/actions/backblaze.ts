@@ -6,6 +6,7 @@ import s3 from "@/lib/s3"
 import { DeleteObjectCommand, DeleteObjectCommandOutput, PutObjectCommand } from "@aws-sdk/client-s3"
 import moment from "moment"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 type S3Payload = {
   uploadDestination?: string
@@ -14,10 +15,12 @@ type S3Payload = {
   mediaID?: string
   filePath?: string
   getFileID?: string
-}
+  redirectPath: string
+};
 
-export async function uploadFileToS3( formData: FormData, payload: S3Payload ): Promise<any[]> {
-    const { uploadDestination, bucket, uploadEndpoint, mediaID } = payload
+export async function uploadFileToS3( formData?: FormData, payload?: S3Payload ): Promise<any[]> {
+    const { uploadDestination, bucket, uploadEndpoint, mediaID, redirectPath } = payload
+    console.log(formData, payload)
     try {
         const files = formData.getAll("file") as File[]
 
@@ -118,7 +121,7 @@ export async function uploadFileToS3( formData: FormData, payload: S3Payload ): 
                 }
               })
         )
-        revalidatePath("/")
+        revalidatePath(redirectPath)
         return response
     } catch (error) {
           console.error("Error uploading file(s) to S3:", error)
@@ -126,7 +129,7 @@ export async function uploadFileToS3( formData: FormData, payload: S3Payload ): 
     }
 }
 
-export async function deleteFileFromS3( { bucket, filePath, getFileID}: S3Payload ): Promise<DeleteObjectCommandOutput> {
+export async function deleteFileFromS3( { bucket, filePath, getFileID, redirectPath}: S3Payload ): Promise<DeleteObjectCommandOutput> {
   const deleteFile = new DeleteObjectCommand({ Bucket: bucket, Key: filePath })
 
   try {
@@ -140,7 +143,7 @@ export async function deleteFileFromS3( { bucket, filePath, getFileID}: S3Payloa
       throw new Error("Failed to delete database for file.");
     }
     
-    revalidatePath("/")
+    revalidatePath(redirectPath);
     return sendDelete
   } catch (error) {
     console.error("Error deleting file(s) from S3:", error);

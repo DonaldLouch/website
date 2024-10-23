@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Post({ params }: { params: Params }) {
-    const {userId, sessionId} = auth()
+    const {userId, sessionId} = await auth()
 
     const isLoggedIn = userId && sessionId ? true : false
 

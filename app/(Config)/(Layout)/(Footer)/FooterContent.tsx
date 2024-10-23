@@ -13,14 +13,20 @@
 
 import { FooterIcon } from "./FooterIcon";
 // import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
-import { SignInButton, SignedOut, UserButton, useAuth, useSession } from "@clerk/nextjs";
 import { Anchor, Group, Stack, Image, Text, Box, Flex } from "@mantine/core";
 import { DashboardSpeed02Icon, Facebook02Icon, GithubIcon, InstagramIcon, Login01Icon, ThreadsIcon, TiktokIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
-import { checkRole } from "@/lib/roles";
+import { useEffect, useState } from "react";
+import { isUserSignedIn } from "@/app/actions/clerk";
 
 
 export default function FooterContent(){
-  const { isSignedIn } = useAuth()
+  
+  const [isSignedIn, setIsSignedIn] = useState(false) as any
+    useEffect(() => {
+        const userSignedIn = isUserSignedIn()
+        setIsSignedIn(userSignedIn)
+    }, [])
+
   const footerLinks = [
     {
       linkURL: "https://facebook.com/DonaldLouchProductions",

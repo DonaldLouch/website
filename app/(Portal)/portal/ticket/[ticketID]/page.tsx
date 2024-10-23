@@ -20,7 +20,7 @@ type Params = Promise<{ ticketID: string }>
 
 export default async function TicketOverview({ params }: { params: Params }) {
     const { ticketID } = await params
-    const { userId } = auth()
+    const { userId } = await auth()
     const isAdmin = checkRole("admin") ? true : false
     const isMod = checkRole("moderator") ? true : false
 

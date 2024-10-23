@@ -8,10 +8,10 @@ import Footer from "../(Config)/(Layout)/(Footer)";
 import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
-import { useAuth } from "@clerk/nextjs";
 import { AlertDiamondIcon, DashboardSpeed02Icon, Login01Icon, Notification03Icon } from "@hugeicons/react";
 import WebsiteAlerts from "../(Components)/WebsiteAlerts";
 import Notifications from "../(Components)/Notifications";
+import { isUserSignedIn } from "../actions/clerk"
 
 // import {hugeiconsLicense} from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
@@ -29,8 +29,12 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const disabled = path.includes("/embed") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
-
-    const { isSignedIn } = useAuth()
+    
+    const [isSignedIn, setIsSignedIn] = useState(false) as any
+    useEffect(() => {
+        const userSignedIn = isUserSignedIn()
+        setIsSignedIn(userSignedIn)
+    }, [])
 
     // console.log("Layout is disabled?", disabled)
     // const [opened { open, close }] = useDisclosure(false)

@@ -3,7 +3,7 @@ import { auth, clerkClient } from "@clerk/nextjs/server";
 // import { Roles } from "@/types/globals";
 
 export async function GET(req: NextRequest) {
-  const { userId, sessionClaims } = auth()
+  const { userId, sessionClaims } = await auth()
   const isAdmin = sessionClaims?.metadata.role === "admin"
   const isMod = sessionClaims?.metadata.role === "moderator"
   const isStaff = isAdmin || isMod

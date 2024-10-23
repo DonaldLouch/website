@@ -3,7 +3,7 @@
 import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Skeleton } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
-import { useUser, useAuth, useSession } from '@clerk/nextjs'
+import { useUser } from '@clerk/nextjs'
 // import { BsCalendar2, BsEye, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 import classes from "./Components.module.css"
@@ -22,7 +22,7 @@ import { useImageSize } from 'react-image-size';
 
 export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
     const {user} = useUser() as any
-    // const {has} = useAuth() as any
+    
     const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
 
     const [opened, { open, close }] = useDisclosure(false)

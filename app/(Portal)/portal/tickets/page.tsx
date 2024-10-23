@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TicketsPage() {
-  const { userId } = auth()  
+  const { userId } = await auth()  
   const isAdmin = checkRole("admin") ? true : false
   const isMod = checkRole("moderator") ? true : false
   const isPayment = checkRole("paymentOnly") ? true : false

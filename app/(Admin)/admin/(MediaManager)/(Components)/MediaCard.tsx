@@ -41,7 +41,8 @@ export const MediaCard = ({ media }: any) => {
         const deleteFile = await deleteFileFromS3({
             bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
             filePath: fileKey,
-            getFileID: fileID
+            getFileID: fileID,
+            redirectPath: "/admin/photography"
         })
 
         const isFileDeleted = deleteFile.$metadata.httpStatusCode === 204 ? true : false
