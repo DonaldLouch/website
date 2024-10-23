@@ -1,5 +1,3 @@
-import { InputControl } from 'formik-chakra-ui'
-
 interface FormProps {
     inputID: string
     inputLabel?: string
@@ -16,22 +14,23 @@ export const FormInputReadOnly = ( props: FormProps) => {
     }
     
     return (
-         <InputControl 
-            name={inputID}
-            label={inputLabel}
-            mt="0.5rem"
-            inputProps={{
-                variant: "unstyled",
-                boxShadow: 'bsBoldRed',
-                p: "1.5rem 2rem",
-                color: 'yellow',
-                borderRadius: "0 2rem 0 2rem",
-                type: theInputType,
-                fontStyle: "italic", 
-                fontWeight: 300,
-            }}
-            labelProps={{color: 'white'}}
-            isReadOnly
-        />
+        <div><h1>Function is being refactored.</h1></div>
+        //  <InputControl 
+        //     name={inputID}
+        //     label={inputLabel}
+        //     mt="0.5rem"
+        //     inputProps={{
+        //         variant: "unstyled",
+        //         boxShadow: 'bsBoldRed',
+        //         p: "1.5rem 2rem",
+        //         color: 'yellow',
+        //         borderRadius: "0 2rem 0 2rem",
+        //         type: theInputType,
+        //         fontStyle: "italic", 
+        //         fontWeight: 300,
+        //     }}
+        //     labelProps={{color: 'white'}}
+        //     isReadOnly
+        // />
     )
 }

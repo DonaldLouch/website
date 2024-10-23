@@ -1,6 +1,4 @@
-// import { Grid, Heading, Stack, Text } from '@chakra-ui/react'
-import { Heading, Stack, Text } from '@chakra-ui/react'
-import { InputControl } from 'formik-chakra-ui'
+
 
 interface FormProps {
     inputID: string
@@ -15,7 +13,8 @@ export const FormInputRow = ( props: FormProps) => {
     const theInputType = inputType ? inputType : "text"
     
     return (<>
-    <Stack width="100%">
+    <div><h1>Function is being refactored.</h1></div>
+    {/* <Stack width="100%">
         <Stack hidden={!inputDescription}>
             <Heading size="lg" lineHeight="1" borderBottom="solid" borderBottomColor="primary" pb="0.5rem">{inputLabel}</Heading>
             <Text fontSize="md" opacity="0.7">{inputDescription}</Text>
@@ -38,6 +37,6 @@ export const FormInputRow = ( props: FormProps) => {
                 hidden: inputDescription,
             }}
         />
-    </Stack>
+    </Stack> */}
     </>)
 }

@@ -1,7 +1,6 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Box, Button, useToast, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react"
 import { LinkCardAdmin } from "./LinkCardAdmin"
 import AddLink from "./AddLink"
 import { PrimaryLinkManager } from "./PrimaryLinkManager"
@@ -29,14 +28,15 @@ export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <Box as="main" id="homeWrapper" color="white">
+      <div><h1>Page is being refactored.</h1></div>
+      {/* <Box as="main" id="homeWrapper" color="white">
         <Button as="a" href={`/about#links`} variant="primary" background="primary" color="white" my="1rem !important">View About#Links Page</Button>
         <Tabs p="1rem" borderRadius="0 2rem" isFitted>
           <TabList display="flex" justifyContent="center">
             <Tab>All Links</Tab>
             <Tab>Primary Links</Tab>
             <Tab>Embeds</Tab>
-            {/* <Tab>Pinned Posts</Tab>  */}
+            {/* <Tab>Pinned Posts</Tab> 
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -53,10 +53,10 @@ export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
             </TabPanel>
             {/* <TabPanel>
               {pinnedPosts.map((post: any) => ( <PinnedPostsManager {...post} /> ))} 
-            </TabPanel> */}
+            </TabPanel>
           </TabPanels>
         </Tabs>
-      </Box>
+      </Box> */}
     </>
   )
 }

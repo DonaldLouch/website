@@ -1,19 +1,13 @@
 'use client'
 
-import FormInput from "@/app/(Components)/(Form)/FormInput"
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly"
-import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow"
-import { FormTextAreaRow } from "@/app/(Components)/(Form)/FormTextAreaRow"
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import supabase from "@/lib/supabase"
-import { Box, Button, Heading, Stack, useToast } from "@chakra-ui/react"
-import { Formik } from "formik"
-import { SubmitButton } from "formik-chakra-ui"
+
 import * as Yup from 'yup'
 
 export default function EditAboutPage({ about }: any) {
-  const toast = useToast()
-  const toastID = "toastID"
+  // const toast = useToast()
+  // const toastID = "toastID"
   
   const breadCrumbs = [
     {"pageLink": "/admin/pages", "pageName": "Page Manager"},
@@ -90,15 +84,15 @@ export default function EditAboutPage({ about }: any) {
       lastUpdatedOn: updateAboutData.lastUpdatedOn 
     }).eq('id', updateAboutData.id)
     // // console.log(supabaseStatus)
-    supabaseStatus && !toast.isActive(toastID) &&
-      toast({
-          id: toastID,
-          title: `${supabaseStatus === 204 ? "Page Updated 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-          description: `${supabaseStatus === 204 ? `You have successfully updated the About Me page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-          status: `${supabaseStatus === 204 ? "success" : "error"}`,
-          duration: 9000,
-          isClosable: true,
-      })
+    // supabaseStatus && !toast.isActive(toastID) &&
+    //   toast({
+    //       id: toastID,
+    //       title: `${supabaseStatus === 204 ? "Page Updated 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+    //       description: `${supabaseStatus === 204 ? `You have successfully updated the About Me page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+    //       status: `${supabaseStatus === 204 ? "success" : "error"}`,
+    //       duration: 9000,
+    //       isClosable: true,
+    //   })
       actions.setSubmitting(false)
   }
 
@@ -137,7 +131,7 @@ export default function EditAboutPage({ about }: any) {
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <Box as="main" id="homeWrapper" color="white">
+      {/* <Box as="main" id="homeWrapper" color="white">
         <Button as="a" href={`/about`} variant="primary" background="primary" color="white" my="1rem !important">View About Me Page</Button>
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
             {({ handleSubmit }: any) => (
@@ -184,7 +178,8 @@ export default function EditAboutPage({ about }: any) {
             </Stack>
             )}
         </Formik>
-      </Box>
+      </Box> */}
+      <div><h1>Page is being refactored.</h1></div>
     </>
   )
 }

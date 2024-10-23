@@ -4,8 +4,6 @@ import "@/lib/fontAwesome"
 
 // import MaintenanceModePage from "./MaintenanceModePage"
 import GeneralLayout from "./GeneralLayout"
-import { useToast } from "@chakra-ui/react"
-import { useSearchParams } from "next/navigation"
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     // const params = useSearchParams()

@@ -23,7 +23,6 @@ import Masonry from 'react-masonry-css'
 import { debounce } from 'lodash'
 import supabase from '@/lib/supabase'
 import DisplayDate from '@/lib/DisplayDate'
-import ViewPhotoAlbum from './ViewPhotoAlbum'
 
 import { MdxContent } from '@/app/mdx-content'
 // import { Bs123, BsCalendar2, BsInfo, BsPinMap, BsTag, BsTags } from 'react-icons/bs'

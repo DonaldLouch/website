@@ -4,7 +4,7 @@ import { Box,  Stack, Text, Button, AppShell, Group, Anchor, Image, Burger, rem,
 
 import { usePathname, useRouter } from 'next/navigation'
 
-import LoadingComponent from '@/app/(Config)/ContentLoading'
+// import LoadingComponent from '@/app/(Config)/ContentLoading'
 import { Suspense, useEffect, useState } from 'react'
 import { UserButton, useClerk, useUser } from '@clerk/nextjs'
 

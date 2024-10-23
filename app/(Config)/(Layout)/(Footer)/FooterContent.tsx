@@ -1,31 +1,24 @@
 'use client'
 
-// import {
-//   Stack,
-//   Text,
-//   Image,
-//   Link,
-//   Heading,
-//   Grid,
-//   Icon,
-//   Box,
-// } from "@chakra-ui/react";
-
 import { FooterIcon } from "./FooterIcon";
 // import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
 import { Anchor, Group, Stack, Image, Text, Box, Flex } from "@mantine/core";
 import { DashboardSpeed02Icon, Facebook02Icon, GithubIcon, InstagramIcon, Login01Icon, ThreadsIcon, TiktokIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
 import { useEffect, useState } from "react";
 import { isUserSignedIn } from "@/app/actions/clerk";
+import { useUser } from "@clerk/nextjs";
 
 
 export default function FooterContent(){
   
-  const [isSignedIn, setIsSignedIn] = useState(false) as any
-    useEffect(() => {
-        const userSignedIn = isUserSignedIn()
-        setIsSignedIn(userSignedIn)
-    }, [])
+  const { user } = useUser()
+  const isSignedIn = user ? true : false
+
+  // const [isSignedIn, setIsSignedIn] = useState(false) as any
+  //   useEffect(() => {
+  //       const userSignedIn = isUserSignedIn()
+  //       setIsSignedIn(userSignedIn)
+  //   }, [])
 
   const footerLinks = [
     {

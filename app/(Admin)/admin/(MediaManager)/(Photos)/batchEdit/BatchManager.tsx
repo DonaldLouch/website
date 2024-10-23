@@ -9,16 +9,6 @@ import { Box, Button, Grid, Input, Stack, Text } from "@mantine/core"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import {MediaCard} from "../../(Components)/MediaCard"
-// import { Field, FieldArray, Formik } from "formik"
-
-// import * as Yup from 'yup'
-// import FormInput from "@/app/(Components)/(Form)/FormInput"
-// import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
-// import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow"
-// import { FormSelect } from "@/app/(Components)/(Form)/FormSelect"
-// import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch"
-// import { FormCheckGroup } from "@/app/(Components)/(Form)/FormCheckGroup"
-// import { CheckboxContainer, CheckboxControl, SubmitButton } from "formik-chakra-ui"
 
 import Image from "next/image"
 import moment from "moment"

@@ -4,19 +4,6 @@ import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import { Divider, Group, Loader, Paper, SimpleGrid, Stack, Title, Text, Anchor, Flex } from "@mantine/core";
 
-// import { FieldArray, Formik } from "formik";
-// import { SubmitButton } from "formik-chakra-ui";
-// import * as Yup from 'yup'
-
-// import FormInput from "@/app/(Components)/(Form)/FormInput";
-// import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
-// import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
-// import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
-// import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
-// import supabase from "@/lib/supabase";
-// import { useRouter } from "next/navigation";
-// import { SectionTitle } from "@/app/(Components)/SectionTitle";
-// import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
 import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
 import { useEffect, useRef, useState } from "react";

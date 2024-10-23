@@ -3,13 +3,8 @@
 
 'use client'
 
-// import { AspectRatio, Card, Heading, Stack, Text, Box } from '@chakra-ui/react'
-// 
 
-// import Link from 'next/link'
-// import Image from 'next/image'
 import DisplayDate from '@/lib/DisplayDate'
-// import { BsPinAngle } from 'react-icons/bs'
 import { Badge, Text, Group, Paper, Title, Box, useMantineTheme, rem, AspectRatio, Center, Stack, Tooltip, Flex, Anchor, Button } from '@mantine/core'
 import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
 import PrimaryLinkedButton from '../(Buttons)/PrimaryLinkedButton'

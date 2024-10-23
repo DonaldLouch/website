@@ -1,6 +1,5 @@
 import { Grid, Title, Stack, Text, Input } from '@mantine/core'
-// import { BsAsterisk } from 'react-icons/bs'
-// import { InputControl } from 'formik-chakra-ui'
+
 
 // interface FormProps {
 //     inputID: string

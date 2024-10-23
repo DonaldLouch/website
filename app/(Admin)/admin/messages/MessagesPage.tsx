@@ -2,7 +2,6 @@
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
-import { Box, Link, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react"
 
 export default function MessagesPage({contactData, jobData}: any) {
   const breadCrumbs = [
@@ -11,7 +10,7 @@ export default function MessagesPage({contactData, jobData}: any) {
   return (
     <>
         <BreadCrumb breads={breadCrumbs} />
-        <Box as="main" id="homeWrapper" color="white">
+        {/* <Box as="main" id="homeWrapper" color="white">
           <SectionTitle headingTitle="Messages" />
           <Tabs p="1rem" borderRadius="0 2rem" isFitted>
             <TabList display="flex" justifyContent="center">
@@ -119,7 +118,8 @@ export default function MessagesPage({contactData, jobData}: any) {
           </TabPanel>
           </TabPanels>
           </Tabs>
-        </Box>
+        </Box> */}
+        <div><h1>Page is being refactored.</h1></div>
     </>
   )
 }

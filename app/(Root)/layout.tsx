@@ -12,6 +12,7 @@ import { AlertDiamondIcon, DashboardSpeed02Icon, Login01Icon, Notification03Icon
 import WebsiteAlerts from "../(Components)/WebsiteAlerts";
 import Notifications from "../(Components)/Notifications";
 import { isUserSignedIn } from "../actions/clerk"
+import { useUser } from "@clerk/nextjs";
 
 // import {hugeiconsLicense} from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
@@ -30,11 +31,13 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
     
-    const [isSignedIn, setIsSignedIn] = useState(false) as any
-    useEffect(() => {
-        const userSignedIn = isUserSignedIn()
-        setIsSignedIn(userSignedIn)
-    }, [])
+    const { user } = useUser()
+    const isSignedIn = user ? true : false
+    // const [isSignedIn, setIsSignedIn] = useState(false) as any
+    // useEffect(() => {
+    //     const userSignedIn = isUserSignedIn()
+    //     setIsSignedIn(userSignedIn)
+    // }, [])
 
     // console.log("Layout is disabled?", disabled)
     // const [opened { open, close }] = useDisclosure(false)

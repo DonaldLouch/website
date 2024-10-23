@@ -4,7 +4,6 @@ import { AspectRatio, Box, Anchor, Stack, Group, Image, Flex, Tabs, Text } from 
 
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
 import { LinkedSVGButton } from '@/app/(Components)/(Buttons)/LinkedSVGButton'
-import { LinkedButton } from '../LinkedButton'
 import { LinkButton } from '../LinkButton'
 import PinnedPostsCard from '@/app/(Components)/(Cards)/PinnedPostsCard'
 import { Title } from '@mantine/core'

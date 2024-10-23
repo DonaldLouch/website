@@ -1,7 +1,5 @@
 'use client'
 
-// import { Button, Card, CardBody, CardHeader, Heading, Icon, Stack, Text } from "@chakra-ui/react";
-import HouseIcon from "../../(Components)/(Vectors)/house";
 import { Cone01Icon, Files01Icon, Tick01Icon, Ticket01Icon } from "@hugeicons/react";
 import { Box, Button, Card, Group, Stack, Text, Title } from "@mantine/core";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";

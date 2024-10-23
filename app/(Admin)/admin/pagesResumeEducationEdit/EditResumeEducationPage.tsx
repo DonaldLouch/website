@@ -1,19 +1,14 @@
 'use client'
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import supabase from "@/lib/supabase"
-import { Box, Button, Stack, useToast } from "@chakra-ui/react"
 import * as Yup from 'yup'
-import { Formik } from "formik"
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly"
-import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow"
-import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
-import { SubmitButton } from "formik-chakra-ui"
+
 import { useRouter } from "next/navigation"
 
 export default function EditResumeEducationExperiencePage({ resumeExperience, resumeID }: any) {
   const router = useRouter()
-  const toast = useToast()
-  const toastID = "toastID"
+  // const toast = useToast()
+  // const toastID = "toastID"
     
   const breadCrumbs = [
     {"pageLink": "/admin/pages", "pageName": "Page Manager"},
@@ -24,15 +19,15 @@ export default function EditResumeEducationExperiencePage({ resumeExperience, re
 
   const deleteEducation = async () => {
         const { status: deleteStatus, error: deleteError } = await supabase.from("ResumeEducation").delete().eq('id', resumeExperience.id);
-        deleteStatus && !toast.isActive(toastID) &&
-        toast({
-            id: toastID,
-            title: `${deleteStatus === 204 ? `${resumeExperience.school} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
-            description: `${deleteStatus === 204 ? `You have successfully deleted ${resumeExperience.school}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
-            status: `${deleteStatus === 204 ? "success" : "error"}`,
-            duration: 9000,
-            isClosable: true,
-        })
+        // deleteStatus && !toast.isActive(toastID) &&
+        // toast({
+        //     id: toastID,
+        //     title: `${deleteStatus === 204 ? `${resumeExperience.school} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
+        //     description: `${deleteStatus === 204 ? `You have successfully deleted ${resumeExperience.school}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
+        //     status: `${deleteStatus === 204 ? "success" : "error"}`,
+        //     duration: 9000,
+        //     isClosable: true,
+        // })
         deleteStatus === 204 && router.push("/admin/pagesResumeExperience")
     }
   
@@ -53,15 +48,15 @@ export default function EditResumeEducationExperiencePage({ resumeExperience, re
     description: submitData.description,
   }).match({ id: submitData.id })
   await supabase.from("Resume").update({lastUpdatedOn: new Date()}).match({ id: resumeID })
-  supabaseStatus && !toast.isActive(toastID) &&
-    toast({
-        id: toastID,
-        title: `${supabaseStatus === 204 ? `Updated ${submitData.school} Experience 🎉` : `Error #${supabaseError?.code} has Occurred`}`,
-        description: `${supabaseStatus === 204 ? `You have successfully updated the Resume page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-        status: `${supabaseStatus === 204 ? "success" : "error"}`,
-        duration: 9000,
-        isClosable: true,
-    })
+  // supabaseStatus && !toast.isActive(toastID) &&
+  //   toast({
+  //       id: toastID,
+  //       title: `${supabaseStatus === 204 ? `Updated ${submitData.school} Experience 🎉` : `Error #${supabaseError?.code} has Occurred`}`,
+  //       description: `${supabaseStatus === 204 ? `You have successfully updated the Resume page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+  //       status: `${supabaseStatus === 204 ? "success" : "error"}`,
+  //       duration: 9000,
+  //       isClosable: true,
+  //   })
     actions.setSubmitting(false)
   }
 
@@ -82,7 +77,8 @@ export default function EditResumeEducationExperiencePage({ resumeExperience, re
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <Box as="main" id="homeWrapper" color="white">
+      <div><h1>Page is being refactored.</h1></div>
+      {/* <Box as="main" id="homeWrapper" color="white">
         <Button as="a" href={`/portfolio/resume`} variant="primary" background="primary" color="white" mt="1rem !important">View Resume Page</Button>
         <Button onClick={deleteEducation}variant="primary" background="red" color="white" mt="1rem !important">DELETE: {resumeExperience.school}</Button> 
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -106,7 +102,7 @@ export default function EditResumeEducationExperiencePage({ resumeExperience, re
           </Stack>
           )}
         </Formik>
-      </Box>
+      </Box> */}
     </>
   )
 }

@@ -18,7 +18,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
     {/* mx={{base: "0", sm: "-3rem"}} */}
     <Grid gutter="1rem">
         {videos?.map((video: any, index: number) => (<>
-        <Grid.Col key={index} span={{base: 12, sm: 6, md: 4}} pos="relative">
+        <Grid.Col key={`video_${index}`} span={{base: 12, sm: 6, md: 4}} pos="relative">
             <Anchor href={`/video/${video.id}`} unstyled>
                 <Box
                     style={{

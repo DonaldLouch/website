@@ -1,16 +1,5 @@
 'use client'
 
-// import {
-//   Box,
-//   Stack,
-//   // Image,
-//   Link,
-//   useDisclosure,
-//   Drawer,
-//   DrawerContent,
-//   IconButton,
-// } from "@chakra-ui/react";
-
 ;
 // import { BsList } from "react-icons/bs";
 import { AppShell, Group, Image, Anchor, Burger } from "@mantine/core";

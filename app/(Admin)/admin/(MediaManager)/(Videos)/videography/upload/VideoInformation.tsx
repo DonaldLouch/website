@@ -21,8 +21,6 @@
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio, SimpleGrid, Grid} from "@mantine/core"
 
-// import { Field, FieldArray, Formik } from "formik";
-// import * as Yup from 'yup'
 
 import * as yup from 'yup';
 import { yupResolver } from 'mantine-form-yup-resolver';

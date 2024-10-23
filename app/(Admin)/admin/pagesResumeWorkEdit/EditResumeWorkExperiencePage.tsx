@@ -2,13 +2,8 @@
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
 import supabase from "@/lib/supabase"
-import { Box, Button, Stack, useToast } from "@chakra-ui/react"
 import * as Yup from 'yup'
-import { Formik } from "formik"
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly"
-import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow"
-import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
-import { SubmitButton } from "formik-chakra-ui"
+
 import AddWorkHistory from "./AddWorkHistory"
 import EditWorkHistory from "./editWorkHistory"
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard"
@@ -16,8 +11,8 @@ import { useRouter } from "next/navigation"
 
 export default function EditResumeWorkExperiencePage({ resumeExperience, resumeID, resumeHistory }: any) {
   const router = useRouter()
-  const toast = useToast()
-  const toastID = "toastID"
+  // const toast = useToast()
+  // const toastID = "toastID"
     
   const breadCrumbs = [
     {"pageLink": "/admin/pages", "pageName": "Page Manager"},
@@ -28,15 +23,15 @@ export default function EditResumeWorkExperiencePage({ resumeExperience, resumeI
 
   const deleteWork = async () => {
         const { status: deleteStatus, error: deleteError } = await supabase.from("ResumeWorkExperience").delete().eq('id', resumeExperience.id);
-        deleteStatus && !toast.isActive(toastID) &&
-        toast({
-            id: toastID,
-            title: `${deleteStatus === 204 ? `${resumeExperience.company} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
-            description: `${deleteStatus === 204 ? `You have successfully deleted ${resumeExperience.company}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
-            status: `${deleteStatus === 204 ? "success" : "error"}`,
-            duration: 9000,
-            isClosable: true,
-        })
+        // deleteStatus && !toast.isActive(toastID) &&
+        // toast({
+        //     id: toastID,
+        //     title: `${deleteStatus === 204 ? `${resumeExperience.company} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
+        //     description: `${deleteStatus === 204 ? `You have successfully deleted ${resumeExperience.company}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
+        //     status: `${deleteStatus === 204 ? "success" : "error"}`,
+        //     duration: 9000,
+        //     isClosable: true,
+        // })
         deleteStatus === 204 && router.push("/admin/pagesResumeExperience")
     }
   
@@ -57,15 +52,15 @@ export default function EditResumeWorkExperiencePage({ resumeExperience, resumeI
     description: submitData.description,
   }).match({ id: submitData.id })
   await supabase.from("Resume").update({lastUpdatedOn: new Date()}).match({ id: resumeID })
-  supabaseStatus && !toast.isActive(toastID) &&
-    toast({
-        id: toastID,
-        title: `${supabaseStatus === 204 ? `Updated ${submitData.company} Experience 🎉` : `Error #${supabaseError?.code} has Occurred`}`,
-        description: `${supabaseStatus === 204 ? `You have successfully updated the Resume page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-        status: `${supabaseStatus === 204 ? "success" : "error"}`,
-        duration: 9000,
-        isClosable: true,
-    })
+  // supabaseStatus && !toast.isActive(toastID) &&
+  //   toast({
+  //       id: toastID,
+  //       title: `${supabaseStatus === 204 ? `Updated ${submitData.company} Experience 🎉` : `Error #${supabaseError?.code} has Occurred`}`,
+  //       description: `${supabaseStatus === 204 ? `You have successfully updated the Resume page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+  //       status: `${supabaseStatus === 204 ? "success" : "error"}`,
+  //       duration: 9000,
+  //       isClosable: true,
+  //   })
     actions.setSubmitting(false)
   }
 
@@ -88,7 +83,8 @@ export default function EditResumeWorkExperiencePage({ resumeExperience, resumeI
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <Box as="main" id="homeWrapper" color="white">
+      <div><h1>Page is being refactored.</h1></div>
+      {/* <Box as="main" id="homeWrapper" color="white">
         <Button as="a" href={`/portfolio/resume`} variant="primary" background="primary" color="white" mt="1rem !important">View Resume Page</Button>
         <Button onClick={deleteWork}variant="primary" background="red" color="white" mt="1rem !important">DELETE: {resumeExperience.company}</Button> 
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -119,7 +115,7 @@ export default function EditResumeWorkExperiencePage({ resumeExperience, resumeI
             {resumeHistory?.map((history: any) => ( <EditWorkHistory history={history} resumeID={resumeID} company={resumeExperience.company} key={history.id} /> ))}
           </Stack>
         </SectionCard>
-      </Box>
+      </Box> */}
     </>
   )
 }

@@ -4,27 +4,9 @@ import FormInput from "@/app/(Components)/(Form)/FormInput";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
-import {
-  Text,
-  Link,
-  Flex,
-  IconButton,
-  Stack,
-  Tooltip,
-  useToast,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  useDisclosure,
-  Icon,
-} from "@chakra-ui/react";
+// imp
 import { MailAtSign02Icon, NewTwitterIcon, Chatting01Icon, GameController01Icon, WifiConnected02Icon, SpotifyIcon, VimeoIcon, YoutubeIcon, MusicNoteSquare02Icon, Shirt01Icon, SoundcloudIcon, Home01Icon } from "@hugeicons/react";
 
-;
-import { Formik } from "formik";
-import { SubmitButton } from "formik-chakra-ui";
 import { useRouter } from "next/navigation";
 // import { BsLink45Deg } from "react-icons/bs";
 // import { BsEnvelopeAt, BsTwitterX, BsChat, BsXbox, BsBarChart, BsSpotify, BsVimeo, BsYoutube, BsLink45Deg } from "react-icons/bs";
@@ -41,22 +23,22 @@ export const LinkCardAdmin = (link: {
   iconName: any;
   subTitle: string | null | undefined;
 }) => {
-  const toast = useToast();
-  const toastID = "toastID"
+  // const toast = useToast();
+  // const toastID = "toastID"
   const router = useRouter();
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  // const { isOpen, onOpen, onClose } = useDisclosure()
 
   const deleteLink = async () => {
         const { status: deleteStatus, error: deleteError } = await supabase.from("Links").delete().eq('id', link.id);
-        deleteStatus && !toast.isActive(toastID) &&
-        toast({
-            id: toastID,
-            title: `${deleteStatus === 204 ? `${link.title} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
-            description: `${deleteStatus === 204 ? `You have successfully deleted ${link.title}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
-            status: `${deleteStatus === 204 ? "success" : "error"}`,
-            duration: 9000,
-            isClosable: true,
-        })
+        // deleteStatus && !toast.isActive(toastID) &&
+        // toast({
+        //     id: toastID,
+        //     title: `${deleteStatus === 204 ? `${link.title} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
+        //     description: `${deleteStatus === 204 ? `You have successfully deleted ${link.title}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
+        //     status: `${deleteStatus === 204 ? "success" : "error"}`,
+        //     duration: 9000,
+        //     isClosable: true,
+        // })
         deleteStatus === 204 && router.refresh()
     }
 
@@ -77,15 +59,15 @@ export const LinkCardAdmin = (link: {
         link: submitData.link,
         lastUpdatedOn: new Date()
     }).match({ id: submitData.id })
-    supabaseStatus && !toast.isActive(toastID) &&
-        toast({
-            id: toastID,
-            title: `${supabaseStatus === 204 ? "Updated Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-            description: `${supabaseStatus === 204 ? `You have successfully updated the ${link.title} link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-            status: `${supabaseStatus === 204 ? "success" : "error"}`,
-            duration: 9000,
-            isClosable: true,
-        })
+    // supabaseStatus && !toast.isActive(toastID) &&
+    //     toast({
+    //         id: toastID,
+    //         title: `${supabaseStatus === 204 ? "Updated Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+    //         description: `${supabaseStatus === 204 ? `You have successfully updated the ${link.title} link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+    //         status: `${supabaseStatus === 204 ? "success" : "error"}`,
+    //         duration: 9000,
+    //         isClosable: true,
+    //     })
         actions.setSubmitting()
   }
   const initialValues = {
@@ -119,7 +101,8 @@ export const LinkCardAdmin = (link: {
   
   return (
     <>
-    <Flex gap="1.3rem" key={link.id}>
+    <div><h1>Page is being refactored.</h1></div>
+    {/* <Flex gap="1.3rem" key={link.id}>
       <Link
         variant="unstyled"
         _hover={{ textDecoration: "none" }}
@@ -151,7 +134,7 @@ export const LinkCardAdmin = (link: {
               fontSize="3xl"
               variant="unstyled"
               icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
-            /> */}
+            /> 
             <Icon as={icon} boxSize="2.3rem" mr="0.5rem" />
             <Stack>
               <Text
@@ -183,7 +166,7 @@ export const LinkCardAdmin = (link: {
           onClick={deleteLink}
           color="red"
           // icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
-        /> */}
+        /> 
     </Flex>
     <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">
       <ModalContent background="blurredPurple">
@@ -246,7 +229,7 @@ export const LinkCardAdmin = (link: {
           </Formik>
         </ModalBody>
       </ModalContent>
-    </Modal>
+    </Modal> */}
     </>
   )
 };
