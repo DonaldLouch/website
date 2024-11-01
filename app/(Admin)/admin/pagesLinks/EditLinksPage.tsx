@@ -7,6 +7,9 @@ import { PrimaryLinkManager } from "./PrimaryLinkManager"
 import AddPrimaryLink from "./AddPrimaryLink"
 import { EmbedManager } from "./EmbedManager"
 import { AddEmbed } from "./AddEmbed"
+import { Box, Tabs } from "@mantine/core"
+import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
+import { ArrowUpRight01Icon } from "@hugeicons/react"
 
 export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
   const breadCrumbs = [
@@ -28,35 +31,29 @@ export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <div><h1>Page is being refactored.</h1></div>
-      {/* <Box as="main" id="homeWrapper" color="white">
-        <Button as="a" href={`/about#links`} variant="primary" background="primary" color="white" my="1rem !important">View About#Links Page</Button>
-        <Tabs p="1rem" borderRadius="0 2rem" isFitted>
-          <TabList display="flex" justifyContent="center">
-            <Tab>All Links</Tab>
-            <Tab>Primary Links</Tab>
-            <Tab>Embeds</Tab>
-            {/* <Tab>Pinned Posts</Tab> 
-          </TabList>
-          <TabPanels>
-            <TabPanel>
+      <Box component="main">
+        <PrimaryLinkedButton link="/" icon={<ArrowUpRight01Icon variant="twotone" />}>View Links</PrimaryLinkedButton>
+        
+        <Tabs defaultValue="all">
+            <Tabs.List grow justify="center">
+              <Tabs.Tab value="all">All Links</Tabs.Tab>
+              <Tabs.Tab value="primary">Primary Links</Tabs.Tab>
+              <Tabs.Tab value="embeds">Embeds</Tabs.Tab>
+            </Tabs.List>
+            <Tabs.Panel value="all">
               <AddLink />
               {links.map((link: any) => ( <LinkCardAdmin {...link} key={link.id} /> ))}
-            </TabPanel>
-            <TabPanel>
+            </Tabs.Panel>
+            <Tabs.Panel value="primary">
               <AddPrimaryLink primaryLength={primaryLinks.length} />
               {primaryLinks.map((link: any) => ( <PrimaryLinkManager {...link} key={link.id} /> ))}
-            </TabPanel>
-            <TabPanel>
+            </Tabs.Panel>
+            <Tabs.Panel value="embeds">
               <AddEmbed />
               {embeds.map((embed: any) => ( <EmbedManager {...embed} key={embed.id} /> ))} 
-            </TabPanel>
-            {/* <TabPanel>
-              {pinnedPosts.map((post: any) => ( <PinnedPostsManager {...post} /> ))} 
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </Box> */}
+            </Tabs.Panel>
+          </Tabs>
+      </Box> 
     </>
   )
 }

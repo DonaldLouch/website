@@ -38,12 +38,12 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
     // const toastID = "toastID"
     const router = useRouter()
 
-    const [chaptersOption, setChaptersOption] = useState(video.chapters.length > 0 ? true : false)
-    const [musicCOption, setMusicCOption] = useState(video.musicCredits.length > 0 ? true : false)
-    const [videoCOption, setVideoCOption] = useState(video.videoCredits.length > 0 ? true : false)
-    const [starringCOption, setStarringCOption] = useState(video.starring.length >0 ? true : false)
-    const [linkOption, setLinkOption] = useState(video.links.length > 0 ? true : false)
-    const [isPinnedOption, setIsPinnedOption] = useState(video.isPinned ? true : false)
+    const [chaptersOption, setChaptersOption] = useState(video?.chapters.length > 0 ? true : false)
+    const [musicCOption, setMusicCOption] = useState(video?.musicCredits.length > 0 ? true : false)
+    const [videoCOption, setVideoCOption] = useState(video?.videoCredits.length > 0 ? true : false)
+    const [starringCOption, setStarringCOption] = useState(video?.starring.length >0 ? true : false)
+    const [linkOption, setLinkOption] = useState(video?.links.length > 0 ? true : false)
+    const [isPinnedOption, setIsPinnedOption] = useState(video?.isPinned ? true : false)
 
     const breadCrumbs = [
         {"pageLink": "/admin/videography", "pageName": "Videography Manager"},

@@ -58,7 +58,7 @@ export default function VideoUploader({currentStep, categoryData, tagsData}: {cu
         </>},
         { title: 'Information', description: 'Add the video information', icon: <InformationCircleIcon />, content: <>
             {/* categoryData={categoryData} */}
-            <VideoInformation videoID={videoID} categoryData={categoryData} tagsData={tagsData} />
+            {/* <VideoInformation videoID={videoID} categoryData={categoryData} tagsData={tagsData} /> */}
         </>},
         { title: 'Done!', description: 'Your video is uploaded!', icon: <CloudSavingDone01Icon />, content: <>
             <SectionCard styleType="primaryCard" id="start">

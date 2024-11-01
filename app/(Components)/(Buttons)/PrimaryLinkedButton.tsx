@@ -9,10 +9,14 @@ interface ButtonProps {
   isFullWidth?: boolean
   colour?: string
   fontColour?: string
+  isExternal?: boolean
+  [key: string]: any
 }
 
-export default function PrimaryLinkedButton(props : ButtonProps) {
-  const { isHidden, link, icon, isFullWidth, children, colour, fontColour } = props
+// ( formData?: FormData, payload?: S3Payload )
+
+export default function PrimaryLinkedButton({isHidden, link, icon, isFullWidth, children, colour, fontColour, isExternal, ...rest}: ButtonProps) {
+  // const { isHidden, link, icon, isFullWidth, children, colour, fontColour, isExternal } = props
 
   return <Button
     styles={{root: {display: isHidden ? "none" : "block"}}} 
@@ -25,6 +29,8 @@ export default function PrimaryLinkedButton(props : ButtonProps) {
     size="lg"
     classNames={{root: classes.primaryButton}}
     c={fontColour ? fontColour : "white"}
+    target={isExternal ? "_blank" : "_self"}
+    {...rest}
   >
     {children}
   </Button>

@@ -5,231 +5,168 @@ import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
 // imp
-import { MailAtSign02Icon, NewTwitterIcon, Chatting01Icon, GameController01Icon, WifiConnected02Icon, SpotifyIcon, VimeoIcon, YoutubeIcon, MusicNoteSquare02Icon, Shirt01Icon, SoundcloudIcon, Home01Icon } from "@hugeicons/react";
+import { MailAtSign02Icon, NewTwitterIcon, Chatting01Icon, GameController01Icon, WifiConnected02Icon, SpotifyIcon, VimeoIcon, YoutubeIcon, MusicNoteSquare02Icon, Shirt01Icon, SoundcloudIcon, Home01Icon, ArrowUpRight01Icon, IconjarIcon, TextFontIcon, AlertDiamondIcon, Delete02Icon } from "@hugeicons/react";
+import { ActionIcon, Anchor, Box, Code, Divider, Group, Modal, SimpleGrid, Stack, Text } from "@mantine/core";
 
 import { useRouter } from "next/navigation";
+
+import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
+
 // import { BsLink45Deg } from "react-icons/bs";
 // import { BsEnvelopeAt, BsTwitterX, BsChat, BsXbox, BsBarChart, BsSpotify, BsVimeo, BsYoutube, BsLink45Deg } from "react-icons/bs";
 // import { IoShirtOutline, IoLogoSoundcloud } from "react-icons/io5";
 // import { SiApplemusic } from "react-icons/si";
 
-import * as Yup from 'yup'
+import * as yup from 'yup'
+import { yupResolver } from 'mantine-form-yup-resolver';
+import { useDisclosure } from "@mantine/hooks";
+import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
+import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
+import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
+import { useForm } from "@mantine/form";
+import { useState } from "react";
+import { notifications } from "@mantine/notifications";
+import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 
-export const LinkCardAdmin = (link: {
+interface LinkCardAdminProps {
   id: string;
   link: string;
   title: string;
   iconPrefix: any;
   iconName: any;
   subTitle: string | null | undefined;
-}) => {
-  // const toast = useToast();
-  // const toastID = "toastID"
+  newIcon?: any
+}
+
+export const LinkCardAdmin = (link: LinkCardAdminProps) => {
+  const [opened, { open, close }] = useDisclosure(false)
+  const [iconVariantSelected, setIconVariantSelected] = useState()
+ 
   const router = useRouter();
-  // const { isOpen, onOpen, onClose } = useDisclosure()
 
   const deleteLink = async () => {
-        const { status: deleteStatus, error: deleteError } = await supabase.from("Links").delete().eq('id', link.id);
-        // deleteStatus && !toast.isActive(toastID) &&
-        // toast({
-        //     id: toastID,
-        //     title: `${deleteStatus === 204 ? `${link.title} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`}`,
-        //     description: `${deleteStatus === 204 ? `You have successfully deleted ${link.title}!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`}`,
-        //     status: `${deleteStatus === 204 ? "success" : "error"}`,
-        //     duration: 9000,
-        //     isClosable: true,
-        // })
-        deleteStatus === 204 && router.refresh()
-    }
-
-  const onSubmit =  async (values: any, actions: any) => {
-    const submitData = {
-        id: values.id,
-        iconPrefix: values.iconPrefix,
-        iconName: values.iconName,
-        title: values.title,
-        subTitle: values.subTitle,
-        link: values.linkForm,
-        }
-    const { status: supabaseStatus , error: supabaseError  } = await supabase.from("Links").update({ 
-        iconPrefix: submitData.iconPrefix,
-        iconName: submitData.iconName,
-        title: submitData.title,
-        subTitle: submitData.subTitle,
-        link: submitData.link,
-        lastUpdatedOn: new Date()
-    }).match({ id: submitData.id })
-    // supabaseStatus && !toast.isActive(toastID) &&
-    //     toast({
-    //         id: toastID,
-    //         title: `${supabaseStatus === 204 ? "Updated Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-    //         description: `${supabaseStatus === 204 ? `You have successfully updated the ${link.title} link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-    //         status: `${supabaseStatus === 204 ? "success" : "error"}`,
-    //         duration: 9000,
-    //         isClosable: true,
-    //     })
-        actions.setSubmitting()
+    const { status: deleteStatus, error: deleteError } = await supabase.from("Links").delete().eq('id', link.id)
+    deleteStatus && notifications.show({
+      id: `EditLink${link.id}`,
+      title: deleteStatus === 204 ? `${link.title} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`,
+      message: deleteStatus === 204 ? `You have successfully deleted the ${link.title} link!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`,
+      color: deleteStatus === 204 ? "green.0" : "red",
+      icon: deleteStatus === 204 ? <ArrowUpRight01Icon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />,
+    })
+    deleteStatus === 204 && router.refresh()
   }
+
+  const onSubmit =  async (values: any) => {
+    const theIcon = new Array({
+      "iconName": values.iconName,
+      "iconVariant": iconVariantSelected ? iconVariantSelected : undefined,
+    })
+
+    const { status: supabaseStatus , error: supabaseError  } = await supabase.from("Links").update({ 
+      iconName: values.iconName,
+      newIcon: theIcon,
+      title: values.title,
+      subTitle: values.subTitle,
+      link: values.linkForm,
+      lastUpdatedOn: new Date()
+    }).match({ id: link.id })
+    supabaseStatus && notifications.show({
+      id: `EditLink${link.id}`,
+      title: `${supabaseStatus === 204 ? "Updated Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+      message: `${supabaseStatus === 204 ? `You have successfully updated the ${link.title} link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+      color: supabaseStatus === 204 ? "green.0" : "red",
+      icon: supabaseStatus === 204 ? <ArrowUpRight01Icon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />,
+    })
+    supabaseStatus === 204 && router.refresh()
+  }
+
   const initialValues = {
-    id: link.id,
-    iconPrefix: link.iconPrefix,
     iconName: link.iconName,
+    iconVariant: link.newIcon ? link.newIcon.iconVariant : null,
     title: link.title,
     subTitle: link.subTitle,
     linkForm: link.link,
   }
-  const validationSchema = Yup.object({
-    id: Yup.string().required("ID is required"),
-    iconPrefix: Yup.string().required("Icon Prefix is required"),
-    iconName: Yup.string().required("Icon Name is required"),
-    title: Yup.string().required("Link Title is required"),
-    linkForm: Yup.string().required("The Link is required"),
+  const schema = yup.object().shape({
+    iconName:  yup.string().required('You must specify an icon'),
+    title: yup.string().required('You must specify a link title'),
+    subTitle: yup.string().required('You must specify a link sub title'),
   })
-  const icon = 
-  link.iconName === "mail-at-sign-02" ? <MailAtSign02Icon variant="twotone" size="3rem" /> : 
-  link.iconName === "new-twitter" ? <NewTwitterIcon variant="twotone" size="3rem" /> : 
-  link.iconName === "chatting-01" ? <Chatting01Icon variant="twotone" size="3rem" /> : 
-  link.iconName === "game-controller-01" ? <GameController01Icon variant="twotone" size="3rem" /> : 
-  link.iconName === "wifi-connect-02" ? <WifiConnected02Icon variant="twotone" size="3rem" /> : 
-  link.iconName === "spotify" ? <SpotifyIcon variant="twotone" size="3rem" /> : 
-  link.iconName === "vimeo" ? <VimeoIcon variant="twotone" size="3rem" /> : 
-  link.iconName === "youtube" ? <YoutubeIcon variant="twotone" size="3rem" /> : 
-  link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
-  link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
-  link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
-  <Home01Icon /> as any
-  
-  return (
-    <>
-    <div><h1>Page is being refactored.</h1></div>
-    {/* <Flex gap="1.3rem" key={link.id}>
-      <Link
-        variant="unstyled"
-        _hover={{ textDecoration: "none" }}
-        flex="auto"
-        onClick={onOpen}
-      >
-        <Tooltip label={link.link}>
-          <Flex
-            color="white"
-            boxShadow="bsPrimary"
-            my="0.8rem"
-            p="1.2rem 2rem"
-            borderRadius="0 2rem"
-            whiteSpace="nowrap"
-            overflowX="scroll"
-            alignItems="center"
-            justifyContent="start"
-            gap="1.3rem"
-            _hover={{
-              boxShadow: "none",
-              bg: "backgroundGradient",
-              color: "white",
-            }}
-          >
-            {/* <IconButton
-              aria-label={`${link.title} Link`}
-              h="auto"
-              w="auto"
-              fontSize="3xl"
-              variant="unstyled"
-              icon={<FontAwesomeIcon icon={[link.iconPrefix, link.iconName]} />}
-            /> 
-            <Icon as={icon} boxSize="2.3rem" mr="0.5rem" />
-            <Stack>
-              <Text
-                m="0"
-                fontWeight="300"
-                fontSize={{ base: "2rem", xl: "1.8rem" }}
-                lineHeight="0.6"
-              >
-                {link.title}
-              </Text>
-              <Text
-                fontSize="0.8rem"
-                fontWeight="300"
-                wordBreak="break-word"
-                color="grey"
-              >
-                {link.subTitle}
-              </Text>
-            </Stack>
-          </Flex>
-        </Tooltip>
-      </Link>
-      {/* <IconButton
-          aria-label={`${link.title} Link`}
-          h="auto"
-          w="auto"
-          fontSize="3xl"
-          variant="unstyled"
-          onClick={deleteLink}
-          color="red"
-          // icon={<FontAwesomeIcon icon={["fas", "trash"]} />}
-        /> 
-    </Flex>
-    <Modal isOpen={isOpen} onClose={onClose} id="addEduction" size="5xl">
-      <ModalContent background="blurredPurple">
-        <ModalHeader>Edit Link: {link.title}</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-            {({ handleSubmit }: any) => (
-              <Stack as="form" onSubmit={handleSubmit as any} gap="2rem">
-                <FormInputReadOnly
-                  inputID="id"
-                  inputLabel=""
-                  inputType="text"
-                />
+  const form = useForm({
+    mode: 'controlled',
+    initialValues,
+    validate: yupResolver(schema)
+  })
 
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  justify="center"
-                  spacing="2rem"
-                >
-                  <FormInputRow
-                    inputID="iconPrefix"
-                    inputLabel="Icon Prefix"
-                    inputType="text"
-                  />
-                  <FormInputRow
-                    inputID="iconName"
-                    inputLabel="Icon Name"
-                    inputType="text"
-                  />
-                </Stack>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  justify="center"
-                  spacing="2rem"
-                >
-                  <FormInputRow
-                    inputID="title"
-                    inputLabel="Title"
-                    inputType="text"
-                  />
-                  <FormInputRow
-                    inputID="subTitle"
-                    inputLabel="Sub Title"
-                    inputType="text"
-                  />
-                </Stack>
-
-                <FormInput
-                  inputID="linkForm"
-                  inputLabel="Link"
-                  inputType="text"
-                />
-
-                <SubmitButton variant="blackFormButton" my="1rem !important">Edit: {link.title}</SubmitButton> 
-              </Stack>
-            )}
-          </Formik>
-        </ModalBody>
-      </ModalContent>
-    </Modal> */}
-    </>
+  const iconVariantOptions = new Array(
+      {value: "stroke", label: "Default (Stroke)", disabled: true},
+      {value: "twotone", label: "Twotone"},
+      {value: "duotone", label: "Duotone (Filled In)"},
+      {value: "solid", label: "Solid"},
+      {value: "bulk", label: "Bulk"},
   )
-};
+
+  const icon = 
+    link.iconName === "mail-at-sign-02" ? <MailAtSign02Icon variant="twotone" size="3rem" /> : 
+    link.iconName === "new-twitter" ? <NewTwitterIcon variant="twotone" size="3rem" /> : 
+    link.iconName === "chatting-01" ? <Chatting01Icon variant="twotone" size="3rem" /> : 
+    link.iconName === "game-controller-01" ? <GameController01Icon variant="twotone" size="3rem" /> : 
+    link.iconName === "wifi-connect-02" ? <WifiConnected02Icon variant="twotone" size="3rem" /> : 
+    link.iconName === "spotify" ? <SpotifyIcon variant="twotone" size="3rem" /> : 
+    link.iconName === "vimeo" ? <VimeoIcon variant="twotone" size="3rem" /> : 
+    link.iconName === "youtube" ? <YoutubeIcon variant="twotone" size="3rem" /> : 
+    link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
+    link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
+    link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
+    <Home01Icon /> as any
+  
+  return <>
+    <Anchor
+      key={link.id}
+      onClick={open}
+      c="currentColor"
+      underline="never"
+    >
+      <Group wrap="nowrap" className={ classes.linkButton } 
+        my="1.5rem"
+        p="0.5rem 1.2rem"
+      >
+        <ActionIcon bg="none" style={{boxShadow: "none", padding: "0.6rem", margin: 0}}>{icon}</ActionIcon>
+        <Stack gap="0">
+          <Text c="white" mb="0" fz="1.5rem">{link.title}</Text>
+          {link.subTitle ? <Text size="sm" c="dimmed" fw={300} mt="0">{link.subTitle}</Text> : null}
+        </Stack>
+      </Group>
+    </Anchor>
+    <Modal 
+      opened={opened} onClose={close} title={`Edit Link: ${link.id}`} yOffset="2rem" xOffset="2rem" size="100%"
+      overlayProps={{
+        backgroundOpacity: 0.5, 
+        blur: 4,
+      }} 
+      styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
+      radius="lg"
+    >
+      {link.link && <PrimaryLinkedButton icon={<ArrowUpRight01Icon />} link={link.link} isExternal my="2rem">Open Link</PrimaryLinkedButton>}
+      <Divider label="Edit Link" labelPosition="center" mx="3rem" my="2rem" />
+      <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
+          <SimpleGrid cols={2} spacing="2rem">
+              <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<IconjarIcon variant="twotone" />} isRequired />
+              <FormSelect inputID="iconVariant" inputLabel="Icon Variant" inputData={iconVariantOptions} {...form.getInputProps(`iconVariant`)} onChange={setIconVariantSelected} value={iconVariantSelected} clearable />
+          </SimpleGrid>
+          <Stack align="center" mb="2rem">
+              <Code p="0.5rem" bg="var(--blackRGBA)" c="white" fz="1rem" w="100%">Please provide the icon name. You may visit <Anchor href="https://hugeicons.com/icons">https://hugeicons.com/icons</Anchor> for a list of all icons.</Code>
+          </Stack>
+          <SimpleGrid cols={2} spacing="2rem">
+              <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<TextFontIcon variant="twotone" />} isRequired />
+              <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<TextFontIcon variant="twotone" />} isRequired />
+          </SimpleGrid>
+          <FormInput inputID="linkForm" inputLabel="Link" {...form.getInputProps('linkForm')} inputDescription="Please provide the link." icon={<ArrowUpRight01Icon variant="twotone" />} />
+          <SimpleGrid cols={2} spacing="2rem" style={{ alignItems: "center" }}>
+            <PrimaryButton action={deleteLink} icon={<Delete02Icon variant="twotone" />} colour="red">Delete {link.id} Link</PrimaryButton>
+            <FormSubmitButton icon={<ArrowUpRight01Icon />}>Edit {link.id} Link</FormSubmitButton> 
+          </SimpleGrid>
+      </Box>
+    </Modal>
+  </>
+}
