@@ -13,12 +13,12 @@ export default function HomeHeroSection({aboutMe}: any) {
     <Box h="100%" w="100vw" visibleFrom="sm">
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
     </Box>
-    <Box hiddenFrom="sm" bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOALIC887xh5HW4rj.jpg") #333 40% 40%`} bgsz="cover" h="100%" w="100vw"></Box>
+    <Box hiddenFrom="sm" bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M1ISNFD4g4o2T6pt3.jpeg") center`} bgsz="cover" h="100%" w="100vw"></Box>
 
     {/* <Box h="100%" w="100%" hiddenFrom="sm" bg="url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg)" bgp="center" bgsz="cover">
       <Image src="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg" alt="Home Hero" />
     </Box> */}
-    <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "100%", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center">
+    <Stack component="section" pos="absolute" top="2%" left="1%" h="100vh" mx={{base: "0.5rem", md: "calc(2rem)"}} mah={{base: "100%", sm: "calc(100vh - 2rem - 2%)"}} style={{ overflow: "scroll" }} justify="center">
       <Box bg="var(--darkPurpleRGBA)" style={{
         boxShadow: "var(--mantine-shadow-bsSMPrimary)",
         backdropFilter: "blur(20px)",

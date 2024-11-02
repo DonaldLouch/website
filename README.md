@@ -31,7 +31,7 @@ Even though I'm still optimizing and constructing features, I feel as, my websit
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
 ## Change Log
-- [Version 29.11.02: Bug fixes, general improvements, and a brand new loading screen](https://github.com/DonaldLouch/website/releases/tag/version291102)
+- [Version 29.11.02: Bug fixes, general improvements, and a updated loading screen and loading component](https://github.com/DonaldLouch/website/releases/tag/version291102)
 - [Version 29.09.23: I am pleased to launch the initial phase of "Tickets"](https://github.com/DonaldLouch/website/releases/tag/version290923)
 - [Version 29.08.11: Initial introduction of the Donald Louch Client Portal and the initial construction of Projects](https://github.com/DonaldLouch/website/releases/tag/version290811)
 - [Version 29.07.29: In this version I have made the initial rebrand changes!](https://github.com/DonaldLouch/website/releases/tag/version290729)
