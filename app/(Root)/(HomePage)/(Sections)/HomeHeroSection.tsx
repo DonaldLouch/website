@@ -35,7 +35,7 @@ export default function HomeHeroSection({aboutMe}: any) {
           <AspectRatio ratio={1/1} 
             w={{base: "20%", sm: "20%"}}
           >
-            <Image src={aboutMe.avatar} alt={`${aboutMe.firstName} ${aboutMe.lastName}`} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
+            <Image src={aboutMe.avatar ? aboutMe.avatar : "https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOANPCWJe9jTCQ2fh.jpg"} alt={aboutMe.firstName && aboutMe.lastName ?`${aboutMe.firstName} ${aboutMe.lastName}` : "Donald Louch"} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
           </AspectRatio>               
           <Flex direction="column" align={{base: "center", sm: "flex-start"}} mt={{base: "1rem", sm: "0"}} gap="2rem">
             <Stack gap="0">

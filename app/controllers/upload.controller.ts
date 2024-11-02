@@ -7,7 +7,7 @@ export const handleFileUpload = async (req: any) => {
   try {
     const form = await req.formData()
     const files = form.getAll("files") as any
-
+    console.log("Appended Files", files)
     const payloadRAW = form.get("payload")
     const {
       uploadDestination,
@@ -28,9 +28,9 @@ export const handleFileUpload = async (req: any) => {
     } as any
 
 
-    if (!files || typeof files !== "object" || !files[0].name) {
-      return NextResponse.json({ message: "failure", reason: "Invalid file" });
-    }
+    // if (!files || typeof files !== "object" || !files[0].name) {
+    //   return NextResponse.json({ message: "failure", reason: "Invalid file" });
+    // }
 
     const uploadURL = await uploadFileToS3(files, payload);
     return NextResponse.json({ message: "success", uploadURL });

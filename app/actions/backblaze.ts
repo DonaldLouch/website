@@ -22,6 +22,7 @@ export async function uploadFileToS3( files: File[], payload: S3Payload ): Promi
   try {
     const response = await Promise.all(
       files.map(async (file) => {
+        console.log("Upload Files", file)
         const {name: fileName, type: fileType, lastModified: date, size: fileSize} = file
         const fileExtension = fileType.split("/")[1]
 
