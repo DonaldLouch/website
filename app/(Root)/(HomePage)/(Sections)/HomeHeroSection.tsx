@@ -18,15 +18,32 @@ export default function HomeHeroSection({aboutMe}: any) {
     {/* <Box h="100%" w="100%" hiddenFrom="sm" bg="url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg)" bgp="center" bgsz="cover">
       <Image src="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg" alt="Home Hero" />
     </Box> */}
-    <Stack component="section" pos="absolute" top="2%" left="1%" h="100vh" mx={{base: "0.5rem", md: "calc(2rem)"}} mah={{base: "100%", sm: "calc(100vh - 2rem - 2%)"}} style={{ overflow: "scroll" }} justify="center">
+    <Stack component="section" pos="absolute" 
+      top="0%" 
+      left="0%" 
+      h="100vh" 
+      // mx="1rem"
+      mx={{base: "2rem", lg: "1rem"}} 
+      mah={{base: "100%", sm: "calc(100vh)"}} 
+      style={{ overflow: "hidden" }} 
+      justify="center"
+      align="center"
+      p="0rem"
+      // m="0"
+    >
       <Box bg="var(--darkPurpleRGBA)" style={{
         boxShadow: "var(--mantine-shadow-bsSMPrimary)",
         backdropFilter: "blur(20px)",
         borderRadius: "var(--mantine-radius-lg)"
-      }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", sm: "2rem"}}>
+      }} 
+      // w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} 
+      p={{base: "1rem", sm: "1.5rem"}}
+      >
         <Flex
           direction={{base: "row", sm: "row"}}
           gap={{base: "0.5rem", sm: "2rem"}}
+          // p="1rem"
+          // p={{base: "1rem 1rem 0", sm: "1.5rem 1.5rem 1rem"}}
           justify="flex-start"
           align="center"
           // mb="2rem"
@@ -55,7 +72,7 @@ export default function HomeHeroSection({aboutMe}: any) {
             </Stack>
           </Flex>
         </Flex>
-        <Stack>
+        <Stack mah={{base: "initial", sm: "40vw", md: "30vw", lg: "50vw"}} style={{overflow: "scroll"}}>
           <Title 
             order={3} 
             fz="2.5vw"
@@ -65,7 +82,7 @@ export default function HomeHeroSection({aboutMe}: any) {
             display={{base: "none", sm: "initial"}}
             mb="-2rem"
           >{aboutMe.tagLine}</Title>
-          <Text c="white">{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
+          <Text c="white" ta={{base: "center", sm: "left"}}>{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
         </Stack>
       </Box>
       <Group justify="center">
