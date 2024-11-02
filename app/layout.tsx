@@ -14,9 +14,9 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 
 export const viewport: Viewport = {
   themeColor: '#1d1929',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
+  // width: 'device-width',
+  // initialScale: 1,
+  // maximumScale: 1,
 }
 
 export const metadata: Metadata = {
@@ -77,7 +77,7 @@ import notificationClasses from "@/app/(Config)/Notifications.module.css"
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // // console.log()
   return (
-    <html>
+    <html lang="en-CA">
       <head>
         {/* <ColorSchemeScript /> */}
       </head>
