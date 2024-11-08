@@ -58,7 +58,63 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
       } as any
       formData.append('payload', JSON.stringify(s3Payload))
 
-
+      try {
+        files.forEach((file: string | Blob) => {
+          formData.append("files", file)
+          
+          const url = "/api/upload"
+          
+          axios
+          .post(url, formData,
+            {
+              headers: {
+                'x-ms-blob-type': 'BlockBlob',
+                'Content-Type': 'multipart/form-data'
+              },
+              maxContentLength: 2e10,
+              maxBodyLength: 2e10,
+              onUploadProgress: (event: any) => {
+                setUploadProgress(Math.round((event.loaded / event.total) * 100))
+              }
+            }
+          )
+            .then((upload) => {
+              setUploading(false)
+              const uploadURL = upload.data.uploadURL
+              uploadURL.forEach((u: any) => {
+                u.fileSetup && notifications.show({ 
+                  id: `fileUploaded${u.fileName}`,
+                  title: "File Uploaded!",
+                  message:`You have successfully uploaded your ${mediaType} file titled "${u.fileName}"`,
+                  color: "black",
+                  icon: <FileUploadIcon variant="twotone" />
+                })
+                u.fileDatabase != 201 && notifications.show({ 
+                  id: `fileUploaded${u.fileName}`,
+                  title: `Error #${u.fileDatabaseError?.code} has Occurred`,
+                  message:`An error has occurred: ${u.supabaseError?.message}. ${u.supabaseError?.hint && `${u.supabaseError?.hint}.`}`,
+                  color: "red",
+                  icon: <AlertDiamondIcon variant="twotone" />
+                })
+              })
+              mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
+              uploadURL.fileDatabase === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
+              uploadURL.fileDatabase === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
+            })
+            .catch((error) => {
+              if (error.response) {
+                console.log(error.response)
+                console.log("server responded error")
+              } else if (error.request) {
+                console.log("network error")
+              } else {
+                console.log(error)
+              }
+            })
+          })
+      } catch (error) {
+        console.error("File(s) couldn't be uploaded to S3", error)
+      }
     }
 
   return <SectionCard styleType="primaryCard" id="mediaUpload">
