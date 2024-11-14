@@ -3,18 +3,6 @@
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { Box, Button, Code, Title, Stack, Group, Badge, Alert, SimpleGrid, ActionIcon, Text, Grid, rem } from "@mantine/core"
 
-// import { Formik } from "formik";
-// import { SubmitButton } from "formik-chakra-ui";
-// import * as Yup from 'yup'
-
-// import FormInput from "@/app/(Components)/(Form)/FormInput";
-// import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
-// import { FormTextAreaRow } from "@/app/(Components)/(Form)/FormTextAreaRow";
-// import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
-// import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
-// import { FormCheckGroup } from "@/app/(Components)/(Form)/FormCheckGroup";
-// import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
-// import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import DisplayDate from "@/lib/DisplayDate";

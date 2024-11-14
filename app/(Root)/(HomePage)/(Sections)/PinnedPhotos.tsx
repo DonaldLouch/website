@@ -95,7 +95,7 @@ export default function PinnedPhotos({ photos, photosPinnedCount, photosAllCount
       // p="1rem 1rem 1rem"
       gap="0.5rem"
     >
-      {photos?.map((image: any, index: number) => (<ViewPhotoFeed imageData={image} key={index} />))}
+      {photos?.map((image: any, index: number) => (<ViewPhotoFeed imageData={image} key={`photo_${index}`} />))}
     </Flex>
     <Group justify="center" m="-1.5rem 0 -1rem">
       <PrimaryLinkedButton link="/feed/photography?search=view&value=pinned" icon={<PinIcon />}>+{photosPinnedCount - 20} More Pinned Photos</PrimaryLinkedButton>

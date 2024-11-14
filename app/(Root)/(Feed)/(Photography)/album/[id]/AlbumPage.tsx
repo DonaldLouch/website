@@ -20,10 +20,8 @@ Badge
 
 import { useEffect, useRef, useState } from 'react'
 import Masonry from 'react-masonry-css'
-import { debounce } from 'lodash'
 import supabase from '@/lib/supabase'
 import DisplayDate from '@/lib/DisplayDate'
-import ViewPhotoAlbum from './ViewPhotoAlbum'
 
 import { MdxContent } from '@/app/mdx-content'
 // import { Bs123, BsCalendar2, BsInfo, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
@@ -32,7 +30,7 @@ import { useRouter } from 'next/router'
 import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'
-import { Calendar03Icon, GridIcon, LicenseIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
+import { ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, GithubIcon, GridIcon, LicenseIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 
 async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
     const from = nextPage * photoLimit
@@ -42,7 +40,7 @@ async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string
         .from('Photography')
         .select(`*, fileID (*), album (*)`)
         .range(from, to)
-        .order('takenOn', { ascending: true })
+        .order('capturedOn', { ascending: true })
         .match({ isPublic: true, isSetup: true, album: albumID })
 
     const { data } = await query
@@ -122,13 +120,26 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                         <DisplayDate source={albumData.uploadedOn} />
                     </Badge>
                     {locations.map((location: any) => (
-                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}}><Badge color="blue" leftSection={<PinLocation03Icon />}>
+                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}} key={`location_${location}`}><Badge color="blue" leftSection={<PinLocation03Icon />}>
                             {location}
                         </Badge></Anchor>
                     ))}
                     <Badge color="teal" leftSection={<GridIcon />}>
                         Contains {getPhotoCount} Photos
                     </Badge>
+                    {albumData.links?.length > 0 && albumData.links.map((link: any) => {
+                            // console.log("Icon", link.icon)
+                            const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
+                            : link.icon === "Github" ? <GithubIcon />
+                            : link.icon === "news" ? <NewsIcon />
+                            : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                            : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                            : <Link04Icon />
+
+                            return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                                {link.name}
+                            </Badge></Anchor>
+                        })}
                 </Group>
 
                 <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">
@@ -136,7 +147,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                 </Box>
                 <Group gap="0.5rem" m="2rem 1rem 1rem">
                     <TagsIcon />
-                    {tags.map((tag: any) => (<Anchor href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
+                    {tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                         <Badge color="white" leftSection={<Tag01Icon />}>
                             {tag}
                         </Badge>

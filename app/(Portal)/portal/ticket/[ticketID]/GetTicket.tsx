@@ -17,6 +17,8 @@ import StatusBadge from "../../project/(Components)/StatusBadge";
 import PriorityBadge from "../../project/(Components)/PriorityBadge";
 import EditTicket from "./EditTicket";
 
+import { MDXBody } from "@/app/actions/mdxBody"
+
 // import { Metadata } from 'next';
 
 // async function getProjectData(projectID: string) {
@@ -27,17 +29,18 @@ import EditTicket from "./EditTicket";
 //   return res.json();
 // }
 
-async function getBody(body: string) {
-    "use sever"
-    const ticketBody = await serialize({source: body})
-    return ticketBody
-}
+// async function getBody(body: string) {
+//     "use server"
+//     const ticketBody = await serialize({source: body})
+//     return ticketBody
+// }
 
 export default async function GetTicket({ticket, isStaff, replies }: any) {
     // const { user } = useUser()
 
 
-    const ticketBody = await getBody(ticket.body)
+    // const ticketBody = await getBody(ticket.body) //TO DO: Fix this
+    // const ticketBody = ticket.body
     
     const breadCrumbs = [
         {"pageLink": "/portal/tickets", "pageName": "Tickets"},
@@ -46,6 +49,8 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
 
 
     const ticketStatus = ProjectStatus.find(({ id }) => id === ticket.status)
+
+    const ticketBody = await MDXBody(ticket.body)
 
     return (
     <>
@@ -71,8 +76,8 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
                     <MdxContent source={ticketBody} />
                 </Box>
                 <Divider m="2rem 2rem 1rem" color="gray" label="Replies" labelPosition="center" />
-                {replies.map((reply: any) => (
-                    <GetReply ticket={ticket} isStaff={isStaff} reply={reply} />
+                {replies.map((reply: any, index: number) => (
+                    <GetReply key={index} ticket={ticket} isStaff={isStaff} reply={reply} />
                 ))}
             </Grid.Col>
             <Grid.Col span={{base: 12, sm: 4}}>

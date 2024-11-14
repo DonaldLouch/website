@@ -12,8 +12,8 @@ import moment from "moment";
 //   },
 // }
 
-const Bucket = process.env.S3_BUCKET_NAME
-const HostName = process.env.S3_HOST_NAME
+const Bucket = process.env.NEXT_PUBLIC_S3_BUCKET_NAME
+const HostName = process.env.NEXT_PUBLIC_S3_HOST_NAME
 
 // const s3 = new S3Client({
 //     endpoint: `https://${process.env.NEXT_PUBLIC_VULTR_HOST_NAME!}:443`,
@@ -25,6 +25,7 @@ const HostName = process.env.S3_HOST_NAME
 // })
 
 export async function POST(request: Request) {
+    console.log("Hello from the upload API!")
     const formData = await request.formData()
     const file = formData.get("file") as File
     const date = formData.get("date") as any
@@ -53,7 +54,7 @@ export async function POST(request: Request) {
     const fileUploaded = upload.$metadata.httpStatusCode === 200 ? true : false
     const uploadEndpoint = `https://${Bucket}.${HostName}`;
     
-    // console.log(upload)
+    console.log("Upload RES", upload)
 
     if (uploadDestination === "photography") {
       const photoID = "photo"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
@@ -67,7 +68,7 @@ export async function POST(request: Request) {
           fileExtension: fileExtension,
           filePath: `${uploadEndpoint}/${filePath}`,
           fileVersionID: upload.VersionId,
-          takenOn: date ? moment(date) : moment(),
+          capturedOn: date ? moment(date) : moment(),
           uploadedOn: moment(),
           photoMetadata: photoID,
         });
@@ -76,7 +77,7 @@ export async function POST(request: Request) {
             fileID: fileID,
             lastUpdatedOn: date ? moment(date) : moment(),
             photoName: file.name,
-            takenOn: date ? moment(date) : moment(),
+            capturedOn: date ? moment(date) : moment(),
             uploadedOn: moment(),
             isPublic: false,
             isSetup: false,

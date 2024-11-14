@@ -13,18 +13,16 @@ import supabase from "@/lib/supabase";
 // import EditPhotoData from "./EditVideoData";
 import EditVideoData from "./EditVideoData";
 
-type Props = {
-    params: { id: string }
-};
+type Params = Promise<{ id: string }>
 
-export default async function EditBlogPost({ params }: Props) {
-  const { id } = params
-//   // console.log(id)
+export default async function EditBlogPost({ params }: { params: Params }) {
+  const { id } = await params
+  //   // console.log(id)
   const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*)`).match({ id: id }).single() as any
   const { data: categoryData } = await supabase.from('VideoCategory').select().order('catSortID', { ascending: true }) as any
   const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
   // const { data: locationsData } = await supabase.from('distinct_locations').select() as any
-  
+
   // let locations = new Array()
   // locationsData.forEach((location: any) => {
   //   locations!.push(location.location)

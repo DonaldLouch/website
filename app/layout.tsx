@@ -14,9 +14,9 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 
 export const viewport: Viewport = {
   themeColor: '#1d1929',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
+  // width: 'device-width',
+  // initialScale: 1,
+  // maximumScale: 1,
 }
 
 export const metadata: Metadata = {
@@ -77,9 +77,9 @@ import notificationClasses from "@/app/(Config)/Notifications.module.css"
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // // console.log()
   return (
-    <html>
+    <html lang="en-CA">
       <head>
-        <ColorSchemeScript />
+        {/* <ColorSchemeScript /> */}
       </head>
       <body>
         <ClerkProvider>
@@ -87,7 +87,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* classNames={noteClasses}  */}
           {/* <Notifications autoClose={false} classNames={{notification: notificationClasses.standardNotification}} styles={{notification: {borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsSMPrimary)", padding: "1rem 2rem"}}}/> */}
           <Notifications />
-          <Context>{children}</Context>
+          <Context>
+            {children}
+          </Context>
           {/* <MantineProvider> */}
             {/* {children} */}
           </MantineProvider> 

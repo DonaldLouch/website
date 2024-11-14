@@ -16,9 +16,9 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
     const [active, setActive] = useState(activeSection ? activeSection : 0)
     const router = useRouter()
     const items = sections.map((section: any, index: number) => (
-        <Tooltip label={section.label}>
+        <Tooltip label={section.label} key={section.label}>
             <Anchor 
-                key={section.label}
+                // key={section.label}
                 href={section.link}
                 onClick={(e: any) => {
                     e.preventDefault();

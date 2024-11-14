@@ -26,7 +26,7 @@ export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any
                         spacing="2rem"
                         w="100%"
                     >
-                        { posts?.map((post: any) => ( <BlogPostCard {...post} /> )) }
+                        { posts?.map((post: any) => ( <BlogPostCard {...post} key={post.id} /> )) }
                     </SimpleGrid>
                     <Pagination {...pagination} />
                 </></SectionCard>

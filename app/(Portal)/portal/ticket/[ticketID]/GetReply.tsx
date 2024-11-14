@@ -8,6 +8,7 @@ import DisplayDate from "@/lib/DisplayDate";
 import { Cone01Icon, UserIcon, UserShield01Icon } from "@hugeicons/react";
 import { serialize } from "next-mdx-remote-client/serialize"
 import { MdxContent } from "@/app/mdx-content";
+import { MDXBody } from "@/app/actions/mdxBody";
 
 // import { Metadata } from 'next';
 
@@ -19,15 +20,16 @@ import { MdxContent } from "@/app/mdx-content";
 //   return res.json();
 // }
 
-async function getBody(body: string) {
-    "use sever"
-    const replyBody = await serialize({source: body})
-    return replyBody
-}
+// async function getBody(body: string) {
+//     "use sever"
+//     const replyBody = await serialize({source: body})
+//     return replyBody
+// }
 
 export default async function GetReply({ticket, isStaff, reply }: any) {
-    const replyBody = await getBody(reply.body)
-   
+    // const replyBody = await getBody(reply.body) //TO DO: Fix this
+    const replyBody = await MDXBody(reply.body)
+//    const replyBody = reply.body
     // UserShield01Icon
     // UserIcon
 
@@ -36,6 +38,7 @@ export default async function GetReply({ticket, isStaff, reply }: any) {
             <Box c={reply.from.type != "admin" ? "white" : "secondary"} hidden={reply.from.type != "client"  && reply.from.type != "admin" }>{reply.from && reply.from.type === "client" ? <UserIcon variant="duotone" color="currentColor" /> : reply.from.type === "admin" ? <UserShield01Icon variant="duotone" color="currentColor" /> : null}</Box>
             <Title order={2} fz="1.2rem" c={reply.from.type != "admin" ? "white" : "secondary"} lineClamp={1}>{reply.from ? reply.from.type === "client" ?  `${reply.from.firstName} ${reply.from.lastName}` : "Donald Louch": "Unknown"} <Tooltip label={<DisplayDate source={reply.createdOn} />}><Box component="span" style={{ fontWeight: "300" }} c="gray" fz="0.8rem"><DisplayDate source={reply.createdOn} format="MM/DD/yy @ h:mm a" /></Box></Tooltip></Title>
         </Group>
+        {/* <Text>{replyBody}</Text> */}
         <MdxContent source={replyBody} />
     </Box>
 }

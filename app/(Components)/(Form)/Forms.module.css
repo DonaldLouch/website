@@ -4,11 +4,11 @@
     color: var(--mantine-color-white) !important;
     border: none;
     outline: none;
-    &:focus {
+    /* &:focus-within {
         box-shadow: var(--mantine-shadow-bsBoldPrimary);
         color: var(--mantine-color-white);
-    };
-        &[data-error] {
+    }; */
+    &[data-error] {
         box-shadow: var(--mantine-shadow-bsBoldRed) !important;
     }
 }

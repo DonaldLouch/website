@@ -19,7 +19,7 @@ export default function AlertsManager({alerts}: any) {
         <Box component="main" color="white">
           <NewAlert />
           {alerts?.length === 0 || !alerts ? <Alert variant="light" color="green" title="No Alerts!" icon={<CheckmarkBadge03Icon variant="twotone"/>}><Text my="0.5rem" c="white">There are no alerts for the website at this time!</Text></Alert> : alerts.length >= 1 && alerts && alerts?.map((alert: any) => (
-            <EditAlert alert={alert} />
+            <EditAlert alert={alert} key={alert.id} />
           ))}
         </Box>
     </>

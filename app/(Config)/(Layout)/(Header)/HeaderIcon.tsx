@@ -1,8 +1,4 @@
 'use client'
-import { 
-    Tooltip, 
-    IconButton 
-} from '@chakra-ui/react'
 
 interface HeaderProps {
     linkURL: string

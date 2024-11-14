@@ -3,7 +3,7 @@
 import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Skeleton } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
-import { useUser, useAuth, useSession } from '@clerk/nextjs'
+import { useUser } from '@clerk/nextjs'
 // import { BsCalendar2, BsEye, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 
 import classes from "./Components.module.css"
@@ -22,7 +22,7 @@ import { useImageSize } from 'react-image-size';
 
 export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
     const {user} = useUser() as any
-    // const {has} = useAuth() as any
+    
     const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
 
     const [opened, { open, close }] = useDisclosure(false)
@@ -57,7 +57,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                             }}
                             width={photoWidth}
                             height={photoHeight}
-                            layout={"responsive"}
+                            // layout={"responsive"}
                             className={classes.imageCardView}
                         />
                     {/* </Anchor> */}
@@ -113,7 +113,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                         </Anchor>}
                     </Group>
                     <Badge color="red" leftSection={<Calendar03Icon />}>
-                        <DisplayDate source={imageData.fileID.takenOn} />
+                        <DisplayDate source={imageData.fileID.capturedOn} />
                     </Badge>
                     <Group gap="0.5rem">
                          {imageData.links.length > 0 && imageData.links.map((link: any) => {
@@ -132,7 +132,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     </Group>
                     <Group gap="0.5rem">
                         <TagsIcon />
-                        {imageData.tags.map((tag: any) => (<Anchor href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
+                        {imageData.tags.map((tag: any, index: number) => (<Anchor key={index} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                             <Badge color="white" leftSection={<Tag01Icon />}>
                                 {tag}
                             </Badge>

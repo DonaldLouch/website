@@ -132,7 +132,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
                             <Title size="xl" td="underline" fw="900" order={3} ta="center" mt="1rem">Sub Tasks</Title>
                             <AddSubTask task={task} isStaff={isStaff} />
                               {!task.subTasks ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>}><Text my="0.5rem" c="white">There currently is no sub tasks assigned for this task. Donald Louch will add new sub tasks as the task progresses so make sure to check back!</Text></Alert> : task.subTasks.map((subtask: any, index: number) => (
-                                <SubTaskCheck subtask={subtask} isStaff={isStaff} allSubTasks={task.subTasks} index={index} taskID={task.id} />
+                                <SubTaskCheck subtask={subtask} isStaff={isStaff} allSubTasks={task.subTasks} index={index} taskID={task.id} key={index} />
                               ))
                                 
                               }

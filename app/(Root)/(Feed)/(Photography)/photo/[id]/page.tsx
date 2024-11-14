@@ -4,11 +4,12 @@ import { serialize } from "next-mdx-remote-client/serialize";
 
 import { Metadata } from 'next';
 import PhotoPage from "./PhotoPage";
-type Props = {
-    params: { id: string }
-};
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { id } = params
+
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { id } = await params
+    
     const {data: photoMeta} = await supabase.from('Photography').select('id,photoName,caption,tags,fileID (filePath)').match({ id: id }).single() as any
     return {
       title: `${photoMeta.photoName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
@@ -27,13 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Photo({ params }: Props) {
-  // const {userId, sessionId} = auth() 
-  // const isLoggedIn = userId && sessionId ? true : false
+export default async function Photo({ params }: { params: Params }) {
+    const { id } = await params
 
-  const { id } = params
-  const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ id: id }).single() as any
-  const mdxSource = await serialize({source: photoData.caption})
+    const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ id: id }).single() as any
+    const mdxSource = await serialize({source: photoData.caption})
 
-  return <PhotoPage photoData={photoData} mdxSource={mdxSource} />
+    return <PhotoPage photoData={photoData} mdxSource={mdxSource} />
 }

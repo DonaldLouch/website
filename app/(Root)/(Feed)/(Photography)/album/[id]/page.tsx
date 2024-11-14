@@ -5,21 +5,21 @@ import { serialize } from "next-mdx-remote-client/serialize"
 import { AlbumPage } from "./AlbumPage";
 
 import { Metadata } from 'next';
-type Props = {
-    params: { id: string }
-};
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { id } = params
+
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { id } = await params
     const {data: postMeta} = await supabase.from('PhotographyAlbum').select('albumName,albumCaption, id, slug').match({ slug: id }).single() as any
     const { data: allPhotoData } = await supabase.from('Photography').select(`*, fileID (*)`).match({ isPublic: true, isSetup: true, album: postMeta.id }) as any
-      let tags = new Array()
-        allPhotoData.forEach((photo: any) => {
-            const photoTags = photo.tags
-            
-            photoTags.forEach((tag: any) => {
-                !tags.includes(tag) && tags.push(tag)
-            })
+    let tags = new Array()
+    allPhotoData.forEach((photo: any) => {
+        const photoTags = photo.tags
+        
+        photoTags.forEach((tag: any) => {
+            !tags.includes(tag) && tags.push(tag)
         })
+    })
     return {
       title: `${postMeta.albumName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
       description: postMeta.albumCaption,
@@ -37,13 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Album({ params }: Props) {
-  // const {userId, sessionId} = auth() 
-  // const isLoggedIn = userId && sessionId ? true : false
+export default async function Album({ params }: { params: Params }) {
+    // const {userId, sessionId} = auth() 
+    // const isLoggedIn = userId && sessionId ? true : false
     const postLimit = 20 as number
-    const { id } = params
+    const { id } = await params
     const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({ slug: id}).single() as any
-    const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('takenOn', { ascending: true }) as any
+    const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('capturedOn', { ascending: true }) as any
     const mdxSource = await serialize({source: albumData.albumCaption ? albumData.albumCaption : "No caption has been posted yet."})
 
     const { data: allPhotoData } = await supabase.from('Photography').select(`*, fileID (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).order('uploadedOn', { ascending: true }) as any
@@ -58,7 +58,7 @@ export default async function Album({ params }: Props) {
         })
         !locations.includes(photoLocation) && locations.push(photoLocation)
     })
-    
+
     const { count: photoCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
 
     // // console.log(photoCount)

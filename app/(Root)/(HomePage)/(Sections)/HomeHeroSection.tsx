@@ -13,20 +13,37 @@ export default function HomeHeroSection({aboutMe}: any) {
     <Box h="100%" w="100vw" visibleFrom="sm">
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
     </Box>
-    <Box hiddenFrom="sm" bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOALIC887xh5HW4rj.jpg") #333 40% 40%`} bgsz="cover" h="100%" w="100vw"></Box>
+    <Box hiddenFrom="sm" bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M1ISNFD4g4o2T6pt3.jpeg") center`} bgsz="cover" h="100%" w="100vw"></Box>
 
     {/* <Box h="100%" w="100%" hiddenFrom="sm" bg="url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg)" bgp="center" bgsz="cover">
       <Image src="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg" alt="Home Hero" />
     </Box> */}
-    <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "100%", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center">
+    <Stack component="section" pos="absolute" 
+      top="0%" 
+      left="0%" 
+      h="100vh" 
+      // mx="1rem"
+      mx={{base: "2rem", lg: "1rem"}} 
+      mah={{base: "100%", sm: "calc(100vh)"}} 
+      style={{ overflow: "hidden" }} 
+      justify="center"
+      align="center"
+      p="0rem"
+      // m="0"
+    >
       <Box bg="var(--darkPurpleRGBA)" style={{
         boxShadow: "var(--mantine-shadow-bsSMPrimary)",
         backdropFilter: "blur(20px)",
         borderRadius: "var(--mantine-radius-lg)"
-      }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", sm: "2rem"}}>
+      }} 
+      // w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} 
+      p={{base: "1rem", sm: "1.5rem"}}
+      >
         <Flex
           direction={{base: "row", sm: "row"}}
           gap={{base: "0.5rem", sm: "2rem"}}
+          // p="1rem"
+          // p={{base: "1rem 1rem 0", sm: "1.5rem 1.5rem 1rem"}}
           justify="flex-start"
           align="center"
           // mb="2rem"
@@ -35,7 +52,7 @@ export default function HomeHeroSection({aboutMe}: any) {
           <AspectRatio ratio={1/1} 
             w={{base: "20%", sm: "20%"}}
           >
-            <Image src={aboutMe.avatar} alt={`${aboutMe.firstName} ${aboutMe.lastName}`} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
+            <Image src={aboutMe.avatar ? aboutMe.avatar : "https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LOANPCWJe9jTCQ2fh.jpg"} alt={aboutMe.firstName && aboutMe.lastName ?`${aboutMe.firstName} ${aboutMe.lastName}` : "Donald Louch"} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
           </AspectRatio>               
           <Flex direction="column" align={{base: "center", sm: "flex-start"}} mt={{base: "1rem", sm: "0"}} gap="2rem">
             <Stack gap="0">
@@ -55,7 +72,7 @@ export default function HomeHeroSection({aboutMe}: any) {
             </Stack>
           </Flex>
         </Flex>
-        <Stack>
+        <Stack mah={{base: "initial", sm: "40vw", md: "30vw", lg: "50vw"}} style={{overflow: "scroll"}}>
           <Title 
             order={3} 
             fz="2.5vw"
@@ -65,7 +82,7 @@ export default function HomeHeroSection({aboutMe}: any) {
             display={{base: "none", sm: "initial"}}
             mb="-2rem"
           >{aboutMe.tagLine}</Title>
-          <Text c="white">{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
+          <Text c="white" ta={{base: "center", sm: "left"}}>{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
         </Stack>
       </Box>
       <Group justify="center">

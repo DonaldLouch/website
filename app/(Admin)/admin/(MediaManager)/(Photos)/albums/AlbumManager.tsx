@@ -17,7 +17,7 @@ export default function AlbumManager({photographyAlbum}: any) {
       <Box component="main" color="white">
         <Box px="2rem" color="white" m="2rem 0">
           {photographyAlbum.map((album:any) => (
-            <AlbumCard albumData={album} />
+            <AlbumCard albumData={album} key={album.id} />
           ))}
         </Box>
       </Box> 

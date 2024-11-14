@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import PortalLayoutContext from "../(Layout)/PortalLayoutContext";
 import { checkRole } from "@/lib/roles";
 
-export default function PortalLayout({ children }: { children: React.ReactNode }) {
+export default async function PortalLayout({ children }: { children: React.ReactNode }) {
     // const userData = useSession()
     // const orgRole = auth();
     // // console.log("Org", orgRole.orgPermissions)
@@ -13,7 +13,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     // // console.log(orgRole)
     // { role: "org:administration:admin" }
     // auth().protect({ role: 'org:admin' })
-    const { orgRole, orgId, userId, has } = auth()
+    const { orgRole, orgId, userId, has } = await auth()
 
     // const isAdmin = has({ permission:"org:portal:access" }) && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID
     const isUser = userId ? true : false

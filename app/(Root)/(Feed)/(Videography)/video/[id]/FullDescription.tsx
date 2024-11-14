@@ -149,8 +149,8 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                     </SimpleGrid>
                 </>)}
                 
-                {video.videoCredits && video.videoCredits.length > 0 && video.videoCredits.map((vCredit: any, index: number) => (<Box>
-                    <Title key={index}  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text" m="0">{vCredit.title}</Title>
+                {video.videoCredits && video.videoCredits.length > 0 && video.videoCredits.map((vCredit: any, index: number) => (<Box key={index}>
+                    <Title order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text" m="0">{vCredit.title}</Title>
                     <Text p="1rem" fz="1.2rem">{vCredit.value}</Text>
                 </Box>))}
             </Stack>

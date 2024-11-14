@@ -1,36 +1,35 @@
 'use client'
 
-// import {
-//   Stack,
-//   Text,
-//   Image,
-//   Link,
-//   Heading,
-//   Grid,
-//   Icon,
-//   Box,
-// } from "@chakra-ui/react";
-
 import { FooterIcon } from "./FooterIcon";
 // import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
-import { SignInButton, SignedOut, UserButton, useAuth, useSession } from "@clerk/nextjs";
 import { Anchor, Group, Stack, Image, Text, Box, Flex } from "@mantine/core";
 import { DashboardSpeed02Icon, Facebook02Icon, GithubIcon, InstagramIcon, Login01Icon, ThreadsIcon, TiktokIcon, TwitterIcon, YoutubeIcon } from "@hugeicons/react";
-import { checkRole } from "@/lib/roles";
+import { useEffect, useState } from "react";
+import { isUserSignedIn } from "@/app/actions/clerk";
+import { useUser } from "@clerk/nextjs";
 
 
 export default function FooterContent(){
-  const { isSignedIn } = useAuth()
+  
+  const { user } = useUser()
+  const isSignedIn = user ? true : false
+
+  // const [isSignedIn, setIsSignedIn] = useState(false) as any
+  //   useEffect(() => {
+  //       const userSignedIn = isUserSignedIn()
+  //       setIsSignedIn(userSignedIn)
+  //   }, [])
+
   const footerLinks = [
     {
       linkURL: "https://facebook.com/DonaldLouchProductions",
       socialMedia: "Facebook",
-      linkIcon: <Facebook02Icon />,
+      linkIcon: <Facebook02Icon variant="duotone" />,
     },
     {
       linkURL: "https://twitter.com/DonaldLouch",
       socialMedia: "X (Twitter)",
-      linkIcon: <TwitterIcon />,
+      linkIcon: <TwitterIcon variant="duotone" />,
     },
     {
       linkURL: "https://instagram.com/donaldlouch",
@@ -40,12 +39,12 @@ export default function FooterContent(){
     {
       linkURL: "https://www.tiktok.com/@donaldlouch",
       socialMedia: "TikTok",
-      linkIcon: <TiktokIcon />,
+      linkIcon: <TiktokIcon variant="duotone" />,
     },
     {
       linkURL: "https://youtube.donaldlouch.ca",
       socialMedia: "YouTube",
-      linkIcon: <YoutubeIcon />,
+      linkIcon: <YoutubeIcon variant="duotone" />,
     },  
     {
       linkURL: "https://github.com/DonaldLouch",

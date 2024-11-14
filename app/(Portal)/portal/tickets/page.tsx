@@ -1,5 +1,5 @@
 // 'use client'
-// import { Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react'
+
 // import GetProjects from './GetProjects'
 // import { RequestNewProject } from './RequestNewProject'
 // import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TicketsPage() {
-  const { userId } = auth()  
+  const { userId } = await auth()  
   const isAdmin = checkRole("admin") ? true : false
   const isMod = checkRole("moderator") ? true : false
   const isPayment = checkRole("paymentOnly") ? true : false

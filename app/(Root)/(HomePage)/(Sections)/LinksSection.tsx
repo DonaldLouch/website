@@ -4,7 +4,6 @@ import { AspectRatio, Box, Anchor, Stack, Group, Image, Flex, Tabs, Text } from 
 
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
 import { LinkedSVGButton } from '@/app/(Components)/(Buttons)/LinkedSVGButton'
-import { LinkedButton } from '../LinkedButton'
 import { LinkButton } from '../LinkButton'
 import PinnedPostsCard from '@/app/(Components)/(Cards)/PinnedPostsCard'
 import { Title } from '@mantine/core'
@@ -30,16 +29,16 @@ export default function LinksSection({about, primaryLinks, links}: any) {
         >
             {primaryLinks.map((buttonLink: any) => {
                 const icon = 
-                    buttonLink.icon === "facebook-02" ? <Facebook02Icon size="2rem" /> :
-                    buttonLink.icon === "new-twitter" ? <NewTwitterIcon size="2rem" /> :
-                    buttonLink.icon === "linkedin-02" ? <Linkedin02Icon size="2rem" /> :
-                    buttonLink.icon === "youtube" ? <YoutubeIcon size="2rem" /> :
+                    buttonLink.icon === "facebook-02" ? <Facebook02Icon variant="duotone" size="2rem" /> :
+                    buttonLink.icon === "new-twitter" ? <NewTwitterIcon variant="duotone" size="2rem" /> :
+                    buttonLink.icon === "linkedin-02" ? <Linkedin02Icon variant="duotone" size="2rem" /> :
+                    buttonLink.icon === "youtube" ? <YoutubeIcon variant="duotone" size="2rem" /> :
                     buttonLink.icon === "threads" ? <ThreadsIcon size="2rem" /> :
                     buttonLink.icon === "instagram" ? <InstagramIcon size="2rem" /> :
-                    buttonLink.icon === "tiktok" ? <TiktokIcon variant='twotone' size="2rem" /> :
+                    buttonLink.icon === "tiktok" ? <TiktokIcon variant="duotone" size="2rem" /> :
                     buttonLink.icon === "github" ? <GithubIcon size="2rem" /> :
                     <ArrowUpRight01Icon size="2rem" />
-                return <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={icon} iconPadding="0.6rem"/>
+                return <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={icon} iconPadding="0.6rem" key={buttonLink.title}/>
             })}
             <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon={<Chatting01Icon size="2rem" />}  iconPadding="0.6rem"/>
             <FooterIcon linkURL={`mailto:${about.email}`} socialMedia="Direct Email Me" linkIcon={<MailAtSign02Icon size="2rem" />} iconPadding="0.6rem" />

@@ -5,11 +5,12 @@ import { serialize } from "next-mdx-remote-client/serialize"
 
 import { Metadata } from 'next';
 import { auth, currentUser } from "@clerk/nextjs/server";
-type Props = {
-    params: { slug: string }
-};
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { slug } = params
+
+type Params = Promise<{ slug: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { slug } = await params
+
     const {data: postMeta} = await supabase.from('BlogPost').select('title,excerpt,thumbnail,tags,category,slug').match({ slug: slug }).single() as any
     return {
       title: `${postMeta.title} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
@@ -28,14 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function Post({ params }: Props) {
-  const {userId, sessionId} = auth() 
+export default async function Post({ params }: { params: Params }) {
+    const {userId, sessionId} = await auth()
 
-  const isLoggedIn = userId && sessionId ? true : false
+    const isLoggedIn = userId && sessionId ? true : false
 
-  const { slug } = params
-  const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
-  const mdxSource = await serialize({source: post?.body})
+    const { slug } = await params
+    const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any
+    const mdxSource = await serialize({source: post?.body})
 
-  return <PostPage post={post} mdxSource={mdxSource} isLoggedIn={isLoggedIn} />
+    return <PostPage post={post} mdxSource={mdxSource} isLoggedIn={isLoggedIn} />
 }

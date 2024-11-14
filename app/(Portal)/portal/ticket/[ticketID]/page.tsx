@@ -16,23 +16,24 @@ import { auth } from '@clerk/nextjs/server';
 //     }
 // }
 
+type Params = Promise<{ ticketID: string }>
 
-export default async function TicketOverview({params}: any) {
-    const { ticketID } = params
-    const { userId } = auth()
+export default async function TicketOverview({ params }: { params: Params }) {
+    const { ticketID } = await params
+    const { userId } = await auth()
     const isAdmin = checkRole("admin") ? true : false
     const isMod = checkRole("moderator") ? true : false
 
     const isStaff = isAdmin || isMod
-    
+
     // const router = useRouter()
-    
+
     const { data: ticket } = await supabase.from('Tickets').select().match({id: ticketID}).single() as any
-    
+
     !isStaff && ticket.internalONLY && redirect("/portal/tickets?error=unauthorized")
     !isStaff && ticket.from.id != userId && redirect("/portal/tickets?error=unauthorized")
-    
+
     const { data: replies } = await supabase.from('TicketReplies').select().match({ticketID: ticketID}).order("createdOn", {ascending: true}) as any
 
-    return <GetTicket ticket={ticket} isStaff={isStaff} replies={replies} /> 
+    return <GetTicket ticket={ticket} isStaff={isStaff} replies={replies} />
 }

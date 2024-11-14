@@ -228,11 +228,16 @@ export const MantineTheme = createTheme({
     }),
     Notification: Notification.extend({
       defaultProps: {
-        color: "black",
+        color: "var(--darkPurpleRGBA)",
         p: "1rem 2rem",
         radius: "md",
-        styles: { root: { boxShadow: "var(--mantine-shadow-bsSMPrimary)" } },
-        classNames: notificationClasses,
+        classNames: {
+          root: notificationClasses.root,
+          title: notificationClasses.title,
+          description: notificationClasses.description,
+          closeButton: notificationClasses.closeButton,
+        },
+        // classNames: notificationClasses,
       },
     }),
     Alert: Alert.extend({
@@ -412,7 +417,7 @@ export const MantineTheme = createTheme({
       "#aca7b1",
       "#c0bdc4",
       "#d5d3d8",
-      "#eae9eb"
+      "#eae9eb",
     ],
     newBlack: [
       "#1e192a",
@@ -424,8 +429,8 @@ export const MantineTheme = createTheme({
       "#a5a3a9",
       "#bbbabf",
       "#d2d1d4",
-      "#e8e8e9"
-    ]
+      "#e8e8e9",
+    ],
   },
   other: {
     // whiteColourGradient: "radial-gradient(ellipse at center, #EDEDED 0%,#FAFAFA 36%,#EBEBEB 100%)",

@@ -2,7 +2,6 @@
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent";
 import DisplayDate from "@/lib/DisplayDate";
-import { Stack, Link, Box, Text } from "@chakra-ui/react";
 
 export default function MessageCContent ({ contactData }: any) {
   const contact = contactData;
@@ -21,7 +20,7 @@ export default function MessageCContent ({ contactData }: any) {
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-        <Box as="main" id="contact">
+        {/* <Box as="main" id="contact">
           <Stack
             key={contact.index}
             boxShadow="bsWhite"
@@ -87,7 +86,8 @@ export default function MessageCContent ({ contactData }: any) {
           variant="primaryButton2"
         >
           Reply via. Email
-        </Link>
+        </Link> */}
+        <div><h1>Page is being refactored.</h1></div>
     </>
   );
 }

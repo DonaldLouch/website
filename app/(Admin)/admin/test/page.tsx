@@ -1,4 +1,4 @@
-import PAGECONTENT from './PAGECONTENT'
+import ADMINPAGECONTENT from './ADMINPAGECONTENT'
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -12,5 +12,5 @@ import PAGECONTENT from './PAGECONTENT'
 // }
 
 export default function Test() {
-  return <PAGECONTENT />
+  return <ADMINPAGECONTENT />
 }

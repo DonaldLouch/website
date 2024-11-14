@@ -4,7 +4,7 @@ import { Box,  Stack, Text, Button, AppShell, Group, Anchor, Image, Burger, rem,
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
-import LoadingComponent from '@/app/(Config)/ContentLoading'
+// import LoadingComponent from '@/app/(Config)/ContentLoading'
 import { Suspense, useEffect, useState } from 'react'
 import { SignOutButton, UserButton, useClerk, useUser } from '@clerk/nextjs'
 
@@ -23,7 +23,6 @@ import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
 import Notifications from '@/app/(Components)/Notifications'
 import { PortalNavigationItems } from '@/lib/PortalNavigationItems'
 import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
-import { concat } from 'lodash'
 
 export default function PortalLayoutContext({ children, isUser, isAdmin }: { children: React.ReactNode, isUser: any, isAdmin: any }) {  
     const path = usePathname()

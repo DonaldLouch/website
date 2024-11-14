@@ -13,15 +13,15 @@
 // }
 
 
-import { SearchUsers } from "./(Components)/SearchUsers";
-import { clerkClient } from "@clerk/nextjs/server";
 import { Album02Icon, AlertDiamondIcon, CameraVideoIcon, Chatting01Icon, Files02Icon, NewsIcon, WavingHand01Icon, ZapIcon } from "@hugeicons/react";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { Group, Stack, Text, Title } from "@mantine/core";
 // import { setRole } from "./_actions";
 
-export default function AdminPageContent({users}: any) {
+export default function AdminPageContent() {
   // const userData = useSession()
+
+  // {users}: any}
 
   // // console.log(userData.session?.user.organizationMemberships?.[0].role)
   //  const setRole = await fetch('/api/media/upload', { method: "POST", body }).then(response => response.json())

@@ -156,3 +156,16 @@
         /* border: "solid green"; */
     }
 }
+
+.stepIcon {
+    background: none; 
+    border: none; 
+    color: var(--mantine-colour-white);
+    &[data-completed] {
+        background: var(--primary);
+        border-radius: var(--mantine-radius-md);
+    }
+    &[data-progress] {
+        color: var(--secondary);
+    }
+}

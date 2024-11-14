@@ -14,12 +14,12 @@ import PhotographyManager from './PhotographyManager'
 //     },
 // }
 
-type Props = {
-    searchParams: { pg: string },
-}
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
-export default async function Media({searchParams}: Props) {  
-  let page = parseInt(searchParams.pg) as number
+export default async function Media(props: {searchParams: SearchParams}) {
+  const { pg } = await props.searchParams as any
+
+  let page = parseInt(pg) as number
   let currentPage = (((page) - 1) as number) || 0
 
   const postLimit = 15 as number
@@ -36,11 +36,11 @@ export default async function Media({searchParams}: Props) {
   const pageCalc = currentPage * postLimit
   const { data: theMediaData } = await supabase.from('Photography').select(`*, fileID ( * )`).order('lastUpdatedOn', { ascending: false }).range(pageCalc, (pageCalc + postLimit - 1)) as any
 
-  
+
   const paginationArray = new Array()
   paginationArray.push(numberOfPages, currentPage)
 
   const { data: photographyAlbum } = await supabase.from('PhotographyAlbum').select().order('lastUpdatedOn', { ascending: false }) as any
-  
+
   return <PhotographyManager mediaData={theMediaData} pagination={paginationArray} photographyAlbum={photographyAlbum}/>
 }
