@@ -8,13 +8,15 @@ import LinksSection from "./(Sections)/LinksSection";
 import PinnedPhotos from "./(Sections)/PinnedPhotos";
 import PinnedVideos from "./(Sections)/PinnedVideos";
 import StatsGroup from "@/app/(Components)/(Cards)/StatsGroup";
-import { Album02Icon, CameraVideoIcon, Cone01Icon, NewsIcon } from "@hugeicons/react";
+import { Album02Icon, CameraVideoIcon, Cone01Icon, MusicNote01Icon, NewsIcon } from "@hugeicons/react";
 import PinnedPostsCard from "@/app/(Components)/(Cards)/PinnedPostsCard";
+import PinnedAudio from "./(Sections)/PinnedAudio";
 
-export default function HomePageLayout({aboutMe, primaryLinksData, linksData, photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount}: any) {
+export default function HomePageLayout({aboutMe, primaryLinksData, linksData, photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount, audios}: any) {
   const stats = [
     { title: 'Photos Uploaded', icon: <Album02Icon variant="twotone"/>, value: `${photosAllCount} Photos`},
     { title: 'Videos Uploaded', icon: <CameraVideoIcon variant="twotone" />, value: `${videosAllCount} Videos`},
+    { title: 'Audio/Music Uploads', icon: <MusicNote01Icon variant="twotone" />, value: `1 Ambient Audio` },
     { title: 'Posts', icon: <NewsIcon variant="twotone" />, value: `${postAllCount} Posts` }
   ] as any
   return (<>
@@ -31,6 +33,7 @@ export default function HomePageLayout({aboutMe, primaryLinksData, linksData, ph
             <Tabs.List grow justify="center">
               <Tabs.Tab value="photos">Photography</Tabs.Tab>
               <Tabs.Tab value="videos">Videography</Tabs.Tab>
+              <Tabs.Tab value="audio">Audio / Music</Tabs.Tab>
               <Tabs.Tab value="posts">Posts</Tabs.Tab>
             </Tabs.List>
             <Tabs.Panel value="photos">
@@ -38,6 +41,9 @@ export default function HomePageLayout({aboutMe, primaryLinksData, linksData, ph
             </Tabs.Panel>
             <Tabs.Panel value="videos">
               <PinnedVideos videos={videos} videosAllCount={videosAllCount} />
+            </Tabs.Panel>
+            <Tabs.Panel value="audio">
+              <PinnedAudio audios={audios} />
             </Tabs.Panel>
             <Tabs.Panel value="posts">
                 <PinnedPostsCard pinnedPosts={pinnedPosts} />

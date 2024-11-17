@@ -33,7 +33,10 @@ export async function uploadFileToS3( files: File[], payload: S3Payload ): Promi
           Math.random().toString(36).substring(2, 5).toLowerCase()
         }` as string
 
-        const filePath = `${uploadDestination}/${fileID}.${fileExtension}`
+        const filePath =
+          uploadDestination != "thumbnail/linkSet"
+            ? `${uploadDestination}/${fileID}.${fileExtension}`
+            : `${uploadDestination}/${mediaID}.${fileExtension}`
 
         const arrayBuffer = await file.arrayBuffer()
         const buffer = Buffer.from(arrayBuffer)

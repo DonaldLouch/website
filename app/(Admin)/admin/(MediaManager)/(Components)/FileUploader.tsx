@@ -97,7 +97,8 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                   icon: <AlertDiamondIcon variant="twotone" />
                 })
               })
-              mediaType != "videography" && mediaType != "thumbnail" && router.refresh()
+
+              mediaType != "videography" && mediaType != "thumbnail" && mediaType != "thumbnail/linkSet" && router.refresh()
               uploadURL.fileDatabase === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
               uploadURL.fileDatabase === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
             })

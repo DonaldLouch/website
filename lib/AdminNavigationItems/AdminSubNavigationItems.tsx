@@ -53,31 +53,31 @@ export const AdminSubNavigationItems: Array<AdminSubNavigationItemsProps> = [
     { 
         name: 'Page Manage',
         slug: 'admin/pages',
-        parentMenu: 5,
+        parentMenu: 6,
         levelOfAccess: '0'
     },
     { 
         name: 'About Me',
         slug: 'admin/pagesAbout',
-        parentMenu: 5,
+        parentMenu: 6,
         levelOfAccess: '0'
     },
     { 
         name: 'Resume',
         slug: 'admin/pagesResume',
-        parentMenu: 5,
+        parentMenu: 6,
         levelOfAccess: '0'
     },
     { 
         name: 'Links',
         slug: 'admin/pagesLinks',
-        parentMenu: 5,
+        parentMenu: 6,
         levelOfAccess: '0'
     },
     { 
         name: 'New Page',
         slug: 'admin/pagesNew',
-        parentMenu: 5,
+        parentMenu: 6,
         levelOfAccess: '0'
     },
     // { 

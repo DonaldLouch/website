@@ -6,6 +6,7 @@ export default async function HomePageContent() {
   const { data: pinnedPostsData } = await supabase.from('BlogPost').select().match({ isPinned: true, postStatus: 'Public' }).order('postedOn', { ascending: false }) as any
   const { data: primaryLinksData } = await supabase.from('PrimaryLinks').select().order('orderNumber', { ascending: true }) as any
   const { data: linksData } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
+  const { data: audios } = await supabase.from('LinkSet').select().order('lastUpdated', { ascending: false }) as any
   // const { data: embedsData } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
   const { data: photos } = await supabase
       .from('Photography')
@@ -31,5 +32,5 @@ export default async function HomePageContent() {
   // const { count: postPinnedCount } = await supabase.from('BlogPost').select("*", { count: 'exact'}).match({ isPinned: true, postStatus: 'Public' })
   const { count: postAllCount } = await supabase.from('BlogPost').select("*", { count: 'exact'}).match({ postStatus: 'Public' })
   
-  return <HomePageLayout aboutMe={aboutMe} primaryLinksData={primaryLinksData} linksData={linksData} pinnedPhotos={photos} photosPinnedCount={photosPinnedCount} photosAllCount={photosAllCount} videosAllCount={videosAllCount} videos={videos} pinnedPosts={pinnedPostsData} postAllCount={postAllCount} />
+  return <HomePageLayout aboutMe={aboutMe} primaryLinksData={primaryLinksData} linksData={linksData} pinnedPhotos={photos} photosPinnedCount={photosPinnedCount} photosAllCount={photosAllCount} videosAllCount={videosAllCount} videos={videos} pinnedPosts={pinnedPostsData} postAllCount={postAllCount} audios={audios} />
 }

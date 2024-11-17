@@ -1,6 +1,6 @@
 'use client'
 
-import { AspectRatio, Box, Anchor, Stack, Group, Image, Flex, Tabs, Text } from '@mantine/core'
+import { AspectRatio, Box, Anchor, Stack, Group, Image, Flex, Tabs, Text, Tooltip, Center } from '@mantine/core'
 
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
 import { LinkedSVGButton } from '@/app/(Components)/(Buttons)/LinkedSVGButton'
@@ -9,11 +9,15 @@ import PinnedPostsCard from '@/app/(Components)/(Cards)/PinnedPostsCard'
 import { Title } from '@mantine/core'
 import { FooterIcon } from '@/app/(Config)/(Layout)/(Footer)/FooterIcon'
 // import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsSend, BsEnvelopeAt } from 'react-icons/bs'
-import { ArrowUpRight01Icon, Chatting01Icon, Facebook02Icon, GithubIcon, InstagramIcon, Linkedin02Icon, MailAtSign02Icon, NewTwitterIcon, ThreadsIcon, TiktokIcon, YoutubeIcon } from '@hugeicons/react'
+import { ArrowUpRight01Icon, Chatting01Icon, Facebook02Icon, GithubIcon, InstagramIcon, Linkedin02Icon, MailAtSign01Icon, MailAtSign02Icon, NewTwitterIcon, ThreadsIcon, TiktokIcon, YoutubeIcon } from '@hugeicons/react'
+
+import classesMarkdown from "@/app/(Components)/Components.module.css"
 
 export default function LinksSection({about, primaryLinks, links}: any) {
     return <Box component="section" id="links">
         <Title order={2} fz="3rem" fw="300" ta="center" mt="2rem">Links</Title>
+        <Text ta="center" mb="2rem">If you have found any additional links and your're unsure if they are my true accounts; or have any issues please do not hesitate to contact me at <Tooltip label="mailto:hello@donaldlouch.ca"><Anchor href="mailto:hello@donaldlouch.ca" target="_blank" fw="700" style={{borderBottom: "solid 2px var(--mantine-color-white)"}} underline="never" className={classesMarkdown.markdownLink}><Center inline><MailAtSign01Icon /> hello@donaldlouch.ca</Center></Anchor></Tooltip></Text>
+        
         <Flex
             justify={{base: "flex-start", sm: "center"}}
             c="white"

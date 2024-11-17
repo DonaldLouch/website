@@ -13,7 +13,7 @@
 // }
 
 
-import { Album02Icon, AlertDiamondIcon, CameraVideoIcon, Chatting01Icon, Files02Icon, NewsIcon, WavingHand01Icon, ZapIcon } from "@hugeicons/react";
+import { Album02Icon, AlertDiamondIcon, CameraVideoIcon, Chatting01Icon, Files02Icon, Link01Icon, NewsIcon, WavingHand01Icon, ZapIcon } from "@hugeicons/react";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { Group, Stack, Text, Title } from "@mantine/core";
 // import { setRole } from "./_actions";
@@ -41,6 +41,11 @@ export default function AdminPageContent() {
       link: "blog",
       title: "Blog Manager",
       icon: <NewsIcon />
+    },
+    {
+      link: "linkSets",
+      title: "Link Sets Manager",
+      icon: <Link01Icon />
     },
     {
       link: "pages",
