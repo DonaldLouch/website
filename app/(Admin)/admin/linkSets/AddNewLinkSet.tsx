@@ -125,6 +125,7 @@ export default function AddNewLinkSet() {
             label: "Non-Link"
         },
     ]
+    // @ts-ignore
     const linkFields = form.getValues().linksRow.map((item: any, index: any) => (
         <Draggable key={item.key} index={index} draggableId={item.key}>
             {(provided: any) => (
