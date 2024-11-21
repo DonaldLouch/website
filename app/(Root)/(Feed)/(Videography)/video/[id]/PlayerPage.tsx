@@ -98,7 +98,8 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             theVideoElement?.addEventListener("touchstart", () => { 
                 setHide(false)
                 sleep(3000).then(() => {
-                    !theVideoElement.paused && setHide(true)
+                    theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
+                    // !theVideoElement.paused && setHide(true)
                 })
             })
             // theVideoElement?.addEventListener("touchend", () => {
