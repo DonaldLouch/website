@@ -374,6 +374,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             buttonIcon: isFullscreenMode == false ? <ArrowExpand01Icon /> : <ArrowShrink01Icon />,
             buttonID: "fullscreenButton",
             buttonFunction: isFullscreenMode == false ? fullscreenMode : exitFullscreenMode,
+            hidden: isVertical
         },
         {
             buttonIcon: <Share05Icon />,
@@ -408,15 +409,16 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                     backdropBlur: "60px", 
                     boxShadow: "var(--mantine-shadow-bsBoldWhite)",
                     overflowX: "hidden", overflowY: isEmbed ? "hidden" : "auto",
-                    zIndex: isFullscreenMode ? 90000 : "auto"
+                    zIndex: isFullscreenMode || isVertical ? 90000 : "auto"
                 }}
-                bg={isFullscreenMode ? "black" : "var(--blackRGBA)"}
+                bg={isFullscreenMode || isVertical ? "black" : "var(--blackRGBA)"}
                 h={isFullscreenMode || isEmbed ? "100vh" : "auto"}
-                p={isFullscreenMode || isEmbed ? "0" : isVertical ? "1rem" : "2rem"}
+                p={isFullscreenMode || isEmbed ? "0" : isVertical ? "2rem 0" : "2rem"}
                 justify="center" align="center"
                 gap="0"
-                pt={isPage ? "6rem" : "initial"}
-                pos={isFullscreenMode ? "fixed" : "initial"}
+                // pt={isPage ? "6rem" : "initial"}
+                pt={isVertical ? "0rem" : isPage ? "6rem" : "initial"}
+                pos={isFullscreenMode ? "fixed" : isVertical ? "relative" : "initial"}
             > 
                 <Stack 
                     justify="center" align="center" 
@@ -430,7 +432,10 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                         // w={isEmbed ? "100%" : isHorizontal ? "calc(100% - 2rem)" : {base: "60vw", sm: "35vw"}}
                         // m={isVertical ? {base: "0.5rem", md: "2rem"} : "inherit" }
                         // w="100% !important"
-                        w= {!isVertical ? "100%" : {base: "60vw", sm: "35vw"}}
+                        w= {!isVertical ? "100%" : "auto"}
+                        mt={isVertical ? "2rem" : "0"}
+                        h={isVertical ? "calc(100vmin - 4rem)" : "auto"}
+                        // w="100%"
                         style={{borderRadius: isFullscreenMode ? "0" : "0.5rem", boxShadow: "var(--mantine-shadow-bsBoldWhite)", overflow: "hidden"}}
                         // pos="relative" 
                         // poster={video.thumbnailFileID.filePath
