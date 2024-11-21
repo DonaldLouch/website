@@ -9,7 +9,7 @@ import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
 import { useUser } from "@clerk/nextjs"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
-import { ArrowExpand01Icon, ArrowExpandIcon, ArrowHorizontalIcon, ArrowLeft01Icon, ArrowLeft02Icon, ArrowShrink01Icon, ArrowShrinkIcon, ArrowUpRight01Icon, ArrowUpRight02Icon, Bookmark01Icon, CameraVideoIcon, Copy01Icon, Database01Icon, Database02Icon, GoBackward10SecIcon, GoForward10SecIcon, InformationCircleIcon, LibraryIcon, LiverIcon, MaximizeScreenIcon, MinimizeScreenIcon, PauseIcon, PlayIcon, Share05Icon, Tag01Icon, TagsIcon, UserMultiple02Icon, VolumeMute01Icon, VolumeOffIcon } from "@hugeicons/react"
+import { ArrowExpand01Icon, ArrowExpandIcon, ArrowHorizontalIcon, ArrowLeft01Icon, ArrowLeft02Icon, ArrowShrink01Icon, ArrowShrinkIcon, ArrowUpRight01Icon, ArrowUpRight02Icon, Bookmark01Icon, CameraVideoIcon, Copy01Icon, Database01Icon, Database02Icon, GoBackward10SecIcon, GoForward10SecIcon, Home01Icon, InformationCircleIcon, LibraryIcon, LiverIcon, MaximizeScreenIcon, MinimizeScreenIcon, PauseIcon, PlayIcon, Share05Icon, Tag01Icon, TagsIcon, UserMultiple02Icon, VolumeMute01Icon, VolumeOffIcon } from "@hugeicons/react"
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording"
@@ -339,6 +339,10 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         // // console.log(chapterTitle, chapterPercent / videoDurationNUMBER)
     })
 
+    function backToFeed() {
+        router.push("/feed/videography")
+    }
+
     const leftButtons = [
         {
             buttonIcon: <GoBackward10SecIcon />,
@@ -394,7 +398,13 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
             buttonIcon: <InformationCircleIcon />,
             buttonID: "description",
             buttonFunction: infoModal,
-            hidden: playerType === "page" ? true : false
+            // hidden: playerType === "page" ? true : false
+        },
+        {
+            buttonIcon: <Home01Icon />,
+            buttonID: "backToFeed",
+            buttonFunction: backToFeed,
+            hidden: !isVertical
         },
     ] as any
 
@@ -544,7 +554,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                                 <Text fz="1rem" fw="900" visibleFrom="md">{timeLeft}</Text>
                                 <Text fz="1rem" fw="300" visibleFrom="md">|</Text>
                                 <Tooltip label={video.title}>
-                                    <Title order={2} fz="1rem" fw="300" lineClamp={1} w="60%" style={{whiteSpace: "nowrap"}}>{video.title} </Title>
+                                    <Title order={2} fz="1rem" fw="300" lineClamp={1} w={{base: "100%", md: "60%"}} style={{whiteSpace: "nowrap"}}>{video.title} </Title>
                                 </Tooltip>
                             </Group>
                         </Grid.Col>
@@ -561,7 +571,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                     </Grid> 
                 </Stack> 
             </Stack>
-            {!isEmbed &&
+            {!isEmbed || !isVertical &&
                 <Box p={{base: "1rem", sm: "1rem 5rem"}}>
                     <FullDescription video={video} mdxSource={mdxSource} />
                 </Box>
