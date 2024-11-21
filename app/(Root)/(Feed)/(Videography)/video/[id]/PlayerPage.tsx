@@ -31,7 +31,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     
     const router = useRouter() as any
     
-    const [playing, setPlaying] = useState(true)
+    const [playing, setPlaying] = useState(false)
     const [muted, setMuted] = useState(false)
     const [isTheaterMode, setIsTheaterMode] = useState(false)
     const [isFullscreenMode, setIsFullscreenMode] = useState(false)
@@ -94,44 +94,25 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         const controlsMobile = document.querySelector('#videoControlsMobile')
         const controlsMobileHeader = document.querySelector('#videoControlsMobileHeader')
         
-        // if (mobile) {
             theVideoElement?.addEventListener("touchstart", () => { 
                 setHide(false)
-                sleep(3000).then(() => {
-                    theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-                    // !theVideoElement.paused && setHide(true)
-                })
+                // !playing && setHide(false)
+                const videoElement = document.querySelector("#videoElement") as any
+                console.log(videoElement.paused)
+                if(videoElement.paused) {
+                    setHide(false)
+                 } else {
+                    sleep(3000).then(() => {
+                        // console.log("HIDE!")
+                        !videoElement.paused && setHide(true)
+                        // !theVideoElement.paused && setHide(true)
+                    })
+                }
             })
-            // theVideoElement?.addEventListener("touchend", () => {
-            //     theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            // })
-
-            // controlsMobile?.addEventListener("touchstart", () => { setHide(false) })
-            // controlsMobile?.addEventListener("touchend", () => {
-            //     const videoElement = document.querySelector("#videoElement") as any
-            //     videoElement?.addEventListener("mouseout", () => {
-            //         videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            //     })
-            // })
-
-            // controlsMobileHeader?.addEventListener("touchstart", () => { setHide(false) })
-            // controlsMobileHeader?.addEventListener("touchend", () => {
-            //     const videoElement = document.querySelector("#videoElement") as any
-            //     videoElement?.addEventListener("mouseout", () => {
-            //         videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            //     })
-            // })
-        // } else {
             theVideoElement?.addEventListener("mouseover", () => { setHide(false) })
             theVideoElement?.addEventListener("mouseout", () => {
                 theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
             })
-
-            // backButton?.addEventListener("mouseover", () => { setHide(false) })
-            // backButton?.addEventListener("mouseout", () => {
-            //     setHide(true)
-            // })
-            
             controlsDesktop?.addEventListener("mouseover", () => { setHide(false) })
             controlsDesktop?.addEventListener("mouseout", () => {
                 const videoElement = document.querySelector("#videoElement") as any
@@ -155,28 +136,33 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
                     videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
                 })
             })
-        // }
+        
     }, [theVideoElement])
 
     useEffect(() => {
         theVideoElement?.addEventListener("play", () => {
             if (playing != true) {
-                setPlaying(false)
-                setHide(true)
+                // setPlaying(false)
+                sleep(3000).then(() => {
+                    setHide(true)
+                })
+                // setHide(true)
             }
-            setHide(false)
-            sleep(3000).then(() => {
-                setHide(true)
-            })
+            // setPlaying(true)
+            // setHide(false)
+            // sleep(3000).then(() => {
+            //     setHide(true)
+            // })
         })
         theVideoElement?.addEventListener("pause", () => {
             if (playing != false) {
-                setPlaying(true)
+                // setPlaying(true)
                 setHide(false)
             }
-            sleep(3000).then(() => {
-                setHide(true)
-            })
+            // setPlaying(false)
+            // sleep(3000).then(() => {
+            //     setHide(true)
+            // })
             // setHide(true)
         })
         // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowRight") {theVideoElement.currentTime -= 10} })
@@ -208,15 +194,17 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
     function playClick() {
         if (theVideoElement.paused) {
             theVideoElement.play()
-            setPlaying(false)
+            setPlaying(true)
             // console.log("You played the video");
         } else {
             theVideoElement.pause(); // Once button is clicked it will pause the video
-            setPlaying(true)
+            setPlaying(false)
             // playBTNImage.data = vectorPath + "playButton.svg"; // Changes the button to the "play" image
             // console.log("You paused the video");
         }
     }
+
+    // console.log(playing)
 
     function skipAhead() {
         theVideoElement.currentTime += 10;
@@ -352,7 +340,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType }: any) {
         },
         
         {
-            buttonIcon: playing == true ? <PlayIcon /> : <PauseIcon />,
+            buttonIcon: playing == false ? <PlayIcon /> : <PauseIcon />,
             buttonID: "playButton",
             buttonFunction: playClick
         },
