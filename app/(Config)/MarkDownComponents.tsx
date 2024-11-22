@@ -23,6 +23,7 @@ import SingleAccordion from "../(Components)/(Accordion)/SingleAccording"
 
 import Masonry from 'react-masonry-css'
 import { ArrowUpRight01Icon, HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react"
+import InlineLink from "../(Components)/InlineLink"
 
  const breakpointColumnsObj = {
     default: 5,
@@ -167,7 +168,7 @@ const orderedList = (props: any) => {
 //     </>
 // )
 
-const links = (props: any) => (<Tooltip label={props.href}><Anchor href={props.href} fw="700" style={{borderBottom: "solid 2px var(--mantine-color-white)"}} underline="never" className={classes.markdownLink}><Center inline>{props.children}<ArrowUpRight01Icon /></Center></Anchor></Tooltip>)
+const links = (props: any) => (<InlineLink link={props.href} body={props.children} isInternal={props.href.startsWith("/")} />)
 
 const videoFrame = (props: any|boolean) => (
     <AspectRatio 

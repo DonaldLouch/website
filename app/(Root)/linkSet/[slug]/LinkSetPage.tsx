@@ -6,6 +6,7 @@ import { ActionIcon, Anchor, Badge, Box, Group, Stack, Title, Text, Flex, Toolti
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import classesMarkdown from "@/app/(Components)/Components.module.css"
+import InlineLink from "@/app/(Components)/InlineLink";
 
 export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxSource: any }) {
   return <>
@@ -40,8 +41,8 @@ export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxS
                     }}
                 >
                     <Box w="100%" m="2rem 1rem">
-                        <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>
-                        <Text>If you have found this on other services or have any issues please do not hesitate to contact me at  <Tooltip label="mailto:hello@donaldlouch.ca"><Anchor href="mailto:hello@donaldlouch.ca" target="_blank" fw="700" style={{borderBottom: "solid 2px var(--mantine-color-white)"}} underline="never" className={classesMarkdown.markdownLink}><Center inline><MailAtSign01Icon /> hello@donaldlouch.ca</Center></Anchor></Tooltip>. More services and links maybe added as they become available or known.</Text>
+                        <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>                        
+                        <Text>If you have found this on other services or have any issues please do not hesitate to contact me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} />. More services and links maybe added as they become available or known.</Text>
                         {linkSet.links.length > 0 && linkSet.links.map((link: any) => {
                             const linkIcon = link.icon === "Apple" ? <AppleIcon />
                                 : link.icon === "Spotify" ? <SpotifyIcon />

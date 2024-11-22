@@ -24,37 +24,44 @@ export default function FooterContent(){
     {
       linkURL: "https://facebook.com/DonaldLouchProductions",
       socialMedia: "Facebook",
-      linkIcon: <Facebook02Icon variant="duotone" />,
+      linkIcon: "facebook-02",
+      iconVariant: "duotone"
     },
     {
       linkURL: "https://twitter.com/DonaldLouch",
       socialMedia: "X (Twitter)",
-      linkIcon: <TwitterIcon variant="duotone" />,
+      linkIcon: "new-twitter",
+      iconVariant: "duotone"
     },
     {
       linkURL: "https://instagram.com/donaldlouch",
       socialMedia: "Instagram",
-      linkIcon: <InstagramIcon />,
+      linkIcon: "instagram",
+      iconVariant: "twotone"
     },
     {
       linkURL: "https://www.tiktok.com/@donaldlouch",
       socialMedia: "TikTok",
-      linkIcon: <TiktokIcon variant="duotone" />,
+      linkIcon: "tiktok",
+      iconVariant: "duotone"
     },
     {
       linkURL: "https://youtube.donaldlouch.ca",
       socialMedia: "YouTube",
-      linkIcon: <YoutubeIcon variant="duotone" />,
+      linkIcon: "youtube",
+      iconVariant: "duotone"
     },  
     {
       linkURL: "https://github.com/DonaldLouch",
       socialMedia: "GitHub",
-      linkIcon: <GithubIcon />,
+      linkIcon: "github",
+      iconVariant: "twotone"
     },
     {
       linkURL: !isSignedIn ? "/signin" : "/portal",
       socialMedia: !isSignedIn ? "Signin/Signup" : "Client Portal",
-      linkIcon: !isSignedIn ? <Login01Icon /> : <DashboardSpeed02Icon />,
+      linkIcon: !isSignedIn ? "login" : "dashboard-speed-02",
+      iconVariant: "twotone"
     },
   ]
   return (
@@ -81,7 +88,7 @@ export default function FooterContent(){
       </Stack>
       <Group wrap="nowrap" style={{ overflow: "scroll" }} px="1rem" maw="80vw">
         {footerLinks.map((link: any) => (
-          <FooterIcon key={link.socialMedia} linkURL={link.linkURL} socialMedia={link.socialMedia} linkIcon={link.linkIcon} />
+          <FooterIcon key={link.socialMedia} linkURL={link.linkURL} socialMedia={link.socialMedia} linkIcon={link.linkIcon} iconVariant={link.iconVariant} />
         ))}
       </Group>
     </Flex>

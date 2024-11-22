@@ -154,9 +154,9 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                       </Badge>
                     </Group>
                     <Group align="center" my="-1rem">
-                      <FooterIcon linkURL={resume.linkedin} socialMedia="Linkedin" linkIcon={<Linkedin02Icon />} />
-                      <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon={<Chatting01Icon />} />
-                      <FooterIcon linkURL={`mailto:${resume.email}`} socialMedia="Email Me" linkIcon={<MailAtSign02Icon />} />
+                      <FooterIcon linkURL={resume.linkedin} socialMedia="Linkedin" linkIcon="linkedin-02" />
+                      <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="chatting-01" />
+                      <FooterIcon linkURL={`mailto:${resume.email}`} socialMedia="Email Me" linkIcon="mail-at-sign-01" />
                     </Group>
                     </Stack>
                   </Flex>
