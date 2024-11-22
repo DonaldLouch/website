@@ -60,7 +60,7 @@ export default function FooterContent(){
     {
       linkURL: !isSignedIn ? "/signin" : "/portal",
       socialMedia: !isSignedIn ? "Signin/Signup" : "Client Portal",
-      linkIcon: !isSignedIn ? "login" : "dashboard-speed-02",
+      linkIcon: !isSignedIn ? "login-01" : "dashboard-speed-02",
       iconVariant: "twotone"
     },
   ]
