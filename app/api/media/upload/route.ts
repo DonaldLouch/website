@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       Math.random().toString(36).substring(2, 5).toLowerCase()
     }` as any;
     const filePath = `${uploadDestination}/${fileID}.${fileExtension}`;
-    const Body = (await file.arrayBuffer()) as Buffer;
+    const Body = (await file.arrayBuffer()) as ArrayBuffer;
     const fileUpload = {
         Bucket,
         Key: filePath,
