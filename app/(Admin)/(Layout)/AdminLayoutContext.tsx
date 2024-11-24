@@ -28,8 +28,6 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
     const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
     useEffect(() => {setWindowHeight(window.innerHeight + 60)})
  
-    console.log(isAdmin)
-    
     // const attachedHeaderHeight = !isHero ? 190 : 800 
     const disabled = path.includes("/video") && !path.includes("feed/video") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })

@@ -1,6 +1,7 @@
 // import { SignedOut, auth, useSession } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import AdminLayoutContext from "../(Layout)/AdminLayoutContext";
+import { isUserSignedIn, userRole } from "@/app/actions/clerk";
 
 // import { checkRole } from "@/lib/roles";
 
@@ -15,8 +16,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     // { role: "org:administration:admin" }
     // auth().protect({ role: 'org:admin' })
     // const { orgRole, orgId, userId, has, sessionClaims } = auth()
-     const { userId }: { userId: string | null } = await auth()
-    const isAdmin = userId ? true : false
+    //  const { userId }: { userId: string | null } = await auth()
+    // const isAdmin = userId ? true : false
+
+    const isUser = await isUserSignedIn()
+    const role = await userRole()
+    const isAdmin = isUser && role === "admin" ? true : false
     // ? true : false
     // console.log("Layout", userId)
     // const isAdmin = has({ permission:"org:portal:access" }) && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID

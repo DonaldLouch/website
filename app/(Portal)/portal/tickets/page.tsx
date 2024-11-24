@@ -11,20 +11,24 @@ import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
 import supabase from '@/lib/supabase';
 import Tickets from './Tickets';
+import { isUserSignedIn, userData, userRole } from '@/app/actions/clerk';
  
 export const metadata: Metadata = {
   title: `Tickets | ${process.env.WEBSITE_NAME}`
 };
 
 export default async function TicketsPage() {
-  const { userId } = await auth()  
-  const isAdmin = userId ? true : false
-  const isMod = userId ? true : false
-  const isPayment = userId ? true : false
-  const isTicket = userId ? true : false
+  const isUser = await isUserSignedIn()
+  const role = await userRole()
+  const theUser = await userData()
 
+  const isAdmin = isUser && role === "admin" ? true : false
+  const isMod = isUser && role === "moderator" ? true : false
+  const isPayment = isUser && role === "paymentOnly" ? true : false
+  const isTicket = isUser && role === "ticketSupportOnly" ? true : false
   const isStaff = isAdmin || isMod
-
+  
+  const { userId } = theUser
   
   !userId && !isAdmin && !isMod && isPayment && !isTicket && redirect("/portal?error=unauthorizedNotProperUser")
 

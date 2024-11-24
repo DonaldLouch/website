@@ -4,6 +4,7 @@ import GetTicket from './GetTicket';
 // import { checkRole } from '@/lib/roles';
 import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
+import { isUserSignedIn, userData, userRole } from '@/app/actions/clerk';
 // import { Metadata } from 'next';
 // type Props = {
 //     params: { ticketID: string }
@@ -20,10 +21,12 @@ type Params = Promise<{ ticketID: string }>
 
 export default async function TicketOverview({ params }: { params: Params }) {
     const { ticketID } = await params
-    const { userId } = await auth()
-    const isAdmin = userId ? true : false
-    const isMod = userId ? true : false
 
+    const isUser = await isUserSignedIn()
+    const role = await userRole()
+    const { userId } = await userData()
+    const isAdmin = isUser && role === "admin" ? true : false
+    const isMod = isUser && role === "moderator" ? true : false
     const isStaff = isAdmin || isMod
 
     // const router = useRouter()
