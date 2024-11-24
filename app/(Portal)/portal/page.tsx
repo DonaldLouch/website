@@ -1,11 +1,13 @@
-import { checkRole } from "@/lib/roles";
+// import { checkRole } from "@/lib/roles";
+import { auth } from "@clerk/nextjs/server";
 import PortalHome from "./PortalHome";
 
 
 
-export default function Portal() {
-  const isAdmin = checkRole("admin") ? true : false
-  const isMod = checkRole("moderator") ? true : false
+export default async function Portal() {
+  const { orgRole, orgId, userId, has } = await auth()
+  const isAdmin = userId ? true : false
+  const isMod = userId ? true : false
 
   const isStaff = isAdmin || isMod
   

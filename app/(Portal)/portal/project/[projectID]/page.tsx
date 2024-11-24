@@ -7,7 +7,8 @@ import supabase from '@/lib/supabase';
 import GetProject from './GetProject';
 
 import { serialize } from "next-mdx-remote-client/serialize"
-import { checkRole } from '@/lib/roles';
+import { auth } from '@clerk/nextjs/dist/types/server';
+// import { checkRole } from '@/lib/roles';
 // import { Metadata } from 'next';
 // type Props = {
 //     params: { projectID: string }
@@ -24,9 +25,9 @@ type Params = Promise<{ projectID: string }>
 
 export default async function ProjectOverview({ params }: { params: Params }) {
     const { projectID } = await params
-
-    const isAdmin = checkRole("admin") ? true : false
-    const isMod = checkRole("moderator") ? true : false
+const { orgRole, orgId, userId, has } = await auth()
+    const isAdmin = userId ? true : false
+    const isMod = userId? true : false
     // const isPayment = checkRole("paymentOnly") ? true : false
     // const isTicket = checkRole("ticketSupportOnly") ? true : false
 

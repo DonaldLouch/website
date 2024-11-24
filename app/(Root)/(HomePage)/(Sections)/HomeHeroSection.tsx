@@ -1,12 +1,15 @@
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
 import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, JobSearchIcon, Link01Icon, Link04Icon, NewsIcon, Passport01Icon, PassportIcon } from "@hugeicons/react"
-import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme } from "@mantine/core"
+import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Spoiler } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks";
+import { useState } from "react";
 // import { BsFolder2Open, BsImages, BsFilePerson, BsSend, BsPersonBadge, BsLink45Deg } from "react-icons/bs"
 
 export default function HomeHeroSection({aboutMe}: any) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+
+  const [expanded, setExpanded] = useState(false)
   
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
     <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
@@ -82,17 +85,26 @@ export default function HomeHeroSection({aboutMe}: any) {
             display={{base: "none", sm: "initial"}}
             mb="-2rem"
           >{aboutMe.tagLine}</Title>
-          <Text c="white" ta={{base: "center", sm: "left"}}>{mobile ? aboutMe.bioExcerpt : aboutMe.bio}</Text>
+          {mobile ?
+            <Box mah="50vh" style={{overflow: "scroll"}}>
+              {/* 165 */}
+              <Spoiler maxHeight={95} showLabel="Read Full Bio" hideLabel="Hide" expanded={expanded} onExpandedChange={setExpanded}>
+              <Text>{!expanded && aboutMe.bioExcerpt}</Text>
+              <Text>{!expanded && " "}</Text>
+              <Text>{aboutMe.bio}</Text>
+              </Spoiler>
+            </Box> 
+          : <Text>{aboutMe.bio}</Text>}
         </Stack>
       </Box>
       <Group justify="center">
-        <PrimaryLinkedButton link="/portfolio" icon={<Briefcase02Icon />}>Portfolio</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/feed" icon={<DashboardSquare02Icon />}>Feed</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/blog" icon={<NewsIcon />}>Blog</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portfolio/resume" icon={<PassportIcon />}>Resume</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="#links" icon={<Link04Icon />}>Links</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact" icon={<Chatting01Icon />}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portal/projects?openID=newProject" icon={<JobSearchIcon />}>Hire Me!</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portfolio" primNewIcon={{name: "briefcase-02", variant: "duotone"}}>Portfolio</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/feed" primNewIcon={{name: "dashboard-square-02", variant: "duotone"}}>Feed</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/blog" primNewIcon={{name: "news", variant: "duotone"}}>Blog</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portfolio/resume" primNewIcon={{name: "passport", variant: "duotone"}}>Resume</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="#links" primNewIcon={{name: "link-04", variant: "twotone"}}>Links</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/contact" primNewIcon={{name: "chatting-01", variant: "twotone"}}>Contact</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portal/projects?openID=newProject" primNewIcon={{name: "job-search", variant: "duotone"}}>Hire Me!</PrimaryLinkedButton>
       </Group>
     </Stack>
   </Box>

@@ -4,7 +4,7 @@
 // import { RequestNewProject } from './RequestNewProject'
 // import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
 // import { currentUser } from '@clerk/nextjs';
-import { checkRole } from '@/lib/roles';
+// import { checkRole } from '@/lib/roles';
 
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 
 export default async function TicketsPage() {
   const { userId } = await auth()  
-  const isAdmin = checkRole("admin") ? true : false
-  const isMod = checkRole("moderator") ? true : false
-  const isPayment = checkRole("paymentOnly") ? true : false
-  const isTicket = checkRole("ticketSupportOnly") ? true : false
+  const isAdmin = userId ? true : false
+  const isMod = userId ? true : false
+  const isPayment = userId ? true : false
+  const isTicket = userId ? true : false
 
   const isStaff = isAdmin || isMod
 

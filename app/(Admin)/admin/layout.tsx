@@ -2,9 +2,9 @@
 import { auth } from "@clerk/nextjs/server";
 import AdminLayoutContext from "../(Layout)/AdminLayoutContext";
 
-import { checkRole } from "@/lib/roles";
+// import { checkRole } from "@/lib/roles";
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
     // const userData = useSession()
     // const orgRole = auth();
     // // console.log("Org", orgRole.orgPermissions)
@@ -15,13 +15,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     // { role: "org:administration:admin" }
     // auth().protect({ role: 'org:admin' })
     // const { orgRole, orgId, userId, has, sessionClaims } = auth()
-    const isAdmin = checkRole("admin") ? true : false
+     const { userId }: { userId: string | null } = await auth()
+    const isAdmin = userId ? true : false
+    // ? true : false
+    // console.log("Layout", userId)
     // const isAdmin = has({ permission:"org:portal:access" }) && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID
     // const isAdmin = false
     // const isAdmin = orgRole == "admin" && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID ? true : false
     // userId && isAdmin && auth().protect().has({ role: 'admin' })
     // // console.log(isAdmin, userId)
 
-    // auth().protect()
     return <AdminLayoutContext isAdmin={isAdmin}>{children}</AdminLayoutContext>
 }

@@ -15,7 +15,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <Grid gutter="2rem">
           <Grid.Col span={{base: 12, md: 4}} h="100%">
             <Center>
-              {children}
+              <Text>Auth is currently disabled.</Text>
+              {/* {children} */}
             </Center>
           </Grid.Col>
           <Grid.Col span={8} h="100%" style={{ justifyContent: "center" }} visibleFrom="md">

@@ -28,6 +28,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
     const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
     useEffect(() => {setWindowHeight(window.innerHeight + 60)})
  
+    console.log(isAdmin)
     
     // const attachedHeaderHeight = !isHero ? 190 : 800 
     const disabled = path.includes("/video") && !path.includes("feed/video") ? true : false
@@ -74,7 +75,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                   >
                     Sign Out and Go Home!
                   </Button>}
-                  <PrimaryLinkedButton link="/" icon={<Home01Icon />}>Go Home</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/" primNewIcon={{name: "home-01", variant: "duotone"}}>Go Home</PrimaryLinkedButton>
                 </Group>
                 {/* <UserButton afterSignOutUrl="/"/>  */}
               </Stack>
@@ -108,7 +109,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                         <Group>
                           <WebsiteAlerts />
                           <Notifications />
-                          <PrimaryLinkedButton link="/portal" icon={<DashboardSpeed02Icon />}>Client Portal</PrimaryLinkedButton>
+                          <PrimaryLinkedButton link="/portal" primNewIcon={{name: "dashboard-speed-02", variant: "duotone"}}>Client Portal</PrimaryLinkedButton>
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>

@@ -1,7 +1,7 @@
 import supabase from '@/lib/supabase';
 import GetTicket from './GetTicket';
 
-import { checkRole } from '@/lib/roles';
+// import { checkRole } from '@/lib/roles';
 import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
 // import { Metadata } from 'next';
@@ -21,8 +21,8 @@ type Params = Promise<{ ticketID: string }>
 export default async function TicketOverview({ params }: { params: Params }) {
     const { ticketID } = await params
     const { userId } = await auth()
-    const isAdmin = checkRole("admin") ? true : false
-    const isMod = checkRole("moderator") ? true : false
+    const isAdmin = userId ? true : false
+    const isMod = userId ? true : false
 
     const isStaff = isAdmin || isMod
 

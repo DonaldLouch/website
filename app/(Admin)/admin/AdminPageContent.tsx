@@ -30,37 +30,37 @@ export default function AdminPageContent() {
     {
       link: "photography",
       title: "Photography Manager",
-      icon: <Album02Icon />
+      icon: "album-02"
     },
     {
       link: "videography",
       title: "Videography Manager",
-      icon: <CameraVideoIcon />
+      icon: "camera-video"
     },
     {
       link: "blog",
       title: "Blog Manager",
-      icon: <NewsIcon />
+      icon: "news"
     },
     {
       link: "linkSets",
       title: "Link Sets Manager",
-      icon: <Link01Icon />
+      icon: "link-01"
     },
     {
       link: "pages",
       title: "Pages Manager",
-      icon: <Files02Icon />
+      icon: "files-02"
     },
     {
       link: "messages",
       title: "Messages",
-      icon: <Chatting01Icon />
+      icon: "chatting-01"
     },
     {
       link: "alerts",
       title: "Website Alerts",
-      icon: <AlertDiamondIcon />
+      icon: "alert-diamond"
     },
   ]
   return <>
@@ -79,7 +79,7 @@ export default function AdminPageContent() {
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem 0.5rem" my="2rem" gap="0">
         <Group justify="center" my="1rem" gap="0.5rem">
             {quickActions.map((action: any) => (
-              <PrimaryLinkedButton icon={action.icon} link={`/admin/${action.link}`} key={action.link}>{action.title}</PrimaryLinkedButton>
+              <PrimaryLinkedButton primNewIcon={{name: action.icon, variant: "duotone"}} link={`/admin/${action.link}`} key={action.link}>{action.title}</PrimaryLinkedButton>
             ))}
           </Group>
     </Stack>
