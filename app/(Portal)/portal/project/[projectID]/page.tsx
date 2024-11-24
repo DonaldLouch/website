@@ -7,7 +7,7 @@ import supabase from '@/lib/supabase';
 import GetProject from './GetProject';
 
 import { serialize } from "next-mdx-remote-client/serialize"
-import { auth } from '@clerk/nextjs/dist/types/server';
+import { auth } from '@clerk/nextjs/server';
 // import { checkRole } from '@/lib/roles';
 // import { Metadata } from 'next';
 // type Props = {
