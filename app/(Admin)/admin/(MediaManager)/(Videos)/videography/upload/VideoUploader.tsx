@@ -20,6 +20,8 @@ import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 // import { BsCloudPlus, BsPencilSquare, BsPlay, BsTrash2 } from "react-icons/bs"
 
 import classes from "@/app/(Components)/Components.module.css"
+import EditVideoData from "../[id]/EditVideoData"
+import VideoInformationNew from "./VideoInformationNew"
 
 export default function VideoUploader({currentStep, categoryData, tagsData}: {currentStep: number, categoryData: any, tagsData: any}) {
     const id = "video"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
@@ -51,6 +53,7 @@ export default function VideoUploader({currentStep, categoryData, tagsData}: {cu
         </>},
         { title: 'Video FIle', description: 'Upload the video file', icon: <CameraVideoIcon />, content: <>
             <FileUploader mediaType="videography" uploadTitle="Upload Video" helperText="For the best video player experience across all devices and browsers, the file format .mp4 is highly recommended video file." id={videoID}/>
+            <Text>{videoID}</Text>
             <ManualVideo id={videoID} />
         </>},
         { title: 'Thumbnail File', description: 'Upload the thumbnail file', icon: <Image02Icon />, content: <>
@@ -58,7 +61,8 @@ export default function VideoUploader({currentStep, categoryData, tagsData}: {cu
         </>},
         { title: 'Information', description: 'Add the video information', icon: <InformationCircleIcon />, content: <>
             {/* categoryData={categoryData} */}
-            {/* <VideoInformation videoID={videoID} categoryData={categoryData} tagsData={tagsData} /> */}
+            <VideoInformationNew videoID={videoID} categoryData={categoryData} tagsData={tagsData} />
+            {/* <EditVideoData videoData={{ id: videoID }} categoryData={categoryData} tagsData={tagsData} /> */}
         </>},
         { title: 'Done!', description: 'Your video is uploaded!', icon: <CloudSavingDone01Icon />, content: <>
             <SectionCard styleType="primaryCard" id="start">
@@ -66,9 +70,9 @@ export default function VideoUploader({currentStep, categoryData, tagsData}: {cu
                 <Text ta="center">You have successfully uploaded your video!</Text>
             </SectionCard>
             <Group m="3rem 0 0" gap="2rem" justify="center">
-                <PrimaryLinkedButton link={`/video/${videoID}`} icon={<PlayIcon />} colour="green.0" fontColour="black">Watch Video</PrimaryLinkedButton>
-                <PrimaryLinkedButton link={`/admin/videography/${videoID}`} icon={<Edit02Icon />} colour="var(--secondary)" fontColour="black">Edit Video</PrimaryLinkedButton>
-                <PrimaryButton colour="red" icon={<CloudUploadIcon />} action={refreshUploader}>Start A New Upload</PrimaryButton>
+                <PrimaryLinkedButton link={`/video/${videoID}`} primNewIcon={{name: "play", variant: "duotone"}} colour="green.0" fontColour="black">Watch Video</PrimaryLinkedButton>
+                <PrimaryLinkedButton link={`/admin/videography/${videoID}`} primNewIcon={{name: "edit-02", variant: "duotone"}} colour="var(--secondary)" fontColour="black">Edit Video</PrimaryLinkedButton>
+                <PrimaryButton colour="red" primNewIcon={{name: "cloud-upload", variant: "duotone"}} action={refreshUploader}>Start A New Upload</PrimaryButton>
             </Group>
         </>, isDisabled: false },
     ]

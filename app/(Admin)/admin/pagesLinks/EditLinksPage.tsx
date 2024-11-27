@@ -32,7 +32,7 @@ export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
     <>
       <BreadCrumb breads={breadCrumbs} />
       <Box component="main">
-        <PrimaryLinkedButton link="/" icon={<ArrowUpRight01Icon variant="twotone" />}>View Links</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/" primNewIcon={{name: "arrow-up-right-01", variant: "twotone"}}>View Links</PrimaryLinkedButton>
         
         <Tabs defaultValue="all">
             <Tabs.List grow justify="center">

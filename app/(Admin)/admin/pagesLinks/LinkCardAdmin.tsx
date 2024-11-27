@@ -147,7 +147,7 @@ export const LinkCardAdmin = (link: LinkCardAdminProps) => {
       styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
       radius="lg"
     >
-      {link.link && <PrimaryLinkedButton icon={<ArrowUpRight01Icon />} link={link.link} isExternal my="2rem">Open Link</PrimaryLinkedButton>}
+      {link.link && <PrimaryLinkedButton primNewIcon={{name: "arrow-up-02", variant: "twotone"}} link={link.link} isExternal my="2rem">Open Link</PrimaryLinkedButton>}
       <Divider label="Edit Link" labelPosition="center" mx="3rem" my="2rem" />
       <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
           <SimpleGrid cols={2} spacing="2rem">

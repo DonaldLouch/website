@@ -118,7 +118,7 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
 
     return <>
         <BreadCrumb breads={breadCrumbs} />
-        <PrimaryLinkedButton link="/admin/videography/upload" icon={<CloudUploadIcon />} >Upload New Video</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/admin/videography/upload" primNewIcon={{name: "cloud-upload", variant: "duotone"}}>Upload New Video</PrimaryLinkedButton>
           <Box id="feed" pos="relative" w="100%">
                 {/* {loadedVideos?.map((video: any, index: number) => (<Text key={index}>{video.title}</Text>))} */}
                 <Grid gutter="1rem" mt={{base: "1rem", md: "2rem"}} p={{base: "0.5rem", md: "0 0.5rem"}}>

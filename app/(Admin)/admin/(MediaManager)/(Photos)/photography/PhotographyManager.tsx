@@ -61,7 +61,7 @@ export default function PhotographyManager({mediaData, pagination, photographyAl
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <PrimaryLinkedButton link="/admin/batchEdit" icon={<Edit02Icon />} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
+      <PrimaryLinkedButton link="/admin/batchEdit" primNewIcon={{name: "edit-02", variant: "duotone"}} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
       <Box component="main" color="white">
         <Box m="2rem 5rem 0rem"><FileUploader mediaType={"photography"} uploadTitle="Upload Photo(s)" helperText="For the best photography experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the photo file. You can drag and drop or click to upload the photo(s)." /></Box>
 

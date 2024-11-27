@@ -28,6 +28,7 @@ import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import { notifications } from "@mantine/notifications";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function EditPostContent({post, tagsData}: any) {
   // const toast = useToast()
@@ -376,10 +377,10 @@ export default function EditPostContent({post, tagsData}: any) {
         <Box component="main" id="editBlogPost" color="white">
           <Group my="2rem">
             <Group gap="0">
-              <PrimaryLinkedButton link={`/post/${post.slug}`} icon={<ViewIcon />}>View Blog Post</PrimaryLinkedButton>
-              <Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{post.slug}</Badge>
+              <PrimaryLinkedButton link={`/post/${post.slug}`} primNewIcon={{name: "view", variant: "duotone"}}>View Blog Post</PrimaryLinkedButton>
+              <Badge leftSection={<HugeIcon name="link-04" variant="twotone" />} color="blue" tt="lowercase">{post.slug}</Badge>
             </Group>
-            <Button leftSection={<Delete03Icon />} color="red" variant="filled" size="lg" classNames={{root: buttonClasses.primaryButton}}>Delete Blog Post</Button>
+            <Button leftSection={<HugeIcon name="delete-03" variant="duotone" />} color="red" variant="filled" size="lg" classNames={{root: buttonClasses.primaryButton}}>Delete Blog Post</Button>
           </Group>
           <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
             <FormInput inputID="title" inputLabel="Title" {...form.getInputProps('title')} inputDescription="The title of the blog post so the users will now at a glance what the blog article will be about." isRequired />

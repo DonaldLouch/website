@@ -17,7 +17,7 @@ import moment from "moment";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
 import { AlertDiamondIcon, Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Image02Icon, Link04Icon, PencilEdit01Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
 import { randomId } from "@mantine/hooks";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import DisplayDate from "@/lib/DisplayDate";
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
@@ -26,29 +26,56 @@ import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import { notifications } from "@mantine/notifications";
+import { getVideoData } from "@/app/actions/video";
 
 // import notificationClasses from '@/app/(Config)/Notifications.module.css'
 
-export default function EditVideoData({videoData, categoryData, tagsData}: any) {
-    const video = videoData
+export default function VideoInformationNew({videoID, categoryData, tagsData}: any) {
 
     // categoryData
 
     // const toast = useToast()
     // const toastID = "toastID"
     const router = useRouter()
+    const [video, setVideoData] = useState() as any
+    // const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        const getTheVideoData = async () => {
+            const data = await getVideoData(videoID)
+            setVideoData(data)
+        }
+        getTheVideoData()
+  },[videoID])
 
-    const [chaptersOption, setChaptersOption] = useState(video?.chapters && video?.chapters.length > 0 ? true : false)
-    const [musicCOption, setMusicCOption] = useState(video?.musicCredits && video?.musicCredits.length > 0 ? true : false)
-    const [videoCOption, setVideoCOption] = useState(video?.videoCredits && video?.videoCredits.length > 0 ? true : false)
-    const [starringCOption, setStarringCOption] = useState(video?.starring && video?.starring.length >0 ? true : false)
-    const [linkOption, setLinkOption] = useState(video?.links && video?.links.length > 0 ? true : false)
-    const [isPinnedOption, setIsPinnedOption] = useState(video?.isPinned ? true : false)
+    // async () => {
+        // const { data: videoData } = await getVideoData(videoID)
+        // const video = videoData
+        // console.log(video)
+    // }
 
-    const breadCrumbs = [
-        {"pageLink": "/admin/videography", "pageName": "Videography Manager"},
-        {"pageLink": `/admin/videography/${video.id}`, "pageName": `Edit Video: ${video.title}`},
-    ]
+
+    // const [videoData, setVideoData] = useState()
+    // useEffect(() => {
+    //     async () => {
+            // const videoData = await getVideoData(videoID)
+            // setVideoData(data)
+    //     }
+    // })
+    // const { data: videoData } = await getVideoData(videoID)
+    // const video = videoData
+    console.log(video)
+
+    const [chaptersOption, setChaptersOption] = useState(false)
+    const [musicCOption, setMusicCOption] = useState(false)
+    const [videoCOption, setVideoCOption] = useState(false)
+    const [starringCOption, setStarringCOption] = useState(false)
+    const [linkOption, setLinkOption] = useState(false)
+    const [isPinnedOption, setIsPinnedOption] = useState(false)
+
+    // const breadCrumbs = [
+    //     {"pageLink": "/admin/videography", "pageName": "Videography Manager"},
+    //     {"pageLink": `/admin/videography/${video.id}`, "pageName": `Edit Video: ${video.title}`},
+    // ]
 
     // async function deleteVideo() {
     //     const { status: privacyUpdate } = await supabase.from("Videography").update({ videoPrivacy: "DELETING" }).eq('id', video.id)
@@ -185,85 +212,61 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
         supabaseStatus === 204 && router.refresh()
     }
 
-    const initialChaptersValues = new Array()
-    videoData.chapters && videoData.chapters.forEach((chapter: any) => {
-        initialChaptersValues.push(
-            { 
-                key: randomId(),
-                title: chapter.title, 
-                timeCode: chapter.timeCode
-            }
-        )
+    const initialChaptersValues = new Array({ 
+        key: randomId(),
+        title: null, 
+        timeCode: null
     })
     
-    const initialMusicCValues = new Array()
-    videoData.musicCredits && videoData.musicCredits.forEach((musicC: any) => {
-        initialMusicCValues.push(
-            { 
-                key: randomId(),
-                timeCode: musicC.timeCode,
-                title: musicC.title,
-                artist: musicC.artist,
-                link: musicC.link,
-                info: musicC.info
-            }
-        )
+    const initialMusicCValues = new Array({ 
+        key: randomId(),
+        timeCode: null,
+        title: null,
+        artist: null,
+        link: null,
+        info: null
     })
     
-    const initialVideoCValues = new Array()
-    videoData.videoCredits && videoData.videoCredits.forEach((videoC: any) => {
-        initialVideoCValues.push(
-            { 
-                key: randomId(),
-                title: videoC.title,
-                value: videoC.value,
-            }
-        )
+    const initialVideoCValues = new Array({ 
+        key: randomId(),
+        title: null,
+        value: null,
     })
     
-    const initialStarringCValues = new Array()
-    videoData.starringCredits && videoData.starringCredits.forEach((starringC: any) => {
-        initialStarringCValues.push(
-            { 
-                key: randomId(),
-                timeCode: starringC.timeCode,
-                displayName: starringC.displayName,
-                link: starringC.link,
-            }
-        )
+    const initialStarringCValues = new Array({ 
+        key: randomId(),
+        timeCode: null,
+        displayName: null,
+        link: null,
     })
 
-    const initialLinkValues = new Array()
-    videoData.links && videoData.links.forEach((link: any) => {
-        initialLinkValues.push(
-            { 
-                key: randomId(),
-                timeCode: link.timeCode, 
-                linkType: link.linkType, 
-                icon: link.icon, 
-                link: link.link, 
-                name: link.name
-            }
-        )
+    const initialLinkValues = new Array({ 
+        key: randomId(),
+        timeCode: null, 
+        linkType: null, 
+        icon: null, 
+        link: null, 
+        name: null
     })
+   
 
     const initialValues = { 
-        id: video.id,
-        title: video.title,
-        excerpt: video.excerpt,
-        description: video.description,
-        videoType: video.videoType ? video.videoType : "Horizontal",
-        category: video.category && video.category.catName,
+        id: videoID,
+        title: null,
+        excerpt: null,
+        description: null,
+        videoType: "Horizontal",
+        category: null,
 
-        tags: video.tags ? video.tags : [],
+        tags: [],
 
-        videoPrivacy: video.videoPrivacy ? video.videoPrivacy : "Private",
-        isPinned: video.isPinned ? video.isPinned : false,
-        isPortfolio: video.isPortfolio ? video.isPortfolio : false,
+        videoPrivacy: "Private",
+        isPinned: false,
+        isPortfolio: false,
         
 
-        capturedOn: new Date(video.videoFileID.capturedOn),
-        uploadedOn: new Date(video.uploadedOn),
+        capturedOn: new Date(video.videoFileID?.capturedOn),
+        uploadedOn: new Date(video.videoFileID?.uploadedOn),
 
         chaptersRow: initialChaptersValues,
         musicCreditsRow: initialMusicCValues,
@@ -461,8 +464,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
 
     return (
         <>
-            <BreadCrumb breads={breadCrumbs} />
-            <Flex
+            {/* <Flex
                 direction={{base: "column", sm: "row"}}
                 gap={{base: "0.5rem", sm: "2rem"}}
                 justify="flex-start"
@@ -488,9 +490,6 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                                 {video.title}
                             </Title>
                         </Tooltip>
-                        {/* <Text fz="1.3rem">
-                            {post.excerpt}
-                        </Text> */}
                     </Stack>
                     <Stack gap="1rem" my="1rem">
                         <Group>
@@ -500,12 +499,12 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                             <Badge color="red" leftSection={<Calendar03Icon />}>
                                 <DisplayDate source={video.videoFileID.capturedOn} />
                             </Badge>
-                            <Anchor href={videoData.videoFileID.filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{video.videoFileID.filePath}</Badge></Anchor> 
+                            <Anchor href={video.videoFileID.filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{video.videoFileID.filePath}</Badge></Anchor> 
                             <Anchor href={`/video/${video.id}`} target="_blank"><Badge leftSection={<PlayIcon />} color="var(--secondary)">Watch the Video</Badge></Anchor> 
                         </Group>
                     </Stack>
                 </Flex>
-            </Flex>
+            </Flex> */}
             <Box p="2rem" component="form" onSubmit={form.onSubmit(onSubmit)}>
                 {/* {...form.getInputProps('FIELDNAME')} */}
                 <FormInput inputID="title" inputLabel="Video Title" inputType="text" inputDescription="Providing is a mandatory field so that it will help people see what they'll be watching before clicking play on the video." {...form.getInputProps('title')}  />
