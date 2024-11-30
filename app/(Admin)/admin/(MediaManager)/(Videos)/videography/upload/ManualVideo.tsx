@@ -45,7 +45,7 @@ export default function ManualVideo({id}: {id: string}) {
                 fileKey: filePath,
                 fileTitle: values.fileName,
                 fileExtension: values.fileExtension,
-                filePath: `https://donaldlouch.s3.us-west-004.backblazeb2.com/${filePath}`,
+                filePath: `https://donaldlouch.s3.us-west-004.backblazeb2.com/${filePath}.${values.fileExtension}`,
                 // fileVersionID: values.fileVersionID,
                 capturedOn: values.capturedOn ? moment(values.capturedOn) : moment(),
                 uploadedOn: values.uploadedOn ? moment(values.uploadedOn) : moment(),
@@ -110,10 +110,7 @@ export default function ManualVideo({id}: {id: string}) {
                 {/* <FormInput inputID="id" inputLabel="Video ID" {...form.getInputProps('id')} inputDescription="DESCRIPTION" icon={<HugeIcon name="grid"  variant="twotone"/>} isRequired /> */}
                 <FormInput inputID="fileName" inputLabel="Original File Name" {...form.getInputProps('fileName')} inputDescription="Please provide the original file name." icon={<HugeIcon name="text-font"  variant="twotone"/>} isRequired />
                 
-                <Stack my="2rem" style={{boxShadow: "var(--mantine-shadow-bsBigBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem" align='center'>
-                    <Text ta="center" fw="700">First make sure to copy the original file name from the S3 bucket; then copy the following id and rename the file on the S3 bucket. Keep the current extension.</Text>
-                    <ClipboardButton copyValue={fileID} copyText={fileID} copiedText="Copied File ID" />
-                </Stack>
+
                 {/* <FormInput inputID="fileID" inputLabel="File ID" {...form.getInputProps('fileID')} inputDescription="DESCRIPTION" icon={<HugeIcon name="grid"  variant="twotone"/>} isRequired /> */}
                 
                 <SimpleGrid cols={2} my="2rem">
@@ -124,6 +121,10 @@ export default function ManualVideo({id}: {id: string}) {
                     <FormDatePicker dateLabel="Taken On" datePlaceholder="Taken On" {...form.getInputProps('capturedOn')} />
                     <FormDatePicker dateLabel="Uploaded On" datePlaceholder="Uploaded On" {...form.getInputProps('uploadedOn')} />
                 </SimpleGrid>
+                <Stack my="2rem" style={{boxShadow: "var(--mantine-shadow-bsBigBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem" align='center'>
+                    <Text ta="center" fw="700">First make sure to copy the original file name from the S3 bucket; then copy the following id and rename the file on the S3 bucket. Keep the current extension.</Text>
+                    <ClipboardButton copyValue={fileID} copyText={fileID} copiedText="Copied File ID" />
+                </Stack>
                 {/* <FormSelect inputID="ID" inputLabel="LABEL" inputData={OPTIONS} {...form.getInputProps(`ID`)} onChange={SET} value={VALUES} clearable searchable />
                 <FormInputPhone inputID="id" inputLabel="LABEL" {...form.getInputProps('ID')} inputDescription="LABEL'." icon={<ICON variant="twotone" />} /> */}
                 <FormSubmitButton icon={<HugeIcon name="sent"  variant="duotone"/>}>Manually Add Video</FormSubmitButton>

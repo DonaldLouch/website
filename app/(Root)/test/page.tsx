@@ -1,8 +1,16 @@
 'use client'
 
 import HugeIcon from "@/app/(Components)/HugeIcon"
-import { Box } from "@mantine/core"
+import { getVideoData } from "@/app/actions/video"
+import { Box, Text } from "@mantine/core"
+import { Suspense, useEffect, useState } from "react"
+
+import Loading from "@/app/loading"
+import CodeBlock from "@/app/(Components)/(MarkdownCode)/CodeBlock"
+import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
 
 export default function page() {
-    return <Box><HugeIcon name="unavailable" size="5rem"/></Box>
+    return <Box mt="2rem">
+        <InlineCode code="console.log('Hello World')" />
+    </Box>
 }

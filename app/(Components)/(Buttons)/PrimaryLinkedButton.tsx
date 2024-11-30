@@ -11,7 +11,7 @@ interface ButtonProps {
   isFullWidth?: boolean
   colour?: string
   fontColour?: string
-  isExternal?: boolean,
+  isExternal?: boolean
   primNewIcon?: IconArray
   [key: string]: any
 }

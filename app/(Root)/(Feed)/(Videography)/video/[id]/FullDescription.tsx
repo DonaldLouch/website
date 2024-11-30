@@ -25,9 +25,9 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                 <DisplayDate source={video.uploadedOn} format="MMMM Do YYYY [at] h:mm A" />
             </Badge>
             <Badge color="primary" leftSection={<LibraryIcon />}>
-                {video.category.catName}
+                {video.category?.catName}
             </Badge>
-            {video.links.length > 0 && video.links.map((link: any) => {
+            {video.links && video.links.length > 0 && video.links.map((link: any) => {
                 // console.log("Icon", link.icon)
                 const linkIcon = link.icon === "album02" ? <Album02Icon />
                 : link.icon === "news" ? <NewsIcon />
@@ -61,7 +61,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
 
                 <Title order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Category</Title>
                 <Badge color="primary" leftSection={<LibraryIcon />}>
-                    {video.category.catName}
+                    {video.category?.catName}
                 </Badge>
                 
                 <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Tags</Title>
@@ -74,7 +74,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                     ))}
                 </Group>
                 
-                {video.links.length > 0 && (<>
+                {video.links && video.links.length > 0 && (<>
                     <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>
                     <Group align="center" gap="1rem">{video.links.length > 0 && video.links.map((link: any) => {
                         const linkIcon = link.icon === "album02" ? <Album02Icon />

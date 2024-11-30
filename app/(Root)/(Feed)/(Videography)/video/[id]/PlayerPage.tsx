@@ -310,26 +310,26 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
     }
 
     const chaptersPercentArray = new Array()
-    const chapterTimes = video.chapters.length > 0  && video?.chapters.map((chapter: any) => {
-        const timeCode = chapter.timeCode
-        let chapterPercent = 0
+    // const chapterTimes = video.chapters.length > 0  && video?.chapters.map((chapter: any) => {
+    //     const timeCode = chapter.timeCode
+    //     let chapterPercent = 0
 
-        const chapterTimeExplode = timeCode.split(':')
+    //     const chapterTimeExplode = timeCode.split(':')
        
-        if(chapterTimeExplode.length >= 3) { // Time split of an hour or more
-            const chapterHour = chapterTimeExplode[0] as number
-            const chapterMinutes = chapterTimeExplode[1] as number
-            const chapterSeconds = chapterTimeExplode[2] as number
-            const chapterMinutesCalc = Number(chapterHour * 60) + Number(chapterMinutes) as number
-            chapterPercent = Number(chapterMinutesCalc*60) + Number(chapterSeconds) as number
-        } else {
-            const chapterMinutes = chapterTimeExplode[0]*60 as number
-            const chapterSeconds = chapterTimeExplode[1] as number
-            chapterPercent = Number(chapterMinutes) + Number(chapterSeconds) as number
-        }
-        chaptersPercentArray.push({ value: chapterPercent / videoDurationNUMBER * 100})
-        // // console.log(chapterTitle, chapterPercent / videoDurationNUMBER)
-    })
+    //     if(chapterTimeExplode.length >= 3) { // Time split of an hour or more
+    //         const chapterHour = chapterTimeExplode[0] as number
+    //         const chapterMinutes = chapterTimeExplode[1] as number
+    //         const chapterSeconds = chapterTimeExplode[2] as number
+    //         const chapterMinutesCalc = Number(chapterHour * 60) + Number(chapterMinutes) as number
+    //         chapterPercent = Number(chapterMinutesCalc*60) + Number(chapterSeconds) as number
+    //     } else {
+    //         const chapterMinutes = chapterTimeExplode[0]*60 as number
+    //         const chapterSeconds = chapterTimeExplode[1] as number
+    //         chapterPercent = Number(chapterMinutes) + Number(chapterSeconds) as number
+    //     }
+    //     chaptersPercentArray.push({ value: chapterPercent / videoDurationNUMBER * 100})
+    //     // // console.log(chapterTitle, chapterPercent / videoDurationNUMBER)
+    // })
 
     function backToFeed() {
         router.push("/feed/videography")
@@ -384,7 +384,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
             buttonIcon: <Bookmark01Icon />,
             buttonID: "chapters",
             buttonFunction: chapterModal,
-            hidden: video.chapters.length > 0 ? false : true
+            hidden: video.chapters && video.chapters.length > 0 ? false : true
         },
         {
             buttonIcon: <InformationCircleIcon />,
@@ -506,7 +506,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                             <Slider 
                                 m="-0.5rem -1rem 0rem"
                                 value={videoProgress} onChange={seekVideo} aria-label="scrubber"
-                                marks={video.chapters.length > 0  ? chaptersPercentArray : [{value: 0}]}
+                                marks={video.chapters && video.chapters.length > 0  ? chaptersPercentArray : [{value: 0}]}
                                 label={null}
                             />
                             <Flex justify="space-between" align="center">
@@ -560,7 +560,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                                     <Text fz="1rem" fw="900" visibleFrom="md">{timeLeft}</Text>
                                     <Text fz="1rem" fw="300" visibleFrom="md">|</Text>
                                     <Tooltip label={video.title}>
-                                        <Title order={2} fz="1rem" fw="300" lineClamp={1} w={{base: "100%", md: "60%"}} style={{whiteSpace: "nowrap"}}>{video.title} </Title>
+                                        <Title order={2} fz="1rem" fw="300" lineClamp={1} w={{base: "100%", md: video.chapters && video.chapters.length > 0  ? "50%" : "60%"}} style={{whiteSpace: "nowrap"}}>{video.title} </Title>
                                     </Tooltip>
                                 </Group>
                             </Grid.Col>
@@ -634,7 +634,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                 >
                     <Stack w="100%" p="2rem 2rem">
                         <Title order={3} ta="center" fz="1.8rem" fw="500" c="white" mb="1rem">Chapters</Title>
-                        {video.chapters.length > 0 && video.chapters.map((chapter:any, index: number) => (<Button 
+                        {video.chapters && video.chapters.length > 0 && video.chapters.map((chapter:any, index: number) => (<Button 
                             key={index}
                             onClick={changeChapter}
                             value={chapter.timeCode} 

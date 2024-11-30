@@ -17,7 +17,7 @@ import moment from "moment";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
 import { AlertDiamondIcon, Calendar03Icon, Delete02Icon, DragDropIcon, GridIcon, Image02Icon, Link04Icon, PencilEdit01Icon, PlayIcon, PlusSignIcon } from "@hugeicons/react";
 import { randomId } from "@mantine/hooks";
-import { use, useEffect, useState } from "react";
+import { Suspense, use, useEffect, useState } from "react";
 import DisplayDate from "@/lib/DisplayDate";
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
@@ -27,25 +27,33 @@ import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import { notifications } from "@mantine/notifications";
 import { getVideoData } from "@/app/actions/video";
+import Loading from "@/app/loading";
 
 // import notificationClasses from '@/app/(Config)/Notifications.module.css'
 
-export default function VideoInformationNew({videoID, categoryData, tagsData}: any) {
+export default function VideoInformationNew({videoID, categoryData, tagsData, videoData}: any) {
 
     // categoryData
 
     // const toast = useToast()
     // const toastID = "toastID"
     const router = useRouter()
-    const [video, setVideoData] = useState() as any
-    // const [isLoading, setIsLoading] = useState(true)
+//     const [video, setVideoData] = useState() as any
+//     // const [isLoading, setIsLoading] = useState(true)
+//     useEffect(() => {
+//         if(!videoID) return
+//         const getTheVideoData = async () => {
+//             const data = await getVideoData(videoID)
+//             setVideoData(data)
+//         }
+//         getTheVideoData()
+//   },[videoID])
+
     useEffect(() => {
-        const getTheVideoData = async () => {
-            const data = await getVideoData(videoID)
-            setVideoData(data)
-        }
-        getTheVideoData()
-  },[videoID])
+        !videoData && window.location.reload()
+    }, [videoData])
+
+    const video = videoData ? videoData : new Array({id: videoID, videoFileID: {fileID: null, capturedOn: moment(), uploadedOn:moment(), filePath: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/thumbnail_LV70EIMNlto6VLuc8.jpeg"}, thumbnailFileID: {fileID: null, capturedOn: moment(), uploadedOn:moment(), filePath: "https://donaldlouch.s3.us-west-004.backblazeb2.com/thumbnail/thumbnail_LV70EIMNlto6VLuc8.jpeg"}, lastUpdatedOn: moment(), title: null, uploadedOn: moment(), videoPrivacy: "Private", isSetup: false, isPortfolio: false, isPinned: false})
 
     // async () => {
         // const { data: videoData } = await getVideoData(videoID)
@@ -181,6 +189,8 @@ export default function VideoInformationNew({videoID, categoryData, tagsData}: a
             }).eq('fileID', video.thumbnailFileID.fileID)
         }
 
+        const isSetup = values.title && values.excerpt && values.videoPrivacy && values.tags && values.videoType && values.category ? true : false
+
         const { status: supabaseStatus , error: supabaseError } = await supabase.from("Videography").update({ 
             title: values.title,
             excerpt: values.excerpt,
@@ -200,7 +210,8 @@ export default function VideoInformationNew({videoID, categoryData, tagsData}: a
             lastUpdatedOn: moment().utc(),
 
             isPortfolio: values.isPortfolio,
-            isPinned: values.isPinned
+            isPinned: values.isPinned,
+            isSetup
         }).eq('id', values.id)
         supabaseStatus && notifications.show({ 
             title: `${supabaseStatus === 204 ? `Video "${values.title}" Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
@@ -209,7 +220,7 @@ export default function VideoInformationNew({videoID, categoryData, tagsData}: a
             icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
         })
         // actions.setSubmitting(false)
-        supabaseStatus === 204 && router.refresh()
+        supabaseStatus === 204 && isSetup && router.push(`/admin/videography/upload?step=5&id=${videoID}`)
     }
 
     const initialChaptersValues = new Array({ 
@@ -464,282 +475,284 @@ export default function VideoInformationNew({videoID, categoryData, tagsData}: a
 
     return (
         <>
-            {/* <Flex
-                direction={{base: "column", sm: "row"}}
-                gap={{base: "0.5rem", sm: "2rem"}}
-                justify="flex-start"
-                align="center"
-                style={{
-                    boxShadow: "var(--mantine-shadow-bsBoldPrimary)",
-                    borderRadius: "var(--mantine-radius-md)"
-                }}
-            >
-                <AspectRatio ratio={16 / 9} w="50%">
-                <Image src={video.thumbnailFileID.filePath} />
-                </AspectRatio>
-                <Flex direction="column" align={{base: "center", lg: "flex-start"}}>
-                    <Stack gap="0">
-                        <Tooltip label={video.title}>
-                            <Title
-                                order={1}
-                                style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
-                                fz="3rem"
-                                td="underline 0.4rem var(--primary)"
-                                lineClamp={1}
-                            >
-                                {video.title}
-                            </Title>
-                        </Tooltip>
-                    </Stack>
-                    <Stack gap="1rem" my="1rem">
-                        <Group>
-                            <Badge color="var(--primary)" leftSection={<GridIcon />}>
-                                {video.id}
-                            </Badge>
-                            <Badge color="red" leftSection={<Calendar03Icon />}>
-                                <DisplayDate source={video.videoFileID.capturedOn} />
-                            </Badge>
-                            <Anchor href={video.videoFileID.filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{video.videoFileID.filePath}</Badge></Anchor> 
-                            <Anchor href={`/video/${video.id}`} target="_blank"><Badge leftSection={<PlayIcon />} color="var(--secondary)">Watch the Video</Badge></Anchor> 
-                        </Group>
-                    </Stack>
+            <Suspense fallback={<Loading />}>
+                <Flex
+                    direction={{base: "column", sm: "row"}}
+                    gap={{base: "0.5rem", sm: "2rem"}}
+                    justify="flex-start"
+                    align="center"
+                    style={{
+                        boxShadow: "var(--mantine-shadow-bsBoldPrimary)",
+                        borderRadius: "var(--mantine-radius-md)"
+                    }}
+                >
+                    <AspectRatio ratio={16 / 9} w="50%">
+                    <Image src={video.thumbnailFileID.filePath} />
+                    </AspectRatio>
+                    <Flex direction="column" align={{base: "center", lg: "flex-start"}}>
+                        <Stack gap="0">
+                            <Tooltip label={video.title}>
+                                <Title
+                                    order={1}
+                                    style={{textShadow: "3px 2px 4px rgb(193 93 79 / 20%)"}}
+                                    fz="3rem"
+                                    td="underline 0.4rem var(--primary)"
+                                    lineClamp={1}
+                                >
+                                    {video.title}
+                                </Title>
+                            </Tooltip>
+                        </Stack>
+                        <Stack gap="1rem" my="1rem">
+                            <Group>
+                                <Badge color="var(--primary)" leftSection={<GridIcon />}>
+                                    {video.id}
+                                </Badge>
+                                <Badge color="red" leftSection={<Calendar03Icon />}>
+                                    <DisplayDate source={video.videoFileID.capturedOn} />
+                                </Badge>
+                                <Anchor href={video.videoFileID.filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{video.videoFileID.filePath}</Badge></Anchor> 
+                                <Anchor href={`/video/${video.id}`} target="_blank"><Badge leftSection={<PlayIcon />} color="var(--secondary)">Watch the Video</Badge></Anchor> 
+                            </Group>
+                        </Stack>
+                    </Flex>
                 </Flex>
-            </Flex> */}
-            <Box p="2rem" component="form" onSubmit={form.onSubmit(onSubmit)}>
-                {/* {...form.getInputProps('FIELDNAME')} */}
-                <FormInput inputID="title" inputLabel="Video Title" inputType="text" inputDescription="Providing is a mandatory field so that it will help people see what they'll be watching before clicking play on the video." {...form.getInputProps('title')}  />
-                <FormTextArea inputID="excerpt" inputLabel="Excerpt" textRows={4} {...form.getInputProps('excerpt')}  />
-                <FormTextArea inputID="description" inputLabel="Description" textRows={10} helperText={`You may use markdown language on this field. For examples of Markdown please open this page from`} {...form.getInputProps('description')} />
+                <Box p="2rem" component="form" onSubmit={form.onSubmit(onSubmit)}>
+                    {/* {...form.getInputProps('FIELDNAME')} */}
+                    <FormInput inputID="title" inputLabel="Video Title" inputType="text" inputDescription="Providing is a mandatory field so that it will help people see what they'll be watching before clicking play on the video." {...form.getInputProps('title')}  />
+                    <FormTextArea inputID="excerpt" inputLabel="Excerpt" textRows={4} {...form.getInputProps('excerpt')}  />
+                    <FormTextArea inputID="description" inputLabel="Description" textRows={10} helperText={`You may use markdown language on this field. For examples of Markdown please open this page from`} {...form.getInputProps('description')} />
 
-                <SimpleGrid cols={2} spacing="2rem">
-                    <FormSelect inputID="videoType" inputData={videoTypeOptions} inputLabel="Video Type" inputHelperText="Please select the video type" {...form.getInputProps('videoType')} />
-                    <FormSelect inputID="category" inputData={categories} inputLabel="Category" inputHelperText="Please select the category" {...form.getInputProps('category')} />
-                </SimpleGrid>
+                    <SimpleGrid cols={2} spacing="2rem">
+                        <FormSelect inputID="videoType" inputData={videoTypeOptions} inputLabel="Video Type" inputHelperText="Please select the video type" {...form.getInputProps('videoType')} />
+                        <FormSelect inputID="category" inputData={categories} inputLabel="Category" inputHelperText="Please select the category" {...form.getInputProps('category')} />
+                    </SimpleGrid>
 
-                <FormTags searchValues={tagsData} {...form.getInputProps('tags')} />
+                    <FormTags searchValues={tagsData} {...form.getInputProps('tags')} />
 
-                <FormSwitch 
-                    inputID="chaptersOption" 
-                    helperText="Toggle on if there are any chapter(s) associated with this video"
-                    onClick={(e: any) => setChaptersOption(e.target.checked)} 
-                    checked={chaptersOption}
-                />
-                {chaptersOption && (
-                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                        <SectionTitle headingTitle="Chapters" />
-                        <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
-                        {chaptersFields.length > 0 ? (
-                            <Grid gutter="2rem">
-                                <Grid.Col span={0.5}></Grid.Col>
-                                <Grid.Col span={5.25}><Text ta="center">Title</Text></Grid.Col>
-                                <Grid.Col span={5.25}><Text ta="center">Time Code</Text></Grid.Col>
-                                <Grid.Col span={0.5}></Grid.Col>
-                            </Grid>
-                        ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
+                    <FormSwitch 
+                        inputID="chaptersOption" 
+                        helperText="Toggle on if there are any chapter(s) associated with this video"
+                        onClick={(e: any) => setChaptersOption(e.target.checked)} 
+                        checked={chaptersOption}
+                    />
+                    {chaptersOption && (
+                        <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                            <SectionTitle headingTitle="Chapters" />
+                            <Code p={3} color="white" ta="center" m="0">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
+                            {chaptersFields.length > 0 ? (
+                                <Grid gutter="2rem">
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                    <Grid.Col span={5.25}><Text ta="center">Title</Text></Grid.Col>
+                                    <Grid.Col span={5.25}><Text ta="center">Time Code</Text></Grid.Col>
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                </Grid>
+                            ) : <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
 
-                        <DragDropContext
-                            onDragEnd={({ destination, source }: any) =>
-                                destination?.index !== undefined && form.reorderListItem('chaptersRow', { from: source.index, to: destination.index })
-                            }
-                        >
-                            <Droppable droppableId="chaptersDnD" direction="vertical">
-                                {(provided: any) => (
-                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
-                                        {chaptersFields}
-                                        {provided.placeholder}
-                                    </Box>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
+                            <DragDropContext
+                                onDragEnd={({ destination, source }: any) =>
+                                    destination?.index !== undefined && form.reorderListItem('chaptersRow', { from: source.index, to: destination.index })
+                                }
+                            >
+                                <Droppable droppableId="chaptersDnD" direction="vertical">
+                                    {(provided: any) => (
+                                        <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                            {chaptersFields}
+                                            {provided.placeholder}
+                                        </Box>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
 
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('chaptersRow', { 
-                            key: randomId(),
-                            title: null, 
-                            timeCode: null, 
-                        })}>Add More Chapter(s)</FormButton>
-                    </Stack>
-                )}
-                
-                <FormSwitch 
-                    inputID="musicCOption" 
-                    helperText="Toggle on if there are any music credit(s) associated with this video"
-                    onClick={(e: any) => setMusicCOption(e.target.checked)} 
-                    checked={musicCOption}
-                />
-                {musicCOption && (
-                    <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                        <SectionTitle headingTitle="Music Credits" />
-                        {musicCFields.length === 0 && <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
-                        <DragDropContext
-                            onDragEnd={({ destination, source }: any) =>
-                                destination?.index !== undefined && form.reorderListItem('musicCreditsRow', { from: source.index, to: destination.index })
-                            }
-                        >
-                            <Droppable droppableId="musicCDnD" direction="vertical">
-                                {(provided: any) => (
-                                    <Box {...provided.droppableProps} ref={provided.innerRef} w="100%">
-                                        <Code p="0.5rem" color="white" ta="center">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
-                                        {musicCFields}
-                                        {provided.placeholder}
-                                    </Box>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('musicCreditsRow', { 
-                            key: randomId(),
-                            title: null,
-                            artist: null,
-                            timeCode: null,
-                            link: null,
-                            info: null
-                        })}>Add More Music Credit(s)</FormButton>
-                    </Stack>
-                )}
+                            <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('chaptersRow', { 
+                                key: randomId(),
+                                title: null, 
+                                timeCode: null, 
+                            })}>Add More Chapter(s)</FormButton>
+                        </Stack>
+                    )}
+                    
+                    <FormSwitch 
+                        inputID="musicCOption" 
+                        helperText="Toggle on if there are any music credit(s) associated with this video"
+                        onClick={(e: any) => setMusicCOption(e.target.checked)} 
+                        checked={musicCOption}
+                    />
+                    {musicCOption && (
+                        <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                            <SectionTitle headingTitle="Music Credits" />
+                            {musicCFields.length === 0 && <Text ta="center">There is Currently No Chapters For This Video! You can add one though!</Text>}
+                            <DragDropContext
+                                onDragEnd={({ destination, source }: any) =>
+                                    destination?.index !== undefined && form.reorderListItem('musicCreditsRow', { from: source.index, to: destination.index })
+                                }
+                            >
+                                <Droppable droppableId="musicCDnD" direction="vertical">
+                                    {(provided: any) => (
+                                        <Box {...provided.droppableProps} ref={provided.innerRef} w="100%">
+                                            <Code p="0.5rem" color="white" ta="center">For proper formatting and to make sure chapters work properly please make sure to add a proper time format of 0:00 or 00:00. For example 0:20 or 01:30.</Code>
+                                            {musicCFields}
+                                            {provided.placeholder}
+                                        </Box>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
+                            <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('musicCreditsRow', { 
+                                key: randomId(),
+                                title: null,
+                                artist: null,
+                                timeCode: null,
+                                link: null,
+                                info: null
+                            })}>Add More Music Credit(s)</FormButton>
+                        </Stack>
+                    )}
 
-                <FormSwitch 
-                    inputID="videoCOption" 
-                    helperText="Toggle on if there are any credit(s) associated with this video"
-                    onClick={(e: any) => setVideoCOption(e.target.checked)} 
-                    checked={videoCOption}
-                />
-                {videoCOption && (
-                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                        <SectionTitle headingTitle="Video Credits" />
-                        {videoCreditsFields.length > 0 ? (
-                            <Grid gutter="2rem">
-                                <Grid.Col span={0.5}></Grid.Col>
-                                <Grid.Col span={5.25}><Text ta="center">Title</Text></Grid.Col>
-                                <Grid.Col span={5.25}><Text ta="center">Value</Text></Grid.Col>
-                                <Grid.Col span={0.5}></Grid.Col>
-                            </Grid>
-                        ) : <Text ta="center">There is Currently No Credits For This Video! You can add one though!</Text>}
+                    <FormSwitch 
+                        inputID="videoCOption" 
+                        helperText="Toggle on if there are any credit(s) associated with this video"
+                        onClick={(e: any) => setVideoCOption(e.target.checked)} 
+                        checked={videoCOption}
+                    />
+                    {videoCOption && (
+                        <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                            <SectionTitle headingTitle="Video Credits" />
+                            {videoCreditsFields.length > 0 ? (
+                                <Grid gutter="2rem">
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                    <Grid.Col span={5.25}><Text ta="center">Title</Text></Grid.Col>
+                                    <Grid.Col span={5.25}><Text ta="center">Value</Text></Grid.Col>
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                </Grid>
+                            ) : <Text ta="center">There is Currently No Credits For This Video! You can add one though!</Text>}
 
-                        <DragDropContext
-                            onDragEnd={({ destination, source }: any) =>
-                                destination?.index !== undefined && form.reorderListItem('videoCreditsRow', { from: source.index, to: destination.index })
-                            }
-                        >
-                            <Droppable droppableId="videoCreditsDnD" direction="vertical">
-                                {(provided: any) => (
-                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
-                                        {videoCreditsFields}
-                                        {provided.placeholder}
-                                    </Box>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
+                            <DragDropContext
+                                onDragEnd={({ destination, source }: any) =>
+                                    destination?.index !== undefined && form.reorderListItem('videoCreditsRow', { from: source.index, to: destination.index })
+                                }
+                            >
+                                <Droppable droppableId="videoCreditsDnD" direction="vertical">
+                                    {(provided: any) => (
+                                        <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                            {videoCreditsFields}
+                                            {provided.placeholder}
+                                        </Box>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
 
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('videoCreditsRow', { 
-                            key: randomId(),
-                            title: null, 
-                            value: null, 
-                        })}>Add More Video Credit(s)</FormButton>
-                    </Stack>
-                )}
-                
-                <FormSwitch 
-                    inputID="starringCOption" 
-                    helperText="Toggle on if there are any people that are starring in this video"
-                    onClick={(e: any) => setStarringCOption(e.target.checked)} 
-                    checked={starringCOption}
-                />
-                {starringCOption && (
-                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                        <SectionTitle headingTitle="Starring Credits" />
-                        {starringCreditsFields.length > 0 ? (
-                            <Grid gutter="2rem">
-                                <Grid.Col span={0.5}></Grid.Col>
-                                <Grid.Col span={3.5}><Text ta="center">Time Code</Text></Grid.Col>
-                                <Grid.Col span={3.5}><Text ta="center">Display Name</Text></Grid.Col>
-                                <Grid.Col span={3.5}><Text ta="center">Link</Text></Grid.Col>
-                                <Grid.Col span={0.5}></Grid.Col>
-                            </Grid>
-                        ) : <Text ta="center">There is Currently No Starring Credits For This Video! You can add one though!</Text>}
+                            <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('videoCreditsRow', { 
+                                key: randomId(),
+                                title: null, 
+                                value: null, 
+                            })}>Add More Video Credit(s)</FormButton>
+                        </Stack>
+                    )}
+                    
+                    <FormSwitch 
+                        inputID="starringCOption" 
+                        helperText="Toggle on if there are any people that are starring in this video"
+                        onClick={(e: any) => setStarringCOption(e.target.checked)} 
+                        checked={starringCOption}
+                    />
+                    {starringCOption && (
+                        <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                            <SectionTitle headingTitle="Starring Credits" />
+                            {starringCreditsFields.length > 0 ? (
+                                <Grid gutter="2rem">
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                    <Grid.Col span={3.5}><Text ta="center">Time Code</Text></Grid.Col>
+                                    <Grid.Col span={3.5}><Text ta="center">Display Name</Text></Grid.Col>
+                                    <Grid.Col span={3.5}><Text ta="center">Link</Text></Grid.Col>
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                </Grid>
+                            ) : <Text ta="center">There is Currently No Starring Credits For This Video! You can add one though!</Text>}
 
-                        <DragDropContext
-                            onDragEnd={({ destination, source }: any) =>
-                                destination?.index !== undefined && form.reorderListItem('starringCreditsRow', { from: source.index, to: destination.index })
-                            }
-                        >
-                            <Droppable droppableId="starringCreditsDnD" direction="vertical">
-                                {(provided: any) => (
-                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
-                                        {starringCreditsFields}
-                                        {provided.placeholder}
-                                    </Box>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
+                            <DragDropContext
+                                onDragEnd={({ destination, source }: any) =>
+                                    destination?.index !== undefined && form.reorderListItem('starringCreditsRow', { from: source.index, to: destination.index })
+                                }
+                            >
+                                <Droppable droppableId="starringCreditsDnD" direction="vertical">
+                                    {(provided: any) => (
+                                        <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                            {starringCreditsFields}
+                                            {provided.placeholder}
+                                        </Box>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
 
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('starringCreditsRow', { 
-                            key: randomId(),
-                            timeCode: null, 
-                            displayName: null, 
-                            link: null, 
-                        })}>Add More Starring Credit(s)</FormButton>
-                    </Stack>
-                )}
-                
-                <FormSwitch 
-                    inputID="linkOption" 
-                    helperText="Toggle on if there are any link(s) associated with this video"
-                    onClick={(e: any) => setLinkOption(e.target.checked)} 
-                    checked={linkOption}
-                />
-                {linkOption && (
-                      <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
-                        <SectionTitle headingTitle="Links" />
-                        {linkFields.length > 0 ? (
-                            <Grid gutter="2rem">
-                                <Grid.Col span={0.5}></Grid.Col>
-                                <Grid.Col span={2.1}><Text ta="center">Time Code</Text></Grid.Col>
-                                <Grid.Col span={2.1}><Text ta="center">Link Type</Text></Grid.Col>
-                                <Grid.Col span={2.1}><Text ta="center">Icon</Text></Grid.Col>
-                                <Grid.Col span={2.1}><Text ta="center">Link</Text></Grid.Col>
-                                <Grid.Col span={2.1}><Text ta="center">Name</Text></Grid.Col>
-                                <Grid.Col span={0.5}></Grid.Col>
-                            </Grid>
-                        ) : <Text ta="center">There is Currently No Links For This Video! You can add one though!</Text>}
+                            <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('starringCreditsRow', { 
+                                key: randomId(),
+                                timeCode: null, 
+                                displayName: null, 
+                                link: null, 
+                            })}>Add More Starring Credit(s)</FormButton>
+                        </Stack>
+                    )}
+                    
+                    <FormSwitch 
+                        inputID="linkOption" 
+                        helperText="Toggle on if there are any link(s) associated with this video"
+                        onClick={(e: any) => setLinkOption(e.target.checked)} 
+                        checked={linkOption}
+                    />
+                    {linkOption && (
+                        <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
+                            <SectionTitle headingTitle="Links" />
+                            {linkFields.length > 0 ? (
+                                <Grid gutter="2rem">
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                    <Grid.Col span={2.1}><Text ta="center">Time Code</Text></Grid.Col>
+                                    <Grid.Col span={2.1}><Text ta="center">Link Type</Text></Grid.Col>
+                                    <Grid.Col span={2.1}><Text ta="center">Icon</Text></Grid.Col>
+                                    <Grid.Col span={2.1}><Text ta="center">Link</Text></Grid.Col>
+                                    <Grid.Col span={2.1}><Text ta="center">Name</Text></Grid.Col>
+                                    <Grid.Col span={0.5}></Grid.Col>
+                                </Grid>
+                            ) : <Text ta="center">There is Currently No Links For This Video! You can add one though!</Text>}
 
-                        <DragDropContext
-                            onDragEnd={({ destination, source }: any) =>
-                                destination?.index !== undefined && form.reorderListItem('linksRow', { from: source.index, to: destination.index })
-                            }
-                        >
-                            <Droppable droppableId="linksDnD" direction="vertical">
-                                {(provided: any) => (
-                                    <Box {...provided.droppableProps} ref={provided.innerRef}>
-                                        {linkFields}
-                                        {provided.placeholder}
-                                    </Box>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
+                            <DragDropContext
+                                onDragEnd={({ destination, source }: any) =>
+                                    destination?.index !== undefined && form.reorderListItem('linksRow', { from: source.index, to: destination.index })
+                                }
+                            >
+                                <Droppable droppableId="linksDnD" direction="vertical">
+                                    {(provided: any) => (
+                                        <Box {...provided.droppableProps} ref={provided.innerRef}>
+                                            {linkFields}
+                                            {provided.placeholder}
+                                        </Box>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
 
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('linksRow', { 
-                            key: randomId(),
-                            linkType: "exLink", 
-                            icon: null, 
-                            link: null, 
-                            name: null
-                        })}>Add More Link(s)</FormButton>
-                    </Stack>
-                )}
-                
-                <SimpleGrid cols={2} my="1rem">
-                    <FormDatePicker dateLabel="Captured On" datePlaceholder="When was this captured?" {...form.getInputProps('capturedOn')}/>
-                    <FormDatePicker dateLabel="Uploaded On" datePlaceholder="When was this uploaded?" {...form.getInputProps('uploadedOn')}/>
-                </SimpleGrid>
-                <FormSelect inputID="videoPrivacy" inputLabel="Video Privacy" inputData={privacyOptions} {...form.getInputProps(`videoPrivacy`)} />
-                <FormSwitch 
-                    inputID="isPinned" 
-                    helperText="Toggle on if you want this post to be pinned"
-                    {...form.getInputProps('isPinned')}
-                    onClick={(e: any) => setIsPinnedOption(e.target.checked)} 
-                    checked={isPinnedOption}
-                />
-                <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Video</FormSubmitButton>
-            </Box>
+                            <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('linksRow', { 
+                                key: randomId(),
+                                linkType: "exLink", 
+                                icon: null, 
+                                link: null, 
+                                name: null
+                            })}>Add More Link(s)</FormButton>
+                        </Stack>
+                    )}
+                    
+                    <SimpleGrid cols={2} my="1rem">
+                        <FormDatePicker dateLabel="Captured On" datePlaceholder="When was this captured?" {...form.getInputProps('capturedOn')}/>
+                        <FormDatePicker dateLabel="Uploaded On" datePlaceholder="When was this uploaded?" {...form.getInputProps('uploadedOn')}/>
+                    </SimpleGrid>
+                    <FormSelect inputID="videoPrivacy" inputLabel="Video Privacy" inputData={privacyOptions} {...form.getInputProps(`videoPrivacy`)} />
+                    <FormSwitch 
+                        inputID="isPinned" 
+                        helperText="Toggle on if you want this post to be pinned"
+                        {...form.getInputProps('isPinned')}
+                        onClick={(e: any) => setIsPinnedOption(e.target.checked)} 
+                        checked={isPinnedOption}
+                    />
+                    <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Video</FormSubmitButton>
+                </Box>
+            </Suspense>
         </>
     )
 }

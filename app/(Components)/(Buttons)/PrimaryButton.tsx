@@ -8,11 +8,12 @@ interface ButtonProps {
   children: React.ReactNode
   isFullWidth?: boolean
   colour?: string
+  fontColour?: string
   action?: any
   primNewIcon?: IconArray
 }
 
-export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, action, primNewIcon, ...rest}: any) {
+export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, fontColour, action, primNewIcon, ...rest}: any) {
   // const { isHidden, icon, isFullWidth, children, colour, action} = props
 
   return <Button
@@ -23,6 +24,7 @@ export default function PrimaryButton({isHidden, icon, isFullWidth, children, co
     variant="filled" 
     size="lg"
     classNames={{root: classes.primaryButton}}
+    c={fontColour ? fontColour : "white"}
     onClick={action ? action : null}
     {...rest}
   >

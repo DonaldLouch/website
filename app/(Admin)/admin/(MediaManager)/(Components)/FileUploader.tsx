@@ -1,7 +1,7 @@
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import supabase from "@/lib/supabase";
-import { Stack, Input, Button, Box, Text, Group, rem, Title, Progress, Grid, GridCol } from "@mantine/core";
+import { Stack, Input, Button, Box, Text, Group, rem, Title, Progress, Grid, GridCol, Loader } from "@mantine/core";
 ;
 import moment from "moment";
 import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -25,6 +25,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
 
     const [isUploading, setUploading] = useState(false)
     const [uploadProgress, setUploadProgress] = useState(0)
+    const [isUploaded, setIsUploaded] = useState(false)
 
 
     // let upload = null
@@ -80,6 +81,7 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
           )
             .then((upload) => {
               setUploading(false)
+              setIsUploaded(true)
               const uploadURL = upload.data.uploadURL
               uploadURL.forEach((u: any) => {
                 u.fileSetup && notifications.show({ 
@@ -97,10 +99,9 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                   icon: <AlertDiamondIcon variant="twotone" />
                 })
               })
-
               mediaType != "videography" && mediaType != "thumbnail" && mediaType != "thumbnail/linkSet" && router.refresh()
-              uploadURL.fileDatabase === 201 && mediaType === "videography" && router.push(`/admin/videography/upload?step=3`); router.refresh()
-              uploadURL.fileDatabase === 201 && mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4`); router.refresh()
+              mediaType === "videography" && router.push(`/admin/videography/upload?step=3&id=${id}`)
+              mediaType === "thumbnail" && router.push(`/admin/videography/upload?step=4&id=${id}`)
             })
             .catch((error) => {
               if (error.response) {
@@ -156,7 +157,12 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
           <Progress radius="sm" size="2rem" value={uploadProgress} color="primary" animated={isUploading} bg="none"  />
         </GridCol>
         <GridCol span={2}>
-          <Text m="0" p="0" ta="right">{uploadProgress}% Uploaded!</Text>
+          <Text m="0" p="0" ta="right">
+              {
+                !isUploaded && isUploading ? uploadProgress < 100 ? `${uploadProgress}% Uploaded!` : "Processing Upload..."
+                : isUploaded ? "Upload Complete!" : null
+              }
+            </Text>
         </GridCol>
       </Grid>
   </SectionCard>
