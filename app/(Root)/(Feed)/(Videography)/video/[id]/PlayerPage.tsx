@@ -519,7 +519,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                                         <Text fz="1rem" fw="900" hidden={isVertical || mobile} visibleFrom="sm">{videoDuration}</Text>
                                 </Group>
                                 <Group wrap="nowrap" justify="flex-end">
-                                    {isEmbed &&  <Anchor href={`/video/${video.id}`} w={{base: "5%", sm: "35%"}} target="_blank"><Image src={mobile ? "/logoWhite.svg" : "/titleLogo/titleLogoWhiteColoured.svg"} alt="Link to video" /></Anchor>}
+                                    {isEmbed &&  <Anchor href={`/video/${video.id}`} w={{base: "5%", sm: "35%"}} target="_blank"><Image src={mobile ? "/logoWhite.svg" : "/titleLogo/titleLogoHoliday.svg"} alt="Link to video" /></Anchor>}
                                     {rightButtons.map((button: any) => (
                                         !button.hidden && <ActionIcon onClick={button.buttonFunction} id={button.buttonID} key={button.buttonID} bg="none" style={{boxShadow: "none"}} size={mobile ? "1.5rem" : "2.5rem"}>{button.buttonIcon}</ActionIcon>
                                     ))}

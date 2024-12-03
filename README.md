@@ -1,7 +1,7 @@
 ![Alt](https://repobeats.axiom.co/api/embed/d23df52609fbb19c9a58e283a9af3d4a7eba0b05.svg "Repobeats analytics image")
 
 ![Donald Louch Title Logo v.5](https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LZQ70AYRu6uKWL9nh.png)
-Hi, my name is Donald and I’m a twenty-something-year-old Canadian web developer and digital content creator. I was born and raised in Victoria, BC and now reside in Nanaimo, BC.
+I’m a Canadian digital producer specializing in web development, photography, videography, and more. I hold a Bachelor of Arts in Digital Media Studies and two Graduate Certificates in Digital Communication, and Digital Productions Writing and Design.
 
 ## Next(Addition)
 
@@ -31,6 +31,7 @@ Even though I'm still optimizing and constructing features, I feel as, my websit
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
 ## Change Log
+- [Version 30.0.0: As I enter a new decade in life, I have changed my bio, and some other improvements to my website!](https://github.com/DonaldLouch/website/releases/tag/version30000)
 - [Version 29.11.02: Bug fixes, general improvements, and a updated loading screen and loading component](https://github.com/DonaldLouch/website/releases/tag/version291102)
 - [Version 29.09.23: I am pleased to launch the initial phase of "Tickets"](https://github.com/DonaldLouch/website/releases/tag/version290923)
 - [Version 29.08.11: Initial introduction of the Donald Louch Client Portal and the initial construction of Projects](https://github.com/DonaldLouch/website/releases/tag/version290811)

@@ -261,7 +261,7 @@ export default function BrandingPage() {
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="titleLogo" mb="2rem">Title Logo</Title>
                             <Image
-                                src="/titleLogo/titleLogoWhiteColoured.svg"
+                                src="/titleLogo/titleLogoHoliday.svg"
                                 alt="Donald Louch"
                                 w="100%"
                                 height="auto"

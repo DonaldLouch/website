@@ -12,6 +12,7 @@ import Pagination from "../../../(Config)/(Layout)/(Pagination)";
 ;
 import NextLink from "next/link";
 import { Alert02Icon } from "@hugeicons/react";
+import DividerInlineText from "@/app/(Components)/DividerInlineText";
 
 export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any){
     return (
@@ -20,7 +21,9 @@ export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any
             <Box component="main">
                 <SectionCard id="posts" styleType="primaryCard"><>
                     <SectionTitle headingTitle={`Blog Posts (${postsNumber})`} />
+                    {/* <DividerInlineText text="Pinned Posts" /> */}
                     <PinnedPostsCard pinnedPosts={pinnedPosts} />
+                    <DividerInlineText text="Blog Posts" />
                     <SimpleGrid
                         cols={{base: 1, sm: 2, md: 3}}
                         spacing="2rem"

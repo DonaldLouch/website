@@ -169,3 +169,11 @@
         color: var(--secondary);
     }
 }
+
+.cardScale {
+    &:hover {
+        & .cardThumbnail {
+            transform: scale(1.03);
+        }
+    }
+}

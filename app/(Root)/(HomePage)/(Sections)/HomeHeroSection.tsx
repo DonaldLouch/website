@@ -89,7 +89,7 @@ export default function HomeHeroSection({aboutMe}: any) {
           {mobile ?
             <Box mah="50vh" style={{overflow: "scroll"}}>
               {/* 165 */}
-              <Spoiler maxHeight={95} showLabel="Read Full Bio" hideLabel="Hide" expanded={expanded} onExpandedChange={setExpanded}>
+              <Spoiler maxHeight={165} showLabel="Read Full Bio" hideLabel="Hide" expanded={expanded} onExpandedChange={setExpanded}>
               <Text>{!expanded && aboutMe.bioExcerpt}</Text>
               <Text>{!expanded && " "}</Text>
               <Text>{aboutMe.bio}</Text>

@@ -28,13 +28,12 @@ export const metadata: Metadata = {
     creator: "Donald Louch",
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
     icons:  [
-      { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/favicon/apple-touch-icon.png" },
-      { rel: "icon", sizes: "32x32", type: "image.png", url: "/favicon/favicon-32x32.png" }, 
-      { rel: "icon", sizes: "16x16", type: "image.png", url: "/favicon/favicon-16x16.png" },
-      { rel: "mask-icon", color: "#1d1929", url: "/favicon/safari-pinned-tab.svg" },
-      { rel: "shortcut icon", url: "/favicon/favicon.ico" },
+      { rel: "icon", sizes: "96x96", type: "image.png", url: "/faviconHoliday/favicon-96x96.png" },
+      { rel: "icon", type: "image/svg+xml", url: "/faviconHoliday/favicon.svg" },
+      { rel: "shortcut icon", url: "/faviconHoliday/favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/faviconHoliday/apple-touch-icon.png" },
     ],
-    // manifest: "/favicon/site.webmanifest",
+    manifest: "/faviconHoliday/site.webmanifest",
     openGraph: {
         type: "website",
         url: process.env.NEXT_PUBLIC_SITE_URL,
@@ -65,7 +64,7 @@ import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import '@mantine/notifications/styles.css';
 import '@mantine/dropzone/styles.css';
-// import '@mantine/carousel/styles.css';
+import '@mantine/carousel/styles.css';
 import "@/app/(Config)/global.css"
 
 import notificationClasses from "@/app/(Config)/Notifications.module.css"

@@ -125,7 +125,7 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
                     <Group gap="1rem" mx="auto" justify="space-between" h="auto">
                         <Anchor href="/" m="0" p="0">
                             <Image
-                                src="/titleLogo/titleLogoWhiteColoured.svg"
+                                src="/titleLogo/titleLogoHoliday.svg"
                                 alt="Donald Louch"
                                 w={{ base: "30vw", lg: "12vw" }}
                             />

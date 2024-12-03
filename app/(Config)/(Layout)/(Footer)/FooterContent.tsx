@@ -80,7 +80,7 @@ export default function FooterContent(){
       <Stack gap="0">
         <Anchor href="/">
           <Image
-            src="/titleLogo/titleLogoWhiteColoured.svg"
+            src="/titleLogo/titleLogoHoliday.svg"
             alt="Donald Louch"
           />
         </Anchor>
