@@ -15,7 +15,7 @@ export default function GeneralLayout({ children }: { children: React.ReactNode 
             <AppShell.Header>
                 <Group w="10%" px="md">
                      <Image
-                        src="/titleLogoPride.svg"
+                        src="/titleLogoWhiteColoured.svg"
                         alt="Donald Louch"
                         // width={{ base: "30vw", lg: "12vw" }}
                         />

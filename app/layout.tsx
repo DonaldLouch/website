@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     keywords: process.env.NEXT_PUBLIC_KEYWORDS,
     creator: "Donald Louch",
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
-    icons:  [
-      { rel: "icon", sizes: "96x96", type: "image.png", url: "/faviconHoliday/favicon-96x96.png" },
-      { rel: "icon", type: "image/svg+xml", url: "/faviconHoliday/favicon.svg" },
-      { rel: "shortcut icon", url: "/faviconHoliday/favicon.ico" },
-      { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/faviconHoliday/apple-touch-icon.png" },
-    ],
-    manifest: "/faviconHoliday/site.webmanifest",
+    // icons:  [
+    //   { rel: "icon", sizes: "96x96", type: "image.png", url: "/faviconHoliday/favicon-96x96.png" },
+    //   { rel: "icon", type: "image/svg+xml", url: "/faviconHoliday/favicon.svg" },
+    //   { rel: "shortcut icon", url: "/faviconHoliday/favicon.ico" },
+    //   { rel: "apple-touch-icon", sizes: "180x180", type: "image.png", url: "/faviconHoliday/apple-touch-icon.png" },
+    // ],
+    // manifest: "/faviconHoliday/site.webmanifest",
     openGraph: {
         type: "website",
         url: process.env.NEXT_PUBLIC_SITE_URL,
@@ -53,9 +53,9 @@ export const revalidate = 0
 // import '@mantine/core/styles.css';
 // import '@mantine/dropzone/styles.css'
 // crossOrigin="anonymous"
-import Script from "next/script";
+// import Script from "next/script";
 // import AppLayout from "./(Config)/(Layout)/AppLayout";
-import GeneralLayout from "./(Config)/(Layout)/GeneralLayout";
+// import GeneralLayout from "./(Config)/(Layout)/GeneralLayout";
 import { MantineTheme } from "./(Config)/MantineTheme"
 
 import { Notifications } from '@mantine/notifications';
@@ -67,7 +67,7 @@ import '@mantine/dropzone/styles.css';
 import '@mantine/carousel/styles.css';
 import "@/app/(Config)/global.css"
 
-import notificationClasses from "@/app/(Config)/Notifications.module.css"
+// import notificationClasses from "@/app/(Config)/Notifications.module.css"
 
 // nse } from "@hugeicons/react";
 // const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE!

@@ -31,7 +31,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                   <Anchor href="/" underline="never">
                     <Group align="center">
                         <Image
-                          src="/titleLogo/titleLogoHoliday.svg"
+                          src="/titleLogo/titleLogoWhiteColoured.svg"
                           alt="Donald Louch"
                           w={{base: "60vw", lg: "30vw !important"}}
                           height="auto"

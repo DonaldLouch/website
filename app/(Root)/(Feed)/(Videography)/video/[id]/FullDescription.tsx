@@ -3,7 +3,7 @@ import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
 import { useUser } from "@clerk/nextjs";
 import { Album02Icon, ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, Edit02Icon, LibraryIcon, Link04Icon, LinkSquare02Icon, NewsIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
-import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button } from "@mantine/core";
+import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button, Table } from "@mantine/core";
 
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
