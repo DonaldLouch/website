@@ -34,12 +34,12 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
     const [photoWidth, setPhotoWidth] = useState(1920)
     const [photoHeight, setPhotoHeight] = useState(1080)
 
-    const [imageQuality, setImageQuality] = useState(1)
+    const [imageQuality, setImageQuality] = useState(50)
 
     useEffect(() => {
+        !loading || error && setImageQuality(100)
         dimensions && !loading || error && setPhotoWidth(Number(dimensions?.width))
         dimensions && !loading || error && setPhotoHeight(Number(dimensions?.height))
-        !loading || error && setImageQuality(100)
     }, [imageURL, dimensions, loading, error])
     
     // className={classes.imageCardView}
