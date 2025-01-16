@@ -209,6 +209,7 @@ export default function HugeIcon({name, variant, size, color, weight, ...rest}: 
         : name === "loading-02" ? <Loading02Icon {...options}  />
         : name === "traffic-light" ? <TrafficLightIcon {...options}  />
         : name === "arrow-up-02" ? <ArrowUp02Icon {...options}  />
+        // : name === "bluesky" ? <BlueskyIcon {...options}  />
         : <FileUnknownIcon {...options}  />
 
     return icon

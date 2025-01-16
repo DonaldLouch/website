@@ -27,6 +27,7 @@ import { useForm } from "@mantine/form";
 import { useState } from "react";
 import { notifications } from "@mantine/notifications";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 interface LinkCardAdminProps {
   id: string;
@@ -40,7 +41,7 @@ interface LinkCardAdminProps {
 
 export const LinkCardAdmin = (link: LinkCardAdminProps) => {
   const [opened, { open, close }] = useDisclosure(false)
-  const [iconVariantSelected, setIconVariantSelected] = useState()
+  const [iconVariantSelected, setIconVariantSelected] = useState(link.newIcon[0] ? link.newIcon[0].iconVariant : null)
  
   const router = useRouter();
 
@@ -81,8 +82,8 @@ export const LinkCardAdmin = (link: LinkCardAdminProps) => {
   }
 
   const initialValues = {
-    iconName: link.iconName,
-    iconVariant: link.newIcon ? link.newIcon.iconVariant : null,
+    iconName: link.newIcon[0] ? link.newIcon[0].iconName : null,
+    iconVariant: link.newIcon[0] ? link.newIcon[0].iconVariant : null,
     title: link.title,
     subTitle: link.subTitle,
     linkForm: link.link,
@@ -106,20 +107,6 @@ export const LinkCardAdmin = (link: LinkCardAdminProps) => {
       {value: "bulk", label: "Bulk"},
   )
 
-  const icon = 
-    link.iconName === "mail-at-sign-02" ? <MailAtSign02Icon variant="twotone" size="3rem" /> : 
-    link.iconName === "new-twitter" ? <NewTwitterIcon variant="twotone" size="3rem" /> : 
-    link.iconName === "chatting-01" ? <Chatting01Icon variant="twotone" size="3rem" /> : 
-    link.iconName === "game-controller-01" ? <GameController01Icon variant="twotone" size="3rem" /> : 
-    link.iconName === "wifi-connect-02" ? <WifiConnected02Icon variant="twotone" size="3rem" /> : 
-    link.iconName === "spotify" ? <SpotifyIcon variant="twotone" size="3rem" /> : 
-    link.iconName === "vimeo" ? <VimeoIcon variant="twotone" size="3rem" /> : 
-    link.iconName === "youtube" ? <YoutubeIcon variant="twotone" size="3rem" /> : 
-    link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
-    link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
-    link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
-    <Home01Icon /> as any
-  
   return <>
     <Anchor
       key={link.id}
@@ -131,7 +118,7 @@ export const LinkCardAdmin = (link: LinkCardAdminProps) => {
         my="1.5rem"
         p="0.5rem 1.2rem"
       >
-        <ActionIcon bg="none" style={{boxShadow: "none", padding: "0.6rem", margin: 0}}>{icon}</ActionIcon>
+        <ActionIcon bg="none" style={{boxShadow: "none", padding: "0.6rem", margin: 0}}>{<HugeIcon name={link.newIcon[0].iconName} variant={link.newIcon[0] ? link.newIcon[0].iconVariant : undefined} />}</ActionIcon>
         <Stack gap="0">
           <Text c="white" mb="0" fz="1.5rem">{link.title}</Text>
           {link.subTitle ? <Text size="sm" c="dimmed" fw={300} mt="0">{link.subTitle}</Text> : null}
