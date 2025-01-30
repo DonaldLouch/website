@@ -14,7 +14,7 @@ import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import moment from "moment";
-import FormInput from "@/app/(Components)/(Form)/FormInput";\
+import FormInput from "@/app/(Components)/(Form)/FormInput";
 import { randomId } from "@mantine/hooks";
 import { Suspense, use, useEffect, useState } from "react";
 import DisplayDate from "@/lib/DisplayDate";
