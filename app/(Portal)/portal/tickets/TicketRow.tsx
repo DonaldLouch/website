@@ -65,12 +65,9 @@ export default function TicketRow({ ticket, orderNumber, isStaff }: { ticket: an
     </Table.Td>
 
     <Table.Td w="15%" ta="center">
-      <StatusBadge status={ticket.status} />
-      {/* <Tooltip label={projectStatus?.fullText ? projectStatus?.fullText : projectStatus?.smallText}>
-        <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <Loading03Icon variant="twotone" />}>
-            {projectStatus?.smallText}
-        </Badge>
-      </Tooltip> */}
+      {/* <Tooltip label={projectStatus?.fullText ? projectStatus?.fullText : projectStatus?.smallText}> */}
+        <StatusBadge status={ticket.status} />
+      {/* </Tooltip> */}
     </Table.Td>
     
     <Table.Td w="15%" ta="center">

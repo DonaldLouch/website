@@ -18,7 +18,6 @@ import EditTicket from "./EditTicket";
 
 import { MDXBody } from "@/app/actions/mdxBody"
 import HugeIcon from "@/app/(Components)/HugeIcon";
-import HugeIcon from "@/app/(Components)/HugeIcon";
 
 // import { Metadata } from 'next';
 

@@ -26,7 +26,15 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
         slug: 'portal/projects',
         icon: {name: "files-01"},
         isParent: false,
-        parentID: 0,
+        parentID: 1,
+        levelOfAccess: "user"
+    },
+   { 
+        name: 'Tickets',
+        slug: 'portal/tickets',
+        icon: {name: "ticket-01"},
+        isParent: false,
+        parentID: 2,
         levelOfAccess: "user"
     },
   // {

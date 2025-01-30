@@ -140,9 +140,9 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
                     </Group>
                 </AppShell.Header>
                 <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--darkPurpleRGBA)", backdropFilter: "blur(20px)", overflow: "scroll"}}}>
-                      {PortalNavigationItems.map((link) => (
+                      {PortalNavigationItems.map((link) => (<>
                         <PortalNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
-                    ))}
+                    </>))}
                     <SignOutButton>
                       <PrimaryButton icon={<HugeIcon name="logout-01" />} color="red">Sign out</PrimaryButton>
                     </SignOutButton>

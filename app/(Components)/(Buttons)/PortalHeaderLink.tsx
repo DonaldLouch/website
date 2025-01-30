@@ -1,6 +1,8 @@
 import { ActionIcon, NavLink } from '@mantine/core'
 
 import classes from './Buttons.module.css'
+
+import HugeIcon from '../HugeIcon'
 // import { Bs123, BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge, BsSend } from 'react-icons/bs'
 
 interface propTypes {
@@ -31,6 +33,6 @@ export default function PortalHeaderLink( props: propTypes ) {
         label={linkName}
         my="0.5rem"
         p="1rem"
-        leftSection={icon}
+        leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} />}
     >{children}</NavLink>
 }
