@@ -24,7 +24,6 @@ import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import { notifications } from "@mantine/notifications";
 import HugeIcon from "@/app/(Components)/HugeIcon";
-import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function NewPostContent({tagsData}: any) {
   const router = useRouter()

@@ -28,7 +28,6 @@ import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import { notifications } from "@mantine/notifications";
 import HugeIcon from "@/app/(Components)/HugeIcon";
-import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function EditPostContent({post, tagsData}: any) {
   // const toast = useToast()
