@@ -117,7 +117,7 @@ export default function NewAlert() {
     )
 
     return <>
-        <PrimaryButton icon={<HugeIcon name="add" />} onClick={open}>New Alert</PrimaryButton>
+        <PrimaryButton icon={<HugeIcon name="add-01" />} onClick={open}>New Alert</PrimaryButton>
         <Modal opened={opened} onClose={close} title="New Alert" yOffset="2rem" xOffset="2rem" size="100%"  
             overlayProps={{
                 backgroundOpacity: 0.5, 
