@@ -9,7 +9,6 @@ import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
 import { useUser } from "@clerk/nextjs"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
-import { ArrowExpand01Icon, ArrowExpandIcon, ArrowHorizontalIcon, ArrowLeft01Icon, ArrowLeft02Icon, ArrowShrink01Icon, ArrowShrinkIcon, ArrowUpRight01Icon, ArrowUpRight02Icon, Bookmark01Icon, CameraVideoIcon, Copy01Icon, Database01Icon, Database02Icon, GoBackward10SecIcon, GoForward10SecIcon, Home01Icon, InformationCircleIcon, LibraryIcon, LiverIcon, MaximizeScreenIcon, MinimizeScreenIcon, PauseIcon, PlayIcon, Share05Icon, Tag01Icon, TagsIcon, UserMultiple02Icon, VolumeMute01Icon, VolumeOffIcon } from "@hugeicons/react"
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording"
@@ -337,18 +336,18 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
 
     const leftButtons = [
         {
-            buttonIcon: <GoBackward10SecIcon />,
+            buttonIcon: <HugeIcon name="go-backward-10-sec" />,
             buttonID: "skipBackButton",
             buttonFunction: skipBack,
         },
         
         {
-            buttonIcon: playing == false ? <PlayIcon /> : <PauseIcon />,
+            buttonIcon: playing == false ? <HugeIcon name="play" /> : <HugeIcon name="pause" />,
             buttonID: "playButton",
             buttonFunction: playClick
         },
         {
-            buttonIcon: <GoForward10SecIcon />,
+            buttonIcon: <HugeIcon name="go-forward-10-sec" />,
             buttonID: "skipAheadButton",
             buttonFunction: skipAhead
         },
@@ -356,7 +355,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
     
     const rightButtons = [
         {
-            buttonIcon: muted == true ? <VolumeOffIcon /> : <VolumeMute01Icon />,
+            buttonIcon: muted == true ? <HugeIcon name="volume-off" /> : <HugeIcon name="volume-mute-01" />,
             buttonID: "muteButton",
             buttonFunction: videoMute
         },
@@ -367,13 +366,13 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
         //     hidden: mobile ? true : false,
         // },
         {
-            buttonIcon: isFullscreenMode == false ? <ArrowExpand01Icon /> : <ArrowShrink01Icon />,
+            buttonIcon: isFullscreenMode == false ? <HugeIcon name="arrow-expand-01" /> : <HugeIcon name="arrow-shrink-01" />,
             buttonID: "fullscreenButton",
             buttonFunction: isFullscreenMode == false ? fullscreenMode : exitFullscreenMode,
             hidden: isVertical
         },
         {
-            buttonIcon: <Share05Icon />,
+            buttonIcon: <HugeIcon name="share-05" />,
             buttonID: "shareButton",
             buttonFunction: shareModal
         }
@@ -381,19 +380,19 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
     
     const topButtons = [
         {
-            buttonIcon: <Bookmark01Icon />,
+            buttonIcon: <HugeIcon name="bookmark-01" />,
             buttonID: "chapters",
             buttonFunction: chapterModal,
             hidden: video.chapters && video.chapters.length > 0 ? false : true
         },
         {
-            buttonIcon: <InformationCircleIcon />,
+            buttonIcon: <HugeIcon name="information-circle" />,
             buttonID: "description",
             buttonFunction: infoModal,
             // hidden: playerType === "page" ? true : false
         },
         {
-            buttonIcon: <Home01Icon />,
+            buttonIcon: <HugeIcon name="home-01" />,
             buttonID: "backToFeed",
             buttonFunction: backToFeed,
             hidden: !isVertical
@@ -417,7 +416,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                 </Group>
                 <Text>🚨 This video is listed as a private video and is not viewable
                   to the public. 🚨</Text>
-                  <PrimaryLinkedButton link="/feed/videography" icon={<ArrowLeft02Icon />}>Go Back To The Video Feed</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/feed/videography" icon={<HugeIcon name="arrow-left-02" />}>Go Back To The Video Feed</PrimaryLinkedButton>
                 </Stack>
             </Paper> : <>
                 <Stack
@@ -597,7 +596,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                         <CopyButton value={`${process.env.NEXT_PUBLIC_SITE_URL}/video/${video.id}`}>
                             {({ copied, copy }) => (
                                 <Group style={{boxShadow: copied ? "var(--mantine-shadow-bsBoldPrimary)" : "var(--mantine-shadow-bsBoldRed)", borderRadius: "var(--mantine-radius-md)"}} p="0.5rem 2rem" onClick={copy}>
-                                    {!copied && <Copy01Icon />}
+                                    {!copied && <HugeIcon name="copy-01" />}
                                     <Text>{copied ? `Link Copied: ${process.env.NEXT_PUBLIC_SITE_URL}/video/${video.id}` :`${process.env.NEXT_PUBLIC_SITE_URL}/video/${video.id}`} </Text>
                                 </Group>
                             )}

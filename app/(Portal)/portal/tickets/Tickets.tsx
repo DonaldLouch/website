@@ -6,9 +6,9 @@ import { useDisclosure } from '@mantine/hooks'
 import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
 import RequestNewProject from './CreateNewTicket'
 import ProjectRow from './TicketRow'
-import { InformationCircleIcon } from '@hugeicons/react'
 import TicketRow from './TicketRow'
 import CreateNewTicket from './CreateNewTicket'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 // import GetProjects from './GetProjects'
 // import { RequestNewProject } from './RequestNewProject'
 // import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
@@ -56,7 +56,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
                     <Tabs.Tab value="all">All</Tabs.Tab>
                 </Tabs.List>
                 <Tabs.Panel value="personal">
-                    {clientTickets.length === 0 ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets that have been requested!</Text></Alert> :
+                    {clientTickets.length === 0 ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets that have been requested!</Text></Alert> :
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {clientTickets.map((ticket: any, index: number) => (
@@ -66,7 +66,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
                     </Table>}
                 </Tabs.Panel>
                 <Tabs.Panel value="all">
-                    {adminTickets.length === 0  || !adminTickets ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets from any clients!</Text></Alert> :
+                    {adminTickets.length === 0  || !adminTickets ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets from any clients!</Text></Alert> :
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {adminTickets.map((ticket: any, index: number) => (
@@ -76,7 +76,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
                     </Table>}
                 </Tabs.Panel>
             </Tabs> 
-            : clientTickets.length === 0 ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets that have been requested!</Text></Alert> : <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}} my="2rem">
+            : clientTickets.length === 0 ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets that have been requested!</Text></Alert> : <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}} my="2rem">
                 <Table.Tbody>
                     {clientTickets.map((ticket: any, index: number) => (
                         <TicketRow key={index} ticket={ticket} orderNumber={index} />

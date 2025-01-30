@@ -4,10 +4,10 @@ import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker"
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect"
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 import { ProjectStatus } from "@/lib/Project/projectStatus"
 import { TaskPriority } from "@/lib/Project/taskPriority"
 import supabase from "@/lib/supabase"
-import { AlertDiamondIcon, PencilEdit01Icon, TaskDone01Icon, TaskEdit01Icon } from "@hugeicons/react"
 import { Box, SimpleGrid, Title } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
@@ -57,7 +57,7 @@ export default function TaskForm({task, isStaff}: any) {
                     title: `${supabaseStatus === 204 ? `"${task.title}" Not Completed 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
                     message: `${supabaseStatus === 204 ? `You have successfully marked the task as uncompleted!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
                     color: supabaseStatus === 204 ? "black" : "red-6",
-                    icon: supabaseStatus === 204 ? <TaskEdit01Icon /> : <AlertDiamondIcon />
+                    icon: supabaseStatus === 204 ? <HugeIcon name="task-edit-01" /> : <HugeIcon name="alert-diamond" />
                 })
                 supabaseStatus === 204 && router.refresh()
             })()
@@ -76,7 +76,7 @@ export default function TaskForm({task, isStaff}: any) {
                     title: `${supabaseStatus === 204 ? `"${task.title}" Status Updated 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
                     message: `${supabaseStatus === 204 ? `You have successfully updated the task!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
                     color: supabaseStatus === 204 ? "black" : "red-6",
-                    icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+                    icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
                 })
                 supabaseStatus === 204 && router.refresh()
             })()

@@ -7,7 +7,7 @@ import React, { Fragment } from "react"
 
 import DisplayDate from '@/lib/DisplayDate'
 import { Badge, Text, Group, Paper, Title, Box, useMantineTheme, rem, AspectRatio, Center, Stack, Tooltip, Flex, Anchor, Button, Card, Spoiler } from '@mantine/core'
-import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
+// import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
 import PrimaryLinkedButton from '../(Buttons)/PrimaryLinkedButton'
 import { randomId, useMediaQuery } from '@mantine/hooks'
 import { SectionTitle } from '../SectionTitle'
@@ -46,7 +46,7 @@ function CardPost (post: any) {
       <Spoiler hideLabel="Hide all Categories" showLabel="Show all Categories" maxHeight={70}>
       <Group pos="relative" top="0%" right="1%" style={{ zIndex: 1 }}>
           {post.category.map((category: any) => (
-              <Badge color="blue" leftSection={<Folder01Icon />} key={category}>
+              <Badge color="blue" leftSection={<HugeIcon name="folder-01" />} key={category}>
                   {category}
               </Badge>
           ))}
@@ -69,7 +69,7 @@ function CardPost (post: any) {
                 {post.headingText}
             </Text>
             <Group justify="space-between">
-              <Badge color="red" leftSection={<Calendar03Icon />}>
+              <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                   <DisplayDate source={post.postedOn} />
               </Badge>
               <Badge color="white" leftSection={<HugeIcon name="pin" variant="duotone" />}>

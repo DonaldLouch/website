@@ -2,8 +2,8 @@
 
 import FormInput from "@/app/(Components)/(Form)/FormInput"
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 import supabase from "@/lib/supabase"
-import { AlertDiamondIcon, PencilEdit01Icon, TaskAdd01Icon, TextFontIcon } from "@hugeicons/react"
 import { Box, Grid } from "@mantine/core"
 import { useForm, yupResolver } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
@@ -35,7 +35,7 @@ export default function AddSubTask({task, isStaff}: any) {
             title: `${supabaseStatus === 204 ? `"Added Sub Task 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message: `${supabaseStatus === 204 ? `You have successfully added the new sub task!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red-6",
-            icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 204 ? <HugeIcon name="task-add-01" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 204 && router.refresh()
     }
@@ -54,10 +54,10 @@ export default function AddSubTask({task, isStaff}: any) {
         <Box component="form" onSubmit={form.onSubmit(onSubmit)} m="-1rem 2rem 2rem">
             <Grid w="80%" justify="center" align="center">
                 <Grid.Col span={10} pl="2rem">
-                    <FormInput inputID="title" {...form.getInputProps('title')} icon={<TextFontIcon variant="twotone" />} w="100%" />
+                    <FormInput inputID="title" {...form.getInputProps('title')} icon={<HugeIcon name="text-font" variant="twotone" />} inputDescription="Please provide the title of the sub task." isRequired />
                 </Grid.Col>
                 <Grid.Col span={2}>
-                    <FormSubmitButton icon={<TaskAdd01Icon />} isNotFull={true}>Add Sub Task</FormSubmitButton>
+                    <FormSubmitButton icon={<HugeIcon name="task-add-01" />}>Add Sub Task</FormSubmitButton>
                 </Grid.Col>
             </Grid>
         </Box>

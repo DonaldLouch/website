@@ -5,7 +5,6 @@ import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponentPortal"
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import DisplayDate from "@/lib/DisplayDate";
-import { Cone01Icon, ContactIcon, Files01Icon, Loading03Icon, MailAtSign01Icon, SmartPhone01Icon, Time02Icon, UserIcon, UserShield01Icon } from "@hugeicons/react";
 import { serialize } from "next-mdx-remote-client/serialize"
 import { MdxContent } from "@/app/mdx-content";
 import GetReply from "./GetReply";
@@ -18,6 +17,8 @@ import PriorityBadge from "../../project/(Components)/PriorityBadge";
 import EditTicket from "./EditTicket";
 
 import { MDXBody } from "@/app/actions/mdxBody"
+import HugeIcon from "@/app/(Components)/HugeIcon";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 // import { Metadata } from 'next';
 
@@ -70,7 +71,7 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
             <Grid.Col span={{base: 12, sm: 8}} style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldWhite)", overflow: "scroll" }} p="2rem" mah="80vh">
                 <Box style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem">
                     <Group align="center" gap="0.5rem">
-                        <Box c={ticket.from.type != "admin" ? "white" : "secondary"} hidden={ticket.from.type != "client"  && ticket.from.type != "admin" }>{ticket.from && ticket.from.type === "client" ? <UserIcon variant="duotone" color="currentColor" /> : ticket.from.type === "admin" ? <UserShield01Icon variant="duotone" color="currentColor" /> : null}</Box>
+                        <Box c={ticket.from.type != "admin" ? "white" : "secondary"} hidden={ticket.from.type != "client"  && ticket.from.type != "admin" }>{ticket.from && ticket.from.type === "client" ? <HugeIcon name="user" variant="duotone" color="currentColor" /> : ticket.from.type === "admin" ? <HugeIcon name="user-shield-01" variant="duotone" color="currentColor" /> : null}</Box>
                         <Title order={2} fz="1.2rem" c={ticket.from.type != "admin" ? "white" : "secondary"} lineClamp={1}>{ticket.from ? ticket.from.type === "client" ?  `${ticket.from.firstName} ${ticket.from.lastName}` : "Donald Louch": "Unknown"} <Tooltip label={<DisplayDate source={ticket.createdOn} />}><Box component="span" style={{ fontWeight: "300" }} c="gray" fz="0.8rem"><DisplayDate source={ticket.createdOn} format="MM/DD/yy @ h:mm a" /></Box></Tooltip></Title>
                     </Group>
                     <MdxContent source={ticketBody} />
@@ -91,28 +92,28 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
                                 </Tooltip>
                                 {ticket.from.id &&
                                     <Group c="white" wrap="nowrap">
-                                        <ContactIcon />
+                                        <HugeIcon name="contact" />
                                         <Tooltip label={ticket.from.id}>
                                             <Text lineClamp={1}>{ticket.from.id}</Text>
                                         </Tooltip>
                                     </Group>
                                 }
                                 <Group c="white" wrap="nowrap">
-                                    <MailAtSign01Icon />
+                                    <HugeIcon name="mail-at-sign-01" />
                                     <Tooltip label={`Send an Email to ${ticket.from.email}`}>
                                         <Anchor href={`mailto:${ticket.from.firstName} ${ticket.from.lastName}<${ticket.from.email}>?subject=RE: Donald Louch Project ${ticket.id}>`} c="var(--secondary)" underline="hover"><Text lineClamp={1}>{ticket.from.email}</Text></Anchor>
                                     </Tooltip>
                                 </Group>
                                 {ticket.from.phoneNumber &&
                                     <Group c="white" wrap="nowrap">
-                                        <SmartPhone01Icon />
+                                        <HugeIcon name="smart-phone-01" />
                                         <Tooltip label={`Client Phone Number ${ticket.from.phoneNumber}`}>
                                             <Text lineClamp={1}>{ticket.from.phoneNumber}</Text>
                                         </Tooltip>
                                     </Group>
                                 }{ticket.from.timezone &&
                                     <Group c="white" wrap="nowrap">
-                                        <Time02Icon />
+                                        <HugeIcon name="time-02" />
                                         <Tooltip label={`It's ${moment().tz(ticket.from.timezone).format("MMMM Do, YYYY")} for the client right now!; ${ticket.from.timezone}`}>
                                             <Text lineClamp={1}><DisplayDate timeZone={ticket.from.timezone ? ticket.from.timezone : null} format="h:mma (z)" /></Text>
                                         </Tooltip>
@@ -125,7 +126,7 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
                         <Title size="2xl" td="underline" fw="900" order={2} ta="center" mt="2rem">Ticket is Related To</Title>
                         <Tooltip label={`Go to the project page for this ticket`}>
                             <Anchor unstyled href={`/portal/project/${ticket.relatedTo.id}`}>
-                                <Badge color="gray" leftSection={<Files01Icon />}>
+                                <Badge color="gray" leftSection={<HugeIcon name="files-01" />}>
                                     {ticket.relatedTo.id}
                                 </Badge>
                             </Anchor>

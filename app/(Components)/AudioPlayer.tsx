@@ -1,9 +1,9 @@
 "use client"
 
-import { ArrowLeft02Icon, ArrowLeft03Icon, ArrowRight02Icon, ArrowRight03Icon, GoBackward10SecIcon, GoForward10SecIcon, PauseIcon, PlayIcon } from "@hugeicons/react";
 import { ActionIcon, Box, Button, Grid, Group, Image, Slider, Stack, Text, Title, Tooltip } from "@mantine/core";
 import { duration } from "moment";
 import { use, useEffect, useRef, useState } from "react"
+import HugeIcon from "./HugeIcon";
 
 export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: string, title: string, thumbnail: string}) {
     const [audioElement, setAudioElement] = useState() as any
@@ -110,27 +110,27 @@ export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: str
 
     const controlButtons = [
         {
-            buttonIcon: <ArrowLeft03Icon />,
+            buttonIcon: <HugeIcon name="arrow-left-03" />,
             buttonID: "backToStart",
             buttonFunction: skipStart
         },
         {
-            buttonIcon: <GoBackward10SecIcon />,
+            buttonIcon: <HugeIcon name="go-backward-10-sec" />,
             buttonID: "rewind",
             buttonFunction: skipBack
         },
         {
-            buttonIcon: isPlaying ?  <PauseIcon /> : <PlayIcon />,
+            buttonIcon: isPlaying ?  <HugeIcon name="pause" /> : <HugeIcon name="play" />,
             buttonID: "playPause",
             buttonFunction: () => setIsPlaying((prev) => !prev)
         },
         {
-            buttonIcon: <GoForward10SecIcon />,
+            buttonIcon: <HugeIcon name="go-forward-10-sec" />,
             buttonID: "fastForward",
             buttonFunction: skipAhead
         },
         {
-            buttonIcon: <ArrowRight03Icon />,
+            buttonIcon: <HugeIcon name="arrow-right-03" />,
             buttonID: "backToEnd",
             buttonFunction: skipEnd
         },

@@ -1,10 +1,7 @@
 'use client'
 
-// import { BsCopy } from 'react-icons/bs'
-
 import classes from "./Buttons.module.css"
 import { AspectRatio, Button, CopyButton, Stack, Title, Text, Tooltip } from '@mantine/core'
-import { Copy01Icon } from '@hugeicons/react'
 
 interface propTypes {
     colourTitle: string

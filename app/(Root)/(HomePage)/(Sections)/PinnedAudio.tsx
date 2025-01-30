@@ -6,13 +6,14 @@
 
 import DisplayDate from '@/lib/DisplayDate'
 import { Badge, Text, Group, Paper, Title, Box, useMantineTheme, rem, AspectRatio, Center, Stack, Tooltip, Flex, Anchor, Button } from '@mantine/core'
-import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
+// import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
 // // import PrimaryLinkedButton from '../(Buttons)/PrimaryLinkedButton'
 // import { useMediaQuery } from '@mantine/hooks'
 // // import { Carousel } from '@mantine/carousel';
 // import { SectionTitle } from '../SectionTitle'
 
 import classes from "@/app/(Components)/Components.module.css"
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 function CardPost (post: any) {
     return <Anchor href={`/linkSet/${post.setSlug}`} underline="never" c="white">
@@ -32,15 +33,15 @@ function CardPost (post: any) {
                 </Text>
                 <Stack gap="1rem" m="0" visibleFrom="md" my="0rem">
                     <Group>
-                        <Badge color="grey" leftSection={<PinIcon />}>Pinned</Badge>
-                        <Badge color="primary" leftSection={<ContactIcon />}>
+                        <Badge color="grey" leftSection={<HugeIcon name="pin" />}>Pinned</Badge>
+                        <Badge color="primary" leftSection={<HugeIcon name="contact" />}>
                             Donald Louch
                         </Badge>
-                        <Badge color="red" leftSection={<Calendar03Icon />}>
+                        <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                             <DisplayDate source={post.postDate} />
                         </Badge>
                         <Group>
-                            <Badge color="blue" leftSection={<Folder01Icon />} key={post.media[0].type}>
+                            <Badge color="blue" leftSection={<HugeIcon name="folder-01" />} key={post.media[0].type}>
                                 {post.media[0].type}
                             </Badge>
                         </Group>

@@ -16,13 +16,13 @@ import PortalNavigationItem from './PortalNavigationItem'
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import HeaderNavigationItem from '@/app/(Config)/(Layout)/(Header)/HeaderNavigationItem'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
-import { DashboardBrowsingIcon, Home01Icon, Login01Icon, Logout01Icon } from '@hugeicons/react'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
 import Notifications from '@/app/(Components)/Notifications'
 import { PortalNavigationItems } from '@/lib/PortalNavigationItems'
 import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 export default function PortalLayoutContext({ children, isUser, isAdmin }: { children: React.ReactNode, isUser: any, isAdmin: any }) {  
     const path = usePathname()
@@ -89,7 +89,7 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
                 <Group justify="center"> 
                   {user.isSignedIn && <Button
                     onClick={() => signOut(() => router.push("/"))}
-                    leftSection={<Logout01Icon />} 
+                    leftSection={<HugeIcon name="logout-01" />}
                     color="black" 
                     // fullWidth={isFullWidth}
                     variant="filled" 
@@ -98,8 +98,8 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
                   >
                     Sign Out and Go Home!
                   </Button>}
-                  <PrimaryLinkedButton link="/" icon={<Home01Icon />}>Go Home</PrimaryLinkedButton>
-                  <PrimaryLinkedButton link={`/signin?reURL=${redirectPath}`} icon={<Login01Icon />}>{getOpenID === "newProject" ? "Sign In and Request a Project! (you will be redirected once successfully signed in!)" : "Sign In and Come Back!"}</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/" icon={<HugeIcon name="home-01" />}>Go Home</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link={`/signin?reURL=${redirectPath}`} icon={<HugeIcon name="login-01" />}>{getOpenID === "newProject" ? "Sign In and Request a Project! (you will be redirected once successfully signed in!)" : "Sign In and Come Back!"}</PrimaryLinkedButton>
                 </Group>
                 {/* <UserButton afterSignOutUrl="/"/>  */}
               </Stack>
@@ -133,7 +133,7 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
                         <Group>
                           <WebsiteAlerts />
                           <Notifications />
-                          {isAdmin && <PrimaryLinkedButton link="/admin" icon={<DashboardBrowsingIcon />}>Admin Dashboard</PrimaryLinkedButton>}
+                          {isAdmin && <PrimaryLinkedButton link="/admin" icon={<HugeIcon name="dashboard-browsing" />}>Admin Dashboard</PrimaryLinkedButton>}
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>
@@ -144,7 +144,7 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
                         <PortalNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
                     ))}
                     <SignOutButton>
-                      <PrimaryButton icon={<Logout01Icon />} color="red">Sign out</PrimaryButton>
+                      <PrimaryButton icon={<HugeIcon name="logout-01" />} color="red">Sign out</PrimaryButton>
                     </SignOutButton>
                 </AppShell.Navbar>
                 <AppShell.Main pt={`calc(${rem(80)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}}  styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}} mx="auto">

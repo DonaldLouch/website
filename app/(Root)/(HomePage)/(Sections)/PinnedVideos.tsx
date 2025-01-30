@@ -5,7 +5,8 @@ import classes from "@/app/(Components)/Components.module.css"
 import DisplayDate from "@/lib/DisplayDate";
 // import { BsCameraReels, BsPlay, BsPlayFill } from "react-icons/bs";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { CameraVideoIcon, PlayIcon } from "@hugeicons/react";
+import HugeIcon from "@/app/(Components)/HugeIcon";
+// import { CameraVideoIcon, PlayIcon } from "@hugeicons/react";
 
 export default function PinnedVideos({videos, videosAllCount}: any) {
   return (<>
@@ -40,7 +41,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
                         </Tooltip>
                         <Text fw={200} fz="1rem" lh="0" c="currentColor" mt="0.5rem"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
                     </Box>
-                    <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><PlayIcon variant="duotone" size="5rem" /></Box>
+                    <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><HugeIcon name="play" variant="duotone" size="5rem" /></Box>
                 </Box>
             </Anchor>
         </Grid.Col>
@@ -48,7 +49,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
     </Grid>
     {/* <Group justify="center"> */}
     <Box mt="1rem">
-      <PrimaryLinkedButton link="/feed/videography" icon={<CameraVideoIcon />}>All {videosAllCount} Videos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link="/feed/videography" icon={<HugeIcon name="camera-video" />}>All {videosAllCount} Videos</PrimaryLinkedButton>
     </Box>
     {/* </Group> */}
     {/* </Group> */}

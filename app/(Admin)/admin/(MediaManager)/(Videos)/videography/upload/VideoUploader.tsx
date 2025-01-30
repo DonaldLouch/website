@@ -14,7 +14,6 @@ import supabase from "@/lib/supabase"
 import moment from "moment"
 import VideoInformation from "./VideoInformation"
 import ManualVideo from "./ManualVideo"
-import { CameraVideoIcon, CloudSavingDone01Icon, CloudUploadIcon, Delete02Icon, Delete03Icon, Edit02Icon, Home01Icon, Image02Icon, ImageUpload01Icon, ImageUploadIcon, InformationCircleIcon, PlayIcon, RefreshIcon } from "@hugeicons/react"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 // import { BsCloudPlus, BsPencilSquare, BsPlay, BsTrash2 } from "react-icons/bs"
@@ -24,6 +23,7 @@ import EditVideoData from "../[id]/EditVideoData"
 import VideoInformationNew from "./VideoInformationNew"
 import ResumeUpload from "./ResumeUpload"
 import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 
 export default function VideoUploader({currentStep, categoryData, tagsData, videoData}: any) {
 // categoryData
@@ -100,30 +100,30 @@ export default function VideoUploader({currentStep, categoryData, tagsData, vide
     ]
 
     const steps = [
-        { title: 'Start', description: 'Start the video upload process', icon: <CloudUploadIcon />, content: <>
+        { title: 'Start', description: 'Start the video upload process', icon: <HugeIcon name="cloud-upload" />, content: <>
             <SectionCard styleType="primaryCard" id="start">
                 <SectionTitle headingTitle="Before you start the video upload process" />
                 <Text>For the best video player experience across all devices and browsers, the file format <InlineCode code=".mp4" /> is highly recommended for the video file; while for the thumbnail a <InlineCode code=".jpg" />/<InlineCode code=".jpeg" /> or <InlineCode code=".png" /> file format is recommended. Once you are ready click the below button to start the process 🎉 you may also resume an upload by clicking the "Resume Upload" button; just as long as you know the ID of the video you are uploading.</Text>
             </SectionCard>
             <Group m="3rem 0 0" gap="2rem" justify="center">
-                <PrimaryButton colour="green.0" icon={<CloudUploadIcon />} action={startUploader} c="black">Start The Upload Process</PrimaryButton>
-                <PrimaryButton colour="red" icon={<Delete02Icon />} action={refreshUploader}>Start Over</PrimaryButton>
+                <PrimaryButton colour="green.0" icon={<HugeIcon name="cloud-upload" />} action={startUploader} c="black">Start The Upload Process</PrimaryButton>
+                <PrimaryButton colour="red" icon={<HugeIcon name="delete-02" />} action={refreshUploader}>Start Over</PrimaryButton>
                 <ResumeUpload />
             </Group>
         </>},
-        { title: 'Video FIle', description: 'Upload the video file', icon: <CameraVideoIcon />, content: <>
+        { title: 'Video FIle', description: 'Upload the video file', icon: <HugeIcon name="camera-video" />, content: <>
             <FileUploader mediaType="videography" uploadTitle="Upload Video" helperText="For the best video player experience across all devices and browsers, the file format .mp4 is highly recommended video file." id={videoID}/>
             <ManualVideo id={videoID} />
         </>},
-        { title: 'Thumbnail File', description: 'Upload the thumbnail file', icon: <Image02Icon />, content: <>
+        { title: 'Thumbnail File', description: 'Upload the thumbnail file', icon: <HugeIcon name="image-02" />, content: <>
             <FileUploader mediaType="thumbnail" uploadTitle="Upload Thumbnail" helperText="For the best video player experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the thumbnail file." id={videoID} />
         </>},
-        { title: 'Information', description: 'Add the video information', icon: <InformationCircleIcon />, content: <>
+        { title: 'Information', description: 'Add the video information', icon: <HugeIcon name="information-circle" />, content: <>
             {/* categoryData={categoryData} */}
             <VideoInformationNew videoID={videoID} categoryData={categoryData} tagsData={tagsData} videoData={videoData} />
             {/* <EditVideoData videoData={{ id: videoID }} categoryData={categoryData} tagsData={tagsData} /> */}
         </>},
-        { title: 'Done!', description: 'Your video is uploaded!', icon: <CloudSavingDone01Icon />, content: <>
+        { title: 'Done!', description: 'Your video is uploaded!', icon: <HugeIcon name="cloud-saving-done-01" />, content: <>
             <SectionCard styleType="primaryCard" id="start">
                 <SectionTitle headingTitle="Your video is uploaded!" />
                 <Text ta="center">You have successfully uploaded your video!</Text>
@@ -164,7 +164,7 @@ export default function VideoUploader({currentStep, categoryData, tagsData, vide
 
     return (<>
         <BreadCrumb breads={breadCrumbs} />
-        <Stepper active={active} onStepClick={setActive} color="var(--primary)" m="3rem 1rem 2rem" size="sm" radius="sm" completedIcon={<CloudSavingDone01Icon variant="twotone" />}>
+        <Stepper active={active} onStepClick={setActive} color="var(--primary)" m="3rem 1rem 2rem" size="sm" radius="sm" completedIcon={<HugeIcon name="cloud-saving-done-01" variant="twotone" />}>
             {steps.map((step, index) => (
                 <Stepper.Step key={index} label={step.title} description={step.description} icon={step.icon} classNames={{ stepIcon: classes.stepIcon}} styles={{ stepDescription: {fontWeight: 300 } }} disabled={step.isDisabled ? step.isDisabled : false}>
                     <Box mx="3rem">

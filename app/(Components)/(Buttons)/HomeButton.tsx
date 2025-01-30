@@ -2,8 +2,6 @@
 
 import { Anchor, Box, Tooltip } from '@mantine/core'
 
-import { Home01Icon } from '@hugeicons/react'
-
 interface propTypes {
     colour?: string | null | undefined | unknown
     hoverColour?: string | null | undefined | unknown
@@ -14,6 +12,7 @@ interface propTypes {
 }
 
 import classes from "./Buttons.module.css"
+import HugeIcon from '../HugeIcon'
 
 export default function HomeButton( props: propTypes ) {
     const {colour, hoverColour, link, icon, helperText} = props
@@ -46,7 +45,7 @@ export default function HomeButton( props: propTypes ) {
                     /> */}
             <Anchor href={goToLink} style={{color: "white"}}>
                 <Tooltip label={theHelperText}>
-                    <Box className={classes.homeButton}>{icon ? icon : <Home01Icon size="3rem" />}</Box>
+                    <Box className={classes.homeButton}>{icon ? icon : <HugeIcon name="home-01" size="3rem" />}</Box>
                     {/* <Icon as={!icon ? BsHouseFill : icon} boxSize="3rem" color={iconColour} _hover={{ color: hoverIconColour }}/> */}
                 </Tooltip>
             </Anchor>

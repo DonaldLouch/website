@@ -5,8 +5,8 @@ import PinnedPhotos from "../../(HomePage)/(Sections)/PinnedPhotos";
 import PinnedVideos from "../../(HomePage)/(Sections)/PinnedVideos";
 import PinnedPostsCard from "@/app/(Components)/(Cards)/PinnedPostsCard";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { ArrowLeft02Icon, NewsIcon } from "@hugeicons/react";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function FeedHome({photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount}: any) {
     return <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
@@ -31,7 +31,7 @@ export default function FeedHome({photosPinnedCount, photosAllCount, pinnedPhoto
         </Tabs.Panel>
         <Tabs.Panel value="posts">
             <PinnedPostsCard pinnedPosts={pinnedPosts} />
-            <PrimaryLinkedButton link="/blog" icon={<NewsIcon />}>All {postAllCount} Posts</PrimaryLinkedButton>
+            <PrimaryLinkedButton link="/blog" icon={<HugeIcon name="news" />}>All {postAllCount} Posts</PrimaryLinkedButton>
         </Tabs.Panel>
     </Tabs>
     </Box>

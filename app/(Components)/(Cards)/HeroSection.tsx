@@ -1,7 +1,6 @@
 'use client'
 
 import PrimaryLinkedButton from "../(Buttons)/PrimaryLinkedButton"
-import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, JobSearchIcon, Link01Icon, Link04Icon, NewsIcon, Passport01Icon, PassportIcon } from "@hugeicons/react"
 import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Anchor, Badge } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -77,13 +76,6 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
       </Box>
       <Group justify="center">
         {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkUrl} link={link.linkUrl} icon={link.linkIcon ? link.linkIcon : null}>{link.linkTitle}</PrimaryLinkedButton>)}
-        {/* <PrimaryLinkedButton link="/portfolio" icon={<Briefcase02Icon />}>Portfolio</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/feed" icon={<DashboardSquare02Icon />}>Feed</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/blog" icon={<NewsIcon />}>Blog</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portfolio/resume" icon={<PassportIcon />}>Resume</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="#links" icon={<Link04Icon />}>Links</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact" icon={<Chatting01Icon />}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact" icon={<JobSearchIcon />}>Hire Me!</PrimaryLinkedButton> */}
       </Group>
     </Stack>
   </Box>

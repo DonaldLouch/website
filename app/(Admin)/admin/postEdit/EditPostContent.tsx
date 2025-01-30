@@ -7,7 +7,6 @@ import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import DisplayDate from "@/lib/DisplayDate";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { AlertDiamondIcon, Delete02Icon, Delete03Icon, DragDropIcon, Link04Icon, PencilEdit01Icon, PlusSignIcon, PropertyEditIcon, ViewIcon } from "@hugeicons/react";
 
 import buttonClasses from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
@@ -28,6 +27,7 @@ import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import { notifications } from "@mantine/notifications";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function EditPostContent({post, tagsData}: any) {
@@ -173,7 +173,7 @@ export default function EditPostContent({post, tagsData}: any) {
         title: `${supabaseStatus === 204 ? "Post Edited 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
         message:`${supabaseStatus === 204 ? `You have successfully edited ${values.title}!` : supabaseStatus === 23505 ?  "The chosen slug is already being used with another post, please try a new slug!" : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
         color: supabaseStatus === 204 ? "black" : "red",
-        icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+        icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
     })
   }
   const initialTOCValues = new Array()
@@ -285,12 +285,12 @@ export default function EditPostContent({post, tagsData}: any) {
             {...provided.draggableProps} {...provided.dragHandleProps}
           >
              <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-              <DragDropIcon />
+             <HugeIcon name="drag-drop" />
             </Box></Grid.Col>
             <Grid.Col span={5.25}><FormInput inputID={`tocRow.${index}.title`} {...form.getInputProps(`tocRow.${index}.title`)} key={form.key(`sections.${index}.title`)} /></Grid.Col>
             <Grid.Col span={5.25}><FormInput inputID={`tocRow.${index}.slug`} {...form.getInputProps(`tocRow.${index}.slug`)} key={form.key(`sections.${index}.slug`)}  /></Grid.Col>
             <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('tocRow', index)}>
-            <Delete02Icon size="1rem" />
+            <HugeIcon name="delete-02" size="2rem" />
             </ActionIcon></Grid.Col>
           </Grid>
         )}
@@ -328,7 +328,7 @@ export default function EditPostContent({post, tagsData}: any) {
             {...provided.draggableProps} {...provided.dragHandleProps}
           >
             <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-              <DragDropIcon />
+              <HugeIcon name="drag-drop" />
             </Box></Grid.Col>
 
             <Grid.Col span={2.75}>
@@ -345,7 +345,7 @@ export default function EditPostContent({post, tagsData}: any) {
             </Grid.Col>
 
             <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-              <Delete02Icon size="1rem" />
+              <HugeIcon name="delete-02" size="2rem" />
             </ActionIcon></Grid.Col>
           </Grid>
         )}
@@ -425,7 +425,7 @@ export default function EditPostContent({post, tagsData}: any) {
                   </Droppable>
                 </DragDropContext>
 
-                <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('tocRow', { 
+                <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('tocRow', {
                   key: randomId(),
                   title: null, 
                   slug: null,
@@ -469,7 +469,7 @@ export default function EditPostContent({post, tagsData}: any) {
                   </Droppable>
                 </DragDropContext>
 
-                <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('linksRow', { 
+                <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('linksRow', { 
                   key: randomId(),
                         linkType: "exLink", 
                         icon: null, 
@@ -491,7 +491,7 @@ export default function EditPostContent({post, tagsData}: any) {
               <FormSelect inputID="postStatus" inputLabel="Post Status" inputData={postStatusOptions} {...form.getInputProps(`postStatus`)} />
             </SimpleGrid>
             {/* TODO: UPLOAD NEW THUMBNAIL */}
-            <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Blog Post</FormSubmitButton>
+            <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Blog Post</FormSubmitButton>
           </Box>
           {/*
               <FormSelect selectLabel="Blog Type" selectID="blogType" selectPlaceholder="Select A Blog Type">

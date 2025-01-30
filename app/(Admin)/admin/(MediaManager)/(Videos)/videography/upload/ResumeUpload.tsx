@@ -3,7 +3,6 @@ import FormInput from '@/app/(Components)/(Form)/FormInput'
 import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 import HugeIcon from '@/app/(Components)/HugeIcon'
 import supabase from '@/lib/supabase'
-import { AlertDiamondIcon } from '@hugeicons/react'
 import { Box, Modal } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useDisclosure } from '@mantine/hooks'
@@ -38,7 +37,7 @@ export default function ResumeUpload() {
                 title: 'Error!', 
                 message: 'An error has occurred while trying to get the video data. Try again or start a new upload.',
                 color: 'red',
-                icon: <AlertDiamondIcon /> 
+                icon: <HugeIcon name="alert-diamond" />
            })
            closed()
        }

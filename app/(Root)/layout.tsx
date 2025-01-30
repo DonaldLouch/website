@@ -8,15 +8,11 @@ import Footer from "../(Config)/(Layout)/(Footer)";
 import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
-import { AlertDiamondIcon, DashboardSpeed02Icon, Login01Icon, Notification03Icon } from "@hugeicons/react";
 import WebsiteAlerts from "../(Components)/WebsiteAlerts";
 import Notifications from "../(Components)/Notifications";
 import { isUserSignedIn } from "../actions/clerk"
 import { useUser } from "@clerk/nextjs";
-
-// import {hugeiconsLicense} from "@hugeicons/react";
-// const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
-// hugeiconsLicense(iconLICENSE)
+import HugeIcon from "../(Components)/HugeIcon";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const path = usePathname()
@@ -70,7 +66,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 <Group>
                     <WebsiteAlerts />
                     {isSignedIn && <Notifications /> }
-                    {!isSignedIn ? <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/signin"><Login01Icon /></Anchor> : <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/portal"><DashboardSpeed02Icon /></Anchor>}
+                    {!isSignedIn ? <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/signin"><HugeIcon name="login-01" /></Anchor> : <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/portal"><HugeIcon name="dashboard-speed-02" /></Anchor>}
                     <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                 </Group>
             </Group>
@@ -79,7 +75,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             {HeaderNavigationItems.map((link) => (
                 <HeaderNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
             ))}
-            <HeaderNavigationItem key={`nav_portalButton`} slug={!isSignedIn ? './signin' : './portal'} isParent={false} parentID={7} linkName={!isSignedIn ? 'Signin/Signup' : 'Client Portal'} icon={!isSignedIn ? <Login01Icon /> : <DashboardSpeed02Icon /> } />
+            <HeaderNavigationItem key={`nav_portalButton`} slug={!isSignedIn ? './signin' : './portal'} isParent={false} parentID={7} linkName={!isSignedIn ? 'Signin/Signup' : 'Client Portal'} icon={{
+                name: !isSignedIn ? "login-01" : "dashboard-speed-02" 
+            }} />
         </AppShell.Navbar>
         <AppShell.Main pt={`calc(${rem(70)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}} styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}}>
             {children}

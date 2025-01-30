@@ -1,8 +1,8 @@
 'use client'
 
 import FormCheckbox from '@/app/(Components)/(Form)/FormCheckbox';
+import HugeIcon from '@/app/(Components)/HugeIcon';
 import supabase from '@/lib/supabase';
-import { AlertDiamondIcon, PencilEdit01Icon, TaskDone01Icon } from '@hugeicons/react';
 import { Box } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
@@ -30,7 +30,7 @@ export default function SubTaskCheck({subtask, allSubTasks, isStaff, index, task
                     title: `${supabaseStatus === 204 ? `Sub Task Updated 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
                     message: `${supabaseStatus === 204 ? `You have successfully update the sub task!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
                     color: supabaseStatus === 204 ? "black" : "red-6",
-                    icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+                    icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
                 })
                 supabaseStatus === 204 && router.refresh()
             })()

@@ -6,6 +6,7 @@ import { Mouse01Icon } from '@hugeicons/react'
 // import Link from 'next/link'
 
 import classes from "@/app/(Components)/Components.module.css"
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 export default function ViewPostButton() {
   return (
@@ -24,7 +25,7 @@ export default function ViewPostButton() {
           c="white"
         >
           <Anchor href="/blog#posts" c="currentColor">
-            <Mouse01Icon size="3rem" variant="duotone" />
+            <HugeIcon name="mouse-01" size="3rem" variant="duotone" />
           </Anchor>
         </Box>
       </Tooltip>

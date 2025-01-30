@@ -1,10 +1,11 @@
-import { AlertDiamondIcon, ArrowDown02Icon, ArrowLeft02Icon, ArrowRight02Icon, ArrowUp02Icon } from "@hugeicons/react"
+import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
 
+type Icons = {name: IconName, variant?: IconVariant}
 interface TaskPriorityProps {
     id: string
     text: string
     colour?: string
-    icon?: any
+    icon?: Icons
 }
 
 export const TaskPriority: Array<TaskPriorityProps> = [
@@ -12,30 +13,30 @@ export const TaskPriority: Array<TaskPriorityProps> = [
         id: 'LOW',
         text: 'Low',
         colour: 'blue',
-        icon: <ArrowDown02Icon variant="twotone" />
+        icon: {name: "arrow-down-02", variant: "twotone"}
     },
     { 
         id: 'MEDIUM',
         text: 'Medium',
         colour: 'orange',
-        icon: <ArrowLeft02Icon variant="twotone" />
+        icon: {name: "arrow-left-02", variant: "twotone"}
     },
     { 
         id: 'HIGH',
         text: 'High',
         colour: 'red',
-        icon: <ArrowUp02Icon variant="twotone" />
+        icon: {name: "arrow-up-02", variant: "twotone"}
     },
     { 
         id: 'CRITICAL',
         text: 'Critical',
         colour: 'pink',
-        icon: <ArrowRight02Icon variant="twotone" />
+        icon: {name: "arrow-up-02", variant: "twotone"}
     },
     { 
         id: 'URGENT',
         text: 'Urgent',
         colour: 'primary',
-        icon: <AlertDiamondIcon variant="twotone" />
+        icon: {name: "alert-diamond", variant: "twotone"}
     },
 ]

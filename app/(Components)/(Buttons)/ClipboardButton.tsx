@@ -1,10 +1,10 @@
 'use client'
 
+import HugeIcon from "../HugeIcon"
 // import { BsCopy } from 'react-icons/bs'
 
 import classes from "./Buttons.module.css"
 import { Button, CopyButton } from '@mantine/core'
-import { Copy01Icon } from '@hugeicons/react'
 
 interface propTypes {
     copyValue: any
@@ -25,7 +25,7 @@ export default function ClipboardButton( props: propTypes ) {
             {({ copied, copy }: any) => (
                 <Button 
                     onClick={copy} 
-                    leftSection={<Copy01Icon />}
+                    leftSection={<HugeIcon name="copy-01" />}
                     aria-label={!copied ? theCopyText : theCopiedText}
                     color="black" 
                     variant="filled" 

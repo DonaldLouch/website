@@ -6,7 +6,7 @@ import ViewPostButton from "./ViewPostButton";
 
 import type { Metadata } from 'next'
 import HeroSection from "@/app/(Components)/(Cards)/HeroSection";
-import { Album01Icon, CameraVideoIcon, ContactIcon, DeskIcon, Globe02Icon, PassportIcon, PinLocation03Icon } from "@hugeicons/react";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
@@ -56,15 +56,15 @@ export default async function Blog(props: {searchParams: SearchParams}) {
     //   linkTitle: "Photography",
     //   linkUrl: "/feed/photography",
     // }
-    {linkUrl: "/blog/C/life", linkTitle: "Life Updates", linkIcon: <ContactIcon /> },
-    {linkUrl: "/blog/C/website", linkTitle: "Website Updates", linkIcon: <Globe02Icon />},
-    {linkUrl: "/blog/C/travel", linkTitle: "Travel", linkIcon: <PinLocation03Icon />},
-    {linkUrl: "/blog/C/education", linkTitle: "Education", linkIcon: <DeskIcon />},
-    {linkUrl: "/feed/photography", linkTitle: "Photography Feed", linkIcon: <Album01Icon />},
-    {linkUrl: "/feed/videography", linkTitle: "Videography Feed", linkIcon: <CameraVideoIcon />},
+    {linkUrl: "/blog/C/life", linkTitle: "Life Updates", linkIcon: <HugeIcon name="contact" /> },
+    {linkUrl: "/blog/C/website", linkTitle: "Website Updates", linkIcon: <HugeIcon name="globe-02" />},
+    {linkUrl: "/blog/C/travel", linkTitle: "Travel", linkIcon: <HugeIcon name="pin-location-03" />},
+    {linkUrl: "/blog/C/education", linkTitle: "Education", linkIcon: <HugeIcon name="desk" />},
+    {linkUrl: "/feed/photography", linkTitle: "Photography Feed", linkIcon: <HugeIcon name="album-01" />},
+    {linkUrl: "/feed/videography", linkTitle: "Videography Feed", linkIcon: <HugeIcon name="camera-video" />},
   ];
   const cta = [
-    { ctaTitle: "About Me", ctaLink: "/", ctaVector: <ContactIcon /> }
+    { ctaTitle: "About Me", ctaLink: "/", ctaVector: <HugeIcon name="contact" /> }
   ]
 
   const { data: aboutMe } = await supabase.from('About').select().single()

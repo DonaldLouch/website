@@ -2,7 +2,6 @@
 
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 import supabase from "@/lib/supabase"
-import { Add01Icon, AlertDiamondIcon, SentIcon } from "@hugeicons/react"
 import { Box, Button, Modal, SimpleGrid, Stack, Text } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import { notifications } from "@mantine/notifications"
@@ -17,6 +16,7 @@ import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 
 export default function NewAlert() {
     const [opened, { open, close }] = useDisclosure(false)
@@ -42,7 +42,7 @@ export default function NewAlert() {
             title: `${supabaseStatus === 201 ? "Alert Added 🎉" : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 201 ? `You have successfully added ${values.title}!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 201 ? "black" : "red",
-            icon: supabaseStatus === 201 ? <SentIcon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 201 ? <HugeIcon name="sent" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 201 && router.refresh()
     }
@@ -117,7 +117,7 @@ export default function NewAlert() {
     )
 
     return <>
-        <PrimaryButton icon={<Add01Icon />} onClick={open}>New Alert</PrimaryButton>
+        <PrimaryButton icon={<HugeIcon name="add" />} onClick={open}>New Alert</PrimaryButton>
         <Modal opened={opened} onClose={close} title="New Alert" yOffset="2rem" xOffset="2rem" size="100%"  
             overlayProps={{
                 backgroundOpacity: 0.5, 
@@ -145,7 +145,7 @@ export default function NewAlert() {
                           <FormDatePicker dateLabel="Created On" datePlaceholder="When was this posted?" {...form.getInputProps('createdOn')} />
                           <FormDatePicker dateLabel="Ended On" datePlaceholder="When is this alert set to expire?" {...form.getInputProps('endedOn')} />
                     </SimpleGrid>
-                    <FormSubmitButton icon={<SentIcon />}>Publish New Alert</FormSubmitButton>
+                    <FormSubmitButton icon={<HugeIcon name="sent" />}>Publish New Alert</FormSubmitButton>
                 </Box>
             </Box>
         </Modal>

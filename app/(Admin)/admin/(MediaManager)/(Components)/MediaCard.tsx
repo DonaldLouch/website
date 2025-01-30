@@ -8,9 +8,9 @@ import { useRouter } from 'next/navigation'
 import DisplayDate from '@/lib/DisplayDate'
 import supabase from '@/lib/supabase'
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
-import { Calendar03Icon, Delete02Icon, Edit02Icon } from "@hugeicons/react"
 import { deleteFileFromS3 } from "@/app/actions/backblaze"
 import { notifications } from "@mantine/notifications"
+import HugeIcon from "@/app/(Components)/HugeIcon"
   
 export const MediaCard = ({ media }: any) => {
     const router = useRouter()
@@ -51,7 +51,7 @@ export const MediaCard = ({ media }: any) => {
             title: "File Deleted!",
             message:`You have successfully deleted your ${fileExtension} file titled "${fileTitle}"`,
             color: "red",
-            icon: <Delete02Icon variant="twotone" />
+            icon: <HugeIcon name="delete-02" variant="twotone" />
           })
 
         // const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
@@ -84,13 +84,14 @@ export const MediaCard = ({ media }: any) => {
                     </Stack>
                     <Group justify="space-between" align="center" px="2rem">
                         <Stack m="0" gap="0" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem" align="center">
-                            <Group><Calendar03Icon color="var(--mantine-color-white)" variant="twotone" /> <Title order={4} size="1rem" c="grey" tt="uppercase">Uploaded On</Title></Group>
+                            <Group>
+                                <HugeIcon name="calendar-03" variant="twotone" />  <Title order={4} size="1rem" c="grey" tt="uppercase">Uploaded On</Title></Group>
                              <Text fw="500" m="0" tt="uppercase" c="secondary" fz="1rem"><DisplayDate source={uploadedOn} format="MM/DD/YYYY" /></Text>
                         </Stack>
                         <Group p="0" m="0">
                             <ClipboardButton copyValue={filePath} />
-                            <Anchor href={`/admin/photography/${id}`} c="var(--secondary)" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><Edit02Icon /></Anchor>
-                            <Anchor onClick={deleteMedia} c="red" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><Delete02Icon /></Anchor>
+                            <Anchor href={`/admin/photography/${id}`} c="var(--secondary)" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><HugeIcon name="edit-02" /></Anchor>
+                            <Anchor onClick={deleteMedia} c="red" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><HugeIcon name="delete-02" /></Anchor>
                         </Group>
                     </Group>
                 </Grid.Col>

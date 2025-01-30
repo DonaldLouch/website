@@ -1,7 +1,6 @@
 'use client'
 
 import DisplayDate from "@/lib/DisplayDate";
-import { ArrowDown02Icon, Book02Icon, CheckmarkBadge01Icon, CheckmarkBadge03Icon, ContactIcon, Delete02Icon, GridIcon, InformationCircleIcon, Loading03Icon, MailAtSign01Icon, Menu01Icon, Remove01Icon, Remove02Icon, SmartPhone01Icon, TaskDone01Icon, Time02Icon, UnavailableIcon, ViewIcon } from "@hugeicons/react";
 import { ActionIcon, Alert, Anchor, AspectRatio, Badge, Box, Card, Divider, Grid, Group, Menu, Modal, rem, Stack, Table, Text, Title, Tooltip } from "@mantine/core";
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
@@ -17,6 +16,7 @@ import TaskDescription from "./TaskDescription";
 import TaskForm from "./TaskForm";
 import AddSubTask from "./AddSubTask";
 import SubTaskCheck from "./SubTaskCheck";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isStaff?: boolean, isOpenedID: boolean }) {    
 //   const projectStatus = ProjectStatus.find(({ id }) => id === task.status)
@@ -84,7 +84,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
 
         <Table.Td w="15%" ta="left">
             {task.isCompleted ? <Tooltip label={`Task Completed On ${moment(task.completedOn).format("MMMM Do, YYYY [at] h:mma")}`}>
-                <Badge color="green" leftSection={<CheckmarkBadge03Icon variant="twotone" />}>
+                <Badge color="green" leftSection={<HugeIcon name="checkmark-badge-03" variant="twotone" />}>
                     Completed!
                 </Badge>
             </Tooltip> : <StatusBadge status={task.status} />}
@@ -94,7 +94,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
             <Group gap="1rem" justify="flex-end" p="0 1rem">
                 <Tooltip label="View Project">
                     <ActionIcon variant="subtle" color={!task.isCompleted ? "gray" : "green"} onClick={open}>
-                        {!task.isCompleted ? <ViewIcon style={{ width: rem(16), height: rem(16) }} variant="twotone" /> : <TaskDone01Icon style={{ width: rem(16), height: rem(16) }} />}
+                        {!task.isCompleted ? <HugeIcon name="view" style={{ width: rem(16), height: rem(16) }}  variant="twotone" /> : <HugeIcon name="task-done-01" style={{ width: rem(16), height: rem(16) }} />}
                     </ActionIcon>
                 </Tooltip>
             </Group>
@@ -117,7 +117,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
                     <PriorityBadge priority={task.priority} />
                     {/* <StatusBadge status={task.status} /> */}
                     {task.isCompleted ? <Tooltip label={`Task Completed On ${moment(task.completedOn).format("MMMM Do, YYYY [at] h:mma")}`}>
-                        <Badge color="green" leftSection={<CheckmarkBadge03Icon variant="twotone" />}>
+                        <Badge color="green" leftSection={<HugeIcon name="checkmark-badge-03" variant="twotone" />}>
                            Completed!
                         </Badge>
                     </Tooltip> : <StatusBadge status={task.status} />}
@@ -131,7 +131,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
                             <TaskDescription task={task} isStaff={isStaff} />
                             <Title size="xl" td="underline" fw="900" order={3} ta="center" mt="1rem">Sub Tasks</Title>
                             <AddSubTask task={task} isStaff={isStaff} />
-                              {!task.subTasks ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>}><Text my="0.5rem" c="white">There currently is no sub tasks assigned for this task. Donald Louch will add new sub tasks as the task progresses so make sure to check back!</Text></Alert> : task.subTasks.map((subtask: any, index: number) => (
+                              {!task.subTasks ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>}><Text my="0.5rem" c="white">There currently is no sub tasks assigned for this task. Donald Louch will add new sub tasks as the task progresses so make sure to check back!</Text></Alert> : task.subTasks.map((subtask: any, index: number) => (
                                 <SubTaskCheck subtask={subtask} isStaff={isStaff} allSubTasks={task.subTasks} index={index} taskID={task.id} key={index} />
                               ))
                                 
@@ -151,7 +151,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
                                     </Stack>
                                     <Stack gap="0">
                                         <Group c="white" m="0" gap="0.5rem">
-                                            <GridIcon />
+                                            <HugeIcon name="grid" />
                                             <Tooltip label={project.id}>
                                                 <Anchor href={`/portal/project/${project.id}`} c="var(--secondary)" underline="hover" m="0"><Text lineClamp={1}>{project.id}</Text></Anchor>
                                             </Tooltip>
@@ -162,7 +162,7 @@ export default function TaskRow({ task, isStaff, isOpenedID }: { task: any, isSt
                                     </Stack>
                                     <Title size="2xl" td="underline" fw="900" order={2} ta="center" my="1rem">Task Information</Title>
                                     <Group c="white" m="0" gap="0.5rem">
-                                        <GridIcon />
+                                        <HugeIcon name="grid" />
                                         <Tooltip label={project.id}>
                                             <Anchor href={`/portal/project/${project.id}?openID=${task.id}`} c="var(--secondary)" underline="hover" m="0"><Text lineClamp={1}>{task.id}</Text></Anchor>
                                         </Tooltip>

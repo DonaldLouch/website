@@ -1,7 +1,6 @@
 'use client'
 
 import DisplayDate from "@/lib/DisplayDate";
-import { Book02Icon, CheckmarkBadge01Icon, Delete02Icon, GridIcon, Loading03Icon, Menu01Icon, UnavailableIcon, ViewIcon } from "@hugeicons/react";
 import { ActionIcon, Avatar, Badge, Group, Menu, rem, Stack, Table, Text, Tooltip } from "@mantine/core";
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
@@ -9,6 +8,7 @@ import { ProjectType } from "@/lib/Project/projectType";
 
 import classes from "@/app/(Components)/Components.module.css"
 import { useRouter } from "next/navigation";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function ProjectRow({ project, orderNumber, isStaff }: { project: any, orderNumber: number, isStaff?: boolean }) {    
   const projectStatus = ProjectStatus.find(({ id }) => id === project.status)
@@ -30,7 +30,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
             <Text fz="sm" lh="1" lineClamp={1} fw="600">{project.name}</Text>
           </Tooltip>
           <Tooltip label={projectType?.fullText ? projectType?.fullText : projectType?.smallText}>
-            <Badge color="gray" leftSection={<Book02Icon />} mb="1rem" mt="-1rem">
+            <Badge color="gray" leftSection={<HugeIcon name="book-02" />} mb="1rem" mt="-1rem">
                 {projectType?.smallText}
             </Badge>
           </Tooltip>
@@ -73,7 +73,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
       <Group gap="1rem" justify="flex-end" p="0 1rem">
         <Tooltip label="View Project">
           <ActionIcon variant="subtle" color="gray" onClick={openProject}>
-            <ViewIcon style={{ width: rem(16), height: rem(16) }} variant="twotone" />
+            <HugeIcon name="view" style={{ width: rem(16), height: rem(16) }}  variant="twotone" />
           </ActionIcon>
         </Tooltip>
         {isStaff &&
@@ -85,13 +85,13 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
         >
           <Menu.Target>
             <ActionIcon variant="subtle" color="gray">
-              <Menu01Icon style={{ width: rem(16), height: rem(16) }} />
+              <HugeIcon name="menu-01" style={{ width: rem(16), height: rem(16) }} />
             </ActionIcon>
           </Menu.Target>
           <Menu.Dropdown bg="black" c="white" bd="none" fz="1.1rem">
             <Menu.Item
               leftSection={
-                <GridIcon style={{ width: rem(16), height: rem(16) }} />
+                <HugeIcon name="grid" style={{ width: rem(16), height: rem(16) }} />
               }
               c="white"
               className={classes.comboboxOption}
@@ -100,7 +100,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
             </Menu.Item>
             <Menu.Item
               leftSection={
-                <CheckmarkBadge01Icon style={{ width: rem(16), height: rem(16) }} />
+                <HugeIcon name="checkmark-badge-01" style={{ width: rem(16), height: rem(16) }} />
               }
               c="white"
               className={classes.comboboxOption}
@@ -109,7 +109,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
             </Menu.Item>
             <Menu.Item
               leftSection={
-                <UnavailableIcon style={{ width: rem(16), height: rem(16) }} />
+                <HugeIcon name="unavailable" style={{ width: rem(16), height: rem(16) }} />
               }
               c="white"
               className={classes.comboboxOption}
@@ -118,7 +118,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
             </Menu.Item>
             <Menu.Item
               leftSection={
-                <Delete02Icon style={{ width: rem(16), height: rem(16) }} />
+                <HugeIcon name="delete-02" style={{ width: rem(16), height: rem(16) }} />
               }
               c="white"
               className={classes.comboboxOption}

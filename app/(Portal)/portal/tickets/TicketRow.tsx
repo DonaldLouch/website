@@ -1,7 +1,6 @@
 'use client'
 
 import DisplayDate from "@/lib/DisplayDate";
-import { Book02Icon, CheckmarkBadge01Icon, Delete02Icon, Files01Icon, GridIcon, Loading03Icon, Menu01Icon, Task01Icon, UnavailableIcon, UserIcon, ViewIcon } from "@hugeicons/react";
 import { ActionIcon, Avatar, Badge, Group, Menu, rem, Stack, Table, Text, Tooltip } from "@mantine/core";
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
@@ -11,6 +10,7 @@ import classes from "@/app/(Components)/Components.module.css"
 import { useRouter } from "next/navigation";
 import PriorityBadge from "../project/(Components)/PriorityBadge";
 import StatusBadge from "../project/(Components)/StatusBadge";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function TicketRow({ ticket, orderNumber, isStaff }: { ticket: any, orderNumber: number, isStaff?: boolean }) {    
 
@@ -46,7 +46,7 @@ export default function TicketRow({ ticket, orderNumber, isStaff }: { ticket: an
 
     <Table.Td w="27.5%" ta="right">
       <Tooltip label={ticket.id}>
-          <Badge color="gray" leftSection={ticket.relatedTo?.type === "Project" ? <Files01Icon /> : ticket.relatedTo?.type === "Task" ? <Task01Icon /> : <GridIcon />}>
+          <Badge color="gray" leftSection={ticket.relatedTo?.type === "Project" ? <HugeIcon name="files-01" /> : ticket.relatedTo?.type === "Task" ? <HugeIcon name="task-01" /> : <HugeIcon name="grid" />}>
              {ticket.relatedTo?.id}
           </Badge>
         </Tooltip>
@@ -77,7 +77,7 @@ export default function TicketRow({ ticket, orderNumber, isStaff }: { ticket: an
       <Group gap="1rem" justify="flex-end" p="0 1rem">
         <Tooltip label="View Ticket">
           <ActionIcon variant="subtle" color="gray" onClick={openProject}>
-            <ViewIcon style={{ width: rem(16), height: rem(16) }} variant="twotone" />
+            <HugeIcon name="view" style={{ width: rem(16), height: rem(16) }}  variant="twotone" />
           </ActionIcon>
         </Tooltip>
         {/* {isStaff &&

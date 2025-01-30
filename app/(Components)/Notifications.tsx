@@ -1,15 +1,15 @@
 'use client'
 
-import { Cone01Icon, Notification03Icon } from "@hugeicons/react"
 import { Modal, Tooltip, Text, Tabs, Alert } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks";
+import HugeIcon from "./HugeIcon";
 
 export default function Notifications() {
     const [opened, { open, close }] = useDisclosure(false)
     
     return <>
         <Tooltip label={`Notifications (0)`}>
-            <Notification03Icon variant="twotone" onClick={open}/>
+            <HugeIcon name="notification-03" variant="duotone" clickOption={open}/>
         </Tooltip>
         <Modal opened={opened} onClose={close} title="Notifications" yOffset="5rem" xOffset="5rem" size="100%"  
             overlayProps={{
@@ -18,7 +18,7 @@ export default function Notifications() {
             }} 
             styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             radius="lg">
-                <Alert variant="light" color="secondary" title="Coming Soon!" icon={<Cone01Icon />}><Text my="0.5rem" c="white">The notifications function is currently being constructed at this time. Please check back later!</Text></Alert>
+                <Alert variant="light" color="secondary" title="Coming Soon!" icon={<HugeIcon name="cone-01" />}><Text my="0.5rem" c="white">The notifications function is currently being constructed at this time. Please check back later!</Text></Alert>
             {/* <Tabs defaultValue="all" style={{boxShadow: "none"}} mt="0">
                 <Tabs.List grow justify="center">
                 <Tabs.Tab value="all">All</Tabs.Tab>

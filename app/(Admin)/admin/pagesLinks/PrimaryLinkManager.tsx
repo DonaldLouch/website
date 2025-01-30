@@ -4,8 +4,6 @@ import FormInput from "@/app/(Components)/(Form)/FormInput";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
-// imp
-import { MailAtSign02Icon, NewTwitterIcon, Chatting01Icon, GameController01Icon, WifiConnected02Icon, SpotifyIcon, VimeoIcon, YoutubeIcon, MusicNoteSquare02Icon, Shirt01Icon, SoundcloudIcon, Home01Icon, ArrowUpRight01Icon, IconjarIcon, TextFontIcon, AlertDiamondIcon, Delete02Icon } from "@hugeicons/react";
 import { ActionIcon, Anchor, Box, Code, Divider, Group, Modal, SimpleGrid, Stack, Text } from "@mantine/core";
 
 import { useRouter } from "next/navigation";
@@ -54,7 +52,7 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       title: deleteStatus === 204 ? `${link.title} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`,
       message: deleteStatus === 204 ? `You have successfully deleted the ${link.title} link!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`,
       color: deleteStatus === 204 ? "green.0" : "red",
-      icon: deleteStatus === 204 ? <ArrowUpRight01Icon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />,
+      icon: deleteStatus === 204 ? <HugeIcon name="arrow-up-right-01" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />,
     })
     deleteStatus === 204 && router.refresh()
   }
@@ -78,7 +76,7 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       title: `${supabaseStatus === 204 ? "Updated Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
       message: `${supabaseStatus === 204 ? `You have successfully updated the ${link.title} link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
       color: supabaseStatus === 204 ? "green.0" : "red",
-      icon: supabaseStatus === 204 ? <ArrowUpRight01Icon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />,
+      icon: supabaseStatus === 204 ? <HugeIcon name="arrow-up-right-01" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />,
     })
     supabaseStatus === 204 && router.refresh()
   }
@@ -154,20 +152,20 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       <Divider label="Edit Link" labelPosition="center" mx="3rem" my="2rem" />
       <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
           <SimpleGrid cols={2} spacing="2rem">
-              <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<IconjarIcon variant="twotone" />} isRequired />
+              <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<HugeIcon name="icon-jar" variant="twotone" />} isRequired />
               <FormSelect inputID="iconVariant" inputLabel="Icon Variant" inputData={iconVariantOptions} {...form.getInputProps(`iconVariant`)} onChange={setIconVariantSelected} value={iconVariantSelected} clearable />
           </SimpleGrid>
           <Stack align="center" mb="2rem">
               <Code p="0.5rem" bg="var(--blackRGBA)" c="white" fz="1rem" w="100%">Please provide the icon name. You may visit <Anchor href="https://hugeicons.com/icons">https://hugeicons.com/icons</Anchor> for a list of all icons.</Code>
           </Stack>
           <SimpleGrid cols={2} spacing="2rem">
-              <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<TextFontIcon variant="twotone" />} isRequired />
-              <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<TextFontIcon variant="twotone" />} isRequired />
+              <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
+              <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
           </SimpleGrid>
-          <FormInput inputID="linkForm" inputLabel="Link" {...form.getInputProps('linkForm')} inputDescription="Please provide the link." icon={<ArrowUpRight01Icon variant="twotone" />} />
+          <FormInput inputID="linkForm" inputLabel="Link" {...form.getInputProps('linkForm')} inputDescription="Please provide the link." icon={<HugeIcon name="arrow-up-right-01" variant="twotone" />} />
           <SimpleGrid cols={2} spacing="2rem" style={{ alignItems: "center" }}>
-            <PrimaryButton action={deleteLink} icon={<Delete02Icon variant="twotone" />} colour="red">Delete {link.id} Link</PrimaryButton>
-            <FormSubmitButton icon={<ArrowUpRight01Icon />}>Edit {link.id} Link</FormSubmitButton> 
+            <PrimaryButton action={deleteLink} icon={<HugeIcon name="delete-02" variant="twotone" />} colour="red">Delete {link.id} Link</PrimaryButton>
+            <FormSubmitButton icon={<HugeIcon name="arrow-up-right-01" />}>Edit {link.id} Link</FormSubmitButton>
           </SimpleGrid>
       </Box>
     </Modal>

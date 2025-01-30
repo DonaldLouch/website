@@ -14,7 +14,6 @@ import { ProjectType } from "@/lib/Project/projectType";
 import { Box, Stack, Modal, SimpleGrid } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { useDisclosure } from "@mantine/hooks";
-import { AlertDiamondIcon, SaveMoneyDollarIcon, SentIcon, SeoIcon, SmartPhone01Icon, TextFontIcon } from "@hugeicons/react";
 import { useForm } from "@mantine/form";
 
 import * as yup from 'yup';
@@ -37,6 +36,7 @@ import { Timezones } from "@/lib/Timezones";
 import moment from 'moment-timezone';
 import { TaskPriority } from "@/lib/Project/taskPriority";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 // type ProjectProps = {
 //     isAdmin: boolean
@@ -113,7 +113,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
             title: `${supabaseStatus === 201 ? "Ticket Created 🎉" : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 201 ? `You have successfully created a ticket!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 201 ? "black" : "red",
-            icon: supabaseStatus === 201 ? <SentIcon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 201 ? <HugeIcon name="sent" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 201 && router.push(`/portal/ticket/${id}`)
     }
@@ -196,7 +196,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
                 <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
                     <FormSelect inputID="subject" inputLabel="Ticket Subject" inputData={subjectOptions} {...form.getInputProps(`subject`)} onChange={setSubjectSelected} value={subjectSelected} />
                     {subjectSelected === "Other" &&
-                        <FormInput inputID="otherSubject" inputLabel="Other Subject" {...form.getInputProps('otherSubject')} inputDescription="Please use a subject to describe the ticket" icon={<TextFontIcon variant="twotone" />} isRequired={subjectSelected === "Other" ? true : false} />
+                        <FormInput inputID="otherSubject" inputLabel="Other Subject" {...form.getInputProps('otherSubject')} inputDescription="Please use a subject to describe the ticket" icon={<HugeIcon name="text-font" variant="twotone" />} isRequired={subjectSelected === "Other" ? true : false} />
                     }
                     <FormTextArea inputID="body" inputLabel="Ticket Body" helperText="MDX Enabled!" textRows={10} {...form.getInputProps('body')} isRequired />
                     <SimpleGrid cols={2} my="2rem">
@@ -211,7 +211,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
                             checked={internalOptions}
                         />
                     }
-                    <FormSubmitButton icon={<SentIcon />}>Create Ticket</FormSubmitButton>
+                    <FormSubmitButton icon={<HugeIcon name="sent" />}>Create Ticket</FormSubmitButton>
                 </Box>
             </Box>
         </Modal>

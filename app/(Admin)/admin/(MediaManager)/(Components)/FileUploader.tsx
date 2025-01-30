@@ -9,11 +9,11 @@ import { useActionState, useEffect, useState } from "react";
 // import { BsCloudUpload } from "react-icons/bs";
 
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
-import { AlertDiamondIcon, Cancel01Icon, CloudUploadIcon, FileUploadIcon } from "@hugeicons/react";
 import { notifications } from "@mantine/notifications";
 import { uploadFileToS3 } from "@/app/actions/backblaze";
 
 import axios from "axios"
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()
@@ -89,14 +89,14 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                   title: "File Uploaded!",
                   message:`You have successfully uploaded your ${mediaType} file titled "${u.fileName}"`,
                   color: "black",
-                  icon: <FileUploadIcon variant="twotone" />
+                  icon: <HugeIcon name="file-upload" variant="twotone" />
                 })
                 u.fileDatabase != 201 && notifications.show({ 
                   id: `fileUploaded${u.fileName}`,
                   title: `Error #${u.fileDatabaseError?.code} has Occurred`,
                   message:`An error has occurred: ${u.supabaseError?.message}. ${u.supabaseError?.hint && `${u.supabaseError?.hint}.`}`,
                   color: "red",
-                  icon: <AlertDiamondIcon variant="twotone" />
+                  icon: <HugeIcon name="alert-diamond" variant="twotone" />
                 })
               })
               mediaType != "videography" && mediaType != "thumbnail" && mediaType != "thumbnail/linkSet" && router.refresh()
@@ -133,13 +133,13 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
       >
         <Group justify="center" gap="2rem" style={{ pointerEvents: 'none' }} py="4rem">
           <Dropzone.Accept>
-            <FileUploadIcon variant="twotone" />
+            <HugeIcon name="file-upload" variant="twotone" />
           </Dropzone.Accept>
           <Dropzone.Reject>
-            <Cancel01Icon variant="twotone" />
+            <HugeIcon name="cancel-circle" variant="twotone" />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <CloudUploadIcon variant="twotone" size="5rem" />
+            <HugeIcon name="cloud-upload" variant="twotone" size="5rem" />
           </Dropzone.Idle>
 
           <Stack gap="0" m="0" p="0">

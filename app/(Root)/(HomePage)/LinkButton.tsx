@@ -7,12 +7,8 @@ import {
   Group,
 } from "@mantine/core"
 
-// import { BsBarChart, BsChat, BsEnvelopeAt, BsLink45Deg, BsSpotify, BsTwitterX, BsVimeo, BsXbox, BsYoutube } from 'react-icons/bs'
-// import { IoShirtOutline, IoLogoSoundcloud } from 'react-icons/io5'
-// import { SiApplemusic } from 'react-icons/si'
-
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import { ArrowUpRight01Icon, Chatting01Icon, GameController01Icon, MailAtSign02Icon, MusicNoteSquare02Icon, NewsIcon, NewTwitterIcon, Shirt01Icon, SoundcloudIcon, SpotifyIcon, VimeoIcon, WifiConnected02Icon, YoutubeIcon } from "@hugeicons/react"
+
 import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
 
 type Icons = {name: IconName, variant?: IconVariant}

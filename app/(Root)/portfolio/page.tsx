@@ -2,8 +2,8 @@ import HeroSection from "@/app/(Components)/(Cards)/HeroSection";
 import HeroPage from "../../(Components)/HeroPage";
 
 import type { Metadata } from 'next'
-import { Album02Icon, CameraVideoIcon, ContactIcon, GithubIcon, NewsIcon } from "@hugeicons/react";
 import supabase from "@/lib/supabase";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 export const metadata: Metadata = {
     title: "Donald Louch's Portfolio",
     description: process.env.NEXT_PUBLIC_DESCRIPTION,
@@ -27,17 +27,17 @@ export default async function Portfolio() {
     {
       linkTitle: "Websites",
       linkUrl: "https://github.com/donaldlouch",
-      linkIcon: <GithubIcon />
+      linkIcon: <HugeIcon name="github" />
     },
     {
       linkTitle: "Photography",
       linkUrl: "/portfolio/photography",
-      linkIcon: <Album02Icon />
+      linkIcon: <HugeIcon name="camera-video" />
     },
     {
       linkTitle: "Videography",
       linkUrl: "/video/clv70b4iy00013b6rinrnxiz7",
-      linkIcon: <CameraVideoIcon />
+      linkIcon: <HugeIcon name="camera-video" />
     },
     // {
     //   linkTitle: "Graphic Design",
@@ -46,7 +46,7 @@ export default async function Portfolio() {
     {
       linkTitle: "Blog",
       linkUrl: "/blog",
-      linkIcon: <NewsIcon />
+      linkIcon: <HugeIcon name="news" />
     },
     // {
     //   linkTitle: "Hire Me!",
@@ -55,7 +55,7 @@ export default async function Portfolio() {
   ];
 
   const cta = [
-    { ctaTitle: "Resume", ctaLink: "/portfolio/resume", ctaVector: <ContactIcon /> }
+    { ctaTitle: "Resume", ctaLink: "/portfolio/resume", ctaVector: <HugeIcon name="contact" /> },
   ]
   
   const { data: aboutMe } = await supabase.from('About').select().single()

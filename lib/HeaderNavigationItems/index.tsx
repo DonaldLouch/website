@@ -1,12 +1,12 @@
-import { auth } from "@clerk/nextjs/server"
-import { Briefcase02Icon, Chatting01Icon, DashboardSpeed02Icon, DashboardSquare02Icon, Folder01Icon, Home01Icon, Link04Icon, Login01Icon, NewsIcon } from "@hugeicons/react"
-// import { BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge } from "react-icons/bs"
+import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
+
+type Icons = {name: IconName, variant?: IconVariant}
 
 interface HeaderNavigationItemsProps {
     name: string
     slug: any
     // iconPre: any
-    icon: any
+    icon: Icons
     isParent: boolean
     parentID: number|null
 }
@@ -15,42 +15,42 @@ export const HeaderNavigationItems: Array<HeaderNavigationItemsProps> = [
     { 
         name: 'Home',
         slug: '/',
-        icon: <Home01Icon />,
+        icon: {name: "home-01", variant: "duotone"},
         isParent: false,
         parentID: 0
     },
     { 
         name: 'Portfolio',
         slug: 'portfolio',
-        icon: <Briefcase02Icon />,
+        icon: {name: "briefcase-02"},
         isParent: true,
         parentID: 1
     },
     { 
         name: 'Feeds',
         slug: 'feed',
-        icon: <DashboardSquare02Icon />,
+        icon: {name: "dashboard-square-02"},
         isParent: true,
         parentID: 2
     },
     { 
         name: 'Blog',
         slug: 'blog',
-        icon: <NewsIcon />,
+        icon: {name: "news"},
         isParent: true,
         parentID: 3
     },
     { 
         name: 'Contact Me',
         slug: 'contact',
-        icon: <Chatting01Icon />,
+        icon: {name: "chatting-01"},
         isParent: false,
         parentID: 4
     },
     { 
         name: 'Links',
         slug: './#links',
-        icon: <Link04Icon />,
+        icon: {name: "link-04"},
         isParent: false,
         parentID: 5
     }

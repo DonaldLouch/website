@@ -1,11 +1,10 @@
 import { Button } from "@mantine/core";
-// import { BsSend } from "react-icons/bs";
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import { SentIcon } from "@hugeicons/react";
+import HugeIcon from "../HugeIcon";
 
 export default function FormSubmitButton({icon, isNotFull, children}: any) {
-    const theIcon = icon ? icon : <SentIcon />
+    const theIcon = icon ? icon : <HugeIcon name="sent" />
   return <Button
     leftSection={theIcon} 
     color="black" 

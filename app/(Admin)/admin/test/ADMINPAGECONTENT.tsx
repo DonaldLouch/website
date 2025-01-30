@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { AlertDiamondIcon } from "@hugeicons/react"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 import { Box } from "@mantine/core"
 import { notifications } from "@mantine/notifications"
 
@@ -15,7 +15,7 @@ export default function ADMINPAGECONTENT() {
     id: "test",
     title: `TEST NOTIFICATION`,
     message: "This is a test notification message .",
-    icon: <AlertDiamondIcon variant="twotone" />,
+    icon: <HugeIcon name="information-circle" variant="twotone" />,
     autoClose: false,
   })
 

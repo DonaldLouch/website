@@ -25,7 +25,7 @@ export default function PrimaryLinkedButton({isHidden, link, icon, isFullWidth, 
     styles={{root: {display: isHidden ? "none" : "block"}}} 
     component="a" 
     href={link} 
-    leftSection={primNewIcon ? <HugeIcon name={primNewIcon.name} variant={primNewIcon.variant ? primNewIcon.variant : "stroke"} /> : icon} 
+    leftSection={primNewIcon ? <HugeIcon name={primNewIcon.name} variant={primNewIcon.variant ? primNewIcon.variant : undefined} /> : icon} 
     color={colour ? colour : "black"}
     fullWidth={isFullWidth}
     variant="filled" 

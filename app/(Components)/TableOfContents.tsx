@@ -1,10 +1,9 @@
 import { Anchor, Button, Group, Stack, Text, Tooltip, rem } from '@mantine/core'
 import React, { useState } from 'react'
-// import { BsListNested } from 'react-icons/bs'
 
 import classes from "./Components.module.css"
 import { useRouter } from 'next/navigation';
-import { Book04Icon, LeftToRightBlockQuoteIcon } from '@hugeicons/react';
+import HugeIcon from './HugeIcon';
 
 type TableOfContentsProps = {
     // sections: [label: string, link: string|null, order: number]
@@ -48,7 +47,7 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
     ))
     return <Stack className={classes.tableOfContentsRoot}>
         <Group>
-            <LeftToRightBlockQuoteIcon variant="duotone" />
+            <HugeIcon name="left-to-right-block-quote" variant="duotone" />
             <Text>Table of Contents</Text>
         </Group>
         <Stack gap="0">

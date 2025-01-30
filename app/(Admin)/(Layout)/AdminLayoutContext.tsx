@@ -16,11 +16,11 @@ import AdminNavigationItem from './AdminNavigationItem'
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import HeaderNavigationItem from '@/app/(Config)/(Layout)/(Header)/HeaderNavigationItem'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
-import { DashboardSpeed02Icon, Home01Icon, Logout01Icon } from '@hugeicons/react'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
 import Notifications from '@/app/(Components)/Notifications'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 export default function AdminLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
   const path = usePathname()
@@ -64,7 +64,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                 <Group justify="center"> 
                   {user.isSignedIn && <Button
                     onClick={() => signOut(() => router.push("/"))}
-                    leftSection={<Logout01Icon />} 
+                    leftSection={<HugeIcon name="logout-01" />} 
                     color="black" 
                     // fullWidth={isFullWidth}
                     variant="filled" 

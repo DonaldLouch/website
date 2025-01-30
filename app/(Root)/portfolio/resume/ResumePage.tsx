@@ -21,8 +21,8 @@ import TableOfContents from "@/app/(Components)/TableOfContents";
 import { FooterIcon } from "@/app/(Config)/(Layout)/(Footer)/FooterIcon";
 import MultiAccordion from "@/app/(Components)/(Accordion)/MultiAccordion";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Album02Icon, Briefcase02Icon, Calendar03Icon, CameraVideoIcon, Chatting01Icon, ContactIcon, Github01Icon, GithubIcon, Linkedin02Icon, MailAtSign02Icon, MessageDownload01Icon, PinLocation03Icon } from "@hugeicons/react";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {
   const sections = [
@@ -104,7 +104,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
           {/* TO DO: CHANGE IMAGE! */}
           <Image src={resume.avatar} w="100vw" h="100vh"/>
       </Box>
-      <Box><HomeButton icon={<Briefcase02Icon size="3rem" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box> 
+      <Box><HomeButton icon={<HugeIcon name="briefcase-02" size="3rem" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box>
       <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
           <Box bg="var(--darkPurpleRGBA)" style={{
               boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -143,13 +143,13 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                   </Stack>
                   <Stack gap="1rem">
                     <Group>
-                      <Badge color="red" leftSection={<Calendar03Icon />}>
+                      <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                           {resume.currentAge}
                       </Badge>
-                      <Badge color="secondary" leftSection={<ContactIcon />}>
+                      <Badge color="secondary" leftSection={<HugeIcon name="contact" />}>
                           {resume.tagLine}
                       </Badge>
-                      <Badge color="blue" leftSection={<PinLocation03Icon />}>
+                      <Badge color="blue" leftSection={<HugeIcon name="pin-location-03" />}>
                           {resume.address}
                       </Badge>
                     </Group>
@@ -276,14 +276,14 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               <Box component="section" id="portfolio">
                 <Title order={3} fz="3rem" fw="300" ta="center">View My Work</Title>
                 <Group my="1rem" align="center" justify="center">
-                  <PrimaryLinkedButton link="https://github.com/donaldlouch" icon={<GithubIcon />}>Web Production</PrimaryLinkedButton>
-                  <PrimaryLinkedButton link="/portfolio/photography" icon={<Album02Icon />}>Photography</PrimaryLinkedButton>
-                  <PrimaryLinkedButton link="/video/clv70b4iy00013b6rinrnxiz7" icon={<CameraVideoIcon />}>Videography</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="https://github.com/donaldlouch" icon={<HugeIcon name="github" />}>Web Production</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/portfolio/photography" icon={<HugeIcon name="album-02" />}>Photography</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/video/clv70b4iy00013b6rinrnxiz7" icon={<HugeIcon name="camera-video" />}>Videography</PrimaryLinkedButton>
                 </Group>
               </Box>
               <Box component="section" id="download">
                 <Title order={3} fz="3rem" fw="300" ta="center">Download My Resume</Title>
-                  <Text ta="center"><MessageDownload01Icon /> {" "} The File Will Be Downloadable Upon <Anchor href="/contact" c="primary">Request</Anchor></Text>
+                  <Text ta="center"><HugeIcon name="message-download-01" /> {" "} The File Will Be Downloadable Upon <Anchor href="/contact" c="primary">Request</Anchor></Text>
                   {/* <PrimaryLinkedButton link="about#contact" icon={<BsDownload />} isFullWidth={true}>Request a Download Link</PrimaryLinkedButton> */}
               </Box>
               <Text style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem">Last Updated On: <DisplayDate source={resume.lastUpdatedOn} /></Text>

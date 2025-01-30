@@ -1,9 +1,9 @@
 'use client'
 
-import { Box, Grid, Group, SimpleGrid, Text } from '@mantine/core';
+import { Box, Grid, Group, SimpleGrid, Text } from '@mantine/core'
 
-import classes from './StatsGrid.module.css';
-import { ArrowDownRight01Icon, ArrowUpRight01Icon } from '@hugeicons/react';
+import classes from './StatsGrid.module.css'
+import HugeIcon from '../HugeIcon';
 // import { BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
 
 // const icons = {
@@ -28,7 +28,7 @@ export default function StatsGroup({ statsData }: { statsData: [title: any, valu
       <Box p="1rem" style={{borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)"}} key={stat.title} bg="none" m="0.5rem">
         <Group justify="space-between" m="0" lh="0">
           <Text size="0.9rem" c="grey" tt="uppercase" fw="300" lh="0" ta={{base: "center", sm: "left"}}>{stat.title}</Text>
-          {stat.icon && <Box c="grey">{stat.icon}</Box>}
+          {stat.icon && <Box c="grey"><HugeIcon name={stat.icon.name} variant="twotone" /></Box>}
         </Group>
 
         <Group align="center" gap="0.5rem" justify="center">
@@ -36,7 +36,7 @@ export default function StatsGroup({ statsData }: { statsData: [title: any, valu
           {stat.difference &&
             <Text c={stat.difference > 0 ? 'teal' : 'red'} fz="sm" fw={500} ff="monospace" lh={1} display={{base: "none", sm: "initial"}}>
                 <span style={{paddingRight: "0.2rem"}}>{stat.difference}%</span>
-                {stat.difference > 0 ? <ArrowUpRight01Icon /> : <ArrowDownRight01Icon />}
+                {stat.difference > 0 ? <HugeIcon name="arrow-up-right-01" /> : <HugeIcon name="arrow-down-right-01" />}
             </Text>
         }
         </Group>

@@ -25,7 +25,7 @@ import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 
 import { ActionIcon, Paper, Group, Loader, Title, Anchor } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Camera01Icon, ContactIcon, PassportIcon } from "@hugeicons/react";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 
 async function fetchPhotos(nextPage: number, photoLimit: number) {
@@ -81,7 +81,7 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
    {/* m="4.5rem auto 0" w="95vw" */}
    {/* m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} pt={{base: "0.5rem", lg: "1.5rem"}} */}
     <Box id="feed" pos="relative" w="100%">
-      <Alert icon={<Camera01Icon />} color="indigo">
+      <Alert icon={<HugeIcon name="camera-01" />} color="indigo">
           Please note that moving forward, all photos will have completed captions, tags, and accurate metadata for improved organization and searchability.
       </Alert>
 
@@ -92,7 +92,7 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
           right={{ base: "4%", md: "1.5%" }}
           onClick={open}
         >
-          <ContactIcon size="2rem" />
+          <HugeIcon name="contact" size="2rem" />
         </ActionIcon>
       </Tooltip>
       <Drawer size="full" opened={opened} onClose={close} title={`About ${about.firstName} ${about.lastName}`} 

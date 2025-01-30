@@ -13,7 +13,6 @@ import { ProjectType } from "@/lib/Project/projectType";
 import { Box, Stack, Modal, SimpleGrid } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { useDisclosure } from "@mantine/hooks";
-import { AlertDiamondIcon, PencilEdit01Icon, SaveMoneyDollarIcon, SentIcon, SeoIcon, SmartPhone01Icon, TextFontIcon, Ticket01Icon } from "@hugeicons/react";
 import { useForm } from "@mantine/form";
 
 import * as yup from 'yup';
@@ -38,6 +37,7 @@ import { TaskPriority } from "@/lib/Project/taskPriority";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import { clerkClient } from "@clerk/nextjs/server";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 // type ProjectProps = {
 //     isAdmin: boolean
@@ -109,7 +109,7 @@ export default function EditTicket({isStaff, ticket}: any) {
             title: `${supabaseStatus === 204 ? `"${ticket.id}" Updated 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message: `${supabaseStatus === 204 ? `You have successfully updated the ticket!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red-6",
-            icon: supabaseStatus === 204 ? <Ticket01Icon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 204 ? <HugeIcon name="ticket-01" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 204 && router.refresh()
     }
@@ -183,7 +183,7 @@ export default function EditTicket({isStaff, ticket}: any) {
         >
             <Box component="main" id="newTicket" color="white">
                 <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
-                   <FormInput inputID="subject" inputLabel="Subject" {...form.getInputProps('subject')} inputDescription="Please use a subject to describe the ticket" icon={<TextFontIcon variant="twotone" />} isRequired />
+                   <FormInput inputID="subject" inputLabel="Subject" {...form.getInputProps('subject')} inputDescription="Please use a subject to describe the ticket" icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
                     
                     <FormTextArea inputID="body" inputLabel="Ticket Body" helperText="MDX Enabled!" textRows={10} {...form.getInputProps('body')} isRequired />
                     {relatedOptions[0].items.length > 0 || relatedOptions[1].items.length > 0 ? <FormSelect inputID="relatedTo" inputLabel="Related To" inputData={relatedOptions} {...form.getInputProps(`relatedTo`)} onChange={setRelatedSelected} value={relatedSelected} searchable clearable /> : null}
@@ -200,7 +200,7 @@ export default function EditTicket({isStaff, ticket}: any) {
                             checked={internalOptions}
                         />
                     }
-                    <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Ticket</FormSubmitButton>
+                    <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Ticket</FormSubmitButton>
                 </Box>
             </Box>
         </Modal>

@@ -9,9 +9,7 @@ import PinnedPostsCard from "../../../(Components)/(Cards)/PinnedPostsCard";
 import BlogPostCard from "./BlogPostCard";
 
 import Pagination from "../../../(Config)/(Layout)/(Pagination)";
-;
-import NextLink from "next/link";
-import { Alert02Icon } from "@hugeicons/react";
+
 import DividerInlineText from "@/app/(Components)/DividerInlineText";
 
 export default function Posts({posts, pinnedPosts, pagination, postsNumber}: any){

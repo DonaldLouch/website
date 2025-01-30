@@ -9,7 +9,6 @@ import { EmbedManager } from "./EmbedManager"
 import { AddEmbed } from "./AddEmbed"
 import { Box, Tabs } from "@mantine/core"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
-import { ArrowUpRight01Icon } from "@hugeicons/react"
 
 export default function EditLinksPage({ links, primaryLinks, embeds }: any) {
   const breadCrumbs = [

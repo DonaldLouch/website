@@ -1,7 +1,6 @@
 'use client'
 import { Title, Loader, Stack, Text, Paper, Group, Anchor, Center } from "@mantine/core";
 import PrimaryLinkedButton from "./(Components)/(Buttons)/PrimaryLinkedButton";
-import { Home01Icon, MailAtSign02Icon, RefreshIcon } from "@hugeicons/react";
 import PrimaryButton from "./(Components)/(Buttons)/PrimaryButton";
 
 export default function loading({loadingTitle, loadingText, loaderStyle}: {loadingTitle?: string, loadingText?: string, loaderStyle?: "bars" | "dots" | undefined}) {

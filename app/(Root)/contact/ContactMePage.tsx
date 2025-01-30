@@ -12,9 +12,9 @@ import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
-import { AlertDiamondIcon, MailAtSign02Icon, MailEdit02Icon, PassportIcon, PencilEdit01Icon } from '@hugeicons/react';
 import { notifications } from '@mantine/notifications';
 import InlineLink from '@/app/(Components)/InlineLink';
+import HugeIcon from '@/app/(Components)/HugeIcon';
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -68,7 +68,7 @@ export default function ContactMePage() {
             title: response.ok ? "Sent 🎉" : "An Error Occurred", 
             message: response.ok ? "You've successfully sent a message to Donald Louch!" : "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.", 
             color: response.ok ? "black" : "red-6",
-            icon: response.ok ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+            icon: response.ok ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
         })
     }
 
@@ -77,9 +77,9 @@ export default function ContactMePage() {
             <SectionTitle headingTitle="Contact Me" />
             <Text ta="center">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01", variant: "twotone"}} body="hello@donaldlouch.ca" /></Text>
             <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={form.onSubmit(onSend)}>
-                <FormInput isRequired inputLabel="First and Last Name" id="name" {...form.getInputProps('name')} icon={<PassportIcon />} inputDescription="I ask for your name so that when I reply back in regards to your contact request, I can formally address you." inputType="text" />
-                <FormInput isRequired inputLabel="Email Address" id="email" {...form.getInputProps('email')} icon={<MailAtSign02Icon />} inputDescription="Your email address is required so that I can send you a reply back in regards to your contact request." inputType="email" />
-                <FormInput isRequired inputLabel="Subject" id="subject" inputDescription="By providing a subject to the contact request, it'll make it easier to distinguish the unique request from others." icon={<MailEdit02Icon />} {...form.getInputProps('subject')} inputType="text" />
+                <FormInput isRequired inputLabel="First and Last Name" id="name" {...form.getInputProps('name')} icon={<HugeIcon name="passport" />} inputDescription="I ask for your name so that when I reply back in regards to your contact request, I can formally address you." inputType="text" />
+                <FormInput isRequired inputLabel="Email Address" id="email" {...form.getInputProps('email')} icon={<HugeIcon name="mail-at-sign-01" />} inputDescription="Your email address is required so that I can send you a reply back in regards to your contact request." inputType="email" />
+                <FormInput isRequired inputLabel="Subject" id="subject" inputDescription="By providing a subject to the contact request, it'll make it easier to distinguish the unique request from others." icon={<HugeIcon name="mail-edit-01" />} {...form.getInputProps('subject')} inputType="text" />
                 <FormTextArea inputID="message" inputLabel="Message" {...form.getInputProps('message')} isRequired />
                 <Group justify="flex-end" mt="md">
                     <FormSubmitButton>Send Message</FormSubmitButton>

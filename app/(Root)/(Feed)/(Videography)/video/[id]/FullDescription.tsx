@@ -1,8 +1,8 @@
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
 import { useUser } from "@clerk/nextjs";
-import { Album02Icon, ArrowUpRight01Icon, CameraVideoIcon, ContactIcon, Database02Icon, Edit02Icon, LibraryIcon, Link04Icon, LinkSquare02Icon, NewsIcon, Tag01Icon, TagsIcon, UserMultiple02Icon } from "@hugeicons/react";
 import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button, Table } from "@mantine/core";
 
 
@@ -14,30 +14,30 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
         <Title order={1} fz="3rem" fw="300">{video.title}</Title>
         <Group mb="1rem">
             {user && isAdmin &&
-            <Anchor href={`/admin/videography/${video.id}`}><Badge color="white" leftSection={<Edit02Icon />}>
+            <Anchor href={`/admin/videography/${video.id}`}><Badge color="white" leftSection={<HugeIcon name="edit-02" />}>
                 Edit Video
             </Badge></Anchor>
             }
-            <Anchor href="/"><Badge color="var(--secondary)" leftSection={<ContactIcon />}>
+            <Anchor href="/"><Badge color="var(--secondary)" leftSection={<HugeIcon name="contact" />}>
                 Donald Louch
             </Badge></Anchor>
-            <Badge color ="red" leftSection={<CameraVideoIcon />}>
+            <Badge color ="red" leftSection={<HugeIcon name="camera-video" />}>
                 <DisplayDate source={video.uploadedOn} format="MMMM Do YYYY [at] h:mm A" />
             </Badge>
-            <Badge color="primary" leftSection={<LibraryIcon />}>
+            <Badge color="primary" leftSection={<HugeIcon name="library" />}>
                 {video.category?.catName}
             </Badge>
             {video.links && video.links.length > 0 && video.links.map((link: any) => {
-                // console.log("Icon", link.icon)
-                const linkIcon = link.icon === "album02" ? <Album02Icon />
-                : link.icon === "news" ? <NewsIcon />
-                : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                : <Link04Icon />
+                // // console.log("Icon", link.icon)
+                // const linkIcon = link.icon === "album02" ? <Album02Icon />
+                // : link.icon === "news" ? <NewsIcon />
+                // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                // : <Link04Icon />
 
-                return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                    {link.name}
-                </Badge></Anchor>
+                // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                //     {link.name}
+                // </Badge></Anchor>
             })} 
         </Group>
 
@@ -47,7 +47,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
         <SingleAccordion customMargin="2rem 0rem" customPadding="1rem" content={[{
             id: "metadata",
             imageType: "Icon",
-            image: <Database02Icon />,
+            image: <HugeIcon name="database-02" />,
             label: "Video Information",
             description: "The video metadata information",
         }]}>
@@ -55,20 +55,20 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                 <Title order={3} ta="center" fz="1.8rem" fw="900" c="white" my="1rem" ff="text">Video Information</Title>
 
                 <Title order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Uploaded On</Title>
-                <Badge color ="red" leftSection={<CameraVideoIcon />}>
+                <Badge color ="red" leftSection={<HugeIcon name="camera-video" />}>
                     <DisplayDate source={video.uploadedOn} format="dddd, MMMM Do YYYY [at] h:mm A" />
                 </Badge>
 
                 <Title order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Category</Title>
-                <Badge color="primary" leftSection={<LibraryIcon />}>
+                <Badge color="primary" leftSection={<HugeIcon name="library" />}>
                     {video.category?.catName}
                 </Badge>
                 
                 <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Tags</Title>
                 <Group align="center" gap="1rem">
-                    <TagsIcon />
+                    <HugeIcon name="tags" />
                     {video.tags && video.tags.map((tag: any, index: number) => (
-                        <Badge color ="white" leftSection={<Tag01Icon />} key={index}>
+                        <Badge color ="white" leftSection={<HugeIcon name="tag-01" />} key={index}>
                             {tag}
                         </Badge>
                     ))}
@@ -77,22 +77,22 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                 {video.links && video.links.length > 0 && (<>
                     <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>
                     <Group align="center" gap="1rem">{video.links.length > 0 && video.links.map((link: any) => {
-                        const linkIcon = link.icon === "album02" ? <Album02Icon />
-                        : link.icon === "news" ? <NewsIcon />
-                        : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                        : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                        : <Link04Icon />
+                        // const linkIcon = link.icon === "album02" ? <Album02Icon />
+                        // : link.icon === "news" ? <NewsIcon />
+                        // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                        // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                        // : <Link04Icon />
 
-                        return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                            {link.name}
-                        </Badge></Anchor>
+                        // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                        //     {link.name}
+                        // </Badge></Anchor>
                     })
                     }</Group>
                 </>)}
 
                 {video.starring && video.starring.length > 0 && (<><Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Starring</Title>
                     <Group align="center" wrap="wrap" gap="0.8rem" m="1rem 1rem 0">
-                        <UserMultiple02Icon />
+                        <HugeIcon name="user-multiple-02" />
                         {video.starring && video.starring.map((star: any, index: number) => (
                             star.link ? <Anchor href={star.link}>
                             <Badge color="orange" leftSection={<Avatar
@@ -138,7 +138,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                                         {mCredit.artist && (
                                         <Tooltip label={mCredit.artist}><Text fw={300} m="-0.5rem 0 1rem" lineClamp={1}>By: {mCredit.artist}</Text></Tooltip>)}
                                     </Stack>
-                                    {mCredit.link && <Tooltip label="View Song"><Button component="a" href={mCredit.link} target="_blank" unstyled c="white"><ArrowUpRight01Icon variant="twotone" size="2rem" /></Button></Tooltip>}
+                                    {mCredit.link && <Tooltip label="View Song"><Button component="a" href={mCredit.link} target="_blank" unstyled c="white"><HugeIcon name="arrow-up-right-01" variant="twotone" size="2rem" /></Button></Tooltip>}
                                 </Group>
                                 
                                 {mCredit.info && (<><Divider opacity="0.2"/><Text lineClamp={8}>

@@ -1,6 +1,7 @@
 import { NavLink } from '@mantine/core'
 
 import classes from './Buttons.module.css'
+import HugeIcon from '../HugeIcon'
 
 interface propTypes {
     linkName: string
@@ -32,6 +33,6 @@ export default function HeaderLink( props: propTypes ) {
         p="1rem"
         // fw="300"
         // fz="1rem"
-        leftSection={icon}
+        leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} />}
     >{children}</NavLink>
 }

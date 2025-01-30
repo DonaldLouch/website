@@ -12,9 +12,9 @@ import {
 } from "@mantine/core";
 
 import { StandardPostType } from "../(Components)/StandardPostType";
-import { Alert02Icon, ArrowLeft02Icon } from "@hugeicons/react";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { useUser } from "@clerk/nextjs";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function PostPage({post, mdxSource, isLoggedIn}: any) {
   
@@ -46,12 +46,12 @@ export default function PostPage({post, mdxSource, isLoggedIn}: any) {
               <Paper p="2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg">
                 <Stack align="center">
                 <Group gap="2rem" align="center">
-                    <Alert02Icon size="4rem" color="red" />
+                    <HugeIcon name="alert-02" size="4rem" color="red" />
                     <Title order={1} fz={{base: "2rem", md: "3rem"}}>Private Post</Title>
                 </Group>
                 <Text>🚨 This post is listed as a private post and is not viewable
                   to the public. 🚨</Text>
-                  <PrimaryLinkedButton link="/blog" icon={<ArrowLeft02Icon />}>Go Back To The Blog Feed</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/blog" icon={<HugeIcon name="arrow-left-02" />}>Go Back To The Blog Feed</PrimaryLinkedButton>
                 </Stack>
             </Paper>    
         )}

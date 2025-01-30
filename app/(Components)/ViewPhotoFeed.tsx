@@ -10,13 +10,13 @@ import classes from "./Components.module.css"
 import { useDisclosure } from '@mantine/hooks'
 import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
 import ClipboardButton from '@/app/(Components)/(Buttons)/ClipboardButton'
-import { Album02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, Edit02Icon, GithubIcon, GridIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon, ViewIcon } from '@hugeicons/react'
 
 // import LazyLoad from 'react-lazyload';
 import Image from 'next/image'
 import { Suspense, useEffect, useState } from 'react'
 
 import { useImageSize } from 'react-image-size';
+import HugeIcon from './HugeIcon'
 // import { checkRole } from '@/lib/roles'
 
 
@@ -86,15 +86,15 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                         />
                     <Group gap="0.5rem">
                         <ClipboardButton copyValue={`${process.env.NEXT_PUBLIC_SITE_URL}/photo/${imageData.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" />
-                        <PrimaryLinkedButton link={`/photo/${imageData.id}`} icon={<ViewIcon />}>View Photo</PrimaryLinkedButton>
+                        <PrimaryLinkedButton link={`/photo/${imageData.id}`} primNewIcon={{name: "view", variant: "duotone"}}>View Photo</PrimaryLinkedButton>
                     </Group>
                 </Stack>
                 <Stack w={{base: "100%", md: "50%"}}> 
                     {user && isAdmin &&
                         <Group gap="0.5rem">
                             <ClipboardButton copyValue={imageData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
-                            <PrimaryLinkedButton link={`/admin/photography/${imageData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>
-                            <Badge color="white" leftSection={<GridIcon />}>
+                            <PrimaryLinkedButton link={`/admin/photography/${imageData.id}`} primNewIcon={{name: "edit-02"}}>Edit Photo</PrimaryLinkedButton>
+                            <Badge color="white" leftSection={<HugeIcon name="grid" />}>
                                 {imageData.id}
                             </Badge> 
                         </Group>
@@ -102,21 +102,22 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     <Text style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "0 2rem", whiteSpace: "break-spaces"}} p="2rem">{imageData.caption}</Text>
                     <Group gap="0.5rem">
                             {imageData.album && hideElement != "album" && <Anchor href={`/album/${albumData.slug}`} style={{color: "currentColor"}}>
-                            <Badge color="primary" leftSection={<Album02Icon />}>
+                            <Badge color="primary" leftSection={<HugeIcon name="album-02" />}>
                                 {albumData.albumName}
                             </Badge>
                         </Anchor>} 
                             {imageData.location && <Anchor href={`/feed/photography?search=location&value=${imageData.location}`} style={{color: "currentColor"}}>
-                            <Badge color='blue' leftSection={<PinLocation03Icon />}>
+                            <Badge color='blue' leftSection={<HugeIcon name="pin-location-03" />}>
                                 {imageData.location}
                             </Badge>
                         </Anchor>}
                     </Group>
-                    <Badge color="red" leftSection={<Calendar03Icon />}>
+                    <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                         <DisplayDate source={imageData.fileID.capturedOn} />
                     </Badge>
                     <Group gap="0.5rem">
-                         {imageData.links.length > 0 && imageData.links.map((link: any) => {
+                        {/* TODO: Add links */}
+                         {/* {imageData.links.length > 0 && imageData.links.map((link: any) => {
                             // console.log("Icon", link.icon)
                             const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
                             : link.icon === "Github" ? <GithubIcon />
@@ -128,12 +129,12 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                             return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
                                 {link.name}
                             </Badge></Anchor>
-                        })} 
+                        })}  */} 
                     </Group>
                     <Group gap="0.5rem">
-                        <TagsIcon />
+                        <HugeIcon name="tags" />
                         {imageData.tags.map((tag: any, index: number) => (<Anchor key={index} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
-                            <Badge color="white" leftSection={<Tag01Icon />}>
+                            <Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
                                 {tag}
                             </Badge>
                         </Anchor> ))}

@@ -18,7 +18,7 @@ export default function PrimaryButton({isHidden, icon, isFullWidth, children, co
 
   return <Button
     styles={{root: {display: isHidden ? "none" : "block"}}} 
-    leftSection={primNewIcon ? <HugeIcon name={primNewIcon.name} variant={primNewIcon.variant ? primNewIcon.variant : "stroke"} /> : icon} 
+    leftSection={primNewIcon ? <HugeIcon name={primNewIcon.name} variant={primNewIcon.variant ? primNewIcon.variant : undefined} /> : icon} 
     color={colour ? colour : "black"}
     fullWidth={isFullWidth}
     variant="filled" 

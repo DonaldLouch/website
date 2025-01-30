@@ -17,7 +17,6 @@ import { SectionTitle } from "@/app/(Components)/SectionTitle";
 // import cuid from "cuid";
 import moment from "moment";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { AlertDiamondIcon, Calendar03Icon, Delete02Icon, FileEditIcon, GridIcon, Link04Icon, PencilEdit01Icon, PencilEdit02Icon, PlusSignIcon } from "@hugeicons/react";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
 import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
@@ -32,6 +31,7 @@ import FormButton from "@/app/(Components)/(Form)/FormButton";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { notifications } from "@mantine/notifications";
 import DisplayDate from "@/lib/DisplayDate";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 // import { BsDashLg, BsLink45Deg, BsNodePlus, BsPencilSquare, BsPlus, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditPhotoData({photoData, photographyAlbum, locations, tagsData}: any) {
@@ -164,7 +164,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
             <FormInput inputID={`linksRow.${index}.link`} inputLabel="Link URL" {...form.getInputProps(`linksRow.${index}.link`)} key={form.key(`links.${index}.link`)} />
             <FormInput inputID={`linksRow.${index}.name`} inputLabel="Link Title" {...form.getInputProps(`linksRow.${index}.name`)} key={form.key(`links.${index}.name`)} />
             <ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-                <Delete02Icon size="1rem" />
+                <HugeIcon name="delete-02" size="1rem" />
             </ActionIcon>
         </Group>
     ));
@@ -245,7 +245,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
             title: `${supabaseStatus === 204 ? `Photo ${photoName} Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 204 ? `You have successfully edited the selected photos!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red",
-            icon: supabaseStatus === 204 ? <FileEditIcon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />
+            icon: supabaseStatus === 204 ? <HugeIcon name="file-edit" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />
         })
         supabaseStatus === 204 && router.refresh()
         // supabaseStatus && !toast.isActive(toastID) &&
@@ -296,13 +296,13 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
                     </Stack>
                     <Stack gap="1rem" my="1rem">
                         <Group>
-                            <Badge color="var(--primary)" leftSection={<GridIcon />}>
+                            <Badge color="var(--primary)" leftSection={<HugeIcon name="grid" />}>
                                 {fileID}
                             </Badge>
-                            <Badge color="red" leftSection={<Calendar03Icon />}>
+                            <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                                 <DisplayDate source={capturedOn} />
                             </Badge>
-                            <Anchor href={filePath} target="_blank"><Badge leftSection={<Link04Icon />} color="blue" tt="lowercase">{filePath}</Badge></Anchor>
+                            <Anchor href={filePath} target="_blank"><Badge leftSection={<HugeIcon name="link-04" />} color="blue" tt="lowercase">{filePath}</Badge></Anchor>
                         </Group>
                     </Stack>
                 </Flex>
@@ -330,7 +330,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
                         </Group>
                         ) : <Text ta="center">There is Currently No Links! You can add one though!</Text>}
                     {linkFields}
-                    <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('linksRow', { 
+                    <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('linksRow', {
                         key: randomId(),
                         linkType: "exLink", 
                         icon: null, 
@@ -399,7 +399,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
                 checked={isPinnedOption}
             />
 
-            <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Photo</FormSubmitButton>
+            <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Photo</FormSubmitButton>
         </Box>
         {/*                 
                     

@@ -1,9 +1,9 @@
 'use client'
 import CopyColourSwatch from "@/app/(Components)/(Buttons)/CopyColourSwatch";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 import TableOfContents from "@/app/(Components)/TableOfContents";
 import DisplayDate from "@/lib/DisplayDate";
-import { ArrowLeft02Icon, Calendar03Icon, ContactIcon, Delete04Icon, InformationCircleIcon } from "@hugeicons/react";
 import { Box, Title, Image, SimpleGrid, AspectRatio, Anchor, Stack, Flex, Tooltip, Text, Badge, Group, Space, Grid, useMantineTheme, Alert, Center } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -132,7 +132,7 @@ export default function BrandingPage() {
             <Box w="100vw" h="100vh">
                 <Image src="https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LYZ6RZZ8ik0X9Eq6x.jpeg" alt="Cover Image Branding 5.0" w="100vw" h="100vh"/>
             </Box>
-            <Box><HomeButton icon={<ArrowLeft02Icon size="3rem" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
+            <Box><HomeButton icon={<HugeIcon name="arrow-left-02" size="3rem" />} link="/blog" helperText="Go Back to Blog Feed" /></Box>
             <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
                 <Box bg="var(--darkPurpleRGBA)" style={{
                     boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -204,7 +204,7 @@ export default function BrandingPage() {
                                     <CopyColourSwatch key={colour.colourHex} colourTitle={colour.colourTitle} colourHex={colour.colourHex} colourAmount={colourSwatches.length} />
                                 ))}
                             </SimpleGrid>
-                            <Alert variant="light" color="red" icon={<Delete04Icon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">The Lima (#6acc1b) green hue has been phased out from the core branding colours. When green is needed within my website, Lima (#6acc1b) remains the designated choice.</Text></Alert>
+                            <Alert variant="light" color="red" icon={<HugeIcon name="delete-04" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">The Lima (#6acc1b) green hue has been phased out from the core branding colours. When green is needed within my website, Lima (#6acc1b) remains the designated choice.</Text></Alert>
                         </Box>
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="gradients" mb="2rem">Gradients</Title>
@@ -217,7 +217,7 @@ export default function BrandingPage() {
                                     </AspectRatio>
                                 ))}
                             </SimpleGrid>
-                             <Alert variant="light" color="red" icon={<Delete04Icon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">The Lima (#6acc1b) green hue has been phased out from the main gradient.</Text></Alert>
+                             <Alert variant="light" color="red" icon={<HugeIcon name="delete-04" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">The Lima (#6acc1b) green hue has been phased out from the main gradient.</Text></Alert>
                         </Box>
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="theShadows" mb="2rem">Box/Drop Shadows</Title>
@@ -230,7 +230,7 @@ export default function BrandingPage() {
                                     </AspectRatio>
                                 ))}
                             </SimpleGrid>
-                            <Alert variant="light" color="var(--secondary)" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">Note that there is also a new shadow for the "Mirage (##1d1929)" colour; however, it's not visible on this particular page since the background is the Mirage colour!</Text></Alert>
+                            <Alert variant="light" color="var(--secondary)" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">Note that there is also a new shadow for the "Mirage (##1d1929)" colour; however, it's not visible on this particular page since the background is the Mirage colour!</Text></Alert>
                         </Box>
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="logos" mb="2rem">Logos</Title>
@@ -256,7 +256,7 @@ export default function BrandingPage() {
                                     />
                                 </Box>
                             </SimpleGrid>
-                            <Alert variant="light" color="var(--secondary)" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There are additional variants that are available which can be seen in the below attached PDF file.</Text></Alert>
+                            <Alert variant="light" color="var(--secondary)" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There are additional variants that are available which can be seen in the below attached PDF file.</Text></Alert>
                         </Box>
                         <Box my="2rem">
                             <Title order={2} my="0.5rem" fw="500" id="titleLogo" mb="2rem">Title Logo</Title>
@@ -266,7 +266,7 @@ export default function BrandingPage() {
                                 w="100%"
                                 height="auto"
                             />
-                            <Alert variant="light" color="var(--secondary)" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There are additional variants that are available which can be seen in the below attached PDF file.</Text></Alert>
+                            <Alert variant="light" color="var(--secondary)" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There are additional variants that are available which can be seen in the below attached PDF file.</Text></Alert>
                         </Box>
                         <Title order={2} my="0.5rem" fw="500" id="pdf">PDF Version of "Branding Version 5.0"</Title>
                         <AspectRatio ratio={8/11.5}>

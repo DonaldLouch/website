@@ -22,8 +22,8 @@ import classes from "@/app/(Components)/Components.module.css"
 import SingleAccordion from "../(Components)/(Accordion)/SingleAccording"
 
 import Masonry from 'react-masonry-css'
-import { ArrowUpRight01Icon, HandPointingRight01Icon, QuoteDownIcon } from "@hugeicons/react"
 import InlineLink from "../(Components)/InlineLink"
+import HugeIcon from "../(Components)/HugeIcon"
 
  const breakpointColumnsObj = {
     default: 5,
@@ -119,7 +119,7 @@ const songInfo = (props: any) => (
     </>
 )
 
-const blockquote = (props: any) => (<Blockquote color="var(--primary)" icon={<QuoteDownIcon />} m="3rem 0 2rem" p="1rem 2rem">
+const blockquote = (props: any) => (<Blockquote color="var(--primary)" icon={<HugeIcon name="quote-down" />} m="3rem 0 2rem" p="1rem 2rem">
     {props.children}
 </Blockquote>)
 
@@ -128,7 +128,7 @@ const unorderedList = (props: any) => {
     props.children.forEach((item: any) => {
         item != "\n" && listArray.push(item)
     })
-    return <List withPadding fw="300" type="unordered" icon={<HandPointingRight01Icon variant="duotone" color="var(--secondary)" />} styles={{itemWrapper: {alignItems: "flex-start"}}}>
+    return <List withPadding fw="300" type="unordered" icon={<HugeIcon name="hand-pointing-right-01" variant="duotone" color="var(--secondary)" />} styles={{itemWrapper: {alignItems: "flex-start"}}}>
         {listArray.map((item: any, index: number) => {
             return <List.Item key={index} m="1rem">{item.props.children}</List.Item>
         })}

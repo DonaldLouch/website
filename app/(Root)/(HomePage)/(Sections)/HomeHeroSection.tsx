@@ -1,5 +1,4 @@
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
-import { Briefcase02Icon, Chatting01Icon, DashboardSquare02Icon, Folder01Icon, JobSearchIcon, Link01Icon, Link04Icon, NewsIcon, Passport01Icon, PassportIcon } from "@hugeicons/react"
 import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Spoiler } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";

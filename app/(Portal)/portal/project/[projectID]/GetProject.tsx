@@ -14,11 +14,11 @@ import TasksComponent from "./(Sections)/(Tasks)/TasksComponent";
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import { ProjectType } from "@/lib/Project/projectType";
-import { Book02Icon, Cone01Icon, Loading03Icon } from "@hugeicons/react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import NotesSection from "./(Sections)/NotesSection";
 import { useUser } from "@clerk/nextjs";
 import ProjectTickets from "./(Sections)/(Tickets)/ProjectTickets";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 // import { Metadata } from 'next';
 
@@ -146,10 +146,10 @@ export default async function GetProject({project, projectDescription, isStaff, 
                 </Group>
                 <Group align="center" justify="center">
                     {/* <Badge color="gray" m="0 auto">{projectType?.fullText ? projectType?.fullText : projectType?.smallText}</Badge> */}
-                    <Badge color="gray" leftSection={<Book02Icon />}>
+                    <Badge color="gray" leftSection={<HugeIcon name="book-02" />}>
                         {projectType?.smallText}
                     </Badge>
-                    <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <Loading03Icon variant="twotone" />}>
+                    <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <HugeIcon name="loading-03" variant="twotone" />}>
                         {projectStatus?.smallText}
                     </Badge>
                     {/* <Badge color={ projectStatus?.colorScheme ? projectStatus.colorScheme : "gray" } m="0 auto">{projectStatus?.fullText ? projectStatus?.fullText : projectStatus?.smallText ? projectStatus?.smallText : null}</Badge> */}
@@ -179,11 +179,11 @@ export default async function GetProject({project, projectDescription, isStaff, 
                 </Tabs.Panel>
                 
                 <Tabs.Panel value="files" py="2rem"><>
-                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Files" section is currently under constriction.</Text></Stack>
+                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><HugeIcon name="cone-01" size="2rem" color="currentColor" /></Box>The "Files" section is currently under constriction.</Text></Stack>
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="communication" py="2rem"><>
-                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Communication" section is currently under constriction.</Text></Stack>
+                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><HugeIcon name="cone-01" size="2rem" color="currentColor" /></Box>The "Communication" section is currently under constriction.</Text></Stack>
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="tickets" py="2rem"><>
@@ -192,15 +192,15 @@ export default async function GetProject({project, projectDescription, isStaff, 
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="timeSheets" py="2rem"><>
-                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Time Sheets" section is currently under constriction.</Text></Stack>
+                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><HugeIcon name="cone-01" size="2rem" color="currentColor" /></Box>The "Time Sheets" section is currently under constriction.</Text></Stack>
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="invoices" py="2rem"><>
-                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Invoices" section is currently under constriction.</Text></Stack>
+                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><HugeIcon name="cone-01" size="2rem" color="currentColor" /></Box>The "Invoices" section is currently under constriction.</Text></Stack>
                 </></Tabs.Panel>
                 
                 <Tabs.Panel value="payments" py="2rem"><>
-                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><Cone01Icon size="2rem" color="currentColor" /></Box>The "Payments" section is currently under constriction.</Text></Stack>
+                 <Stack align="center" justify="center"><Text fz="3xl" fw="700" c="var(--secondary)" display="inline-flex" style={{alignItems: "center", justifyContent: "center"}}><Box component="span" mr="1rem"><HugeIcon name="cone-01" size="2rem" color="currentColor" /></Box>The "Payments" section is currently under constriction.</Text></Stack>
                 </></Tabs.Panel>
 
 

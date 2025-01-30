@@ -9,12 +9,13 @@ import { useDisclosure } from '@mantine/hooks'
 import * as yup from 'yup';
 import { yupResolver } from 'mantine-form-yup-resolver';
 import { useForm } from '@mantine/form'
-import { AlertDiamondIcon, ArrowUpRight01Icon, IconjarIcon, TextFontIcon } from '@hugeicons/react'
 import { FormSelect } from '@/app/(Components)/(Form)/FormSelect'
 import { useState } from 'react'
 import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 import { useRouter } from 'next/navigation'
 import { notifications } from '@mantine/notifications'
+import HugeIcon from '@/app/(Components)/HugeIcon'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 export default function AddLink() {
     const router = useRouter()
@@ -43,7 +44,7 @@ export default function AddLink() {
             title: `${supabaseStatus === 201 ? "Added New Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
             message: `${supabaseStatus === 201 ? `You have successfully added a new link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
             color: supabaseStatus === 201 ? "green.0" : "red",
-            icon: supabaseStatus === 201 ? <ArrowUpRight01Icon variant="twotone" /> : <AlertDiamondIcon variant="twotone" />,
+            icon: supabaseStatus === 201 ? <HugeIcon name="arrow-up-right-01" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />,
         })
         supabaseStatus === 201 && router.refresh()
     }
@@ -84,18 +85,18 @@ export default function AddLink() {
         >
             <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
                 <SimpleGrid cols={2} spacing="2rem">
-                    <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<IconjarIcon variant="twotone" />} isRequired />
+                    <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<HugeIcon name="icon-jar" variant="twotone" />} isRequired />
                     <FormSelect inputID="iconVariant" inputLabel="Icon Variant" inputData={iconVariantOptions} {...form.getInputProps(`iconVariant`)} onChange={setIconVariantSelected} value={iconVariantSelected} clearable />
                 </SimpleGrid>
                 <Stack align="center" mb="2rem">
                     <Code p="0.5rem" bg="var(--blackRGBA)" c="white" fz="1rem" w="100%">Please provide the icon name. You may visit <Anchor href="https://hugeicons.com/icons">https://hugeicons.com/icons</Anchor> for a list of all icons.</Code>
                 </Stack>
                 <SimpleGrid cols={2} spacing="2rem">
-                    <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<TextFontIcon variant="twotone" />} isRequired />
-                    <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<TextFontIcon variant="twotone" />} isRequired />
+                    <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
+                    <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
                 </SimpleGrid>
-                <FormInput inputID="link" inputLabel="Link" {...form.getInputProps('link')} inputDescription="Please provide the link." icon={<ArrowUpRight01Icon variant="twotone" />} />
-                <FormSubmitButton icon={<ArrowUpRight01Icon />}>Add New Link</FormSubmitButton> 
+                <FormInput inputID="link" inputLabel="Link" {...form.getInputProps('link')} inputDescription="Please provide the link." icon={<HugeIcon name="arrow-up-right-01" variant="twotone" />} />
+                <FormSubmitButton icon={<HugeIcon name="arrow-up-right-01" />}>Add New Link</FormSubmitButton>
             </Box>
         </Modal>
     </>

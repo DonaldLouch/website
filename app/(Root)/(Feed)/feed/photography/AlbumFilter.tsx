@@ -1,4 +1,4 @@
-import { Album02Icon } from "@hugeicons/react"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
 // import { BsImages } from "react-icons/bs"
@@ -44,7 +44,7 @@ export default function AlbumFilter( {photographyAlbum}: any ) {
                 onClick={() => combobox.openDropdown()}
                 onFocus={() => combobox.openDropdown()}
                 onBlur={() => combobox.closeDropdown()}
-                leftSection={<Album02Icon />}
+                leftSection={<HugeIcon name="album-02" />}
             />
         </Combobox.Target>
 

@@ -19,7 +19,7 @@ import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { useUser } from "@clerk/nextjs";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
-import { Album02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, Edit02Icon, GithubIcon, GridIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from "@hugeicons/react";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function PhotoPage({photoData, mdxSource}: any) {
   const {user} = useUser()
@@ -42,8 +42,8 @@ export default function PhotoPage({photoData, mdxSource}: any) {
        {user && isAdmin &&
           <Group gap="0.5rem">
             <ClipboardButton copyValue={photoData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
-            <PrimaryLinkedButton link={`/admin/photography/${photoData.id}`} icon={<Edit02Icon />}>Edit Photo</PrimaryLinkedButton>
-            <Badge color="white" leftSection={<GridIcon />}>
+            <PrimaryLinkedButton link={`/admin/photography/${photoData.id}`} icon={<HugeIcon name="edit-02" />}>Edit Photo</PrimaryLinkedButton>
+            <Badge color="white" leftSection={<HugeIcon name="grid" />}>
               {photoData.id}
             </Badge> 
           </Group>
@@ -55,38 +55,38 @@ export default function PhotoPage({photoData, mdxSource}: any) {
         </Box>
         <Group gap="0.5rem">
           {photoData.album && <Anchor href={`/album/${albumData.slug}`} style={{color: "currentColor"}}>
-            <Badge color="primary" leftSection={<Album02Icon />}>
+            <Badge color="primary" leftSection={<HugeIcon name="album-02" />}>
               {albumData.albumName}
             </Badge>
           </Anchor>} 
           {photoData.location && <Anchor href={`/feed/photography?search=location&value=${photoData.location}`} style={{color: "currentColor"}}>
-            <Badge color='blue' leftSection={<PinLocation03Icon />}>
+            <Badge color='blue' leftSection={<HugeIcon name="pin-location-03" />}>
               {photoData.location}
             </Badge>
           </Anchor>}
         </Group>
-        <Badge color="red" leftSection={<Calendar03Icon />}>
+        <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
           <DisplayDate source={photoData.fileID.capturedOn} />
         </Badge>
         <Group gap="0.5rem">
           {photoData.links.length > 0 && photoData.links.map((link: any) => {
               // console.log("Icon", link.icon)
-              const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
-              : link.icon === "Github" ? <GithubIcon />
-              : link.icon === "news" ? <NewsIcon />
-              : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-              : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-              : <Link04Icon />
+              // const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
+              // : link.icon === "Github" ? <GithubIcon />
+              // : link.icon === "news" ? <NewsIcon />
+              // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+              // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+              // : <Link04Icon />
 
-              return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                  {link.name}
-              </Badge></Anchor>
+              // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+              //     {link.name}
+              // </Badge></Anchor>
           })} 
         </Group>
         <Group gap="0.5rem">
-          <TagsIcon />
+          <HugeIcon name="tags" />
           {photoData.tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
-            <Badge color="white" leftSection={<Tag01Icon />}>
+            <Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
               {tag}
             </Badge>
           </Anchor> ))}

@@ -14,10 +14,10 @@ import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
-import { AlertDiamondIcon, ContactIcon, PencilEdit01Icon, SaveMoneyDollarIcon, TextFontIcon } from "@hugeicons/react";
 import supabase from "@/lib/supabase";
 import { notifications } from "@mantine/notifications";
 import { useRouter } from "next/navigation";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 export default function EditProject({project}: any) {
     
@@ -108,7 +108,7 @@ export default function EditProject({project}: any) {
             title: `${supabaseStatus === 204 ? `Project "${values.projectName}" Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message: `${supabaseStatus === 204 ? `You have successfully updated the project!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red-6",
-            icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
         })
         // actions.setSubmitting(false)
         supabaseStatus === 204 && router.refresh()
@@ -170,17 +170,17 @@ export default function EditProject({project}: any) {
         {editOptions && (<> 
             <Title size="2xl" td="underline" fw="900" order={1}>Project Settings</Title>
             <Box p="3rem 3rem 0.5rem" component="form" onSubmit={form.onSubmit(onSubmit)} style={{boxShadow: "var(--mantine-shadow-bsBoldWhite)", borderRadius: "var(--mantine-radius-md)"}} m="0">
-                <FormInput inputID="projectName" inputLabel="Project Name" {...form.getInputProps('projectName')} inputDescription="Please use a easily project name to make it easy for finding. (I.E. Install: DLPortal)" icon={<TextFontIcon variant="twotone" />} isRequired />
+                <FormInput inputID="projectName" inputLabel="Project Name" {...form.getInputProps('projectName')} inputDescription="Please use a easily project name to make it easy for finding. (I.E. Install: DLPortal)" icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
                 <FormTextArea inputID="projectDescription" inputLabel="Project Description" helperText="MDX Enabled!" textRows={10} {...form.getInputProps('projectDescription')} isRequired />
                 <SimpleGrid cols={3} my="2rem">
                     <FormDatePicker dateLabel="Created On" {...form.getInputProps('projectCreatedOn')} />
                     <FormDatePicker dateLabel="Expected Start Date" datePlaceholder="When are you expecting this project to start on?" {...form.getInputProps('projectStartDate')} />
                     <FormDatePicker dateLabel="Expected Deadline" datePlaceholder="When is the expected deadline of this project?" {...form.getInputProps('projectDeadline')} />
                 </SimpleGrid>
-                <FormInput inputID="projectBudget" inputLabel="Budget" {...form.getInputProps('projectBudget')} icon={<SaveMoneyDollarIcon variant="twotone"/>} inputDescription="Please include what you think will be the budget for the project. If no budget say FREE, or UNSURE if you're unsure. If currency is not in Canadian Dollar (CAD) please also specify the currency!" isRequired />
+                <FormInput inputID="projectBudget" inputLabel="Budget" {...form.getInputProps('projectBudget')} icon={<HugeIcon name="save-money-dollar" variant="twotone"/>} inputDescription="Please include what you think will be the budget for the project. If no budget say FREE, or UNSURE if you're unsure. If currency is not in Canadian Dollar (CAD) please also specify the currency!" isRequired />
                 <SimpleGrid cols={2}>
-                    <FormInput inputID="firstName" inputLabel="First Name" {...form.getInputProps('firstName')} icon={<ContactIcon />} isRequired />
-                    <FormInput inputID="lastName" inputLabel="Last Name" {...form.getInputProps('lastName')} icon={<ContactIcon />} isRequired />
+                    <FormInput inputID="firstName" inputLabel="First Name" {...form.getInputProps('firstName')} icon={<HugeIcon name="contact" />} isRequired />
+                    <FormInput inputID="lastName" inputLabel="Last Name" {...form.getInputProps('lastName')} icon={<HugeIcon name="contact" />} isRequired />
                 </SimpleGrid>
                 <SimpleGrid cols={2} my="2rem">
                     <FormSelect inputID="type" inputLabel="Project Type" inputData={typeOptions} {...form.getInputProps(`type`)} onChange={setTypeSelected} value={typeSelected} searchable />
@@ -212,7 +212,7 @@ export default function EditProject({project}: any) {
                 </SimpleGrid>
                 {bannerOption && <Box p="2rem" style={{ boxShadow: "var(--mantine-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)" }}>
                     <Title size="2xl" td="underline" fw="900" mb="2rem" order={2}>Banner Settings</Title>
-                    <FormInput inputID="bannerTitle" inputLabel="Banner Title" {...form.getInputProps('bannerTitle')} inputDescription="" icon={<TextFontIcon variant="twotone" />} />
+                    <FormInput inputID="bannerTitle" inputLabel="Banner Title" {...form.getInputProps('bannerTitle')} inputDescription="" icon={<HugeIcon name="text-font" variant="twotone" />} />
                     <FormTextArea inputID="bannerBody" inputLabel="Banner Body" textRows={5} {...form.getInputProps('bannerBody')}  isRequired={bannerOption}  />
                     <FormSelect inputID="bannerColour" inputLabel="Banner Colour" inputData={bannerColourOptions} {...form.getInputProps(`bannerColour`)} onChange={setBannerColourSelected} value={bannerColourSelected} isRequired={bannerOption} />
                     <FormSwitch 
@@ -230,7 +230,7 @@ export default function EditProject({project}: any) {
                     onClick={(e: any) => setIsVisibleClient(e.target.checked)} 
                     checked={isVisibleClient}
                 />
-                <FormSubmitButton icon={<PencilEdit01Icon />}>Edit Project</FormSubmitButton>
+                <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Project</FormSubmitButton>
             </Box>
         </>)}
     </Stack>

@@ -5,9 +5,9 @@ import Link from "next/link";
 import moment from 'moment-timezone';
 
 import { useUser } from '@clerk/nextjs'
-import { ContactIcon, MailAtSign01Icon, SmartPhone01Icon, Time02Icon } from "@hugeicons/react";
 import { MdxContent } from "@/app/mdx-content";
 import DisplayDate from "@/lib/DisplayDate";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 // import Loading from "../../../(Config)/ContentLoading";
 
 // type Post = {
@@ -68,25 +68,25 @@ export default async function OverviewComponent({project, projectDescription}: a
                                     <Text fz="2xl" fw="900" lineClamp={1}>{project.client.firstName} {project.client.lastName}</Text>
                                 </Tooltip>
                                 <Group c="white" wrap="nowrap">
-                                    <ContactIcon />
+                                    <HugeIcon name="contact" />
                                     <Tooltip label={project.client.id}>
                                         <Text lineClamp={1}>{project.client.id}</Text>
                                     </Tooltip>
                                 </Group>
                                 <Group c="white" wrap="nowrap">
-                                    <MailAtSign01Icon />
+                                    <HugeIcon name="mail-at-sign-01" />
                                     <Tooltip label={`Send an Email to ${project.client.email}`}>
                                         <Anchor href={`mailto:${project.client.firstName} ${project.client.lastName}<${project.client.email}>?subject=RE: Donald Louch Project ${project.id}`} c="var(--secondary)" underline="hover"><Text lineClamp={1}>{project.client.email}</Text></Anchor>
                                     </Tooltip>
                                 </Group>
                                 <Group c="white" wrap="nowrap">
-                                    <SmartPhone01Icon />
+                                    <HugeIcon name="smart-phone-01" />
                                     <Tooltip label={`Client Phone Number ${project.client.phoneNumber}`}>
                                         <Text lineClamp={1}>{project.client.phoneNumber}</Text>
                                     </Tooltip>
                                 </Group>
                                 <Group c="white" wrap="nowrap">
-                                    <Time02Icon />
+                                    <HugeIcon name="time-02" />
                                     <Tooltip label={`It's ${moment().tz(project.client.timezone).format("MMMM Do, YYYY")} for the client right now!; ${project.client.timezone}`}>
                                         {/* MMMM Do, YYYY; h:mma */}
                                         <Text lineClamp={1}><DisplayDate timeZone={project.client.timezone ? project.client.timezone : null} format="h:mma (z)" /></Text>

@@ -12,5 +12,6 @@ import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
 export default function page() {
     return <Box mt="2rem">
         <InlineCode code="console.log('Hello World')" />
+        <HugeIcon name="tiktok" color="red" size="10rem" variant="twotone" />
     </Box>
 }

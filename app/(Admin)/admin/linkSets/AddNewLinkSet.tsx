@@ -4,7 +4,6 @@ import { ProjectType } from "@/lib/Project/projectType";
 import { Box, Stack, Modal, SimpleGrid, Text, Grid, ActionIcon } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { randomId, useDisclosure } from "@mantine/hooks";
-import { AlertDiamondIcon, Delete02Icon, DragDropIcon, Link01Icon, PlusSignIcon, SaveMoneyDollarIcon, SentIcon, SeoIcon, SmartPhone01Icon, TextFontIcon } from "@hugeicons/react";
 import { useForm } from "@mantine/form";
 
 import * as yup from 'yup';
@@ -27,6 +26,7 @@ import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
 import FormButton from "@/app/(Components)/(Form)/FormButton";
 import FileUploader from "../(MediaManager)/(Components)/FileUploader";
+import HugeIcon from "@/app/(Components)/HugeIcon";
 
 // type ProjectProps = {
 //     isAdmin: boolean
@@ -81,7 +81,7 @@ export default function AddNewLinkSet() {
             title: `${supabaseStatus === 201 ? "Link Set Added 🎉" : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 201 ? `You have successfully added ${values.setName}!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 201 ? "black" : "red",
-            icon: supabaseStatus === 201 ? <SentIcon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 201 ? <HugeIcon name="sent" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 201 && router.refresh()
     }
@@ -136,14 +136,14 @@ export default function AddNewLinkSet() {
                     {...provided.draggableProps} {...provided.dragHandleProps}
                 >
                     <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-                        <DragDropIcon />
+                        <HugeIcon name="drag-drop" />
                     </Box></Grid.Col>
                     <Grid.Col span={2.75}> <FormSelect inputID={`linksRow.${index}.linkType`} inputData={linkTypeOptions} key={form.key(`linksRow.${index}.linkType`)} {...form.getInputProps(`linksRow.${index}.linkType`)} /></Grid.Col>
                     <Grid.Col span={2.75}><FormInput inputID={`linksRow.${index}.icon`}  {...form.getInputProps(`linksRow.${index}.icon`)} key={form.key(`linksRow.${index}.icon`)} /></Grid.Col>
                     <Grid.Col span={2.75}><FormInput inputID={`linksRow.${index}.link`}  {...form.getInputProps(`linksRow.${index}.link`)} key={form.key(`linksRow.${index}.link`)} /></Grid.Col>
                     <Grid.Col span={2.75}><FormInput inputID={`linksRow.${index}.name`}  {...form.getInputProps(`linksRow.${index}.name`)} key={form.key(`linksRow.${index}.name`)} /></Grid.Col>
                     <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-                        <Delete02Icon size="1rem" />
+                        <HugeIcon name="delete-02" size="1rem" />
                     </ActionIcon></Grid.Col>
                 </Grid>
             )}
@@ -179,8 +179,8 @@ export default function AddNewLinkSet() {
                         postDate
                      */}
                     <SimpleGrid cols={2} my="2rem">
-                        <FormInput inputID="setName" inputLabel="Link Set Name" {...form.getInputProps('setName')} icon={<TextFontIcon variant="twotone" />} isRequired />
-                        <FormInput inputID="setSlug" inputLabel="Link Set Slug" {...form.getInputProps('setSlug')} icon={<Link01Icon variant="twotone" />} isRequired />
+                        <FormInput inputID="setName" inputLabel="Link Set Name" {...form.getInputProps('setName')} icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
+                        <FormInput inputID="setSlug" inputLabel="Link Set Slug" {...form.getInputProps('setSlug')} icon={<HugeIcon name="link-01" variant="twotone" />} isRequired />
                     </SimpleGrid>
 
                     <FormTextArea inputID="description" inputLabel="Link Set Description" helperText="MDX Enabled!" textRows={5} {...form.getInputProps('description')} isRequired />
@@ -190,7 +190,7 @@ export default function AddNewLinkSet() {
                     {typeSelected === "Audio" ? (<>
                             <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem" mb="2rem">
                                 <SectionTitle headingTitle="Media: Audio" />
-                                <FormInput inputID="audioSRC" inputLabel="Audio Source Link" {...form.getInputProps('audioSRC')} icon={<Link01Icon variant="twotone" />} isRequired={typeSelected === "Audio"} />
+                                <FormInput inputID="audioSRC" inputLabel="Audio Source Link" {...form.getInputProps('audioSRC')} icon={<HugeIcon name="link-01" variant="twotone" />} isRequired={typeSelected === "Audio"} />
                             </Stack>
                         </>) 
                         : typeSelected && <Text ta="center" my="2rem">The {typeSelected} media is currently not supported.</Text>
@@ -224,7 +224,7 @@ export default function AddNewLinkSet() {
                             </Droppable>
                         </DragDropContext>
 
-                        <FormButton icon={<PlusSignIcon />} onClick={() => form.insertListItem('linksRow', { 
+                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('linksRow', {
                             key: randomId(),
                             linkType: "exLink", 
                             icon: undefined, 
@@ -237,7 +237,7 @@ export default function AddNewLinkSet() {
 
                     <Box m="2rem 5rem 0rem"><FileUploader mediaType={"thumbnail/linkSet"} uploadTitle="Upload Thumbnail" helperText="Recommend uploading a single thumbnail." id={id} /></Box>
 
-                    <FormSubmitButton icon={<SentIcon />}>Add New Link Set</FormSubmitButton>
+                    <FormSubmitButton icon={<HugeIcon name="sent" />}>Add New Link Set</FormSubmitButton>
                 </Box>
             </Box>
         </Modal>

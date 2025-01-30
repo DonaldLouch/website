@@ -21,10 +21,10 @@ import {
 
 import { SidebarCard } from '../(Components)/SidebarCard'
 import PostContent from '../(Components)/PostContent'
-import { Album02Icon, ArrowLeft02Icon, ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, ContactIcon, Edit02Icon, Folder01Icon, GithubIcon, Link04Icon, LinkSquare02Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser } from '@clerk/nextjs'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 // const meta = keyframes `
 //     0% {
@@ -51,7 +51,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
             <Box w="100vw" h="100vh">
                 <Image src={post.thumbnail} alt={post.title} w="100vw" h="100vh"/>
             </Box>
-            <Box><HomeButton icon={<ArrowLeft02Icon size="3rem" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
+            <Box><HomeButton icon={<HugeIcon name="arrow-left-02" size="3rem" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
             <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
                 <Box bg="var(--darkPurpleRGBA)" style={{
                     boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -91,44 +91,44 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                             <Stack gap="1rem" m="1rem 0">
                                 <Group>
                                     {isLoggedIn && isAdmin &&
-                                        <Anchor href={`/admin/postEdit/${post.slug}`} m="0"><Badge color="white" leftSection={<Edit02Icon />}>
+                                        <Anchor href={`/admin/postEdit/${post.slug}`} m="0"><Badge color="white" leftSection={<HugeIcon name="edit-02" />}>
                                             Edit Post
                                         </Badge></Anchor>
                                     }
-                                    <Anchor href="/" m="0"><Badge color="primary" leftSection={<ContactIcon />}>
+                                    <Anchor href="/" m="0"><Badge color="primary" leftSection={<HugeIcon name="contact" />}>
                                         {post.author}
                                     </Badge></Anchor>
-                                    <Badge color="red" leftSection={<Calendar03Icon />} m="0">
+                                    <Badge color="red" leftSection={<HugeIcon name="calander-03" />} m="0">
                                         <DisplayDate source={post.postedOn} />
                                     </Badge>
                                     <Group>
                                         {post.category.map((category: any) => (
-                                            <Anchor key={category} href={`/blog/C/${category}`} m="0"><Badge color="blue" leftSection={<Folder01Icon />}>
+                                            <Anchor key={category} href={`/blog/C/${category}`} m="0"><Badge color="blue" leftSection={<HugeIcon name="folder-01" />}>
                                                 {category}
                                             </Badge></Anchor>
                                         ))}
                                     </Group>
                                     {post.links.length > 0 && post.links.map((link: any) => {
-                                        // console.log("Icon", link.icon)
-                                        const linkIcon = link.icon === "album02" ? <Album02Icon />
-                                        : link.icon === "CameraVideo" ? <CameraVideoIcon />
-                                        : link.icon === "Github" ? <GithubIcon />
-                                        : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                                        : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                                        : <Link04Icon />
+                                        // // console.log("Icon", link.icon)
+                                        // const linkIcon = link.icon === "album02" ? <Album02Icon />
+                                        // : link.icon === "CameraVideo" ? <CameraVideoIcon />
+                                        // : link.icon === "Github" ? <GithubIcon />
+                                        // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                                        // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                                        // : <Link04Icon />
 
-                                        return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                                            {link.name}
-                                        </Badge></Anchor>
+                                        // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                                        //     {link.name}
+                                        // </Badge></Anchor>
                                     })} 
                                 </Group>
                             </Stack>
                         </Flex>
                     </Flex>
                     <Group gap="1rem" m="1rem" mah="20vh" style={{overflow: "scroll"}}>
-                        <TagsIcon />
+                        <HugeIcon name="tags" />
                         {post.tags.map((tag: any) => (
-                            <Anchor key={tag} href={`/blog/T/${tag}`} m="0"><Badge color="white" leftSection={<Tag01Icon />}>
+                            <Anchor key={tag} href={`/blog/T/${tag}`} m="0"><Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
                                 {tag}
                             </Badge></Anchor>
                         ))}

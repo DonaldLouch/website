@@ -5,11 +5,11 @@ import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
 
 import { useForm, yupResolver } from "@mantine/form"
 import * as yup from "yup"
-import { AlertDiamondIcon, SentIcon } from "@hugeicons/react"
 import supabase from "@/lib/supabase"
 import { useUser } from "@clerk/nextjs"
 import { notifications } from "@mantine/notifications"
 import { useRouter } from "next/navigation"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 
 export default function AddReply({ ticket, isStaff }: any) {
     const { user } = useUser()
@@ -45,7 +45,7 @@ export default function AddReply({ ticket, isStaff }: any) {
             title: `${supabaseStatus === 201 ? "Reply Added 🎉" : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 201 ? `You have successfully added a reply to the ticket: ${ticket.id}!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 201 ? "black" : "red",
-            icon: supabaseStatus === 201 ? <SentIcon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 201 ? <HugeIcon name="sent" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 201 && router.refresh()
         // const from = ticket.from.id
@@ -63,6 +63,6 @@ export default function AddReply({ ticket, isStaff }: any) {
 
     return <Box component="form" onSubmit={form.onSubmit(onSubmit)} m="0">
         <FormTextArea inputID="body" textRows={10} {...form.getInputProps('body')} />
-        <FormSubmitButton icon={<SentIcon />}>Add Reply</FormSubmitButton>
+        <FormSubmitButton icon={<HugeIcon name="sent" />}>Add Reply</FormSubmitButton>
     </Box>
 }

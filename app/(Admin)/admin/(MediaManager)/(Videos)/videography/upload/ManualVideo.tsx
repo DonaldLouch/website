@@ -8,7 +8,6 @@ import FormTextArea from '@/app/(Components)/(Form)/FormTextArea'
 import HugeIcon from '@/app/(Components)/HugeIcon'
 
 import supabase from '@/lib/supabase'
-import { Attachment02Icon } from '@hugeicons/react'
 import { Box, Group, Modal, SimpleGrid, Stack, Text } from '@mantine/core'
 import { useForm, yupResolver } from '@mantine/form'
 import { useDisclosure } from '@mantine/hooks'
@@ -95,7 +94,7 @@ export default function ManualVideo({id}: {id: string}) {
         close()
     }
     return <>
-        <PrimaryButton onClick={open} icon={<Attachment02Icon />} isFullWidth m="3rem 0 0">Add a Manual Video</PrimaryButton>
+        <PrimaryButton onClick={open} primNewIcon={{name: "file-attachment", variant: "duotone"}} isFullWidth m="3rem 0 0">Add a Manual Video</PrimaryButton>
         {/* <Button onClick={open} variant="newFormButton">Add a Manual Video</Button> */}
         <Modal opened={opened} onClose={closed} title={`Add a manual video for ${id}`} yOffset="2rem" xOffset="2rem" size="100%"  
             overlayProps={{

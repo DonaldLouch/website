@@ -6,7 +6,7 @@ import { useDisclosure } from '@mantine/hooks'
 import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
 import RequestNewProject from './RequestNewProject'
 import ProjectRow from './ProjectRow'
-import { InformationCircleIcon } from '@hugeicons/react'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 // import GetProjects from './GetProjects'
 // import { RequestNewProject } from './RequestNewProject'
 // import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
@@ -55,7 +55,7 @@ export default function Projects({isAdmin, isMod, clientProjects, adminProjects}
                     <Tabs.Tab value="all">All</Tabs.Tab>
                 </Tabs.List>
                 <Tabs.Panel value="personal">
-                    {clientProjects.length === 0 ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no projects that have been requested! If there should be projects please contact Donald for further assistance (COMING SOON!)!</Text></Alert> :
+                    {clientProjects.length === 0 ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no projects that have been requested! If there should be projects please contact Donald for further assistance (COMING SOON!)!</Text></Alert> :
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {clientProjects.map((project: any, index: number) => (
@@ -65,7 +65,7 @@ export default function Projects({isAdmin, isMod, clientProjects, adminProjects}
                     </Table>}
                 </Tabs.Panel>
                 <Tabs.Panel value="all">
-                    {adminProjects.length === 0  || !adminProjects ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no projects from any clients!</Text></Alert> :
+                    {adminProjects.length === 0  || !adminProjects ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no projects from any clients!</Text></Alert> :
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {adminProjects.map((project: any, index: number) => (
@@ -75,7 +75,7 @@ export default function Projects({isAdmin, isMod, clientProjects, adminProjects}
                     </Table>}
                 </Tabs.Panel>
             </Tabs> 
-            : clientProjects.length === 0 ? <Alert variant="light" color="green" icon={<InformationCircleIcon variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no projects that have been requested! If there should be projects please contact Donald for further assistance (COMING SOON!)!</Text></Alert> : <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}} my="2rem">
+            : clientProjects.length === 0 ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no projects that have been requested! If there should be projects please contact Donald for further assistance (COMING SOON!)!</Text></Alert> : <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}} my="2rem">
                 <Table.Tbody>
                     {clientProjects.map((project: any, index: number) => (
                         <ProjectRow key={index} project={project} orderNumber={index} />

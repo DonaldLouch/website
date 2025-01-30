@@ -9,7 +9,6 @@ import { useEffect, useRef, useState } from "react"
 
 // import Image from "next/image"
 import DisplayDate from "@/lib/DisplayDate"
-import { CloudUploadIcon, FileUploadIcon, Home01Icon, PlayIcon } from "@hugeicons/react"
 import { Anchor, AspectRatio, Box, Grid, Image, Title, Tooltip, Text, Paper, Stack, Group, Loader } from "@mantine/core"
 // import { BsCloudPlus } from "react-icons/bs"
 
@@ -17,6 +16,7 @@ import classes from "@/app/(Components)/Components.module.css"
 import { useInView } from "react-intersection-observer"
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 
 // async function fetchVideos(offset: number, limit: number) {
 //   const from = offset * limit
@@ -145,7 +145,7 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
                         </Tooltip>
                         <Text fw={200} fz="1rem" lh="0" c="currentColor" mt="0.5rem"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
                         </Box>
-                        <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><PlayIcon variant="duotone" size="5rem" /></Box>
+                        <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><HugeIcon name="play" variant="duotone" size="5rem" /></Box>
                     </Box>
                     </Anchor>
                     </Grid.Col>
@@ -157,7 +157,7 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
                         <Loader color="white" size="md" type="bars" />
                         <Title fz={{base: "2rem", md: "3rem"}}>Loading More Videos</Title>
                     </Group>
-                    <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
+                    <Text>If the content is still not loaded after a minute please contact Donald Louch at  <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
                     </Stack>
                 </Paper>
             </Box>

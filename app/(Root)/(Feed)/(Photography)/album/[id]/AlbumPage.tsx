@@ -30,7 +30,7 @@ import { useRouter } from 'next/router'
 import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'
-import { ArrowUpRight01Icon, Calendar03Icon, CameraVideoIcon, GithubIcon, GridIcon, LicenseIcon, Link04Icon, LinkSquare02Icon, NewsIcon, PinLocation03Icon, Tag01Icon, TagsIcon } from '@hugeicons/react'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
     const from = nextPage * photoLimit
@@ -102,7 +102,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     right={{ base: "4%", md: "1.5%" }}
                     onClick={open}
                 >
-                    <LicenseIcon size="2rem" />
+                    <HugeIcon name="license" size="2rem" />
                 </ActionIcon>
             </Tooltip>
             <Drawer size="full" opened={opened} onClose={close} title={albumData.albumName} 
@@ -116,29 +116,29 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                 styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             >      
                 <Group gap="0.8rem" my="1rem">
-                    <Badge color="white" leftSection={<Calendar03Icon />}>
+                    <Badge color="white" leftSection={<HugeIcon name="calendar-03" />}>
                         <DisplayDate source={albumData.uploadedOn} />
                     </Badge>
                     {locations.map((location: any) => (
-                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}} key={`location_${location}`}><Badge color="blue" leftSection={<PinLocation03Icon />}>
+                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}} key={`location_${location}`}><Badge color="blue" leftSection={<HugeIcon name="pin-location-03" />}>
                             {location}
                         </Badge></Anchor>
                     ))}
-                    <Badge color="teal" leftSection={<GridIcon />}>
+                    <Badge color="teal" leftSection={<HugeIcon name="grid" />}>
                         Contains {getPhotoCount} Photos
                     </Badge>
                     {albumData.links?.length > 0 && albumData.links.map((link: any) => {
-                            // console.log("Icon", link.icon)
-                            const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
-                            : link.icon === "Github" ? <GithubIcon />
-                            : link.icon === "news" ? <NewsIcon />
-                            : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                            : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                            : <Link04Icon />
+                            // // console.log("Icon", link.icon)
+                            // const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
+                            // : link.icon === "Github" ? <GithubIcon />
+                            // : link.icon === "news" ? <NewsIcon />
+                            // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
+                            // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
+                            // : <Link04Icon />
 
-                            return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                                {link.name}
-                            </Badge></Anchor>
+                            // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
+                            //     {link.name}
+                            // </Badge></Anchor>
                         })}
                 </Group>
 
@@ -146,9 +146,9 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     <MdxContent source={mdxSource} />
                 </Box>
                 <Group gap="0.5rem" m="2rem 1rem 1rem">
-                    <TagsIcon />
+                    <HugeIcon name="tags" />
                     {tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
-                        <Badge color="white" leftSection={<Tag01Icon />}>
+                        <Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
                             {tag}
                         </Badge>
                     </Anchor> ))}

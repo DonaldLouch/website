@@ -1,11 +1,12 @@
-import { Album02Icon, AlertDiamondIcon, CameraVideoIcon, ClipboardIcon, DashboardSpeed02Icon, Files01Icon, Home01Icon, InboxIcon, NewsIcon } from "@hugeicons/react";
+import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
 
+type Icons = {name: IconName, variant?: IconVariant}
 interface PortalNavigationItemsProps {
   name: string;
   slug: any;
   // iconPre: any;
   // icon: any;
-  icon: any;
+  icon: Icons
   isParent: boolean;
   parentID: number | null;
   levelOfAccess: "isStaff"|"user"|"paymentOnly"|"ticketSupportOnly"|"anyone"
@@ -15,7 +16,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
    { 
         name: 'Home',
         slug: 'portal',
-        icon: <Home01Icon />,
+        icon: {name: "home-01", variant: "duotone"},
         isParent: false,
         parentID: 0,
         levelOfAccess: "anyone"
@@ -23,7 +24,7 @@ export const PortalNavigationItems: Array<PortalNavigationItemsProps> = [
    { 
         name: 'Projects',
         slug: 'portal/projects',
-        icon: <Files01Icon />,
+        icon: {name: "files-01"},
         isParent: false,
         parentID: 0,
         levelOfAccess: "user"

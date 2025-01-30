@@ -1,7 +1,7 @@
-import { Calendar03Icon } from '@hugeicons/react';
 import { DateTimePicker } from '@mantine/dates';
 
 import classes from "./Forms.module.css"
+import HugeIcon from '../HugeIcon';
 
 export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, isClearable, isJustRead, ...rest}: any) {
   return <DateTimePicker
@@ -24,7 +24,7 @@ export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, 
             c: "white",
             styles: {input: {color: "var(--mantine-color-white)"}}
         }}
-        leftSection={<Calendar03Icon variant='twotone' />}
+        leftSection={<HugeIcon name="calendar-03" variant="twotone" />}
         leftSectionProps={{
             style: {margin: "0 0.5rem"}
         }}

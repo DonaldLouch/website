@@ -1,11 +1,14 @@
-import { Cancel01Icon, CheckmarkBadge03Icon, DocumentValidationIcon, JobSearchIcon, Loading02Icon, Loading03Icon, SentIcon, Tick01Icon, TrafficLightIcon, UserIcon, UserShield01Icon, ViewIcon } from "@hugeicons/react"
+
+import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
+
+type Icons = {name: IconName, variant?: IconVariant}
 
 interface ProjectStatusProps {
     id: string
     smallText: string
     fullText: string|null
     colorScheme: string|null
-    icon: any
+    icon: Icons
 }
 
 export const ProjectStatus: Array<ProjectStatusProps> = [
@@ -14,21 +17,21 @@ export const ProjectStatus: Array<ProjectStatusProps> = [
         smallText: 'Submitted',
         fullText: null,
         colorScheme: 'yellow',
-        icon: <SentIcon variant="twotone" />
+        icon: {name: "sent", variant: "twotone"}
     },
     { 
         id: 'REVIEWING',
         smallText: 'Reviewing',
         fullText: null,
         colorScheme: 'yellow',
-        icon: <ViewIcon variant="twotone" />
+        icon: {name: "view", variant: "twotone"}
     },
     { 
         id: 'INPROGRESS',
         smallText: 'In Progress',
         fullText: null,
         colorScheme: 'yellow',
-        icon: <Loading02Icon variant="twotone" />
+        icon: {name: "loading-02", variant: "twotone"}
     },
 
     { 
@@ -36,28 +39,28 @@ export const ProjectStatus: Array<ProjectStatusProps> = [
         smallText: 'Reviewed',
         fullText: null,
         colorScheme: 'green',
-        icon: <JobSearchIcon variant="twotone" />
+        icon: {name: "job-search", variant: "twotone"}
     },
     { 
         id: 'OPENED',
         smallText: 'Opened',
         fullText: null,
         colorScheme: 'green',
-        icon: <Tick01Icon variant="twotone" />
+        icon: {name: "ticket-01", variant: "twotone"}
     },
     { 
         id: 'COMPLETED',
         smallText: 'Completed',
         fullText: null,
         colorScheme: 'green',
-        icon: <CheckmarkBadge03Icon variant="twotone" />
+        icon: {name: "checkmark-badge-03", variant: "twotone"}
     },
     { 
         id: 'APPROVED',
         smallText: 'Approved',
         fullText: null,
         colorScheme: 'green',
-        icon: <DocumentValidationIcon variant="twotone" />
+        icon: {name: "document-validation", variant: "twotone"}
     },
     
     { 
@@ -65,7 +68,7 @@ export const ProjectStatus: Array<ProjectStatusProps> = [
         smallText: 'Awaiting: C',
         fullText: 'Awaiting: Customer',
         colorScheme: 'teal',
-        icon: <UserIcon variant="twotone" />
+        icon: {name: "user", variant: "twotone"}
     },
     
     { 
@@ -73,7 +76,7 @@ export const ProjectStatus: Array<ProjectStatusProps> = [
         smallText: 'Awaiting: A',
         fullText: 'Awaiting: Administrator',
         colorScheme: 'white',
-        icon: <UserShield01Icon variant="twotone" />
+        icon: {name: "user-shield-01", variant: "twotone"}
     },
     
     { 
@@ -81,27 +84,27 @@ export const ProjectStatus: Array<ProjectStatusProps> = [
         smallText: 'Stalled',
         fullText: null,
         colorScheme: 'black',
-        icon: <TrafficLightIcon variant="twotone" />
+        icon: {name: "traffic-light", variant: "twotone"}
     },
     { 
         id: 'CLOSED',
         smallText: 'Closed',
         fullText: null,
         colorScheme: 'black',
-        icon: <Cancel01Icon variant="twotone" />
+        icon: {name: "cancel-01", variant: "twotone"}
     },
     { 
         id: 'DECLINED',
         smallText: 'Declined',
         fullText: null,
         colorScheme: 'red',
-        icon: <Cancel01Icon variant="twotone" />
+        icon: {name: "cancel-01", variant: "twotone"}
     },
     { 
         id: 'OTHER',
         smallText: 'Other',
         fullText: null,
         colorScheme: 'blue',
-        icon: <Loading03Icon variant="twotone" />
+        icon: {name: "loading-03", variant: "twotone"}
     }
 ]

@@ -27,8 +27,6 @@ import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 import React from "react";
 import { useRouter } from "next/navigation"
 
-// import { BsArrowDown, BsArrowUp, BsCamera, BsFilter, BsFolder2Open, BsImages, BsPinAngle, BsSearch } from "react-icons/bs";
-
 
 import { useInView } from 'react-intersection-observer'
 import { useDebouncedValue, useDisclosure } from "@mantine/hooks";
@@ -36,7 +34,8 @@ import TagFilter from "./TagFilter";
 import AlbumFilter from "./AlbumFilter";
 import LocationFilter from "./LocationFilter";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { Album02Icon, Briefcase02Icon, Camera01Icon, FilterIcon, PinIcon, Search01Icon, Sorting19Icon, Sorting91Icon } from "@hugeicons/react";
+import HugeIcon from "@/app/(Components)/HugeIcon";
+import InlineLink from "@/app/(Components)/InlineLink";
 
 
 async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: string, searchValue?: string) {
@@ -128,7 +127,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
    {/* m="4.5rem auto 0" w="95vw" */}
    {/* m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} pt={{base: "0.5rem", lg: "1.5rem"}} */}
     <Box id="feed" pos="relative" w="100%">
-      <Alert icon={<Camera01Icon />} color="indigo">
+      <Alert icon={<HugeIcon name="camera-01" />} color="indigo">
         Please note that moving forward, all photos will have completed captions, tags, and accurate metadata for improved organization and searchability.
       </Alert>
 
@@ -139,7 +138,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
           right={{ base: "4%", md: "1.5%" }}
           onClick={open}
         >
-          <FilterIcon size="2rem" />
+          <HugeIcon name="filter" size="2rem" />
         </ActionIcon>
       </Tooltip>
       <Drawer size="sm" opened={opened} onClose={close} title="Filters" 
@@ -153,7 +152,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
         styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
       >
         <Text>Search</Text>
-          <Input placeholder="Donald Louch" leftSection={<Search01Icon size={16} />} type="search" onFocus={() => {setFocused(true)}} onChange={(e: any) => {setSearch(e.target.value)}} onMouseOut={() => {setCompleted(true)}}/>
+          <Input placeholder="Donald Louch" leftSection={<HugeIcon name="search-01" size={16}/>} type="search" onFocus={() => {setFocused(true)}} onChange={(e: any) => {setSearch(e.target.value)}} onMouseOut={() => {setCompleted(true)}}/>
         
         <Text>Filter By:</Text>
           <Stack gap="1rem">
@@ -163,14 +162,14 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
           </Stack>
        
         <Text>Sort By:</Text>
-          <PrimaryLinkedButton isFullWidth isHidden={searchValue != "old"} link={`/feed/photography`} icon={<Sorting19Icon />}>New-Old</PrimaryLinkedButton>
-          <PrimaryLinkedButton isFullWidth isHidden={searchType === "order" && searchValue === "old" } link={`/feed/photography?search=order&value=old`} icon={<Sorting91Icon />}>Old-New</PrimaryLinkedButton>
+          <PrimaryLinkedButton isFullWidth isHidden={searchValue != "old"} link={`/feed/photography`} icon={<HugeIcon name="sorting-19" />}>New-Old</PrimaryLinkedButton>
+          <PrimaryLinkedButton isFullWidth isHidden={searchType === "order" && searchValue === "old" } link={`/feed/photography?search=order&value=old`} icon={<HugeIcon name="sorting-91" />}>Old-New</PrimaryLinkedButton>
         
         <Text>View:</Text>
           <Stack gap="1rem">
-            <PrimaryLinkedButton isFullWidth isHidden={searchValue != "pinned"} link={`/feed/photography`} icon={<Album02Icon />}>All Photos</PrimaryLinkedButton>
-            <PrimaryLinkedButton isFullWidth isHidden={searchType === "view" && searchValue === "pinned"} link={`/feed/photography?search=view&value=pinned`} icon={<PinIcon />}>Pinned Photos</PrimaryLinkedButton>
-            <PrimaryLinkedButton isFullWidth link={`/portfolio/photography`} icon={<Briefcase02Icon />}>Portfolio Photos</PrimaryLinkedButton>
+            <PrimaryLinkedButton isFullWidth isHidden={searchValue != "pinned"} link={`/feed/photography`} icon={<HugeIcon name="album-02" />}>All Photos</PrimaryLinkedButton>
+            <PrimaryLinkedButton isFullWidth isHidden={searchType === "view" && searchValue === "pinned"} link={`/feed/photography?search=view&value=pinned`} icon={<HugeIcon name="pin" />}>Pinned Photos</PrimaryLinkedButton>
+            <PrimaryLinkedButton isFullWidth link={`/portfolio/photography`} icon={<HugeIcon name="briefcase-02" />}>Portfolio Photos</PrimaryLinkedButton>
             {/* TO DO: Make Random Sorting Function*/}
           </Stack>
       </Drawer>
@@ -201,7 +200,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
             <Loader color="white" size="md" type="bars" />
             <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
           </Group>
-          <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
+          <Text>If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
         </Stack>
       </Paper>
     </Box> 

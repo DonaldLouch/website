@@ -7,7 +7,8 @@ import DisplayDate from "@/lib/DisplayDate"
 import classes from "@/app/(Components)/Components.module.css"
 // import { BsPlayFill } from "react-icons/bs"
 import { useInView } from "react-intersection-observer"
-import { PlayIcon } from "@hugeicons/react"
+import HugeIcon from "@/app/(Components)/HugeIcon"
+import InlineLink from "@/app/(Components)/InlineLink";
 
 async function fetchVideos(offset: number, limit: number) {
   const from = offset * limit
@@ -109,7 +110,7 @@ export default function VideoFeed({ videoData, videosCount }: { videoData: any, 
                         </Tooltip>
                         <Text fw={200} fz="1rem" lh="0" c="currentColor" mt="0.5rem"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
             </Box>
-            <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><PlayIcon variant="duotone" size="5rem" /></Box>
+            <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><HugeIcon name="play" variant="duotone" size="5rem" /></Box>
           </Box>
           </Anchor>
         </Grid.Col>
@@ -121,7 +122,7 @@ export default function VideoFeed({ videoData, videosCount }: { videoData: any, 
             <Loader color="white" size="md" type="bars" />
             <Title fz={{base: "2rem", md: "3rem"}}>Loading More Videos</Title>
           </Group>
-          <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
+          <Text>If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
         </Stack>
       </Paper>
   </Box>

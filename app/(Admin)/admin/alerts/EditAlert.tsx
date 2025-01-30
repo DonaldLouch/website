@@ -2,7 +2,6 @@
 
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 import supabase from "@/lib/supabase"
-import { Add01Icon, Alert01Icon, Alert02Icon, AlertCircleIcon, AlertDiamondIcon, Archive02Icon, Bookmark01Icon, CancelCircleIcon, CheckmarkCircle02Icon, Cone01Icon, DashboardBrowsingIcon, DashboardSpeed02Icon, Delete01Icon, Delete02Icon, FavouriteIcon, Flag02Icon, Folder01Icon, Home01Icon, Image02Icon, InformationCircleIcon, LaurelWreath02Icon, Link01Icon, Location01Icon, Mail01Icon, Notification03Icon, PencilEdit01Icon, PencilIcon, Search01Icon, SecurityCheckIcon, SentIcon, Settings02Icon, StarIcon, Tag01Icon } from "@hugeicons/react"
 import { Alert, Anchor, Box, Button, Modal, SimpleGrid, Stack, Text } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import { notifications } from "@mantine/notifications"
@@ -18,6 +17,7 @@ import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker"
 import { useState } from "react"
 import DisplayDate from "@/lib/DisplayDate"
 import { useRouter } from "next/navigation"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 
 export default function EditAlert({alert}: any) {
     const [opened, { open, close }] = useDisclosure(false)
@@ -28,33 +28,34 @@ export default function EditAlert({alert}: any) {
     const router = useRouter()
 
     const isActive = !alert.EndedOn || alert.EndedOn && new Date(alert.EndedOn && alert.EndedOn) >= new Date()
-    const icon = alert.AlertIcon === "Cone01Icon" ? <Cone01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} /> 
-    : alert.AlertIcon === "Alert01Icon" ? <Alert01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Tag01Icon" ?  <Tag01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "StarIcon" ? <StarIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "FavouriteIcon" ? <FavouriteIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Settings02Icon" ? <Settings02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "SecurityCheckIcon" ? <SecurityCheckIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Search01Icon" ? <Search01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "PencilIcon" ? <PencilIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Notification03Icon" ? <Notification03Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Mail01Icon" ? <Mail01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Location01Icon" ? <Location01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Link01Icon" ? <Link01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "InformationCircleIcon" ? <InformationCircleIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Image02Icon" ? <Image02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Home01Icon" ? <Home01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Folder01Icon" ? <Folder01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Delete02Icon" ? <Delete02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "CheckmarkCircle02Icon" ? <CheckmarkCircle02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "CancelCircleIcon" ? <CancelCircleIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Bookmark01Icon" ? <Bookmark01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Archive02Icon" ? <Archive02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "Flag02Icon" ? <Flag02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "LaurelWreath02Icon" ? <LaurelWreath02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "DashboardBrowsingIcon" ? <DashboardBrowsingIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : alert.AlertIcon === "DashboardSpeed02Icon" ? <DashboardSpeed02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
-    : <Alert02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // const icon = alert.AlertIcon === "Cone01Icon" ? <Cone01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} /> 
+    // : alert.AlertIcon === "Alert01Icon" ? <Alert01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Tag01Icon" ?  <Tag01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "StarIcon" ? <StarIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "FavouriteIcon" ? <FavouriteIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Settings02Icon" ? <Settings02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "SecurityCheckIcon" ? <SecurityCheckIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Search01Icon" ? <Search01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "PencilIcon" ? <PencilIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Notification03Icon" ? <Notification03Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Mail01Icon" ? <Mail01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Location01Icon" ? <Location01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Link01Icon" ? <Link01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "InformationCircleIcon" ? <InformationCircleIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Image02Icon" ? <Image02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Home01Icon" ? <Home01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Folder01Icon" ? <Folder01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Delete02Icon" ? <Delete02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "CheckmarkCircle02Icon" ? <CheckmarkCircle02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "CancelCircleIcon" ? <CancelCircleIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Bookmark01Icon" ? <Bookmark01Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Archive02Icon" ? <Archive02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "Flag02Icon" ? <Flag02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "LaurelWreath02Icon" ? <LaurelWreath02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "DashboardBrowsingIcon" ? <DashboardBrowsingIcon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : alert.AlertIcon === "DashboardSpeed02Icon" ? <DashboardSpeed02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    // : <Alert02Icon variant={alert.AlertIconStyle ? alert.AlertIconStyle : "stroke"} />
+    const icon = <HugeIcon name="file-unknown" variant={alert.AlertIconStyle ? alert.AlertIconStyle : undefined} />
 
     const deleteAlert = async () => {
         const  res  = await supabase.from('WebsiteAlerts').delete().eq('id', alert.id)as any
@@ -63,7 +64,7 @@ export default function EditAlert({alert}: any) {
             title: `${res.status === 204 ? "Alert Deleted 🎉" : `Error #${res?.status} has Occurred`}`,
             message:`${res.status === 204 ? `You have successfully edited ${alert.id}!` : `An error has occurred: ${res?.status}. ${res?.statusText && `${res?.statusText}.`}`}`,
             color: res.status === 204 ? "black" : "red",
-            icon: res.status === 204 ? <Delete01Icon /> : <AlertDiamondIcon />
+            icon: res.status === 204 ? <HugeIcon name="delete-01" /> : <HugeIcon name="alert-diamond" />
         })
         res.status === 204 && router.refresh()
     }
@@ -82,7 +83,7 @@ export default function EditAlert({alert}: any) {
             title: `${supabaseStatus === 204 ? "Alert Edited 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
             message:`${supabaseStatus === 204 ? `You have successfully edited ${values.title}!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
             color: supabaseStatus === 204 ? "black" : "red",
-            icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
         })
         supabaseStatus === 204 && router.refresh()
     }
@@ -189,8 +190,8 @@ export default function EditAlert({alert}: any) {
                           <FormDatePicker dateLabel="Ended On" datePlaceholder="When is this alert set to expire?" {...form.getInputProps('endedOn')} />
                     </SimpleGrid>
                     <SimpleGrid cols={2} style={{alignItems: "center"}} spacing="2rem">
-                        <FormSubmitButton icon={<SentIcon />}>Edit {alert.id} Alert</FormSubmitButton>
-                        <PrimaryButton icon={<Delete01Icon />} onClick={deleteAlert} color="red">Delete Alert</PrimaryButton>
+                        <FormSubmitButton icon={<HugeIcon name="sent" />}>Edit {alert.id} Alert</FormSubmitButton>
+                        <PrimaryButton icon={<HugeIcon name="delete-02" />} onClick={deleteAlert} color="red">Delete Alert</PrimaryButton>
                     </SimpleGrid>
                 </Box>
             </Box>

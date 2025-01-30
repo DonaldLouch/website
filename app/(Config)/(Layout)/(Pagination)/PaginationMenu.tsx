@@ -2,7 +2,7 @@
 import { Anchor, Box, Button, Group, Menu, Stack } from '@mantine/core'
     
 import classes from "@/app/(Components)/Components.module.css"
-import { MoreHorizontalIcon } from '@hugeicons/react'
+import HugeIcon from '@/app/(Components)/HugeIcon'
 
 //  _hover={{background: "blurredBackground", c:"secondary", fw: "900 !important"}
 export const PaginationMenu = ( props: any ) => { 
@@ -15,7 +15,7 @@ export const PaginationMenu = ( props: any ) => {
           <Box key={page}>{
             page === "...Prev" && (
               <Menu position="top" key={`prev`}>
-                <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><MoreHorizontalIcon /></Button></Menu.Target>
+                <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><HugeIcon name="more-horizontal" /></Button></Menu.Target>
                 <Menu.Dropdown style={{overflowY: "scroll", border:"none", maxHeight: "40vh"}} w="5%" bg="black">
                   {previousPages?.map((number: any) => (
                     <Anchor href={`?pg=${number}`} key={`${number}`} underline="never">
@@ -26,7 +26,7 @@ export const PaginationMenu = ( props: any ) => {
               </Menu>
             ) || page === "...Nex" && (
             <Menu position="top" key={`next`}>
-                <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><MoreHorizontalIcon /></Button></Menu.Target>
+                <Menu.Target><Button unstyled bg="none" style={{border: "none"}} c="white"><HugeIcon name="more-horizontal" /></Button></Menu.Target>
                 <Menu.Dropdown style={{overflowY: "scroll", border:"none", maxHeight: "40vh"}} w="5%" bg="black">
                 {nextPages?.map((number: any) => (
                   <Anchor href={`?pg=${number}`} key={`${number}`} underline="never">

@@ -2,8 +2,8 @@
 
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 import supabase from "@/lib/supabase"
-import { AlertDiamondIcon, PencilEdit01Icon } from "@hugeicons/react"
 import { Box, Title } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
@@ -21,7 +21,7 @@ export default function NotesSection({project, isStaff}: any) {
             title: `${supabaseStatus === 204 ? `"${project.name}" Notes Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message: `${supabaseStatus === 204 ? `You have successfully updated the project notes!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red-6",
-            icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
         })
     }
 
@@ -42,7 +42,7 @@ export default function NotesSection({project, isStaff}: any) {
 
         <Box component="form" onSubmit={form.onSubmit(onSubmit)} mt="-1rem">
             <FormTextArea inputID="notes" textRows={30} {...form.getInputProps('notes')} disabled={!isStaff} />
-            {isStaff && <FormSubmitButton icon={<PencilEdit01Icon />}>Update Notes</FormSubmitButton>}
+            {isStaff && <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Update Notes</FormSubmitButton>}
         </Box>
     </>
 }

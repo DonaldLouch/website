@@ -1,5 +1,5 @@
-import { ArrowDown01Icon } from "@hugeicons/react"
 import { Accordion, Avatar, Group, Text, Image, Stack, ActionIcon, Box } from "@mantine/core"
+import HugeIcon from "../HugeIcon"
 // import { BsChevronDown } from "react-icons/bs"
 
 interface AccordionLabelProps {
@@ -36,7 +36,7 @@ export default function SingleAccordion({content, customMargin, children, custom
       </Accordion.Panel>
     </Accordion.Item>
   ));
-  return<Accordion chevron={<ArrowDown01Icon />} m={customMargin ? customMargin : "1rem 0"}>
+  return<Accordion chevron={<HugeIcon name="arrow-down-01" />} m={customMargin ? customMargin : "1rem 0"}>
       {items}
     </Accordion>
 }

@@ -2,8 +2,8 @@
 
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
+import HugeIcon from "@/app/(Components)/HugeIcon"
 import supabase from "@/lib/supabase"
-import { AlertDiamondIcon, PencilEdit01Icon } from "@hugeicons/react"
 import { Box, Title } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
@@ -21,7 +21,7 @@ export default function TaskDescription({task, isStaff}: any) {
             title: `${supabaseStatus === 204 ? `"${task.title}" Description Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message: `${supabaseStatus === 204 ? `You have successfully updated the task description!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red-6",
-            icon: supabaseStatus === 204 ? <PencilEdit01Icon /> : <AlertDiamondIcon />
+            icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
         })
     }
 
