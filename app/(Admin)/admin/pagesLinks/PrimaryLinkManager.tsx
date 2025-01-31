@@ -1,8 +1,6 @@
 'use client'
 
 import FormInput from "@/app/(Components)/(Form)/FormInput";
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
-import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
 import { ActionIcon, Anchor, Box, Code, Divider, Group, Modal, SimpleGrid, Stack, Text } from "@mantine/core";
 

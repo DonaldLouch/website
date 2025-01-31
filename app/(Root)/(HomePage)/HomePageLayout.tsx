@@ -1,8 +1,7 @@
 'use client'
 
-import { AspectRatio, Box, Flex, Stack, Image, Title, Text, Center, Group, Space, Tabs } from "@mantine/core";
+import { Box, Title, Space, Tabs } from "@mantine/core";
 import PrimaryLinkedButton from "../../(Components)/(Buttons)/PrimaryLinkedButton";
-// import { BsCameraReels, BsCode, BsConeStriped, BsFilePerson, BsFolder2Open, BsImages, BsPersonBadge, BsPostcard, BsSend } from "react-icons/bs";
 import HomeHeroSection from "./(Sections)/HomeHeroSection";
 import LinksSection from "./(Sections)/LinksSection";
 import PinnedPhotos from "./(Sections)/PinnedPhotos";
@@ -13,6 +12,7 @@ import PinnedAudio from "./(Sections)/PinnedAudio";
 
 export default function HomePageLayout({aboutMe, primaryLinksData, linksData, photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount, audios}: any) {
   const stats = [
+
     { title: 'Photos Uploaded', icon:  { name: "album-02" }, value: `${photosAllCount} Photos`},
     { title: 'Videos Uploaded', icon:  { name: "camera-video" }, value: `${videosAllCount} Videos`},
     { title: 'Audio/Music Uploads', icon:  { name: "music-note-square-02" }, value: `1 Ambient Audio` },

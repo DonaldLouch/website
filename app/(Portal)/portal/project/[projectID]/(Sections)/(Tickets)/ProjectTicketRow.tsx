@@ -1,18 +1,14 @@
 'use client'
 
 import DisplayDate from "@/lib/DisplayDate";
-import { ActionIcon, Avatar, Badge, Group, Menu, rem, Stack, Table, Text, Tooltip } from "@mantine/core";
+import { ActionIcon, Badge, Group, rem, Stack, Table, Text, Tooltip } from "@mantine/core";
 
-import { ProjectStatus } from "@/lib/Project/projectStatus";
-import { ProjectType } from "@/lib/Project/projectType";
-
-import classes from "@/app/(Components)/Components.module.css"
 import { useRouter } from "next/navigation";
 import PriorityBadge from "../../../(Components)/PriorityBadge";
 import StatusBadge from "../../../(Components)/StatusBadge";
 import HugeIcon from "@/app/(Components)/HugeIcon";
 
-export default function ProjectTicketRow({ ticket, orderNumber, isStaff }: { ticket: any, orderNumber: number, isStaff?: boolean }) {    
+export default function ProjectTicketRow({ ticket }: { ticket: any }) {    
 
   // const projectStatus = ProjectStatus.find(({ id }) => id === ticket.status)
   

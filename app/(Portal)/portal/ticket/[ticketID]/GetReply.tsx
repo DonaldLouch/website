@@ -1,32 +1,13 @@
 'use client'
 
-import { Alert, Badge, Button, Divider, Title, Modal, Stack, Tabs, Text, Group, Box, convertCssVariables, Grid, Anchor, Tooltip } from "@mantine/core";
-import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponentPortal"
+import { Title, Group, Box, Tooltip } from "@mantine/core";
 
-import { ProjectStatus } from "@/lib/Project/projectStatus";
 import DisplayDate from "@/lib/DisplayDate";
-import { serialize } from "next-mdx-remote-client/serialize"
 import { MdxContent } from "@/app/mdx-content";
 import { MDXBody } from "@/app/actions/mdxBody";
 import HugeIcon from "@/app/(Components)/HugeIcon";
 
-// import { Metadata } from 'next';
-
-// async function getProjectData(projectID: string) {
-//   const res = await fetch(`/api/project/getProject?id=${projectID}`, { cache: 'no-store' });
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch project');
-//   }
-//   return res.json();
-// }
-
-// async function getBody(body: string) {
-//     "use sever"
-//     const replyBody = await serialize({source: body})
-//     return replyBody
-// }
-
-export default async function GetReply({ticket, isStaff, reply }: any) {
+export default async function GetReply({ reply }: any) {
     // const replyBody = await getBody(reply.body) //TO DO: Fix this
     const replyBody = await MDXBody(reply.body)
 //    const replyBody = reply.body

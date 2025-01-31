@@ -3,7 +3,7 @@
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
 import Pagination from "@/app/(Config)/(Layout)/(Pagination)"
-import { Box, Anchor } from "@mantine/core"
+import { Box } from "@mantine/core"
 import {MediaCard} from "../../(Components)/MediaCard"
 import FileUploader from "../../(Components)/FileUploader"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"

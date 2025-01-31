@@ -1,9 +1,8 @@
-import { Box, Modal, Stack } from '@mantine/core'
+import { Modal, Stack } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
 import Image from 'next/image'
 
-import classes from "@/app/(Config)/Components.module.css"
 import { useEffect, useState } from 'react'
 import { useImageSize } from 'react-image-size'
 

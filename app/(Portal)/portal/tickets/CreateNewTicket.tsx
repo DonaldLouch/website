@@ -1,17 +1,6 @@
-
 'use client'
 
-
-// import * as Yup from "yup";
-
-// import { FormInputReadOnly } from "../(Form)/FormInputReadOnly";
-// import { FormInput } from "../(Form)/FormInput";
-// import { FormSelect } from "../(Form)/FormSelect";
-// import { FormTextArea } from "../(Form)/FormTextArea";
-
-
-import { ProjectType } from "@/lib/Project/projectType";
-import { Box, Stack, Modal, SimpleGrid } from "@mantine/core";
+import { Box, Modal, SimpleGrid } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { useDisclosure } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
@@ -21,19 +10,13 @@ import { yupResolver } from 'mantine-form-yup-resolver';
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
-import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import supabase from "@/lib/supabase";
 import { notifications } from "@mantine/notifications";
 import { useRouter, useSearchParams } from "next/navigation";
-import FormInputPhone from "@/app/(Components)/(Form)/FormInputPhone";
-import { Timezones } from "@/lib/Timezones";
 
-// import getClientProjects from "./lib/GetProjects";
-
-import moment from 'moment-timezone';
 import { TaskPriority } from "@/lib/Project/taskPriority";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
 import HugeIcon from "@/app/(Components)/HugeIcon";
@@ -89,7 +72,7 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
             id: user?.id,
             firstName: user?.firstName,
             lastName: user?.lastName,
-            email: user?.emailAddresses[0].emailAddress,
+            email: user.emailAddresses[0].emailAddress!,
         } : {type: "user"}
 
         const theSubject = subjectSelected === "Other" ? values.otherSubject : subjectSelected

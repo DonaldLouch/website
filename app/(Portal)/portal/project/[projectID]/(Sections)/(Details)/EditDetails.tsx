@@ -1,12 +1,11 @@
 'use client'
 
-import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker"
 import FormInput from "@/app/(Components)/(Form)/FormInput"
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect"
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch"
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
-import { Box, SimpleGrid, Text, Title } from "@mantine/core"
+import { Box, Title } from "@mantine/core"
 import { useForm } from "@mantine/form"
 
 import * as yup from 'yup';
@@ -16,7 +15,6 @@ import supabase from "@/lib/supabase"
 import { notifications } from "@mantine/notifications"
 import FormNumber from "@/app/(Components)/(Form)/FormNumber"
 import { useState } from "react"
-import FormCheckbox from "@/app/(Components)/(Form)/FormCheckbox"
 import FormInputPhone from "@/app/(Components)/(Form)/FormInputPhone"
 
 import { Timezones } from "@/lib/Timezones"

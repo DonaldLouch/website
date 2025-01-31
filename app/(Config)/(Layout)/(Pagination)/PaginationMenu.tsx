@@ -1,5 +1,5 @@
 'use client'
-import { Anchor, Box, Button, Group, Menu, Stack } from '@mantine/core'
+import { Anchor, Box, Button, Group, Menu } from '@mantine/core'
     
 import classes from "@/app/(Components)/Components.module.css"
 import HugeIcon from '@/app/(Components)/HugeIcon'

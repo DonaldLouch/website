@@ -1,16 +1,11 @@
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
-import { SectionTitle } from "@/app/(Components)/SectionTitle";
-import supabase from "@/lib/supabase";
-import { Stack, Input, Button, Box, Text, Group, rem, Title, Progress, Grid, GridCol, Loader } from "@mantine/core";
+import { Stack, Text, Group, Title, Progress, Grid, GridCol } from "@mantine/core";
 ;
-import moment from "moment";
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useActionState, useEffect, useState } from "react";
-// import { BsCloudUpload } from "react-icons/bs";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
+import { Dropzone, DropzoneProps } from '@mantine/dropzone';
 import { notifications } from "@mantine/notifications";
-import { uploadFileToS3 } from "@/app/actions/backblaze";
 
 import axios from "axios"
 import HugeIcon from "@/app/(Components)/HugeIcon";

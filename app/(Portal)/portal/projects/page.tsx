@@ -1,10 +1,3 @@
-// 'use client'
-
-// import GetProjects from './GetProjects'
-// import { RequestNewProject } from './RequestNewProject'
-// import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
-// import { currentUser } from '@clerk/nextjs';
-// import { checkRole } from '@/lib/roles';
 import Projects from './Projects';
 
 import { Metadata } from 'next';

@@ -1,6 +1,5 @@
 'use client'
-import { Anchor, Box, Group, Text, Notification } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
+import { Box, Group, Text } from '@mantine/core'
 // import { BsEnvelopeAt, BsEnvelopeExclamation, BsPersonBadge, BsSend, BsSendCheck, BsSendDash } from 'react-icons/bs'
 
 import * as yup from 'yup';

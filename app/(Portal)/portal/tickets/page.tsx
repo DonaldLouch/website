@@ -1,14 +1,5 @@
-// 'use client'
-
-// import GetProjects from './GetProjects'
-// import { RequestNewProject } from './RequestNewProject'
-// import { BreadCrumb } from "../(Components)/BreadCrumbsComponent";
-// import { currentUser } from '@clerk/nextjs';
-// import { checkRole } from '@/lib/roles';
-
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import { auth } from '@clerk/nextjs/server';
 import supabase from '@/lib/supabase';
 import Tickets from './Tickets';
 import { isUserSignedIn, userData, userRole } from '@/app/actions/clerk';

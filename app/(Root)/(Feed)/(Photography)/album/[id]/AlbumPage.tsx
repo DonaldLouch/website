@@ -6,9 +6,7 @@ Flex,
 Tooltip,
 Drawer,
 Stack,
-Divider,
 Text,
-Grid,
 ActionIcon,
 Paper,
 Group,
@@ -24,9 +22,7 @@ import supabase from '@/lib/supabase'
 import DisplayDate from '@/lib/DisplayDate'
 
 import { MdxContent } from '@/app/mdx-content'
-// import { Bs123, BsCalendar2, BsInfo, BsPinMap, BsTag, BsTags } from 'react-icons/bs'
 import { useInView } from 'react-intersection-observer'
-import { useRouter } from 'next/router'
 import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'

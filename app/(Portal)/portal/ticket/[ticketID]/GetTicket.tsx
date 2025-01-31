@@ -1,16 +1,13 @@
 'use client'
 
-import { Alert, Badge, Button, Divider, Title, Modal, Stack, Tabs, Text, Group, Box, convertCssVariables, Grid, Anchor, Tooltip, AspectRatio } from "@mantine/core";
+import { Badge, Divider, Title, Stack, Text, Group, Box, Grid, Anchor, Tooltip, AspectRatio } from "@mantine/core";
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponentPortal"
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import DisplayDate from "@/lib/DisplayDate";
-import { serialize } from "next-mdx-remote-client/serialize"
 import { MdxContent } from "@/app/mdx-content";
 import GetReply from "./GetReply";
 import moment from "moment";
-import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
 import AddReply from "./AddReply";
 import StatusBadge from "../../project/(Components)/StatusBadge";
 import PriorityBadge from "../../project/(Components)/PriorityBadge";
@@ -48,7 +45,7 @@ export default async function GetTicket({ticket, isStaff, replies }: any) {
     ]
 
 
-    const ticketStatus = ProjectStatus.find(({ id }) => id === ticket.status)
+    // const ticketStatus = ProjectStatus.find(({ id }) => id === ticket.status)
 
     const ticketBody = await MDXBody(ticket.body)
 

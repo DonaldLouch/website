@@ -1,9 +1,7 @@
 'use client'
 
 
-import Header from "./(Header)"
-import Footer from "./(Footer)"
-import { AppShell, Group, Image, Box, rem, Text, Title } from "@mantine/core"
+import { AppShell, Group, Title } from "@mantine/core"
 import { useHeadroom } from "@mantine/hooks"
 
 export default function GeneralLayout({ children }: { children: React.ReactNode }) {

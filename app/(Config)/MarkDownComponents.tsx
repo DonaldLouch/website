@@ -10,11 +10,9 @@ import {
     Anchor,
     Table,
     List,
-    Tooltip,
     Flex,
     Code,
-    Blockquote,
-    Center
+    Blockquote
 } from "@mantine/core"
 
 import classes from "@/app/(Components)/Components.module.css"

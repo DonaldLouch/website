@@ -1,6 +1,5 @@
 'use client'
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent";
-import DisplayDate from "@/lib/DisplayDate"
 
 export default function MessageCContent({ contactData }: any) {
   const contact = contactData;

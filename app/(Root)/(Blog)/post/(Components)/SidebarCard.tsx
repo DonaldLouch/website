@@ -2,11 +2,7 @@
 
 import { 
     Box,
-    Title,
-    Stack,
-    Button,
     Grid,
-    Text,
     useMantineTheme
 } from '@mantine/core'
 

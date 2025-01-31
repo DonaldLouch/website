@@ -1,11 +1,7 @@
 'use client'
 
-;
-// import { BsList } from "react-icons/bs";
-import { AppShell, Group, Image, Anchor, Burger } from "@mantine/core";
-import { HeaderNavigationItems } from "@/lib/HeaderNavigationItems";
-import HeaderNavigationItem from "./HeaderNavigationItem";
-import { useDisclosure } from "@mantine/hooks";
+import { AppShell, Group, Image, Anchor, Burger } from "@mantine/core"
+import { useDisclosure } from "@mantine/hooks"
 
 // TODO: Look into usePathname() to get active page
 

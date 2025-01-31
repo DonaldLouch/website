@@ -1,73 +1,15 @@
 'use client'
 
-import supabase from "@/lib/supabase"
-import { useState, useEffect } from "react"
-
-import {
-  Box,
-  Text,
-  Alert,
-  Flex,
-  Drawer,
-  Tooltip,
-  Stack,
-  AspectRatio,
-  Image
-} from "@mantine/core";
+import { Box, Flex, Group, } from "@mantine/core"
 
 import Masonry from 'react-masonry-css'
 import React from "react";
 
-import { useInView } from 'react-intersection-observer'
 import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 
-import { ActionIcon, Paper, Group, Loader, Title, Anchor } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 
-
-// async function fetchPhotos(nextPage: number, photoLimit: number) {
-//   const from = nextPage * photoLimit
-//   const to = from + photoLimit - 1
-
-//   const { data: data } = await supabase
-//     .from('Photography')
-//     .select(`*, fileID (*), album (*)`)
-//     .range(from, to)
-//     .order('uploadedOn', { ascending: false })
-//     .match({ isPublic: true, isSetup: true, isPortfolio: true })
-  
-//     return data
-// }
-
 export default function PinnedPhotos({ photos, photosPinnedCount, photosAllCount }: {photos: any, photosAllCount: number, photosPinnedCount: number})  {
-  // const [opened, { open, close }] = useDisclosure(false);
-  
-  // const photoLimit = 20 as number
-  // const [loadedPhotos, setLoadedPhotos] = useState(photos)
-  // const [page, setPage] = useState(0)
-  // const [isLastPage, setIsLastPage] = useState(false)
-
-  // const [ref, inView] = useInView()
-
-  // async function loadMorePhotos() {
-  //     const nextPage = page + 1
-  //     const newPhotos = await fetchPhotos(nextPage, photoLimit) as any
-  //     setIsLastPage(nextPage <= Math.ceil(photosCount / photoLimit) - 1 ? false : true)
-
-  //     if (!isLastPage) {
-  //       setPage(nextPage)
-  //       setLoadedPhotos((prevPhotos: any) => [
-  //         ...(prevPhotos?.length ? prevPhotos : []),
-  //         ...newPhotos
-  //       ])
-  //     }
-  //     // setIsLoading(false)
-  // }
-
-  // useEffect(() => {
-  //   inView && loadMorePhotos()
-  // }, [inView])
 
   const breakpointColumnsObj = {
 		default: 5,

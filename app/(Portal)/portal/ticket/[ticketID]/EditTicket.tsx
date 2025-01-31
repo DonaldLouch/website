@@ -1,16 +1,7 @@
 
 'use client'
 
-// import * as Yup from "yup";
-
-// import { FormInputReadOnly } from "../(Form)/FormInputReadOnly";
-// import { FormInput } from "../(Form)/FormInput";
-// import { FormSelect } from "../(Form)/FormSelect";
-// import { FormTextArea } from "../(Form)/FormTextArea";
-
-
-import { ProjectType } from "@/lib/Project/projectType";
-import { Box, Stack, Modal, SimpleGrid } from "@mantine/core";
+import { Box, Modal, SimpleGrid } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { useDisclosure } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
@@ -20,52 +11,26 @@ import { yupResolver } from 'mantine-form-yup-resolver';
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
-import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import supabase from "@/lib/supabase";
 import { notifications } from "@mantine/notifications";
-import { useRouter, useSearchParams } from "next/navigation";
-import FormInputPhone from "@/app/(Components)/(Form)/FormInputPhone";
-import { Timezones } from "@/lib/Timezones";
+import { useRouter } from "next/navigation";
 
-// import getClientProjects from "./lib/GetProjects";
-
-import moment from 'moment-timezone';
 import { TaskPriority } from "@/lib/Project/taskPriority";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
 import { ProjectStatus } from "@/lib/Project/projectStatus";
-import { clerkClient } from "@clerk/nextjs/server";
 import HugeIcon from "@/app/(Components)/HugeIcon";
-
-// type ProjectProps = {
-//     isAdmin: boolean
-//     isMod: boolean
-// }
-
-// {isAdmin, isMod}: ProjectProps
-
-// async function getClientProjects(userID: string) {
-//     "use sever"
-//     const clientProjects = await supabase.from('Projects').select().contains('client', {id: userID}) as any
-//     return JSON.parse(JSON.stringify(clientProjects))
-// }
-
-// async function getAdminProjects(isStaff: boolean) {
-//     "use sever"
-//     const adminProjects = isStaff ? await supabase.from('Projects').select().order('lastUpdated', { ascending: false }) : undefined
-//     return adminProjects
-// }
 
 export default function EditTicket({isStaff, ticket}: any) {
     const router = useRouter()
     const [opened, { open, close }] = useDisclosure(false)
-    const [statusSelected, setStatusSelected] = useState(ticket.status ? ticket.status : null)
+    const [statusSelected, setStatusSelected] = useState(ticket.status ? ticket.status : undefined)
 
     const [prioritySelected, setPrioritySelected] = useState(ticket.priority)
-    const [fromSelected, setFromSelected] = useState(ticket.from.type ? `client;;${ticket.from.id}` : null)
-    const [relatedSelected, setRelatedSelected] = useState(ticket.relatedTo.id ? `${ticket.relatedTo.type};;${ticket.relatedTo.id}` : null)
+    const [fromSelected, setFromSelected] = useState(ticket.from.type ? `client;;${ticket.from.id}` : undefined)
+    const [relatedSelected, setRelatedSelected] = useState(ticket.relatedTo.id ? `${ticket.relatedTo.type};;${ticket.relatedTo.id}` : undefined)
     const [internalOptions, setInternalOptions] = useState(ticket.internalONLY)
     const [users, setUsers] = useState<any>([])
 
@@ -82,7 +47,7 @@ export default function EditTicket({isStaff, ticket}: any) {
 
     const onSubmit = async (values: any) => {
         const fromArray = fromSelected.split(";;")
-        const userData = users.find(({ id }) => id === fromArray[1])
+        const userData = users.find(({ id }: any) => id === fromArray[1])
         const from = fromArray[0] === "admin" ? {type: "admin"} 
             : fromArray[0] === "client" ? {
                 type: "client",

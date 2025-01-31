@@ -2,7 +2,7 @@
 
 'use client'
 
-import { AspectRatio, Box, Title, Text, Anchor, Image, Grid, Tooltip } from "@mantine/core";
+import { AspectRatio, Box, Title, Text, Anchor, Image, Tooltip } from "@mantine/core";
 
 export default function BlogPostCard(props: any) {
     return (

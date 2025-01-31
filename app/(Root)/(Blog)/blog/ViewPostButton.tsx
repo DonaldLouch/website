@@ -2,9 +2,6 @@
 
 import { Anchor, Box, Tooltip } from '@mantine/core'
 
-import { Mouse01Icon } from '@hugeicons/react'
-// import Link from 'next/link'
-
 import classes from "@/app/(Components)/Components.module.css"
 import HugeIcon from '@/app/(Components)/HugeIcon'
 

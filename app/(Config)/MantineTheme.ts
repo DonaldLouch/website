@@ -1,9 +1,9 @@
 'use client'
 
-import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Button, Combobox, createTheme, Input, rem, Slider, Tabs, Text, Notification } from "@mantine/core"
+import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Combobox, createTheme, Input, Slider, Tabs, Text, Notification } from "@mantine/core"
 // import "@mantine/core/styles.css";
 
-import { Playfair_Display, Lato, Victor_Mono, Noto_Sans, Noto_Serif, Noto_Sans_Mono, Noto_Emoji } from "next/font/google"
+import { Noto_Sans, Noto_Serif, Noto_Sans_Mono } from "next/font/google"
 
 // import "@/app/(Config)/global.css";
 
@@ -11,13 +11,7 @@ import classes from "@/app/(Components)/Components.module.css"
 import formStyles from "@/app/(Components)/(Form)/Forms.module.css"
 import notificationClasses from "@/app/(Config)/Notifications.module.css";
 
-const playfairDisplay = Playfair_Display({ 
-  subsets: ["latin"], 
-  style: ['normal', 'italic'], 
-  display: 'swap', 
-  preload: true,
-  fallback: ['Georgia', 'serif']
-})
+
 const notoBase = Noto_Sans({
   subsets: ["latin"],
   style: ["normal", "italic"],
@@ -38,27 +32,6 @@ const notoMono = Noto_Sans_Mono({
   display: "swap",
   preload: true,
   fallback: ["SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
-})
-const notoEmoji = Noto_Emoji({
-  subsets: ["emoji"],
-  style: ["normal"],
-  display: "swap",
-  preload: true
-})
-const lato = Lato({
-    weight: ["100", "300", "400", "700", "900"], 
-    style: ['normal', 'italic'],
-    subsets: ["latin"],
-    display: 'swap', 
-    preload: true,
-    fallback: ['system-ui', 'arial', 'sans-serif']
-})
-const victorMono = Victor_Mono({
-    display: 'swap',
-    fallback: ['SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
-    preload: true,
-    style: ['normal', 'italic'],
-    subsets: ["latin"],
 })
 
 export const MantineTheme = createTheme({

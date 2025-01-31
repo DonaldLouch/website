@@ -1,8 +1,7 @@
 'use client'
 
 import { FooterIcon } from "./FooterIcon";
-// import { BsArchive, BsArchiveFill, BsBoxArrowInUpRight, BsFacebook, BsGithub, BsInstagram, BsThreads, BsTwitterX, BsYoutube } from "react-icons/bs";
-import { Anchor, Group, Stack, Image, Text, Box, Flex } from "@mantine/core";
+import { Anchor, Group, Stack, Image, Text, Flex } from "@mantine/core";
 import { useUser } from "@clerk/nextjs";
 
 

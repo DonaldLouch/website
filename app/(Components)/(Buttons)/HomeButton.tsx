@@ -30,21 +30,9 @@ export default function HomeButton( props: propTypes ) {
             c="white"
             id="goHome"
         >
-            {/* <IconButton
-                        aria-label={theHelperText}
-                        variant="unstyled"
-                        _hover={{ color: hoverIconColour }}
-                        color={iconColour}
-                        // h="auto"
-                        // w="100%"
-                        // height="100%"
-                        // fontSize="3xl"
-                        icon={!icon ? <BsHouseFill size="4rem"  /> : BsArrowLeft ? <Icon as={BsArrowLeft} /> : <Icon />}
-                    /> */}
             <Anchor href={goToLink} style={{color: "white"}}>
                 <Tooltip label={theHelperText}>
                     <Box className={classes.homeButton}>{icon ? icon : <HugeIcon name="home-01" size="3rem" />}</Box>
-                    {/* <Icon as={!icon ? BsHouseFill : icon} boxSize="3rem" color={iconColour} _hover={{ color: hoverIconColour }}/> */}
                 </Tooltip>
             </Anchor>
         </Box>

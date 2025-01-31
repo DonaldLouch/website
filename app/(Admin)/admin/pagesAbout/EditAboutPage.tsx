@@ -1,11 +1,12 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import supabase from "@/lib/supabase"
+// import supabase from "@/lib/supabase"
 
-import * as Yup from 'yup'
+// import * as Yup from 'yup'
 
-export default function EditAboutPage({ about }: any) {
+export default function EditAboutPage() {
+  // { about }: any
   // const toast = useToast()
   // const toastID = "toastID"
   
@@ -14,119 +15,119 @@ export default function EditAboutPage({ about }: any) {
     {"pageLink": "/admin/pagesAbout", "pageName": "Edit: About Me Page"}
   ]
 
-  const onSubmit =  async (values: any, actions: any) => {
-    let avatar = about.avatar
+  // const onSubmit =  async (values: any, actions: any) => {
+  //   let avatar = about.avatar
 
-    const findFileName = ({ name }: any) => name === 'file'
-    const form = document.querySelector('form') as any
-    const fileInput = Array.from(form.elements).find(findFileName) as any
+  //   const findFileName = ({ name }: any) => name === 'file'
+  //   const form = document.querySelector('form') as any
+  //   const fileInput = Array.from(form.elements).find(findFileName) as any
 
-    const formData = new FormData()
+  //   const formData = new FormData()
 
-    for ( const file of fileInput.files ) {
-      formData.append('file', file)
-      formData.append('upload_preset', 'thumbnail')
+  //   for ( const file of fileInput.files ) {
+  //     formData.append('file', file)
+  //     formData.append('upload_preset', 'thumbnail')
 
-      // const thumbnailData = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!}/image/upload`, {
-      //   method: 'POST',
-      //   body: formData
-      // }).then(r => r.json())
+  //     // const thumbnailData = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!}/image/upload`, {
+  //     //   method: 'POST',
+  //     //   body: formData
+  //     // }).then(r => r.json())
 
-      // const submitMediaData = {
-      //   mediaPublicID: thumbnailData.public_id,
-      //   mediaSignature: thumbnailData.signature,
-      //   mediaKind: thumbnailData.resource_type,
-      //   mediaTitle: thumbnailData.original_filename,
-      //   mediaExtension: thumbnailData.format,
-      //   mediaPath: thumbnailData.secure_url,
-      //   mediaSize: thumbnailData.bytes,
-      //   mediaDimensions: `${thumbnailData.width}px x ${thumbnailData.height}px`,
-      // }
-      // const response = await fetch('/api/media/newMedia', {
-      //   method: 'POST',
-      //   body: JSON.stringify(submitMediaData),
-      // })
-      // avatar = response ? thumbnailData.secure_url : avatar
-      avatar
-    }
+  //     // const submitMediaData = {
+  //     //   mediaPublicID: thumbnailData.public_id,
+  //     //   mediaSignature: thumbnailData.signature,
+  //     //   mediaKind: thumbnailData.resource_type,
+  //     //   mediaTitle: thumbnailData.original_filename,
+  //     //   mediaExtension: thumbnailData.format,
+  //     //   mediaPath: thumbnailData.secure_url,
+  //     //   mediaSize: thumbnailData.bytes,
+  //     //   mediaDimensions: `${thumbnailData.width}px x ${thumbnailData.height}px`,
+  //     // }
+  //     // const response = await fetch('/api/media/newMedia', {
+  //     //   method: 'POST',
+  //     //   body: JSON.stringify(submitMediaData),
+  //     // })
+  //     // avatar = response ? thumbnailData.secure_url : avatar
+  //     avatar
+  //   }
 
-    const updateAboutData = {
-      id: values.id,
-      firstName: values.firstName,
-      middleName: values.middleName,
-      lastName: values.lastName,
-      currentAge: values.currentAge,
-      city: values.city,
-      province: values.province,
-      country: values.country,
-      tagLine: values.tagLine,
-      bio: values.bio,
-      email: values.email,
-      avatar: avatar,
-      pronouns: values.pronouns,
-      bioExcerpt: values.bioExcerpt,
-      lastUpdatedOn: new Date()
-    }
-    const { status: supabaseStatus , error: supabaseError } = await supabase.from("About").update({ 
-      firstName: updateAboutData.firstName,
-      middleName: updateAboutData.middleName,
-      lastName: updateAboutData.lastName,
-      currentAge: updateAboutData.currentAge,
-      city: updateAboutData.city,
-      province: updateAboutData.province,
-      country: updateAboutData.country,
-      tagLine: updateAboutData.tagLine,
-      bio: updateAboutData.bio,
-      email: updateAboutData.email,
-      avatar: updateAboutData.avatar,
-      pronouns: updateAboutData.pronouns,
-      bioExcerpt: updateAboutData.bioExcerpt,
-      lastUpdatedOn: updateAboutData.lastUpdatedOn 
-    }).eq('id', updateAboutData.id)
-    // // console.log(supabaseStatus)
-    // supabaseStatus && !toast.isActive(toastID) &&
-    //   toast({
-    //       id: toastID,
-    //       title: `${supabaseStatus === 204 ? "Page Updated 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
-    //       description: `${supabaseStatus === 204 ? `You have successfully updated the About Me page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
-    //       status: `${supabaseStatus === 204 ? "success" : "error"}`,
-    //       duration: 9000,
-    //       isClosable: true,
-    //   })
-      actions.setSubmitting(false)
-  }
+  //   const updateAboutData = {
+  //     id: values.id,
+  //     firstName: values.firstName,
+  //     middleName: values.middleName,
+  //     lastName: values.lastName,
+  //     currentAge: values.currentAge,
+  //     city: values.city,
+  //     province: values.province,
+  //     country: values.country,
+  //     tagLine: values.tagLine,
+  //     bio: values.bio,
+  //     email: values.email,
+  //     avatar: avatar,
+  //     pronouns: values.pronouns,
+  //     bioExcerpt: values.bioExcerpt,
+  //     lastUpdatedOn: new Date()
+  //   }
+  //   const { status: supabaseStatus , error: supabaseError } = await supabase.from("About").update({ 
+  //     firstName: updateAboutData.firstName,
+  //     middleName: updateAboutData.middleName,
+  //     lastName: updateAboutData.lastName,
+  //     currentAge: updateAboutData.currentAge,
+  //     city: updateAboutData.city,
+  //     province: updateAboutData.province,
+  //     country: updateAboutData.country,
+  //     tagLine: updateAboutData.tagLine,
+  //     bio: updateAboutData.bio,
+  //     email: updateAboutData.email,
+  //     avatar: updateAboutData.avatar,
+  //     pronouns: updateAboutData.pronouns,
+  //     bioExcerpt: updateAboutData.bioExcerpt,
+  //     lastUpdatedOn: updateAboutData.lastUpdatedOn 
+  //   }).eq('id', updateAboutData.id)
+  //   // // console.log(supabaseStatus)
+  //   // supabaseStatus && !toast.isActive(toastID) &&
+  //   //   toast({
+  //   //       id: toastID,
+  //   //       title: `${supabaseStatus === 204 ? "Page Updated 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
+  //   //       description: `${supabaseStatus === 204 ? `You have successfully updated the About Me page!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
+  //   //       status: `${supabaseStatus === 204 ? "success" : "error"}`,
+  //   //       duration: 9000,
+  //   //       isClosable: true,
+  //   //   })
+  //     actions.setSubmitting(false)
+  // }
 
-  const initialValues = {
-    id: about.id,
+  // const initialValues = {
+  //   id: about.id,
 
-    firstName: about.firstName,
-    middleName: about.middleName,
-    lastName: about.lastName,
-    currentAge: about.currentAge,
-    city: about.city,
-    province: about.province,
-    country: about.country,
-    tagLine: about.tagLine,
-    bio: about.bio,
-    email: about.email,
-    pronouns: about.pronouns,
-    bioExcerpt: about.bioExcerpt,
-  }
+  //   firstName: about.firstName,
+  //   middleName: about.middleName,
+  //   lastName: about.lastName,
+  //   currentAge: about.currentAge,
+  //   city: about.city,
+  //   province: about.province,
+  //   country: about.country,
+  //   tagLine: about.tagLine,
+  //   bio: about.bio,
+  //   email: about.email,
+  //   pronouns: about.pronouns,
+  //   bioExcerpt: about.bioExcerpt,
+  // }
 
-  const validationSchema = Yup.object({
-    firstName: Yup.string().required('First Name is required'),
-    middleName: Yup.string().required('Middle Name is required'),
-    lastName: Yup.string().required('Last Name is required'),
-    currentAge: Yup.number().required('Age is required'),
-    city: Yup.string().required('City is required'),
-    province: Yup.string().required('Province is required'),
-    country: Yup.string().required('Country is required'),
-    tagLine: Yup.string().required('Tag Line is required'),
-    bio: Yup.string().required('Bio is required'),
-    pronouns: Yup.string().required('Pronouns is required'),
-    bioExcerpt: Yup.string().max(300, 'Bio Excerpt cannot exceed 300 characters.').required('Bio Excerpt is required'),
-    email: Yup.string().email().required('Email is required'),
-  })
+  // const validationSchema = Yup.object({
+  //   firstName: Yup.string().required('First Name is required'),
+  //   middleName: Yup.string().required('Middle Name is required'),
+  //   lastName: Yup.string().required('Last Name is required'),
+  //   currentAge: Yup.number().required('Age is required'),
+  //   city: Yup.string().required('City is required'),
+  //   province: Yup.string().required('Province is required'),
+  //   country: Yup.string().required('Country is required'),
+  //   tagLine: Yup.string().required('Tag Line is required'),
+  //   bio: Yup.string().required('Bio is required'),
+  //   pronouns: Yup.string().required('Pronouns is required'),
+  //   bioExcerpt: Yup.string().max(300, 'Bio Excerpt cannot exceed 300 characters.').required('Bio Excerpt is required'),
+  //   email: Yup.string().email().required('Email is required'),
+  // })
 
   return (
     <>

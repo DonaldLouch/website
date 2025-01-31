@@ -1,21 +1,14 @@
 'use client'
 
-import { Anchor, AspectRatio, Box, Button, Divider, Title, Slider, Stack, Badge, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Grid, SimpleGrid, rem, Space, Paper } from "@mantine/core"
+import { Anchor, AspectRatio, Box, Button, Title, Slider, Stack, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Paper } from "@mantine/core"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import HomeButton from "@/app/(Components)/(Buttons)/HomeButton"
-import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent"
-import DisplayDate from "@/lib/DisplayDate"
 import FullDescription from "./FullDescription"
-import { useUser } from "@clerk/nextjs"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording"
 import HugeIcon from "@/app/(Components)/HugeIcon"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
-
-
 
 export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }: any) {
     const theme = useMantineTheme();
@@ -90,11 +83,11 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
             setVideoDurationNUMBER(e.target.duration)
         })
         
-        const backButton = document.querySelector('#goHome')
+        // const backButton = document.querySelector('#goHome')
         const controlsDesktop = document.querySelector('#videoControlsDesktop')
         const controlsDesktopHeader = document.querySelector('#videoControlsDesktopHeader')
         const controlsMobile = document.querySelector('#videoControlsMobile')
-        const controlsMobileHeader = document.querySelector('#videoControlsMobileHeader')
+        // const controlsMobileHeader = document.querySelector('#videoControlsMobileHeader')
         
             theVideoElement?.addEventListener("touchstart", () => { 
                 setHide(false)

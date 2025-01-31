@@ -3,8 +3,7 @@ import CopyColourSwatch from "@/app/(Components)/(Buttons)/CopyColourSwatch";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
 import HugeIcon from "@/app/(Components)/HugeIcon";
 import TableOfContents from "@/app/(Components)/TableOfContents";
-import DisplayDate from "@/lib/DisplayDate";
-import { Box, Title, Image, SimpleGrid, AspectRatio, Anchor, Stack, Flex, Tooltip, Text, Badge, Group, Space, Grid, useMantineTheme, Alert, Center } from "@mantine/core";
+import { Box, Title, Image, SimpleGrid, AspectRatio, Anchor, Stack, Flex, Tooltip, Text, Space, Grid, useMantineTheme, Alert, Center } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 export default function BrandingPage() {

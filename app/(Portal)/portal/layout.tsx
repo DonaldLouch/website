@@ -1,5 +1,3 @@
-// import { SignedOut, auth, useSession } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
 import PortalLayoutContext from "../(Layout)/PortalLayoutContext";
 import { isUserSignedIn, userRole } from "@/app/actions/clerk";
 // import { checkRole } from "@/lib/roles";

@@ -1,11 +1,7 @@
 'use client'
 import { BreadCrumb } from '@/app/(Components)/BreadCrumbsComponentPortal'
-import { Alert, Box, Modal, Stack, Table, Tabs, Title, Text } from '@mantine/core'
-// import GetProjects from './GetProjects'
-import { useDisclosure } from '@mantine/hooks'
-import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
-import RequestNewProject from './CreateNewTicket'
-import ProjectRow from './TicketRow'
+import { Alert, Table, Tabs, Title, Text } from '@mantine/core'
+
 import TicketRow from './TicketRow'
 import CreateNewTicket from './CreateNewTicket'
 import HugeIcon from '@/app/(Components)/HugeIcon'

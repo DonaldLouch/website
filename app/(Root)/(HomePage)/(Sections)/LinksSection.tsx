@@ -1,11 +1,7 @@
 'use client'
 
-import { AspectRatio, Box, Anchor, Stack, Group, Image, Flex, Tabs, Text, Tooltip, Center, ActionIcon } from '@mantine/core'
-
-import { SectionTitle } from '@/app/(Components)/SectionTitle'
-import { LinkedSVGButton } from '@/app/(Components)/(Buttons)/LinkedSVGButton'
+import { Box, Flex, Text } from '@mantine/core'
 import { LinkButton } from '../LinkButton'
-import PinnedPostsCard from '@/app/(Components)/(Cards)/PinnedPostsCard'
 import { Title } from '@mantine/core'
 import { FooterIcon } from '@/app/(Config)/(Layout)/(Footer)/FooterIcon'
 // import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsSend, BsEnvelopeAt } from 'react-icons/bs'

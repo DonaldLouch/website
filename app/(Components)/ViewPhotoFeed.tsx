@@ -1,6 +1,6 @@
 'use client'
 
-import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Skeleton } from '@mantine/core'
+import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser } from '@clerk/nextjs'
@@ -13,7 +13,7 @@ import ClipboardButton from '@/app/(Components)/(Buttons)/ClipboardButton'
 
 // import LazyLoad from 'react-lazyload';
 import Image from 'next/image'
-import { Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useImageSize } from 'react-image-size';
 import HugeIcon from './HugeIcon'

@@ -1,11 +1,11 @@
 'use client'
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { SectionTitle } from "@/app/(Components)/SectionTitle"
-import AddEducation from "./AddEducation"
-import AddWork from "./AddWork"
+// import { SectionTitle } from "@/app/(Components)/SectionTitle"
+// import AddEducation from "./AddEducation"
+// import AddWork from "./AddWork"
 
-export default function EditResumeExperiencePage({ resumeExperience, resumeEducation, resumeID }: any) {
-
+export default function EditResumeExperiencePage() {
+  // { resumeExperience, resumeEducation, resumeID }: any
   const breadCrumbs = [
     {"pageLink": "/admin/pages", "pageName": "Page Manager"},
     {"pageLink": "/admin/pagesResume", "pageName": "Edit: Resume Page"},

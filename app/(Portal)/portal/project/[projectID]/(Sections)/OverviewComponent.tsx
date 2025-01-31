@@ -1,7 +1,5 @@
 import { Card, Title, Stack, Text, Group, AspectRatio, Anchor, Tooltip, Box } from "@mantine/core";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { MdxContent } from '../../../mdx-content';
-import Link from "next/link";
+
 import moment from 'moment-timezone';
 
 import { useUser } from '@clerk/nextjs'

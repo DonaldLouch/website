@@ -2,21 +2,16 @@
 
 import { Image, Text, Anchor, Group, Card, Grid, Title, Stack } from "@mantine/core"
 
-import { useRouter } from 'next/navigation'
-  
-
 import DisplayDate from '@/lib/DisplayDate'
-import supabase from '@/lib/supabase'
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { deleteFileFromS3 } from "@/app/actions/backblaze"
 import { notifications } from "@mantine/notifications"
 import HugeIcon from "@/app/(Components)/HugeIcon"
   
 export const MediaCard = ({ media }: any) => {
-    const router = useRouter()
     // const toastID = "toastID"
     // const date = new Date(uploadedOn).toLocaleDateString()
-    const { fileID, filePath, uploadedOn, fileExtension, fileKey, fileVersionID } = media.fileID
+    const { fileID, filePath, uploadedOn, fileExtension, fileKey } = media.fileID
     const { isPublic, isSetup, photoName: fileTitle, id, caption } = media
 
     // const [ value ] = useState(filePath)

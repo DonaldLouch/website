@@ -1,7 +1,5 @@
 'use client'
 
-import "@/lib/fontAwesome"
-
 // import MaintenanceModePage from "./MaintenanceModePage"
 import GeneralLayout from "./GeneralLayout"
 

@@ -1,16 +1,7 @@
-
-
-
 'use client'
 
-
 import DisplayDate from '@/lib/DisplayDate'
-import { Badge, Text, Group, Paper, Title, Box, useMantineTheme, rem, AspectRatio, Center, Stack, Tooltip, Flex, Anchor, Button } from '@mantine/core'
-// import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
-// // import PrimaryLinkedButton from '../(Buttons)/PrimaryLinkedButton'
-// import { useMediaQuery } from '@mantine/hooks'
-// // import { Carousel } from '@mantine/carousel';
-// import { SectionTitle } from '../SectionTitle'
+import { Badge, Text, Group, Title, Box, Stack, Flex, Anchor } from '@mantine/core'
 
 import classes from "@/app/(Components)/Components.module.css"
 import HugeIcon from '@/app/(Components)/HugeIcon'

@@ -6,8 +6,6 @@ import {
     Text,
 } from '@mantine/core'
 
-import { useRouter } from 'next/navigation'
-
 import classes from "@/app/(Components)/Components.module.css"
 
 export const AlbumCard = ({ albumData }: any) => {

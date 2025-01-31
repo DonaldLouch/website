@@ -3,7 +3,6 @@ import GetTicket from './GetTicket';
 
 // import { checkRole } from '@/lib/roles';
 import { redirect } from 'next/navigation';
-import { auth } from '@clerk/nextjs/server';
 import { isUserSignedIn, userData, userRole } from '@/app/actions/clerk';
 // import { Metadata } from 'next';
 // type Props = {
