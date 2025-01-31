@@ -1,4 +1,4 @@
-import { ActionIcon, NavLink } from '@mantine/core'
+import { NavLink } from '@mantine/core'
 
 import classes from './Buttons.module.css'
 

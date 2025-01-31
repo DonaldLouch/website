@@ -1,7 +1,6 @@
 'use client'
 
-import { TagsInput, Title, Text, Box, Code, Stack } from "@mantine/core";
-
+import { TagsInput, Title, Code, Stack } from "@mantine/core";
 
 import classes from "@/app/(Components)/Components.module.css"
 

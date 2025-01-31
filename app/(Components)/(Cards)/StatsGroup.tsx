@@ -1,26 +1,9 @@
 'use client'
 
-import { Box, Grid, Group, SimpleGrid, Text } from '@mantine/core'
+import { Box, Group, SimpleGrid, Text } from '@mantine/core'
 
 import classes from './StatsGrid.module.css'
-import HugeIcon from '../HugeIcon';
-// import { BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
-
-// const icons = {
-//   user: IconUserPlus,
-//   discount: IconDiscount2,
-//   receipt: IconReceipt2,
-//   coin: IconCoin,
-// };
-
-// const data = [
-//   { title: 'Revenue', value: '13,456' },
-//   { title: 'Profit', icon: <BsCoin />, value: '4,145' },
-//   { title: 'Profit', icon: <BsCoin />, value: '4,145' },
-//   { title: 'Profit', icon: <BsCoin />, value: '4,145'},
-//   { title: 'Profit', icon: <BsCoin />, value: '4,145', difference: -13, differenceText: "Compared to previous month" },
-//   { title: 'Profit', icon: <BsCoin />, value: '4,145', difference: -13 },
-// ] as const;
+import HugeIcon from '../HugeIcon'
 
 export default function StatsGroup({ statsData }: { statsData: [title: any, value: any, icon?: any, difference?: number, differenceText?: string]}) {
   const stats = statsData.map((stat: any) => {

@@ -1,7 +1,6 @@
 'use client'
 
-import supabase from "@/lib/supabase"
-import { CheckIcon, Combobox, Group, Input, Pill, PillsInput, useCombobox } from "@mantine/core";
+import { CheckIcon, Combobox, Group, Pill, PillsInput, useCombobox } from "@mantine/core";
 import { useEffect, useState } from "react";
 
 import { useForm } from '@mantine/form';

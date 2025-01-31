@@ -1,16 +1,16 @@
 
 
-interface FormProps {
-    inputID: string
-    inputLabel: string
-    inputType?: any|undefined|null
-    inputDescription?: string|any
-}
+// interface FormProps {
+//     inputID: string
+//     inputLabel: string
+//     inputType?: any|undefined|null
+//     inputDescription?: string|any
+// }
 
-export const FormInputRow = ( props: FormProps) => {
-    const { inputID, inputLabel, inputType, inputDescription } = props
+export const FormInputRow = ( ) => {
+    // const { inputType } = props
     
-    const theInputType = inputType ? inputType : "text"
+    // const theInputType = inputType ? inputType : "text"
     
     return (<>
     <div><h1>Function is being refactored.</h1></div>

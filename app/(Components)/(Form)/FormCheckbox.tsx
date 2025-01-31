@@ -1,11 +1,4 @@
-import { Grid, Title, Stack, Text, Input, Checkbox, CheckboxProps } from '@mantine/core'
-
-// interface FormProps {
-//     inputID: string
-//     inputLabel: string
-//     inputType?: any|undefined|null
-//     inputDescription?: string|any
-// }
+import { Checkbox, CheckboxProps } from '@mantine/core'
 
 import classes from "./Forms.module.css"
 import HugeIcon from '../HugeIcon'

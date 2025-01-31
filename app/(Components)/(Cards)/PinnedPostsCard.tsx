@@ -6,11 +6,8 @@
 import React, { Fragment } from "react"
 
 import DisplayDate from '@/lib/DisplayDate'
-import { Badge, Text, Group, Paper, Title, Box, useMantineTheme, rem, AspectRatio, Center, Stack, Tooltip, Flex, Anchor, Button, Card, Spoiler } from '@mantine/core'
-// import { Calendar03Icon, ContactIcon, Folder01Icon, PinIcon, ViewIcon } from '@hugeicons/react'
-import PrimaryLinkedButton from '../(Buttons)/PrimaryLinkedButton'
-import { randomId, useMediaQuery } from '@mantine/hooks'
-import { SectionTitle } from '../SectionTitle'
+import { Badge, Text, Group, Title, Box, Stack, Card, Spoiler } from '@mantine/core'
+import { randomId } from '@mantine/hooks'
 
 import { Carousel } from '@mantine/carousel';
 

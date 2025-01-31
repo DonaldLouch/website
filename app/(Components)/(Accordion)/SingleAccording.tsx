@@ -1,4 +1,4 @@
-import { Accordion, Avatar, Group, Text, Image, Stack, ActionIcon, Box } from "@mantine/core"
+import { Accordion, Avatar, Group, Text, Stack, Box } from "@mantine/core"
 import HugeIcon from "../HugeIcon"
 // import { BsChevronDown } from "react-icons/bs"
 

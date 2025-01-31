@@ -1,7 +1,6 @@
 'use client'
 
-import classes from "./Buttons.module.css"
-import { AspectRatio, Button, CopyButton, Stack, Title, Text, Tooltip } from '@mantine/core'
+import { AspectRatio, CopyButton, Stack, Title, Text, Tooltip } from '@mantine/core'
 
 interface propTypes {
     colourTitle: string
@@ -10,7 +9,7 @@ interface propTypes {
 }
 
 export default function CopyColourSwatch( props: propTypes ) {
-    const { colourTitle, colourHex, colourAmount} = props
+    const { colourTitle, colourHex} = props
     
     return (<>
         <CopyButton value={colourHex}>

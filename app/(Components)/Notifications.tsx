@@ -1,6 +1,6 @@
 'use client'
 
-import { Modal, Tooltip, Text, Tabs, Alert } from "@mantine/core"
+import { Modal, Tooltip, Text, Alert } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks";
 import HugeIcon from "./HugeIcon";
 

@@ -6,7 +6,7 @@ interface FormProps {
 }
 
 export const FormInputReadOnly = ( props: FormProps) => {
-    const { inputID, inputLabel, inputType, inputValue } = props
+    const { inputType } = props
     
     let theInputType = "text"
     if (inputType != undefined) {

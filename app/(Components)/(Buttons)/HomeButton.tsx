@@ -15,10 +15,8 @@ import classes from "./Buttons.module.css"
 import HugeIcon from '../HugeIcon'
 
 export default function HomeButton( props: propTypes ) {
-    const {colour, hoverColour, link, icon, helperText} = props
+    const {link, icon, helperText} = props
 
-    const iconColour = colour ? colour : "white"
-    const hoverIconColour = hoverColour ? hoverColour : "secondary"
     const goToLink = link ? link : "/" as any
     // const iconName = icon ? icon : "house" as any
     const theHelperText = helperText ? helperText : "Go Back to Home" as any

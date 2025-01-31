@@ -42,7 +42,7 @@ export default function TaskDescription({task, isStaff}: any) {
 
         <Box component="form" onSubmit={form.onSubmit(onSubmit)} m="0">
             <FormTextArea inputID="description" textRows={10} {...form.getInputProps('description')} disabled={!isStaff} />
-            {isStaff && <FormSubmitButton icon={<PencilEdit01Icon />}>Update Description</FormSubmitButton>}
+            {isStaff && <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Update Description</FormSubmitButton>}
         </Box>
     </>
 }

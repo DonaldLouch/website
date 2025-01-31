@@ -1,4 +1,4 @@
-import { Anchor, Button, Group, Stack, Text, Tooltip, rem } from '@mantine/core'
+import { Anchor, Group, Stack, Text, Tooltip, rem } from '@mantine/core'
 import React, { useState } from 'react'
 
 import classes from "./Components.module.css"

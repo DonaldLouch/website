@@ -1,8 +1,7 @@
 "use client"
 
-import { ActionIcon, Box, Button, Grid, Group, Image, Slider, Stack, Text, Title, Tooltip } from "@mantine/core";
-import { duration } from "moment";
-import { use, useEffect, useRef, useState } from "react"
+import { ActionIcon, Box, Grid, Group, Image, Slider, Stack, Text, Title, Tooltip } from "@mantine/core";
+import { useEffect, useState } from "react"
 import HugeIcon from "./HugeIcon";
 
 export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: string, title: string, thumbnail: string}) {
@@ -18,7 +17,7 @@ export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: str
 
 
 
-    const audioRef = useRef<HTMLAudioElement>(null)
+    // const audioRef = useRef<HTMLAudioElement>(null)
 
     useEffect(() => {
         const element = document.querySelector("#audioElement") as any

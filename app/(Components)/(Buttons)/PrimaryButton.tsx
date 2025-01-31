@@ -1,17 +1,7 @@
 import { Button } from "@mantine/core";
 import classes from "./Buttons.module.css"
-import HugeIcon, { IconArray } from "../HugeIcon";
+import HugeIcon from "../HugeIcon";
 
-interface ButtonProps {
-  isHidden?: boolean
-  icon?: any
-  children: React.ReactNode
-  isFullWidth?: boolean
-  colour?: string
-  fontColour?: string
-  action?: any
-  primNewIcon?: IconArray
-}
 
 export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, fontColour, action, primNewIcon, ...rest}: any) {
   // const { isHidden, icon, isFullWidth, children, colour, action} = props

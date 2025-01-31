@@ -1,4 +1,4 @@
-import { Grid, Title, Stack, Text, Input } from '@mantine/core'
+import { Grid, Title, Text, Input } from '@mantine/core'
 
 
 // interface FormProps {
