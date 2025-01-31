@@ -18,7 +18,7 @@ import React, { useState } from 'react'
 
 import * as yup from 'yup';
 
-export default function ManualVideo({id}: {id: string}) {
+export default function ManualVideo({id}: {id: string | undefined | null}) {
     const [opened, { open, close }] = useDisclosure(false)
     const router = useRouter()
 

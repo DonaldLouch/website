@@ -112,8 +112,8 @@ export default function VideoUploader({currentStep, categoryData, tagsData, vide
             </Group>
         </>},
         { title: 'Video FIle', description: 'Upload the video file', icon: <HugeIcon name="camera-video" />, content: <>
-            <FileUploader mediaType="videography" uploadTitle="Upload Video" helperText="For the best video player experience across all devices and browsers, the file format .mp4 is highly recommended video file." id={videoID}/>
-            <ManualVideo id={videoID} />
+            <FileUploader mediaType="videography" uploadTitle="Upload Video" helperText="For the best video player experience across all devices and browsers, the file format .mp4 is highly recommended video file." id={videoID!}/>
+            <ManualVideo id={videoID!} />
         </>},
         { title: 'Thumbnail File', description: 'Upload the thumbnail file', icon: <HugeIcon name="image-02" />, content: <>
             <FileUploader mediaType="thumbnail" uploadTitle="Upload Thumbnail" helperText="For the best video player experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the thumbnail file." id={videoID} />
