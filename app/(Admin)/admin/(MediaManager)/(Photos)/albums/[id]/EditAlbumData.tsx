@@ -1,17 +1,15 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { SectionTitle } from "@/app/(Components)/SectionTitle";
-import { Divider, Group, Loader, Paper, SimpleGrid, Stack, Title, Text, Anchor, Flex } from "@mantine/core";
+import { Divider, Group, Loader, Paper, SimpleGrid, Stack, Title, Text, Anchor } from "@mantine/core";
 
-import moment from "moment";
+// import moment from "moment";
 import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
 import { useEffect, useRef, useState } from "react";
-import { useDebouncedValue, useDisclosure } from "@mantine/hooks";
+// import { useDisclosure } from "@mantine/hooks";
 import { useInView } from "react-intersection-observer";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import supabase from "@/lib/supabase";
-import Masonry from "react-masonry-css";
 // ;
 // import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
 // import Masonry from "react-masonry-css";
@@ -26,15 +24,15 @@ async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string
 }
 
 export default function EditAlbumData({albumData, locations, photoData, photosCount}: any) {
-    const { id, albumName, slug, albumCaption, albumLinks, uploadedOn } = albumData
-
-    const [opened, { open, close }] = useDisclosure(false)
+    const { id, albumName } = albumData
+    // albumCaption, albumLinks, uploadedOn
+    // const [opened, { open, close }] = useDisclosure(false)
     const photoLimit = 15 as number
-    const initialRender = useRef(true)
+    // const initialRender = useRef(true)
     const [loadedPhotos, setLoadedPhotos] = useState(photoData)
     const [page, setPage] = useState(0)
     const [isLastPage, setIsLastPage] = useState(false)
-    const router = useRouter()
+    // const router = useRouter()
 
     const [ref, inView] = useInView()
 
@@ -60,11 +58,11 @@ export default function EditAlbumData({albumData, locations, photoData, photosCo
         inView && loadMorePhotos()
     }, [inView])
 
-    const breakpointColumnsObj = {
-        default: 5,
-        1500: 4,
-        800: 3,
-    }
+    // const breakpointColumnsObj = {
+    //     default: 5,
+    //     1500: 4,
+    //     800: 3,
+    // }
   
 
 //   const [ search, setSearch ] = useState(searchValue)
@@ -148,15 +146,15 @@ export default function EditAlbumData({albumData, locations, photoData, photosCo
     //     router.refresh()
     // }
 
-    const initialValues = { 
-        albumID: id,
-        albumName,
-        albumCaption,
-        links: albumLinks ? true : false,
-        hideForm: false,
-        uploadedOn: moment(uploadedOn).format("yyyy-MM-DDTkk:mm"),
-        linksRow: albumLinks
-    }
+    // const initialValues = { 
+    //     albumID: id,
+    //     albumName,
+    //     albumCaption,
+    //     links: albumLinks ? true : false,
+    //     hideForm: false,
+    //     uploadedOn: moment(uploadedOn).format("yyyy-MM-DDTkk:mm"),
+    //     linksRow: albumLinks
+    // }
 
     // const validationSchema = Yup.object({})
 
