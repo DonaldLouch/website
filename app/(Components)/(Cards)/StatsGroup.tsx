@@ -2,7 +2,6 @@
 
 import { Box, Group, SimpleGrid, Text } from '@mantine/core'
 
-import classes from './StatsGrid.module.css'
 import HugeIcon from '../HugeIcon'
 
 export default function StatsGroup({ statsData }: { statsData: [title: any, value: any, icon?: any, difference?: number, differenceText?: string]}) {
@@ -15,7 +14,7 @@ export default function StatsGroup({ statsData }: { statsData: [title: any, valu
         </Group>
 
         <Group align="center" gap="0.5rem" justify="center">
-          <Text className={classes.value} fw={700} fz={{base: "1.3rem", sm: "1.6rem"}}>{stat.value}</Text>
+          <Text fw={700} fz={{base: "1.3rem", sm: "1.6rem"}}>{stat.value}</Text>
           {stat.difference &&
             <Text c={stat.difference > 0 ? 'teal' : 'red'} fz="sm" fw={500} ff="monospace" lh={1} display={{base: "none", sm: "initial"}}>
                 <span style={{paddingRight: "0.2rem"}}>{stat.difference}%</span>

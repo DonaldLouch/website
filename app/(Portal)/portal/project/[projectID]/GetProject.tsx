@@ -1,9 +1,8 @@
 'use client'
 
-import { Alert, Badge, Button, Divider, Title, Modal, Stack, Tabs, Text, Group, Box, convertCssVariables } from "@mantine/core";
+import { Badge, Divider, Title, Stack, Tabs, Text, Group, Box } from "@mantine/core";
 // import { useSession } from "next-auth/react";
 // import Link from "next/link";
-import { Suspense } from "react";
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponentPortal"
 // import moment from 'moment';
 // import Loading from "../../(Config)/ContentLoading";
@@ -14,7 +13,7 @@ import TasksComponent from "./(Sections)/(Tasks)/TasksComponent";
 
 import { ProjectStatus } from "@/lib/Project/projectStatus";
 import { ProjectType } from "@/lib/Project/projectType";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import NotesSection from "./(Sections)/NotesSection";
 import { useUser } from "@clerk/nextjs";
 import ProjectTickets from "./(Sections)/(Tickets)/ProjectTickets";
@@ -149,9 +148,10 @@ export default async function GetProject({project, projectDescription, isStaff, 
                     <Badge color="gray" leftSection={<HugeIcon name="book-02" />}>
                         {projectType?.smallText}
                     </Badge>
-                    <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <HugeIcon name="loading-03" variant="twotone" />}>
+                    <ProjectStatusBadge projectStatus={projectStatus} />
+                    {/* <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <HugeIcon name="loading-03" variant="twotone" />}>
                         {projectStatus?.smallText}
-                    </Badge>
+                    </Badge> */}
                     {/* <Badge color={ projectStatus?.colorScheme ? projectStatus.colorScheme : "gray" } m="0 auto">{projectStatus?.fullText ? projectStatus?.fullText : projectStatus?.smallText ? projectStatus?.smallText : null}</Badge> */}
                 </Group>
             </Group>

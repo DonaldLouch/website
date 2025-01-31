@@ -1,7 +1,7 @@
 'use client'
 
 import { ProjectType } from "@/lib/Project/projectType";
-import { Box, Stack, Modal, SimpleGrid } from "@mantine/core";
+import { Box, Modal, SimpleGrid } from "@mantine/core";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
 import { useDisclosure } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
