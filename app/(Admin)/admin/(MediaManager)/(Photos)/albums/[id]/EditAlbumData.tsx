@@ -5,7 +5,7 @@ import { Divider, Group, Loader, Paper, SimpleGrid, Stack, Title, Text, Anchor }
 
 // import moment from "moment";
 import ViewPhotoEditAlbum from "./ViewPhotoEditAlbum";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 // import { useDisclosure } from "@mantine/hooks";
 import { useInView } from "react-intersection-observer";
 // import { useRouter } from "next/navigation";
