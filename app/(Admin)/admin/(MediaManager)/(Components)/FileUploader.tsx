@@ -10,7 +10,7 @@ import { notifications } from "@mantine/notifications";
 import axios from "axios"
 import HugeIcon from "@/app/(Components)/HugeIcon";
 
-export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
+export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string | null, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()
     const pathname = mediaType === "videography" ? "/admin/videography/upload?step=2" : mediaType === "thumbnail" ? "/admin/videography/upload?step3" : `/admin/photography`
 
