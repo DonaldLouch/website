@@ -18,8 +18,7 @@
 */
 'use client'
 
-import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Button, Code, Stack, Anchor, Group, ActionIcon, Text, Flex, Title, Badge, Image, Tooltip, Box, AspectRatio, SimpleGrid, Grid} from "@mantine/core"
+import { Code, Stack, Group, ActionIcon, Text, Box, SimpleGrid, Grid} from "@mantine/core"
 
 
 import * as yup from 'yup';
@@ -28,24 +27,19 @@ import { useForm } from '@mantine/form';
 
 // import FormInput from "@/app/(Components)/(Form)/FormInput";
 // import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
-import { FormInputRow } from "@/app/(Components)/(Form)/FormInputRow";
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
-import { FormInputCard } from "@/app/(Components)/(Form)/FormInputCard";
 import moment from "moment";
 import FormInput from "@/app/(Components)/(Form)/FormInput";
 import { randomId } from "@mantine/hooks";
 import { useState } from "react";
-import DisplayDate from "@/lib/DisplayDate";
 import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
 import FormButton from "@/app/(Components)/(Form)/FormButton";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
-import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import { notifications } from "@mantine/notifications";
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";

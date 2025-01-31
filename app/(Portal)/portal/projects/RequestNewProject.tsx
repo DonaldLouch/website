@@ -55,12 +55,12 @@ export default function RequestNewProject() {
     const onSubmit = async (values: any) => {
         const id = "project"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
 
-        const client ={
+        const client = {
             id: user?.id,
             firstName: user?.firstName,
             lastName: user?.lastName,
             username: user?.username,
-            email: user?.emailAddresses[0].emailAddress,
+            email: user?.emailAddresses?.[0]?.emailAddress ?? '',
             phoneNumber: values.phone,
             timezone: timezoneSelected
         }

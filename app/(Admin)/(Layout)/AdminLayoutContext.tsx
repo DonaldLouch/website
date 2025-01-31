@@ -5,16 +5,13 @@ import { Box,  Stack, Text, Button, AppShell, Group, Anchor, Image, Burger, rem,
 import { usePathname, useRouter } from 'next/navigation'
 
 // import LoadingComponent from '@/app/(Config)/ContentLoading'
-import { Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { UserButton, useClerk, useUser } from '@clerk/nextjs'
 
-import { shadesOfPurple } from '@clerk/themes';
 import { useDisclosure, useHeadroom } from '@mantine/hooks'
-import Footer from '@/app/(Config)/(Layout)/(Footer)'
 import { AdminNavigationItems } from '@/lib/AdminNavigationItems'
 import AdminNavigationItem from './AdminNavigationItem'
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
-import HeaderNavigationItem from '@/app/(Config)/(Layout)/(Header)/HeaderNavigationItem'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
@@ -29,7 +26,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
     useEffect(() => {setWindowHeight(window.innerHeight + 60)})
  
     // const attachedHeaderHeight = !isHero ? 190 : 800 
-    const disabled = path.includes("/video") && !path.includes("feed/video") ? true : false
+    // const disabled = path.includes("/video") && !path.includes("feed/video") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
 

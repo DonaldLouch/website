@@ -56,10 +56,10 @@ export type IconName = "file-attachment" | "arrow-right-01" | "bluesky" | "youtu
 
 export type IconArray = {name: IconName, variant?: IconVariant}
 
-export default function HugeIcon({ name, variant, size, color, weight, clickOption, ...rest }: { name: IconName, variant?: IconVariant, size?: any, color?: string, weight?: any, [key: string]: any, clickOption?: any }) {
+export default function HugeIcon({ name, variant, size, color, weight, clickOption }: { name: IconName, variant?: IconVariant, size?: any, color?: string, weight?: any, [key: string]: any, clickOption?: any }) {
     const options = { size: size ? size : undefined, color: color ? color : "currentColor", strokeWidth: weight ? weight : undefined}
 
-    const getIcon =
+    const getIcon: typeof HugeiconsIcon = 
         name === "file-unknown" && !variant ? FileUnknownIcon 
             : name === "file-unknown" && variant === "solid" ? FileUnknownSolidRounded 
             : name === "file-unknown" && variant === "bulk" ? FileUnknownBulkRounded 

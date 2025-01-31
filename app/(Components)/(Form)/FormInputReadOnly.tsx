@@ -1,17 +1,17 @@
-interface FormProps {
-    inputID: string
-    inputLabel?: string
-    inputType?: any|undefined|null
-    inputValue?: any|undefined|null
-}
+// interface FormProps {
+//     inputID: string
+//     inputLabel?: string
+//     inputType?: any|undefined|null
+//     inputValue?: any|undefined|null
+// }
 
-export const FormInputReadOnly = ( props: FormProps) => {
-    const { inputType } = props
+export const FormInputReadOnly = () => {
+    // const { inputType } = props
     
-    let theInputType = "text"
-    if (inputType != undefined) {
-        theInputType = inputType
-    }
+    // let theInputType = "text"
+    // if (inputType != undefined) {
+    //     theInputType = inputType
+    // }
     
     return (
         <div><h1>Function is being refactored.</h1></div>
