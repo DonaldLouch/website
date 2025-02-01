@@ -1,0 +1,26230 @@
+export const HugeIconsNames: any = {
+    "icons": [
+        {
+            "name": "1st-bracket",
+            "tags": "parenthesis, bracket",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "1st-bracket-circle",
+            "tags": "1st-bracket-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "1st-bracket-square",
+            "tags": "1st-bracket-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "2nd-bracket",
+            "tags": "parenthesis, bracket",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "2nd-bracket-circle",
+            "tags": "2nd-bracket-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "2nd-bracket-square",
+            "tags": "2nd-bracket-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "3d-move",
+            "tags": "3d-move",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "3d-rotate",
+            "tags": "3d-rotate",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "3d-scale",
+            "tags": "3d-scale",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "3-d-view",
+            "tags": "Perspective Mode, Dimensional Display, Tri-Dimensional View, Spatial Perspective, 3D Scene, Depth Visualization, 3d view, 3d",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "3rd-bracket",
+            "tags": "parenthesis, bracket",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "3rd-bracket-circle",
+            "tags": "3rd-bracket-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "3rd-bracket-square",
+            "tags": "3rd-bracket-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "4k",
+            "tags": "4k",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "abacus",
+            "tags": "abacus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "absolute",
+            "tags": "absolute, ultimate, perfect, paramount",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "acceleration",
+            "tags": "Speed Boost Symbol, Rapid Motion Icon, Quickening Emoji, Velocity Symbol, Fast Track Emblem, Swift Movement Sign, Hastening Icon, Turbo Charge Emoji, Speedy Motion Symbol, Accelerated Pace Symbol",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "access",
+            "tags": "access",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "accident",
+            "tags": "accident icon, mishap, emergency, incident, calamity, misfortune, mishandling",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "account-setting-01",
+            "tags": "profile-settings, user-options, personal-preferences, account-config, profile-customize, user-configurations, settings-profile, customize-account",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "account-setting-02",
+            "tags": "profile-settings, user-options, personal-preferences, account-config, profile-customize, user-configurations, settings-profile, customize-account",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "account-setting-03",
+            "tags": "profile-settings, user-options, personal-preferences, account-config, profile-customize, user-configurations, settings-profile, customize-account",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "activity-01",
+            "tags": "activity-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "activity-02",
+            "tags": "activity-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "activity-03",
+            "tags": "activity-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "activity-04",
+            "tags": "activity-04",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "acute",
+            "tags": "acute, sharp, angular",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "add-01",
+            "tags": "add, plus, plus sign, add button",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "add-02",
+            "tags": "add, plus, plus sign, add button",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "add-circle",
+            "tags": "add, plus, plus sign, add button, add-circle, plus circle",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "add-circle-half-dot",
+            "tags": "add, plus, plus sign, add button, add half-dot, plus circle half-dot",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "add-female",
+            "tags": "add-female",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "add-invoice",
+            "tags": "add-invoice",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "add-male",
+            "tags": "add-male",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "add-money-circle",
+            "tags": "add-money-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "address-book",
+            "tags": "address-book",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "add-square",
+            "tags": "add, plus, plus sign, add button, add square",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "add-team",
+            "tags": "add users, group users, invite team,",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "add-team-02",
+            "tags": "add-team-02",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "add-to-list",
+            "tags": "add-to-list",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "adobe-after-effect",
+            "tags": "adobe-after-effect",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "adobe-illustrator",
+            "tags": "adobe-illustrator",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "adobe-indesign",
+            "tags": "adobe-indesign",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "adobe-photoshop",
+            "tags": "adobe-photoshop",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "adobe-premier",
+            "tags": "adobe-premier",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "adobe-xd",
+            "tags": "adobe-xd",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "adventure",
+            "tags": "adventure",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "advertisiment",
+            "tags": "ad, promote,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "adzan",
+            "tags": "adzan",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "affiliate",
+            "tags": "money, affiliate, dollar, commission",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "agreement-01",
+            "tags": "hand shake, deal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "agreement-02",
+            "tags": "hand shake, deal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "agreement-03",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "ai-audio",
+            "tags": "ai-audio",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-beautify",
+            "tags": "ai-beautify",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-book",
+            "tags": "ai-book",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-brain-01",
+            "tags": "ai-brain-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-brain-02",
+            "tags": "ai-brain-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-brain-03",
+            "tags": "ai-brain-03",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-brain-04",
+            "tags": "ai-brain-04",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-brain-05",
+            "tags": "ai-brain-05",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-browser",
+            "tags": "ai-browser",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-chat-01",
+            "tags": "ai-chat-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-chat-02",
+            "tags": "ai-chat-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-chemistry-01",
+            "tags": "ai-chemistry-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-chemistry-02",
+            "tags": "ai-chemistry-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-chemistry-03",
+            "tags": "ai-chemistry-03",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-chip",
+            "tags": "ai-chip",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-cloud",
+            "tags": "ai-cloud",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-cloud-01",
+            "tags": "ai-cloud-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-cloud-02",
+            "tags": "ai-cloud-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-computer",
+            "tags": "ai-computer",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-content-generator-01",
+            "tags": "ai-content-generator-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-content-generator-02",
+            "tags": "ai-content-generator-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-dna",
+            "tags": "ai-dna",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "aids",
+            "tags": "aids",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "ai-editing",
+            "tags": "ai-editing",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-eraser",
+            "tags": "ai-eraser",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-file",
+            "tags": "ai-file",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-folder-01",
+            "tags": "ai-folder-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-folder-02",
+            "tags": "ai-folder-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-game",
+            "tags": "ai-game",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-generative",
+            "tags": "ai-generative",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-idea",
+            "tags": "ai-idea",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-image",
+            "tags": "ai-image",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-innovation-01",
+            "tags": "ai-innovation-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-innovation-02",
+            "tags": "ai-innovation-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-innovation-03",
+            "tags": "ai-innovation-03",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-laptop",
+            "tags": "ai-laptop",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-learning",
+            "tags": "ai-learning",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-lock",
+            "tags": "ai-lock",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-magic",
+            "tags": "ai-magic",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-mail",
+            "tags": "ai-mail",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-mail-01",
+            "tags": "ai-mail-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-mail-02",
+            "tags": "ai-mail-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-mic",
+            "tags": "ai-mic",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-network",
+            "tags": "ai-network",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-phone-01",
+            "tags": "ai-phone-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-phone-02",
+            "tags": "ai-phone-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-programming",
+            "tags": "ai-programming",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "airbnb",
+            "tags": "airbnb",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "aircraft-game",
+            "tags": "aircraft-game",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "airdrop",
+            "tags": "airdrop",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airplane-01",
+            "tags": "airplane icon, jet, aircraft, flying machine, air shuttle, sky cruiser, aviation symbol, plane, aerial transport",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplane-02",
+            "tags": "airplane icon, jet, aircraft, flying machine, air shuttle, sky cruiser, aviation symbol, plane, aerial transport",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplane-landing-01",
+            "tags": "airplane-landing icon, landing-plane, arrival-plane, touchdown-aircraft, lander-jet, descent-flight, approach-aircraft, landfall-plane, touch-down jet, final-descent, touchdown-jet, landing-aircraft, arrival-jet",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplane-landing-02",
+            "tags": "airplane-landing icon, landing-plane, arrival-plane, touchdown-aircraft, lander-jet, descent-flight, approach-aircraft, landfall-plane, touch-down jet, final-descent, touchdown-jet, landing-aircraft, arrival-jet",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplane-mode",
+            "tags": "airplane-mode",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airplane-mode-off",
+            "tags": "airplane-mode-off",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airplane-seat",
+            "tags": "airplane-seat",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplane-take-off-01",
+            "tags": "airplane-take-off icon, flight-departure, jet-launch, aircraft-takeoff, flying-start, departure-plane, lift-off, soaring-jet, air-travel-begin, departure-flight",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplane-take-off-02",
+            "tags": "airplane-take-off icon, flight-departure, jet-launch, aircraft-takeoff, flying-start, departure-plane, lift-off, soaring-jet, air-travel-begin, departure-flight",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "airplay-line",
+            "tags": "airplay-line",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airpod-01",
+            "tags": "airpod-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airpod-02",
+            "tags": "airpod-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airpod-03",
+            "tags": "airpod-03",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "airport",
+            "tags": "airport",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "ai-scan",
+            "tags": "ai-scan",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-scheduling",
+            "tags": "ai-scheduling",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-search",
+            "tags": "ai-search",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-search-02",
+            "tags": "ai-search-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-security-01",
+            "tags": "ai-security-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-security-02",
+            "tags": "ai-security-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-security-03",
+            "tags": "ai-security-03",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-setting",
+            "tags": "ai-setting",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-sheets",
+            "tags": "ai-sheets",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-smartwatch",
+            "tags": "ai-smartwatch",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-user",
+            "tags": "ai-user",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-video",
+            "tags": "ai-video",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-view",
+            "tags": "ai-view",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-vision-recognition",
+            "tags": "ai-vision-recognition",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-voice",
+            "tags": "ai-voice",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-voice-generator",
+            "tags": "ai-voice-generator",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "ai-web-browsing",
+            "tags": "ai-web-browsing",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "al-aqsa-mosque",
+            "tags": "al-aqsa-mosque",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "alarm-clock",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "album-01",
+            "tags": "images, photos,",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "album-02",
+            "tags": "images, photos,",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "album-not-found-01",
+            "tags": "no images, no photos,",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "album-not-found-02",
+            "tags": "no images, no photos,",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "alert-01",
+            "tags": "Alert, Warning, Attention, Caution, Exclamation, Advisory, Signal, Alarm, Indicator, Prompt, Reminder, Announcement, Signalization, Alertness, Notifier, Vigilance, Admonition, Heads-up, Alert Signal, Warning Symbol.",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "alert-02",
+            "tags": "Alert, Warning, Attention, Caution, Exclamation, Advisory, Signal, Alarm, Indicator, Prompt, Reminder, Announcement, Signalization, Alertness, Notifier, Vigilance, Admonition, Heads-up, Alert Signal, Warning Symbol.",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "alert-circle",
+            "tags": "Alert, Warning, Attention, Caution, Exclamation, Advisory, Signal, Alarm, Indicator, Prompt, Reminder, Announcement, Signalization, Alertness, Notifier, Vigilance, Admonition, Heads-up, Alert Signal, Warning Symbol.alert-circle",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "alert-diamond",
+            "tags": "alert-diamond, Alert, Warning, Attention, Caution, Exclamation, Advisory, Signal, Alarm, Indicator, Prompt, Reminder, Announcement, Signalization, Alertness, Notifier, Vigilance, Admonition, Heads-up, Alert Signal, Warning Symbol.alert-circle",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "alert-square",
+            "tags": "Alert, Warning, Attention, Caution, Exclamation, Advisory, Signal, Alarm, Indicator, Prompt, Reminder, Announcement, Signalization, Alertness, Notifier, Vigilance, Admonition, Heads-up, Alert Signal, Warning Symbol. Alert-square",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "algorithm",
+            "tags": "algorithm",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "alien-01",
+            "tags": "extraterrestrial, visitor, spaceling, ET, Martian, cosmic being, outerworldly, interstellar traveler, space creature, star dweller, otherworldly being, celestial voyager, UFO inhabitant, galactic entity, astral being",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "alien-02",
+            "tags": "extraterrestrial, visitor, spaceling, ET, Martian, cosmic being, outerworldly, interstellar traveler, space creature, star dweller, otherworldly being, celestial voyager, UFO inhabitant, galactic entity, astral being",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "align-bottom",
+            "tags": "Bottom Align, Align to Bottom, Lower Alignment, Baseline Align, Downward Alignment, Bottom Alignment, Align Bottom, Bottom Align, Align",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-bottom-center",
+            "tags": "Centered Bottom Alignment, Bottom-Centered Align Box, Align to Bottom Center, Box Align Bottom Middle, Centered Box at Bottom, Bottom-Centered Box Alignment, Align Box to Bottom Center, Box Aligned Bottom Middle, Centered Alignment at Bottom, Bottom Center Box Alignment",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-bottom-left",
+            "tags": "align-box-bottom-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-bottom-right",
+            "tags": "\"Bottom Right Alignment, Align to Bottom Right Corner, Position in Bottom Right, Box Alignment Lower Right, Corner Alignment Bottom Right, Bottom Right Box Alignment, Right-Bottom Positioning, Align Box to Lower Right, Bottom Right Box Placement, align box bottom right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-middle-center",
+            "tags": "Centered Box Alignment, Middle Center Align, Box Center Alignment, Central Box Position, Centered Content Box, Middle Align Box, Center Align Box, Box Middle Centered, Central Box Alignment, Center Aligned Box, align box middle center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-middle-left",
+            "tags": "Box Center Left Align, Horizontal Middle Align Left, Centered Box Align Left, Middle-Left Box Alignment, Left Aligned Box Center, Align to Left Center Box, Middle Aligned Left Box, Left Aligned Middle Box, Box Left Middle Alignment, Align Box Middle Left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-middle-right",
+            "tags": "Center Right Align, Middle Right Alignment, Box Middle Right Align, Right-Centered Box, Horizontal Center Right, Middle Right Box Position, Align to Right Center, Right Middle Alignment, Central Right Box Placement, Right Aligned Box Center,\" Rightward Middle Alignment, Align Box Middle Right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-top-center",
+            "tags": "Top Center Alignment, Centered Box Alignment, Top-Centered Box, Centralized Box Alignment, Box Align Top-Center, Centered Box Arrangement, Align to Top-Center, Top Middle Alignment, Top Central Box Alignment, Align Box Top Center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-top-left",
+            "tags": "align box top left, Top Left Alignment, Upper Left Align, Box Align Top Left Corner, Align to Top Left, Corner Alignment Top Left, Top Left Box Alignment,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-box-top-right",
+            "tags": "Top Right Alignment Box, Box Align Right Top, Right Top Box Align, Align to Top Right, Upper Right Box Align, Box Aligned at Top Right, Rightward Top Box Alignment, Align Box Towards Top Right, Top-Right Aligned Box, Box Alignment Right Up, Align Box Top Right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-horizontal-center",
+            "tags": "enter Horizontal Alignment, Middle Horizontal Alignment, Align Center Horizontally, Horizontal Center Alignment, Centered Horizontal Alignment, Horizontal Centering, Center Alignment Horizontal, Align vertical Center, Align",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-key-object",
+            "tags": "Object Alignment Tool, Key Object Aligner, Object Key Align, Aligner Tool, Key Align Object, Object Key Alignment, Key Element Align, Object Key Centering, Object Key Positioner, Key Element Alignment, Align Kew Object",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-left",
+            "tags": "align left, left align, align to the left, leftward alignment, ext align left, flush left, justify left, align text left, left text alignment, eftward text align, align content left, Align, Align left, Left align, Align",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-right",
+            "tags": "Right justify, Right align, Align to the right, Text alignment right, Rightward alignment, Right-side alignment, Align flush right, Justify to the right, Text right alignment, Right position, Rightward positioning, Rightward justify, Align right, Right align, Align",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-selection",
+            "tags": "center selection, adjust selection, position selection, arrange selection, organize selection, line up selection, place selection, set selection, group selection, order selection, orient selection, match selection, align chosen, align picked, align marked, align selection",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-top",
+            "tags": "Top Align, Top Position, Upper Alignment, Highest Position, Uppermost Align, Vertical Alignment, Peak Alignment, Highest Placement, Upper Boundary, Align Top, Top Align, Align",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "align-vertical-center",
+            "tags": "Center Vertically, Vertical Middle Align, Align to Middle Vertically, Vertical Centering, Center Vertically, Middle Alignment, Central Vertical Alignment, Vertical Center Align, Vertical Middle, Centered Vertically, Align Center Vertically, Vertical Center Alignment, Vertical Centered Position, Align Middle Vertically, Vertical Alignment Center, Vertical Centering, Vertical Central Alignment, Vertical Centered Alignment, Vertical Center Aligning, Align vertical Center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "allah",
+            "tags": "allah",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "all-bookmark",
+            "tags": "bookmark, book, later, marker, reading, save, tag,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "alms",
+            "tags": "alms",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "alpha",
+            "tags": "alpha",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "alphabet-arabic",
+            "tags": "Arabic Letters, Arabic Characters, Arabic Script, Islamic Alphabet, Middle Eastern Alphabet, Arabic Language Symbols, Script of the Arab World, Alphabet in Arabic Style, Alphabet Arabic",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-bangla",
+            "tags": "Bangla Letters, Bengali Alphabet, Bangla Script, বাংলা বর্ণমালা, Bangla Writing, বাংলা লেখা, Bangla Symbols, বাংলা অক্ষর, Bangla Characters, Bengali Language, Bangla Text, Alphabet Bangla",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-chinese",
+            "tags": "Chinese characters, Mandarin symbols, Hanzi letters, Oriental alphabet, Asian script, Pinyin glyphs, Kanji characters, Logographic symbols, Sinograph symbols, East Asian writing, Traditional script, Calligraphic letters, Ideographic characters, Han script, Alphabet chinese",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-greek",
+            "tags": "Greek Alphabet, Greek Letters, Hellenic Alphabet, AlphaBeta Symbols, Grecian Characters, Greek Script, Hellenic Writing, Greek Symbol Set, Greek Language Icons, AlphaBeta Icons, Alphabet Greek",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-hebrew",
+            "tags": "Hebrew Letters, Aleph Bet, Jewish Alphabet, Sacred Script, Torah Writing, Biblical Characters, Israeli Characters, Holy Language, Semitic Script, Judaic Symbols. Alphabet Hebrew",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-hindi",
+            "tags": "Hindi Lettering, Indian Script Characters, Devanagari Alphabets,  Hindi Alphabetical Symbols, Sanskrit Script Icons, Indian Language Characters, Hindi Script Letters, Devanagari Text Symbols, Hindi Writing System, Alphabet Hindi",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-japanese",
+            "tags": "apanese Alphabet, Hiragana Chart, Kana Characters, Kanji Script, Eastern Characters, Nihongo Letters, Asian Lettering, Oriental Alphabet, Japanese Writing System, Hiragana & Katakana, Kanji Symbols, Asian Script, Alphabet Japanese",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-korean",
+            "tags": "Korean characters, Hangul script, korean writing system, Korean alphabet, Hangul letters, Korean symbols, Korean text, Korean script, Hangul alphabet, 한국어 characters, Korean glyphs, Alphabet Korean",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alphabet-thai",
+            "tags": "hai Alphabet, Thai Writing, Siamese Alphabet, Thai Lettering, Thai Language, Thai Text, Thai Symbols, Thai Calligraphy, Thai Typography, Alphabet Thai",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "alpha-circle",
+            "tags": "alpha-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "alpha-square",
+            "tags": "alpha-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "amazon",
+            "tags": "amazon",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "ambulance",
+            "tags": "ambulance icon, emergency vehicle, medical transport, rescue car, paramedic van, lifesaving transport, EMT vehicle, hospital ambulance, emergency response vehicle, medical ambulance, ambulance transport",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "american-football",
+            "tags": "american-football",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "amie",
+            "tags": "amie",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "ampoule",
+            "tags": "ampoule",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "analysis-text-link",
+            "tags": "report, overview",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "analytics-01",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "analytics-02",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "analytics-03",
+            "tags": "analytics-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "analytics-down",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "analytics-up",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "anchor",
+            "tags": "anchor",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "anchor-point",
+            "tags": "fixed position, reference spot, tether spot, secure point, pivot marker, stabilization point, central hub, docking point, focal node, mooring spot, attachment marker, core junction, anchor point",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "android",
+            "tags": "android",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "angel",
+            "tags": "halo symbol, cherub icon, heavenly figure, celestial emoticon, divine messenger, seraphic symbol, winged spirit, blessed emoji, ethereal icon, guardian symbol",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "angle",
+            "tags": "arrowhead, angle, Angular, Arrow",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "angle-01",
+            "tags": "arrowhead, angle, Angular, Arrow",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "angry",
+            "tags": "Fuming Face, Rage Symbol, Mad Emoticon, Wrathful Icon, Furious Emoji, Irritated Face, Enraged Symbol, Angry Symbol, Livid Emoticon, Outraged Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "angry-bird",
+            "tags": "angry-bird",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "anonymous",
+            "tags": "Incognito, Hidden, Masked, Ghost, Concealed, Veiled, Unnamed, Stealth, Secret, Unknown, anonymous",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "api",
+            "tags": "api",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "apple",
+            "tags": "apple",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "apple-01",
+            "tags": "apple-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "apple-finder",
+            "tags": "apple-finder",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "apple-intelligence",
+            "tags": "apple-intelligence",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "apple-news",
+            "tags": "apple-news",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "apple-pie",
+            "tags": "apple-pie",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "apple-reminder",
+            "tags": "apple-reminder",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "apple-stocks",
+            "tags": "apple-stocks",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "apple-vision-pro",
+            "tags": "apple-vision-pro",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "appointment-01",
+            "tags": "booking, calendar booked, scheduled,",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "appointment-02",
+            "tags": "booking, calendar booked, scheduled,",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "approximately-equal",
+            "tags": "approximately-equal",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "approximately-equal-circle",
+            "tags": "approximately-equal-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "approximately-equal-square",
+            "tags": "approximately-equal-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "app-store",
+            "tags": "app-store",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "apricot",
+            "tags": "apricot",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "apron",
+            "tags": "apron",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "arc-browser",
+            "tags": "arc-browser",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "archer",
+            "tags": "archer",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "archive",
+            "tags": "archive",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "archive-01",
+            "tags": "archive-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "archive-02",
+            "tags": "archive-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "armored-boot",
+            "tags": "armored-boot",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "arrange",
+            "tags": "Sort, Organize, Rearrange, Order, Align, Categorize, Position, Arrange & Align, Group, Manage, Structure, Reorder, Set in Order, Arrange Items, Arrange",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "arrange-by-letters-a-z",
+            "tags": "Alphabetical order, Sort alphabetically, A to Z sorting, Alphabet sort, Order by letters, AZ arrangement, Letter sequence, ABC categorization, Character organization, Alphabetize, Alphabetic sorting, Sequential letters, Arrange By Letters A Z",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "arrange-by-letters-z-a",
+            "tags": "Alphabetical order, Sort alphabetically, A to Z sorting, Alphabet sort, Order by letters, AZ arrangement, Letter sequence, ABC categorization, Character organization, Alphabetize, Alphabetic sorting, Sequential letters, Arrange By Letters Z A",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "arrange-by-numbers-1-9",
+            "tags": "Numeric Sorting, Order by Numerals, Sequence Organize, Numerical Arrangement, Sort with Numbers, 1-9 Ordering, Numeric Sequence, Numbered Sorting, Numerical Sort, Arrange By Numbers 1 9",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "arrange-by-numbers-9-1",
+            "tags": "Sort by Numerical Order, Order by 9 to 1, Number-Based Sorting, Sequence 9 to 1, Numeric Arrangement, 9-1 Ordering, Ascending Number Sort, Numerical Ranking 9-1, Arrange Sequentially 9-1, Arrange By Numbers 9 1",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "arrow-all-direction",
+            "tags": "arrow-all-direction, Minimize-Arrow, Expand-Arrow, Directional-Arrow, Resize-Arrow, Universal-Arrow, Shrinkage-Indicator, Multi-Direction-Arrow, Compact-Arrow, big screen, full screen",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-data-transfer-diagonal",
+            "tags": "arrow-data-transfer-diagonal",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-data-transfer-horizontal",
+            "tags": "Arrow-data-transfer-horizontal, Transfer, Horizontal data transfer arrow, Data exchange arrow, Transfer data Icon, Horizontal transfer arrow, Data flow arrow, Data link arrow, Horizontal data sync icon, File transfer arrow, Data transmission arrow, Horizontal data mover icon, Information transfer arrow, Data share arrow, Horizontal file exchange icon",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-data-transfer-vertical",
+            "tags": "arrow-data-transfer-vertical",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-diagonal",
+            "tags": "big screen, full screen, expand, enlarge",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-01",
+            "tags": "down-arrow, arrow, down, decrease arrow, drop arrow, drop down, drop down arrow, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-02",
+            "tags": "downward arrow, arrow pointing down, lower arrow, decrease arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-03",
+            "tags": "return to bottom, arrow to descend, go backward, navigate downward",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-04",
+            "tags": "arrow-down-04",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-05",
+            "tags": "arrow-down-05",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-double",
+            "tags": "Arrow-down-double, Double-arrow-down, Downward-double-arrow, Dual-arrow-down, Twin-arrow-down, Dual-chevron-down, Double-pointing-down, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-left-01",
+            "tags": "down-left arrow, diagonal down arrow, southwestern arrow, lower-left pointing arrow, descending left arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-left-02",
+            "tags": "arrow-down-left-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-right-01",
+            "tags": "lower right direction arrow, Diagonal descent arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-down-right-02",
+            "tags": "arrow-down-right-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-expand",
+            "tags": "shrink-arrow, minimize-icon, compress-arrow, reduce-symbol, collapse-indicator, condense-arrow,\nexpand-arrow, maximize-icon, enlarge, unfold-arrow, big screen, full screen",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-expand-01",
+            "tags": "big screen, full screen, expand, enlarge",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-expand-02",
+            "tags": "big screen, full screen, expand, enlarge",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-expand-diagonal-01",
+            "tags": "enlarge, big, expand screen",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-expand-diagonal-02",
+            "tags": "enlarge, big, expand screen",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-horizontal",
+            "tags": "big screen, full screen, expand, enlarge",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-01",
+            "tags": "left-arrow, back-arrow, arrow, leftward indicator, go back, back navigation, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-02",
+            "tags": "left arrow, back arrow, previous arrow, navigate left, return arrow, backward arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-03",
+            "tags": "arrow-to-left, leftward arrow, back arrow, navigate left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-04",
+            "tags": "arrow-left-04",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-05",
+            "tags": "arrow-left-05",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-double",
+            "tags": "Arrow-left-double, Double-left-arrow, Backward-arrow, Reverse-arrow, Leftward-arrow, Undo-arrow, Previous-arrow, Retreat-arrow, Dual-left-arrow, Recede-arrow, Backtrack-arrow, Double-back-arrow, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-left-right",
+            "tags": "arrow-left-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-move-down-left",
+            "tags": "arrow-move-down-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-move-down-right",
+            "tags": "arrow-move-down-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-move-left-down",
+            "tags": "arrow-move-left-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-move-right-down",
+            "tags": "arrow-move-right-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-move-up-left",
+            "tags": "Move-diagonal-arrow, Data-transfer-arrow, Diagonal-up-arrow, Horizontal-transfer-arrow, Transfer-arrow-up-left, Data-arrow-diagonal, Up-left-move-icon, Horizontal-data-arrow, Diagonal-transfer-arrow, Left-upward-arrow.",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-move-up-right",
+            "tags": "Arrow-move-up-right, Upward-diagonal-arrow, Diagonal-transfer-arrow, Northeast-arrow,\nHorizontal-data-transfer, Data-exchange-arrow, Side-to-side-arrow.",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-reload-horizontal",
+            "tags": "Refresh-arrow, Sync-arrow, Update-arrow, Circular-arrow, Loop-arrow, Reload-circle, Transfer-arrow-horizontal, Data-sync-arrow, Horizontal-transfer, Data-exchange-arrow, Data-refresh-arrow, Circular-data-transfer, Swap-arrow-horizontal, Sync-data-arrow, Cyclic-arrow, Exchange-arrow, Loop-data-arrow, Refresh, Arrow reload",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-reload-vertical",
+            "tags": "refresh-arrow, sync-arrow, update-arrow, circular-arrow, loop-arrow, reload-circle, transfer-arrow-horizontal, data-sync-arrow, horizontal-transfer, data-exchange-arrow, data-refresh-arrow, circular-data-transfer, swap-arrow-horizontal, sync-data-arrow, cyclic-arrow, exchange-arrow, loop-data-arrow.Refresh, arrow reload",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-right-01",
+            "tags": "right-arrow, next-arrow, navigate-right, move-forward, right-direction, chevron,",
+            "category": "arrows",
+            "featured": true
+        },
+        {
+            "name": "arrow-right-02",
+            "tags": "arrow, next-arrow, move-right, navigate-right, right-direction",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-right-03",
+            "tags": "Arrow-to-right, Right direction, Next, Navigate right, Move right, Advance, Right arrow, Progress, Go forward, Forward arrow, Right shift, Right move, Right-way, Arrow forward, Forward motion, Right glide, Right path, Right journey, Right route, Right trail, Right trek, Right course, Right advance, Right march, Right step,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-right-04",
+            "tags": "arrow-right-04",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-right-05",
+            "tags": "arrow-right-05",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-right-double",
+            "tags": "Arrow-right-double, Double-right-arrow, Forward-double-arrow, Right-arrow-twin, Dual-arrow-right, Paired-arrow-forward, Twin-arrow-right, Double-forward-arrow, Double-arrow-to-right, Arrow-right-pair, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-shrink",
+            "tags": "arrow-shrink, reduce-arrow, transfer-arrow, minimize-arrow, data-move-arrow, compress-arrow, share-arrow-horizontal, condense-arrow, exchange-arrow-horizontal, collapse-arrow, convey-arrow-horizontal",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-shrink-01",
+            "tags": "collapse, minimize screen",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-shrink-02",
+            "tags": "collapse, minimize screen",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-turn-backward",
+            "tags": "Arrow-turn-backward, Rewind-arrow, Reverse-arrow, Back-arrow, U-turn-arrow, Left-turn-arrow, Retro-arrow, Revert-arrow, Backward-pointing-arrow, Return-arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-turn-down",
+            "tags": "Arrow-turn-down, Arrow-point-down, Downward-arrow, Descend-arrow, Downturn-arrow, Drop-arrow, Fall-arrow, Lower-arrow, Descend-indicator, Move-down-arrow, Go-down-arrow, Downward-pointing-arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-turn-forward",
+            "tags": "Arrow-turn-forward, Forward-arrow, Next-arrow, Proceed-arrow, Advance-arrow, Navigate-arrow, Move-forward, Progress-arrow, Step-forward, Continue-arrow, Onward-arrow, Shift-ahead, Propel-arrow, Go-forward",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-turn-up",
+            "tags": "Arrow-turn-up,Turn up, Upward-arrow, Direction-change-up, Flip-arrow-up, Ascend-arrow, Vertical-turn-arrow, Elevate-arrow, Northward-arrow, Climb-arrow, Rise-arrow, Shift-up-arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-01",
+            "tags": "drop up-arrow, up arrow, arrow, upper direction arrow, increase arrow, chevron,",
+            "category": "arrows",
+            "featured": true
+        },
+        {
+            "name": "arrow-up-02",
+            "tags": "upward arrow, directional up, navigate up, up-arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-03",
+            "tags": "back to top, up arrow, scroll up, up arrow, return to top, top scroll, back top",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-04",
+            "tags": "arrow-up-04",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-05",
+            "tags": "arrow-up-05",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-double",
+            "tags": "Double-arrow-up, Up-arrow-pair, Dual-up-arrow, Vertical-twin-arrows, Paired-upward-arrows, Ascent-duo, Double-upward-chevron, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-down",
+            "tags": "arrow-up-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-left-01",
+            "tags": "diagonal-arrow-up-left, upper-left-arrow, leftward-up-arrow, diagonal-up-left-arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-left-02",
+            "tags": "arrow-up-left-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-right-01",
+            "tags": "up right arrow, upward diagonal arrow, diagonal up arrow, upper right direction arrow",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-right-02",
+            "tags": "arrow-up-right-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-up-right-03",
+            "tags": "arrow-up-right-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "arrow-vertical",
+            "tags": "big screen, full screen, expand, enlarge",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "artboard",
+            "tags": "creation board,  drawing panel, visual board, drafting area, layout board, artboard, art board",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "artboard-tool",
+            "tags": "Canvas Creator, Design Board, Layout Generator, Drawing Space, Template Maker, Page Constructor, Sketch Pad, Blueprint Generator, Visual Planner, Composition Tool, Artboard Tool, Art Board Tool",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-01",
+            "tags": "artificial-intelligence-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-02",
+            "tags": "artificial-intelligence, ai",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-03",
+            "tags": "Ai,",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-04",
+            "tags": "artificial-intelligence, ai",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-05",
+            "tags": "artificial-intelligence, ai",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-06",
+            "tags": "artificial-intelligence, ai",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-07",
+            "tags": "artificial-intelligence-07",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "artificial-intelligence-08",
+            "tags": "artificial-intelligence-08",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "aspect-ratio",
+            "tags": "Proportion Selector, Scale Control, Dimension Modifier, Screen Ratio Adjuster, Size Ratio Setter, Image Scaling Tool, Ratio Resizer, Aspect Adjustment, Proportion Modifier, Aspect Ration",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "assignments",
+            "tags": "assignments",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "asteroid-01",
+            "tags": "space rock, cosmic stone, meteorite, celestial pebble, star shard, galaxy stone, astral fragment, comet core, lunar debris, stellar rock",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "asteroid-02",
+            "tags": "space rock, cosmic stone, meteorite, celestial pebble, star shard, galaxy stone, astral fragment, comet core, lunar debris, stellar rock",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "astronaut-01",
+            "tags": "space explorer, cosmonaut, star voyager, celestial traveler, lunar pioneer, galaxy rover, cosmic adventurer",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "astronaut-02",
+            "tags": "space explorer, cosmonaut, star voyager, celestial traveler, lunar pioneer, galaxy rover, cosmic adventurer",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "at",
+            "tags": "at",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "atm-01",
+            "tags": "atm-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "atm-02",
+            "tags": "atm-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "atom-01",
+            "tags": "Atomic Symbol, Molecular Icon, Particle Emblem, Nuclear Glyph, Electron Symbol, Chemistry Emoji, Proton Emblem, Neutron Icon, Atomic Model, Molecular Structure",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "atom-02",
+            "tags": "Atomic Symbol, Molecular Icon, Particle Emblem, Nuclear Glyph, Electron Symbol, Chemistry Emoji, Proton Emblem, Neutron Icon, Atomic Model, Molecular Structure",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "atomic-power",
+            "tags": "atomic",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "attachment",
+            "tags": "attachment, file, attach",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "attachment-01",
+            "tags": "paperclip, link, fasten, connect, affix, clip, join, tether, annex, bind, hitch, clasp, secure, hook, tie, attachment,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "attachment-02",
+            "tags": "paperclip, link, fasten, connect, affix, clip, join, tether, annex, bind, hitch, clasp, secure, hook, tie, attachment,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "attachment-circle",
+            "tags": "paperclip, link, fasten, connect, affix, clip, join, tether, annex, bind, hitch, clasp, secure, hook, tie, attachment, attachment circle, circle attachment",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "attachment-square",
+            "tags": "paperclip, link, fasten, connect, affix, clip, join, tether, annex, bind, hitch, clasp, secure, hook, tie, attachment, attachment square, square attachment",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "auction",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "audio-book-01",
+            "tags": "Listen Now, Narration, Read Aloud, Voice Text, Audio Read, Sound Book, Listen & Read, Spoken Word, Tale Talk, Story Sound, Auditory Book, Audio Readings, Listen Pages, Vocal Story, Audio Book, Book, Sound Book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "audio-book-02",
+            "tags": "Listen Now, Narration, Read Aloud, Voice Text, Audio Read, Sound Book, Listen & Read, Spoken Word, Tale Talk, Story Sound, Auditory Book, Audio Readings, Listen Pages, Vocal Story, Audio Book, Book, Sound Book, Music Book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "audio-book-03",
+            "tags": "Listen Now, Narration, Read Aloud, Voice Text, Audio Read, Sound Book, Listen & Read, Spoken Word, Tale Talk, Story Sound, Auditory Book, Audio Readings, Listen Pages, Vocal Story, Audio Book, Book, Sound Book, Music Book, media, media book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "audio-book-04",
+            "tags": "Listen Now, Narration, Read Aloud, Voice Text, Audio Read, Sound Book, Listen & Read, Spoken Word, Tale Talk, Story Sound, Auditory Book, Audio Readings, Listen Pages, Vocal Story, Audio Book, Book, Sound Book, Music Book, media, media book, head set book, headphone",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "audio-wave-01",
+            "tags": "audio-wave-01",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "audio-wave-02",
+            "tags": "audio-wave-02",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "audit-01",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "audit-02",
+            "tags": "audit-02",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "augmented-reality-ar",
+            "tags": "augmented-reality-ar",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "authorized",
+            "tags": "authorized",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "auto-conversations",
+            "tags": "up, price high, trade up, level,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "automotive-battery-01",
+            "tags": "battery, energy, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "automotive-battery-02",
+            "tags": "battery, energy, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "avalanche",
+            "tags": "snow slide, avalanche, landslide, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "avocado",
+            "tags": "avocado",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "award-01",
+            "tags": "award, trophy, winner, cup, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "award-02",
+            "tags": "award, prize, star award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "award-03",
+            "tags": "award, prize, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "award-04",
+            "tags": "Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "award-05",
+            "tags": "Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "baby-01",
+            "tags": "baby-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "baby-02",
+            "tags": "baby-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "baby-bed-01",
+            "tags": "baby-bed-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "baby-bed-02",
+            "tags": "baby-bed-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "baby-bottle",
+            "tags": "baby-bottle",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "baby-boy-dress",
+            "tags": "baby-boy-dress",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "baby-girl-dress",
+            "tags": "baby-girl-dress",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "background",
+            "tags": "background",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "back-muscle-body",
+            "tags": "back-muscle-body",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "backpack-01",
+            "tags": "knapsack, rucksack, pack, schoolbag, book bag, carryall, daypack, haversack, travel pack, kitbag, school bag, bag, education, tour",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "backpack-02",
+            "tags": "knapsack, rucksack, pack, schoolbag, book bag, carryall, daypack, haversack, travel pack, kitbag, school bag, bag, education, tour",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "backpack-03",
+            "tags": "knapsack, rucksack, pack, schoolbag, book bag, carryall, daypack, haversack, travel pack, kitbag, school bag, bag, education, tour",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "backward-01",
+            "tags": "Backward",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "backward-02",
+            "tags": "Backward",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "bacteria",
+            "tags": "microbe symbol, germ icon, tiny organism, microbial emoticon, pathogen symbol, microscopic creature, bacterial emblem, virus icon, minuscule bug, contagion symbol, tiny pathogen, microbial sign, infectious symbol, tiny germ",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "badminton",
+            "tags": "badminton",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "badminton-shuttle",
+            "tags": "badminton-shuttle",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "balance-scale",
+            "tags": "balance-scale",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "balloons",
+            "tags": "balloons",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "banana",
+            "tags": "banana",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bandage",
+            "tags": "bandage",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "bank",
+            "tags": "business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bar-chart",
+            "tags": "bar-chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bar-chart-horizontal",
+            "tags": "bar-chart-horizontal",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bar-code-01",
+            "tags": "barcode, scan-code, label-bar, product-scan, id",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "bar-code-02",
+            "tags": "barcode, scan-code, label-bar, product-scan, id",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "barns",
+            "tags": "barns",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "baseball",
+            "tags": "baseball",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "baseball-bat",
+            "tags": "baseball-bat",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "baseball-helmet",
+            "tags": "baseball-helmet",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bash",
+            "tags": "bash",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "basketball-01",
+            "tags": "basketball-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "basketball-02",
+            "tags": "basketball-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "basketball-hoop",
+            "tags": "basketball-hoop",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bathtub-01",
+            "tags": "bathtub-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bathtub-02",
+            "tags": "bathtub-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "batteries-energy",
+            "tags": "battery, energy, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "battery-charging-01",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery, battery charging, charging battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-charging-02",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery, battery charging, charging battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-eco-charging",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery, battery eco charging, charging eco battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-empty",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery empty, empty battery, battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-full",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery, battery full, full battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-low",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery empty, empty battery, battery, battery low, low battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-medium-01",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery, battery medium, medium battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "battery-medium-02",
+            "tags": "power source, energy level, charge indicator, cell status, battery life, power gauge, energy reserve, charge level, electrical capacity, battery, battery medium, medium battery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bbq-grill",
+            "tags": "bbq-grill",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "beach",
+            "tags": "beach",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "beach-02",
+            "tags": "beach-02",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "beater",
+            "tags": "beater",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "bebo",
+            "tags": "bebo",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "bed",
+            "tags": "bed",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bed-bunk",
+            "tags": "bed-bunk",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bed-double",
+            "tags": "bed-double",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bed-single-01",
+            "tags": "bed-single-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bed-single-02",
+            "tags": "bed-single-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bedug-01",
+            "tags": "bedug-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "bedug-02",
+            "tags": "bedug-02",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "behance-01",
+            "tags": "behance-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "behance-02",
+            "tags": "behance-02",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "belt",
+            "tags": "belt",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "bend-tool",
+            "tags": "bend tool, curve tool, flex tool, reshape tool, twist tool, contour tool, morph tool, manipulate tool, curve adjuster, flexify tool, bend adjuster, tool bend",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "berlin",
+            "tags": "berlin",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "berlin-tower",
+            "tags": "berlin-tower",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "beta",
+            "tags": "beta",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "bicycle",
+            "tags": "bicycle",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bicycle-01",
+            "tags": "bicycle icon, bike, cycle, two-wheeler, pedal bike, velocipede, wheeled transport, pedal-powered vehicle, riding machine, pushbike, pedaler, two-wheel motion",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "billiard-01",
+            "tags": "billiard-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "billiard-02",
+            "tags": "billiard-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "binary-code",
+            "tags": "binary-code",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "bing",
+            "tags": "bing",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "binoculars",
+            "tags": "binoculars",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "bio-energy",
+            "tags": "energy, bio energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "biomass-energy",
+            "tags": "biomass, battery, energy, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "biometric-access",
+            "tags": "biometric-access",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "biometric-device",
+            "tags": "biometric-device",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "birthday-cake",
+            "tags": "birthday-cake",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "biscuit",
+            "tags": "biscuit",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bitcoin",
+            "tags": "bitcoin",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-01",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-02",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-03",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-04",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-bag",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin bag, coin bag, bag,",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-circle",
+            "tags": "bitcoin-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-cloud",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin cloud, cloud bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-cpu",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin cpu, cpu bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-credit-card",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin credit card, credit card bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-database",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin database, database bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-down-01",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin down, down bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-down-02",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin down, down bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-ellipse",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin ellipse, ellipse bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-eye",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin eye, eye bitcoin, eye, money eye, eye money",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-filter",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin filter, filter bitcoin, filter",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-flashdisk",
+            "tags": "bitcoin-flashdisk",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-graph",
+            "tags": "digital gold, crypto coin, BTC symbol, blockchain currency, virtual currency, decentralized money, electronic cash, cryptocurrency emblem, BTC logo, bitcoin, bit coin, coin, currency, money, bitcoin graph, graph bitcoin, graph, money graph, graph money",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-invoice",
+            "tags": "bitcoin-invoice",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-key",
+            "tags": "bitcoin-key",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-location",
+            "tags": "bitcoin-location",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-lock",
+            "tags": "bitcoin-lock",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-mail",
+            "tags": "bitcoin-mail",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-mind",
+            "tags": "bitcoin-mind",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-money-01",
+            "tags": "bitcoin-money-01",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-money-02",
+            "tags": "bitcoin-money-02",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-pie-chart",
+            "tags": "bitcoin-pie-chart",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-piggy-bank",
+            "tags": "bitcoin-piggy-bank",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-presentation",
+            "tags": "bitcoin-presentation",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-receipt",
+            "tags": "bitcoin-receipt",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-receive",
+            "tags": "bitcoin-receive",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-rectangle",
+            "tags": "bitcoin-rectangle",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-safe",
+            "tags": "bitcoin-safe",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-search",
+            "tags": "bitcoin-search",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-send",
+            "tags": "bitcoin-send",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-setting",
+            "tags": "bitcoin-setting",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-shield",
+            "tags": "bitcoin-shield",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-shopping",
+            "tags": "bitcoin-shopping",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-smartphone-01",
+            "tags": "bitcoin-smartphone-01",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-smartphone-02",
+            "tags": "bitcoin-smartphone-02",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-square",
+            "tags": "bitcoin-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-store",
+            "tags": "bitcoin-store",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-tag",
+            "tags": "bitcoin-tag",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-target",
+            "tags": "bitcoin-target",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-transaction",
+            "tags": "crypto transfer, BTC payment, digital exchange, blockchain transaction, coin transfer, virtual currency movement, cryptocurrency transaction, bitcoin transaction, transaction, transaction bitcoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-up-01",
+            "tags": "btc increase, crypto surge, coin boost, rising bitcoi, upward crypto, btc uptrend, crypto climb, coin upswing, bitcoin rise, crypto up, coin surge, up bitcoin, bitcoin up",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-up-02",
+            "tags": "btc increase, crypto surge, coin boost, rising bitcoi, upward crypto, btc uptrend, crypto climb, coin upswing, bitcoin rise, crypto up, coin surge, up bitcoin, bitcoin up",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-wallet",
+            "tags": "Crypto Purse, Digital Coin Wallet, BTC Wallet, Cryptocurrency Vault, Virtual Currency Purse, Blockchain Wallet, Digital Money Holder, Crypto Safe, Coin Stash, Electronic Wallet, Bitcoin Wallet, Wallet",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "bitcoin-withdraw",
+            "tags": "Crypto Cash Out, BTC Withdrawal, Digital Currency Withdraw, Bitcoin Cashout, Withdraw Bitcoin, Cryptocurrency Withdrawal, Bitcoin Exit, BTC Cash Withdrawal, Crypto Withdrawal, Bitcoin Outflow, Bitcoin Transfer Out, Withdraw BTC, Cryptocurrency Cashout, Bitcoin Disbursement, Digital Money Withdrawal, Bitcoin Liquidation, BTC Removal, Cryptocurrency Cashback, Bitcoin withdraw, withdraw",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "black-hole",
+            "tags": "abyss, void, dark vortex, cosmic whirl, deep void, event horizon, singularity, celestial pit, space well, gravitational sinkhole, stellar abyss",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "black-hole-01",
+            "tags": "Void Vortex, Cosmic Funnel, Abyssal Pit, Dark Whirlpool, Singularity Sphere, Infinite Chasm, Eclipse Center, Event Horizon, Shadowy Vacuum, Deep Abyss",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "blend",
+            "tags": "mix, merge, combine, unify, fuse, integrate, mingle, harmonize, amalgamate, blendify, blend",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "blender",
+            "tags": "blender",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "blockchain-01",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blockchain-02",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blockchain-03",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blockchain-04",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blockchain-05",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blockchain-06",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blockchain-07",
+            "tags": "ledger, cryptochain, digital ledger, chainlink, crypto record, secure link, blockchain, block chain, crypto blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "blocked",
+            "tags": "blocked",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "block-game",
+            "tags": "block-game",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "blogger",
+            "tags": "blogger",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "blood",
+            "tags": "blood",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "blood-bag",
+            "tags": "blood-bag",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "blood-bottle",
+            "tags": "blood-bottle",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "blood-pressure",
+            "tags": "blood-pressure",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "blood-type",
+            "tags": "blood-type",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "bluesky",
+            "tags": "bluesky",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "bluetooth",
+            "tags": "bluetooth",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bluetooth-circle",
+            "tags": "bluetooth-circle",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bluetooth-not-connected",
+            "tags": "bluetooth-not-connected",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bluetooth-search",
+            "tags": "bluetooth-search",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bluetooth-square",
+            "tags": "bluetooth-square",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "blur",
+            "tags": "soft-focus, hazy, obscured, misty, defocused, obscured, unclear, foggy, indistinct, fuzzy, smudged, vague, nebulous, cloudy, muddled, faint, blur",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "blush-brush-01",
+            "tags": "blush-brush-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "blush-brush-02",
+            "tags": "blush-brush-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "board-math",
+            "tags": "board-math",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "boat",
+            "tags": "boat icon, watercraft, vessel, ship, yacht, ferry, cruiser, sailboat, maritime transport, nautical craft, seafaring icon",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "body-armor",
+            "tags": "body-armor",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "body-part-leg",
+            "tags": "body-part-leg",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "body-part-muscle",
+            "tags": "body-part-muscle",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "body-part-six-pack",
+            "tags": "body-part-six-pack",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "body-soap",
+            "tags": "body-soap",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "body-weight",
+            "tags": "body-weight",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "bomb",
+            "tags": "bomb",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bone-01",
+            "tags": "bone-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "bone-02",
+            "tags": "bone-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "book-01",
+            "tags": "Reading Material, Encyclopedia, Notebook, Literature, Textbook, Manuscript, Storybook, Paperback, Hardcover, Novel, Almanac, Reference, Anthology, Folio, Tome, Libro, Codex, Compendium, Journal, Chronicle, Book, Read, Reading Book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-02",
+            "tags": "Reading Material, Encyclopedia, Notebook, Literature, Textbook, Manuscript, Storybook, Paperback, Hardcover, Novel, Almanac, Reference, Anthology, Folio, Tome, Libro, Codex, Compendium, Journal, Chronicle, Book, Read, Reading Book",
+            "category": "education",
+            "featured": true
+        },
+        {
+            "name": "book-03",
+            "tags": "Reading Material, Encyclopedia, Notebook, Literature, Textbook, Manuscript, Storybook, Paperback, Hardcover, Novel, Almanac, Reference, Anthology, Folio, Tome, Libro, Codex, Compendium, Journal, Chronicle, Book, Read, Reading Book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-04",
+            "tags": "Reading Material, Encyclopedia, Notebook, Literature, Textbook, Manuscript, Storybook, Paperback, Hardcover, Novel, Almanac, Reference, Anthology, Folio, Tome, Libro, Codex, Compendium, Journal, Chronicle, Book, Read, Reading Book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-bookmark-01",
+            "tags": "book-bookmark-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-bookmark-02",
+            "tags": "book-bookmark-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-download",
+            "tags": "book-download",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-edit",
+            "tags": "book-edit",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "bookmark-01",
+            "tags": "bookmark, book, later, marker, reading, save, tag,",
+            "category": "bookmark",
+            "featured": true
+        },
+        {
+            "name": "bookmark-02",
+            "tags": "bookmark, book, later, marker, reading, save, tag,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-03",
+            "tags": "save,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-add-01",
+            "tags": "add bookmark, book, add later, marker, reading, save, tag,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-add-02",
+            "tags": "add bookmark, add later, add reading,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-block-01",
+            "tags": "block bookmark,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-block-02",
+            "tags": "bookmark-block-02",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-check-01",
+            "tags": "check bookmark, check marker,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-check-02",
+            "tags": "bookmark-check-02",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-minus-01",
+            "tags": "bookmark minus, remove bookmark, delete bookmark",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-minus-02",
+            "tags": "bookmark-minus-02",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-off-01",
+            "tags": "bookmark off,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-off-02",
+            "tags": "bookmark-off-02",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-remove-01",
+            "tags": "cancel bookmark, remove bookmark, delete bookmark",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "bookmark-remove-02",
+            "tags": "bookmark-remove-02",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "book-open-01",
+            "tags": "book-open-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "book-open-02",
+            "tags": "book-open-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "books-01",
+            "tags": "books-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "books-02",
+            "tags": "books-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "bookshelf-01",
+            "tags": "bookshelf-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bookshelf-02",
+            "tags": "bookshelf-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "bookshelf-03",
+            "tags": "bookshelf-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "book-upload",
+            "tags": "book-upload",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "bootstrap",
+            "tags": "bootstrap",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "border-all-01",
+            "tags": "border-all-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-all-02",
+            "tags": "border-all-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-bottom-01",
+            "tags": "border-bottom-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-bottom-02",
+            "tags": "border-bottom-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-full",
+            "tags": "complete border, enclosed frame, whole outline, total perimeter, entire edge, full boundary, border full, full border, all border, border",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "border-horizontal",
+            "tags": "border-horizontal",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-inner",
+            "tags": "border-inner",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-left-01",
+            "tags": "border-left-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-left-02",
+            "tags": "border-left-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-none-01",
+            "tags": "border-none-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-none-02",
+            "tags": "border-none-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-right-01",
+            "tags": "border-right-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-right-02",
+            "tags": "border-right-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-top-01",
+            "tags": "border-top-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-top-02",
+            "tags": "border-top-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "border-vertical",
+            "tags": "border-vertical",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "borobudur",
+            "tags": "borobudur",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "bot",
+            "tags": "virtual assistant, chat companion, AI helper, digital buddy, conversation bot, automated helper, friendly bot, interactive guide, messaging assistant, online companion, talkbot, chat facilitator, conversational AI",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "bounce-left",
+            "tags": "bounce-left",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "bounce-right",
+            "tags": "bounce-right",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "bounding-box",
+            "tags": "selection-area, frame-marker, outline-tool, region-marker, area-marker, enclosure-icon, boundary-box",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "bowling",
+            "tags": "bowling",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bowling-ball",
+            "tags": "bowling-ball",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bowling-pins",
+            "tags": "bowling-pins",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "bow-tie",
+            "tags": "bow-tie",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "boxer",
+            "tags": "boxer",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "boxing-bag",
+            "tags": "boxing-bag",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "boxing-glove",
+            "tags": "boxing-glove",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "boxing-glove-01",
+            "tags": "boxing-glove-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "brain",
+            "tags": "brain",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "brain-01",
+            "tags": "brain-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "brain-02",
+            "tags": "brain-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "brain-03",
+            "tags": "brain-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "brandfetch",
+            "tags": "brandfetch",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "bread-01",
+            "tags": "bread-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bread-02",
+            "tags": "bread-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bread-03",
+            "tags": "bread-03",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bread-04",
+            "tags": "bread-04",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "breast-pump",
+            "tags": "breast-pump",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "bridge",
+            "tags": "bridge",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "briefcase-01",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-02",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-03",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-04",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-05",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-06",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-07",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-08",
+            "tags": "luggage",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-09",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "briefcase-dollar",
+            "tags": "luggage, business,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "broccoli",
+            "tags": "broccoli",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "brochure",
+            "tags": "brochure",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "broken-bone",
+            "tags": "broken-bone",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "browser",
+            "tags": "internet, web, surfing tool, navigator, search engine, web explorer, online finder, web viewer, browsing tool, web portal, web access, browsing app, net viewer, web searcher, online explorer, Browser, Brows",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "brush",
+            "tags": "paint tool, stroke tool, drawing implement, art brush, paintbrush, artistic tool, coloring tool, graphical brush, creative wand, design brush, brush",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat",
+            "tags": "message, chat, communicate, talk, comment",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-add",
+            "tags": "add message, add chat, add communicate, talk, new chat",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-blocked",
+            "tags": "no message, no chat, no communicate, no talk, mute chat, mute conversation,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-cancel",
+            "tags": "remove message, remove chat, remove communicate, remove talk, remove chat, remove conversation,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-delay",
+            "tags": "delay communication, delay message, delay talk",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-done",
+            "tags": "chat done, check check, communication done, chat finished",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-download-01",
+            "tags": "bubble-chat-download-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-download-02",
+            "tags": "bubble-chat-download-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-edit",
+            "tags": "new chat, new message, write message,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-favourite",
+            "tags": "love chat, message love, love communication",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-income",
+            "tags": "bubble-chat-income",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-lock",
+            "tags": "chat lock, message lock, communication lock",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-notification",
+            "tags": "bubble-chat-notification",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-outcome",
+            "tags": "bubble-chat-outcome",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-preview",
+            "tags": "bubble-chat-preview",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-question",
+            "tags": "bubble-chat-question",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-search",
+            "tags": "search chat, search message, search communication",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-secure",
+            "tags": "safe talk, message safe, communication safe, chat safe",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-translate",
+            "tags": "bubble-chat-translate",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-unlock",
+            "tags": "chat lock, message lock, communication lock",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-upload",
+            "tags": "bubble-chat-upload",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-chat-user",
+            "tags": "bubble-chat-user",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "bubble-tea-01",
+            "tags": "bubble-tea-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bubble-tea-02",
+            "tags": "bubble-tea-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "bug-01",
+            "tags": "bug-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "bug-02",
+            "tags": "bug-02",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "building-01",
+            "tags": "building-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "building-02",
+            "tags": "building-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "building-03",
+            "tags": "building-03",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "building-04",
+            "tags": "building-04",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "building-05",
+            "tags": "building-05",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "building-06",
+            "tags": "building-06",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "bulb",
+            "tags": "bulb",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bulb-charging",
+            "tags": "bulb-charging",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "bulletproof-vest",
+            "tags": "bulletproof-vest",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "burj-al-arab",
+            "tags": "burj-al-arab",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "burning-cd",
+            "tags": "Media Library, Torch, Burning",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "bus-01",
+            "tags": "bus icon, transit, coach, transport, shuttle, public transport, vehicle, commuter, ride, transportation",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "bus-02",
+            "tags": "bus icon, transit, coach, transport, shuttle, public transport, vehicle, commuter, ride, transportation",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "bus-03",
+            "tags": "bus icon, transit, coach, transport, shuttle, public transport, vehicle, commuter, ride, transportation",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "c++",
+            "tags": "c++",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "cabinet-01",
+            "tags": "cabinet-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "cabinet-02",
+            "tags": "cabinet-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "cabinet-03",
+            "tags": "cabinet-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "cabinet-04",
+            "tags": "cabinet-04",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "cable-car",
+            "tags": "cable-car icon, aerial tramway, gondola lift, ropeway, sky tram, cableway",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "cactus",
+            "tags": "cactus",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "caduceus",
+            "tags": "caduceus",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "cafe",
+            "tags": "cafe",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "calculate",
+            "tags": "calculate",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "calculator",
+            "tags": "calculator, math",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "calculator-01",
+            "tags": "calculator-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "calendar-01",
+            "tags": "datebook, timetable, agenda, scheduler, planner, event planner, timekeeper, appointment book, organizer, diary, schedule, calendar, date, date and time, event tracker, timekeeper",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-02",
+            "tags": "datebook, timetable, agenda, scheduler, planner, event planner, timekeeper, appointment book, organizer, diary, schedule, calendar, date, date and time, event tracker, timekeeper",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-03",
+            "tags": "datebook, timetable, agenda, scheduler, planner, event planner, timekeeper, appointment book, organizer, diary, schedule, calendar, date, date and time, event tracker, timekeeper",
+            "category": "date-time",
+            "featured": true
+        },
+        {
+            "name": "calendar-04",
+            "tags": "datebook, timetable, agenda, scheduler, planner, event planner, timekeeper, appointment book, organizer, diary, schedule, calendar, date, date and time, event tracker, timekeeper",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-add-01",
+            "tags": "calendar-add-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-add-02",
+            "tags": "calendar-add-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-block-01",
+            "tags": "calendar-block-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-block-02",
+            "tags": "calendar-block-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-check-in-01",
+            "tags": "calendar-check-in-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-check-in-02",
+            "tags": "calendar-check-in-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-check-out-01",
+            "tags": "calendar-check-out-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-check-out-02",
+            "tags": "calendar-check-out-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-download-01",
+            "tags": "calendar-download-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-download-02",
+            "tags": "calendar-download-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-favorite-01",
+            "tags": "calendar-favorite-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-favorite-02",
+            "tags": "calendar-favorite-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-lock-01",
+            "tags": "calendar-lock-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-lock-02",
+            "tags": "calendar-lock-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-love-01",
+            "tags": "calendar-love-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-love-02",
+            "tags": "calendar-love-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-minus-01",
+            "tags": "calendar-minus-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-minus-02",
+            "tags": "calendar-minus-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-remove-01",
+            "tags": "calendar-remove-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-remove-02",
+            "tags": "calendar-remove-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-setting-01",
+            "tags": "calendar-setting-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-setting-02",
+            "tags": "calendar-setting-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-upload-01",
+            "tags": "calendar-upload-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "calendar-upload-02",
+            "tags": "calendar-upload-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "call",
+            "tags": "call",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-02",
+            "tags": "call-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-add",
+            "tags": "call-add",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-add-02",
+            "tags": "call-add-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-blocked",
+            "tags": "call-blocked",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-blocked-02",
+            "tags": "call-blocked-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-disabled",
+            "tags": "call-disabled",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-disabled-02",
+            "tags": "call-disabled-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-done",
+            "tags": "call-done",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-done-02",
+            "tags": "call-done-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-end-01",
+            "tags": "call-end-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-end-02",
+            "tags": "call-end-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-end-03",
+            "tags": "call-end-03",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-end-04",
+            "tags": "call-end-04",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-incoming-01",
+            "tags": "call-incoming-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-incoming-02",
+            "tags": "call-incoming-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-incoming-03",
+            "tags": "call-incoming-03",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-incoming-04",
+            "tags": "call-incoming-04",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "calling",
+            "tags": "calling",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "calling-02",
+            "tags": "calling-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-internal",
+            "tags": "call-internal",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-internal-02",
+            "tags": "call-internal-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-locked",
+            "tags": "call-locked",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-locked-02",
+            "tags": "call-locked-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-minus",
+            "tags": "call-minus",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-minus-02",
+            "tags": "call-minus-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-missed-01",
+            "tags": "call-missed-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-missed-02",
+            "tags": "call-missed-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-missed-03",
+            "tags": "call-missed-03",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-missed-04",
+            "tags": "call-missed-04",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-outgoing-01",
+            "tags": "call-outgoing-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-outgoing-02",
+            "tags": "calling,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-outgoing-03",
+            "tags": "call-outgoing-03",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-outgoing-04",
+            "tags": "call-outgoing-04",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-paused",
+            "tags": "call-paused",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-paused-02",
+            "tags": "call-paused-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-received",
+            "tags": "call-received",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-received-02",
+            "tags": "call-received-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-ringing-01",
+            "tags": "call-ringing-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-ringing-02",
+            "tags": "calling,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-ringing-03",
+            "tags": "call-ringing-03",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-ringing-04",
+            "tags": "call-ringing-04",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-unlocked",
+            "tags": "call-unlocked",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "call-unlocked-02",
+            "tags": "call-unlocked-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "camel",
+            "tags": "camel",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "camera-01",
+            "tags": "camera-01",
+            "category": "image-camera",
+            "featured": true
+        },
+        {
+            "name": "camera-02",
+            "tags": "camera-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-add-01",
+            "tags": "camera-add-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-add-02",
+            "tags": "camera-add-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-automatically-01",
+            "tags": "camera-automatically-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-automatically-02",
+            "tags": "camera-automatically-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-lens",
+            "tags": "camera-lens",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-microphone-01",
+            "tags": "camera-microphone-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-microphone-02",
+            "tags": "camera-microphone-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-night-mode-01",
+            "tags": "camera-night-mode-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-night-mode-02",
+            "tags": "camera-night-mode-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-off-01",
+            "tags": "camera-off-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-off-02",
+            "tags": "camera-off-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-rotated-01",
+            "tags": "camera-rotated-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-rotated-02",
+            "tags": "camera-rotated-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-smile-01",
+            "tags": "camera-smile-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-smile-02",
+            "tags": "camera-smile-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-tripod",
+            "tags": "camera-tripod",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camera-video",
+            "tags": "camera-video",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "camper",
+            "tags": "camper icon, RV, Trailblazer, Wanderer, Explorer, Nomad, Adventure Van, Roamer, Journeyer, Camping Wagon, Outdoor Cruiser, Traveler's Shelter, Mobile Retreat",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "campfire",
+            "tags": "campfire",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "cancel-01",
+            "tags": "cancel, minimize-arrow, close, cross, exit, remove, minimize",
+            "category": "add-remove",
+            "featured": true
+        },
+        {
+            "name": "cancel-02",
+            "tags": "cancel, minimize-arrow, close-cross, close, cross, exit, remove, minimize",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "cancel-circle",
+            "tags": "cancel, minimize-arrow, close-cross, close, cross, exit, cancel circle, close-circle",
+            "category": "add-remove",
+            "featured": true
+        },
+        {
+            "name": "cancel-circle-half-dot",
+            "tags": "cancel-circle-half-dot, minimize-arrow, close-cross, close, cross, exit, cancel circle, close-circle",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "cancel-square",
+            "tags": "cancel, minimize-arrow, close-cross, close, cross, exit, remove, minimize, cancel-square, minimize-square, close-square, cross-square",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "candelier-01",
+            "tags": "candelier-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "candelier-02",
+            "tags": "candelier-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "canvas",
+            "tags": "drawing board, art pad, painters panel, sketch space, design slate, creative surface, illustration area, visual canvas, artwork platform, graphical stage, image board, picture space, draft surface, canvas",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "cap",
+            "tags": "cap",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "capcut",
+            "tags": "capcut",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "capcut-rectangle",
+            "tags": "capcut-rectangle",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "cap-projecting",
+            "tags": "Cap Protrusion, Hat Extending, Peak Projection, Headwear Outcrop, Brim Extend, Visor Projection, Cap Bulge, Hat Overhang, Peak Extrusion, Cap Projecting, Projecting Cap, Cap, Projecting",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "cap-round",
+            "tags": "Circular Hat, Rounded Cap, Round Headwear, Dome Cap, Sphere Hat, Curved Brim, Crown Circle, Ball Cap, Spherical Hat, Curved Topper, Circlet Cap, Round Crown, Dome Top Hat, Circular Bonnet, Sphere Headgear, Curved Peak, Cap Round, Round Cap, Cap",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "cap-straight",
+            "tags": "baseball cap, flat brim hat, snapback, peaked cap, fitted cap, brimmed hat, sporty cap, uncurved cap, bill cap, straight-billed hat, rigid brim cap, modern hat, cap straight, straight cap, cap, straight",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "car-01",
+            "tags": "car icon, automobile, vehicle, transport, sedan, coupe, ride, motor, wheels, auto, carriage, roadster, machine",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-02",
+            "tags": "car icon, automobile, vehicle, transport, sedan, coupe, ride, motor, wheels, auto, carriage, roadster, machine",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-03",
+            "tags": "car icon, automobile, vehicle, transport, sedan, coupe, ride, motor, wheels, auto, carriage, roadster, machine",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-04",
+            "tags": "car icon, automobile, vehicle, transport, sedan, coupe, ride, motor, wheels, auto, carriage, roadster, machine",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-05",
+            "tags": "car-05",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-alert",
+            "tags": "car-alert",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "caravan",
+            "tags": "caravan, camper, RV, trailer, travel van, wheeled shelter, adventure wagon, nomad's nest",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "card-exchange-01",
+            "tags": "card-exchange-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "card-exchange-02",
+            "tags": "card-exchange-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "cardigan",
+            "tags": "cardigan",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "cardiogram-01",
+            "tags": "cardiogram-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "cardiogram-02",
+            "tags": "cardiogram-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "cards-01",
+            "tags": "cards-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "cards-02",
+            "tags": "cards-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "cargo-ship",
+            "tags": "vessel, freighter, cargo, carrier",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "carousel-horizontal",
+            "tags": "slider, image scroller, picture reel, horizontal gallery, slide viewer, scrolling carousel, image carousel, picture slider, horizontal slideshow, media reel, carousel horizontal, horizontal carousel, carousel",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "carousel-horizontal-02",
+            "tags": "carousel-horizontal-02",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "carousel-vertical",
+            "tags": "Vertical Slider, Upward Carousel, Vertical Scroll, Towering Carousel, Elevating Carousel, Tall Carousel, Vertical Slideshow, Uplifting Carousel, High-rise Carousel, Vertical Rotation, Ascending Carousel, Vertical Gallery, Carousel Vertical, Vertical Carousel, Carousel",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "car-parking-01",
+            "tags": "car-parking icon, auto-parking, vehicle-parking, car-spot, parking-lot, automobile-park, car-space",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-parking-02",
+            "tags": "car-parking icon, auto-parking, vehicle-parking, car-spot, parking-lot, automobile-park, car-space",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "carrot",
+            "tags": "carrot",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "car-signal",
+            "tags": "car-signal",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "car-time",
+            "tags": "car-time",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "cash-01",
+            "tags": "cash-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "cash-02",
+            "tags": "cash-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "cashback",
+            "tags": "cashback",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "cashier",
+            "tags": "cashier",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "cashier-02",
+            "tags": "cashier-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "castle",
+            "tags": "castle",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "castle-01",
+            "tags": "castle-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "castle-02",
+            "tags": "castle-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "catalogue",
+            "tags": "catalogue",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "cayan-tower",
+            "tags": "cayan-tower",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "cctv-camera",
+            "tags": "cctv-camera",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "cd",
+            "tags": "cd",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "cells",
+            "tags": "grid, blocks, units, compartments, squares, partitions, segments, modules, elements, divisions, sections, parcels, panels, zones, areas, parcels",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "cellular-network",
+            "tags": "cellular-network",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "cellular-network-offline",
+            "tags": "cellular-network-offline",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "celsius",
+            "tags": "Celsius, degree, heat, temperature",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "center-focus",
+            "tags": "center-focus",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "centralized",
+            "tags": "centralized",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "central-shaheed-minar",
+            "tags": "central-shaheed-minar",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "certificate-01",
+            "tags": "certificate-01",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "certificate-02",
+            "tags": "certificate-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "chair-01",
+            "tags": "chair-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "chair-02",
+            "tags": "chair-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "chair-03",
+            "tags": "chair-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "chair-04",
+            "tags": "chair-04",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "chair-05",
+            "tags": "chair-05",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "chair-barber",
+            "tags": "chair-barber",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "champion",
+            "tags": "award, trophy, winner, cup, champion",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "change-screen-mode",
+            "tags": "Switch Display, Toggle View, Adjust Screen Layout, Modify Display Setting, Shift Screen Mode, Adapt View Mode, Alter Screen Appearance, Switch Screen Format, Transform Display Mode, Adjust Visual Presentation, Change Screen Mode, Screen Mode, Change Screen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "character-phonetic",
+            "tags": "letter sound, alphabet pronunciation, vocal symbol, speech representation, linguistic character, verbal phonics, spoken symbol, word pronunciation, vocalized letter, speech sound, character phonetic, phonetic character, character, phonetic",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "charity",
+            "tags": "charity",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "chart",
+            "tags": "chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-01",
+            "tags": "kanban,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-02",
+            "tags": "chart-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-03",
+            "tags": "chart-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-average",
+            "tags": "report, overview, dashboard, bar, graph, chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-bar-line",
+            "tags": "report, overview, chart, bar,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-breakout-circle",
+            "tags": "chart-breakout-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-breakout-square",
+            "tags": "chart-breakout-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-bubble-01",
+            "tags": "chart-bubble-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-bubble-02",
+            "tags": "report, overview, dashboard",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-column",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-decrease",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-down",
+            "tags": "chart-down",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-evaluation",
+            "tags": "chart-evaluation",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-high-low",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-histogram",
+            "tags": "report, overview, dashboard, bar, graph, chart,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-increase",
+            "tags": "chart-increase",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-line-data-01",
+            "tags": "chart-line-data-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-line-data-02",
+            "tags": "chart-line-data-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-line-data-03",
+            "tags": "chart-line-data-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-maximum",
+            "tags": "chart-maximum",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-medium",
+            "tags": "chart-medium",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-minimum",
+            "tags": "chart-minimum",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-radar",
+            "tags": "report, overview, dashboard",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-relationship",
+            "tags": "report, overview, dashboard, connection,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-ring",
+            "tags": "chart-ring",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-rose",
+            "tags": "report, overview, dashboard",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-scatter",
+            "tags": "report, overview, dashboard, bar, graph, chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chart-up",
+            "tags": "chart-up",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "chat-bot",
+            "tags": "chat-bot",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "chat-gpt",
+            "tags": "chat-gpt",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "chatting-01",
+            "tags": "chatting-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "check-list",
+            "tags": "To-Do List, Tasks, Checklist, Task List, Agenda, Action Items, Checkmark List, Task Tracker, Completion List, Inventory, Task Manager, Reminders, Planner, Schedule, Check List, List view, List, Check List",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "checkmark-badge-01",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle, checkmark badge, badge",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-badge-02",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle, checkmark badge, badge",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-badge-03",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle, checkmark badge, badge",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-badge-04",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle, checkmark badge, badge",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-circle-01",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-circle-02",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle",
+            "category": "check",
+            "featured": true
+        },
+        {
+            "name": "checkmark-circle-03",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-circle-04",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-square-01",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark square",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-square-02",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark square",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-square-03",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark square",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "checkmark-square-04",
+            "tags": "tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark square",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "check-unread-01",
+            "tags": "check-unread-01",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "check-unread-02",
+            "tags": "check-unread-02",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "check-unread-03",
+            "tags": "check-unread-03",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "check-unread-04",
+            "tags": "check-unread-04",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "cheese",
+            "tags": "cheese",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "cheese-cake-01",
+            "tags": "cheese-cake-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "cheese-cake-02",
+            "tags": "cheese-cake-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "chef",
+            "tags": "chef",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "chef-hat",
+            "tags": "chef-hat",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "chemistry-01",
+            "tags": "chemistry-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "chemistry-02",
+            "tags": "chemistry-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "chemistry-03",
+            "tags": "chemistry-03",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "cherry",
+            "tags": "cherry",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "chess-01",
+            "tags": "chess-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "chess-02",
+            "tags": "chess-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "chess-pawn",
+            "tags": "chess-pawn",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "chicken-thighs",
+            "tags": "chicken-thighs",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "child",
+            "tags": "child",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "chimney",
+            "tags": "chimney",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "china-temple",
+            "tags": "china-temple",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "chip",
+            "tags": "chip",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "chip-02",
+            "tags": "chip-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "chocolate",
+            "tags": "chocolate",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "chopsticks",
+            "tags": "chopsticks",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "chrome",
+            "tags": "chrome",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "chrysler",
+            "tags": "chrysler",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "church",
+            "tags": "church",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "cinnamon-roll",
+            "tags": "cinnamon-roll",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "circle",
+            "tags": "circle",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-data-transfer-diagonal",
+            "tags": "circle-arrow-data-transfer-diagonal",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-data-transfer-horizontal",
+            "tags": "circle-arrow-data-transfer-horizontal",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-data-transfer-vertical",
+            "tags": "circle-arrow-data-transfer-vertical",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-diagonal-01",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-diagonal-02",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-down-01",
+            "tags": "circle-arrow-down, shrink-arrow, down-arrow-circle, minimize-arrow, collapse-circle, reduce-arrow, downward-circle, compress-arrow, contract-circle, condense-arrow, descend-circle, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-down-02",
+            "tags": "circle-arrow-down-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-down-03",
+            "tags": "circle-arrow-down-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-down-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-down-left",
+            "tags": "circle-arrow-down-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-down-right",
+            "tags": "circle-arrow-down-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-expand-01",
+            "tags": "big screen, full screen, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-expand-02",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-horizontal",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-left-01",
+            "tags": "Arrow-left, Left-Arrow, Back-Arrow, Arrow, Leftward Indicator, Go Back, Back Navigation Symbol, Circle arrow left, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-left-02",
+            "tags": "circle-arrow-left-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-left-03",
+            "tags": "circle-arrow-left-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-left-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-left-right",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-move-down-left",
+            "tags": "circle-arrow-move-down-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-move-down-right",
+            "tags": "circle-arrow-move-down-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-move-left-down",
+            "tags": "circle-arrow-move-left-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-move-right-down",
+            "tags": "circle-arrow-move-right-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-move-up-left",
+            "tags": "circle-arrow-move-up-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-move-up-right",
+            "tags": "circle-arrow-move-up-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-reload-01",
+            "tags": "circle-arrow-reload-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-reload-02",
+            "tags": "circle-arrow-reload-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-right-01",
+            "tags": "Arrow-right, Right-arrow,Next-arrow, Go-ahead-arrow, Navigate-right, Move-forward, Right-direction, Circle arrow, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-right-02",
+            "tags": "circle-arrow-right-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-right-03",
+            "tags": "circle-arrow-right-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-right-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-shrink-01",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-shrink-02",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-01",
+            "tags": "Reduce-Arrow, Upward-Circle-Arrow, Minimize-Arrow, Expand-Circle, Shrink-Direction, Ascend-Arrow, Downsize-Circle, chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-02",
+            "tags": "circle-arrow-up-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-03",
+            "tags": "circle-arrow-up-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-down",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-left",
+            "tags": "circle-arrow-up-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-right",
+            "tags": "circle-arrow-up-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-up-right-02",
+            "tags": "circle-arrow-up-right-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-arrow-vertical",
+            "tags": "big screen, full screen circle, expand, enlarge circle",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-01",
+            "tags": "circle-lock-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-02",
+            "tags": "circle-lock-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-add-01",
+            "tags": "circle-lock-add-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-add-02",
+            "tags": "circle-lock-add-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-check-01",
+            "tags": "circle-lock-check-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-check-02",
+            "tags": "circle-lock-check-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-minus-01",
+            "tags": "circle-lock-minus-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-minus-02",
+            "tags": "circle-lock-minus-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-remove-01",
+            "tags": "circle-lock-remove-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-lock-remove-02",
+            "tags": "circle-lock-remove-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-password",
+            "tags": "circle-password",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-unlock-01",
+            "tags": "circle-unlock-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "circle-unlock-02",
+            "tags": "circle-unlock-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "city-01",
+            "tags": "city-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "city-02",
+            "tags": "city-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "city-03",
+            "tags": "city-03",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "clapping-01",
+            "tags": "clapping-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "clapping-02",
+            "tags": "clapping-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "clean",
+            "tags": "clean",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "cleaning-bucket",
+            "tags": "cleaning-bucket",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "clinic",
+            "tags": "clinic",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "clip",
+            "tags": "clip",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "cliparts",
+            "tags": "cliparts",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "clipboard",
+            "tags": "Document Holder, Copy Tool, Note Saver, Text Keeper, Paper Clip, Writing Pad, Clipboard Symbol, Data Collector, Information Board, File Manager, Clipboard",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "clock-01",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "clock-02",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "clock-03",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "clock-04",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "clock-05",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "closed-caption",
+            "tags": "closed-caption",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "closed-caption-alt",
+            "tags": "closed-caption-alt",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "clothes",
+            "tags": "clothes",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "cloud",
+            "tags": "cloud, data, sky, server",
+            "category": "weather",
+            "featured": true
+        },
+        {
+            "name": "cloud-angled-rain",
+            "tags": "cloud, rain, cloud rain, little rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-angled-rain-zap",
+            "tags": "cloud, cloud snow, snow, zap",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-angled-zap",
+            "tags": "cloud, cloud snow, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-big-rain",
+            "tags": "cloud, data, sky, server",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-download",
+            "tags": "download, cloud, cloud save, import, cloud down, transfer,",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "cloud-fast-wind",
+            "tags": "cloud, cloud snow, snow, zap, slow cloud, wind, wind cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-hailstone",
+            "tags": "cloud, cloud snow, snow, hailstone",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-little-rain",
+            "tags": "cloud, rain, cloud rain, little rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-little-snow",
+            "tags": "cloud, cloud snow, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-loading",
+            "tags": "cloud-loading",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "cloud-mid-rain",
+            "tags": "cloud, rain, cloud rain, little rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-mid-snow",
+            "tags": "cloud, cloud snow, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-saving-done-01",
+            "tags": "cloud-saving-done-01",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "cloud-saving-done-02",
+            "tags": "cloud-saving-done-02",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "cloud-server",
+            "tags": "cloud-server",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "cloud-slow-wind",
+            "tags": "cloud, cloud snow, snow, zap, slow cloud, wind, wind cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-snow",
+            "tags": "cloud, cloud snow, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "cloud-upload",
+            "tags": "upload cloud, cloud storage, cloud transfer, upload cloud, send to cloud, cloud backup, cloud up, uploader, upload",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "clubs-01",
+            "tags": "clubs-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "clubs-02",
+            "tags": "clubs-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "code",
+            "tags": "code",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "code-circle",
+            "tags": "code-circle",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "code-folder",
+            "tags": "code-folder",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "codesandbox",
+            "tags": "codesandbox",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "code-square",
+            "tags": "code-square",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "coffee-01",
+            "tags": "coffee-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "coffee-02",
+            "tags": "coffee-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "coffee-beans",
+            "tags": "coffee-beans",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "coinbase",
+            "tags": "coinbase",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "coins-01",
+            "tags": "report, overview, dashboard, bar, graph, chart, earn cash, funding, earn money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-02",
+            "tags": "earn cash, funding, earn money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-bitcoin",
+            "tags": "bitcoin,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-dollar",
+            "tags": "earn dollar,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-euro",
+            "tags": "earn euro,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-pound",
+            "tags": "coins-pound",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-swap",
+            "tags": "coins-swap",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "coins-yen",
+            "tags": "earn yen,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "collections-bookmark",
+            "tags": "save, bulk,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "color-picker",
+            "tags": "hue selector, palette tool, color chooser, shade picker, spectrum selector, tint picker, chroma tool, Color, Colors, Color Picker",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "colors",
+            "tags": "Palette, Hues, Shades, Color Wheel, Spectrum, Tints, Pigments, Chroma, Color Options, Rainbow, Color Picker, Paintbox, Vividness, Hue Selection, Color Swatches, Dyes, Color Chart, Tinctures, Gradient, Color Palette, Colors, Color",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "colosseum",
+            "tags": "colosseum",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "column-delete",
+            "tags": "Remove Column, Erase Column, Delete Column, Column Remove, Eliminate Column, Column Erase, Omit Column, Exclude Column, Dismiss Column, Drop Column, Column Delete, Delete Column",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "column-insert",
+            "tags": "Add Column, Insert Column, New Column, Column Addition, Column Create, Column+, Column Insert, Insert Column",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "comet-01",
+            "tags": "streak, meteor, shooting star, celestial trail, astral blaze, cosmic dash, sky dart, blazing tail",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "comet-02",
+            "tags": "streak, meteor, shooting star, celestial trail, astral blaze, cosmic dash, sky dart, blazing tail",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "coming-soon-01",
+            "tags": "coming-soon-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "coming-soon-02",
+            "tags": "coming-soon-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "command",
+            "tags": "Apple Control, Keyboard Command, macOS Function, System Shortcut, Command Center, Mac Directive, Control Key, Apple Hotkey, System Command, Mac Functionality, Keyboard Directive, Mac Shortcut, Command Key, Mac Control, Command",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "command-line",
+            "tags": "command-line",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "comment-01",
+            "tags": "opinion, comment, feedback, chat",
+            "category": "communications",
+            "featured": true
+        },
+        {
+            "name": "comment-02",
+            "tags": "empty opinion, empty comment, empty feedback, no chat,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "comment-add-01",
+            "tags": "add opinion, add comment, add feedback",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "comment-add-02",
+            "tags": "add comment, add opinion, add feedback",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "comment-block-01",
+            "tags": "block opinion, block comment, block feedback,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "comment-block-02",
+            "tags": "comment-block-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "comment-remove-01",
+            "tags": "comment-remove-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "comment-remove-02",
+            "tags": "close comment, close opinion, close feedback, close chat",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "compass",
+            "tags": "Compass, Direction, Destination",
+            "category": "maps",
+            "featured": true
+        },
+        {
+            "name": "compass-01",
+            "tags": "navigation, compass, direction, heading indicator, cardinal",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "complaint",
+            "tags": "report,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "computer",
+            "tags": "desktop, screen share, imac, display, screen",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-add",
+            "tags": "add screen, add desktop, add computer",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-check",
+            "tags": "computer-check",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-cloud",
+            "tags": "desktop cloud",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-desk-01",
+            "tags": "computer-desk-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "computer-desk-02",
+            "tags": "computer-desk-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "computer-desk-03",
+            "tags": "computer-desk-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "computer-dollar",
+            "tags": "earn online, earn money, funding,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "computer-phone-sync",
+            "tags": "responsive, both devices, computer and mobile",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-programming-01",
+            "tags": "computer-programming-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "computer-programming-02",
+            "tags": "computer-programming-02",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "computer-protection",
+            "tags": "computer-protection",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "computer-remove",
+            "tags": "close screen, close desktop, close computer, cancel share, cancel screen share",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-settings",
+            "tags": "screen sharing setting, screen setting",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-terminal-01",
+            "tags": "computer-terminal-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "computer-terminal-02",
+            "tags": "computer-terminal-02",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "computer-video",
+            "tags": "desktop camera, video screen share, imac, display, screen, video call",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "computer-video-call",
+            "tags": "computer-video-call",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "cone-01",
+            "tags": "cone-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cone-02",
+            "tags": "cone-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "conference",
+            "tags": "conference",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "configuration-01",
+            "tags": "settings, preferences, options, setup, customizations, controls, adjustments, configurations, configurations, configurations",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "configuration-02",
+            "tags": "settings, preferences, options, setup, customizations, controls, adjustments, configurations, configurations, configurations",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "confused",
+            "tags": "Dazed Face, Bewildered Expression, Perplexed Symbol, Puzzled Visage, Muddled Emoticon, Uncertain Glyph, Lost Emoji, Frazzled Face, Flustered Icon, Disoriented Symbol, Baffled Expression, Confounded Visage",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "congruent-to",
+            "tags": "congruent-to",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "congruent-to-circle",
+            "tags": "congruent-to-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "congruent-to-square",
+            "tags": "congruent-to-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "connect",
+            "tags": "connect",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "console",
+            "tags": "console",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "constellation",
+            "tags": "star map, celestial pattern, stellar arrangement, galaxy guide, star cluster, astral chart, cosmic array, heavenly layout, space map, celestial mosaic, stellar chart",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "contact",
+            "tags": "contact",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "contact-01",
+            "tags": "contact-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "contact-02",
+            "tags": "contact-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "contact-book",
+            "tags": "contact-book",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "container-truck",
+            "tags": "container-truck icon, cargo-hauler, freight-carrier, shipping-truck, transport-container, delivery-rig, load-carrier, haulage-vehicle, freighter-truck, goods-transporter, logistics-truck",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "container-truck-01",
+            "tags": "truck, transport, shipment, logistics, delivery, shipping",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "container-truck-02",
+            "tags": "truck, transport, shipment, logistics, delivery, shipping",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "content-writing",
+            "tags": "content-writing",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "contracts",
+            "tags": "contracts",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "conversation",
+            "tags": "conversation",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "cook-book",
+            "tags": "cook-book",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "cookie",
+            "tags": "cookie",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "coordinate-01",
+            "tags": "coordinate, location",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "coordinate-02",
+            "tags": "coordinate, location",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "copilot",
+            "tags": "copilot",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "co-present",
+            "tags": "co-present",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "copy-01",
+            "tags": "duplicate, replicate, mirror, clone, mimic, reproduce, imitate, transfer, echo, backup, carbon copy, emulate, photocopy, match, twin, reproduce, copy",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "copy-02",
+            "tags": "duplicate, replicate, mirror, clone, mimic, reproduce, imitate, transfer, echo, backup, carbon copy, emulate, photocopy, match, twin, reproduce, copy",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "copy-link",
+            "tags": "copy-link",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "copyright",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "corn",
+            "tags": "corn",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "corporate",
+            "tags": "corporate",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "cos",
+            "tags": "cos",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cosine-01",
+            "tags": "cosine-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cosine-02",
+            "tags": "cosine-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cottage",
+            "tags": "cottage",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "cotton-candy",
+            "tags": "cotton-candy",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "coupon-01",
+            "tags": "discount, voucher, promo, coupon, offer",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "coupon-02",
+            "tags": "discount, voucher, promo, coupon, offer",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "coupon-03",
+            "tags": "discount, voucher, promo, coupon, offer",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "coupon-percent",
+            "tags": "discount, voucher, promo, coupon, offer",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "course",
+            "tags": "course",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "court-house",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "court-law",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "covariate",
+            "tags": "covariate",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "covid-info",
+            "tags": "covid-info",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "cowboy-hat",
+            "tags": "cowboy-hat",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "cpp",
+            "tags": "cpp",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "c-programming",
+            "tags": "c-programming",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "cpu",
+            "tags": "cpu",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "cpu-charge",
+            "tags": "cpu-charge",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "cpu-settings",
+            "tags": "cpu-settings",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "crab",
+            "tags": "crab",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "crane",
+            "tags": "crane, lifter, hoister, elevator, pulley, derrick, winch, jib, dolly, gantry, boom",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "crazy",
+            "tags": "Whimsical Face, Zany Emoticon, Madcap Symbol, Eccentric Expression, Wild Emote, Offbeat Icon, Wacky Facial, Quirky Emojiface, Outlandish Smiley, Playful Glyph",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "creative-market",
+            "tags": "creative-market",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "credit-card",
+            "tags": "master card, pay with card,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-accept",
+            "tags": "master card, pay with card,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-add",
+            "tags": "master card, pay with card, add card, payment method,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-change",
+            "tags": "master card, pay with card,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-defrost",
+            "tags": "credit-card-defrost",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-freeze",
+            "tags": "credit-card-freeze",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-not-accept",
+            "tags": "master card, pay with card,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-not-found",
+            "tags": "master card, pay with card,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-pos",
+            "tags": "save money, card, payment,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "credit-card-validation",
+            "tags": "credit check, card verifier, payment authentication, verify payment, validate card, payment confirmation, card validation, verify credit, payment security, credit card validation, credit card checkmark, credit card tick",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "cricket-bat",
+            "tags": "cricket-bat",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "cricket-helmet",
+            "tags": "cricket-helmet",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "croissant",
+            "tags": "croissant",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "crop",
+            "tags": "trim, adjust, resize, cut, frame, tailor, modify, reshape, snip, alter, edit, prune, reconfigure, refine, customize, crop",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "crowdfunding",
+            "tags": "crowdfunding",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "crown",
+            "tags": "Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "crying",
+            "tags": "Tearful Face, Weeping Emoji, Sad Tear, Sobbing Emoticon, Tearful Expression, Crying Face, Sorrowful Icon, Teardrop Emoji, Emotional Symbol, Weepy Smiley",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "csv-01",
+            "tags": "csv-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "csv-02",
+            "tags": "csv-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "cube",
+            "tags": "cube",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cupcake-01",
+            "tags": "cupcake-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "cupcake-02",
+            "tags": "cupcake-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "cupcake-03",
+            "tags": "cupcake-03",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "curling",
+            "tags": "curling",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "cursor-01",
+            "tags": "cursor",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-02",
+            "tags": "cursor",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-add-selection-01",
+            "tags": "cursor add, cursor plus",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-add-selection-02",
+            "tags": "cursor add selection, cursor add",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-circle-selection-01",
+            "tags": "cursor circle, cursor ellipse, cursor round,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-circle-selection-02",
+            "tags": "cursor circle, cursor ellipse , cursor round",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-disabled-01",
+            "tags": "cursor disabled",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-disabled-02",
+            "tags": "cursor disabled",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-edit-01",
+            "tags": "cursor edit",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-edit-02",
+            "tags": "cursor edit",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-hold-01",
+            "tags": "cursor hold, cursor time",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-hold-02",
+            "tags": "cursor hold",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-info-01",
+            "tags": "cursor information, cursor info, question mark cursor, cursor question mark,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-info-02",
+            "tags": "cursor, cursor info, cursor question",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-in-window",
+            "tags": "cursor in window, cursor window",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-loading-01",
+            "tags": "cursor loading, cursor pending, cursor hourglass",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-loading-02",
+            "tags": "cursor loading, cursor wait, cursor pending,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-magic-selection-01",
+            "tags": "cursor magic selection,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-magic-selection-02",
+            "tags": "cursor magic",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-magic-selection-03",
+            "tags": "cursor-magic-selection-03",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-magic-selection-04",
+            "tags": "cursor-magic-selection-04",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-move-01",
+            "tags": "cursor move",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-move-02",
+            "tags": "cursor move",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-pointer-01",
+            "tags": "cursor pointer,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-pointer-02",
+            "tags": "cursor pointer",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-progress-01",
+            "tags": "cursor progress,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-progress-02",
+            "tags": "cursor progress,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-progress-03",
+            "tags": "cursor progress,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-progress-04",
+            "tags": "cursor progress,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-rectangle-selection-01",
+            "tags": "cursor rectangle selection, cursor rectangle,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-rectangle-selection-02",
+            "tags": "cursor rectangle",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-remove-selection-01",
+            "tags": "cursor remove, cursor minus,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-remove-selection-02",
+            "tags": "cursor remove",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "cursor-text",
+            "tags": "cursor text, text cursor",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "curtains",
+            "tags": "curtains",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "curvy-left-direction",
+            "tags": "curvy-left-direction",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "curvy-left-right-direction",
+            "tags": "curvy-left-right-direction",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "curvy-right-direction",
+            "tags": "curvy-right-direction",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "curvy-up-down-direction",
+            "tags": "curvy-up-down-direction",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "customer-service",
+            "tags": "24 call, 24hr, 24 service",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "customer-service-01",
+            "tags": "support, help",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "customer-service-02",
+            "tags": "support, help",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "customer-support",
+            "tags": "service, support, customer, user-care, help, call center",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "custom-field",
+            "tags": "custom-field",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "customize",
+            "tags": "Personalize, Modify, Edit, Tailor, Adjust, Tweak, Adapt, Revise, Alter, Fine-tune, Revamp, Refine",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "cylinder-01",
+            "tags": "cylinder-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cylinder-02",
+            "tags": "cylinder-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cylinder-03",
+            "tags": "cylinder-03",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "cylinder-04",
+            "tags": "cylinder-04",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "danger",
+            "tags": "danger",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "dark-mode",
+            "tags": "dark-mode",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "dart",
+            "tags": "dart",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dashboard-browsing",
+            "tags": "overview, control panel, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard,",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-circle",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard circle",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-circle-add",
+            "tags": "overview, control panel, data center, insights hub, administration, status board, main menu, command center, information hub, dashboard, dashboard circle, dashboard add,",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-circle-edit",
+            "tags": "overview, control panel, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard edit, dashboard circle edit, edit dashboard",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-circle-remove",
+            "tags": "overview, control panel,, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, minus, dashboard minus, dashboard square remove,",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-circle-settings",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard circle, dashboard circle setting, dashboard setting, setting dashboard",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-speed-01",
+            "tags": "overview, control panel, data center, insights hub, administration, summary, analytics, performance, status board, command center, information hub, dashboard, dashboard speed, speed dashboard, speed",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-speed-02",
+            "tags": "overview, control panel, hub, data center, insights hub, administration, summary, analytics, performance, status board, command center, information hub, speed",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-01",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard square",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-02",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard square",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-03",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard square",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-add",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard square, dashboard add, dashboard square add",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-edit",
+            "tags": "overview, control panel, hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, dashboard square, dashboard edit,",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-remove",
+            "tags": "overview, control panel, home hub, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, dashboard square, dashboard remove, dashboard square remove, dashboard minus, dashboard square minus",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashboard-square-setting",
+            "tags": "overview, control panel, hub, data center, insights hub, administration, summary, analytics, status board, main menu, command center, information hub, dashboard, dashboard square,",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dashed-line-01",
+            "tags": "broken line, dotted line, interrupted line, segmented line, discontinuous line, stippled line, fragmented line, speckled line, dashed stroke, dashed stroke icon, intermittent line, dashed line, line dashed",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "dashed-line-02",
+            "tags": "broken line, dotted line, interrupted line, segmented line, discontinuous line, stippled line, fragmented line, speckled line, dashed stroke, dashed stroke icon, intermittent line, dashed line, line dashed, dashed line square",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "dashed-line-circle",
+            "tags": "dashed-line-circle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "database",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "database-01",
+            "tags": "ata store, information repository, data bank, data warehouse, data vault, record hub, info cache, data reservoir, storage center, data depot, information trove, data archive, database",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "database-02",
+            "tags": "ata store, information repository, data bank, data warehouse, data vault, record hub, info cache, data reservoir, storage center, data depot, information trove, data archive, database",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "database-add",
+            "tags": "ata store, information repository, data bank, data warehouse, data vault, record hub, info cache, data reservoir, storage center, data depot, information trove, data archive, database, database recovery, data, database add",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "database-export",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "database-import",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "database-locked",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "database-restore",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "database-setting",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "database-sync",
+            "tags": "ata store, information repository, data bank, data warehouse, data vault, record hub, info cache, data reservoir, storage center, data depot, information trove, data archive, database, database synce",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "database-sync-01",
+            "tags": "data stack, data center,",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "data-recovery",
+            "tags": "ata store, information repository, data bank, data warehouse, data vault, record hub, info cache, data reservoir, storage center, data depot, information trove, data archive, database, database recovery",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "dates",
+            "tags": "dates",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "date-time",
+            "tags": "date-time",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "datev",
+            "tags": "datev",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "dead",
+            "tags": "Expired Emoticon, Lifeless Symbol, Grimacing Face, Deceased Icon, Grim Reaper Symbol, Inanimate Expression, Mortal Emoticon, End-of-Life Symbol, Ghostly Face, Departed Emoticon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "delete-01",
+            "tags": "delete, remove, vanish, archive, bin, trash",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "delete-02",
+            "tags": "delete, remove, vanish, archive, bin, trash",
+            "category": "add-remove",
+            "featured": true
+        },
+        {
+            "name": "delete-03",
+            "tags": "delete, remove, vanish, archive, bin, trash",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "delete-04",
+            "tags": "delete, remove, vanish, archive, bin, trash",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "delete-column",
+            "tags": "delete-column",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "delete-put-back",
+            "tags": "restore, delete-back, remove-back, remove, trash",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "delete-row",
+            "tags": "delete-row",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "delete-throw",
+            "tags": "remove-throw, restore, trash",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "delivered-sent",
+            "tags": "sent, arrived, delivered, dispatched, shipped",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-box-01",
+            "tags": "shipping, package, parcel, box",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-box-02",
+            "tags": "shipping, package, parcel, box",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-delay-01",
+            "tags": "delay, not sent, not delivered",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-delay-02",
+            "tags": "sent, arrived, delivered, dispatched, shipped",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-return-01",
+            "tags": "shipping return, package return, parcel return, box return",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-return-02",
+            "tags": "shipping return, package return, parcel return, box return",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-secure-01",
+            "tags": "shipping secure, package secure, parcel secure, box secure",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-secure-02",
+            "tags": "shipping secure, package secure, parcel secure, box secure",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-sent-01",
+            "tags": "sent, arrived, delivered, dispatched, shipped",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-sent-02",
+            "tags": "sent, arrived, delivered, dispatched, shipped",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-tracking-01",
+            "tags": "shipping tracking, package tracking, parcel tracking, box tracking",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-tracking-02",
+            "tags": "shipping tracking, package tracking, parcel tracking, box tracking",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-truck-01",
+            "tags": "sent, delivered, dispatched, shipped",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-truck-02",
+            "tags": "sent, delivered, dispatched, shipped",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-view-01",
+            "tags": "shipping view, package view, parcel view, box view",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "delivery-view-02",
+            "tags": "shipping view, package view, parcel view, box view",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "dental-braces",
+            "tags": "dental-braces",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "dental-broken-tooth",
+            "tags": "dental-broken-tooth",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "dental-care",
+            "tags": "dental-care",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "dental-tooth",
+            "tags": "dental-tooth",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "departement",
+            "tags": "departement",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "desert",
+            "tags": "desert, sand, land",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "desk",
+            "tags": "desk",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "desk-01",
+            "tags": "desk-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "desk-02",
+            "tags": "desk-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "developer",
+            "tags": "developer",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "deviantart",
+            "tags": "deviantart",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "device-access",
+            "tags": "device-access",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "diagonal-scroll-point-01",
+            "tags": "diagonal-scroll-point-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "diagonal-scroll-point-02",
+            "tags": "diagonal-scroll-point-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "dialpad-circle-01",
+            "tags": "dialpad-circle-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "dialpad-circle-02",
+            "tags": "dialpad-circle-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "dialpad-square-01",
+            "tags": "dialpad-square-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "dialpad-square-02",
+            "tags": "dialpad-square-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "diameter",
+            "tags": "diameter",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "diamond",
+            "tags": "diamond",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "diamond-01",
+            "tags": "diamond-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "diamond-02",
+            "tags": "diamond-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "diaper",
+            "tags": "diaper",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dice",
+            "tags": "dice",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dice-faces-01",
+            "tags": "dice-faces-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dice-faces-02",
+            "tags": "dice-faces-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dice-faces-03",
+            "tags": "dice-faces-03",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dice-faces-04",
+            "tags": "dice-faces-04",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dice-faces-05",
+            "tags": "dice-faces-05",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dice-faces-06",
+            "tags": "dice-faces-06",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "digestion",
+            "tags": "digestion",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "digg",
+            "tags": "digg",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "digital-clock",
+            "tags": "digital-clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "dim-sum-01",
+            "tags": "dim-sum-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "dim-sum-02",
+            "tags": "dim-sum-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "dining-table",
+            "tags": "dining-table",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "diploma",
+            "tags": "certificate,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "direction-left-01",
+            "tags": "Direction, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "direction-left-02",
+            "tags": "Direction, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "direction-right-01",
+            "tags": "Direction, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "direction-right-02",
+            "tags": "Direction, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "directions-01",
+            "tags": "Direction, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "directions-02",
+            "tags": "Direction, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "dirham",
+            "tags": "dirham",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "disability-01",
+            "tags": "disability-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "disability-02",
+            "tags": "disability-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "discord",
+            "tags": "discord",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "discount",
+            "tags": "discount, voucher, promo, coupon, offer",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "discount-01",
+            "tags": "discount-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "discount-tag-01",
+            "tags": "discount, offer, tag, sale, deal",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "discount-tag-02",
+            "tags": "discount, offer, tag, sale, deal",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "discover-circle",
+            "tags": "overview, control panel, data center, insights hub, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, circle, circle discover, explore circle, circle explore",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "discover-square",
+            "tags": "overview, control panel, administration, summary, analytics, performance, status board, main menu, command center, information hub, dashboard, discover square, square discover, explore, square explore",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "dish-01",
+            "tags": "dish-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "dish-02",
+            "tags": "dish-02",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "dish-washer",
+            "tags": "dish-washer",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "displeased",
+            "tags": "grumpy face, frowning emoticon, unhappy icon, irritated symbol, discontented smiley, sour expression, moody face, dissatisfied emoti, annoyed icon, discontent emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "distribute-horizontal-center",
+            "tags": "Align Horizontally, Center Distribute, Horizontal Distribution Center, Evenly Space Horizontally, Center Horizontal Alignment, Distribute Horizontal Center, Horizontal Distribute Center, Distribute Center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "distribute-horizontal-left",
+            "tags": "Align Left, Spread Horizontally Left, Arrange Leftward, Evenly Space Left, Leftward Distribution, Horizontal Left Alignment, Distribute Horizontal Left, Horizontal Left Distribute",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "distribute-horizontal-right",
+            "tags": "Spread Right, Align Horizontally Right, Evenly Space Right, Horizontal Distribution Right, Rightward Alignment, Equalize Right, Rightward Spacing, Even Spacing Right, Align Right Equally, Distribute Evenly Right, Distribute Horizontal Right, Horizontal Right Distribute",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "distribute-vertical-bottom",
+            "tags": "Align to Bottom, Vertical Distribution, Bottom Distribution, Arrange Vertically, Bottom Align, Vertical Bottom Placement, Stack at Bottom, Arrange Downwards, Bottom Vertical Spread, Vertical Bottom Distribution, Distribute Vertical Bottom, Vertical Bottom Distribute",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "distribute-vertical-center",
+            "tags": "Align Vertically, Center Vertical Distribution, Vertical Alignment, Distribute Equally, Middle Alignment, Vertical Centering, Even Vertical Spacing, Align Middle Vertical, Vertical Equidistance, Distribute Vertical Center, Distribute Center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "distribute-vertical-top",
+            "tags": "Vertical Top Alignment, Vertical Distribution - Top, Top Aligner, Top Arrangement, Vertical Top Spread,\" \"Topward Alignment, Top Distributor, Top Positioning, Distribute Vertical Top, Vertical Top Distribute",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "distribution",
+            "tags": "distribution, flow, allocation, supply-chain",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "divide-sign",
+            "tags": "split, division, segmentation, fraction, divider",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "divide-sign-circle",
+            "tags": "divide-sign-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "divide-sign-square",
+            "tags": "divide-sign-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "dna",
+            "tags": "dna",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "dna-01",
+            "tags": "dna-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "doc-01",
+            "tags": "doc-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "doc-02",
+            "tags": "doc-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "doctor-01",
+            "tags": "career, business career,",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "doctor-02",
+            "tags": "career, business career,",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "doctor-03",
+            "tags": "career, business career,",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "document-attachment",
+            "tags": "docs,",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "document-code",
+            "tags": "document-code",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "document-validation",
+            "tags": "document verification, file confirmation, paper authentication, record validation, doc approval, paperwork validation, file certification, document authentication, record verification, validation check, document confirmation, document validation, document check, document checkmark",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "dollar-01",
+            "tags": "payment,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-02",
+            "tags": "payment,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-circle",
+            "tags": "dollar-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-receive-01",
+            "tags": "dollar-receive-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-receive-02",
+            "tags": "dollar-receive-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-send-01",
+            "tags": "dollar-send-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-send-02",
+            "tags": "dollar-send-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dollar-square",
+            "tags": "dollar-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "dome",
+            "tags": "dome",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "domino",
+            "tags": "domino",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "do-not-touch-01",
+            "tags": "Hand,",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "do-not-touch-02",
+            "tags": "Hand,",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "door",
+            "tags": "door",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "door-01",
+            "tags": "ntrance, gateway, portal, access point, doorway, passage, threshold, egress, exit",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "door-02",
+            "tags": "ntrance, gateway, portal, access point, doorway, passage, threshold, egress, exit",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "door-lock",
+            "tags": "door-lock",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "doughnut",
+            "tags": "doughnut",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "download-01",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-02",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-03",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-04",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader",
+            "category": "download-upload",
+            "featured": true
+        },
+        {
+            "name": "download-05",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-circle-01",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader, Download Circle, Circle Download",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-circle-02",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader, Download Circle, Circle Download",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-square-01",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader, Download Square, Square Download",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "download-square-02",
+            "tags": "Save, Get, Fetch, Export, Store, Receive, Transfer, Downlink, Downloaded, Download, Downloader, Download Square, Square Download",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "drag-01",
+            "tags": "drag-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-02",
+            "tags": "drag-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-03",
+            "tags": "drag-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-04",
+            "tags": "drag-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-drop",
+            "tags": "Move Object, Transfer Item, Shift Content, Rearrange Element, Place & Shift, Rearrange Object, Shift Item, Move & Drop, Rearrange Content, Drag & Release, Drag Drop, Drop Drag",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "drag-drop-horizontal",
+            "tags": "Horizontal Drag and Drop, Move Sideways, Slide & Place, Shift Along, Sideways Transfer, Horizontal Shift, Drag Across, Sideways Move, Transfer Horizontally, Slide Drop, Drag Drop Horizontal, Horizontal Drag Drop",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "drag-drop-vertical",
+            "tags": "Vertical Drag, Drop Down, Arrange Vertically, Vertical Arrange, Sort Vertically, Stack Order, Arrange Order, Vertical Rearrange, Drag Drop Vertical, Vertical Drag Drop, Drag Drop",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "drag-left-01",
+            "tags": "drag-left-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-left-02",
+            "tags": "drag-left-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-left-03",
+            "tags": "drag-left-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-left-04",
+            "tags": "drag-left-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-right-01",
+            "tags": "drag-right-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-right-02",
+            "tags": "drag-right-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-right-03",
+            "tags": "drag-right-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drag-right-04",
+            "tags": "drag-right-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "drawing-compass",
+            "tags": "drawing-compass",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "drawing-mode",
+            "tags": "ketching Tool, Doodle Mode, Artistic Mode, Designing Feature, Illustration Mode, Creative Canvas, Painter's Mode, Drafting Tool, Visual Creation Mode, Art Mode, Drawing Mood",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "dress-01",
+            "tags": "dress-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dress-02",
+            "tags": "dress-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dress-03",
+            "tags": "dress-03",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dress-04",
+            "tags": "dress-04",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dress-05",
+            "tags": "dress-05",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dress-06",
+            "tags": "dress-06",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dress-07",
+            "tags": "dress-07",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "dressing-table-01",
+            "tags": "dressing-table-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "dressing-table-02",
+            "tags": "dressing-table-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "dressing-table-03",
+            "tags": "dressing-table-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "dribbble",
+            "tags": "dribbble",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "drink",
+            "tags": "drink",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "drone",
+            "tags": "drone icon, aerial vehicle, quadcopter, flying robot, UAV, Unmanned Aerial Vehicle, sky cam, remote aircraft, airborne device, hovering machine, flight gadget, copter",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "drooling",
+            "tags": "Hungry Face Emoji, Salivating Emoji, Yummy Emoji, Appetite Emoji, Mouthwatering Emoji, Craving Emoji, Delicious Emoji, Tasty Emoji, Savoring Emoji, Lip-smacking Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "dropbox",
+            "tags": "dropbox",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "droplet",
+            "tags": "water bead, liquid dot, aqua spot, raindrop, fluid point, dew symbol, moisture mark, dribble emblem, splash shape, drizzle icon, condensation badge, hydration sign, droplet",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "dropper",
+            "tags": "dropper",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "ds3-tool",
+            "tags": "ds3-tool",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "dua",
+            "tags": "dua",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "dumbbell-01",
+            "tags": "dumbbell-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "dumbbell-02",
+            "tags": "dumbbell-02",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "dumbbell-03",
+            "tags": "dumbbell-03",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "ear",
+            "tags": "ear",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "ear-rings-01",
+            "tags": "ear-rings-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "ear-rings-02",
+            "tags": "ear-rings-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "ear-rings-03",
+            "tags": "ear-rings-03",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "earth",
+            "tags": "globe, world, planet, orb, sphere, terra, Gaia, blue marble, celestial, terrestrial",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "ease-curve-control-points",
+            "tags": "ease-curve-control-points",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "ease-in",
+            "tags": "ease-in",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "ease-in-control-point",
+            "tags": "ease-in-control-point",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "ease-in-out",
+            "tags": "ease-in-out",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "ease-out",
+            "tags": "ease-out",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "ease-out-control-point",
+            "tags": "ease-out-control-point",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "eco-energy",
+            "tags": "eco, eco energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "eco-lab",
+            "tags": "eco-lab",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "eco-lab-01",
+            "tags": "eco-lab-01",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "eco-lab-02",
+            "tags": "eco-lab-02",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "eco-power",
+            "tags": "eco, eco power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "edge-style",
+            "tags": "Boundary Design, Outline Mode, Perimeter Look, Contour Style, Border Presentation, Rim Appearance, Margin Form, Frame Outline, Boundary View, Edge Format, Edge Style, Edge",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "edit-01",
+            "tags": "modify, revise, alter, update, adjust, change, amend, tweak, enhance, revamp, edit",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "edit-02",
+            "tags": "modify, update, adjust, revise, change, tweak, alter, amend, refine, edit",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "edit-off",
+            "tags": "disable edit, modify off, edit disable, change off, alter off, edit stop, adjust off, edit inactive, edit lock, edit block, edit off switch, edit off",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "edit-road",
+            "tags": "Street Edit, Highway Edit, Road Edit, Path Edit",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "edit-table",
+            "tags": "edit-table",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "edit-user-02",
+            "tags": "user, user edit, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "eggs",
+            "tags": "eggs",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "eid-mubarak",
+            "tags": "eid-mubarak",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "eiffel-tower",
+            "tags": "eiffel-tower",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "elearning-exchange",
+            "tags": "elearning-exchange",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "electric-home-01",
+            "tags": "electric home, home",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "electric-home-02",
+            "tags": "electric home, home",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "electric-plugs",
+            "tags": "electric-plugs",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "electric-tower-01",
+            "tags": "electric tower, tower",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "electric-tower-02",
+            "tags": "electric tower, tower",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "electric-wire",
+            "tags": "wire, electric wire",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "ellipse-selection",
+            "tags": "ellipse-selection",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "encrypt",
+            "tags": "encrypt",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "energy",
+            "tags": "energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "energy-ellipse",
+            "tags": "energy round, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "energy-rectangle",
+            "tags": "energy rectangle, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "entering-geo-fence",
+            "tags": "Location boundary, Zone-egress-alert, Zone-egress-alert, Area, Arrival Alert, Zone Entry",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "entrance-stairs",
+            "tags": "entrance-stairs",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "envato",
+            "tags": "envato",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "equal-sign",
+            "tags": "twin, matching, equal, equality",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "equal-sign-circle",
+            "tags": "equal-sign-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "equal-sign-square",
+            "tags": "equal-sign-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "equipment-bench-press",
+            "tags": "equipment-bench-press",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "equipment-chest-press",
+            "tags": "equipment-chest-press",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "equipment-gym-01",
+            "tags": "equipment-gym-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "equipment-gym-02",
+            "tags": "equipment-gym-02",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "equipment-gym-03",
+            "tags": "equipment-gym-03",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "equipment-weightlifting",
+            "tags": "equipment-weightlifting",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "eraser",
+            "tags": "eraser",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "eraser-01",
+            "tags": "eraser, erase, remove, cancel, cancel-eraser",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "eraser-add",
+            "tags": "add-eraser, eraser-add, plus-eraser",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "eraser-auto",
+            "tags": "eraser-auto",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "estimate-01",
+            "tags": "estimate-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "estimate-02",
+            "tags": "estimate-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "ethereum",
+            "tags": "ethereum",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "ethereum-ellipse",
+            "tags": "ethereum-ellipse",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "ethereum-rectangle",
+            "tags": "ethereum-rectangle",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "euro",
+            "tags": "euro",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "euro-circle",
+            "tags": "euro-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "euro-receive",
+            "tags": "euro-receive",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "euro-send",
+            "tags": "euro-send",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "euro-square",
+            "tags": "euro-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "ev-charging",
+            "tags": "ev charging, charging",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "evil",
+            "tags": "sinister face, wicked grin, malevolent smile, villainous expression, devilish smirk, menacing icon, dark emoji, malicious symbol, sinister grin",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "exchange-01",
+            "tags": "swap, convert, switch, trade, interchange, transfer, replace, barter, shift, alternate, exchange, change",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "exchange-02",
+            "tags": "swap, convert, switch, trade, interchange, transfer, replace, barter, shift, alternate, exchange, change, crypto exchange, crypto change, bitcoin exchange",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "exchange-03",
+            "tags": "swap, convert, switch, trade, interchange, transfer, replace, barter, shift, alternate, exchange, change, crypto exchange, crypto change, bitcoin exchange",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "expander",
+            "tags": "expander",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "external-drive",
+            "tags": "external-drive",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "eye",
+            "tags": "eye",
+            "category": "medical",
+            "featured": true
+        },
+        {
+            "name": "facebook-01",
+            "tags": "facebook-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "facebook-02",
+            "tags": "facebook-02",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "face-id",
+            "tags": "face-id",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "factory",
+            "tags": "factory",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "factory-01",
+            "tags": "factory-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "factory-02",
+            "tags": "factory-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "fahrenheit",
+            "tags": "Celsius, degree, heat, temperature, fahrenheit",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "falling-star",
+            "tags": "twinkling-night, shooting-glimmer, celestial-fall, meteoric-shine, stardust-plunge, astral-descend",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "fast-wind",
+            "tags": "wind, air, breeze",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "favourite",
+            "tags": "favourite, love, heart",
+            "category": "bookmark",
+            "featured": true
+        },
+        {
+            "name": "favourite-circle",
+            "tags": "favourite, love, heart, love circle, heart circle",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "favourite-square",
+            "tags": "favourite, love, heart, love square, heart square",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "feather",
+            "tags": "feather",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "female-02",
+            "tags": "female-02",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "female-symbol",
+            "tags": "female-symbol",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "fencing",
+            "tags": "fencing",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "fencing-mask",
+            "tags": "fencing-mask",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "ferris-wheel",
+            "tags": "ferris-wheel",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "ferry-boat",
+            "tags": "ferry-boat icon, water taxi, nautical vessel, marine transport, ship shuttle, seafaring craft, harbor cruiser, passenger boat, aquatic transit",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "figma",
+            "tags": "figma",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "file-01",
+            "tags": "page, doc,",
+            "category": "files-folders",
+            "featured": true
+        },
+        {
+            "name": "file-02",
+            "tags": "page, doc,",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-add",
+            "tags": "file-add",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-attachment",
+            "tags": "file-attachment",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-audio",
+            "tags": "file-audio",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-bitcoin",
+            "tags": "file-bitcoin",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "file-block",
+            "tags": "file-block",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-bookmark",
+            "tags": "file-bookmark",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-cloud",
+            "tags": "file-cloud",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-corrupt",
+            "tags": "file-corrupt",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-dollar",
+            "tags": "file-dollar",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "file-download",
+            "tags": "file-download",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-edit",
+            "tags": "file-edit",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-empty-01",
+            "tags": "file-empty-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-empty-02",
+            "tags": "file-empty-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-euro",
+            "tags": "file-euro",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "file-export",
+            "tags": "file-export",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-favourite",
+            "tags": "file-favourite",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-import",
+            "tags": "file-import",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-link",
+            "tags": "file-link",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-locked",
+            "tags": "file-locked",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-management",
+            "tags": "file-management",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-minus",
+            "tags": "file-minus",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-music",
+            "tags": "file-music",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-not-found",
+            "tags": "file-not-found",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-paste",
+            "tags": "file-paste",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-pin",
+            "tags": "file-pin",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-pound",
+            "tags": "file-pound",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "file-remove",
+            "tags": "file-remove",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "files-01",
+            "tags": "files-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "files-02",
+            "tags": "files-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-script",
+            "tags": "file-script",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-search",
+            "tags": "file-search",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-security",
+            "tags": "file-security",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-shredder",
+            "tags": "file-shredder",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-star",
+            "tags": "file-star",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-sync",
+            "tags": "file-sync",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-unknown",
+            "tags": "file-unknown",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-unlocked",
+            "tags": "file-unlocked",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-upload",
+            "tags": "file-upload",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-validation",
+            "tags": "data check, document verification, file integrity, validate file, verify data, check document, file validation, validation file, file check, file checkmark, checkmark file",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "file-verified",
+            "tags": "file-verified",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-video",
+            "tags": "file-video",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-view",
+            "tags": "file-view",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "file-yen",
+            "tags": "file-yen",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "file-zip",
+            "tags": "file-zip",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "film-01",
+            "tags": "film-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "film-02",
+            "tags": "film-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "film-roll-01",
+            "tags": "film-roll-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "film-roll-02",
+            "tags": "film-roll-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "filter",
+            "tags": "filter, purifier, refine",
+            "category": "filter-sorting",
+            "featured": true
+        },
+        {
+            "name": "filter-add",
+            "tags": "filter add, purifier add, refine add",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-edit",
+            "tags": "filter edit, purifier edit, refine edit",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-horizontal",
+            "tags": "filter horizontal, filter, purifier, refine",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-mail-circle",
+            "tags": "filter, purifier, refine, filter round",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-mail-square",
+            "tags": "filter, purifier, refine, filter square",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-remove",
+            "tags": "filter remove, purifier remove, refine remove",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-reset",
+            "tags": "filter reset, purifier reset, refine reset",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "filter-vertical",
+            "tags": "filter vertical, filter, purifier, refine",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "finger-access",
+            "tags": "finger-access",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "finger-print",
+            "tags": "finger-print",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "finger-print-add",
+            "tags": "finger-print-add",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "finger-print-check",
+            "tags": "finger-print-check",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "finger-print-minus",
+            "tags": "finger-print-minus",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "finger-print-remove",
+            "tags": "finger-print-remove",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "finger-print-scan",
+            "tags": "finger-print-scan",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "fingerprint-scan",
+            "tags": "fingerprint-scan",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "fins",
+            "tags": "fins",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "fire",
+            "tags": "fire",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "fire-02",
+            "tags": "fire-02",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "fire-03",
+            "tags": "fire-03",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "fire-pit",
+            "tags": "fire-pit",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "fire-security",
+            "tags": "fire-security",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "firewall",
+            "tags": "firewall",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "fireworks",
+            "tags": "fireworks",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "first-aid-kit",
+            "tags": "first-aid-kit",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "fish-food",
+            "tags": "fish-food",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "fit-to-screen",
+            "tags": "fit-to-screen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "fiverr",
+            "tags": "fiverr",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "flag-01",
+            "tags": "Flag",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "flag-02",
+            "tags": "Flag",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "flag-03",
+            "tags": "Flag",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "flash",
+            "tags": "flash",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "flashlight",
+            "tags": "flashlight",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "flash-off",
+            "tags": "flash-off",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "flaticon",
+            "tags": "flaticon",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "flickr",
+            "tags": "flickr",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "flim-slate",
+            "tags": "flim-slate",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "flip-bottom",
+            "tags": "flip-bottom",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "flip-horizontal",
+            "tags": "flip-horizontal",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "flip-left",
+            "tags": "flip-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "flip-phone",
+            "tags": "flip-phone",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "flip-right",
+            "tags": "flip-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "flip-top",
+            "tags": "flip-top",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "flip-vertical",
+            "tags": "flip-vertical",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "floor-plan",
+            "tags": "floor-plan",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "floppy-disk",
+            "tags": "floppy-disk",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "flow",
+            "tags": "flow",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "flowchart-01",
+            "tags": "flowchart-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "flowchart-02",
+            "tags": "flowchart-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "flow-circle",
+            "tags": "flow-circle",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "flow-connection",
+            "tags": "flow-connection",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "flower",
+            "tags": "flower",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "flower-pot",
+            "tags": "flower-pot",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "flow-square",
+            "tags": "flow-square",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "flushed",
+            "tags": "blushing face, embarrassed smiley, crimson expression, shy emoticon, bashful symbol, red-faced glyph, embarrassed emoji, bashful smiley, flushed emoticon, rosy-faced icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "flying-human",
+            "tags": "flying-human",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "focus-point",
+            "tags": "focus-point",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "folder-01",
+            "tags": "folder-01",
+            "category": "files-folders",
+            "featured": true
+        },
+        {
+            "name": "folder-02",
+            "tags": "folder-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-03",
+            "tags": "folder-03",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-add",
+            "tags": "folder-add",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-attachment",
+            "tags": "folder-attachment",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-audio",
+            "tags": "folder-audio",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-block",
+            "tags": "folder-block",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-check",
+            "tags": "folder-check",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-cloud",
+            "tags": "folder-cloud",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-details",
+            "tags": "folder-details",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-details-reference",
+            "tags": "folder-details-reference",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-download",
+            "tags": "folder-download",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-edit",
+            "tags": "folder-edit",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-export",
+            "tags": "folder-export",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-favourite",
+            "tags": "folder-favourite",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-file-storage",
+            "tags": "folder-file-storage",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-import",
+            "tags": "folder-import",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-library",
+            "tags": "folder-library",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-links",
+            "tags": "folder-links",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-locked",
+            "tags": "folder-locked",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-management",
+            "tags": "folder-management",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-minus",
+            "tags": "folder-minus",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-music",
+            "tags": "folder-music",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-off",
+            "tags": "folder-off",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-open",
+            "tags": "folder-open",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-pin",
+            "tags": "folder-pin",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-remove",
+            "tags": "folder-remove",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folders",
+            "tags": "folders",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-search",
+            "tags": "folder-search",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-security",
+            "tags": "folder-security",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-shared-01",
+            "tags": "folder-shared-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-shared-02",
+            "tags": "folder-shared-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-shared-03",
+            "tags": "folder-shared-03",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-sync",
+            "tags": "folder-sync",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-transfer",
+            "tags": "folder-transfer",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-unknown",
+            "tags": "folder-unknown",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-unlocked",
+            "tags": "folder-unlocked",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-upload",
+            "tags": "folder-upload",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-video",
+            "tags": "folder-video",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-view",
+            "tags": "folder-view",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "folder-zip",
+            "tags": "folder-zip",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "football",
+            "tags": "football",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "football-pitch",
+            "tags": "football-pitch",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "forgot-password",
+            "tags": "forgot-password",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "fork",
+            "tags": "fork",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "forrst",
+            "tags": "forrst",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "fortress",
+            "tags": "fortress",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "forward-01",
+            "tags": "Forward, Move On",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "forward-02",
+            "tags": "Forward",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "four-finger-02",
+            "tags": "Hand,",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "four-finger-03",
+            "tags": "hand,",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "foursquare",
+            "tags": "foursquare",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "framer",
+            "tags": "framer",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "frameworks",
+            "tags": "frameworks",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "french-fries-01",
+            "tags": "french-fries-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "french-fries-02",
+            "tags": "french-fries-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "fridge",
+            "tags": "fridge",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "frisbee",
+            "tags": "frisbee",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "fry",
+            "tags": "fry",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "fuel",
+            "tags": "fuel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "fuel-01",
+            "tags": "fuel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "fuel-02",
+            "tags": "fuel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "fuel-station",
+            "tags": "fuel-station icon, gas station, petrol station, refueling point, service station, energy depot, filling station, fuel hub, gas pump, refuel stop, diesel stop",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "full-screen",
+            "tags": "full-screen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "full-signal",
+            "tags": "full-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "function",
+            "tags": "function",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "function-circle",
+            "tags": "function-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "function-of-x",
+            "tags": "function-of-x",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "function-square",
+            "tags": "function-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "galaxy",
+            "tags": "cosmos, stellar, nebula, celestial, astral, universe, space, stellaris",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "game",
+            "tags": "game",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "gameboy",
+            "tags": "gameboy",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "game-controller-01",
+            "tags": "game-controller-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "game-controller-02",
+            "tags": "game-controller-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "game-controller-03",
+            "tags": "game-controller-03",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "garage",
+            "tags": "garage",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "garbage-truck",
+            "tags": "garbage-truck icon, trash-collector, waste-disposal, rubbish-wagon, bin-mobile, junk-hauler, recycling-van, dumpster-truck, refuse-vehicle, litter-picker, disposal-unit",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "garlands",
+            "tags": "garlands",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "gas-pipe",
+            "tags": "gas, gas pipe",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "gas-stove",
+            "tags": "gas-stove",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "gears",
+            "tags": "gears",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "gem",
+            "tags": "gem",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "geology-crust",
+            "tags": "geology-crust",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "geometric-shapes-01",
+            "tags": "geometric-shapes-01",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "geometric-shapes-02",
+            "tags": "geometric-shapes-02",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "gibbous-moon",
+            "tags": "moon, night, lunar, moonlight",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "gif-01",
+            "tags": "gif-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "gif-02",
+            "tags": "gif-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "gift",
+            "tags": "present, surprise, reward, token, package, souvenir, offering, bounty, prize, donation, souvenir, bonus, gratuity, keepsake, memento, gift",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "gift-card",
+            "tags": "gift card, event voucher, festive gift card",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "gift-card-02",
+            "tags": "gift-card-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "gitbook",
+            "tags": "gitbook",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "git-branch",
+            "tags": "git-branch",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-commit",
+            "tags": "git-commit",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-compare",
+            "tags": "git-compare",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-fork",
+            "tags": "git-fork",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "github",
+            "tags": "github",
+            "category": "git",
+            "featured": true
+        },
+        {
+            "name": "github-01",
+            "tags": "github-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "gitlab",
+            "tags": "gitlab",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-merge",
+            "tags": "git-merge",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-pull-request",
+            "tags": "git-pull-request",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-pull-request-closed",
+            "tags": "git-pull-request-closed",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "git-pull-request-draft",
+            "tags": "git-pull-request-draft",
+            "category": "git",
+            "featured": false
+        },
+        {
+            "name": "give-blood",
+            "tags": "give-blood",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "give-pill",
+            "tags": "give-pill",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "glasses",
+            "tags": "glasses",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "global",
+            "tags": "Global, Earth",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "global-editing",
+            "tags": "Earth Editing, Global Editing",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "global-education",
+            "tags": "global-education",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "global-refresh",
+            "tags": "Location Reload, Global Refresh, Earth Refresh",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "global-search",
+            "tags": "Global, Earth, Global Search, Magnifying Glass, Map Explore, Look Up",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "globe",
+            "tags": "Earth, World, Planet, Global, Map, Sphere, Orb, Continents, Atlas, Geography, Terra, International, Celestial, Hemisphere, Navigation, Cartography, Terra firma, Global View, Glove",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "globe-02",
+            "tags": "globe-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "glove",
+            "tags": "glove",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "go-backward-10-sec",
+            "tags": "Go Backward, Go Backward 10 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-backward-15-sec",
+            "tags": "Go Backward, Go Backward 15 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-backward-30-sec",
+            "tags": "Go Backward, Go Backward 30 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-backward-5-sec",
+            "tags": "Go Backward, Go Backward 5 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-backward-60-sec",
+            "tags": "Go Backward, Go Backward 60 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-forward-10-sec",
+            "tags": "Go Forward 10 sec, Move forward 10 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-forward-15-sec",
+            "tags": "Go Forward 15 sec, Move forward 15 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-forward-30-sec",
+            "tags": "Go Forward 30 sec, Move forward 30 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-forward-5-sec",
+            "tags": "Go Forward 5 sec, Move forward 5 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "go-forward-60-sec",
+            "tags": "Go Forward 60 sec, Move forward 60 sec",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "gold",
+            "tags": "gold",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "gold-ingots",
+            "tags": "gold-ingots",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "golf-ball",
+            "tags": "golf-ball",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "golf-bat",
+            "tags": "golf-bat",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "golf-cart",
+            "tags": "golf-cart icon, golf buggy, golf vehicle, course transporter, fairway cruiser, links cart, green transport",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "golf-hole",
+            "tags": "golf-hole",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "google",
+            "tags": "google",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-doc",
+            "tags": "google-doc",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-drive",
+            "tags": "google-drive",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-gemini",
+            "tags": "google-gemini",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-home",
+            "tags": "google-home",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "google-lens",
+            "tags": "google-lens",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-maps",
+            "tags": "google-maps",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-photos",
+            "tags": "google-photos",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "google-sheet",
+            "tags": "google-sheet",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "gps-01",
+            "tags": "Direction, GPS",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "gps-02",
+            "tags": "Direction, GPS",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "gps-disconnected",
+            "tags": "gps-disconnected",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "gps-off-01",
+            "tags": "Map, Location, GPS Off, GPS Close, GPS Cancel",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "gps-off-02",
+            "tags": "Map, Location, GPS Off, GPS Close, GPS Cancel",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "gps-signal-01",
+            "tags": "gps-signal-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "gps-signal-02",
+            "tags": "gps-signal-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "gpu",
+            "tags": "gpu",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "graduate-female",
+            "tags": "student, mentor, graduate,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "graduate-male",
+            "tags": "student, mentor, graduate,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "graduation-scroll",
+            "tags": "graduation-scroll",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "grapes",
+            "tags": "grapes",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "gravity",
+            "tags": "gravitation, pull, attractor, force, magnetism, allure, tug, attraction, weight, draw, centripetal",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "greater-than",
+            "tags": "greater than, Forward, Go Forward",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "greater-than-circle",
+            "tags": "greater-than-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "greater-than-square",
+            "tags": "greater-than-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "greek-helmet",
+            "tags": "greek-helmet",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "green-house",
+            "tags": "green house",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "grid",
+            "tags": "matrix, hash, mesh, array, framework, layout, pattern, mosaic, grating, arrangement, network, structure, checkerboard, blueprint, template, grid",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "grid-02",
+            "tags": "grid-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "grid-off",
+            "tags": "hash, no grid",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "grid-table",
+            "tags": "grid-table",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "grid-view",
+            "tags": "Matrix Display, Block Arrangement, Array Mode, Tile View, Mosaic Layout, Panel Grid, Collage Mode, Brick View, Ensemble Display, Patchwork Format, Chessboard Layout, Array Visualization, Quilted View, Grid View, View Grid",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "grimacing",
+            "tags": "grimacing",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "grinning",
+            "tags": "Happy Face, Smiling Emoji, Laughing Symbol, Joyful Emoticon, Cheery Icon, Smiley Face, Grin Symbol, Chuckling Emoticon, Beaming Icon, Jovial Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "grok",
+            "tags": "grok",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "group-01",
+            "tags": "group-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "group-items",
+            "tags": "Combine Objects, Gather Selection, Merge Elements, Aggregate Items, Bundle Objects, Cluster Items, Consolidate Elements, Unify Selection, Assemble Objects, Collect Elements, Link Items, Organize Items, Group Items, Item, Group",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "group-layers",
+            "tags": "Layer Cluster, Arrange Layers, Merge Layers, Stack Layers, Bundle Layers, Combine Layers, Unit Layers, Consolidate Layers, Aggregate Layers, Composite Layers, Group Layers, Layers Group, Layers, Group",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "guest-house",
+            "tags": "guest-house",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "gun",
+            "tags": "gun",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "gymnastic",
+            "tags": "gymnastic",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "gymnastic-rings",
+            "tags": "gymnastic-rings",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "hackerrank",
+            "tags": "hackerrank",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "hair-clips",
+            "tags": "hair-clips",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "hair-dryer",
+            "tags": "hair-dryer",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "haji",
+            "tags": "haji",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "halal",
+            "tags": "halal",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "halal-lab",
+            "tags": "halal-lab",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "hamburger-01",
+            "tags": "hamburger-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "hamburger-02",
+            "tags": "hamburger-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "hand-bag-01",
+            "tags": "hand-bag-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "hand-bag-02",
+            "tags": "hand-bag-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "hand-beater",
+            "tags": "hand-beater",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "handcuffs",
+            "tags": "handcuffs",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "hand-grip",
+            "tags": "hand-grip",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-down-01",
+            "tags": "hand-pointing-down-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-down-02",
+            "tags": "hand-pointing-down-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-down-03",
+            "tags": "hand-pointing-down-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-down-04",
+            "tags": "hand-pointing-down-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-left-01",
+            "tags": "hand-pointing-left-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-left-02",
+            "tags": "hand-pointing-left-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-left-03",
+            "tags": "hand-pointing-left-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-left-04",
+            "tags": "hand-pointing-left-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-right-01",
+            "tags": "hand-pointing-right-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-right-02",
+            "tags": "hand-pointing-right-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-right-03",
+            "tags": "hand-pointing-right-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-pointing-right-04",
+            "tags": "hand-pointing-right-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-prayer",
+            "tags": "hand-prayer",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hand-sanitizer",
+            "tags": "hand-sanitizer",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "hanger",
+            "tags": "hanger",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "hanging-clock",
+            "tags": "hanging-clock",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "hangout",
+            "tags": "hangout",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "happy",
+            "tags": "Joyful Face, Cheerful Emoticon, Smiling Icon, Delighted Symbol, Blissful Expression, Radiant Emote, Grinning Symbol, Ecstatic Face, Beaming Emoji, Contented Sign",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "hard-drive",
+            "tags": "hard-drive",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "hat",
+            "tags": "hat",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "hdd",
+            "tags": "hdd",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "hdr-01",
+            "tags": "hdr-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "hdr-02",
+            "tags": "hdr-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "heading",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "heading-01",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline, headline 1",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "heading-02",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline, headline 2",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "heading-03",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline, headline 3",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "heading-04",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline, headline 4",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "heading-05",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline, headline 5",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "heading-06",
+            "tags": "itle, headline, header, caption, banner, masthead, label, subject, topic, heading text, headline, headline 6",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "headphone-mute",
+            "tags": "headphone off, headphone mute, mute",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "headphones",
+            "tags": "Earphones, audio, sound, headphone, earpiece, headset, listening, speakers",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "headset",
+            "tags": "earphones, headphones, audio device, sound gear, listening device, earpiece, audio headset, sound equipment, headphone set, listening gear, ear gear, stereo set, headphone icon, sound accessory, headphone symbol, ear gear symbol, audio gadget, headset symbol, headset, head set",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "headset-connected",
+            "tags": "headset-connected",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "headset-off",
+            "tags": "silent mode, mute audio, sound off, quiet mode, audio off, headphone off, mute headset, headset off, off headset, head set off",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "healtcare",
+            "tags": "healtcare",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "health",
+            "tags": "health",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "heart-add",
+            "tags": "heart-add",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "heartbreak",
+            "tags": "heartbreak, broken love, broken heart",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "heart-check",
+            "tags": "love,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "heart-remove",
+            "tags": "love,",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "helicopter",
+            "tags": "chopper, copter, whirlybird, air taxi, sky whirl, rotorcraft, flying machine, copper craft, helo, airscrew, bird's eye, hovercraft, blade runner, flight-bird, sky spinner",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "help-circle",
+            "tags": "help-circle, help, questions",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "help-square",
+            "tags": "help-square, help, Questions,",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "hexagon",
+            "tags": "hexagon",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "hexagon-01",
+            "tags": "hexagon-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "hierarchy",
+            "tags": "hierarchy",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-circle-01",
+            "tags": "hierarchy-circle-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-circle-02",
+            "tags": "hierarchy-circle-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-circle-03",
+            "tags": "hierarchy-circle-03",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-files",
+            "tags": "hierarchy-files",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-01",
+            "tags": "hierarchy-square-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-02",
+            "tags": "hierarchy-square-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-03",
+            "tags": "hierarchy-square-03",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-04",
+            "tags": "hierarchy-square-04",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-05",
+            "tags": "hierarchy-square-05",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-06",
+            "tags": "hierarchy-square-06",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-07",
+            "tags": "hierarchy-square-07",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-08",
+            "tags": "hierarchy-square-08",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "hierarchy-square-10",
+            "tags": "hierarchy-square-10",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "high-heels-01",
+            "tags": "high-heels-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "high-heels-02",
+            "tags": "high-heels-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "highlighter",
+            "tags": "highlighter",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "hijab",
+            "tags": "hijab",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "hockey",
+            "tags": "hockey",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "hold-01",
+            "tags": "hold-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-02",
+            "tags": "hold-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-03",
+            "tags": "hold-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-04",
+            "tags": "hold-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-05",
+            "tags": "hold-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-locked-01",
+            "tags": "hold-locked-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-locked-02",
+            "tags": "hold-locked-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hold-phone",
+            "tags": "hold-phone",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "hologram",
+            "tags": "hologram",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "home-01",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": true
+        },
+        {
+            "name": "home-02",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-03",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-04",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-05",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-06",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-07",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-08",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-09",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-10",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-11",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-12",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-13",
+            "tags": "house, main, hub, base, central, welling, residence, primary, abode, nexus, core, foundation, origin, launchpad, homestead",
+            "category": "home",
+            "featured": false
+        },
+        {
+            "name": "home-wifi",
+            "tags": "home-wifi",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "honey-01",
+            "tags": "honey-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "honey-02",
+            "tags": "honey-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "honor",
+            "tags": "honor, Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "honour-star",
+            "tags": "Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "hoodie",
+            "tags": "hoodie",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "horizonal-scroll-point",
+            "tags": "horizonal-scroll-point",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "horizontal-resize",
+            "tags": "resize horizontal",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "horse",
+            "tags": "horse",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "horse-head",
+            "tags": "horse-head",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "horse-saddle",
+            "tags": "horse-saddle",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "hospital-01",
+            "tags": "hospital-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "hospital-02",
+            "tags": "hospital-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "hospital-bed-01",
+            "tags": "hospital-bed-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "hospital-bed-02",
+            "tags": "hospital-bed-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "hospital-location",
+            "tags": "hospital-location",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "hot-air-balloon",
+            "tags": "hot-air-balloon icon, airship, sky orb, floating basket, lofty balloon, aerial sphere, high-flying globe, sky cruiser, lofty transport, cloud hopper",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "hotdog",
+            "tags": "hotdog",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "hotel-01",
+            "tags": "hotel-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "hotel-02",
+            "tags": "hotel-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "hotel-bell",
+            "tags": "hotel-bell",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "hot-price",
+            "tags": "discount, voucher, promo, coupon, offer, hot price",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "hotspot",
+            "tags": "hotspot",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "hotspot-offline",
+            "tags": "hotspot-offline",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "hot-tube",
+            "tags": "hot-tube",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "hourglass",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "hourglass-off",
+            "tags": "hourglass-off",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "house-01",
+            "tags": "house-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "house-02",
+            "tags": "house-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "house-03",
+            "tags": "house-03",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "house-04",
+            "tags": "house-04",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "house-05",
+            "tags": "house-05",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "house-solar-panel",
+            "tags": "solar panel, solar",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "html-5",
+            "tags": "html-5",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "hugeicons",
+            "tags": "hugeicons",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "humidity",
+            "tags": "humidity, moisture, air",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "hut",
+            "tags": "hut",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "hydro-power",
+            "tags": "hydro power, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "hyperbole",
+            "tags": "amplify, hyperbole, Intensify, Augment",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "ice-cream-01",
+            "tags": "ice-cream-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "ice-cream-02",
+            "tags": "ice-cream-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "ice-cream-03",
+            "tags": "ice-cream-03",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "ice-cream-04",
+            "tags": "ice-cream-04",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "ice-cubes",
+            "tags": "ice-cubes",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "ice-hockey",
+            "tags": "ice-hockey",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "ice-skating",
+            "tags": "ice-skating",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "ico",
+            "tags": "ico",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "iconjar",
+            "tags": "iconjar",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "id",
+            "tags": "id",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "idea",
+            "tags": "bulb, light,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "idea-01",
+            "tags": "lightbulb, brainstorm, innovation, creativity, insight, eureka, thought bubble, concept, imagination, revelation, spark, ingenious, inventive, visionary, intellect, genius, idea",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "identification",
+            "tags": "identification",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "identity-card",
+            "tags": "identity-card",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "id-not-verified",
+            "tags": "id-not-verified",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "id-verified",
+            "tags": "id-verified",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "image-01",
+            "tags": "image-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-02",
+            "tags": "image-02",
+            "category": "image-camera",
+            "featured": true
+        },
+        {
+            "name": "image-03",
+            "tags": "image-03",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-actual-size",
+            "tags": "image-actual-size",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-add-01",
+            "tags": "image-add-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-add-02",
+            "tags": "image-add-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-composition",
+            "tags": "image-composition",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-composition-oval",
+            "tags": "image-composition-oval",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-counter-clockwise",
+            "tags": "image-counter-clockwise",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-crop",
+            "tags": "image-crop",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-delete-01",
+            "tags": "image-delete-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-delete-02",
+            "tags": "image-delete-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-done-01",
+            "tags": "image-done-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-done-02",
+            "tags": "image-done-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-download",
+            "tags": "image-download",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-download-02",
+            "tags": "image-download-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-flip -horizontal",
+            "tags": "image-flip -horizontal",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-flip-vertical",
+            "tags": "image-flip-vertical",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-not-found-01",
+            "tags": "image-not-found-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-not-found-02",
+            "tags": "image-not-found-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-remove-01",
+            "tags": "image-remove-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-remove-02",
+            "tags": "image-remove-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-rotation-clockwise",
+            "tags": "image-rotation-clockwise",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-upload",
+            "tags": "image-upload",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "image-upload-01",
+            "tags": "image-upload-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "imo",
+            "tags": "imo",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "important-book",
+            "tags": "important-book",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "inbox",
+            "tags": "inbox",
+            "category": "communications",
+            "featured": true
+        },
+        {
+            "name": "inbox-check",
+            "tags": "inbox-check",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "inbox-download",
+            "tags": "inbox-download",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "inbox-unread",
+            "tags": "inbox-unread",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "inbox-upload",
+            "tags": "inbox-upload",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "incognito",
+            "tags": "incognito",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "india-gate",
+            "tags": "india-gate",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "inequality-01",
+            "tags": "imbalance, inequity, bias, social divide, equity gap, justice scale",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "inequality-02",
+            "tags": "imbalance, inequity, bias, social divide, equity gap, justice scale",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "inequality-circle-01",
+            "tags": "inequality-circle-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "inequality-circle-02",
+            "tags": "inequality-circle-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "inequality-square-01",
+            "tags": "inequality-square-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "inequality-square-02",
+            "tags": "inequality-square-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "infant",
+            "tags": "infant",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "infinity-01",
+            "tags": "infinity-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "infinity-02",
+            "tags": "infinity, endless, eternal",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "infinity-circle",
+            "tags": "infinity-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "infinity-square",
+            "tags": "infinity-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "information-circle",
+            "tags": "Information-circle, Info, information, Information-square, Info",
+            "category": "alert-notification",
+            "featured": true
+        },
+        {
+            "name": "information-diamond",
+            "tags": "information-diamond",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "information-square",
+            "tags": "Information-square, Info, information, Information-square, Info",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "injection",
+            "tags": "injection",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "in-love",
+            "tags": "Heart Eyes, Smiling Face with Heart-Eyes, Adoration Symbol, Affectionate Smile, Lovestruck Expression, Infatuated Icon, Heartfelt Emoticon, Amorous Symbol, Affection Emoji, Enamored Face, Loving Grin, Fond Expression, Heartwarming Symbol, Adoring Emoticon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "insert-bottom-image",
+            "tags": "insert-bottom-image",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "insert-center-image",
+            "tags": "insert-center-image",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "insert-column",
+            "tags": "insert-column",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "insert-column-left",
+            "tags": "insert-column-left",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "insert-column-right",
+            "tags": "insert-column-right",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "insert-pi",
+            "tags": "insert-pi",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "insert-row",
+            "tags": "insert-row",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "insert-row-down",
+            "tags": "insert-row-down",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "insert-row-up",
+            "tags": "insert-row-up",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "insert-top-image",
+            "tags": "insert-top-image",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "inspect-code",
+            "tags": "inspect-code",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "instagram",
+            "tags": "instagram",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "installing-updates-01",
+            "tags": "Update in Progress, System Update, Refresh & Install, Patch Installation, Updating Software, Upgrade in Process, Firmware Update, Installing Improvements, Software Refresh, Update Procedure, App Upgrade, Patch Installing",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "installing-updates-02",
+            "tags": "Update in Progress, System Update, Refresh & Install, Patch Installation, Updating Software, Upgrade in Process, Firmware Update, Installing Improvements, Software Refresh, Update Procedure, App Upgrade, Patch Installing",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "internet",
+            "tags": "internet",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "internet-antenna-01",
+            "tags": "internet-antenna-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "internet-antenna-02",
+            "tags": "internet-antenna-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "internet-antenna-03",
+            "tags": "internet-antenna-03",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "internet-antenna-04",
+            "tags": "internet-antenna-04",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "investigation",
+            "tags": "investigation",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "invoice",
+            "tags": "bill,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "invoice-01",
+            "tags": "invoice, payment, billing, purchase, receipt, expense",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "invoice-02",
+            "tags": "invoice, payment, billing, purchase, receipt, expense",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "invoice-03",
+            "tags": "invoice, payment, billing, purchase, receipt, expense",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "invoice-04",
+            "tags": "invoice, payment, billing, purchase, receipt, expense",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "ipod",
+            "tags": "ipod",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "iris-scan",
+            "tags": "iris-scan",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "island",
+            "tags": "island",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "jar",
+            "tags": "jar",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "java",
+            "tags": "java",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "java-script",
+            "tags": "java-script",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "job-link",
+            "tags": "job-link",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "job-search",
+            "tags": "find job, job searching,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "job-share",
+            "tags": "find job,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "jogger-pants",
+            "tags": "jogger-pants",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "join-bevel",
+            "tags": "join-bevel",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "join-round",
+            "tags": "join-round",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "join-straight",
+            "tags": "join-straight",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "joker",
+            "tags": "joker",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "joystick-01",
+            "tags": "joystick-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "joystick-02",
+            "tags": "joystick-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "joystick-03",
+            "tags": "joystick-03",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "joystick-04",
+            "tags": "joystick-04",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "joystick-05",
+            "tags": "joystick-05",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "jpg-01",
+            "tags": "jpg-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "jpg-02",
+            "tags": "jpg-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "jsx-01",
+            "tags": "jsx-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "jsx-02",
+            "tags": "jsx-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "jsx-03",
+            "tags": "jsx-03",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "judge",
+            "tags": "judge",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "jumpers",
+            "tags": "jumpers",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "jupiter",
+            "tags": "Big Red, Gas Giant, King of Planets, Zeus, Mighty Orb, Giant's Eye, Jove, Cosmic Sphere, Thundering Planet, Celestial King",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "justice-scale-01",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "justice-scale-02",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "kaaba-01",
+            "tags": "kaaba-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "kaaba-02",
+            "tags": "kaaba-02",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "kanban",
+            "tags": "kanban",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "kayak",
+            "tags": "kayak",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "keffiyeh",
+            "tags": "keffiyeh",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "kettle",
+            "tags": "kettle",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "kettle-01",
+            "tags": "kettle-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "kettlebell",
+            "tags": "kettlebell",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "ketupat",
+            "tags": "ketupat",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "key-01",
+            "tags": "key-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "key-02",
+            "tags": "key-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "keyboard",
+            "tags": "typing pad, input board, key panel, text entry, character board, typepad, key interface, letter grid, input keys, text panel, key matrix, character input, typing interface, letter pad, keyboard, key board",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "keyframe",
+            "tags": "keyframe",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-add",
+            "tags": "keyframe-add",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-align-center",
+            "tags": "keyframe-align-center",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-align-horizontal",
+            "tags": "keyframe-align-horizontal",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-align-vertical",
+            "tags": "keyframe-align-vertical",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-bottom",
+            "tags": "keyframe-bottom",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-left",
+            "tags": "keyframe-left",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-remove",
+            "tags": "keyframe-remove",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-right",
+            "tags": "keyframe-right",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframes-double",
+            "tags": "keyframes-double",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframes-double-add",
+            "tags": "keyframes-double-add",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframes-double-remove",
+            "tags": "keyframes-double-remove",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframes-multiple",
+            "tags": "keyframes-multiple",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframes-multiple-add",
+            "tags": "keyframes-multiple-add",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframes-multiple-remove",
+            "tags": "keyframes-multiple-remove",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "keyframe-top",
+            "tags": "keyframe-top",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "key-generator-fob",
+            "tags": "key-generator-fob",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "kickstarter-01",
+            "tags": "kickstarter-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "kickstarter-02",
+            "tags": "kickstarter-02",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "kid",
+            "tags": "Child Face, Youngster Symbol, Junior Icon, Little One Emoticon, Youthful Avatar, Tiny Tot Emoji, Kidlet Symbol, Miniature Human Face, Offspring Icon, Youngling Emote, Junior Member Symbol, Tot Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "kidneys",
+            "tags": "kidneys",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "kissing",
+            "tags": "smooch symbol, love kiss icon, affectionate emoji, romantic gesture symbol, sweet peck icon, heartfelt kiss symbol, lips emoji, affection expression icon, romantic kiss symbol, emotive smooch icon, loving gesture symbol, tender kiss emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "kitchen-utensils",
+            "tags": "kitchen-utensils",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "kite",
+            "tags": "kite",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "klarna",
+            "tags": "klarna",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "knife-01",
+            "tags": "knife-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "knife-02",
+            "tags": "knife-02",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "knife-bread",
+            "tags": "knife-bread",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "knight-shield",
+            "tags": "knight-shield",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "knives",
+            "tags": "knives",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "knowledge-01",
+            "tags": "knowledge-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "knowledge-02",
+            "tags": "knowledge-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "ko-fi",
+            "tags": "ko-fi",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "kurta",
+            "tags": "kurta",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "kurta-01",
+            "tags": "kurta-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "label",
+            "tags": "Label, tag",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "label-important",
+            "tags": "Label important, tag, important",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "labor",
+            "tags": "worker,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "labs",
+            "tags": "labs",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "lake",
+            "tags": "lake",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "lamp",
+            "tags": "lamp",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "lamp-01",
+            "tags": "lamp-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "lamp-02",
+            "tags": "lamp-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "lamp-03",
+            "tags": "lamp-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "lamp-04",
+            "tags": "lamp-04",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "lamp-05",
+            "tags": "lamp-05",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "language-circle",
+            "tags": "Language, Language Circle, Circle Language",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "language-skill",
+            "tags": "language-skill",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "language-square",
+            "tags": "Language, Language Square, Square Language",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "lantern",
+            "tags": "lantern",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "laptop",
+            "tags": "laptop",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-add",
+            "tags": "laptop-add",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-charging",
+            "tags": "laptop-charging",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-check",
+            "tags": "laptop-check",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-cloud",
+            "tags": "laptop-cloud",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-issue",
+            "tags": "laptop-issue",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-performance",
+            "tags": "laptop-performance",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-phone-sync",
+            "tags": "responsive, laptop and mobile",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-programming",
+            "tags": "laptop-programming",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "laptop-remove",
+            "tags": "laptop-remove",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-settings",
+            "tags": "laptop-settings",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "laptop-video",
+            "tags": "laptop-video",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "lasso-tool-01",
+            "tags": "lasso-tool-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "lasso-tool-02",
+            "tags": "lasso-tool-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "last-fm",
+            "tags": "last-fm",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "latitude",
+            "tags": "Global positioning, map grid, position pin, earth coordinates, navigation point, latitude",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "laughing",
+            "tags": "Happy Face, LOL Emoji, Giggling Emoticon, Cheerful Symbol, Smiling Tears Emoji, Jovial Icon, Laugh-Out-Loud Emoticon, Hilarious Face, Mirthful Emoji, Grinning Tears Symbol, Chuckling Emojiface, Amusing Icon, Joyful Emoji, Crying with Laughter Symbol, Guffaw Emoticon, Delighted Face, ROFL Emoji, Euphoric Symbol, Hysterical Icon, Bursting in Laughter Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-01",
+            "tags": "Feather, Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-02",
+            "tags": "Feather, Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-first-01",
+            "tags": "Feather, Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-first-02",
+            "tags": "Feather, Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-left-01",
+            "tags": "laurel-wreath-left-01",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-left-02",
+            "tags": "laurel-wreath-left-02",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-left-03",
+            "tags": "laurel-wreath-left-03",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-right-01",
+            "tags": "laurel-wreath-right-01",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-right-02",
+            "tags": "laurel-wreath-right-02",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "laurel-wreath-right-03",
+            "tags": "laurel-wreath-right-03",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "layer-add",
+            "tags": "layer-add",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "layer-mask-01",
+            "tags": "layer-mask-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "layer-mask-02",
+            "tags": "layer-mask-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "layers-01",
+            "tags": "Stacks, Sheets, Overlays, Strata, Tiered, Sheets, Arrangement, Overlaps, Levels, Piles, Tiers, Meld, Cascades, Tiers, Overlays, Array, Veils, Slabs, Groupings, Layers, layer",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "layers-02",
+            "tags": "Stacks, Sheets, Overlays, Strata, Tiered, Sheets, Arrangement, Overlaps, Levels, Piles, Tiers, Meld, Cascades, Tiers, Overlays, Array, Veils, Slabs, Groupings, Layers, layer",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "layers-logo",
+            "tags": "layers-logo",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "layout-01",
+            "tags": "layout-01",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-02",
+            "tags": "layout-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-03",
+            "tags": "layout-03",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-04",
+            "tags": "layout-04",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-05",
+            "tags": "layout-05",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-06",
+            "tags": "layout-06",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-07",
+            "tags": "layout-07",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-2-column",
+            "tags": "layout-2-column",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-2-row",
+            "tags": "layout-2-row",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-3-column",
+            "tags": "kanban,",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-3-row",
+            "tags": "layout-3-row",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-bottom",
+            "tags": "layout-bottom",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-grid",
+            "tags": "layout-grid",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-left",
+            "tags": "layout-left",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-right",
+            "tags": "layout-right",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-table-01",
+            "tags": "kanban,",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-table-02",
+            "tags": "layout-table-02",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "layout-top",
+            "tags": "layout-top",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "leaf-01",
+            "tags": "leaf-01",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "leaf-02",
+            "tags": "leaf-02",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "leaf-03",
+            "tags": "leaf-03",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "leaf-04",
+            "tags": "leaf-04",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "leaving-geo-fence",
+            "tags": "Location boundary, Zone-egress-alert, Zone-egress-alert, Area, Arrival Alert, Zone Entry",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "leetcode",
+            "tags": "leetcode",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "left-angle",
+            "tags": "arrowhead, angle, Angular, Arrow",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-block-quote",
+            "tags": "left-to-right-block-quote",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-list-bullet",
+            "tags": "left-to-right-list-bullet",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-list-dash",
+            "tags": "left-to-right-list-dash",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-list-number",
+            "tags": "left-to-right-list-number",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-list-star",
+            "tags": "left-to-right-list-star",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-list-star-01",
+            "tags": "left-to-right-list-star-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-to-right-list-triangle",
+            "tags": "left-to-right-list-triangle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "left-triangle",
+            "tags": "triangle, trigon",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "legal-01",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "legal-02",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "legal-document-01",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "legal-document-02",
+            "tags": "legal-document-02",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "legal-hammer",
+            "tags": "legal-hammer",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "less-than",
+            "tags": "not greater than, less than",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "less-than-circle",
+            "tags": "less-than-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "less-than-square",
+            "tags": "less-than-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "letter-spacing",
+            "tags": "letter-spacing",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "libraries",
+            "tags": "libraries",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "library",
+            "tags": "Bookshelf, Reading Room, Knowledge Center, Archives, Literary Hub, Reference, Information Hub, Repository, Book Haven, Resource Center, Study Corner, Media Library, Learning Hub, Book Collection, Literary Archive, Library",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "license",
+            "tags": "blog, article, news paper",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "license-draft",
+            "tags": "blog, article, news paper, agreement",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "license-maintenance",
+            "tags": "license-maintenance",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "license-no",
+            "tags": "license-no",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "license-pin",
+            "tags": "license-pin",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "license-third-party",
+            "tags": "license-third-party",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "lifebuoy",
+            "tags": "lifebuoy",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "lift-truck",
+            "tags": "lift-truck icon, forklift, warehouse mover, pallet jack, lifting machine, cargo lifter, material handler, industrial truck, load lifter, fork hoist, lifting vehicle, pallet lifter, lifting gear, stacker truck, goods transporter, lifting equipment",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "lighthouse",
+            "tags": "lighthouse",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "limitation",
+            "tags": "limitation",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "limit-order",
+            "tags": "limit-order",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "line",
+            "tags": "line",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "liner",
+            "tags": "liner",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "link-01",
+            "tags": "link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach",
+            "category": "link-unlink",
+            "featured": true
+        },
+        {
+            "name": "link-02",
+            "tags": "link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-03",
+            "tags": "link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-04",
+            "tags": "link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-05",
+            "tags": "link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-06",
+            "tags": "link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-backward",
+            "tags": "link-backward-icon, back-arrow, return-arrow, previous-link, reverse-link, backward-navigation",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-circle",
+            "tags": "link-circle-icon, connection-loop, circular-link, circle-connector, looped-link, round-link, circular-connection, link-ring, link-loop, circle-joiner",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-circle-02",
+            "tags": "link-circle-icon, connection-loop, circular-link, circle-connector, looped-link, round-link, circular-connection, link-ring, link-loop, circle-joiner",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "linkedin-01",
+            "tags": "linkedin-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "linkedin-02",
+            "tags": "linkedin-02",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "link-forward",
+            "tags": "link-forward-icon, forward-arrow, next-page, proceed, navigate, advance, move-ahead, jump, go-forward, arrow-right, direct-link, onward, follow, progress-arrow, continue, onward-arrow, link-to-next",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-square-01",
+            "tags": "link-square-icon, link-box, square-link, hyperlink-square, connect-square, URL-box, square-connector, link-frame, square-hyperlink, linked-square",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "link-square-02",
+            "tags": "link-square-icon, link-box, square-link, hyperlink-square, connect-square, URL-box, square-connector, link-frame, square-hyperlink, linked-square",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "list-setting",
+            "tags": "settings-list, list-options, list-configuration, list-preferences, list-controls, list-customization, list-management, list-config, list-tools, list-tweaks",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "list-view",
+            "tags": "list-view",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "litecoin",
+            "tags": "litecoin",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "liver",
+            "tags": "liver",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "live-streaming-01",
+            "tags": "live-streaming-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "live-streaming-02",
+            "tags": "live-streaming-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "live-streaming-03",
+            "tags": "live-streaming-03",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "loading-01",
+            "tags": "hourglass, glass, loading, wait, hour, slow",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "loading-02",
+            "tags": "loading, wait, slow, loop, looping, loading icon",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "loading-03",
+            "tags": "loading, wait, slow, loop, looping, loading icon",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "loading-04",
+            "tags": "loading, wait, slow, loop, looping, loading icon",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "location-01",
+            "tags": "Map, Location",
+            "category": "maps",
+            "featured": true
+        },
+        {
+            "name": "location-02",
+            "tags": "Map, Location",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-03",
+            "tags": "Map, Location, Pin,",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-04",
+            "tags": "Map, Location, Pin,",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-05",
+            "tags": "Map, Location, Pin,",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-06",
+            "tags": "Map, Location, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-07",
+            "tags": "Map, Location, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-08",
+            "tags": "Map, Location, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-09",
+            "tags": "Map, Location, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-10",
+            "tags": "Map, Location, Destination",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-add-01",
+            "tags": "Location Add, Location Plus, Map Plus, Map Add",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-add-02",
+            "tags": "Map Add, Map Plus, Location Add, Location Plus",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-check-01",
+            "tags": "Map Check, Location Check",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-check-02",
+            "tags": "Map Check, Location Check",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-favourite-01",
+            "tags": "Map Favourite, Location Favourite",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-favourite-02",
+            "tags": "Map Favourite, Location Favourite",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-offline-01",
+            "tags": "Location Offline, Map Offline, Location off,",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-offline-02",
+            "tags": "Location Offline, Map Offline, Location off,",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-offline-03",
+            "tags": "Location Offline, Map Offline",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-offline-04",
+            "tags": "Location Offline, Map Offline",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-remove-01",
+            "tags": "Location Remove, Location Minus, Map Remove, Map Minus",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-remove-02",
+            "tags": "Map Remove, Map Minus, Location Remove, Location Minus",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-share-01",
+            "tags": "Map Share, Location Share",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-share-02",
+            "tags": "Map, Location, GPS, Location Share",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-star-01",
+            "tags": "Map Star, Location Start, save map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-star-02",
+            "tags": "Map Star, Location Star",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-update-01",
+            "tags": "Map, Update, Map Reload, Location Update, Location Reload",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-update-02",
+            "tags": "Map, Location, GPS, Location Update",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-user-01",
+            "tags": "Map, Location, GPS, Location Update, Location User",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-user-02",
+            "tags": "Map, Location, GPS, Location Update, Location User",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-user-03",
+            "tags": "Map, Location, GPS, Location Update, Location User",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "location-user-04",
+            "tags": "Map, Location, GPS, Location Update, Location User",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "lock",
+            "tags": "lock",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "lock-computer",
+            "tags": "lock-computer",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "locked",
+            "tags": "locked",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "locker",
+            "tags": "locker",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "locker-01",
+            "tags": "locker-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "lock-key",
+            "tags": "lock-key",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "lock-password",
+            "tags": "lock-password",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "lock-sync-01",
+            "tags": "lock-sync-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "lock-sync-02",
+            "tags": "lock-sync-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "login-01",
+            "tags": "sign in, access, authenticate, enter, user-access, login access, member login, account entry, connect, portal-access, authorization, switch, member-access",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "login-02",
+            "tags": "sign in, access, authenticate, enter, user-access, login access, member login, account entry, connect, portal-access, authorization, switch, member-access",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "login-03",
+            "tags": "sign in, access, authenticate, enter, user-access, login access, member login, account entry, connect, portal-access, authorization, switch, member-access",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "login-circle-01",
+            "tags": "sign in, access, enter, user-access, connect, secure entry, user gateway, authorization, user-login, member access, login-square, login-circle,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "login-circle-02",
+            "tags": "sign in, access, enter, user-access, connect, secure entry, user gateway, authorization, user-login, member access, login-square, login-circle,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "login-method",
+            "tags": "login-method",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "login-square-01",
+            "tags": "sign in, access, enter, user-access, connect, secure entry, user gateway, authorization, user-login, member access, login-square",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "login-square-02",
+            "tags": "sign in, access, enter, user-access, connect, secure entry, user gateway, authorization, user-login, member access, login-square",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-01",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-02",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-03",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-04",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-05",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-circle-01",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-circle-02",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-square-01",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "logout-square-02",
+            "tags": "sign-out, exit, log-off, end-session, disconnect, leave, quit, close session, terminate, finish, power off, switch off,",
+            "category": "login-logout",
+            "featured": false
+        },
+        {
+            "name": "lollipop",
+            "tags": "lollipop",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "longitude",
+            "tags": "Longitude, Longitude Indicator, Geo-Position",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "long-sleeve-shirt",
+            "tags": "long-sleeve-shirt",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "look-bottom",
+            "tags": "gaze-down symbol, peek-beneath icon, view-lower emoticon, observe-bottom glyph, glance-lower emoji, peer-down symbol, inspect-bottom icon, survey-lower emoticon, scrutinize-below glyph, check-beneath emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "look-left",
+            "tags": "side-glance, peek-left, glance-left, peek-a-boo, leftward-gaze, side-peek, left-glimpse, sideways-look, left-peek, side-eye",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "look-right",
+            "tags": "glance-right, peek-right, view-right, observe-right, check-right, eye-right, watch-right, gaze-right, peeking-right, spy-right, scan-right, survey-right, glimpse-right, peer-right, stare-right",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "look-top",
+            "tags": "peek-a-boo face, upward glance emoticon, upward peek smiley, skyward gaze icon, upward glance emoji, peeking smiley, glance-up emoji, topward look emoticon, upward peek emoji, upward glance face, upward peeping icon, topward gaze emoji, upward peeking face, upward glance smiley",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "loom",
+            "tags": "loom",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "lottiefiles",
+            "tags": "lottiefiles",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "love-korean-finger",
+            "tags": "love-korean-finger",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "low-signal",
+            "tags": "low-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "loyalty-card",
+            "tags": "loyalty card, card",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "luggage-01",
+            "tags": "luggage-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "luggage-02",
+            "tags": "luggage-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "lungs",
+            "tags": "lungs",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "machine-robot",
+            "tags": "machine-robot",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "magic-wand-01",
+            "tags": "magic wand, wand magic, magic, wand, stars, star, AI, ai,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "magic-wand-02",
+            "tags": "magic wand, stars, magic star, wand magic, stars, star, magic, ai,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "magic-wand-03",
+            "tags": "magic wand, star, stars, wand magic, magic, ai,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "magic-wand-04",
+            "tags": "magic-wand-04",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "magnet",
+            "tags": "attraction, puller, magnetic pull, attractor, magnetizer, magnetic force, magnetic field, magnetism, magnetic pull, magnetize, magnetism symbol, magnetic attraction",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "magnet-01",
+            "tags": "magnet",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "magnet-02",
+            "tags": "magnet",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "mail-01",
+            "tags": "message, email, gmail",
+            "category": "communications",
+            "featured": true
+        },
+        {
+            "name": "mail-02",
+            "tags": "mail-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-account-01",
+            "tags": "mail-account-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-account-02",
+            "tags": "mail-account-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-add-01",
+            "tags": "add message, add email, add gmail, new message, new mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-add-02",
+            "tags": "add message, add email, add gmail, new message, new mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-at-sign-01",
+            "tags": "gmail, mail sign, gmail sign,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-at-sign-02",
+            "tags": "mail-at-sign-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-block-01",
+            "tags": "mail-block-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-block-02",
+            "tags": "mail-block-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mailbox",
+            "tags": "mailbox",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mailbox-01",
+            "tags": "mailbox-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-download-01",
+            "tags": "mail-download-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-download-02",
+            "tags": "mail-download-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-edit-01",
+            "tags": "write message, write email, add gmail, new message, new mail, write communication",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-edit-02",
+            "tags": "mail-edit-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-lock-01",
+            "tags": "mail-lock-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-lock-02",
+            "tags": "mail-lock-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-love-01",
+            "tags": "love message, love email, love gmail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-love-02",
+            "tags": "mail-love-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-minus-01",
+            "tags": "mail-minus-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-minus-02",
+            "tags": "close message, close email, close gmail, close message, close mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-open",
+            "tags": "open chat, open gmail, open email, open mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-open-01",
+            "tags": "open chat, open gmail, open email, open mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-open-02",
+            "tags": "open chat, open gmail, open email, open mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-open-love",
+            "tags": "open love chat, open love gmail, open love email, open love mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-receive-01",
+            "tags": "mail-receive-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-receive-02",
+            "tags": "gmail, email, incoming mail, incoming gmail, incoming message",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-remove-01",
+            "tags": "mail-remove-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-remove-02",
+            "tags": "close message, close email, close gmail, close message, close mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-reply-01",
+            "tags": "mail-reply-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-reply-02",
+            "tags": "reply message, reply email, reply gmail, reply message, reply mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-reply-all-01",
+            "tags": "mail-reply-all-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-reply-all-02",
+            "tags": "reply all message, reply all email, reply all gmail, reply all message, reply all mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-search-01",
+            "tags": "search mail, search message, search gmail,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-search-02",
+            "tags": "mail-search-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-secure-01",
+            "tags": "mail-secure-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-secure-02",
+            "tags": "mail-secure-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-send-01",
+            "tags": "mail-send-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-send-02",
+            "tags": "mail-send-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-setting-01",
+            "tags": "mail-setting-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-setting-02",
+            "tags": "mail-setting-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-unlock-01",
+            "tags": "mail-unlock-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-unlock-02",
+            "tags": "mail-unlock-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-upload-01",
+            "tags": "mail-upload-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-upload-02",
+            "tags": "mail-upload-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-validation-01",
+            "tags": "mail-validation-01",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "mail-validation-02",
+            "tags": "mail-validation-02",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "mail-voice-01",
+            "tags": "mail-voice-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "mail-voice-02",
+            "tags": "voice record message, voice email, record gmail, voice message, record voice mail",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "male-02",
+            "tags": "male-02",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "male-symbol",
+            "tags": "male-symbol",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "man",
+            "tags": "man",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "manager",
+            "tags": "admin, boss,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "man-woman",
+            "tags": "man-woman",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "maping",
+            "tags": "Map, Location, Navigate",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "map-pin",
+            "tags": "Map, Location, GPS, Destination, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "map-pinpoint-01",
+            "tags": "Map, Location, GPS, Navigate, Destination, Pinpoint, Pin, Position Tracker",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "map-pinpoint-02",
+            "tags": "Map, Location, GPS, Navigate, Destination, Pinpoint, Pin, Position Tracker",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps",
+            "tags": "Map, Location, Navigate, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-circle-01",
+            "tags": "Map, Location, Circle Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-circle-02",
+            "tags": "Map, Location, Circle Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-editing",
+            "tags": "Location editing, Map editing",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-global-01",
+            "tags": "Global Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-global-02",
+            "tags": "Global Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-location-01",
+            "tags": "Map, Location, Navigate, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-location-02",
+            "tags": "Map, Location, Navigate, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-off",
+            "tags": "Map Break, Map Off",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-refresh",
+            "tags": "Map, Location, GPS, Location Reload, Map Refresh",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-search",
+            "tags": "Location, GPS, Locate, Map Search, Map Find, Magnifying Glass, Look Up, Map Discover",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-square-01",
+            "tags": "Map, Location, Square Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "maps-square-02",
+            "tags": "Map, Location, Square Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "market-analysis",
+            "tags": "market-analysis",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "marketing",
+            "tags": "marketing, announce, promotional",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "market-order",
+            "tags": "market-order",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "mask",
+            "tags": "mask",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "mask-love",
+            "tags": "mask-love",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "master-card",
+            "tags": "master-card",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "mastodon",
+            "tags": "mastodon",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "matches",
+            "tags": "matches",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "material-and-texture",
+            "tags": "material-and-texture",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "math",
+            "tags": "calculation, numbers, arithmetic, calculations, mathematics, numeric, figures, computations, numerical, algebraic, math",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "matrix",
+            "tags": "binary weave, code lattice, matrix",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "maximize-01",
+            "tags": "maximize-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "maximize-02",
+            "tags": "maximize-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "maximize-03",
+            "tags": "maximize-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "maximize-04",
+            "tags": "maximize-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "maximize-screen",
+            "tags": "maximize-screen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "mayan-pyramid",
+            "tags": "mayan-pyramid",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "maze",
+            "tags": "maze",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "medal-01",
+            "tags": "Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-02",
+            "tags": "Reward, award, badge,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-03",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-04",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-05",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-06",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-07",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-first-place",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-second-place",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medal-third-place",
+            "tags": "Reward, award,",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "medical-file",
+            "tags": "medical-file",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "medical-mask",
+            "tags": "face mask, health mask, surgical mask, protective mask, doctor mask, healthcare mask, hygiene mask, virus mask, safety mask, breathing mask, COVID mask, facial covering, infection prevention mask, respiratory mask, illness mask, public health mask, contagion mask, pandemic mask, safety precaution mask",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "medicine-01",
+            "tags": "medicine-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "medicine-02",
+            "tags": "medicine-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "medicine-bottle-01",
+            "tags": "medicine-bottle-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "medicine-bottle-02",
+            "tags": "medicine-bottle-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "medicine-syrup",
+            "tags": "medicine-syrup",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "medium",
+            "tags": "medium",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "medium-signal",
+            "tags": "medium-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "medium-square",
+            "tags": "medium-square",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "meeting-room",
+            "tags": "meeting-room",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "megaphone-01",
+            "tags": "loudspeaker, announcement symbol, amplification tool, communication horn, public address device, voice projection symbol, broadcast icon, speaker cone, vocal amplifier, announcement megaphone, megaphone, mega phone, mic",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "megaphone-02",
+            "tags": "loudspeaker, announcement symbol, amplification tool, communication horn, public address device, voice projection symbol, broadcast icon, speaker cone, vocal amplifier, announcement megaphone, megaphone, mega phone, mic",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "megaphone-03",
+            "tags": "megaphone-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "meh",
+            "tags": "indifferent face, so-so symbol, meh expression, neutral icon, ambivalent emoticon, shrug symbol, apathetic face, nonchalant emoji, unimpressed symbol, indifferent emoticon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "mentor",
+            "tags": "mentor, instructor, professor, academic, coach, facilitator, career, business career, teacher,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "mentoring",
+            "tags": "mentoring, guide, advisor, teacher, coach, guru, expert, counselor, instructor, leader, role model, helper, supporter, consultant, mentorship, mentor",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "menu-01",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": true
+        },
+        {
+            "name": "menu-02",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-03",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-04",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-05",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-06",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-07",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-08",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-09",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-10",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-11",
+            "tags": "menu, hamburger, lines, list, grid",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-circle",
+            "tags": "menu, circle, oval",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-collapse",
+            "tags": "collapse, minimize,",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-restaurant",
+            "tags": "menu-restaurant",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "menu-square",
+            "tags": "menu, square",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "menu-two-line",
+            "tags": "menu-two-line",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "message-01",
+            "tags": "message-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-02",
+            "tags": "chat, communication,",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-add-01",
+            "tags": "message-add-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-add-02",
+            "tags": "message-add-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-blocked",
+            "tags": "mute chat, mute message, hide message",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-cancel-01",
+            "tags": "message-cancel-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-cancel-02",
+            "tags": "message-cancel-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-delay-01",
+            "tags": "message-delay-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-delay-02",
+            "tags": "message-delay-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-done-01",
+            "tags": "message-done-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-done-02",
+            "tags": "message done, chat done, finished communication",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-download-01",
+            "tags": "message-download-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-download-02",
+            "tags": "message-download-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-edit-01",
+            "tags": "message-edit-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-edit-02",
+            "tags": "message-edit-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-favourite-01",
+            "tags": "message-favourite-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-favourite-02",
+            "tags": "message-favourite-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-incoming-01",
+            "tags": "message-incoming-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-incoming-02",
+            "tags": "message-incoming-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-lock-01",
+            "tags": "message-lock-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-lock-02",
+            "tags": "message-lock-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-multiple-01",
+            "tags": "communication, conversation",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-multiple-02",
+            "tags": "message-multiple-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-notification-01",
+            "tags": "message-notification-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-notification-02",
+            "tags": "message-notification-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-outgoing-01",
+            "tags": "message-outgoing-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-outgoing-02",
+            "tags": "message-outgoing-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-preview-01",
+            "tags": "message-preview-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-preview-02",
+            "tags": "message-preview-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-programming",
+            "tags": "message-programming",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "message-question",
+            "tags": "message-question",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-search-01",
+            "tags": "message-search-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-search-02",
+            "tags": "message-search-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-secure-01",
+            "tags": "message-secure-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-secure-02",
+            "tags": "message-secure-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-translate",
+            "tags": "message-translate",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-unlock-01",
+            "tags": "message-unlock-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-unlock-02",
+            "tags": "message-unlock-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-upload-01",
+            "tags": "message-upload-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-upload-02",
+            "tags": "message-upload-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-user-01",
+            "tags": "message-user-01",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "message-user-02",
+            "tags": "message-user-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "messenger",
+            "tags": "messenger",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "meta",
+            "tags": "meta",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "metro",
+            "tags": "metro icon, subway, rapid transit, underground, urban rail, city train, transit system",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "mic-01",
+            "tags": "microphone, voice recorder, audio symbol, sound capture, record, speaker",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "mic-02",
+            "tags": "microphone, voice recorder, audio, sound capture, speech symbol, speaker",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "mic-off-01",
+            "tags": "microphone mute, audio off, quiet mode, mute audio, soundless, voice off, mic off",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "mic-off-02",
+            "tags": "microphone mute, audio off, sound silence, voice disabled, mute mic, quiet mode, audio hush, no sound, microphone off, mute audio, silent mic, soundless, voice off, audio mute, muted microphone, mic off",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "microscope",
+            "tags": "microscope",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "microsoft",
+            "tags": "microsoft",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "microsoft-admin",
+            "tags": "microsoft-admin",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "microwave",
+            "tags": "microwave",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "milk-bottle",
+            "tags": "milk-bottle",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "milk-carton",
+            "tags": "milk-carton",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "milk-coconut",
+            "tags": "milk-coconut",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "milk-oat",
+            "tags": "milk-oat",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "minimize-01",
+            "tags": "minimize-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "minimize-02",
+            "tags": "minimize-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "minimize-03",
+            "tags": "minimize-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "minimize-04",
+            "tags": "minimize-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "minimize-screen",
+            "tags": "minimize-screen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "mining-01",
+            "tags": "mining-01",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "mining-02",
+            "tags": "mining-02",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "mining-03",
+            "tags": "mining-03",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "minus-plus-01",
+            "tags": "minus plus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-plus-02",
+            "tags": "minus plus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-plus-circle-01",
+            "tags": "minus-plus-circle-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-plus-circle-02",
+            "tags": "minus-plus-circle-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-plus-square-01",
+            "tags": "minus-plus-square-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-plus-square-02",
+            "tags": "minus-plus-square-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-sign",
+            "tags": "minus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-sign-circle",
+            "tags": "minus-sign-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "minus-sign-square",
+            "tags": "minus-sign-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "mirror",
+            "tags": "mirror",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "mirroring-screen",
+            "tags": "mirroring-screen",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "mixer",
+            "tags": "mixer",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "mobile-navigator-01",
+            "tags": "Map, Location, GPS, Pin, Mobile Navigator Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "mobile-navigator-02",
+            "tags": "Map, Location, GPS, Pin, Mobile Navigator Map",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "mobile-programming-01",
+            "tags": "mobile-programming-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "mobile-programming-02",
+            "tags": "mobile-programming-02",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "mobile-protection",
+            "tags": "mobile-protection",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "mobile-security",
+            "tags": "mobile-security",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "mochi",
+            "tags": "mochi",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "modern-tv",
+            "tags": "share screen,",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "modern-tv-4-k",
+            "tags": "modern-tv-4-k",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "modern-tv-issue",
+            "tags": "modern-tv-issue",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "molecules",
+            "tags": "Tiny Elements, Atomic Fusion, Molecular Mix, Nano Structures, Particle Ensemble, Micro Units, Chemical Bonds, Elemental Fusion, Molecular Array, Atom Matrix",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "mollie",
+            "tags": "mollie",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "monas",
+            "tags": "monas",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "money-01",
+            "tags": "money-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-02",
+            "tags": "money-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-03",
+            "tags": "money-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-04",
+            "tags": "money-04",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-add-01",
+            "tags": "money-add-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-add-02",
+            "tags": "money-add-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-bag-01",
+            "tags": "Fund, funding,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-bag-02",
+            "tags": "Fund, funding, safe money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-exchange-01",
+            "tags": "money-exchange-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-exchange-02",
+            "tags": "money-exchange-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-exchange-03",
+            "tags": "money-exchange-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-not-found-01",
+            "tags": "money-not-found-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-not-found-02",
+            "tags": "money-not-found-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-not-found-03",
+            "tags": "money-not-found-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-not-found-04",
+            "tags": "money-not-found-04",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-receive-01",
+            "tags": "money-receive-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-receive-02",
+            "tags": "money-receive-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-receive-circle",
+            "tags": "money-receive-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-receive-flow-01",
+            "tags": "money-receive-flow-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-receive-flow-02",
+            "tags": "money-receive-flow-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-receive-square",
+            "tags": "earn money, fund money, funding,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-remove-01",
+            "tags": "money-remove-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-remove-02",
+            "tags": "money-remove-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-safe",
+            "tags": "money-safe",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-saving-jar",
+            "tags": "money-saving-jar",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-security",
+            "tags": "safe money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-send-01",
+            "tags": "money-send-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-send-02",
+            "tags": "money-send-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-send-circle",
+            "tags": "send money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-send-flow-01",
+            "tags": "money-send-flow-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-send-flow-02",
+            "tags": "money-send-flow-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "money-send-square",
+            "tags": "send money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "monocle",
+            "tags": "monocle",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "monocle-01",
+            "tags": "One-Eyed Lens, Inspector Lens, Classy Scope, Vintage Eyeglass, Sophisticate Viewer, Dapper Spyglass, Elegant Monocle, Retro Spy Lens, Gentleman's Peep, Classic Eyepiece",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "monster",
+            "tags": "critter, beastie, fiend, creature, monstro, ghoul, sprite, daemon, titan, ogre, chimera, behemoth, leviathan, gremlin, phantom",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "moon",
+            "tags": "Luna, Celestial Orb, Night Sky, Lunar Sphere, Crescent Glow, Midnight Beacon, Astral Globe, Moonlight Emblem, Silver Radiance, Lunar Disk",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "moon-01",
+            "tags": "recognizable: Luna, Celestial Orb, Nighttime Symbol, Lunar Sphere, Crescent, Night Light, Sky Emblem, Astral Globe, Lunar Icon, Moonbeam, Moon",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "moon-02",
+            "tags": "moon, night, lunar, moonlight",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-angled-rain-zap",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow, zap",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-angled-rain",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-angled-zap",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-big-rain",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-fast-wind",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-hailstone",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-little-rain",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-little-snow",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-mid-rain",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-mid-snow",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-slow-wind",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-cloud-snow",
+            "tags": "moon, night, lunar, moonlight, moon wind, moon rain, cloud, snow, cloud snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-eclipse",
+            "tags": "moon, night, lunar, moonlight",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-fast-wind",
+            "tags": "moon, night, lunar, moonlight, moon wind",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-landing",
+            "tags": "lunar-touchdown, celestial-descent, space-landing, orbit-arrival, astral-landing, cosmic-touchdown, star-landing, galaxy-arrival, celestial-landing, space-exploration",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "moonset",
+            "tags": "moon, night, lunar, moonlight, moonset",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "moon-slow-wind",
+            "tags": "moon, night, lunar, moonlight, moon wind",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "more",
+            "tags": "additional, expand, extra, options, further, menu, details, extras, extended, supplementary, additional actions",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "more-01",
+            "tags": "menu, oval",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-02",
+            "tags": "menu, oval",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-03",
+            "tags": "menu, square",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-horizontal",
+            "tags": "horizontal, more",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-horizontal-circle-01",
+            "tags": "horizontal, more",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-horizontal-circle-02",
+            "tags": "horizontal, more, circle",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-horizontal-square-01",
+            "tags": "horizontal, more, square",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-horizontal-square-02",
+            "tags": "horizontal, more, square",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-or-less",
+            "tags": "more-or-less",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "more-or-less-circle",
+            "tags": "more-or-less-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "more-or-less-square",
+            "tags": "more-or-less-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "more-vertical",
+            "tags": "vertical, more",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-vertical-circle-01",
+            "tags": "vertical, more",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-vertical-circle-02",
+            "tags": "more-vertical-circle icon, vertical-options-circle, expand-menu-circle, additional-choices-circle, extra-vertical-circle, extended-settings-circle, supplementary-vertical-circle, menu-expand-circle, added-vertical-circle, more-options-circle",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-vertical-square-01",
+            "tags": "horizontal, more, square",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "more-vertical-square-02",
+            "tags": "vertical, more, square",
+            "category": "menu",
+            "featured": false
+        },
+        {
+            "name": "mortar",
+            "tags": "mortar",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "mortarboard-01",
+            "tags": "student, mentor, graduate,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "mortarboard-02",
+            "tags": "student, mentor, graduate,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "mosque-01",
+            "tags": "mosque-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "mosque-02",
+            "tags": "mosque-02",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "mosque-03",
+            "tags": "mosque-03",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "mosque-04",
+            "tags": "mosque-04",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "mosque-05",
+            "tags": "mosque-05",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "mosque-location",
+            "tags": "mosque-location",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "motion-01",
+            "tags": "motion-01",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "motion-02",
+            "tags": "motion-02",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "motorbike-01",
+            "tags": "motorbike icon, bike, motorcycle, two-wheeler, cycle, motor, chopper, hog, cruiser, ride, two-wheel-drive, motorized bicycle",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "motorbike-02",
+            "tags": "motorbike icon, bike, motorcycle, two-wheeler, cycle, motor, chopper, hog, cruiser, ride, two-wheel-drive, motorized bicycle",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "mountain",
+            "tags": "hill, jabal,",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "mouse-01",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-02",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-03",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-04",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-05",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-06",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-07",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-08",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-09",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-10",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-11",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-12",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-13",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-14",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-15",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-16",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-17",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-18",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-19",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-20",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-21",
+            "tags": "mouse",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-22",
+            "tags": "mouse-22",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "mouse-23",
+            "tags": "mouse-23",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "mouse-left-click-01",
+            "tags": "mouse scroll",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-left-click-02",
+            "tags": "mouse left click, mouse click, mouse left,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-left-click-03",
+            "tags": "mouse left click, mouse click, mouse left,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-left-click-04",
+            "tags": "mouse left click, mouse click, mouse left,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-left-click-05",
+            "tags": "mouse left click, mouse click, mouse left,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-left-click-06",
+            "tags": "mouse left click, mouse click, mouse left,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-right-click-01",
+            "tags": "mouse right click, mouse click, mouse right,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-right-click-02",
+            "tags": "mouse right click, mouse click, mouse right,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-right-click-03",
+            "tags": "mouse, mouse right click",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-right-click-04",
+            "tags": "mouse right click, mouse click, mouse right,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-right-click-05",
+            "tags": "mouse right click, mouse click, mouse right,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-right-click-06",
+            "tags": "mouse right click, mouse click, mouse right,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-scroll-01",
+            "tags": "mouse scroll",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "mouse-scroll-02",
+            "tags": "mouse scroll",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "move",
+            "tags": "move, arrow move, move arrow,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "move-01",
+            "tags": "move-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "move-02",
+            "tags": "move-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "move-bottom",
+            "tags": "move-bottom",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "move-left",
+            "tags": "move-left",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "move-right",
+            "tags": "move-right",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "move-to",
+            "tags": "move-to",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "move-top",
+            "tags": "move-top",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "mp3-01",
+            "tags": "mp3-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "mp-3-02",
+            "tags": "mp-3-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "mp-4-01",
+            "tags": "mp-4-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "mp-4-02",
+            "tags": "mp-4-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "muhammad",
+            "tags": "muhammad",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "multiplication-sign",
+            "tags": "cross, multiplication, math, X",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "multiplication-sign-circle",
+            "tags": "multiplication-sign-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "multiplication-sign-square",
+            "tags": "multiplication-sign-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "mushroom",
+            "tags": "mushroom",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "mushroom-01",
+            "tags": "mushroom-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "music-note-01",
+            "tags": "audio, sound, music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "music-note-02",
+            "tags": "audio, sound, music, listening",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "music-note-03",
+            "tags": "audio, sound, music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "music-note-04",
+            "tags": "audio, sound, music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "music-note-square-01",
+            "tags": "audio, sound, music, square music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "music-note-square-02",
+            "tags": "audio, sound, music, square music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "muslim",
+            "tags": "muslim",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "mute",
+            "tags": "silent symbol, sound off icon, quiet face, muted emoticon, hush symbol, silent expression, mute icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "mymind",
+            "tags": "mymind",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "nano-technology",
+            "tags": "Nano Tech, Molecular Innovation, Microscopic Advancement, Tiny World, Smart Materials, Nano Wonders, Molecular Engineering, Microscale Marvel, Nano Innovations, Subatomic Breakthrough.",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "napkins-01",
+            "tags": "napkins-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "napkins-02",
+            "tags": "napkins-02",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "natural-food",
+            "tags": "natural-food",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "navigation-01",
+            "tags": "navigation",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "navigation-02",
+            "tags": "navigation,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "navigation-03",
+            "tags": "Map, Location, Mobile Navigator Map, Send, Share,",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "navigation-04",
+            "tags": "Compass, Direction, Map, Location, GPS, Navigate, Navigator",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "navigation-05",
+            "tags": "navigation-05",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "navigator-01",
+            "tags": "Road, Street, Highway, Path, Route, Navigator",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "navigator-02",
+            "tags": "Road, Street, Highway, Path, Route, Navigator",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "necklace",
+            "tags": "necklace",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "nerd",
+            "tags": "Brainiac Symbol, Geek Face, Intellectual Icon, Smarty Emoticon, Knowledge Avatar, Thinker Symbol, Brainy Expression, Scholarly Emoji, Wise Visage, Genius Face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "neural-network",
+            "tags": "neural-network",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "neutral",
+            "tags": "balanced face, even-keeled expression, middle-ground symbol, calm emoticon, serene face, equanimous icon, composed emoji, tranquil symbol, impartial emoticon, relaxed face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "new-job",
+            "tags": "find job,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "new-office",
+            "tags": "new-office",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "new-releases",
+            "tags": "new-releases, verify, approval symbol in badge",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "news",
+            "tags": "blog, article, journal, news paper",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "news-01",
+            "tags": "blog, article, news paper",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "new-twitter",
+            "tags": "x, elon, twitter",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "new-twitter-ellipse",
+            "tags": "x, elon, twitter, circle x, circle old twitter",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "new-twitter-rectangle",
+            "tags": "x, elon, twitter, square x",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "next",
+            "tags": "Play Next, playback Hub",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "nike",
+            "tags": "nike",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "nintendo",
+            "tags": "nintendo",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "nintendo-switch",
+            "tags": "nintendo-switch",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "niqab",
+            "tags": "niqab",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "node-add",
+            "tags": "node-add",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "node-edit",
+            "tags": "node-edit",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "node-move-down",
+            "tags": "node-move-down",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "node-move-up",
+            "tags": "node-move-up",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "node-remove",
+            "tags": "node-remove",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "no-internet",
+            "tags": "no-internet",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "no-meeting-room",
+            "tags": "no-meeting-room",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "noodles",
+            "tags": "noodles",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "nose",
+            "tags": "nose",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "no-signal",
+            "tags": "no-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "note",
+            "tags": "note",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "note-01",
+            "tags": "note-01",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "note-02",
+            "tags": "note-02",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "note-03",
+            "tags": "note-03",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "note-04",
+            "tags": "note-04",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "note-05",
+            "tags": "note-05",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "note-add",
+            "tags": "note-add",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "notebook",
+            "tags": "notebook",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "notebook-01",
+            "tags": "notebook-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "notebook-02",
+            "tags": "journal, diary, notepad, jotter, logbook, sketchbook, pad, memo book, record book, writing pad, notebooklet, scribble pad, composition book, exercise book, planner, notebook, note book, note, book",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "note-done",
+            "tags": "note-done",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "note-edit",
+            "tags": "note-edit",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "not-equal-sign",
+            "tags": "not twin, not matching, not equal, not equality",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "not-equal-sign-circle",
+            "tags": "not-equal-sign-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "not-equal-sign-square",
+            "tags": "not-equal-sign-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "note-remove",
+            "tags": "note-remove",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "notification-01",
+            "tags": "Notification, Notifier, Alert, Notice",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-02",
+            "tags": "notification, notifier, alert, bell, notification bell",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-03",
+            "tags": "Notification, Notifier, Alert, notice",
+            "category": "alert-notification",
+            "featured": true
+        },
+        {
+            "name": "notification-block-01",
+            "tags": "Notification block",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-block-02",
+            "tags": "Notification-block",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-block-03",
+            "tags": "notification-block, block notification, notification",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-bubble",
+            "tags": "notification, notifier, Alert, notice, Notification-bubble, Bubble notification",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-circle",
+            "tags": "Notification, Notifier, Alert, Notice, Notification circle",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-off-01",
+            "tags": "notification-off-01",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-off-02",
+            "tags": "Notification off, silent, notification mute",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-off-03",
+            "tags": "Notification-off, Mute-alert, Silence-Indicator, Alert-Silenced, Quiet-Notification, Inactive-Alert, Silent-Alert, Notice-Disabled, Hush-Alert, Notify-Off, Alert-Mute.",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-snooze-01",
+            "tags": "notification-snooze-01",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-snooze-02",
+            "tags": "notification-snooze-02",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-snooze-03",
+            "tags": "Notification-snooze,snooze-bell,",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notification-square",
+            "tags": "notification, notifier, alert, notice, notification-square",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "notion-01",
+            "tags": "notion-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "notion-02",
+            "tags": "notion-02",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "npm",
+            "tags": "npm",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "n-th-root",
+            "tags": "n-th-root",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "n-th-root-circle",
+            "tags": "n-th-root-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "n-th-root-square",
+            "tags": "n-th-root-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "nuclear-power",
+            "tags": "nuclear power, nuclear",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "nut",
+            "tags": "nut",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "obtuse",
+            "tags": "wide, obtuse,",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "octagon",
+            "tags": "octagon",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "octopus",
+            "tags": "octopus",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "office",
+            "tags": "office",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "office-365",
+            "tags": "office-365",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "office-chair",
+            "tags": "office-chair",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "oil-barrel",
+            "tags": "oil barrel, oil, barrel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "ok-finger",
+            "tags": "ok-finger",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "olympic-torch",
+            "tags": "olympic-torch",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "online-learning-01",
+            "tags": "online-learning-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "online-learning-02",
+            "tags": "online-learning-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "online-learning-03",
+            "tags": "online-learning-03",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "online-learning-04",
+            "tags": "online-learning-04",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "open-caption",
+            "tags": "open-caption",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "option",
+            "tags": "option",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "orange",
+            "tags": "orange",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "orbit-01",
+            "tags": "circulate, cycle, revolve, spin, whirl, loop, rotate, gyrate, spiral, twirl",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "orbit-02",
+            "tags": "circulate, cycle, revolve, spin, whirl, loop, rotate, gyrate, spiral, twirl",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "organic-food",
+            "tags": "organic-food",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "orthogonal-edge",
+            "tags": "orthogonal-edge",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "oval",
+            "tags": "oval",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "oven",
+            "tags": "oven",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "package",
+            "tags": "shipping, package, parcel, box",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-02",
+            "tags": "package-02",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-03",
+            "tags": "package-03",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-add",
+            "tags": "shipping add, package add, parcel add, box add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-delivered",
+            "tags": "shipped, package delivered, parcel delivered, box delivered",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-dimensions-01",
+            "tags": "package-dimensions-01",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-dimensions-02",
+            "tags": "package-dimensions-02",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-moving",
+            "tags": "shipping moving, package moving, parcel moving, box moving",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-open",
+            "tags": "shipping open, package open, parcel open, box open",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-out-of-stock",
+            "tags": "shipping\n, package, parcel, box",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-process",
+            "tags": "shipping process, package process, parcel process, box process",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-receive",
+            "tags": "shipping receive, package receive, parcel receive, box receive",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-remove",
+            "tags": "shipping remove, package remove, parcel remove, box remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-search",
+            "tags": "shipping search, package search, parcel, box",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "package-sent",
+            "tags": "shipping sent, package sent, parcel sent, box sent",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "packaging",
+            "tags": "packaging",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "pacman-01",
+            "tags": "pacman-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "pacman-02",
+            "tags": "pacman-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "paella",
+            "tags": "paella",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "paint-board",
+            "tags": "Color Canvas, Art Palette, Drawing Surface, Sketch Pad, Creative Board, Paint Palette, Design Canvas, Artistic Panel, Visual Board, Drawing Board, Paint Board, Colors",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "paint-brush-01",
+            "tags": "drawing tool, artistic brush, paint tool, creative brush, brush stroke, design brush, art pencil, coloring brush, painter's tool, canvas brush, brush icon, paint brush, brush paint",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paint-brush-02",
+            "tags": "drawing tool, artistic brush, paint tool, creative brush, brush stroke, design brush, art pencil, coloring brush, painter's tool, canvas brush, brush icon, paint brush, brush paint",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paint-brush-03",
+            "tags": "drawing tool, artistic brush, paint tool, creative brush, brush stroke, design brush, art pencil, coloring brush, painter's tool, canvas brush, brush icon, paint brush, brush paint",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paint-brush-04",
+            "tags": "drawing tool, artistic brush, paint tool, creative brush, brush stroke, design brush, art pencil, coloring brush, painter's tool, canvas brush, brush icon, paint brush, brush paint",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paint-bucket",
+            "tags": "ill Tool, Color Fill, Paint Can, Bucket Fill, Ink Fill, Color Bucket, Fill Bucket, Paint Fill, Solid Fill, Colorize, Paint Bucket, Bucket Paint, Paint, Bucket",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pan-01",
+            "tags": "pan-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "pan-02",
+            "tags": "pan-02",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "pan-03",
+            "tags": "pan-03",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "parabola-01",
+            "tags": "curve, parabola, arc, mathematical, geometric",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "parabola-02",
+            "tags": "curve, parabola, arc, mathematical, geometric",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "parabola-03",
+            "tags": "curve, parabola, arc, mathematical, geometric",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "paragliding",
+            "tags": "paragliding",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "paragraph",
+            "tags": "text block, content section, body of text, narrative, passage, textual segment, written excerpt, discourse snippet, composition, script section, block of writing, prose excerpt, paragraph",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paragraph-bullets-point-01",
+            "tags": "paragraph-bullets-point-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paragraph-bullets-point-02",
+            "tags": "paragraph-bullets-point-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "paragraph-spacing",
+            "tags": "paragraph-spacing",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "parallelogram",
+            "tags": "parallelogram",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "parking-area-circle",
+            "tags": "parking-area-circle icon, parking-circle, vehicle-spot-circle, car-space-round, auto-zone-circle, parking-lot-circle, car-park-circle, vehicle-area-round, automobile-space-circle",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "parking-area-square",
+            "tags": "parking-area-square icon, parking-square, vehicle-park, parking-spot-square, car-space, square-parking, auto-zone, parking-lot-square, car-park, square-lot, automobile-area",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "party",
+            "tags": "party",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "passport",
+            "tags": "ID,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "passport-01",
+            "tags": "passport-01",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "passport-expired",
+            "tags": "passport-expired",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "passport-valid",
+            "tags": "ID,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "password-validation",
+            "tags": "password-validation",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "path",
+            "tags": "path",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-crop",
+            "tags": "pathfinder-crop",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-divide",
+            "tags": "pathfinder-divide",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-exclude",
+            "tags": "pathfinder-exclude",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-intersect",
+            "tags": "pathfinder-intersect",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-merge",
+            "tags": "pathfinder-merge",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-minus-back",
+            "tags": "pathfinder-minus-back",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-minus-front",
+            "tags": "pathfinder-minus-front",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-outline",
+            "tags": "pathfinder-outline",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-trim",
+            "tags": "pathfinder-trim",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pathfinder-unite",
+            "tags": "pathfinder-unite",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "patient",
+            "tags": "patient",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "patio",
+            "tags": "patio",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "pause",
+            "tags": "Pause, Media Library",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "pause-circle",
+            "tags": "pause-circle",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "pavilon",
+            "tags": "pavilon",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "pay-by-check",
+            "tags": "agreement,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "payment-01",
+            "tags": "payment-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "payment-02",
+            "tags": "payment-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "payment-success-01",
+            "tags": "payment-success-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "payment-success-02",
+            "tags": "payment-success-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "payoneer",
+            "tags": "payoneer",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "paypal",
+            "tags": "paypal",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "pdf-01",
+            "tags": "pdf-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "pdf-02",
+            "tags": "pdf-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "peer-to-peer-01",
+            "tags": "peer-to-peer-01",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "peer-to-peer-02",
+            "tags": "peer-to-peer-02",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "peer-to-peer-03",
+            "tags": "peer-to-peer-03",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "pen-01",
+            "tags": "pen-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pen-02",
+            "tags": "pen-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pencil",
+            "tags": "pencil",
+            "category": "education",
+            "featured": true
+        },
+        {
+            "name": "pencil-edit-01",
+            "tags": "Edit Tool, Write Edit, Modify Pencil, Update Icon, Change Pen, Revise Marker, Amend Writing, Alteration Symbol, Redact Instrument, Adjust Notation, Corrective Graphite, Revamp Quill, Pencil Edit, Edit Pencil, Edit, Pencil",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pencil-edit-02",
+            "tags": "Edit Tool, Write Edit, Modify Pencil, Update Icon, Change Pen, Revise Marker, Amend Writing, Alteration Symbol, Redact Instrument, Adjust Notation, Corrective Graphite, Revamp Quill, Pencil Edit, Edit Pencil, Edit, Pencil",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pen-connect-bluetooth",
+            "tags": "pen-connect-bluetooth",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "pen-connect-usb",
+            "tags": "pen-connect-usb",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "pen-connect-wifi",
+            "tags": "pen-connect-wifi",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "pendulum",
+            "tags": "swing, oscillator, swayer, rhythmic motion, bob, timekeeper, metronome, back-and-forth, sway, tictoc, arc-motion, balance-swing, pendular movement",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "pensive",
+            "tags": "Reflective Face, Thoughtful Expression, Contemplative Symbol, Meditative Icon, Pondering Emoticon, Melancholic Face, Considerate Emoji, Introspective Symbol, Brooding Icon, Musing Emoticon, Reflecting Face, and Thoughtful Emo",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "pentagon",
+            "tags": "pentagon",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "pentagon-01",
+            "tags": "pentagon-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "pen-tool-01",
+            "tags": "writing instrument, marker tool, drawing pen, freehand tool, sketch tool, pencil icon, creative pen, drafting tool, annotation tool, digital pen, artistic tool, line tool, pentool, pen tool, pen, tool, tool pen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pen-tool-02",
+            "tags": "writing instrument, marker tool, drawing pen, freehand tool, sketch tool, pencil icon, creative pen, drafting tool, annotation tool, digital pen, artistic tool, line tool, pentool, pen tool, pen, tool, tool pen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pen-tool-03",
+            "tags": "writing instrument, marker tool, drawing pen, freehand tool, sketch tool, pencil icon, creative pen, drafting tool, annotation tool, digital pen, artistic tool, line tool, pentool, pen tool, pen, tool, tool pen",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pen-tool-add",
+            "tags": "pen-tool-add",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pen-tool-minus",
+            "tags": "pen-tool-minus",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "percent",
+            "tags": "numeric, proportion, ratio, fraction, relative value, share, percent",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "percent-circle",
+            "tags": "percent-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "percent-square",
+            "tags": "percent-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "perfume",
+            "tags": "perfume",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "periscope",
+            "tags": "periscope",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "permanent-job",
+            "tags": "full time job, in house job,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "perplexity-ai",
+            "tags": "perplexity-ai",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "perspective",
+            "tags": "perspective",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "petrol-pump",
+            "tags": "petrol-pump",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "pexels",
+            "tags": "pexels",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "phone-off-01",
+            "tags": "phone-off-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "phone-off-02",
+            "tags": "phone-off-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "php",
+            "tags": "php",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "physics",
+            "tags": "physics",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "pi",
+            "tags": "pi",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "picasa",
+            "tags": "picasa",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "pi-circle",
+            "tags": "pi-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "pickup-01",
+            "tags": "pickup icon, grab, collect, acquire, retrieve, select, gather, snatch, procure, obtain, harvest",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "pickup-02",
+            "tags": "pickup icon, grab, collect, acquire, retrieve, select, gather, snatch, procure, obtain, harvest",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "picture-in-picture-exit",
+            "tags": "picture-in-picture-exit",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "picture-in-picture-on",
+            "tags": "picture-in-picture-on",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pie",
+            "tags": "pie",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "pie-chart",
+            "tags": "pie-chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-01",
+            "tags": "pie-chart-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-02",
+            "tags": "pie-chart-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-03",
+            "tags": "pie-chart-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-04",
+            "tags": "pie-chart-04",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-05",
+            "tags": "pie-chart-05",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-06",
+            "tags": "pie-chart-06",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-07",
+            "tags": "pie-chart-07",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-08",
+            "tags": "pie-chart-08",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-09",
+            "tags": "pie-chart-09",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pie-chart-square",
+            "tags": "pie-chart-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "piggy-bank",
+            "tags": "piggy-bank",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pin",
+            "tags": "Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "pin-02",
+            "tags": "pin-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pin-code",
+            "tags": "pin-code",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "pine-tree",
+            "tags": "pine-tree",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "pin-location-01",
+            "tags": "Destination, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "pin-location-02",
+            "tags": "Destination, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "pin-location-03",
+            "tags": "Destination, Pin",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "pin-off",
+            "tags": "Pin, Pin Off",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "pinterest",
+            "tags": "pinterest",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "pipeline",
+            "tags": "pipeline",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "pisa-tower",
+            "tags": "pisa-tower",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "pi-square",
+            "tags": "pi-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "pivot",
+            "tags": "pivot",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "pizza-01",
+            "tags": "pizza-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "pizza-02",
+            "tags": "pizza-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "pizza-03",
+            "tags": "pizza-03",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "pizza-04",
+            "tags": "pizza-04",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "pizza-cutter",
+            "tags": "pizza-cutter",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "plane",
+            "tags": "plane icon, aircraft, jet, airplane, flying machine, air shuttle, sky cruiser, aerial vehicle, winged transport, aviation craft, air travel symbol",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "plant-01",
+            "tags": "plant-01",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plant-02",
+            "tags": "plant-02",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plant-03",
+            "tags": "plant-03",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plant-04",
+            "tags": "plant-04",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plate",
+            "tags": "plate",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "plaxo",
+            "tags": "plaxo",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "play",
+            "tags": "Play",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "play-circle",
+            "tags": "play-circle",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-circle-02",
+            "tags": "play-circle-02",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "play-list",
+            "tags": "play-list",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "playlist-01",
+            "tags": "Playlist, music, Media Library",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "playlist-02",
+            "tags": "Playlist, music, Media Library",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "playlist-03",
+            "tags": "Playlist, music, Media Library",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "play-list-add",
+            "tags": "play-list-add",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-list-favourite-01",
+            "tags": "play-list-favourite-01",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-list-favourite-02",
+            "tags": "play-list-favourite-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-list-minus",
+            "tags": "play-list-minus",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-list-remove",
+            "tags": "play-list-remove",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-square",
+            "tags": "play-square",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "play-store",
+            "tags": "play-store",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "plaza",
+            "tags": "plaza",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "plug-01",
+            "tags": "plug",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plug-02",
+            "tags": "plug round",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plug-socket",
+            "tags": "socket, plug socket",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "plus-minus",
+            "tags": "plus-minus",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "plus-minus-01",
+            "tags": "plus minus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-minus-02",
+            "tags": "plus minus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-minus-circle-01",
+            "tags": "plus-minus-circle-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-minus-circle-02",
+            "tags": "plus-minus-circle-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-minus-square-01",
+            "tags": "plus-minus-square-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-minus-square-02",
+            "tags": "plus-minus-square-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-sign",
+            "tags": "add, plus",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-sign-circle",
+            "tags": "plus-sign-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "plus-sign-square",
+            "tags": "plus-sign-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "png-01",
+            "tags": "png-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "png-02",
+            "tags": "png-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "podcast",
+            "tags": "podcast",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "podium",
+            "tags": "podium",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-01",
+            "tags": "pointing-left-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-02",
+            "tags": "pointing-left-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-03",
+            "tags": "pointing-left-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-04",
+            "tags": "pointing-left-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-05",
+            "tags": "pointing-left-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-06",
+            "tags": "pointing-left-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-07",
+            "tags": "pointing-left-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-left-08",
+            "tags": "pointing-left-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-01",
+            "tags": "pointing-right-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-02",
+            "tags": "pointing-right-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-03",
+            "tags": "pointing-right-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-04",
+            "tags": "pointing-right-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-05",
+            "tags": "pointing-right-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-06",
+            "tags": "pointing-right-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-07",
+            "tags": "pointing-right-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pointing-right-08",
+            "tags": "pointing-right-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "pokeball",
+            "tags": "pokeball",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "pokemon",
+            "tags": "pokemon",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "police-badge",
+            "tags": "police-badge",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "police-cap",
+            "tags": "police-cap",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "police-car",
+            "tags": "cop-car, law-enforcement-vehicle, patrol-car, cruiser, squad-car, lawman-auto, copmobile, enforcement-vehicle",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "police-station",
+            "tags": "police-station",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "policy",
+            "tags": "policy",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "polygon",
+            "tags": "polygon",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "poly-tank",
+            "tags": "poly-tank",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "pool",
+            "tags": "pool",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "pool-table",
+            "tags": "pool-table",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "poop",
+            "tags": "poop",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "popcorn",
+            "tags": "popcorn",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "pot-01",
+            "tags": "pot-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "pot-02",
+            "tags": "pot-02",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "potion",
+            "tags": "potion",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "pound",
+            "tags": "pound",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pound-circle",
+            "tags": "pound-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pound-receive",
+            "tags": "pound-receive",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pound-send",
+            "tags": "pound-send",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "pound-square",
+            "tags": "pound-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "power-service",
+            "tags": "power service, service, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "power-socket-01",
+            "tags": "power socket, socket",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "power-socket-02",
+            "tags": "power socket, socket",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "ppt-01",
+            "tags": "ppt-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "ppt-02",
+            "tags": "ppt-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "prawn",
+            "tags": "prawn",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "prayer-rug-01",
+            "tags": "prayer-rug-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "prayer-rug-02",
+            "tags": "prayer-rug-02",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "preference-horizontal",
+            "tags": "filter horizontal, filter, purifier, refine",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "preference-vertical",
+            "tags": "preference vertical",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "prescription",
+            "tags": "prescription",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "presentation-01",
+            "tags": "presentation-01",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-02",
+            "tags": "presentation-02",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-03",
+            "tags": "presentation-03",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-04",
+            "tags": "presentation-04",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-05",
+            "tags": "presentation-05",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-06",
+            "tags": "presentation-06",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-07",
+            "tags": "presentation-07",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-bar-chart-01",
+            "tags": "presentation-bar-chart-01",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-bar-chart-02",
+            "tags": "presentation-bar-chart-02",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-line-chart-01",
+            "tags": "presentation-line-chart-01",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-line-chart-02",
+            "tags": "presentation-line-chart-02",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-online",
+            "tags": "presentation-online",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "presentation-podium",
+            "tags": "presentation-podium",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "previous",
+            "tags": "Play, Previous",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "printer",
+            "tags": "printer",
+            "category": "devices",
+            "featured": true
+        },
+        {
+            "name": "printer-off",
+            "tags": "printer-off",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "prism",
+            "tags": "prism",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "prism-01",
+            "tags": "colorbeam, spectrumflare, lightsplit, chromalens, rainbowray, huebeam, spectrumfocus, prismalight",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "prison",
+            "tags": "prison",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "prisoner",
+            "tags": "career, business career,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "prison-guard",
+            "tags": "career, business career,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "product-loading",
+            "tags": "product loading, product",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "profile",
+            "tags": "user, account, person, avatar, identity, portrait, my info, personal, my account, user info, character, individual, persona, user profile, my profile, member, account settings, user details, profile, profile information",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "profile-02",
+            "tags": "profile-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "profit",
+            "tags": "earnings, gains, revenue, income, returns, wealth, surplus, benefit, advantage, proceeds, winnings, win, profit",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "programming-flag",
+            "tags": "programming-flag",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "progress",
+            "tags": "progress",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "progress-01",
+            "tags": "progress-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "progress-02",
+            "tags": "progress-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "progress-03",
+            "tags": "progress-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "progress-04",
+            "tags": "progress-04",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "projector",
+            "tags": "projector",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "projector-01",
+            "tags": "projector-01",
+            "category": "presentation",
+            "featured": false
+        },
+        {
+            "name": "promotion",
+            "tags": "marketing, announce, promotion",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "property-add",
+            "tags": "property-add",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "property-delete",
+            "tags": "property-delete",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "property-edit",
+            "tags": "property-edit",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "property-new",
+            "tags": "property-new",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "property-search",
+            "tags": "property-search",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "property-view",
+            "tags": "property-view",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "protection-mask",
+            "tags": "protection-mask",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "pulley",
+            "tags": "rope wheel, lifting gear, hoist wheel, cable roller, elevation wheel, traction disc, draw wheel, tension wheel, guiding reel, lifting pulley",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "pulse-01",
+            "tags": "pulse-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "pulse-02",
+            "tags": "pulse-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "pulse-rectangle-01",
+            "tags": "pulse-rectangle-01",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "pulse-rectangle-02",
+            "tags": "pulse-rectangle-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "pumpkin",
+            "tags": "pumpkin",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "punch",
+            "tags": "punch",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "punching-ball-01",
+            "tags": "punching-ball-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "punching-ball-02",
+            "tags": "punching-ball-02",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "purse",
+            "tags": "handbag, clutch, wallet, pouch, satchel, tote, pocketbook, baguette, billfold, carryall, reticule, moneybag, knapsack, duffel, coin purse, bitcoin purse, purse, wallet",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "purse-01",
+            "tags": "purse-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "push-up-bar",
+            "tags": "push-up-bar",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "puzzle",
+            "tags": "puzzle",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "pyramid",
+            "tags": "pyramid",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "pyramid-maslowo",
+            "tags": "pyramid-maslowo",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "pyramid-structure-01",
+            "tags": "pyramid-structure-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "pyramid-structure-02",
+            "tags": "pyramid-structure-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "python",
+            "tags": "python",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "qq-plot",
+            "tags": "qq-plot",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "qr-code",
+            "tags": "qr-code",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "qr-code-01",
+            "tags": "qr-code-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "question",
+            "tags": "support,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "queue-01",
+            "tags": "queue-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "queue-02",
+            "tags": "queue-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quill-write-01",
+            "tags": "Feather,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quill-write-02",
+            "tags": "feather,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quiz-01",
+            "tags": "quiz-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "quiz-02",
+            "tags": "quiz-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "quiz-03",
+            "tags": "quiz-03",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "quiz-04",
+            "tags": "quiz-04",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "quiz-05",
+            "tags": "quiz-05",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "quora",
+            "tags": "quora",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "quote-down",
+            "tags": "quote-down",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quote-down-circle",
+            "tags": "quote-down-circle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quote-down-square",
+            "tags": "quote-down-square",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quotes",
+            "tags": "quotes",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quote-up",
+            "tags": "quote-up",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quote-up-circle",
+            "tags": "quote-up-circle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quote-up-square",
+            "tags": "quote-up-square",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "quran-01",
+            "tags": "quran-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "quran-02",
+            "tags": "quran-02",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "quran-03",
+            "tags": "quran-03",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "racing-flag",
+            "tags": "racing-flag",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "radar-01",
+            "tags": "Direction, Position Tracker, Radar, Target Locator",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "radar-02",
+            "tags": "Direction, Position Tracker, Radar, Target Locator",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "radial",
+            "tags": "radial",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "radio",
+            "tags": "Radio, Wireless Signal, Radio Waves, Broadcast, Audio Device, Antenna",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "radio-01",
+            "tags": "radio-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "radio-02",
+            "tags": "radio-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "radioactive-alert",
+            "tags": "radioactive-alert",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "radio-button",
+            "tags": "radio-button",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "radius",
+            "tags": "radius",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "rain",
+            "tags": "rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "rainbow",
+            "tags": "rainbow, color",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "rain-double-drop",
+            "tags": "rain, rain drop, drop",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "rain-drop",
+            "tags": "rain, rain drop, drop",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "ramadhan-01",
+            "tags": "ramadhan-01",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "ramadhan-02",
+            "tags": "ramadhan-02",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "ramadhan-month",
+            "tags": "ramadhan-month",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "ranking",
+            "tags": "ranking",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "raw-01",
+            "tags": "raw-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "raw-02",
+            "tags": "raw-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "re",
+            "tags": "re",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "re:",
+            "tags": "re:",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "react",
+            "tags": "react",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "real-estate-01",
+            "tags": "real-estate-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "real-estate-02",
+            "tags": "real-estate-02",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "receipt-dollar",
+            "tags": "receipt-dollar",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "record",
+            "tags": "Capture, Audio Memo, Start Recording, Voice Note, Red Dot, Sound Recording, Record Button, Capture Audio, Voice Recording",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "recovery-mail",
+            "tags": "recovery-mail",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "rectangular",
+            "tags": "rectangular",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "rectangular-01",
+            "tags": "rectangular-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "recycle-01",
+            "tags": "recycle",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "recycle-02",
+            "tags": "recycle",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "recycle-03",
+            "tags": "recycle",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "reddit",
+            "tags": "reddit",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "redo",
+            "tags": "redo",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "redo-02",
+            "tags": "redo-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "redo-03",
+            "tags": "redo-03",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "reflex",
+            "tags": "reflex, Instant, prompt",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "refresh",
+            "tags": "refresh",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "refrigerator",
+            "tags": "refrigerator",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "register",
+            "tags": "register",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "registered",
+            "tags": "registered",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "relieved-01",
+            "tags": "Happy Relief, Content Face, Stress-Free Smile, Relaxation Expression, Calm Emoji, Sigh of Relief, Tranquil Grin, Eased Emoticon, Serene Symbol, Unburdened Face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "relieved-02",
+            "tags": "Happy Relief, Content Face, Stress-Free Smile, Relaxation Expression, Calm Emoji, Sigh of Relief, Tranquil Grin, Eased Emoticon, Serene Symbol, Unburdened Face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "reload",
+            "tags": "reload",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "reminder",
+            "tags": "reminder",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "remote-control",
+            "tags": "remote-control",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "remove-01",
+            "tags": "Remove, Minus, Minimize, Decrease Size, hide arrow,",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "remove-02",
+            "tags": "remove, minus, minimize, decrease size, hide arrow",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "remove-circle",
+            "tags": "remove, minus, minimize, decrease size, hide Arrow, remove circle, minus-circle",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "remove-circle-half-dot",
+            "tags": "remove, minus, minimize, decrease size, hide Arrow, remove circle, minus-circle, minus-circle-half-dot",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "remove-female",
+            "tags": "remove-female",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "remove-male",
+            "tags": "remove-male",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "remove-pi",
+            "tags": "remove-pi",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "remove-square",
+            "tags": "remove, minus, minimize, decrease size, hide arrow, remove-square, minus-square",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "renewable-energy",
+            "tags": "energy, renewable energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "renewable-energy-01",
+            "tags": "save energy, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "repair",
+            "tags": "repair",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "repeat",
+            "tags": "replay, loop, refresh, recycle, redo, replay arrow, cyclic, reoccur, iterate, repeat, recurrence",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "repeat-off",
+            "tags": "replay, loop, refresh, recycle, redo, replay arrow, cyclic, reoccur, iterate, repeat, recurrence,  repeat off, repeat close, repeat cancel",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "repeat-one-01",
+            "tags": "replay, loop, refresh, recycle, redo, replay arrow, cyclic, reoccur, iterate, repeat, recurrence",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "repeat-one-02",
+            "tags": "replay, loop, refresh, recycle, redo, replay arrow, cyclic, reoccur, iterate, repeat, recurrence",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "replay",
+            "tags": "replay",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "repository",
+            "tags": "repository",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "reset-password",
+            "tags": "reset-password",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "resize-01",
+            "tags": "resize-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "resize-02",
+            "tags": "resize-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "resize-field",
+            "tags": "resize-field",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "resize-field-rectangle",
+            "tags": "resize-field-rectangle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "resources-add",
+            "tags": "resources-add",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "resources-remove",
+            "tags": "resources-remove",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "restaurant",
+            "tags": "restaurant",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "restaurant-01",
+            "tags": "restaurant-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "restaurant-02",
+            "tags": "restaurant-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "restaurant-03",
+            "tags": "restaurant-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "restaurant-table",
+            "tags": "restaurant-table",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "restore-bin",
+            "tags": "restore-bin, bin-restore, recycle-restore, trash-recover, bin-undo, archive-restore,",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "return-request",
+            "tags": "return-request",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "reverse-withdrawal-01",
+            "tags": "reverse-withdrawal-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "reverse-withdrawal-02",
+            "tags": "reverse-withdrawal-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "rhombus",
+            "tags": "rhombus",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "rhombus-01",
+            "tags": "rhombus-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "rice-bowl-01",
+            "tags": "rice-bowl-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "rice-bowl-02",
+            "tags": "rice-bowl-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "right-angle",
+            "tags": "arrowhead, angle, Angular, Arrow",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "right-to-left-block-quote",
+            "tags": "right-to-left-block-quote",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "right-to-left-list-bullet",
+            "tags": "right-to-left-list-bullet",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "right-to-left-list-dash",
+            "tags": "right-to-left-list-dash",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "right-to-left-list-number",
+            "tags": "right-to-left-list-number",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "right-to-left-list-triangle",
+            "tags": "right-to-left-list-triangle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "right-triangle",
+            "tags": "triangle, trigon",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "ripple",
+            "tags": "ripple",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "riyal",
+            "tags": "riyal",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "riyal-rectangle",
+            "tags": "riyal-rectangle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "road",
+            "tags": "road icon path, highway, route, street, thoroughfare, avenue, boulevard, freeway, expressway, roadway, lane, way",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "road-01",
+            "tags": "Road, Street, Highway, Path, Route",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "road-02",
+            "tags": "Road, Street, Highway, Path, Route",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "road-location-01",
+            "tags": "Map, Location, Destination, Pin, Position Tracker, Road, Path",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "road-location-02",
+            "tags": "Map, Location, Destination, Pin, Position Tracker, Road, Path",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "road-wayside",
+            "tags": "Road, Path, Road Wayside, Highway",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "robot-01",
+            "tags": "robot-01",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "robot-02",
+            "tags": "robot-02",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "robotic",
+            "tags": "robotic",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "rocket",
+            "tags": "rocket icon boost, soar, jet, propel, shuttle, launch, spacecraft, zoom, blast, fly",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "rocket-01",
+            "tags": "Spacecraft, Jet, Galactic Ship, Speeder, Blast-off, Falcon, Orbiter, Cosmic Cruiser, Rocketeer, Star Voyager, Lunar Lander, Celestial Navigator, Astronavigator, Meteor Mover, Stellar Shuttle, Astro Blaster, Comet Cruiser, Nebula Navigator, Interstellar Transporter, Supernova Soarer",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "rocket-02",
+            "tags": "Spacecraft, Jet, Galactic Ship, Speeder, Blast-off, Falcon, Orbiter, Cosmic Cruiser, Rocketeer, Star Voyager, Lunar Lander, Celestial Navigator, Astronavigator, Meteor Mover, Stellar Shuttle, Astro Blaster, Comet Cruiser, Nebula Navigator, Interstellar Transporter, Supernova Soarer",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "rocking-chair",
+            "tags": "rocking-chair",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "rocking-horse",
+            "tags": "rocking-horse",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "roller-skate",
+            "tags": "roller-skate",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "rolling-pin",
+            "tags": "rolling-pin",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "root-01",
+            "tags": "root-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "root-02",
+            "tags": "root-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "root-1st-bracket",
+            "tags": "root-1st-bracket",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "root-2nd-bracket",
+            "tags": "root-2nd-bracket",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "root-3rd-bracket",
+            "tags": "root-3rd-bracket",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "root-circle",
+            "tags": "root-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "rotate-01",
+            "tags": "rotate-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-02",
+            "tags": "rotate-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-360",
+            "tags": "rotate-360",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-bottom-left",
+            "tags": "rotate-bottom-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-bottom-right",
+            "tags": "rotate-bottom-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-clockwise",
+            "tags": "rotate-clockwise",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-crop",
+            "tags": "rotate-crop",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-left-01",
+            "tags": "rotate-left-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-left-02",
+            "tags": "rotate-left-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-left-03",
+            "tags": "rotate-left-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-left-04",
+            "tags": "rotate-left-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-left-05",
+            "tags": "rotate-left-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-left-06",
+            "tags": "rotate-left-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-right-01",
+            "tags": "rotate-right-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-right-02",
+            "tags": "rotate-right-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-right-03",
+            "tags": "rotate-right-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-right-04",
+            "tags": "rotate-right-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-right-05",
+            "tags": "rotate-right-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-right-06",
+            "tags": "rotate-right-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "rotate-square",
+            "tags": "rotate-square",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-top-left",
+            "tags": "rotate-top-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rotate-top-right",
+            "tags": "rotate-top-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "route-01",
+            "tags": "Map, Location, GPS, Navigate, Destination, Route Planner, Position Tracker, Road, Path",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "route-02",
+            "tags": "Map, Location, GPS, Navigate, Destination, Route Planner, Position Tracker, Road, Path",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "route-03",
+            "tags": "Map, Location, GPS, Navigate, Destination, Route Planner, Position Tracker, Road, Path",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "route-block",
+            "tags": "Navigate, Destination, Road, Path, Route Block, Road Cancel",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "router",
+            "tags": "router",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "router-01",
+            "tags": "router-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "router-02",
+            "tags": "router-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "row-delete",
+            "tags": "row-delete",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "row-insert",
+            "tags": "row-insert",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "rss",
+            "tags": "rss",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "rss-connected-01",
+            "tags": "rss-connected-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "rss-connected-02",
+            "tags": "rss-connected-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "rss-error",
+            "tags": "rss-error",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "rss-locked",
+            "tags": "rss-locked",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "rss-unlocked",
+            "tags": "rss-unlocked",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "rubber-duck",
+            "tags": "rubber-duck",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "rub-el-hizb",
+            "tags": "rub-el-hizb",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "rubik's-cube",
+            "tags": "rubik's-cube",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "rubiks-cube",
+            "tags": "rubiks-cube",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "ruku",
+            "tags": "ruku",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "ruler",
+            "tags": "ruler",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "running-shoes",
+            "tags": "running-shoes",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "sad-01",
+            "tags": "frowning face, unhappy icon, sorrow symbol, teary-eyed emoticon, gloomy face, downcast smiley, melancholic symbol, upset emoji, despondent icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sad-02",
+            "tags": "frowning face, unhappy icon, sorrow symbol, teary-eyed emoticon, gloomy face, downcast smiley, melancholic symbol, upset emoji, despondent icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sad-dizzy",
+            "tags": "Miserable-Spin, Unhappy-Daze, Gloomy-Whirl, Melancholy-Spin, Sorrowful-Dizzy, Despondent-Whirl, Doleful-Spin, Dejected-Daze, Woeful-Whirl, Blue-Dizzy",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "safari",
+            "tags": "safari",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "safe",
+            "tags": "safe",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "safe-delivery-01",
+            "tags": "delivery, delivered",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "safe-delivery-02",
+            "tags": "delivery, delivered",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "safety-pin-01",
+            "tags": "safety-pin-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "safety-pin-02",
+            "tags": "safety-pin-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "sailboat-coastal",
+            "tags": "vessel, sail, sailboat, sailer",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sailboat-offshore",
+            "tags": "vessel, sail, sailboat, sailer",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sakura",
+            "tags": "sakura",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "salah",
+            "tags": "salah",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "salah-time",
+            "tags": "salah-time",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "sale-tag-01",
+            "tags": "sale tag, offer, discount, tag",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "sale-tag-02",
+            "tags": "sale tag, offer, discount, tag",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "sandals",
+            "tags": "sandals",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "satellite",
+            "tags": "satellite",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "satellite-01",
+            "tags": "orbiter, space probe, cosmic beacon, celestial tracker, orbit watcher, starcom, space sentinel, astral guide, galaxy eye, cosmos link",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "satellite-02",
+            "tags": "orbiter, space probe, cosmic beacon, celestial tracker, orbit watcher, starcom, space sentinel, astral guide, galaxy eye, cosmos link",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "satellite-03",
+            "tags": "satellite-03",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "saturn",
+            "tags": "Ringed Planet, Celestial Ring, Cosmic Hoop, Galactic Loop, Planetary Halo, Stellar Orbit, Space Circlet, Astral Ring, Universe Wheel, Nebula Band, Starry Loop, Orbital Halo, Infinity Ring, Saturn",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "saturn-01",
+            "tags": "Ringed Planet, Cosmic Circle, Celestial Hoop, Orbiting World, Galactic Loop, Space Ring, Planetary Loop, Stellar Ring, Astral Loop, Heavenly Circle",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "saturn-02",
+            "tags": "Ringed Planet, Cosmic Circle, Celestial Hoop, Orbiting World, Galactic Loop, Space Ring, Planetary Loop, Stellar Ring, Astral Loop, Heavenly Circle",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "sausage",
+            "tags": "sausage",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "save-energy-01",
+            "tags": "save energy, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "save-energy-02",
+            "tags": "save energy, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "save-money-dollar",
+            "tags": "save-money-dollar",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "save-money-euro",
+            "tags": "save-money-euro",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "save-money-pound",
+            "tags": "save-money-pound",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "save-money-yen",
+            "tags": "save-money-yen",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "savings",
+            "tags": "savings",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "scheme",
+            "tags": "scheme",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "school",
+            "tags": "school",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "school-01",
+            "tags": "school-01",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "school-bell-01",
+            "tags": "school-bell-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "school-bell-02",
+            "tags": "school-bell-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "school-bus",
+            "tags": "school-bus icon bus-school, education-bus, yellow-bus, learning-transport, student-shuttle, academic-bus, kids-bus, classroom-transport, scholar-bus, education-shuttle",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "school-report-card",
+            "tags": "school-report-card",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "school-tie",
+            "tags": "mentor, instructor, professor, academic, coach, facilitator, career, business career, teacher,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "scissor",
+            "tags": "scissor",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "scissor-01",
+            "tags": "scissors, cutting , shears, snippers, clipper, trimmer, sharp blade, blade, tailor's, precision cutter, craft, snipping, shear",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "scissor-rectangle",
+            "tags": "scissor-rectangle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "scooter-01",
+            "tags": "scooter icon, kickboard, two-wheeler, motorized board, ride-on, push scooter, wheeled glide, urban mover, roll board, sidewalk cruiser, electric kick, swift glide",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "scooter-02",
+            "tags": "scooter icon, kickboard, two-wheeler, motorized board, ride-on, push scooter, wheeled glide, urban mover, roll board, sidewalk cruiser, electric kick, swift glide",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "scooter-03",
+            "tags": "scooter icon, kickboard, two-wheeler, motorized board, ride-on, push scooter, wheeled glide, urban mover, roll board, sidewalk cruiser, electric kick, swift glide",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "scooter-04",
+            "tags": "scooter icon, kickboard, two-wheeler, motorized board, ride-on, push scooter, wheeled glide, urban mover, roll board, sidewalk cruiser, electric kick, swift glide",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "scooter-electric",
+            "tags": "scooter-electric icon, e-scooter, electric scooter, motorized scooter, battery scooter, eco-scooter, electric ride, powered scooter, electronic scooter, plug-in scooter, electric-powered ride",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "scratch-card",
+            "tags": "scratch-card",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "screen-add-to-home",
+            "tags": "screen-add-to-home",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "screen-lock-rotation",
+            "tags": "screen-lock-rotation",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "screen-rotation",
+            "tags": "screen-rotation",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "scribd",
+            "tags": "scribd",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "scroll",
+            "tags": "scroll",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "scroll-horizontal",
+            "tags": "scroll horizontal",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "scroll-vertical",
+            "tags": "scroll vertical",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "sd-card",
+            "tags": "sd-card",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "seal",
+            "tags": "seal",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "search-01",
+            "tags": "Find, Explore, Lookup, Hunt, Scan, Seek, Scour, Quest, Hunt Down, Discover, Probe, Investigate, Peruse, search",
+            "category": "search",
+            "featured": true
+        },
+        {
+            "name": "search-02",
+            "tags": "Find, Explore, Lookup, Hunt, Scan, Seek, Scour, Quest, Hunt Down, Discover, Probe, Investigate, Peruse",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-add",
+            "tags": "Find-Include, Seek-Insert, Hunt-Append, Explore-Attach, Locate-Add, Discover-Include, Quest-Attach, Scan-Add, Probe-Append, Investigate-Insert,zoom in",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-area",
+            "tags": "search-box, find-zone, query-space, exploration-zone, seek-area, lookup-zone, hunt-space, browse-region, discover-zone, exploration-area",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-circle",
+            "tags": "find-round, hunt-disk, explore-loop, quest-ring, locate-round, scan-cycle, seek-donut, pursuit-circular, lookup-ring, probe-circlet, scour-wheel, quest-hoop, examine-roundel, hunt-circlet, discover-doughnut",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-dollar",
+            "tags": "search-dollar",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "search-focus",
+            "tags": "find-center, lookup-aim, seek-target, locate-point, hunt-precise, scan-pinpoint",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "searching",
+            "tags": "Find, Explore, Lookup, Hunt, Scan, Seek, Scour, Quest, Hunt Down, Discover, Probe, Investigate, Peruse",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-list-01",
+            "tags": "find-view, lookup-menu, explore-options, query-directory, hunt-index, scan-catalog, seek-listing, inspect-collection, expedition-menu, browse-inventory",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-list-02",
+            "tags": "find-view, lookup-menu, explore-options, query-directory, hunt-index, scan-catalog, seek-listing, inspect-collection, expedition-menu, browse-inventory",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-minus",
+            "tags": "minus-search, search-remove, search-minus-symbol, search-decrease, search-less, search-minus-sign, zoom out",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-remove",
+            "tags": "Search Erase, Remove Search, Clear Search, Delete Search, Search Clear, Erase Query, Remove Query, Search Delete, Clear Query, Query Erase, Erase Search, Search Reset",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-replace",
+            "tags": "search-replace",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "search-square",
+            "tags": "find-box, query-block, locate-frame, seek-square, explore-cell, lookup-corner, scan-box, hunt-panel",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "search-visual",
+            "tags": "find-view, seek-vision, locate-see, hunt-display, explore-observe, scan-sight, quest-image, lookup-visual, probe-vista, inspect-look",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "seat-selector",
+            "tags": "seat-selector",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "secured-network",
+            "tags": "secured-network",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "security",
+            "tags": "security",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "security-block",
+            "tags": "security-block",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "security-check",
+            "tags": "security-check",
+            "category": "security",
+            "featured": true
+        },
+        {
+            "name": "security-key-usb",
+            "tags": "security-key-usb",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "security-lock",
+            "tags": "security-lock",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "security-password",
+            "tags": "security-password",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "security-validation",
+            "tags": "security-validation",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "security-wifi",
+            "tags": "security-wifi",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "segment",
+            "tags": "segment",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "select-01",
+            "tags": "select-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "select-02",
+            "tags": "select-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "self-transfer",
+            "tags": "self-transfer",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "semi-truck",
+            "tags": "semi-truck",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "sending-order",
+            "tags": "sending-order",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "send-to-mobile",
+            "tags": "send-to-mobile",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "senseless",
+            "tags": "Confused Face, Baffled Expression, Bewildered Symbol, Perplexed Icon, Unintelligible Emoticon, Disoriented Image, Puzzled Sign, Nonplussed Graphic, Dazed Symbol, Unclear Face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sent",
+            "tags": "submit, send, share",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "sent-02",
+            "tags": "sent-02",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "seo",
+            "tags": "marketing,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "server-stack-01",
+            "tags": "server-stack-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "server-stack-02",
+            "tags": "server-stack-02",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "server-stack-03",
+            "tags": "server-stack-03",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "service",
+            "tags": "service",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "serving-food",
+            "tags": "food service,",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "setting-06",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-07",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-done-01",
+            "tags": "settings-completed, settings-finished, configuration-finished, preferences-done, options-done, setup-done, adjustments-complete, configuration-checked, preferences-confirmed",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-done-02",
+            "tags": "settings-completed, settings-finished, configuration-finished, preferences-done, options-done, setup-done, adjustments-complete, configuration-checked, preferences-confirmed",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-done-03",
+            "tags": "settings-completed, settings-finished, configuration-finished, preferences-done, options-done, setup-done, adjustments-complete, configuration-checked, preferences-confirmed",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-done-04",
+            "tags": "settings-completed, settings-finished, configuration-finished, preferences-done, options-done, setup-done, adjustments-complete, configuration-checked, preferences-confirmed",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-error-03",
+            "tags": "warning-settings, configuration-issue, error-in-settings, settings-alert, problem-settings, settings-problem, error-configuration",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setting-error-04",
+            "tags": "warning-settings, configuration-issue, error-in-settings, settings-alert, problem-settings, settings-problem, error-configuration",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "settings-01",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "settings-02",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": true
+        },
+        {
+            "name": "settings-03",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "settings-04",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "settings-05",
+            "tags": "preferences, options, configurations, tools, gear, adjustments, setup, controls, parameters, customizations, configurations, tweaks, properties, utilities, system",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "settings-error-01",
+            "tags": "warning-settings, configuration-issue, error-in-settings, settings-alert, problem-settings, settings-problem, error-configuration",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "settings-error-02",
+            "tags": "warning-settings, configuration-issue, error-in-settings, settings-alert, problem-settings, settings-problem, error-configuration",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setup-01",
+            "tags": "configuration, preferences, settings, customization, options, setup wizard, control panel, system, setup menu, gear, tools, adjustments, tweak, setup assistant, setup guide",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "setup-02",
+            "tags": "configuration, preferences, settings, customization, options, setup wizard, control panel, system, setup menu, gear, tools, adjustments, tweak, setup assistant, setup guide",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "shaka-01",
+            "tags": "shaka-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "shaka-02",
+            "tags": "shaka-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "shaka-03",
+            "tags": "shaka-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "shaka-04",
+            "tags": "shaka-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "shampoo",
+            "tags": "shampoo",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "shape-collection",
+            "tags": "shape-collection",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "shapes",
+            "tags": "shapes",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "share-01",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": true
+        },
+        {
+            "name": "share-02",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "share-03",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "share-04",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "share-05",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "share-06",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "share-07",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "share-08",
+            "tags": "share-icon, send, distribute, spread, forward, circulate, pass-on, transmit, exchange, propagate, disseminate, broadcast, convey, hand-over, impart, allocate",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "shared-wifi",
+            "tags": "shared-wifi",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "share-knowledge",
+            "tags": "mentor, instructor, professor, academic, coach, facilitator, career, business career, teacher,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "share-location-01",
+            "tags": "Map, Location, GPS, Navigate, Location Share, Map Share",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "share-location-02",
+            "tags": "Map, Location, GPS, Navigate, Location Share, Map Share",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "sharing",
+            "tags": "sharing",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "shellfish",
+            "tags": "shellfish",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "sheriff-01",
+            "tags": "sheriff-01",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "sheriff-02",
+            "tags": "sheriff-02",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "shield-01",
+            "tags": "shield-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "shield-02",
+            "tags": "shield-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "shield-blockchain",
+            "tags": "shield-blockchain",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "shield-energy",
+            "tags": "shield-energy",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "shield-key",
+            "tags": "shield-key",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "shield-user",
+            "tags": "shield-user",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "shipment-tracking",
+            "tags": "shipment tracking",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shipping-center",
+            "tags": "shipping-center icon, delivery hub, transport depot, cargo station, shipping hub, distribution center, logistics hub, freight terminal, shipment hub",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "shipping-loading",
+            "tags": "shipment loading, shipment",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shipping-truck-01",
+            "tags": "truck, transport, shipment, logistics, delivery, shipping",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shipping-truck-02",
+            "tags": "truck, transport, shipment, logistics, delivery, shipping",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shirt-01",
+            "tags": "shirt-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "shocked",
+            "tags": "surprised face, astonished emoji, gasping emoticon, wide-eyed symbol, startled expression, awe-struck smiley, incredulous face, jaw-dropping icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "shopify",
+            "tags": "shopify",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "shopping-bag-01",
+            "tags": "shopping bag, bag, purchase",
+            "category": "e-commerce",
+            "featured": true
+        },
+        {
+            "name": "shopping-bag-02",
+            "tags": "shopping bag, bag, purchase",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-bag-03",
+            "tags": "shopping bag, bag, purchase",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-bag-add",
+            "tags": "shopping bag add, bag add, purchase add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-bag-check",
+            "tags": "shopping bag check, bag check, purchase check",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-bag-favorite",
+            "tags": "shopping bag favorite, bag favorite, purchase favorite",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-bag-remove",
+            "tags": "shopping bag remove, bag remove, purchase remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-03",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-add-01",
+            "tags": "shopping add, cart add, basket add, checkout add, add-to-cart add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-add-02",
+            "tags": "shopping add, cart add, basket add, checkout add, add-to-cart add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-add-03",
+            "tags": "shopping add, cart add, basket add, checkout add, add-to-cart add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-check-in-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-check-in-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-check-in-03",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-check-out-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-check-out-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-check-out-03",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-done-01",
+            "tags": "shopping done, cart done, basket done, checkout done, add-to-cart done",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-done-02",
+            "tags": "shopping done, cart done, basket done, checkout done, add-to-cart done",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-done-03",
+            "tags": "shopping check, cart check, basket check, checkout check, add-to-cart check",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-favorite-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-favorite-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-favorite-03",
+            "tags": "shopping-basket-favorite-03",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-remove-01",
+            "tags": "shopping remove, cart remove, basket remove, checkout remove, add-to-cart remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-remove-02",
+            "tags": "shopping remove, cart remove, basket remove, checkout remove, add-to-cart remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-remove-03",
+            "tags": "shopping remove, cart remove, basket remove, checkout remove, add-to-cart remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-secure-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-secure-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-basket-secure-03",
+            "tags": "shopping safe, cart security, secured shopping,",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-add-01",
+            "tags": "shopping add, cart add, basket add, checkout add, add-to-cart add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-add-02",
+            "tags": "shopping add, cart add, basket add, checkout add, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-check-01",
+            "tags": "shopping check, cart check, basket check, checkout check, add-to-cart check",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-check-02",
+            "tags": "shopping check, cart check, basket check, checkout check, add-to-cart check",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-check-in-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-check-in-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-check-out-01",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-check-out-02",
+            "tags": "shopping, cart, basket, checkout, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-favorite-01",
+            "tags": "shopping favorite, cart favorite, favorite basket, checkout favorite, add-to-cart favorite",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-favorite-02",
+            "tags": "shopping favorite, cart favorite, basket favorite, checkout favorite, add-to-cart favorite",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-remove-01",
+            "tags": "shopping remove, cart remove, basket remove, checkout remove, add-to-cart",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shopping-cart-remove-02",
+            "tags": "shopping remove, cart remove, basket remove, checkout remove, add-to-cart remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shop-sign",
+            "tags": "shop sign, sign",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "shorts-pants",
+            "tags": "shorts-pants",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "shoulder",
+            "tags": "shoulder",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "shuffle",
+            "tags": "box, swap-tiles, reorder-cells, shuffle, grid-shuffle, random-layout, tile-shuffle, box-rearrange",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "shuffle-square",
+            "tags": "mix-grid, swap-tiles, reorder-cells, square-shuffle, grid-shuffle, random-layout, tile-shuffle, box-rearrange, square-mix",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "shut-down",
+            "tags": "shut-down",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "shutterstock",
+            "tags": "shutterstock",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "sidebar-bottom",
+            "tags": "Side menu, Navigation drawer, Quick access bar, Side toolbar, Right sidebar, Menu slider, Side options, Toggle menu, Panel navigator, sidebar bttom, bottom sidebar, sidebar",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "sidebar-left",
+            "tags": "Side menu, Navigation drawer, Quick access bar, Side toolbar, Right sidebar, Menu slider, Side options, Toggle menu, Panel navigator, sidebar left, left sidebar, sidebar",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "sidebar-left-01",
+            "tags": "sidebar-left-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "sidebar-right",
+            "tags": "Side menu, Navigation drawer, Quick access bar, Side toolbar, Right sidebar, Menu slider, Side options, Toggle menu, Panel navigator, sidebar right, right sidebar, sidebar",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "sidebar-right-01",
+            "tags": "sidebar-right-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "sidebar-top",
+            "tags": "Side menu, Navigation drawer, Quick access bar, Side toolbar, Right sidebar, Menu slider, Side options, Toggle menu, Panel navigator, sidebar top, top sidebar, sidebar",
+            "category": "dashboard",
+            "featured": false
+        },
+        {
+            "name": "signal",
+            "tags": "signal",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "signal-full-01",
+            "tags": "signal-full-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-full-02",
+            "tags": "signal-full-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-low-01",
+            "tags": "signal-low-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-low-02",
+            "tags": "signal-low-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-low-medium",
+            "tags": "signal-low-medium",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-medium-01",
+            "tags": "signal-medium-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-medium-02",
+            "tags": "signal-medium-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-no-01",
+            "tags": "signal-no-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signal-no-02",
+            "tags": "signal-no-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "signature",
+            "tags": "Autograph, Endorsement, Seal, Mark, Handwriting, Approval, Sign-off, Inscription, Symbol, Certification, Confirmation, Stamp, Manuscript, Authentication, Written Confirmation, Signature",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "sign-language-c",
+            "tags": "sign-language-c",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "silence",
+            "tags": "Quiet Face, Hush Symbol, Soundless Emoticon, Serene Expression, Shush Icon, Tranquil Emoji, Mute Face, Peaceful Symbol, Calm Emoticon, Stillness Icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "simcard-01",
+            "tags": "simcard-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "simcard-02",
+            "tags": "simcard-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "simcard-dual",
+            "tags": "simcard-dual",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "sin",
+            "tags": "sin",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "sine-01",
+            "tags": "sine-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "sine-02",
+            "tags": "sine-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "sing-left",
+            "tags": "Left-Singing Note, Melody Pointing Left, Vocal Arrow Left, Music Note Leftward, Crooning Direction, Tune Left Emoji, Leftward Song Note, Singing Arrow Left",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sing-right",
+            "tags": "Vocal Tune, Melody Marker, Harmony Hint, Croon Cue, Chorus Charm, Pitch Pointer, Serenade Signal, Tune Tip, Song Sync, Vocal Guide",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sink-01",
+            "tags": "sink-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "sink-02",
+            "tags": "sink-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "siri",
+            "tags": "VoiceAssist, TalkMate, AudioGuide, SpeakUp, SoundHelper, VocalBuddy, ChatterBot, AudioWizard, TalkBack, VoiceAid, SpeakEasy, AudioCompanion",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "siri-new",
+            "tags": "siri-new",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "sketch",
+            "tags": "sketch",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "skew",
+            "tags": "skew",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "ski",
+            "tags": "ski",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "skipping-rope",
+            "tags": "skipping-rope",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "skool",
+            "tags": "skool",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "skull",
+            "tags": "skull",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "skype",
+            "tags": "skype",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "slack",
+            "tags": "slack",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "sleeping",
+            "tags": "dozing face, snooze icon, slumber symbol, nap emoticon, restful glyph, bedtime emoji, drowsy face, peaceful sleeper",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sleeveless",
+            "tags": "sleeveless",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "sliders-horizontal",
+            "tags": "horizontal sliders, slide bars, side-to-side adjusters, level adjusters, parallel sliders, flat sliders, bar controllers, width sliders, span adjusters, breadth sliders",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "sliders-vertical",
+            "tags": "vertical-sliders, up-down sliders, tall sliders, vertical adjusters, height sliders, portrait sliders, length adjusters, vertical controls, column sliders, upright sliders",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "slideshare",
+            "tags": "slideshare",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "slow-winds",
+            "tags": "wind, air, breeze, slow wind",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "smart",
+            "tags": "IntelliMote, CleverGlyph, BrainyEmote, GeniusSymbol, QuickExpression, WiseIcon, SharpEmoticon, BrightGlyph, BrainwaveEmoji, SavvySymbol",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "smart-ac",
+            "tags": "smart-ac",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "smart-phone-01",
+            "tags": "ell phone, mobile device, handset, cellular device, smartphone, mobile phone, communication device, portable phone, wireless device, pocket phone, smart phone, phone, smartphone",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "smart-phone-02",
+            "tags": "ell phone, mobile device, handset, cellular device, smartphone, mobile phone, communication device, portable phone, wireless device, pocket phone, smart phone, phone, smartphone",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "smart-phone-03",
+            "tags": "ell phone, mobile device, handset, cellular device, smartphone, mobile phone, communication device, portable phone, wireless device, pocket phone, smart phone, phone, smartphone",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "smart-phone-04",
+            "tags": "ell phone, mobile device, handset, cellular device, smartphone, mobile phone, communication device, portable phone, wireless device, pocket phone, smart phone, phone, smartphone",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "smart-phone-landscape",
+            "tags": "smart-phone-landscape",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "smartphone-lost-wifi",
+            "tags": "smartphone-lost-wifi",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "smartphone-wifi",
+            "tags": "smartphone-wifi",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "smart-watch-01",
+            "tags": "smart-watch-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "smart-watch-02",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock, smart watch, watch smart",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "smart-watch-03",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock, smart watch, watch smart",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "smart-watch-04",
+            "tags": "timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock, alarm clock, smart watch, watch smart",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "smile",
+            "tags": "happy face, joyful emoji, smiling symbol, cheerful emoticon, beaming icon, grinning smiley, radiant face, delighted emoji, positive emoji, laughing symbol",
+            "category": "emojis",
+            "featured": true
+        },
+        {
+            "name": "smile-dizzy",
+            "tags": "dizzy face, happy swirl, giggly whirl, joyful spin, laughter twirl, merry spiral, ecstatic circle, gleeful swirl, cheerful rotation, elated spin",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sms-code",
+            "tags": "sms-code",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "snail",
+            "tags": "snail",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "snapchat",
+            "tags": "snapchat",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "snow",
+            "tags": "snow, snowfall, frozen, winter, cold",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "socks",
+            "tags": "socks",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "soda-can",
+            "tags": "soda-can",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "sofa-01",
+            "tags": "sofa-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "sofa-02",
+            "tags": "sofa-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "sofa-03",
+            "tags": "sofa-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "sofa-single",
+            "tags": "sofa-single",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "soft-drink-01",
+            "tags": "soft-drink-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "soft-drink-02",
+            "tags": "soft-drink-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "software",
+            "tags": "software",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "software-license",
+            "tags": "software-license",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "software-uninstall",
+            "tags": "software-uninstall",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "soil-moisture-field",
+            "tags": "soil, soil moisture, field, plant, dampness",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "soil-moisture-global",
+            "tags": "soil, soil moisture, field, plant, dampness",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "soil-temperature-field",
+            "tags": "soil, soil moisture, field, plant, dampness, soil temperature",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "soil-temperature-global",
+            "tags": "soil, soil moisture, field, plant, dampness",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "solar-energy",
+            "tags": "solar energy, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-panel-01",
+            "tags": "solar, solar panel, panel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-panel-02",
+            "tags": "solar, solar pannel, pannel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-panel-03",
+            "tags": "solar, solar panel, panel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-panel-04",
+            "tags": "solar, solar panel, panel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-panel-05",
+            "tags": "solar, solar panel, panel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-power",
+            "tags": "solar, solar panel, panel",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "solar-system",
+            "tags": "sun-and-planets, space-galaxy, cosmic-orbit, celestial-assembly, stellar-arrangement, astral-system, planetary-sun, universe-array",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "solar-system-01",
+            "tags": "star-map, cosmic-orbit, sun-and-planets, celestial-chart, galaxy-view, astral-layout, planetary-array, space-constellation, stellar-diagram, universe-display",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "solid-line-01",
+            "tags": "solid-line-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "solid-line-02",
+            "tags": "solid-line-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "sort-by-down-01",
+            "tags": "sort, sort by, sort by down",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sort-by-down-02",
+            "tags": "sort, sort by, sort by down",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sort-by-up-01",
+            "tags": "sort, sort by, sort by up",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sort-by-up-02",
+            "tags": "sort, sort by, sort by up",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-01",
+            "tags": "sort, sort by, sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-02",
+            "tags": "sort, sort by, sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-03",
+            "tags": "sort, sort by, sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-04",
+            "tags": "sort, sort by, sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-05",
+            "tags": "sort, sort by, sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-1-9",
+            "tags": "sort, sort by, sorting, 1 to 9 sorting, sorting 1 9",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-9-1",
+            "tags": "sort, sort by, sorting, 9 to 1 sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-a-z-01",
+            "tags": "sort, sort by, sorting, a to z sorting, sorting a z",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-a-z-02",
+            "tags": "sort, sort by, sorting, a to z sorting, sorting a z",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-down",
+            "tags": "sort, sort by, sorting down",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-up",
+            "tags": "sort, sort by, sorting",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "sorting-z-a-01",
+            "tags": "sort, sort by, sorting, a to z sorting, sorting az",
+            "category": "filter-sorting",
+            "featured": false
+        },
+        {
+            "name": "soundcloud",
+            "tags": "soundcloud",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "source-code",
+            "tags": "source-code",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "source-code-circle",
+            "tags": "source-code-circle",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "source-code-square",
+            "tags": "source-code-square",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "spaceship",
+            "tags": "rocket, space shuttle, cosmic craft, stellar vessel, celestial flyer, astral transporter, galactic rocket, interstellar cruiser, starship, planetary explorer",
+            "category": "space",
+            "featured": false
+        },
+        {
+            "name": "spades",
+            "tags": "spades",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "spaghetti",
+            "tags": "spaghetti",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "spam",
+            "tags": "Spam, Barrier",
+            "category": "alert-notification",
+            "featured": false
+        },
+        {
+            "name": "sparkles",
+            "tags": "spark, stars",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "spartan-helmet",
+            "tags": "spartan-helmet",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "spatula",
+            "tags": "spatula",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "speaker",
+            "tags": "sound, audio, volume, amplifier, loudspeaker, audio device, sound symbol, speaker symbol, audio speaker, playback icon, sound icon, volume control, audio output, speaker symbol, speaker icon, speaker, mic",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "speaker-01",
+            "tags": "Sound, Volume, Speaker, Audio",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "speech-to-text",
+            "tags": "speech-to-text",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "speed-train-01",
+            "tags": "speed-train icon, rapid-rail, swift-express, fast-track, velocity-locomotive, quick-transit, high-speed-rail, turbo-train, accelerated-commute",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "speed-train-02",
+            "tags": "speed-train icon, rapid-rail, swift-express, fast-track, velocity-locomotive, quick-transit, high-speed-rail, turbo-train, accelerated-commute",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "sperm",
+            "tags": "sperm",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "sphere",
+            "tags": "sphere",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "spirals",
+            "tags": "spirals",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "spoon",
+            "tags": "spoon",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "spoon-and-fork",
+            "tags": "spoon-and-fork",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "spoon-and-knife",
+            "tags": "spoon-and-knife",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "spotify",
+            "tags": "spotify",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "sql",
+            "tags": "sql",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "square",
+            "tags": "square",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "square-01",
+            "tags": "square-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-data-transfer-diagonal",
+            "tags": "square-arrow-data-transfer-diagonal",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-data-transfer-horizontal",
+            "tags": "square-arrow-data-transfer-horizontal",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-data-transfer-vertical",
+            "tags": "square-arrow-data-transfer-vertical",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-diagonal-01",
+            "tags": "big screen, full screen square, expand, enlarge square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-diagonal-02",
+            "tags": "big screen, full screen square, expand, enlarge square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-down-01",
+            "tags": "square-arrow-down-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-down-02",
+            "tags": "square-arrow-down-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-down-03",
+            "tags": "square-arrow-down-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-down-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-down-left",
+            "tags": "square-arrow-down-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-down-right",
+            "tags": "square-arrow-down-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-expand-01",
+            "tags": "big screen, full screen square, expand, enlarge square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-expand-02",
+            "tags": "big screen, full screen square, expand, enlarge square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-horizontal",
+            "tags": "big screen, full screen square, expand, enlarge square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-left-01",
+            "tags": "square-arrow-left-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-left-02",
+            "tags": "square-arrow-left-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-left-03",
+            "tags": "square-arrow-left-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-left-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-left-right",
+            "tags": "square-arrow-left-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-move-down-left",
+            "tags": "square-arrow-move-down-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-move-down-right",
+            "tags": "square-arrow-move-down-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-move-left-down",
+            "tags": "square-arrow-move-left-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-move-left-up",
+            "tags": "square-arrow-move-left-up",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-move-right-down",
+            "tags": "square-arrow-move-right-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-move-right-up",
+            "tags": "square-arrow-move-right-up",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-reload-01",
+            "tags": "square-arrow-reload-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-reload-02",
+            "tags": "square-arrow-reload-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-right-01",
+            "tags": "square-arrow-right-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-right-02",
+            "tags": "square-arrow-right-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-right-03",
+            "tags": "square-arrow-right-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-right-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-shrink-01",
+            "tags": "small screen, collapse screen square, minimize square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-shrink-02",
+            "tags": "small screen, collapse screen square, minimize square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-01",
+            "tags": "square-arrow-up-01",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-02",
+            "tags": "square-arrow-up-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-03",
+            "tags": "square-arrow-up-03",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-double",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-down",
+            "tags": "square-arrow-up-down",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-left",
+            "tags": "square-arrow-up-left",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-right",
+            "tags": "square-arrow-up-right",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-up-right-02",
+            "tags": "square-arrow-up-right-02",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-arrow-vertical",
+            "tags": "big screen, full screen square, expand, enlarge square",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "square-circle",
+            "tags": "square-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "square-lock-01",
+            "tags": "square-lock-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-02",
+            "tags": "square-lock-02",
+            "category": "security",
+            "featured": true
+        },
+        {
+            "name": "square-lock-add-01",
+            "tags": "square-lock-add-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-add-02",
+            "tags": "square-lock-add-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-check-01",
+            "tags": "square-lock-check-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-check-02",
+            "tags": "square-lock-check-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-minus-01",
+            "tags": "square-lock-minus-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-minus-02",
+            "tags": "square-lock-minus-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-password",
+            "tags": "square-lock-password",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-remove-01",
+            "tags": "square-lock-remove-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-lock-remove-02",
+            "tags": "square-lock-remove-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-root-square",
+            "tags": "square-root-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "square-square",
+            "tags": "square-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "square-unlock-01",
+            "tags": "square-unlock-01",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "square-unlock-02",
+            "tags": "square-unlock-02",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "stack-star",
+            "tags": "stack-star",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "stake",
+            "tags": "stakeholder, bet, post, marker, peg, pole, wager, bettor, gamble, stick, stake",
+            "category": "crypto",
+            "featured": false
+        },
+        {
+            "name": "stamp",
+            "tags": "stamp",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "stamp-01",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "stamp-02",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "star",
+            "tags": "star, ratting, review, rate, favorite, half-star, half-rate, half-review",
+            "category": "bookmark",
+            "featured": true
+        },
+        {
+            "name": "star-award-01",
+            "tags": "star-award-01",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "star-award-02",
+            "tags": "star-award-02",
+            "category": "award",
+            "featured": false
+        },
+        {
+            "name": "star-circle",
+            "tags": "star-circle",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "star-face",
+            "tags": "Starry Smiley, Celestial Grin, Galaxy Glow, Cosmic Smile, Stellar Expression, Twinkle Face, Astral Grin, Sparkling Visage, Nebula Emoji, Shining Countenance, Constellation Smile",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "star-half",
+            "tags": "half-star, half-rate, half-review",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "star-off",
+            "tags": "star-off, slash-star, off star",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "stars",
+            "tags": "luminous, star",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "star-square",
+            "tags": "star, review, rate, star square, rate sqaure, review square",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "start-up-01",
+            "tags": "speed,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "start-up-02",
+            "tags": "start-up-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "stationery",
+            "tags": "stationery",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "status",
+            "tags": "status",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "steak",
+            "tags": "steak",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "steering",
+            "tags": "steering",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "step-into",
+            "tags": "step-into",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "step-out",
+            "tags": "step-out",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "step-over",
+            "tags": "step-over",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "stethoscope",
+            "tags": "stethoscope",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "stethoscope-02",
+            "tags": "stethoscope-02",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "sticky-note-01",
+            "tags": "sticky-note-01",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "sticky-note-02",
+            "tags": "sticky-note-02",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "sticky-note-03",
+            "tags": "sticky-note-03",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stop",
+            "tags": "Halt, Cease, End, Terminate, Stop, Abort, Cancel, Pause",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "stop-circle",
+            "tags": "stop-circle",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "stop-loss-order",
+            "tags": "stop-loss-order",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "stop-watch",
+            "tags": "stop-watch",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "store-01",
+            "tags": "store, market, shop, marketplace",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-02",
+            "tags": "store, market, shop, marketplace",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-03",
+            "tags": "store, market, shop, marketplace",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-04",
+            "tags": "store, market, shop, marketplace",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-add-01",
+            "tags": "store add, market add, shop add, marketplace add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-add-02",
+            "tags": "store add, market add, shop add, marketplace add",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-location-01",
+            "tags": "store location, market location, shop location, marketplace location",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-location-02",
+            "tags": "store location, market location, shop location, marketplace location",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-management-01",
+            "tags": "store-management-01",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-management-02",
+            "tags": "store-management-02",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-remove-01",
+            "tags": "store remove, market remove, shop remove, marketplace remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-remove-02",
+            "tags": "store remove, market remove, shop remove, marketplace remove",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "store-verified-01",
+            "tags": "store-verified-01",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "store-verified-02",
+            "tags": "store-verified-02",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "straight-edge",
+            "tags": "straight-edge",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "strategy",
+            "tags": "strategy",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "streering-wheel",
+            "tags": "streering-wheel",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "street-food",
+            "tags": "street-food",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "stripe",
+            "tags": "stripe",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "stroke-bottom",
+            "tags": "stroke-bottom",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stroke-center",
+            "tags": "stroke-center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stroke-inside",
+            "tags": "stroke-inside",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stroke-left",
+            "tags": "stroke-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stroke-outside",
+            "tags": "stroke-outside",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stroke-right",
+            "tags": "stroke-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "stroke-top",
+            "tags": "stroke-top",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "structure-01",
+            "tags": "structure-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-02",
+            "tags": "structure-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-03",
+            "tags": "structure-03",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-04",
+            "tags": "structure-04",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-05",
+            "tags": "structure-05",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-add",
+            "tags": "structure-add",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-check",
+            "tags": "structure-check",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-fail",
+            "tags": "structure-fail",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-folder",
+            "tags": "structure-folder",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "structure-folder-circle",
+            "tags": "structure-folder-circle",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "student",
+            "tags": "student",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "student-card",
+            "tags": "mentor, instructor, professor, academic, coach, facilitator, career, business career, teacher,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "students",
+            "tags": "students",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "study-desk",
+            "tags": "study-desk",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "study-lamp",
+            "tags": "study-lamp",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "stumbleupon",
+            "tags": "stumbleupon",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "submarine",
+            "tags": "submarine icon, undersea vessel, sea explorer, ocean diver, aquatic craft, depth explorer, underwater ship, marine voyager, submersible, below-surface vessel, underwater explorer",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "submerge",
+            "tags": "immerse, plunge, dip, submerse, soak, saturate, dunk, douse, engulf, submergence",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "subnode-add",
+            "tags": "subnode-add",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "subnode-delete",
+            "tags": "subnode-delete",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "subpoena",
+            "tags": "legal,",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "subtitle",
+            "tags": "Caption, Subtitle",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "suit-01",
+            "tags": "suit-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "suit-02",
+            "tags": "suit-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "sujood",
+            "tags": "sujood",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "summation-01",
+            "tags": "summation-01",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "summation-02",
+            "tags": "summation-02",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "summation-circle",
+            "tags": "summation-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "summation-square",
+            "tags": "summation-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "sun-01",
+            "tags": "sun, solar, daytime, shining",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-02",
+            "tags": "sun, solar, daytime, shining",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-03",
+            "tags": "sun, solar, daytime, shining",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-01",
+            "tags": "sun, solar, daytime, shining, suncloud",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-angled-rain-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-angled-rain-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, rain, cloud rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-angled-rain-zap-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, lighting",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-angled-rain-zap-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, lighting",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-angled-zap-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, lighting",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-angled-zap-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, lighting",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-big-rain-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-big-rain-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-fast-wind-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, wind",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-fast-wind-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, lighting",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-hailstone-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-hailstone-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-little-rain-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-little-rain-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, rain, cloud rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-little-snow-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-little-snow-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-mid-rain-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-mid-rain-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-mid-snow-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-mid-snow-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-slow-wind-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-slow-wind-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, lighting",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-snow-01",
+            "tags": "sun, solar, daytime, shining, sun cloud, rain, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sun-cloud-snow-02",
+            "tags": "sun, solar, daytime, shining, sun cloud, cloudy, snow",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sunglasses",
+            "tags": "Shades, Sunnies, Cool Glasses, Dark Glasses, Sun Shades, Tinted Specs, Cool Shades, Eye Shades, Sunny Specs, Stylish Shades, Sunnies Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sunrise",
+            "tags": "sun, solar, daytime, shining, sunrise",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "sunset",
+            "tags": "sun, solar, daytime, shining, sunset",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "super-mario",
+            "tags": "super-mario",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "super-mario-toad",
+            "tags": "super-mario-toad",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "surfboard",
+            "tags": "surfboard",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "surprise",
+            "tags": "Wow Face, Shocked Expression, Amazement Symbol, Startled Emoticon, Unexpected Reaction, Astonished Icon, Wonderment Emoji, Dazzled Face, Jaw-Drop Emoticon, Speechless Symbol, Impressed Expression, Stunning Face, Gobsmacked Emoji, Astounding Emoticon, Eureka Symbol, Mind-Blown Icon, Stupefied Face, Incredible Emoticon, Bewildered Expression, Fascinated Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sushi-01",
+            "tags": "sushi-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "sushi-02",
+            "tags": "sushi-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "sushi-03",
+            "tags": "sushi-03",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "suspicious",
+            "tags": "side-eye emoji, doubtful emoji, skeptical emoji, wary emoji, distrustful emoji, uncertain emoji, questioning emoji, dubious emoji, cautious emoji, mistrustful emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "sustainable-energy",
+            "tags": "sustainable energy, energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "svg-01",
+            "tags": "svg-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "svg-02",
+            "tags": "svg-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "swarm",
+            "tags": "swarm",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "swatch",
+            "tags": "swatch",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "swimming",
+            "tags": "swimming",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "swimming-cap",
+            "tags": "swimming-cap",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-01",
+            "tags": "swipe-down-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-02",
+            "tags": "swipe-down-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-03",
+            "tags": "swipe-down-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-04",
+            "tags": "swipe-down-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-05",
+            "tags": "swipe-down-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-06",
+            "tags": "swipe-down-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-07",
+            "tags": "swipe-down-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-down-08",
+            "tags": "swipe-down-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-01",
+            "tags": "swipe-left-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-02",
+            "tags": "swipe-left-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-03",
+            "tags": "swipe-left-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-04",
+            "tags": "swipe-left-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-05",
+            "tags": "swipe-left-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-06",
+            "tags": "swipe-left-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-07",
+            "tags": "swipe-left-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-08",
+            "tags": "swipe-left-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-left-09",
+            "tags": "swipe-left-09",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-01",
+            "tags": "swipe-right-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-02",
+            "tags": "swipe-right-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-03",
+            "tags": "swipe-right-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-04",
+            "tags": "swipe-right-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-05",
+            "tags": "swipe-right-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-06",
+            "tags": "swipe-right-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-07",
+            "tags": "swipe-right-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-08",
+            "tags": "swipe-right-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-right-09",
+            "tags": "swipe-right-09",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-01",
+            "tags": "swipe-up-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-02",
+            "tags": "swipe-up-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-03",
+            "tags": "swipe-up-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-04",
+            "tags": "swipe-up-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-05",
+            "tags": "swipe-up-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-06",
+            "tags": "swipe-up-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-07",
+            "tags": "swipe-up-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "swipe-up-08",
+            "tags": "swipe-up-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "sword-01",
+            "tags": "sword-01",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "sword-02",
+            "tags": "sword-02",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "sword-03",
+            "tags": "sword-03",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "system-update-01",
+            "tags": "software-refresh, update-center, system-refresh, refresh-icon, software-update, system-refresh, update-icon",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "system-update-02",
+            "tags": "software-refresh, update-center, system-refresh, refresh-icon, software-update, system-refresh, update-icon",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "table",
+            "tags": "kanban,",
+            "category": "layout",
+            "featured": false
+        },
+        {
+            "name": "table-01",
+            "tags": "table-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "table-02",
+            "tags": "table-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "table-03",
+            "tags": "table-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "table-lamp-01",
+            "tags": "table-lamp-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "table-lamp-02",
+            "tags": "table-lamp-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "table-round",
+            "tags": "table-round",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "tablet-01",
+            "tags": "tablet-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tablet-02",
+            "tags": "tablet-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tablet-connected-bluetooth",
+            "tags": "tablet-connected-bluetooth",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tablet-connected-usb",
+            "tags": "tablet-connected-usb",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tablet-connected-wifi",
+            "tags": "tablet-connected-wifi",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "table-tennis-bat",
+            "tags": "table-tennis-bat",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "tablet-pen",
+            "tags": "tablet-pen",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "taco-01",
+            "tags": "taco-01",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "taco-02",
+            "tags": "taco-02",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "tag-01",
+            "tags": "tag-01",
+            "category": "bookmark",
+            "featured": true
+        },
+        {
+            "name": "tag-02",
+            "tags": "tag-02",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "tags",
+            "tags": "tag",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "taj-mahal",
+            "tags": "taj-mahal",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "tan",
+            "tags": "tan",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "tanker-truck",
+            "tags": "tanker-truck",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "tank-top",
+            "tags": "tank-top",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "tap-01",
+            "tags": "tap-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-02",
+            "tags": "tap-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-03",
+            "tags": "tap-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-04",
+            "tags": "tap-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-05",
+            "tags": "tap-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-06",
+            "tags": "tap-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-07",
+            "tags": "tap-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tap-08",
+            "tags": "tap-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "tape-measure",
+            "tags": "tape-measure",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "target-01",
+            "tags": "target-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "target-02",
+            "tags": "marketing,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "target-03",
+            "tags": "target-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "target-dollar",
+            "tags": "target-dollar",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "tasbih",
+            "tags": "tasbih",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "task-01",
+            "tags": "clipboard,",
+            "category": "notes-tasks",
+            "featured": true
+        },
+        {
+            "name": "task-02",
+            "tags": "clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-add-01",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-add-02",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-daily-01",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-daily-02",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-done-01",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-done-02",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-edit-01",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-edit-02",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-remove-01",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "task-remove-02",
+            "tags": "to do, clipboard,",
+            "category": "notes-tasks",
+            "featured": false
+        },
+        {
+            "name": "taxes",
+            "tags": "taxes",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "taxi",
+            "tags": "taxi icon, cab, car service, ride-hail, transportation, shuttle, cabby, yellow cab, car hire, taxi-cab, chauffeur, taxicab, transit, city ride",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "taxi-02",
+            "tags": "taxi-02",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "tea",
+            "tags": "tea",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "teacher",
+            "tags": "mentor, instructor, professor, academic, coach, facilitator, career, business career, teacher,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "teaching",
+            "tags": "mentor, instructor, professor, academic, coach, facilitator, career, business career, teacher,",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "teamviewer",
+            "tags": "teamviewer",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "tea-pod",
+            "tags": "tea-pod",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "telegram",
+            "tags": "telegram",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "telephone",
+            "tags": "telephone",
+            "category": "communications",
+            "featured": false
+        },
+        {
+            "name": "telescope-01",
+            "tags": "telescope-01",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "telescope-02",
+            "tags": "telescope-02",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "television-table",
+            "tags": "television-table",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "temperature",
+            "tags": "temperature, heat",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tennis-ball",
+            "tags": "tennis-ball",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "terrace",
+            "tags": "terrace",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "test-tube",
+            "tags": "Chemistry Flask, Science Vial, Lab Beaker, Research Tube, Experiment Flask, Biochemistry Vessel, Analysis Vial, Chemical Test Tube, Lab Experiment Tube, Science Sample Vial",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "test-tube-01",
+            "tags": "Chemical Vial, Science Flask, Lab Cylinder, Research Beaker, Experiment Tube, Solution Container, Biology Vessel, Chemistry Pipette, Medical Ampoule, Test Tube",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "test-tube-02",
+            "tags": "Chemical Vial, Science Flask, Lab Cylinder, Research Beaker, Experiment Tube, Solution Container, Biology Vessel, Chemistry Pipette, Medical Ampoule, Test Tube",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "test-tube-03",
+            "tags": "Chemical Vial, Science Flask, Lab Cylinder, Research Beaker, Experiment Tube, Solution Container, Biology Vessel, Chemistry Pipette, Medical Ampoule, Test Tube",
+            "category": "education",
+            "featured": false
+        },
+        {
+            "name": "tetris",
+            "tags": "tetris",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "text",
+            "tags": "message, communication, dialogue, chat, conversation, words, typography, writing, script, speech, language, text",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-center",
+            "tags": "text-align-center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-justify-center",
+            "tags": "text-align-justify-center",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-justify-left",
+            "tags": "text-align-justify-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-justify-right",
+            "tags": "text-align-justify-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-left",
+            "tags": "text-align-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-left-01",
+            "tags": "text-align-left-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-right",
+            "tags": "text-align-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-align-right-01",
+            "tags": "text-align-right-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-all-caps",
+            "tags": "text-all-caps",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-bold",
+            "tags": "Bold text, Strong text, Emphasized text, Highlighted text, Dark text, Weighted text, Intensified text, Thickened text, Enlarged text, Empowered text, Heavy text, Solid text, Accentuated text, Prominent text, Robust text, Stressed text, Impactful text, Text bold",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-centerline-center-top",
+            "tags": "text-centerline-center-top",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-centerline-left",
+            "tags": "text-centerline-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-centerline-middle",
+            "tags": "text-centerline-middle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-centerline-right",
+            "tags": "text-centerline-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-check",
+            "tags": "text-check",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-circle",
+            "tags": "text-circle",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-clear",
+            "tags": "text-clear",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-color",
+            "tags": "text-color",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-creation",
+            "tags": "text-creation",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-firstline-left",
+            "tags": "text-firstline-left",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-firstline-right",
+            "tags": "text-firstline-right",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-font",
+            "tags": "Font Style, Typography, Character Style, Typeface, Writing Style, Lettering, Font Format, Text Appearance, Typeface Selection, Text Design, Font Choice, Writing Format, Text Styling, Font Selection, Text Font",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-footnote",
+            "tags": "text-footnote",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-indent",
+            "tags": "text-indent",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-indent-01",
+            "tags": "text-indent-01",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-indent-less",
+            "tags": "text-indent-less",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-indent-more",
+            "tags": "text-indent-more",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-italic",
+            "tags": "text-italic",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-italic-slash",
+            "tags": "text-italic-slash",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-kerning",
+            "tags": "text-kerning",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-number-sign",
+            "tags": "text-number-sign",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-selection",
+            "tags": "text-selection",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-smallcaps",
+            "tags": "text-smallcaps",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-square",
+            "tags": "text-square",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-strikethrough",
+            "tags": "text-strikethrough",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-subscript",
+            "tags": "text-subscript",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-superscript",
+            "tags": "text-superscript",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-tracking",
+            "tags": "text-tracking",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-underline",
+            "tags": "text-underline",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-variable-front",
+            "tags": "text-variable-front",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-vertical-alignment",
+            "tags": "text-vertical-alignment",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "text-wrap",
+            "tags": "text-wrap",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "the-prophets-mosque",
+            "tags": "the-prophets-mosque",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "thermometer",
+            "tags": "thermometer",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "thermometer-cold",
+            "tags": "degree, cold, temperature, thermometer",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "thermometer-warm",
+            "tags": "degree, warm, temperature, thermometer",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "thread",
+            "tags": "thread",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "threads",
+            "tags": "threads",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "threads-ellipse",
+            "tags": "threads-ellipse",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "threads-rectangle",
+            "tags": "threads-rectangle",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "three-finger-01",
+            "tags": "three-finger-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "three-finger-02",
+            "tags": "three-finger-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "three-finger-03",
+            "tags": "three-finger-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "three-finger-04",
+            "tags": "three-finger-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "three-finger-05",
+            "tags": "three-finger-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "thumbs-down",
+            "tags": "thumbs-down",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "thumbs-down-ellipse",
+            "tags": "thumbs-down-ellipse",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "thumbs-down-rectangle",
+            "tags": "thumbs-down-rectangle",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "thumbs-up",
+            "tags": "thumbs-up",
+            "category": "bookmark",
+            "featured": true
+        },
+        {
+            "name": "thumbs-up-down",
+            "tags": "thumbs-up-down",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "thumbs-up-ellipse",
+            "tags": "thumbs-up-ellipse",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "thumbs-up-rectangle",
+            "tags": "thumbs-up-rectangle",
+            "category": "bookmark",
+            "featured": false
+        },
+        {
+            "name": "tick-01",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-02",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-03",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-04",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-double-01",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check, tick double",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-double-02",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check, tick double",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-double-03",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check, tick double",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "tick-double-04",
+            "tags": "checkmark, confirm, approve, validate, select, mark, okay, agree, endorse, accept, affirm, validate, pass, done, success, complete, enable, authorize, consent, tick, check, tick double",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "ticket-01",
+            "tags": "ticket, entry, access, token,",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "ticket-02",
+            "tags": "ticket, entry, access, token,",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "ticket-03",
+            "tags": "ticket, entry, access, token,",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "ticket-star",
+            "tags": "ticket, entry, access, token,",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "tic-tac-toe",
+            "tags": "tic-tac-toe",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "tie",
+            "tags": "tie",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "tiktok",
+            "tags": "tiktok",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "tiltify",
+            "tags": "tiltify",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "time-01",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-02",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-03",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-04",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-half-pass",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time, timer, time half pass",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-management",
+            "tags": "time-management",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "time-management-circle",
+            "tags": "time-management-circle",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "time-quarter",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time, timer, time quarter",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-quarter-02",
+            "tags": "time-quarter-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-quarter-pass",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time, timer",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "timer-01",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time, timer",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "timer-02",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time, timer",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-schedule",
+            "tags": "clock, stopwatch, timer, chronometer, hourglass, watch, countdown, hour tracker, timepiece, temporal symbol, time indicator, temporal device, timekeeper, temporal gauge, time gauge, temporal meter, time, timer, time schedule, schedule time",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "time-setting-01",
+            "tags": "clock-setup, schedule-adjust, timer-config, chronometer-options, watch-settings, hour-setup, calendar-customize, stopwatch-settings",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "time-setting-02",
+            "tags": "clock-setup, schedule-adjust, timer-config, chronometer-options, watch-settings, hour-setup, calendar-customize, stopwatch-settings",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "time-setting-03",
+            "tags": "clock-setup, schedule-adjust, timer-config, chronometer-options, watch-settings, hour-setup, calendar-customize, stopwatch-settings",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "tips",
+            "tags": "tips",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "tire",
+            "tags": "tire",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "tired-01",
+            "tags": "exhausted face, sleepy icon, weary emoticon, fatigued symbol, drained emoji, drowsy face, worn-out symbol, lethargic icon, spent emoticon, sleepyhead emoji, and weary face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "tired-02",
+            "tags": "exhausted face, sleepy icon, weary emoticon, fatigued symbol, drained emoji, drowsy face, worn-out symbol, lethargic icon, spent emoticon, sleepyhead emoji, and weary face",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "tissue-paper",
+            "tags": "tissue-paper",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "toggle-off",
+            "tags": "switch-off, deactivate, disable, turn-off, unclick, power-down, inactive, shut-down",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "toggle-on",
+            "tags": "switch, activate, power, enable, on-off, turn on, activate switch, toggle active, start, engage",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "toilet-01",
+            "tags": "toilet-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "toilet-02",
+            "tags": "toilet-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "token-circle",
+            "tags": "token-circle",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "token-square",
+            "tags": "token-square",
+            "category": "ai",
+            "featured": false
+        },
+        {
+            "name": "tongue",
+            "tags": "tongue",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "tongue-01",
+            "tags": "Playful Tongue, Cheeky Expression, Waggish Symbol, Lighthearted Tongue, Teasing Icon, Jovial Emoji, Whimsical Tongue, Mischievous Symbol, Frolicsome Expression, Amusing Icon, Mirthful Tongue, Witty Emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "tongue-wink-left",
+            "tags": "Winking Tongue Left, Playful Wink Tongue, Cheeky Left Wink, Jovial Tongue Wink, Mischievous Lick Left, Humorous Tongue Wink, Saucy Left Wink, Playful Licking Wink, Waggish Tongue Left",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "tongue-wink-right",
+            "tags": "Winking Tongue, Cheeky Wink, Playful Tongue, Sassy Wink, Teasing Tongue, Mischievous Wink, Jovial Tongue, Coy Wink, Lively Tongue, Saucy Wink",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "tools",
+            "tags": "tools",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "tornado-01",
+            "tags": "tornado, cyclone, storm",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "tornado-02",
+            "tags": "tornado, cyclone, storm",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "torri-gate",
+            "tags": "torri-gate",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "touch-01",
+            "tags": "touch-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-02",
+            "tags": "touch-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-03",
+            "tags": "touch-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-04",
+            "tags": "touch-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-05",
+            "tags": "touch-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-06",
+            "tags": "touch-06",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-07",
+            "tags": "touch-07",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-08",
+            "tags": "touch-08",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-09",
+            "tags": "touch-09",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-10",
+            "tags": "touch-10",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-interaction-01",
+            "tags": "touch-interaction-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-interaction-02",
+            "tags": "touch-interaction-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-interaction-03",
+            "tags": "touch-interaction-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-interaction-04",
+            "tags": "touch-interaction-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-locked-01",
+            "tags": "touch-locked-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-locked-02",
+            "tags": "touch-locked-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-locked-03",
+            "tags": "touch-locked-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touch-locked-04",
+            "tags": "touch-locked-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touchpad-01",
+            "tags": "touchpad-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touchpad-02",
+            "tags": "touchpad-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touchpad-03",
+            "tags": "touchpad-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "touchpad-04",
+            "tags": "touchpad-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "towels",
+            "tags": "towels",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "tow-truck",
+            "tags": "tow-truck icon, towing vehicle, rescue truck, hauler, wrecker, tow rig, recovery van, tow transporter, roadside assistance, breakdown truck",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "toy-train",
+            "tags": "toy-train icon, choo-choo, play locomotive, kiddie express, miniature rail, tiny railcar, fun choo-choo, child's locomotion, playful rail, mini-rail, train",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "tractor",
+            "tags": "tractor icon, farm machine, plower, agri-vehicle, rural mover, field master, harvester, land rover, cultivator, agro-truck, tiller",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "trade-down",
+            "tags": "price decrease, price down, down, level",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "trade-mark",
+            "tags": "trade-mark",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "trademark",
+            "tags": "trademark",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "trade-up",
+            "tags": "price increase, price up, high, level",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "traffic-incident",
+            "tags": "accident-alert, road-trouble, congestion-event, collision-warning, traffic-trouble",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "traffic-jam-01",
+            "tags": "traffic-jam-01",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "traffic-jam-02",
+            "tags": "traffic-jam-02",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "traffic-light",
+            "tags": "signal, stoplight, semaphore, intersection-light, road-light, crossroad-signal, traffic-signal",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "train-01",
+            "tags": "train icon, locomotive, railway, transit, express, railcar, choo-choo, metro, subway, tram, bullet train",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "train-02",
+            "tags": "train icon, locomotive, railway, transit, express, railcar, choo-choo, metro, subway, tram, bullet train",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "tram",
+            "tags": "tram icon, streetcar, trolley, light rail, cable car, tramcar, transit car, railway car, people mover, urban rail, electric tram",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "trampoline",
+            "tags": "trampoline",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "transaction",
+            "tags": "transaction",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "transition-bottom",
+            "tags": "transition-bottom",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "transition-left",
+            "tags": "transition-left",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "transition-right",
+            "tags": "transition-right",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "transition-top",
+            "tags": "transition-top",
+            "category": "animation",
+            "featured": false
+        },
+        {
+            "name": "translate",
+            "tags": "translate",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "translation",
+            "tags": "translation",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "transmission",
+            "tags": "transmission",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "transparency",
+            "tags": "transparency",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "trapezoid-line-horizontal",
+            "tags": "trapezoid-line-horizontal",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "trapezoid-line-vertical",
+            "tags": "trapezoid-line-vertical",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "travel-bag",
+            "tags": "travel-bag",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "treadmill-01",
+            "tags": "treadmill-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "treadmill-02",
+            "tags": "treadmill-02",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "treatment",
+            "tags": "treatment",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "tree-01",
+            "tags": "tree-01",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tree-02",
+            "tags": "tree-02",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tree-03",
+            "tags": "tree-03",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tree-04",
+            "tags": "tree-04",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tree-05",
+            "tags": "tree-05",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tree-06",
+            "tags": "tree-06",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tree-07",
+            "tags": "tree-07",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "trello",
+            "tags": "trello",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "triangle",
+            "tags": "triangle",
+            "category": "shapes",
+            "featured": false
+        },
+        {
+            "name": "triangle-01",
+            "tags": "pyramid, triangle, trigon",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "triangle-02",
+            "tags": "pyramid, triangle, trigon",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "triangle-03",
+            "tags": "Three-Sided Shape, Delta, Triangular Symbol, Pyramid, Triad Marker, Trigon, Triquetra, Trihedral Glyph, Triangular Sign, Tri-Point Emblem, Three-Cornered Icon",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "trolley-01",
+            "tags": "trolley",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "trolley-02",
+            "tags": "trolley, shopping bag, shopping cart,",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "tropical-storm",
+            "tags": "tornado, cyclone, storm",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "tropical-storm-tracks-01",
+            "tags": "tornado, cyclone, storm",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "tropical-storm-tracks-02",
+            "tags": "tornado, cyclone, storm",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "truck",
+            "tags": "delivery vehicle, transport, lorry, freighter, cargo carrier, moving van, hauler, goods transporter, box truck, logistics vehicle",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "truck-delivery",
+            "tags": "truck-delivery icon, delivery-truck, shipping-vehicle, transport-delivery, cargo-truck, logistics-icon, shipment-truck, freight-delivery, haulage-truck, dispatch-vehicle, distribution-truck",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "truck-monster",
+            "tags": "beastly-hauler, monster-truck, roaring-rig, colossal-hauler, fierce-mover, titan-transport, mega-monster, savage-hauler, giant-truck, monstrous-mover",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "truck-return",
+            "tags": "Return Truck, truck back, revert transport, vehicle return, return delivery, transport reversal, truck reversal, backtrack vehicle, reverse shipping, return cargo, revert haulage, bring back truck, recall transport, retrieve Truck",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "trulli",
+            "tags": "trulli",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "t-shirt",
+            "tags": "t-shirt",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "tsunami",
+            "tags": "tornado, cyclone, storm, tsunami, sunami",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "tulip",
+            "tags": "tulip",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "tumblr",
+            "tags": "tumblr",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "turtle-neck",
+            "tags": "turtle-neck",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "tv-01",
+            "tags": "television, screen, monitor, display, viewing device, entertainment box, media screen, visual device, tv",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tv-02",
+            "tags": "television, screen, monitor, display, viewing device, entertainment box, media screen, visual device, tv",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tv-fix",
+            "tags": "television, screen, monitor, display, viewing device, entertainment box, media screen, visual device, tv, tv fix",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tv-issue",
+            "tags": "television, screen, monitor, display, viewing device, entertainment box, media screen, visual device, tv, tv issue",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "tv-smart",
+            "tags": "television, screen, monitor, display, viewing device, entertainment box, media screen, visual device, tv, smart tv, tv smart",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "twin-tower",
+            "tags": "twin-tower",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "twitch",
+            "tags": "twitch",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "twitter",
+            "tags": "twitter",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "twitter-square",
+            "tags": "twitter-square",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "two-factor-access",
+            "tags": "two-factor-access",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "two-finger-01",
+            "tags": "two-finger-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "two-finger-02",
+            "tags": "two-finger-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "two-finger-03",
+            "tags": "two-finger-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "two-finger-04",
+            "tags": "two-finger-04",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "two-finger-05",
+            "tags": "two-finger-05",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "txt-01",
+            "tags": "txt-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "txt-02",
+            "tags": "txt-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "type-cursor",
+            "tags": "type-cursor",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "typescript-01",
+            "tags": "typescript-01",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "typescript-02",
+            "tags": "typescript-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "typescript-03",
+            "tags": "typescript-03",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "uber",
+            "tags": "uber",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "ufo",
+            "tags": "ufo icon, alien ship, flying saucer, extraterrestrial craft, space vessel, unidentified flying object, celestial shuttle, intergalactic pod, otherworldly cruiser, cosmic disc, galactic transport",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "ufo-01",
+            "tags": "flying saucer, alien craft, extraterrestrial ship, spaceship, unidentified flying object, celestial vessel, interstellar object, cosmic shuttle, otherworldly craft, galactic saucer",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "umbrella",
+            "tags": "umbrella",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "umbrella-dollar",
+            "tags": "umbrella-dollar",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "unamused",
+            "tags": "Displeased face, Serious emoji, Frowning symbol, Dismayed emoticon, Unimpressed icon, Pouty face, Grimacing expression, Stern emoji, Dissatisfied symbol, Grumpy emoticon, Irritated face, Dour emoticon, Glowering icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "unavailable",
+            "tags": "unavailable, crossed-out, off-limits, disabled, not accessible, out of service, restricted, inactive, off-duty, inoperable, non-operational, out of order, closed, off-limits, off the grid, unavailable, not reachable, off, out of commission, unable",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "underpants-01",
+            "tags": "underpants-01",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "underpants-02",
+            "tags": "underpants-02",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "underpants-03",
+            "tags": "underpants-03",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "undo",
+            "tags": "undo",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "undo-02",
+            "tags": "undo-02",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "undo-03",
+            "tags": "undo-03",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "unfold-less",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "unfold-more",
+            "tags": "chevron,",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "ungroup-items",
+            "tags": "ungroup-items",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "ungroup-layers",
+            "tags": "ungroup-layers",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "unhappy",
+            "tags": "Frowning Face, Sad Emoticon, Disappointed Symbol, Upset Icon, Gloomy Smiley, Melancholy Face, Unsettled Expression, Sorrowful Emoji, Dismal Character, Dejected Symbol, Morose Icon, Crestfallen Emoticon, Miserable Face, Distressed Symbol",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "universal-access",
+            "tags": "universal-access",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "universal-access-circle",
+            "tags": "universal-access-circle",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "university",
+            "tags": "university",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "unlink-01",
+            "tags": "unlink-icon, detach, disconnect, separate, disjoin, unhook, sever, isolate, unbind, uncouple, unyoke, release",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "unlink-02",
+            "tags": "unlink-icon, detach, disconnect, separate, disjoin, unhook, sever, isolate, unbind, uncouple, unyoke, release",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "unlink-03",
+            "tags": "unlink-icon, detach, disconnect, separate, disjoin, unhook, sever, isolate, unbind, uncouple, unyoke, release",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "unlink-04",
+            "tags": "unlink-icon, detach, disconnect, separate, disjoin, unhook, sever, isolate, unbind, uncouple, unyoke, release",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "unlink-05",
+            "tags": "unlink-icon, detach, disconnect, separate, disjoin, unhook, sever, isolate, unbind, uncouple, unyoke, release",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "unlink-06",
+            "tags": "unlink-icon, detach, disconnect, separate, disjoin, unhook, sever, isolate, unbind, uncouple, unyoke, release",
+            "category": "link-unlink",
+            "featured": false
+        },
+        {
+            "name": "unsplash",
+            "tags": "unsplash",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "upload-01",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-02",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-03",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-04",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-05",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-circle-01",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader, Upload Circle",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-circle-02",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader, Upload Circle",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-square-01",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader, Upload Square",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upload-square-02",
+            "tags": "Send File, Submit, Transfer, Load, Dispatch, Contribute, Upload Data, Transmit, Deliver, Import, Upload, Uploader, Upload Square",
+            "category": "download-upload",
+            "featured": false
+        },
+        {
+            "name": "upwork",
+            "tags": "upwork",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "usb",
+            "tags": "usb",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-bugs",
+            "tags": "usb-bugs",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-connected-01",
+            "tags": "usb-connected-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-connected-02",
+            "tags": "usb-connected-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-connected-03",
+            "tags": "usb-connected-03",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-error",
+            "tags": "usb-error",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-memory-01",
+            "tags": "usb-memory-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-memory-02",
+            "tags": "usb-memory-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-not-connected-01",
+            "tags": "usb-not-connected-01",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "usb-not-connected-02",
+            "tags": "usb-not-connected-02",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "user",
+            "tags": "user, profile, avatar, member, account",
+            "category": "users",
+            "featured": true
+        },
+        {
+            "name": "user-02",
+            "tags": "user-02",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-03",
+            "tags": "user-03",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-account",
+            "tags": "user, profile, avatar, member, account, user account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-add-01",
+            "tags": "user add, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-add-02",
+            "tags": "user add, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-arrow-left-right",
+            "tags": "user, profile, avatar, member, account, user right, user left",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-block-01",
+            "tags": "user, user remove, profile, avatar, member, account, user block",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-block-02",
+            "tags": "user, user remove, profile, avatar, member, account, user block",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-check-01",
+            "tags": "user check, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-check-02",
+            "tags": "user check, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-circle",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user round, circle user",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-circle-02",
+            "tags": "user-circle-02",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-edit-01",
+            "tags": "user, user edit, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-full-view",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user full view",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-group",
+            "tags": "user, profile, avatar, member, account, multiple user, group, team",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-group-02",
+            "tags": "user-group-02",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-group-03",
+            "tags": "user-group-03",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-id-verification",
+            "tags": "verification, user, user verification",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-list",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user list",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-lock-01",
+            "tags": "user lock, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-lock-02",
+            "tags": "user lock, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-love-01",
+            "tags": "user, user love, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-love-02",
+            "tags": "user, user love, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-minus-01",
+            "tags": "user minus, user, user remove, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-minus-02",
+            "tags": "user minus, user, user remove, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-multiple",
+            "tags": "user, profile, avatar, member, account, multiple user, team, users, group, team, multiple users,",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-multiple-02",
+            "tags": "users, group, team, multiple users,",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-multiple-03",
+            "tags": "user-multiple-03",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-question-01",
+            "tags": "user question, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-question-02",
+            "tags": "user question, user, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-remove-01",
+            "tags": "user minus, user, user remove, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-remove-02",
+            "tags": "user minus, user, user remove, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-roadside",
+            "tags": "Direction, Location, GPS, Navigate, Position Tracker, Location User, Roadside",
+            "category": "maps",
+            "featured": false
+        },
+        {
+            "name": "user-search-01",
+            "tags": "user, user search, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-search-02",
+            "tags": "user, user search, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-settings-01",
+            "tags": "user, user settings, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-settings-02",
+            "tags": "user, user settings, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-sharing",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user sharing",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-shield-01",
+            "tags": "user, user shield, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-shield-02",
+            "tags": "user, user shield, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-square",
+            "tags": "user, profile, avatar, member, account, multiple user,",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-star-01",
+            "tags": "user, user star, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-star-02",
+            "tags": "user, user star, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-status",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user status",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-story",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user story",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-switch",
+            "tags": "user, profile, avatar, member, account, multiple user, group, user switch, team",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-unlock-01",
+            "tags": "user, user unlock, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "user-unlock-02",
+            "tags": "user, user unlock, profile, avatar, member, account",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "uv-01",
+            "tags": "sun, solar, daytime, shining, uv",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "uv-02",
+            "tags": "sun, solar, daytime, shining, uv",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "uv-03",
+            "tags": "sun, solar, daytime, shining, uv",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "vaccine",
+            "tags": "vaccine",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "validation",
+            "tags": "validation",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "validation-approval",
+            "tags": "validation-approval",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "van",
+            "tags": "van, transporter, delivery, cargo, minibus, shuttle, moving, commute, caravan, hauler, camper, wheels",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "variable",
+            "tags": "variable",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "vegetarian-food",
+            "tags": "vegetarian-food",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "versus",
+            "tags": "versus",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "vertical-resize",
+            "tags": "resize vertical,",
+            "category": "mouse",
+            "featured": false
+        },
+        {
+            "name": "vertical-scroll-point",
+            "tags": "vertical-scroll-point",
+            "category": "arrows",
+            "featured": false
+        },
+        {
+            "name": "vest",
+            "tags": "vest",
+            "category": "clothing",
+            "featured": false
+        },
+        {
+            "name": "victory-finger-01",
+            "tags": "victory-finger-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "victory-finger-02",
+            "tags": "victory-finger-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "victory-finger-03",
+            "tags": "victory-finger-03",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "video-01",
+            "tags": "video-01",
+            "category": "image-camera",
+            "featured": true
+        },
+        {
+            "name": "video-02",
+            "tags": "video-02",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "video-console",
+            "tags": "video-console",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "video-off",
+            "tags": "video-off",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "video-replay",
+            "tags": "video-replay",
+            "category": "image-camera",
+            "featured": false
+        },
+        {
+            "name": "view",
+            "tags": "eye, show, show password,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "view-off",
+            "tags": "eye off, hide, hide password,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "view-off-slash",
+            "tags": "eye off, hide, hide password,",
+            "category": "editing",
+            "featured": false
+        },
+        {
+            "name": "vimeo",
+            "tags": "vimeo",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "vine",
+            "tags": "vine",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "vine-square",
+            "tags": "vine-square",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "vintage-clock",
+            "tags": "vintage-clock",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "virtual-reality-vr-01",
+            "tags": "VR Experience, Immersive Tech, Simulated Reality, 3D Simulation, Virtual World, Cyber Experience, Digital Realm, Augmented Environment, VR Universe, Simulated Realm, Alternate Reality, Virtual Reality, Virtual",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "virtual-reality-vr-02",
+            "tags": "VR Experience, Immersive Tech, Simulated Reality, 3D Simulation, Virtual World, Cyber Experience, Digital Realm, Augmented Environment, VR Universe, Simulated Realm, Alternate Reality, Virtual Reality, Virtual",
+            "category": "devices",
+            "featured": false
+        },
+        {
+            "name": "vision",
+            "tags": "vision",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "vk",
+            "tags": "vk",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "vk-square",
+            "tags": "vk-square",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "voice",
+            "tags": "audio, sound, talk, speak, vocal, microphone, recorder, voice control, speech, talkback",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "voice-id",
+            "tags": "voice-id",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "volleyball",
+            "tags": "volleyball",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "volume-high",
+            "tags": "Sound High, Audio Loud, Volume Max, High Volume, Volume Up, High Sound",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "volume-low",
+            "tags": "Volume Decrease, Audio Lower, Volume Reduction, Audio Quieter, Volume Less, Volume Low",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "volume-minus",
+            "tags": "Sound Down, Volume Decrease, Audio Lower, Sound Minus, Volume Reduction, Audio Quieter, Volume Less",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "volume-mute-01",
+            "tags": "No Volume, Volume, Sound, Audio , Mute",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "volume-mute-02",
+            "tags": "No Volume, Sound, Audio , Mute",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "volume-off",
+            "tags": "No Volume, Volume, Sound, Audio , Mute, Volume Off",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "volume-up",
+            "tags": "Increase Volume, Sound, Audio , Mute, Sound, Volume High, Volume Plus",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "vomiting",
+            "tags": "sick face, puke emoji, nauseated symbol, barfing icon, queasy emoticon, throwing up emoji, upset stomach symbol, vomit face, regurgitating icon, nauseous emoji",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "voucher",
+            "tags": "discount, voucher, promo, coupon, offer",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "vr",
+            "tags": "vr",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "vr-glasses",
+            "tags": "vr-glasses",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "vynil-01",
+            "tags": "music disc, record, vinyl record, LP, sound disc, audio disk, vintage disc, vinyl album",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "vynil-02",
+            "tags": "vinyl record, LP, phonograph record, sound disc, audio disk, vintage disc, vinyl album, music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "vynil-03",
+            "tags": "vinyl record, LP, phonograph record, sound disc, audio disk, vintage disc, vinyl album, music",
+            "category": "media",
+            "featured": false
+        },
+        {
+            "name": "waiter",
+            "tags": "waiter",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "waiters",
+            "tags": "waiters",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-01",
+            "tags": "earning cash, earn,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-02",
+            "tags": "fund wallet, funding money, earning cash, earn,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-03",
+            "tags": "money bag, earning cash,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-04",
+            "tags": "wallet-04",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-05",
+            "tags": "wallet-05",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-add-01",
+            "tags": "fund wallet, funding money, earning cash,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-add-02",
+            "tags": "fund wallet, funding money, earning, earn cash",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-done-01",
+            "tags": "wallet-done-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-done-02",
+            "tags": "fund wallet, funding money,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-not-found-01",
+            "tags": "wallet-not-found-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-not-found-02",
+            "tags": "No wallet,",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-remove-01",
+            "tags": "wallet-remove-01",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wallet-remove-02",
+            "tags": "wallet-remove-02",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wall-lamp",
+            "tags": "wall-lamp",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "wanted",
+            "tags": "wanted",
+            "category": "legal",
+            "featured": false
+        },
+        {
+            "name": "wardrobe-01",
+            "tags": "wardrobe-01",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "wardrobe-02",
+            "tags": "wardrobe-02",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "wardrobe-03",
+            "tags": "wardrobe-03",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "wardrobe-04",
+            "tags": "wardrobe-04",
+            "category": "furnitures",
+            "featured": false
+        },
+        {
+            "name": "warehouse",
+            "tags": "warehouse",
+            "category": "e-commerce",
+            "featured": false
+        },
+        {
+            "name": "washington-monument",
+            "tags": "washington-monument",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "waste",
+            "tags": "trash, restore",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "waste-restore",
+            "tags": "restore-bin, bin-restore, recycle-restore, trash-recover, bin-undo, archive-restore,",
+            "category": "add-remove",
+            "featured": false
+        },
+        {
+            "name": "watch-01",
+            "tags": "watch-01",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "watch-02",
+            "tags": "watch-02",
+            "category": "date-time",
+            "featured": false
+        },
+        {
+            "name": "water-energy",
+            "tags": "water, water energy",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "waterfall-down-01",
+            "tags": "report, overview, dashboard, bar, graph, chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "waterfall-down-03",
+            "tags": "waterfall-down-03",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "waterfall-up-01",
+            "tags": "report, overview, dashboard, bar, graph, chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "waterfall-up-02",
+            "tags": "report, overview, dashboard, bar, graph, chart",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "watermelon",
+            "tags": "watermelon",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "water-polo",
+            "tags": "water-polo",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "water-pump",
+            "tags": "water, water pump",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "wattpad",
+            "tags": "wattpad",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "wattpad-square",
+            "tags": "wattpad-square",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "waving-hand-01",
+            "tags": "waving-hand-01",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "waving-hand-02",
+            "tags": "waving-hand-02",
+            "category": "hands",
+            "featured": false
+        },
+        {
+            "name": "waze",
+            "tags": "waze",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "web-design-01",
+            "tags": "web-design-01",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "web-design-02",
+            "tags": "web-design-02",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "webflow",
+            "tags": "webflow",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "webflow-ellipse",
+            "tags": "webflow-ellipse",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "webflow-rectangle",
+            "tags": "webflow-rectangle",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "webhook",
+            "tags": "webhook",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "web-programming",
+            "tags": "web-programming",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "web-protection",
+            "tags": "web-protection",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "web-security",
+            "tags": "web-security",
+            "category": "security",
+            "featured": false
+        },
+        {
+            "name": "web-validation",
+            "tags": "web-validation",
+            "category": "check",
+            "featured": false
+        },
+        {
+            "name": "wechat",
+            "tags": "wechat",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "wedding",
+            "tags": "wedding",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "weight-scale",
+            "tags": "weight-scale",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "weight-scale-01",
+            "tags": "weight-scale-01",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "wellness",
+            "tags": "wellness",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "whatsapp",
+            "tags": "whatsapp",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "whatsapp-business",
+            "tags": "whatsapp-business",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "wheelchair",
+            "tags": "wheelchair",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "whisk",
+            "tags": "whisk",
+            "category": "kitchen",
+            "featured": false
+        },
+        {
+            "name": "whistle",
+            "tags": "whistle",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "whiteboard",
+            "tags": "whiteboard",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "wifi-01",
+            "tags": "wifi-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-02",
+            "tags": "wifi-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-circle",
+            "tags": "wifi-circle",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-connected-01",
+            "tags": "wifi-connected-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-connected-02",
+            "tags": "wifi-connected-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-connected-03",
+            "tags": "wifi-connected-03",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-disconnected-01",
+            "tags": "wifi-disconnected-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-disconnected-02",
+            "tags": "wifi-disconnected-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-disconnected-03",
+            "tags": "wifi-disconnected-03",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-disconnected-04",
+            "tags": "wifi-disconnected-04",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-error-01",
+            "tags": "wifi-error-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-error-02",
+            "tags": "wifi-error-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-full-signal",
+            "tags": "wifi-full-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-location",
+            "tags": "wifi-location",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-lock",
+            "tags": "wifi-lock",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-low-signal",
+            "tags": "wifi-low-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-medium-signal",
+            "tags": "wifi-medium-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-no-signal",
+            "tags": "wifi-no-signal",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-off-01",
+            "tags": "wifi-off-01",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-off-02",
+            "tags": "wifi-off-02",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-square",
+            "tags": "wifi-square",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wifi-unlock",
+            "tags": "wifi-unlock",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wikipedia",
+            "tags": "wikipedia",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "windows-new",
+            "tags": "windows-new",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "windows-old",
+            "tags": "windows-old",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "wind-power",
+            "tags": "wind, fan, wind power",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "wind-power-01",
+            "tags": "wind power, power",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "wind-power-02",
+            "tags": "wind power, power, wind",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "wind-power-03",
+            "tags": "wind power, power, wind",
+            "category": "energy",
+            "featured": false
+        },
+        {
+            "name": "wind-surf",
+            "tags": "wind-surf",
+            "category": "games",
+            "featured": false
+        },
+        {
+            "name": "wind-turbine",
+            "tags": "wind-turbine\" icon: windmill, renewable energy, wind generator, breezy spin, eco turbine, air-powered, gusty wheel, sustainable spin, wind energy, airy propeller",
+            "category": "science-technology",
+            "featured": false
+        },
+        {
+            "name": "wink",
+            "tags": "playful face, cheeky symbol, sly expression, flirtatious icon, mischievous emoji, knowing smiley, coy symbol, teasing emoticon, cunning face, suggestive wink, conspiratorial emoji, playful wink symbol",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "winking",
+            "tags": "Winky Face, Blinking Emoji, Smiley Wink, Playful Emoji, Flirty Face, Cheeky Wink, Mischievous Smile, Cute Wink, Eye Wink Emoji, Grinning Wink",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "wireless",
+            "tags": "wireless",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wireless-cloud-access",
+            "tags": "wireless-cloud-access",
+            "category": "wifi",
+            "featured": false
+        },
+        {
+            "name": "wise",
+            "tags": "wise",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "woman",
+            "tags": "woman",
+            "category": "users",
+            "featured": false
+        },
+        {
+            "name": "wordpress",
+            "tags": "wordpress",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "work",
+            "tags": "work",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "work-alert",
+            "tags": "work-alert",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "workflow-circle-01",
+            "tags": "workflow-circle-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-circle-02",
+            "tags": "workflow-circle-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-circle-03",
+            "tags": "workflow-circle-03",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-circle-04",
+            "tags": "workflow-circle-04",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-circle-05",
+            "tags": "workflow-circle-05",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-circle-06",
+            "tags": "workflow-circle-06",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-01",
+            "tags": "workflow-square-01",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-02",
+            "tags": "workflow-square-02",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-03",
+            "tags": "workflow-square-03",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-04",
+            "tags": "workflow-square-04",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-05",
+            "tags": "workflow-square-05",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-06",
+            "tags": "workflow-square-06",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-07",
+            "tags": "workflow-square-07",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-08",
+            "tags": "workflow-square-08",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-09",
+            "tags": "workflow-square-09",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "workflow-square-10",
+            "tags": "workflow-square-10",
+            "category": "hierarchy",
+            "featured": false
+        },
+        {
+            "name": "work-history",
+            "tags": "work-history",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "workout-battle-ropes",
+            "tags": "workout-battle-ropes",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-gymnastics",
+            "tags": "workout-gymnastics",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-kicking",
+            "tags": "workout-kicking",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-run",
+            "tags": "workout-run",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-sport",
+            "tags": "workout-sport",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-squats",
+            "tags": "workout-squats",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-stretching",
+            "tags": "workout-stretching",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "workout-warm-up",
+            "tags": "workout-warm-up",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "work-update",
+            "tags": "work-update",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "worry",
+            "tags": "Concerned Face, Anxious Expression, Nervous Emoticon, Distressed Symbol, Uneasy Icon, Apprehensive Emoji, Tensed Face, Worried Emoticon, Fretful Symbol, Anxieted Expression, Agitated Icon",
+            "category": "emojis",
+            "featured": false
+        },
+        {
+            "name": "wps-office",
+            "tags": "wps-office",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "wps-office-rectangle",
+            "tags": "wps-office-rectangle",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "wrench-01",
+            "tags": "tool, spanner, adjuster, fixer, implement, turner, key, hardware, twisty",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "wrench-02",
+            "tags": "tool, spanner, adjuster, fixer, implement, turner, key, hardware, twisty",
+            "category": "settings",
+            "featured": false
+        },
+        {
+            "name": "wudu",
+            "tags": "wudu",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "xing",
+            "tags": "xing",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "xls-01",
+            "tags": "xls-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "xls-02",
+            "tags": "xls-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "xml-01",
+            "tags": "xml-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "xml-02",
+            "tags": "xml-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "x-ray",
+            "tags": "x-ray",
+            "category": "medical",
+            "featured": false
+        },
+        {
+            "name": "xsl-01",
+            "tags": "xsl-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "xsl-02",
+            "tags": "xsl-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "x-variable",
+            "tags": "x-variable",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "x-variable-circle",
+            "tags": "x-variable-circle",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "x-variable-square",
+            "tags": "x-variable-square",
+            "category": "mathematics",
+            "featured": false
+        },
+        {
+            "name": "yelp",
+            "tags": "yelp",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "yen",
+            "tags": "yen",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "yen-circle",
+            "tags": "yen-circle",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "yen-receive",
+            "tags": "yen-receive",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "yen-send",
+            "tags": "yen-send",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "yen-square",
+            "tags": "yen-square",
+            "category": "business",
+            "featured": false
+        },
+        {
+            "name": "yoga-01",
+            "tags": "yoga-01",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "yoga-02",
+            "tags": "yoga-02",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "yoga-03",
+            "tags": "yoga-03",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "yoga-ball",
+            "tags": "yoga-ball",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "yoga-mat",
+            "tags": "yoga-mat",
+            "category": "gym",
+            "featured": false
+        },
+        {
+            "name": "yogurt",
+            "tags": "yogurt",
+            "category": "foods",
+            "featured": false
+        },
+        {
+            "name": "youtube",
+            "tags": "youtube",
+            "category": "logos",
+            "featured": true
+        },
+        {
+            "name": "yurt",
+            "tags": "yurt",
+            "category": "buildings",
+            "featured": false
+        },
+        {
+            "name": "zakat",
+            "tags": "zakat",
+            "category": "islamic",
+            "featured": false
+        },
+        {
+            "name": "zap",
+            "tags": "zap, lighting, speed, fast",
+            "category": "weather",
+            "featured": false
+        },
+        {
+            "name": "zeppelin",
+            "tags": "zeppelin, airship, blimp, dirigible, skyship, aerial cruiser, floating balloon, gasbag, cloud rider, helium craft, flying vessel",
+            "category": "logistics",
+            "featured": false
+        },
+        {
+            "name": "zip-01",
+            "tags": "zip-01",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "zip-02",
+            "tags": "zip-02",
+            "category": "files-folders",
+            "featured": false
+        },
+        {
+            "name": "zoom",
+            "tags": "zoom",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "zoom-circle",
+            "tags": "zoom-circle",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "zoom-in-area",
+            "tags": "zoom-in-area, icon: magnify-region, focus-zoom, enlarge-section, expand-view, area-zoom, pinpoint-zoom, detailed-focus, targeted-magnify, specific-zoom",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "zoom-out-area",
+            "tags": "zoom-out-area, reduce view, minimize area, shrink display, decrease scope, scale down zone, diminish region",
+            "category": "search",
+            "featured": false
+        },
+        {
+            "name": "zoom-square",
+            "tags": "zoom-square",
+            "category": "logos",
+            "featured": false
+        },
+        {
+            "name": "zsh",
+            "tags": "zsh",
+            "category": "programming",
+            "featured": false
+        },
+        {
+            "name": "zzz",
+            "tags": "zzz",
+            "category": "emojis",
+            "featured": false
+        }
+    ]
+}

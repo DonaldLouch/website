@@ -29,6 +29,8 @@ npmUpdate.txt
 # testing
 /coverage
 
+/lib/HugeIcons.json
+
 /public/videos
 /public/pictures
 
