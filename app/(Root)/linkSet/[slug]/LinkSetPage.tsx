@@ -44,32 +44,30 @@ export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxS
                         <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>                        
                         <Text>If you have found this on other services or have any issues please do not hesitate to contact me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} />. More services and links maybe added as they become available or known.</Text>
                         {linkSet.links.length > 0 && linkSet.links.map((link: any) => {
-                            // const linkIcon = link.icon === "Apple" ? <AppleIcon />
-                            //     : link.icon === "Spotify" ? <SpotifyIcon />
-                            //     : link.icon === "YouTube" ? <YoutubeIcon />
-                            //     : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                            //     : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                            //     : <MusicNote01Icon />
+                            const iconName = link.icon.name ? link.icon.name 
+                                : !link.icon.name && link.linkType.includes("ex") ? "arrow-up-right-01"
+                                : !link.icon.name && link.linkType.includes("in") ? "link-square-02"
+                                : "link-04"
 
-                            // return <Anchor
-                            //     key={link.id}
-                            //     href={link.link ? link.link : "#"}
-                            //     c="currentColor"
-                            //     underline="never"
-                            //     target={link.linkType === "exLink" ? "_blank" : "_self"}
-                            // >
-                            //     <Group wrap="nowrap" className={ classes.linkButton } 
-                            //         my="1.5rem"
-                            //         p={"1.2rem"}
-                            //         align="center"
-                            //     >
-                            //         <ActionIcon bg="none" style={{boxShadow: "none", padding: "0", margin: 0}}>{linkIcon}</ActionIcon>
-                            //         <Stack gap="0" m="0" p="0">
-                            //             <Text c="white" m="0" fz="1.5rem" p="0" lh="1">{link.name}</Text>
-                            //             {link.subTitle ? <Text size="sm" c="dimmed" fw={300} m="0.2rem 0" p="0" lh="1">{link.subTitle}</Text> : null}
-                            //         </Stack>
-                            //     </Group>
-                            // </Anchor>
+                            return <Anchor
+                                key={link.id}
+                                href={link.link ? link.link : "#"}
+                                c="currentColor"
+                                underline="never"
+                                target={link.linkType === "exLink" ? "_blank" : "_self"}
+                            >
+                                <Group wrap="nowrap" className={ classes.linkButton } 
+                                    my="1.5rem"
+                                    p={"1.2rem"}
+                                    align="center"
+                                >
+                                    <ActionIcon bg="none" style={{boxShadow: "none", padding: "0", margin: 0}}><HugeIcon name={iconName} variant={link.icon.variant ? link.icon.variant : undefined} size="1.5rem" /></ActionIcon>
+                                    <Stack gap="0" m="0" p="0">
+                                        <Text c="white" m="0" fz="1.5rem" p="0" lh="1">{link.name}</Text>
+                                        {link.subTitle ? <Text size="sm" c="dimmed" fw={300} m="0.2rem 0" p="0" lh="1">{link.subTitle}</Text> : null}
+                                    </Stack>
+                                </Group>
+                            </Anchor>
                         })}
                     </Box>
                 </Flex>
