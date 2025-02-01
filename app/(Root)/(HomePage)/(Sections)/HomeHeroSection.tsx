@@ -12,10 +12,12 @@ export default function HomeHeroSection({aboutMe}: any) {
   
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", overflowY: "hidden"}} bg="var(--blurredBackground)">
     {/* <Box bg= {`no-repeat url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M41U25E6mtuU256ls.jpeg) center`}  bgsz="cover" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box> */}
-    <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.4" pos="absolute"></Box>
-    <Box h="100%" w="100vw" visibleFrom="sm">
+    <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.4" pos="absolute" style={{zIndex: "110", overflowY: "hidden"}}></Box>
+    {/* <Box h="100%" w="100vw" visibleFrom="sm"> */}
+    <AspectRatio ratio={16/9} h="100%" w="100vw" visibleFrom="sm" pos="absolute" style={{zIndex: "100", overflowY: "hidden"}}>
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>
-    </Box>
+    </AspectRatio>
+    {/* </Box> */}
     <Box hiddenFrom="sm" bg={`no-repeat url("https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M1ISNFD4g4o2T6pt3.jpeg") center`} bgsz="cover" h="100%" w="100vw"></Box>
 
     {/* <Box h="100%" w="100%" hiddenFrom="sm" bg="url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LNQUPGZ0x3vPA2ztg.jpg)" bgp="center" bgsz="cover">
@@ -28,7 +30,7 @@ export default function HomeHeroSection({aboutMe}: any) {
       // mx="1rem"
       mx={{base: "2rem", lg: "1rem"}} 
       mah={{base: "100%", sm: "calc(100vh)"}} 
-      style={{ overflow: "hidden" }} 
+      style={{ zIndex: "1000", overflow: "hidden" }} 
       justify="center"
       align="center"
       p="0rem"
