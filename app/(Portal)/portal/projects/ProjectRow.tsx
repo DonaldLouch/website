@@ -9,7 +9,7 @@ import { ProjectType } from "@/lib/Project/projectType";
 import classes from "@/app/(Components)/Components.module.css"
 import { useRouter } from "next/navigation";
 import HugeIcon from "@/app/(Components)/HugeIcon";
-import StatusBadge from "../(Components)/StatusBadge";
+import StatusBadge from "../project/(Components)/StatusBadge";
 
 export default function ProjectRow({ project, orderNumber, isStaff }: { project: any, orderNumber: number, isStaff?: boolean }) {    
   // const projectStatus = ProjectStatus.find(({ id }) => id === project.status)
