@@ -2,7 +2,7 @@
     Hugeicons Icon Component v. 0.0.2
     By: [Donald Louch](https://donaldlouch.ca)
 
-    Featuring: [Hugeicons: @hugeicons/react@1.0.0](https://hugeicons.com/icons)
+    Featuring: [Hugeicons: @hugeicons/react@1.0.1](https://hugeicons.com/icons)
 
     Here is an easy to use component that allows you to use the Hugeicons icon library in your React application. Currently I'm only importing the icons that I use for my personal website. More maybe added at a later time.
 

@@ -39,7 +39,7 @@ export default function TaskForm({task, isStaff}: any) {
                     title: `${supabaseStatus === 204 ? `"${task.title}" Completed 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
                     message: `${supabaseStatus === 204 ? `You have successfully completed the task!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
                     color: supabaseStatus === 204 ? "black" : "red-6",
-                    icon: supabaseStatus === 204 ? <TaskDone01Icon /> : <AlertDiamondIcon />
+                    icon: supabaseStatus === 204 ? <HugeIcon name="task-done-01" /> : <HugeIcon name="alert-diamond" />
                 })
                 supabaseStatus === 204 && router.refresh()
             })()
