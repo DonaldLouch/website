@@ -98,7 +98,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                                     <Anchor href="/" m="0"><Badge color="primary" leftSection={<HugeIcon name="contact" />}>
                                         {post.author}
                                     </Badge></Anchor>
-                                    <Badge color="red" leftSection={<HugeIcon name="calander-03" />} m="0">
+                                    <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                                         <DisplayDate source={post.postedOn} />
                                     </Badge>
                                     <Group>
