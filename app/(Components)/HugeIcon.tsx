@@ -64,7 +64,8 @@ export type IconArray = {name: IconName, variant?: IconVariant}
 export default function HugeIcon({ name, variant, size, color, weight, clickOption }: { name: IconName, variant?: IconVariant, size?: any, color?: string, weight?: any, [key: string]: any, clickOption?: any }) {
     const options = { size: size ? size : undefined, color: color ? color : "currentColor", strokeWidth: weight ? weight : undefined}
 
-    const getIcon = name === "file-unknown" && !variant ? FileUnknownStrokeRounded 
+    const getIcon: any = 
+        name === "file-unknown" && !variant ? FileUnknownStrokeRounded 
             : name === "file-unknown" && variant === "solid" ? FileUnknownSolidRounded 
             : name === "file-unknown" && variant === "bulk" ? FileUnknownBulkRounded 
             : name === "file-unknown" && variant === "twotone" ? FileUnknownTwotoneRounded
@@ -939,6 +940,6 @@ export default function HugeIcon({ name, variant, size, color, weight, clickOpti
             : name === "arrow-up-02" && variant === "bulk" ? ArrowUp02BulkRounded
             : name === "arrow-up-02" && variant === "twotone" ? ArrowUp02TwotoneRounded
             : name === "arrow-up-02" && variant === "duotone" ? ArrowUp02DuotoneRounded
-        : FileUnknownIcon
+        : FileUnknownStrokeRounded
     return <HugeiconsIcon icon={getIcon} {...options} onClick={clickOption ? clickOption : undefined} />
 }
