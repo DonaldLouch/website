@@ -20,6 +20,7 @@ import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButto
 import { useUser } from "@clerk/nextjs";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
 import HugeIcon from "@/app/(Components)/HugeIcon";
+import LinkBadge from "@/app/(Components)/LinkBadge";
 
 export default function PhotoPage({photoData, mdxSource}: any) {
   const {user} = useUser()
@@ -69,19 +70,9 @@ export default function PhotoPage({photoData, mdxSource}: any) {
           <DisplayDate source={photoData.fileID.capturedOn} />
         </Badge>
         <Group gap="0.5rem">
-          {photoData.links.length > 0 && photoData.links.map((link: any) => {
-              // console.log("Icon", link.icon)
-              // const linkIcon = link.icon === "CameraVideo" ? <CameraVideoIcon />
-              // : link.icon === "Github" ? <GithubIcon />
-              // : link.icon === "news" ? <NewsIcon />
-              // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-              // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-              // : <Link04Icon />
-
-              // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-              //     {link.name}
-              // </Badge></Anchor>
-          })} 
+          {photoData.links.length > 0 && photoData.links.map((link: any, index: number) => (
+            <LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, variant: link.icon.variant}} key={index} />
+            ))}
         </Group>
         <Group gap="0.5rem">
           <HugeIcon name="tags" />

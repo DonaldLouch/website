@@ -1,5 +1,6 @@
 import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording";
 import HugeIcon from "@/app/(Components)/HugeIcon";
+import LinkBadge from "@/app/(Components)/LinkBadge";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
 import { useUser } from "@clerk/nextjs";
@@ -27,18 +28,9 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
             <Badge color="primary" leftSection={<HugeIcon name="library" />}>
                 {video.category?.catName}
             </Badge>
-            {video.links && video.links.length > 0 && video.links.map((link: any) => {
-                // // console.log("Icon", link.icon)
-                // const linkIcon = link.icon === "album02" ? <Album02Icon />
-                // : link.icon === "news" ? <NewsIcon />
-                // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                // : <Link04Icon />
-
-                // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                //     {link.name}
-                // </Badge></Anchor>
-            })} 
+            {video.links && video.links.length > 0 && video.links.map((link: any, index: number) => (
+                <LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, variant: link.icon.variant}} key={index} />
+            ))}
         </Group>
 
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)", overflow: "scroll"}} p="1rem 2rem" mah="60vh">
@@ -76,18 +68,9 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
                 
                 {video.links && video.links.length > 0 && (<>
                     <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>
-                    <Group align="center" gap="1rem">{video.links.length > 0 && video.links.map((link: any) => {
-                        // const linkIcon = link.icon === "album02" ? <Album02Icon />
-                        // : link.icon === "news" ? <NewsIcon />
-                        // : link.icon === "" && link.linkType.includes("ex") ? <ArrowUpRight01Icon />
-                        // : link.icon === "" && link.linkType.includes("in") ? <LinkSquare02Icon />
-                        // : <Link04Icon />
-
-                        // return <Anchor href={link.link} key={link.link} target={link.linkType === "exLink" ? "_blank" : "_self"}><Badge color="blue" leftSection={linkIcon ? linkIcon : <Link04Icon />}>
-                        //     {link.name}
-                        // </Badge></Anchor>
-                    })
-                    }</Group>
+                    <Group align="center" gap="1rem">{video.links.length > 0 && video.links && video.links.length > 0 && video.links.map((link: any, index: number) => (
+                        <LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, variant: link.icon.variant}} key={index} />
+                    ))}</Group>
                 </>)}
 
                 {video.starring && video.starring.length > 0 && (<><Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Starring</Title>

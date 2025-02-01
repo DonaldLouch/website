@@ -9,7 +9,7 @@ export default function Notifications() {
     
     return <>
         <Tooltip label={`Notifications (0)`}>
-            <HugeIcon name="notification-03" variant="duotone" clickOption={open}/>
+            <HugeIcon name="notification-03" variant="twotone" clickOption={open}/>
         </Tooltip>
         <Modal opened={opened} onClose={close} title="Notifications" yOffset="5rem" xOffset="5rem" size="100%"  
             overlayProps={{
