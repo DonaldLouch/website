@@ -66,7 +66,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {adminTickets.map((ticket: any, index: number) => (
-                                <TicketRow key={index} ticket={ticket} isStaff={isStaff} />
+                                <TicketRow key={index} ticket={ticket} />
                             ))}
                         </Table.Tbody>
                     </Table>}
