@@ -56,7 +56,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {clientTickets.map((ticket: any, index: number) => (
-                                <TicketRow key={index} ticket={ticket} orderNumber={index} />
+                                <TicketRow key={index} ticket={ticket} />
                             ))}
                         </Table.Tbody>
                     </Table>}
@@ -66,7 +66,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
                     <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}}>
                         <Table.Tbody>
                             {adminTickets.map((ticket: any, index: number) => (
-                                <TicketRow key={index} ticket={ticket} orderNumber={index} isStaff={isStaff} />
+                                <TicketRow key={index} ticket={ticket} isStaff={isStaff} />
                             ))}
                         </Table.Tbody>
                     </Table>}
@@ -75,7 +75,7 @@ export default function Tickets({isStaff, clientTickets, adminTickets}: ProjectP
             : clientTickets.length === 0 ? <Alert variant="light" color="green" icon={<HugeIcon name="information-circle" variant="twotone"/>} mt="3rem"><Text my="0.5rem" c="white">There currently is no tickets that have been requested!</Text></Alert> : <Table stickyHeader stickyHeaderOffset={60} highlightOnHover borderColor="var(--darkPurple)" highlightOnHoverColor="var(--darkPurpleRGBA)" striped="even" stripedColor="var(--blackRGBA)" p="1rem" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)", overflow: "hidden"}} my="2rem">
                 <Table.Tbody>
                     {clientTickets.map((ticket: any, index: number) => (
-                        <TicketRow key={index} ticket={ticket} orderNumber={index} />
+                        <TicketRow key={index} ticket={ticket} />
                     ))}
                 </Table.Tbody>
             </Table>
