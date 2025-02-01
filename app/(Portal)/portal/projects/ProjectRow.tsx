@@ -9,9 +9,10 @@ import { ProjectType } from "@/lib/Project/projectType";
 import classes from "@/app/(Components)/Components.module.css"
 import { useRouter } from "next/navigation";
 import HugeIcon from "@/app/(Components)/HugeIcon";
+import StatusBadge from "../(Components)/StatusBadge";
 
 export default function ProjectRow({ project, orderNumber, isStaff }: { project: any, orderNumber: number, isStaff?: boolean }) {    
-  const projectStatus = ProjectStatus.find(({ id }) => id === project.status)
+  // const projectStatus = ProjectStatus.find(({ id }) => id === project.status)
   const projectType = ProjectType.find(({ id }) => id === project.projectKind)
   
   const router = useRouter()
@@ -62,11 +63,7 @@ export default function ProjectRow({ project, orderNumber, isStaff }: { project:
       </Text>
     </Table.Td>
     <Table.Td w="15%" ta="center">
-      <Tooltip label={projectStatus?.fullText ? projectStatus?.fullText : projectStatus?.smallText}>
-        <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <Loading03Icon variant="twotone" />}>
-            {projectStatus?.smallText}
-        </Badge>
-      </Tooltip>
+    <StatusBadge status={project.status} />
     </Table.Td>
     
     <Table.Td>

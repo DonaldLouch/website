@@ -11,7 +11,7 @@ import OverviewComponent from "./(Sections)/OverviewComponent";
 import DetailsComponent from "./(Sections)/(Details)/DetailsComponent";
 import TasksComponent from "./(Sections)/(Tasks)/TasksComponent";
 
-import { ProjectStatus } from "@/lib/Project/projectStatus";
+import StatusBadge from "../(Components)/StatusBadge";
 import { ProjectType } from "@/lib/Project/projectType";
 import { useRouter, useSearchParams } from "next/navigation";
 import NotesSection from "./(Sections)/NotesSection";
@@ -57,7 +57,7 @@ export default async function GetProject({project, projectDescription, isStaff, 
     ]
 
 
-    const projectStatus = ProjectStatus.find(({ id }) => id === project.status)
+    // const projectStatus = ProjectStatus.find(({ id }) => id === project.status)
     const projectType = ProjectType.find(({ id }) => id === project.projectKind)
     // console.log(ProjectStatus.find(({ id }) => id === project.status)?.fullText)
 
@@ -148,7 +148,7 @@ export default async function GetProject({project, projectDescription, isStaff, 
                     <Badge color="gray" leftSection={<HugeIcon name="book-02" />}>
                         {projectType?.smallText}
                     </Badge>
-                    <ProjectStatusBadge projectStatus={projectStatus} />
+                    <StatusBadge status={project.status} />
                     {/* <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <HugeIcon name="loading-03" variant="twotone" />}>
                         {projectStatus?.smallText}
                     </Badge> */}

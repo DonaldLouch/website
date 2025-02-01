@@ -2,19 +2,17 @@
 
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker"
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect"
-import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton"
-import FormTextArea from "@/app/(Components)/(Form)/FormTextArea"
 import HugeIcon from "@/app/(Components)/HugeIcon"
 import { ProjectStatus } from "@/lib/Project/projectStatus"
 import { TaskPriority } from "@/lib/Project/taskPriority"
 import supabase from "@/lib/supabase"
-import { Box, SimpleGrid, Title } from "@mantine/core"
+import { SimpleGrid } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
 import { yupResolver } from "mantine-form-yup-resolver"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 export default function TaskForm({task, isStaff}: any) {
     const [statusSelected, setStatusSelected] = useState(task.status ? task.status : null)
