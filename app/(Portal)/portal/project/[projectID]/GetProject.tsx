@@ -11,13 +11,14 @@ import OverviewComponent from "./(Sections)/OverviewComponent";
 import DetailsComponent from "./(Sections)/(Details)/DetailsComponent";
 import TasksComponent from "./(Sections)/(Tasks)/TasksComponent";
 
-import StatusBadge from "../(Components)/StatusBadge";
 import { ProjectType } from "@/lib/Project/projectType";
 import { useRouter, useSearchParams } from "next/navigation";
 import NotesSection from "./(Sections)/NotesSection";
 import { useUser } from "@clerk/nextjs";
 import ProjectTickets from "./(Sections)/(Tickets)/ProjectTickets";
 import HugeIcon from "@/app/(Components)/HugeIcon";
+
+import StatusBadge from "../(Components)/StatusBadge";
 
 // import { Metadata } from 'next';
 
@@ -149,10 +150,6 @@ export default async function GetProject({project, projectDescription, isStaff, 
                         {projectType?.smallText}
                     </Badge>
                     <StatusBadge status={project.status} />
-                    {/* <Badge color={projectStatus?.colorScheme ? projectStatus?.colorScheme : "blue"} leftSection={projectStatus?.icon ? projectStatus?.icon : <HugeIcon name="loading-03" variant="twotone" />}>
-                        {projectStatus?.smallText}
-                    </Badge> */}
-                    {/* <Badge color={ projectStatus?.colorScheme ? projectStatus.colorScheme : "gray" } m="0 auto">{projectStatus?.fullText ? projectStatus?.fullText : projectStatus?.smallText ? projectStatus?.smallText : null}</Badge> */}
                 </Group>
             </Group>
             <Divider />
