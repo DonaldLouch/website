@@ -1,6 +1,6 @@
 'use client'
 
-import { Anchor, AspectRatio, Box, Button, Title, Slider, Stack, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Paper } from "@mantine/core"
+import { Anchor, AspectRatio, Box, Button, Title, Slider, Stack, Text, Image, ActionIcon, Group, Tooltip, Drawer, CopyButton, Flex, useMantineTheme, Paper, Grid } from "@mantine/core"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import FullDescription from "./FullDescription"
