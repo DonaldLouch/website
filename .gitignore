@@ -30,6 +30,9 @@ npmUpdate.txt
 /coverage
 
 /lib/HugeIcons.json
+/app/(Components)/import.tsx
+app/(Components)/HugeIconCopy.tsx
+app/(Components)/HugeIconCopy2.tsx
 
 /public/videos
 /public/pictures
