@@ -14,28 +14,17 @@ import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 export default function page() {
     const iconnames = HugeIconsNames.icons
     const iconList = new Array()
-    const iconImports = new Array()
     iconnames.forEach((icon: { name: string }) => {
         iconList.push(icon.name)
-        const importBase = icon.name.split('-')
-            .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-            .join('')
-        const theImport = `: iconName === "${icon.name}" && iconVariant === "stroke" ? StrokeIcons.${importBase}StrokeRounded 
-            : iconName === "${icon.name}" && iconVariant === "solid" ? SolidIcons.${importBase}SolidRounded 
-            : iconName === "${icon.name}" && iconVariant === "bulk" ? BulkIcons.${importBase}BulkRounded 
-            : iconName === "${icon.name}" && iconVariant === "twotone" ? TwotoneIcons.${importBase}TwotoneRounded
-            : iconName === "${icon.name}" && iconVariant === "duotone" ? DuotoneIcons.${importBase}DuotoneRounded`
-        iconImports.push(theImport)
     })
-    console.log(iconImports[1])
     const list = iconList.toString().replaceAll(",", '" | "')
 
     const [clicked, setClicked] = useState(false)
 
     return <Box mt="2rem">
         <InlineCode code="console.log('Hello World')" />
-        <ClipboardButton copyValue={iconImports.toString()} />
-        <HugeIcon name="apple" color="red" size="10rem" variant="twotone" altStatus={clicked} altName="spotify" altVariant="duotone" clickOption={() => setClicked(!clicked ? true : false)}  />
+        <ClipboardButton copyValue={list} />
+        <HugeIcon name="sun-01" variant="duotone" color={!clicked ? "white" : "black"} size="10rem" altStatus={clicked} altName="moon-02" clickOption={() => setClicked(!clicked ? true : false)}  />
         {/* altStatus={clicked} altName="absolute" onClick={() => setClicked(!clicked ? true : false)} */}
     </Box>
 }
