@@ -35,6 +35,7 @@ export default function page() {
     return <Box mt="2rem">
         <InlineCode code="console.log('Hello World')" />
         <ClipboardButton copyValue={iconImports.toString()} />
-        <HugeIcon name="sun" color="red" size="10rem" variant="twotone" altStatus={clicked} altName="moon" onClick={() => setClicked(!clicked ? true : false)} />
+        <HugeIcon name="apple" color="red" size="10rem" variant="twotone" altStatus={clicked} altName="spotify" altVariant="duotone" clickOption={() => setClicked(!clicked ? true : false)}  />
+        {/* altStatus={clicked} altName="absolute" onClick={() => setClicked(!clicked ? true : false)} */}
     </Box>
 }
