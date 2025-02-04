@@ -46,8 +46,8 @@ export async function uploadFileToS3( files: File[], payload: S3Payload ): Promi
           Key: filePath,
           Body: buffer,
           ContentType: file.type,
-          ContentLength: fileSize,
-        }
+          ContentLength: fileSize
+        };
 
         const uploadFile = new PutObjectCommand(uploadFileObject)
         const upload = await s3.send(uploadFile)

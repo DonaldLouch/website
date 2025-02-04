@@ -6,5 +6,5 @@ export default new S3Client({
   credentials: {
     accessKeyId: process.env.NEXT_PUBLIC_S3_ACCESS_KEY_ID!,
     secretAccessKey: process.env.NEXT_PUBLIC_S3_SECRET_ACCESS_KEY!,
-  }
+  },
 })

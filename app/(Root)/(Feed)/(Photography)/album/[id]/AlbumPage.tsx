@@ -28,6 +28,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'
 import HugeIcon from '@/app/(Components)/HugeIcon'
 import LinkBadge from '@/app/(Components)/LinkBadge'
+import InlineLink from '@/app/(Components)/InlineLink'
 
 async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
     const from = nextPage * photoLimit
@@ -160,7 +161,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     <Loader color="white" size="md" type="bars" />
                     <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
                 </Group>
-                <Text>If the content is still not loaded after a minute please contact Donald Louch at <Anchor href="mailto:hello@donaldlouch.ca">hello@donaldlouch.ca</Anchor> for further assistance.</Text>
+                <Text>If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
                 </Stack>
             </Paper>
             </Box>
