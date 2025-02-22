@@ -122,7 +122,7 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
                     </Group>
                     <Group gap="0.5rem">
                         <HugeIcon name="tags" />
-                        {imageData.tags.map((tag: any, index: number) => (<Anchor key={index} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
+                        {imageData.tags && imageData.tags.map((tag: any, index: number) => (<Anchor key={index} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
                             <Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
                                 {tag}
                             </Badge>

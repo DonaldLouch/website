@@ -37,31 +37,57 @@ export default async function PortfolioPhotography(props: {searchParams: SearchP
     : searchValue?.includes("%20") ? searchValue?.replace('%20', ' ') 
     : searchValue
 
-  const query =
-    supabase
-      .from('Photography')
-      .select(`*, fileID (*), album (*)`)
-      .limit(postLimit)
-  searchType && searchValue && searchType === "keyword" && query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%`) //TODO: Add Tags
-  searchType && searchValue && searchType === "location" && query.ilike('location', `%${keyword}%`)
-  searchType && searchValue && searchType === "tag" && query.contains("tags", [`${keyword}`])
-  searchType && searchValue && searchType === "order" && searchValue === "old" ? query.order('uploadedOn', { ascending: true }) : query.order('uploadedOn', { ascending: false })
-  searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true })
-
-  const query2 =
-  supabase
+  const query = supabase
+    .from('Photography')
+    .select(`*, fileID (*), album (*)`)
+    .limit(postLimit)
+    .match({ 
+      isPublic: true, 
+      isSetup: true,
+      ...(searchType === "view" && searchValue === "pinned" ? { isPinned: true } : {})
+    })
+    if (searchType && searchValue) {
+      switch (searchType) {
+        case 'keyword':
+          query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%,tags.cs.{${keyword}}`)
+          query.contains('tags', [`${keyword}`])
+          break
+        case 'location':
+          query.ilike('location', `%${keyword}%`)
+          break
+        case 'tag':
+          query.contains('tags', [`${keyword}`])
+          break
+      }
+    }
+    query.order('uploadedOn', { ascending: searchType === "order" && searchValue === 'old' ? true : false })
+  
+  const query2 = supabase
     .from('Photography')
     .select("*", { count: 'exact'})
     .limit(postLimit)
-  searchType && searchValue && searchType === "keyword" && query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%`) //TODO: Add Tags
-  searchType && searchValue && searchType === "location" && query.ilike('location', `%${keyword}%`)
-  searchType && searchValue && searchType === "tag" && query.contains("tags", [`${keyword}`])
-  searchType && searchValue && searchType === "order" && searchValue === "old" ? query.order('uploadedOn', { ascending: true }) : query.order('uploadedOn', { ascending: false })
-  searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true })
+    .match({ 
+      isPublic: true,
+       isSetup: true,
+      ...(searchType === "view" && searchValue === "pinned" ? { isPinned: true } : {})
+    })
+    if (searchType && searchValue) {
+      switch (searchType) {
+        case 'keyword':
+          query2.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%,tags.cs.{${keyword}}`)
+          break
+        case 'location':
+          query2.ilike('location', `%${keyword}%`)
+          break
+        case 'tag':
+          query2.contains('tags', [`${keyword}`])
+          break
+      }
+    }
 
-  const { data: photos } = await query
+    const { data: photos } = await query
 
-  const { count: photosCount } = await query2
+    const { count: photosCount } = await query2
 
   return <PhotographyFeed photos={photos} photographyAlbum={photographyAlbum} locationData={locationData} tagData={tagData} searchType={searchType} searchValue={keyword} photosCount={photosCount} />
 }

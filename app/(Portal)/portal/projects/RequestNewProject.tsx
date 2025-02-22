@@ -88,13 +88,13 @@ export default function RequestNewProject() {
     }
 
     const initialValues = {
-        name: null,
-        description: null, 
+        name: "",
+        description: "", 
         startDate: null, 
         deadline: null, 
-        budget: null, 
-        type: null,
-        phone: null
+        budget: "", 
+        type: "",
+        phone: ""
     }
     const schema = yup.object().shape({})
     const form = useForm({

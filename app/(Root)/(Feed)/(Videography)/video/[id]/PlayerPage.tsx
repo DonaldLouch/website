@@ -14,385 +14,224 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
-   const video = videoData
-   const isPublic = video.videoPrivacy === "Public" || video.videoPrivacy === "Unlisted" ? true : false
+    const video = videoData;
+    const isPublic = ["Public", "Unlisted"].includes(video.videoPrivacy);
 
-    // const {user} = useUser()
-    // const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
-   
-    const [openedShare, { open: openShare, close: closeShare }] = useDisclosure(false)
-    const [openedChapter, { open: openChapter, close: closeChapter }] = useDisclosure(false)
-    const [openedInfo, { open: openInfo, close: closeInfo }] = useDisclosure(false)
-    
-    const router = useRouter() as any
-    
-    const [playing, setPlaying] = useState(false)
-    const [muted, setMuted] = useState(false)
-    const [isTheaterMode, setIsTheaterMode] = useState(false)
-    const [isFullscreenMode, setIsFullscreenMode] = useState(false)
-    const [videoProgress, setVideoProgress] = useState(0)
-    const [theVideoElement, setVideoElement] = useState() as any
-    const [timeLeft, setTimeLeft] = useState("0:00") as any
-    const [videoDuration, setVideoDuration] = useState("0:00") as any
-    const [videoDurationNUMBER, setVideoDurationNUMBER] = useState(0) as any
-    const [currentVideoTime, setCurrentVideoTime] = useState("0:00") as any
-    const [hide, setHide] = useState(false)
+    const [openedShare, { open: openShare, close: closeShare }] = useDisclosure(false);
+    const [openedChapter, { open: openChapter, close: closeChapter }] = useDisclosure(false);
+    const [openedInfo, { open: openInfo, close: closeInfo }] = useDisclosure(false);
 
-    const isVertical = video.videoType === "Vertical" ? true : false
-    const isHorizontal = video.videoType === "Horizontal" ? true : false
-    const isEmbed = playerType === "embed" ? true : false
-    const isPage = playerType === "page" ? true : false
+    const router = useRouter();
 
-    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    // const [hideTimeLeft, setHideTimeLeft] = useState(false)
+    const [playing, setPlaying] = useState(false);
+    const [muted, setMuted] = useState(false);
+    const [isFullscreenMode, setIsFullscreenMode] = useState(false);
+    const [videoProgress, setVideoProgress] = useState(0);
+    const [theVideoElement, setVideoElement] = useState<HTMLVideoElement | null>(null);
+    const [timeLeft, setTimeLeft] = useState("0:00");
+    const [videoDuration, setVideoDuration] = useState("0:00");
+    const [videoDurationNUMBER, setVideoDurationNUMBER] = useState(0);
+    const [currentVideoTime, setCurrentVideoTime] = useState("0:00");
+    const [hide, setHide] = useState(false);
+
+    const isVertical = video.videoType === "Vertical";
+    const isHorizontal = video.videoType === "Horizontal";
+    const isEmbed = playerType === "embed";
+    const isPage = playerType === "page";
+
+    const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     useEffect(() => {
-        const videoElement = document.querySelector("#videoElement") as any
-        setVideoElement(videoElement)
-    }, [])
-    
-    useEffect(() => {
-
-        theVideoElement?.addEventListener("timeupdate", (e:any) => {
-            const theCurrentTime = e.target.currentTime
-            const timeCurrentHours = Math.floor(theCurrentTime / 60 / 60) as number;
-            const timeCurrentMinutes = Math.floor(theCurrentTime / 60 - timeCurrentHours * 60 ) as number;
-            const timeCurrentTotal = Math.floor(theCurrentTime / 60) as number;
-            const timeCurrentSeconds = Math.floor(theCurrentTime - timeCurrentTotal * 60) as number;
-            const timeCurrentTextString = `${timeCurrentHours >= 1 ? `${timeCurrentHours}:` : ""}${timeCurrentMinutes < 10 ? `0${timeCurrentMinutes}` : timeCurrentMinutes}:${timeCurrentSeconds < 10 ? `0${timeCurrentSeconds}` : timeCurrentSeconds}` as string
-
-            const timeCalc = e.target.duration - e.target.currentTime
-            const timeLeftHours = Math.floor(timeCalc / 60 / 60) as number;
-            const timeLeftMinutes = Math.floor(timeCalc / 60 - timeLeftHours * 60 ) as number;
-            const timeLeftTotal = Math.floor(timeCalc / 60) as number;
-            const timeLeftSeconds = Math.floor(timeCalc - timeLeftTotal * 60) as number;
-            
-            const timeDurationHours = Math.floor(e.target.duration / 60 / 60) as number;
-            const timeDurationMinutes = Math.floor(e.target.duration / 60 - timeDurationHours * 60 ) as number;
-            const timeDurationTotal = Math.floor(e.target.duration / 60) as number;
-            const timeDurationSeconds = Math.floor(e.target.duration - timeDurationTotal * 60) as number;
-
-            const timeLeftTextString = `${timeLeftHours >= 1 ? `${timeLeftHours}:` : ""}${timeLeftMinutes < 10 ? `0${timeLeftMinutes}` : timeLeftMinutes}:${timeLeftSeconds < 10 ? `0${timeLeftSeconds}` : timeLeftSeconds}` as string
-            const timeDurationTextString = `${timeDurationHours >= 1 ? `${timeDurationHours}:` : ""}${timeDurationMinutes < 10 ? `0${timeDurationMinutes}` : timeDurationMinutes}:${timeDurationSeconds < 10 ? `0${timeDurationSeconds}` : timeDurationSeconds}` as string
-        
-            const timePercent = Math.floor((theCurrentTime / e.target.duration) * 100)
-            setVideoProgress(timePercent)
-            setTimeLeft(timeLeftTextString)
-            setCurrentVideoTime(timeCurrentTextString)
-            setVideoDuration(timeDurationTextString)
-            setVideoDurationNUMBER(e.target.duration)
-        })
-        
-        // const backButton = document.querySelector('#goHome')
-        const controlsDesktop = document.querySelector('#videoControlsDesktop')
-        const controlsDesktopHeader = document.querySelector('#videoControlsDesktopHeader')
-        const controlsMobile = document.querySelector('#videoControlsMobile')
-        // const controlsMobileHeader = document.querySelector('#videoControlsMobileHeader')
-        
-            theVideoElement?.addEventListener("touchstart", () => { 
-                setHide(false)
-                // !playing && setHide(false)
-                const videoElement = document.querySelector("#videoElement") as any
-                console.log(videoElement.paused)
-                if(videoElement.paused) {
-                    setHide(false)
-                 } else {
-                    sleep(3000).then(() => {
-                        // console.log("HIDE!")
-                        !videoElement.paused && setHide(true)
-                        // !theVideoElement.paused && setHide(true)
-                    })
-                }
-            })
-            theVideoElement?.addEventListener("mouseover", () => { setHide(false) })
-            theVideoElement?.addEventListener("mouseout", () => {
-                theVideoElement.paused || theVideoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-            })
-            controlsDesktop?.addEventListener("mouseover", () => { setHide(false) })
-            controlsDesktop?.addEventListener("mouseout", () => {
-                const videoElement = document.querySelector("#videoElement") as any
-                videoElement?.addEventListener("mouseout", () => {
-                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-                })
-            })
-
-            isVertical && controlsMobile?.addEventListener("mouseover", () => { setHide(false) })
-            isVertical && controlsMobile?.addEventListener("mouseout", () => {
-                const videoElement = document.querySelector("#videoElement") as any
-                videoElement?.addEventListener("mouseout", () => {
-                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-                })
-            })
-
-            controlsDesktopHeader?.addEventListener("mouseover", () => { setHide(false) })
-            controlsDesktopHeader?.addEventListener("mouseout", () => {
-                const videoElement = document.querySelector("#videoElement") as any
-                videoElement?.addEventListener("mouseout", () => {
-                    videoElement.paused || videoElement.currentTIme < 0 ? setHide(false) : setHide(true)
-                })
-            })
-        
-    }, [theVideoElement])
+        const videoElement = document.querySelector("#videoElement") as HTMLVideoElement;
+        setVideoElement(videoElement);
+    }, []);
 
     useEffect(() => {
-        theVideoElement?.addEventListener("play", () => {
-            if (playing != true) {
-                // setPlaying(false)
-                sleep(3000).then(() => {
-                    setHide(true)
-                })
-                // setHide(true)
+        if (!theVideoElement) return;
+
+        const handleTimeUpdate = (e: any) => {
+            const currentTime = e.target.currentTime;
+            const duration = e.target.duration;
+
+            const formatTime = (time: number) => {
+                const hours = Math.floor(time / 3600);
+                const minutes = Math.floor((time % 3600) / 60);
+                const seconds = Math.floor(time % 60);
+                return `${hours > 0 ? `${hours}:` : ""}${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+            };
+
+            setVideoProgress(Math.floor((currentTime / duration) * 100));
+            setTimeLeft(formatTime(duration - currentTime));
+            setCurrentVideoTime(formatTime(currentTime));
+            setVideoDuration(formatTime(duration));
+            setVideoDurationNUMBER(duration);
+        };
+
+        theVideoElement.addEventListener("timeupdate", handleTimeUpdate);
+
+        return () => {
+            theVideoElement.removeEventListener("timeupdate", handleTimeUpdate);
+        };
+    }, [theVideoElement]);
+
+    useEffect(() => {
+        if (!theVideoElement) return;
+
+        const controlsDesktop = document.querySelector('#videoControlsDesktop');
+        const controlsDesktopHeader = document.querySelector('#videoControlsDesktopHeader');
+        const controlsMobile = document.querySelector('#videoControlsMobile');
+
+        const handleHide = () => setHide(false);
+        const handleShow = () => setHide(true);
+
+        const handlePlay = () => {
+            setPlaying(true);
+        };
+
+        const handlePause = () => {
+            setPlaying(false);
+        };
+
+         const handleMouseOut = () => {
+            if (theVideoElement.paused || theVideoElement.currentTime < 0) {
+                setHide(false);
+            } else {
+                sleep(3000).then(() => setHide(true));
             }
-            // setPlaying(true)
-            // setHide(false)
-            // sleep(3000).then(() => {
-            //     setHide(true)
-            // })
-        })
-        theVideoElement?.addEventListener("pause", () => {
-            if (playing != false) {
-                // setPlaying(true)
-                setHide(false)
+        };
+
+        const handleTouchStart = () => {
+            setHide(false);
+            if (!theVideoElement.paused) {
+                setTimeout(() => {
+                    if (!theVideoElement.paused) {
+                        sleep(3000).then(() => setHide(true));
+                    }
+                }, 3000);
             }
-            // setPlaying(false)
-            // sleep(3000).then(() => {
-            //     setHide(true)
-            // })
-            // setHide(true)
-        })
-        // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowRight") {theVideoElement.currentTime -= 10} })
-        // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowLeft") {theVideoElement.currentTime += 10}  })
-    })
+        };
+
+        theVideoElement?.addEventListener("touchstart", handleTouchStart);
+        theVideoElement?.addEventListener("mouseover", handleHide);
+        theVideoElement?.addEventListener("mouseout", handleMouseOut);
+
+        controlsDesktop?.addEventListener("mouseover", handleHide);
+        controlsDesktop?.addEventListener("mouseout", handleMouseOut);
+
+        controlsDesktopHeader?.addEventListener("mouseover", handleHide);
+        controlsDesktopHeader?.addEventListener("mouseout", handleMouseOut);
+
+        controlsMobile?.addEventListener("mouseover", handleHide);
+        controlsMobile?.addEventListener("mouseout", handleMouseOut);
+
+        theVideoElement.addEventListener("play", handlePlay);
+        theVideoElement.addEventListener("pause", handlePause);
+
+        return () => {
+            theVideoElement.removeEventListener("play", handlePlay);
+            theVideoElement.removeEventListener("pause", handlePause);
+
+            theVideoElement?.removeEventListener("touchstart", handleTouchStart);
+            theVideoElement?.removeEventListener("mouseover", handleHide);
+            theVideoElement?.removeEventListener("mouseout", handleMouseOut);
+
+            controlsDesktop?.removeEventListener("mouseover", handleHide);
+            controlsDesktop?.removeEventListener("mouseout", handleMouseOut);
+
+            controlsDesktopHeader?.removeEventListener("mouseover", handleHide);
+            controlsDesktopHeader?.removeEventListener("mouseout", handleMouseOut);
+
+            controlsMobile?.removeEventListener("mouseover", handleHide);
+            controlsMobile?.removeEventListener("mouseout", handleMouseOut);
+        };
+    }, [theVideoElement]);
 
     useEffect(() => {
-        document.addEventListener('fullscreenchange', () => {
-            // if (document.fullscreenElement) {}
-            setIsFullscreenMode(Boolean(document.fullscreenElement))
-        })
-        // document.addEventListener("keydown", keyPress)
-        // document.addEventListener("keydown", (e: any) => { if(e.key === "ArrowLeft") {theVideoElement.currentTime += 10}  })
-        // document?.addEventListener("keydown", (e: KeyboardEvent) => {
-        //     e.key === "Escape" && setIsFullscreenMode(false)
-        // }, true)
-    }, [])
+        const handleFullscreenChange = () => {
+            setIsFullscreenMode(Boolean(document.fullscreenElement));
+        };
 
-    // function keyPress(e: KeyboardEvent) {
-        // console.log(e.key)
-        // if(e.key === "ArrowRight") {// console.log(theVideoElement.currentTime)}
-        // if(e.key === "ArrowLeft") {theVideoElement.currentTime -= 10}
-    // }
-   
-    function skipBack() {
-        theVideoElement.currentTime -= 10;
-    }
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
 
-    function playClick() {
-        if (theVideoElement.paused) {
-            theVideoElement.play()
-            setPlaying(true)
-            // console.log("You played the video");
-        } else {
-            theVideoElement.pause(); // Once button is clicked it will pause the video
-            setPlaying(false)
-            // playBTNImage.data = vectorPath + "playButton.svg"; // Changes the button to the "play" image
-            // console.log("You paused the video");
+        return () => {
+            document.removeEventListener('fullscreenchange', handleFullscreenChange);
+        };
+    }, []);
+
+    const skipBack = () => {
+        if (theVideoElement) theVideoElement.currentTime -= 10;
+    };
+
+    const playClick = () => {
+        if (theVideoElement) {
+            if (theVideoElement.paused) {
+                theVideoElement.play();
+            } else {
+                theVideoElement.pause();
+            }
         }
-    }
+    };
 
-    // console.log(playing)
+    const skipAhead = () => {
+        if (theVideoElement) theVideoElement.currentTime += 10;
+    };
 
-    function skipAhead() {
-        theVideoElement.currentTime += 10;
-    }
+    const videoMute = () => {
+        if (theVideoElement) {
+            theVideoElement.muted = !theVideoElement.muted;
+            setMuted(theVideoElement.muted);
+        }
+    };
 
-    function videoMute() {
-        if (theVideoElement.muted) {
-            theVideoElement.muted = false; // Video audio is NOT muted
-            setMuted(false)
-            // console.log("You unmuted the video");
-          } else {
-            theVideoElement.muted = true; // Video audio IS muted
-            setMuted(true)
-            // console.log("You muted the video");
-          }
-    }
-
-    // function theaterMode () {
-    //     setIsTheaterMode(true)
-    //     // console.log("Entering Theater Mode")
-    // }
-    // function exitTheaterMode() {
-    //     setIsTheaterMode(false)
-    //     // console.log("Exiting Theater Mode")
-    // }
-
-    function fullscreenMode () {
-        // const elem = document.documentElement
-        // if (elem.requestFullscreen) {
+    const fullscreenMode = () => {
         document.body.requestFullscreen();
-        // }
-        // } else if (elem.webkitRequestFullscreen) {
-        //     /* Safari */
-        //     elem.webkitRequestFullscreen();
-        // } else if (elem.msRequestFullscreen) {
-        //     /* IE11 */
-        //     elem.msRequestFullscreen();
-        // }
-        setIsFullscreenMode(true)
+        setIsFullscreenMode(true);
+    };
 
-        // document.addEventListener("keydown", (e: any) => {
-        //     e.key === "Escape" && setIsFullscreenMode(false)
-        // })
-        // // console.log("Entering Fullscreen Mode")
-    }
-    function exitFullscreenMode() {
-        // const elem = document.documentElement.
-        // if (document.exitFullscreen) {
-            document.exitFullscreen()
-        // } else if (document.webkitExitFullscreen) {
-        //     /* Safari */
-        //     document.webkitExitFullscreen();
-        // } else if (document.msExitFullscreen) {
-        //     /* IE11 */
-        //     document.msExitFullscreen();
-        // }
-        // document.addEventListener("keydown", (e: any) => {
-        //     e.key === "Escape" && setIsFullscreenMode(false)
-        // })
-        setIsFullscreenMode(false)
-        // // console.log("Exiting Fullscreen Mode")
-    }
+    const exitFullscreenMode = () => {
+        document.exitFullscreen();
+        setIsFullscreenMode(false);
+    };
 
-    // useEffect(() => {
-    // }, [document.exitFullscreen()])
-    
-
-    function seekVideo (e: any) {
-        const seekTo = theVideoElement.duration * (e / 100)
-        theVideoElement.currentTime = seekTo
-    }
-
-    function shareModal () {
-        openShare()
-    }
-    function chapterModal () {
-        openChapter()
-    }
-    function infoModal () {
-        openInfo()
-    }
-
-    function changeChapter(e:any) {
-        const chapterTimeCode = e.target.value
-        const chapterTimeExplode = chapterTimeCode.split(':')
-       
-        if(chapterTimeExplode.length >= 3) { // Time split of an hour or more
-            const chapterHour = chapterTimeExplode[0] as number
-            const chapterMinutes = chapterTimeExplode[1] as number
-            const chapterSeconds = chapterTimeExplode[2] as number
-            const chapterMinutesCalc = Number(chapterHour * 60) + Number(chapterMinutes) as number
-            const chapterTime = Number(chapterMinutesCalc*60) + Number(chapterSeconds) as number
-            theVideoElement.currentTime = chapterTime
-        } else {
-            const chapterMinutes = chapterTimeExplode[0]*60 as number
-            const chapterSeconds = chapterTimeExplode[1] as number
-            const chapterTime = Number(chapterMinutes) + Number(chapterSeconds) as number
-            theVideoElement.currentTime = chapterTime
+    const seekVideo = (e: any) => {
+        if (theVideoElement) {
+            const seekTo = theVideoElement.duration * (e / 100);
+            theVideoElement.currentTime = seekTo;
         }
-    }
+    };
 
-    const chaptersPercentArray = new Array()
-    // const chapterTimes = video.chapters.length > 0  && video?.chapters.map((chapter: any) => {
-    //     const timeCode = chapter.timeCode
-    //     let chapterPercent = 0
+    const shareModal = openShare;
+    const chapterModal = openChapter;
+    const infoModal = openInfo;
 
-    //     const chapterTimeExplode = timeCode.split(':')
-       
-    //     if(chapterTimeExplode.length >= 3) { // Time split of an hour or more
-    //         const chapterHour = chapterTimeExplode[0] as number
-    //         const chapterMinutes = chapterTimeExplode[1] as number
-    //         const chapterSeconds = chapterTimeExplode[2] as number
-    //         const chapterMinutesCalc = Number(chapterHour * 60) + Number(chapterMinutes) as number
-    //         chapterPercent = Number(chapterMinutesCalc*60) + Number(chapterSeconds) as number
-    //     } else {
-    //         const chapterMinutes = chapterTimeExplode[0]*60 as number
-    //         const chapterSeconds = chapterTimeExplode[1] as number
-    //         chapterPercent = Number(chapterMinutes) + Number(chapterSeconds) as number
-    //     }
-    //     chaptersPercentArray.push({ value: chapterPercent / videoDurationNUMBER * 100})
-    //     // // console.log(chapterTitle, chapterPercent / videoDurationNUMBER)
-    // })
+    const changeChapter = (e: any) => {
+        const chapterTimeCode = e.target.value;
+        const [hours, minutes, seconds] = chapterTimeCode.split(':').map(Number);
+        const chapterTime = (hours || 0) * 3600 + (minutes || 0) * 60 + (seconds || 0);
+        if (theVideoElement) theVideoElement.currentTime = chapterTime;
+    };
 
-    function backToFeed() {
-        router.push("/feed/videography")
-    }
+    const backToFeed = () => {
+        router.push("/feed/videography");
+    };
 
     const leftButtons = [
-        {
-            buttonIcon: <HugeIcon name="go-backward-10-sec" />,
-            buttonID: "skipBackButton",
-            buttonFunction: skipBack,
-        },
-        
-        {
-            buttonIcon: playing == false ? <HugeIcon name="play" /> : <HugeIcon name="pause" />,
-            buttonID: "playButton",
-            buttonFunction: playClick
-        },
-        {
-            buttonIcon: <HugeIcon name="go-forward-10-sec" />,
-            buttonID: "skipAheadButton",
-            buttonFunction: skipAhead
-        },
-    ] as any
-    
-    const rightButtons = [
-        {
-            buttonIcon: muted == true ? <HugeIcon name="volume-off" /> : <HugeIcon name="volume-mute-01" />,
-            buttonID: "muteButton",
-            buttonFunction: videoMute
-        },
-        //  {
-        //     buttonIcon: isTheaterMode == false ? <MaximizeScreenIcon /> : <MinimizeScreenIcon />,
-        //     buttonID: "theaterModeButton",
-        //     buttonFunction: isTheaterMode == false ? theaterMode : exitTheaterMode,
-        //     hidden: mobile ? true : false,
-        // },
-        {
-            buttonIcon: isFullscreenMode == false ? <HugeIcon name="arrow-expand-01" /> : <HugeIcon name="arrow-shrink-01" />,
-            buttonID: "fullscreenButton",
-            buttonFunction: isFullscreenMode == false ? fullscreenMode : exitFullscreenMode,
-            hidden: isVertical
-        },
-        {
-            buttonIcon: <HugeIcon name="share-05" />,
-            buttonID: "shareButton",
-            buttonFunction: shareModal
-        }
-    ] as any
-    
-    const topButtons = [
-        {
-            buttonIcon: <HugeIcon name="bookmark-01" />,
-            buttonID: "chapters",
-            buttonFunction: chapterModal,
-            hidden: video.chapters && video.chapters.length > 0 ? false : true
-        },
-        {
-            buttonIcon: <HugeIcon name="information-circle" />,
-            buttonID: "description",
-            buttonFunction: infoModal,
-            // hidden: playerType === "page" ? true : false
-        },
-        {
-            buttonIcon: <HugeIcon name="home-01" />,
-            buttonID: "backToFeed",
-            buttonFunction: backToFeed,
-            hidden: !isVertical
-        },
-    ] as any
+        { buttonIcon: <HugeIcon name="go-backward-10-sec" />, buttonID: "skipBackButton", buttonFunction: skipBack },
+        { buttonIcon: playing ? <HugeIcon name="pause" /> : <HugeIcon name="play" />, buttonID: "playButton", buttonFunction: playClick },
+        { buttonIcon: <HugeIcon name="go-forward-10-sec" />, buttonID: "skipAheadButton", buttonFunction: skipAhead },
+    ];
 
-    console.log("Is Vertical", isVertical, "Is Horizontal", isHorizontal)
+    const rightButtons = [
+        { buttonIcon: muted ? <HugeIcon name="volume-off" /> : <HugeIcon name="volume-mute-01" />, buttonID: "muteButton", buttonFunction: videoMute },
+        { buttonIcon: isFullscreenMode ? <HugeIcon name="arrow-shrink-01" /> : <HugeIcon name="arrow-expand-01" />, buttonID: "fullscreenButton", buttonFunction: isFullscreenMode ? exitFullscreenMode : fullscreenMode, hidden: isVertical },
+        { buttonIcon: <HugeIcon name="share-05" />, buttonID: "shareButton", buttonFunction: shareModal },
+    ];
+
+    const topButtons = [
+        { buttonIcon: <HugeIcon name="bookmark-01" />, buttonID: "chapters", buttonFunction: chapterModal, hidden: !(video.chapters && video.chapters.length > 0) },
+        { buttonIcon: <HugeIcon name="information-circle" />, buttonID: "description", buttonFunction: infoModal },
+        { buttonIcon: <HugeIcon name="home-01" />, buttonID: "backToFeed", buttonFunction: backToFeed, hidden: !isVertical },
+    ];
 
     return (<>
         <Box
@@ -404,7 +243,6 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                 <Stack align="center">
                 <Group gap="2rem" align="center">
                     <HugeIcon name="alert-02" size="4rem" color="red" />
-                    {/* <Alert02Icon size="4rem" color="red" /> */}
                     <Title order={1} fz={{base: "2rem", md: "3rem"}}>Private Video</Title>
                 </Group>
                 <Text>🚨 This video is listed as a private video and is not viewable
@@ -421,10 +259,10 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                     }}
                     bg={isFullscreenMode || isVertical ? "black" : "var(--blackRGBA)"}
                     h={isFullscreenMode || isEmbed ? "100vh" : "auto"}
+                    w="100vw"
                     p={isFullscreenMode || isEmbed ? "0" : isVertical ? {base: "0", sm: "0 0 2rem", md: "2rem 0"} : "2rem"}
                     justify="center" align="center"
                     gap="0"
-                    // pt={isPage ? "6rem" : "initial"}
                     pt={isVertical ? "0rem" : isPage ? "6rem" : "initial"}
                     pos={isFullscreenMode ? "fixed" : isVertical ? "relative" : "initial"}
                 > 
@@ -434,22 +272,23 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                         style={{zIndex: 90000}}
                         gap="0"
                     >
-                        {/* isVertical ? {base: "80%", sm: "50vw", lg: "40%", xl: "30%"} */}
                         <AspectRatio 
                             ratio={isVertical ? 9 / 16 : 16 / 9}
-                            // w={isEmbed ? "100%" : isHorizontal ? "calc(100% - 2rem)" : {base: "60vw", sm: "35vw"}}
-                            // m={isVertical ? {base: "0.5rem", md: "2rem"} : "inherit" }
-                            // w="100% !important"
-                            w= {!isVertical ? "100%" : "auto"}
-                            h={isVertical ? {base: "100vh", sm: "calc(100vmin - 4rem)"} : "auto"}
-                            mt={isVertical ? {base: "0", sm: "2rem"} : "0"}
-                            // w="100%"
-                            style={{borderRadius: isFullscreenMode ? "0" : "0.5rem", boxShadow: "var(--mantine-shadow-bsBoldWhite)", overflow: "hidden"}}
-                            // pos="relative" 
-                            // poster={video.thumbnailFileID.filePath
+                            w={isVertical ? "auto" : "100%"}
+                            h={isVertical ? { base: "100vh", sm: "calc(100vmin - 4rem)" } : "auto"}
+                            mt={isVertical ? { base: "0", sm: "2rem" } : "0"}
+                            style={{
+                                borderRadius: isFullscreenMode ? "0" : "0.5rem",
+                                boxShadow: "var(--mantine-shadow-bsBoldWhite)",
+                                overflow: "hidden"
+                            }}
                         >
-                
-                            <video src={video.videoFileID.filePath} poster={video.thumbnailFileID.filePath} playsInline={!isFullscreenMode} id="videoElement" />
+                            <video 
+                                src={video.videoFileID.filePath} 
+                                poster={video.thumbnailFileID.filePath} 
+                                playsInline={!isFullscreenMode} 
+                                id="videoElement"
+                            />
                         </AspectRatio>
 
                         <Grid 
@@ -498,7 +337,6 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                             <Slider 
                                 m="-0.5rem -1rem 0rem"
                                 value={videoProgress} onChange={seekVideo} aria-label="scrubber"
-                                marks={video.chapters && video.chapters.length > 0  ? chaptersPercentArray : [{value: 0}]}
                                 label={null}
                             />
                             <Flex justify="space-between" align="center">
@@ -544,7 +382,6 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                             left="3vw"
                             bg="var(--darkPurpleRGBA)"
                             w="calc(100% - (3vw * 2))"
-                            // w={{base: "calc(100% - (14vw * 2))", sm: "calc(100% - (26vw * 2))", lg: "calc(100% - (36vw * 2))"}}
                             align="center"
                         >
                             <Grid.Col span={{base: 6, md: 8}}>
@@ -598,20 +435,6 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
 
                     <Text fw="600" mt="2rem">Share via Embed</Text>
                     <Text>Feature Coming Soon!</Text>
-                        {/* <Input 
-                            value={`<iframe style="aspect-ratio: 16 / 9; width: 100%; overflow: hidden; z-index: 10000;" src="${process.env.NEXT_PUBLIC_SITE_URL}/embed/${video.id}" allowfullscreen></iframe>`} 
-                            isReadOnly
-                            mt="0.5rem"
-                            variant="unstyled"
-                            boxShadow='bsBoldRed'
-                            p="1.5rem 2rem"
-                            color='yellow'
-                            borderRadius="0 2rem 0 2rem"
-                            type="url"
-                            fontStyle="italic"
-                            fontWeight={300}
-                            hidden={!user && isAdmin}
-                        /> */}
                 </Drawer>
                 <Drawer size="full" opened={openedChapter} onClose={closeChapter} title={`Video Chapters: "${video.title}"`} 
                     overlayProps={{

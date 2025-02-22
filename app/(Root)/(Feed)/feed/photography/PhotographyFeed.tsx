@@ -47,19 +47,44 @@ async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: st
     : searchValue?.includes("%20") ? searchValue?.replace('%20', ' ') 
     : searchValue
 
-  let query = supabase
-    .from('Photography')
-    .select(`*, fileID (*), album (*)`)
-    .range(from, to)
-    .order('uploadedOn', { ascending: false })
-    .match({ isPublic: true, isSetup: true })
-    searchType && searchValue && searchType === "keyword" && query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%`) //TODO: Add Tags
-    searchType && searchValue && searchType === "location" && query.ilike('location', `%${keyword}%`) 
-    searchType && searchValue && searchType === "tag" && query.contains("tags", [`${keyword}`]) 
-    searchType && searchValue && searchType === "order" && searchValue === "old" ? query.order('uploadedOn', { ascending: true }) : query.order('uploadedOn', { ascending: false })
-    searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true }) 
-    const { data } = await query
+  // let query = supabase
+  //   .from('Photography')
+  //   .select(`*, fileID (*), album (*)`)
+  //   .range(from, to)
+  //   .order('uploadedOn', { ascending: false })
+  //   .match({ isPublic: true, isSetup: true })
+  //   searchType && searchValue && searchType === "keyword" && query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%`) //TODO: Add Tags
+  //   searchType && searchValue && searchType === "location" && query.ilike('location', `%${keyword}%`) 
+  //   searchType && searchValue && searchType === "tag" && query.contains("tags", [`${keyword}`]) 
+  //   searchType && searchValue && searchType === "order" && searchValue === "old" ? query.order('uploadedOn', { ascending: true }) : query.order('uploadedOn', { ascending: false })
+  //   searchType && searchValue && searchType === "view" && searchValue === "pinned" ? query.match({ isPublic: true, isSetup: true, isPinned: true }) : query.match({ isPublic: true, isSetup: true }) 
+  //   const { data } = await query
 
+const query = supabase
+  .from('Photography')
+  .select(`*, fileID (*), album (*)`)
+  .range(from, to)
+  .match({ 
+    isPublic: true, 
+    isSetup: true, 
+    ...(searchType === "view" && searchValue === "pinned" ? { isPinned: true } : {})
+   })
+  if (searchType && searchValue) {
+    switch (searchType) {
+      case 'keyword':
+        query.or(`caption.ilike.%${keyword}%,photoName.ilike.%${keyword}%,tags.cs.{${keyword}}`)
+        break
+      case 'location':
+        query.ilike('location', `%${keyword}%`)
+        break
+      case 'tag':
+        query.contains('tags', [`${keyword}`])
+        break
+    }
+  }
+  query.order('uploadedOn', { ascending: searchType === "order" && searchValue === 'old' ? true : false })
+  
+  const { data } = await query
   return data
 }
 
@@ -200,7 +225,8 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
             <Loader color="white" size="md" type="bars" />
             <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
           </Group>
-          <Text>If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
+          <Text>If the content is still not loaded after a minute please contact Donald Louch at for further assistance.</Text>
+          {/* <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> */}
         </Stack>
       </Paper>
     </Box> 

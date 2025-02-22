@@ -3,7 +3,7 @@ import { DateTimePicker } from '@mantine/dates';
 import classes from "./Forms.module.css"
 import HugeIcon from '../HugeIcon';
 
-export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, isClearable, isJustRead, ...rest}: any) {
+export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, isClearable, isJustRead, isRequired, ...rest}: any) {
   return <DateTimePicker
         clearable={isClearable}
         // disabled={isJustRead}
@@ -50,6 +50,7 @@ export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, 
             monthsListControl: classes.dateInput,
             yearsListControl: classes.dateInput
         }}
+        required={isRequired}
         {...rest}
     />
 }

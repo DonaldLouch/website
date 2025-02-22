@@ -102,8 +102,8 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
     }
 
     const initialValues = {
-        otherSubject: null,
-        body: null,
+        otherSubject: "",
+        body: "",
         // description: null, 
         // startDate: null, 
         // deadline: null, 
@@ -136,7 +136,9 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
     )
 
     const [clientProjects, setClientProjects] = useState<any>([])
-    const [adminProjects, setAdminProjects] = useState<any>([])
+    const [adminProjects, setAdminProjects] = useState<any>([])    
+    const [clientTasks, setClientTasks] = useState<any>([])
+    const [adminTasks, setAdminTasks] = useState<any>([])
 
     useEffect(() => {
         const fetchClientProjects = async () => {
@@ -144,11 +146,24 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
             setClientProjects(data)
         }
         fetchClientProjects()
+
         const fetchAdminProjects = async () => {
             const {data} = isStaff ? await supabase.from('Projects').select().order('lastUpdated', { ascending: false }) : undefined
             setAdminProjects(data)
         }
         fetchAdminProjects()
+        
+         const fetchClientTasks = async () => {
+            const {data} = await supabase.from('Tasks').select().match({'clientID': userID}).order('lastUpdated', { ascending: false }) as any
+            setClientTasks(data)
+        }
+        fetchClientTasks()
+
+        const fetchAdminTasks = async () => {
+            const {data} = isStaff ? await supabase.from('Tasks').select().order('lastUpdated', { ascending: false }) : undefined
+            setAdminTasks(data)
+        }
+        fetchAdminTasks()
     }, [])
     const relatedOptions = new Array(
         // {group: "", items: [{label: "Nothing", value: ""}]},
@@ -163,6 +178,12 @@ export default function CreateNewTicket({isStaff, relatedID}: any) {
     })
     adminProjects.forEach((project: any) => {
         project.client.id != userID && relatedOptions[1].items.push({"value": `Project;;${project.id}`, "label": `${project.name} (${project.id})`})
+    })
+    clientTasks.forEach((task: any) => {
+        task.clientID === userID && relatedOptions[2].items.push({"value": `Task;;${task.id}`, "label": `${task.title} (${task.id})`})
+    })
+    adminTasks.forEach((task: any) => {
+        task.clientID != userID && relatedOptions[3].items.push({"value": `Task;;${task.id}`, "label": `${task.title} (${task.id})`})
     })
 
     return <>

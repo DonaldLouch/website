@@ -18,7 +18,7 @@ import HugeIcon from "@/app/(Components)/HugeIcon";
 // }
 
 
-export default function PortalHome() {
+export default function PortalHome({isStaff}: any) {
   // {isStaff}: any
   // const userData = useSession()
 
@@ -30,6 +30,10 @@ export default function PortalHome() {
         <Title ta="center" size="2.5rem" fw="900" order={2}>UNDER CONSTRUCTION!</Title>
       </Group>
         <Text ta="center">Please note that the portal section is under construction and not functional right now! Please check back later!</Text>
+    </Stack>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0" display={isStaff ? "inherit" : "none"}>
+        <Text>Invoices and payments coming soon!</Text>
+        <PrimaryLinkedButton link="/portal/invoices" icon={<HugeIcon name="invoice-01" />}>Invoice Manager</PrimaryLinkedButton>
     </Stack>
     <Group align="center" justify="center" c="green">
       <HugeIcon name="ticket-01" size="2.5rem" color="currentColor" variant="twotone" />
