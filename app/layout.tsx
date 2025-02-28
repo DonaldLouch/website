@@ -66,6 +66,7 @@ import '@mantine/notifications/styles.css';
 import '@mantine/dropzone/styles.css';
 import '@mantine/carousel/styles.css';
 import "@/app/(Config)/global.css"
+import MaintenanceModePage from "./(Config)/(Layout)/MaintenanceModePage";
 
 // import notificationClasses from "@/app/(Config)/Notifications.module.css"
 
@@ -74,6 +75,7 @@ import "@/app/(Config)/global.css"
 // hugeiconsLicense(iconLICENSE)
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const isMaintenanceMode = false
   // // console.log()
   return (
     <html lang="en-CA">
@@ -86,9 +88,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* classNames={noteClasses}  */}
           {/* <Notifications autoClose={false} classNames={{notification: notificationClasses.standardNotification}} styles={{notification: {borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsSMPrimary)", padding: "1rem 2rem"}}}/> */}
           <Notifications />
+          {!isMaintenanceMode ? 
           <Context>
             {children}
-          </Context>
+          </Context> : <MaintenanceModePage />}
           {/* <MantineProvider> */}
             {/* {children} */}
           </MantineProvider> 

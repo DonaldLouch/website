@@ -1,5 +1,10 @@
 'use client'
 
+import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
+import HugeIcon from "@/app/(Components)/HugeIcon"
+import InlineLink from "@/app/(Components)/InlineLink"
+import { Stack, Title, Text, Box } from "@mantine/core"
+
 // import { useRouter } from "next/navigation"
 
 
@@ -25,12 +30,16 @@ export default function MaintenanceModePage() {
 
     return (
         <>
-            {/* <Stack w="100vw" h="100vh" background="black" overflow="hidden" color="white" pos="absolute" top="0" left="0" zIndex="sticky" justifyContent="center" alignItems="center" px="2rem">
-                {/* <Button pos="absolute" top="2%" right="2%" opacity="0.09" onClick={signInWithGoogle}>Developer Login</Button> 
-                <Heading textAlign="center" fontSize="5xl" fontWeight="900" color="secondary">Under Development</Heading>
-                <Text textAlign="center" fontSize="5xl" fontWeight="900" color="secondary" mt="1rem">Under Development</Text>
-                <Text fontSize="2xl" textAlign="center" lineHeight="1.5"> Please note that this version of Donald Louch's Website is currently under development and will not be functional to the public at this time. You may visit the live version of the website at <Link href="https://donaldlouch.ca" variant="primary" color="white">https://donaldlouch.ca</Link>.</Text>
-            </Stack> */}
+            <Stack w="100vw" h="100vh" bg="var(--darkPurple)" style={{ overflow: "hidden", zIndex: "1000000" }} pos="absolute" top="0" left="0" justify="center" align="center" px="2rem">
+                <PrimaryButton primNewIcon={{name: "login-01", variant: "twotone" }} opacity="0.09" >Developer Login</PrimaryButton>
+                <Box maw="65vw">
+                <Title order={1} ta="center" fz="3rem" fw="900" c="var(--secondary)" visibleFrom="sm"><HugeIcon name="cone-01" variant="duotone" size="2.1rem" /> Website Under Maintenance</Title>
+                <Text>I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.</Text>
+
+                <Text>If you have any urgent concerns, feel free to reach out to me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{ name: "mail-at-sign-02", variant: "twotone"}} /> or on my social media platforms.</Text>
+                <Text>Thank you for your understanding!</Text>
+                </Box>
+            </Stack>
         </>
     )
 }
