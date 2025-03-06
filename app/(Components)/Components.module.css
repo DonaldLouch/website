@@ -134,7 +134,7 @@
 .markdownLink {
     /* border-bottom: solid 2px var(--mantine-color-white); */
     color: var(--secondary) !important;
-    display: inline-flex;
+    /* display: inline-flex; */
     &:hover {
         /* border: none !important; */
         color: var(--primary) !important;

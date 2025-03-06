@@ -122,7 +122,7 @@ export default function VideoFeed({ videoData, videosCount }: { videoData: any, 
             <Loader color="white" size="md" type="bars" />
             <Title fz={{base: "2rem", md: "3rem"}}>Loading More Videos</Title>
           </Group>
-          <Text>If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
+          <Text component="div">If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
         </Stack>
       </Paper>
   </Box>

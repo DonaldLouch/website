@@ -11,6 +11,12 @@ import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
 import { HugeIconsNames } from "@/lib/HugeIconsNames"
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { HugeiconsIcon } from "@hugeicons/react"
+// import {
+//   FrameworksIcon,
+// } from '@hugeicons-pro/core-stroke-rounded';
+// import {
+//   AddInvoiceStrokeRounded,
+// } from '@hugeicons-pro/core-stroke-rounded';
 
 
 export default function page() {
@@ -37,9 +43,11 @@ export default function page() {
     const [clicked, setClicked] = useState(false)
 
     return <Box mt="2rem">
-        <InlineCode code="console.log('Hello World')" />
-        <ClipboardButton copyValue={list} />
-        <HugeIcon name="modern-tv-four-k" variant="duotone" color={!clicked ? "white" : "black"} size="10rem" altStatus={clicked} altName="moon-02" clickOption={() => setClicked(!clicked ? true : false)}  />
+        {/* <HugeiconsIcon icon={AddInvoiceStrokeRounded} /> */}
+        {/* <InlineCode code="console.log('Hello World')" />
+        <ClipboardButton copyValue={list} /> */}
+        {/* <HugeiconsIcon icon={FrameworksIcon} /> */}
+        <HugeIcon name="invoice-01" variant="duotone" size="3rem" />
         {/* altStatus={clicked} altName="absolute" onClick={() => setClicked(!clicked ? true : false)} */}
     </Box>
 }

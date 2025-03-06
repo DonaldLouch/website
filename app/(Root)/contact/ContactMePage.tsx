@@ -74,7 +74,7 @@ export default function ContactMePage() {
     return (<>
         <SectionCard styleType="primary" id="contactMe">
             <SectionTitle headingTitle="Contact Me" />
-            <Text ta="center">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01", variant: "twotone"}} body="hello@donaldlouch.ca" /></Text>
+            <Text ta="center" component="div">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01", variant: "twotone"}} body="hello@donaldlouch.ca" /></Text>
             <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={form.onSubmit(onSend)}>
                 <FormInput isRequired inputLabel="First and Last Name" id="name" {...form.getInputProps('name')} icon={<HugeIcon name="passport" />} inputDescription="I ask for your name so that when I reply back in regards to your contact request, I can formally address you." inputType="text" />
                 <FormInput isRequired inputLabel="Email Address" id="email" {...form.getInputProps('email')} icon={<HugeIcon name="mail-at-sign-01" />} inputDescription="Your email address is required so that I can send you a reply back in regards to your contact request." inputType="email" />

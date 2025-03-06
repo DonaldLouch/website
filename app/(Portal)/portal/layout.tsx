@@ -20,10 +20,7 @@ export default async function PortalLayout({ children }: { children: React.React
     const role = await userRole()
     const isAdmin = isUser && role === "admin" ? true : false
 
-    // const isAdmin = orgRole == "admin" && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID ? true : false
-    // userId && isAdmin && auth().protect().has({ role: 'admin' })
-    // // console.log(isAdmin, userId)
+    console.log(isUser, role, isAdmin)
 
-    // auth().protect()
     return <PortalLayoutContext isUser={isUser} isAdmin={isAdmin}>{children}</PortalLayoutContext>
 }

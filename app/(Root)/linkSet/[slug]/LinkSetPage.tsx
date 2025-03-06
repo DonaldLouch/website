@@ -42,7 +42,7 @@ export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxS
                 >
                     <Box w="100%" m="2rem 1rem">
                         <Title  order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Links</Title>                        
-                        <Text>If you have found this on other services or have any issues please do not hesitate to contact me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} />. More services and links maybe added as they become available or known.</Text>
+                        <Text component="div">If you have found this on other services or have any issues please do not hesitate to contact me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} />. More services and links maybe added as they become available or known.</Text>
                         {linkSet.links.length > 0 && linkSet.links.map((link: any) => {
                             const iconName = link.icon.name ? link.icon.name 
                                 : !link.icon.name && link.linkType.includes("ex") ? "arrow-up-right-01"

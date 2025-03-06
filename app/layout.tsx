@@ -1,16 +1,23 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import Context from "./(Config)/Context"
-
+export const revalidate = 0
 import type { Metadata, Viewport } from 'next'
-
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core'
+import { isUserSignedIn, userRole } from "./actions/clerk";
+import { ClerkProvider } from "@clerk/nextjs";
 
-// import { hugeiconsLicense } from "@hugeicons/react";
-// const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE as string
-// hugeiconsLicense(iconLICENSE)
+import { MantineProvider } from '@mantine/core'
+import { Notifications } from '@mantine/notifications';
+import { MantineTheme } from "./(Config)/MantineTheme"
+import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
+import '@mantine/notifications/styles.css';
+import '@mantine/dropzone/styles.css';
+import '@mantine/carousel/styles.css';
+import "@/app/(Config)/global.css"
+
+import MaintenanceModePage from "./(Config)/(Layout)/MaintenanceModePage";
+import Context from "./(Config)/Context"
 
 export const viewport: Viewport = {
   themeColor: '#1d1929',
@@ -48,58 +55,32 @@ export const metadata: Metadata = {
     appleWebApp: { capable: true, title: process.env.NEXT_PUBLIC_WEBSITE_NAME, statusBarStyle: "black-translucent" }
 }
 
-export const revalidate = 0
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const isUser = await isUserSignedIn()
+  const role = await userRole()
+  const isAdmin = isUser && role === "admin" ? true : false
 
-// import '@mantine/core/styles.css';
-// import '@mantine/dropzone/styles.css'
-// crossOrigin="anonymous"
-// import Script from "next/script";
-// import AppLayout from "./(Config)/(Layout)/AppLayout";
-// import GeneralLayout from "./(Config)/(Layout)/GeneralLayout";
-import { MantineTheme } from "./(Config)/MantineTheme"
+  const isMaintenanceMode = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
 
-import { Notifications } from '@mantine/notifications';
-
-import '@mantine/core/styles.css';
-import '@mantine/dates/styles.css';
-import '@mantine/notifications/styles.css';
-import '@mantine/dropzone/styles.css';
-import '@mantine/carousel/styles.css';
-import "@/app/(Config)/global.css"
-import MaintenanceModePage from "./(Config)/(Layout)/MaintenanceModePage";
-
-// import notificationClasses from "@/app/(Config)/Notifications.module.css"
-
-// nse } from "@hugeicons/react";
-// const iconLICENSE = process.env.NEXT_PUBLIC_HUGEICONSLICENSE!
-// hugeiconsLicense(iconLICENSE)
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const isMaintenanceMode = false
-  // // console.log()
+  console.log(isMaintenanceMode)
   return (
     <html lang="en-CA">
-      <head>
-        {/* <ColorSchemeScript /> */}
-      </head>
+      <head></head>
       <body>
         <ClerkProvider>
           <MantineProvider theme={MantineTheme}>
-            {/* classNames={noteClasses}  */}
-          {/* <Notifications autoClose={false} classNames={{notification: notificationClasses.standardNotification}} styles={{notification: {borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsSMPrimary)", padding: "1rem 2rem"}}}/> */}
           <Notifications />
-          {!isMaintenanceMode ? 
-          <Context>
-            {children}
-          </Context> : <MaintenanceModePage />}
-          {/* <MantineProvider> */}
-            {/* {children} */}
+          {isMaintenanceMode === "false" || (isMaintenanceMode === "true" && isAdmin) ? 
+            <Context>
+              {children}
+            </Context> 
+            : <MaintenanceModePage isUser={isUser} />
+          }
           </MantineProvider> 
         </ClerkProvider>
         <Analytics />
         <SpeedInsights />
       </body>
-      {/* <Script src="https://kit.fontawesome.com/66b6e8c296.js" strategy="afterInteractive"/> */}
     </html>
   )
 }
