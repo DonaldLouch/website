@@ -47,7 +47,7 @@ export default function page() {
         {/* <InlineCode code="console.log('Hello World')" />
         <ClipboardButton copyValue={list} /> */}
         {/* <HugeiconsIcon icon={FrameworksIcon} /> */}
-        <HugeIcon name="invoice-01" variant="duotone" size="3rem" />
+        <HugeIcon name="webflow-ellipse" variant="duotone" size="3rem" />
         {/* altStatus={clicked} altName="absolute" onClick={() => setClicked(!clicked ? true : false)} */}
     </Box>
 }
