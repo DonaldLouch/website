@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
-import { Notification, Button, Code, Stack , Text, Grid, Anchor, Box, Group, Combobox, PillsInput, Pill, CheckIcon, useCombobox, Input, ActionIcon, Select, Flex, AspectRatio, Image, Badge, Title} from "@mantine/core"
+import { Stack , Text, Anchor, Box, Group, ActionIcon, Flex, Badge, Title} from "@mantine/core"
 
 import * as yup from 'yup';
 import { yupResolver } from 'mantine-form-yup-resolver';
@@ -14,25 +14,19 @@ import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { SectionTitle } from "@/app/(Components)/SectionTitle";
-// import cuid from "cuid";
 import moment from "moment";
-import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
-import { FormInputReadOnly } from "@/app/(Components)/(Form)/FormInputReadOnly";
 import FormTags from "@/app/(Components)/(Form)/FormTags";
-import { Key, useEffect, useState } from "react";
-import FormTagsCopy from "@/app/(Components)/(Form)/FormTagsCopy";
+import { useState } from "react";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
 import { randomId } from "@mantine/hooks";
 
-import classes from "@/app/(Components)/Components.module.css"
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import FormButton from "@/app/(Components)/(Form)/FormButton";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import { notifications } from "@mantine/notifications";
 import DisplayDate from "@/lib/DisplayDate";
 import HugeIcon from "@/app/(Components)/HugeIcon";
-// import { BsDashLg, BsLink45Deg, BsNodePlus, BsPencilSquare, BsPlus, BsPlusLg, BsTrash2 } from "react-icons/bs";
 
 export default function EditPhotoData({photoData, photographyAlbum, locations, tagsData}: any) {
     const {fileID, fileTitle, filePath, capturedOn, uploadedOn, fileKey, fileVersionID } = photoData.fileID
@@ -44,15 +38,7 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
     const [isPortfolioOption, setIsPortfolioOption] = useState(isPortfolio ? true : false)
     const [isPinnedOption, setIsPinnedOption] = useState(isPinned ? true : false)
 
-    // // console.log(photographyAlbum)
-
-    // const toast = useToast()
-    const toastID = "toastID"
     const router = useRouter()
-    // const { fileID, fileTitle, filePath } = media
-    // const { isOpen, onOpen, onClose } = useDisclosure()
-    // const [linkIndex, setLinkIndex] = useState(links ? links.length : 1)
-    // // console.log(photoData.photoMetadata)
 
     const breadCrumbs = [
         {"pageLink": "/admin/photography", "pageName": "Photography Manager"},
@@ -195,15 +181,6 @@ export default function EditPhotoData({photoData, photographyAlbum, locations, t
         : values.albumSelect && values.albumSelect === "newAlbum" 
         ? "album"+Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 5).toLowerCase()
         : !values.albumSelect && null
-    
-        // values.photoName
-        // values.isPublic
-        // values.isPortfolio
-        // values.isPinned
-        // values.capturedOn
-        // values.uploadedOn
-        // values.caption
-        // values.tags
 
         if (values.albumSelect === "newAlbum") { //Add new album
         const { status: supabaseStatus , error: supabaseError } = await supabase.from("PhotographyAlbum").insert({

@@ -27,11 +27,12 @@ export default async function EditAlbum({ params }: { params: Params }) {
   const mdxSource = await serialize({source: albumData.albumCaption ? albumData.albumCaption : "No caption has been posted yet."})
 
   const { data: locationsData } = await supabase.from('distinct_locations').select() as any
+    const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
 
   let locations = new Array()
   locationsData.forEach((location: any) => {
     locations!.push(location.location)
   })
 
-  return <EditAlbumData photoData={photoData} albumData={albumData} locations={locations} mdxSource={mdxSource} photosCount={photosCount} />
+  return <EditAlbumData photoData={photoData} albumData={albumData} locations={locations} mdxSource={mdxSource} photosCount={photosCount} tagsData={tagsData} />
 }

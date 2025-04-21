@@ -442,7 +442,7 @@ export default function EditPostContent({post, tagsData}: any) {
              {isLinksOption && (<>
               <Stack style={{boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}} p="2rem 2rem 1rem">
                 <SectionTitle headingTitle="Links" />
-                {tocFields.length > 0 ? (
+                {linksFields.length > 0 ? (
                   <Grid my="0">
                     <Grid.Col span={0.5}><></></Grid.Col>
                     <Grid.Col span={2.75} ta="center"><Text>Link Type</Text></Grid.Col>

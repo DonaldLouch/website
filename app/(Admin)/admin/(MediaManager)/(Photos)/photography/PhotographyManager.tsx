@@ -3,7 +3,7 @@
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
 import Pagination from "@/app/(Config)/(Layout)/(Pagination)"
-import { Box } from "@mantine/core"
+import { Box, SimpleGrid } from "@mantine/core"
 import {MediaCard} from "../../(Components)/MediaCard"
 import FileUploader from "../../(Components)/FileUploader"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
@@ -60,7 +60,10 @@ export default function PhotographyManager({mediaData, pagination, photographyAl
   return (
     <>
       <BreadCrumb breads={breadCrumbs} />
-      <PrimaryLinkedButton link="/admin/batchEdit" primNewIcon={{name: "edit-02", variant: "duotone"}} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
+      <SimpleGrid cols={2} spacing="2rem" mt="2rem">
+        <PrimaryLinkedButton link="/admin/albums" primNewIcon={{name: "album-02", variant: "duotone"}} isFullWidth={false}>Album Manager</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/admin/batchEdit" primNewIcon={{name: "edit-02", variant: "duotone"}} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
+      </SimpleGrid>
       <Box component="main" color="white">
         <Box m="2rem 5rem 0rem"><FileUploader mediaType={"photography"} uploadTitle="Upload Photo(s)" helperText="For the best photography experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the photo file. You can drag and drop or click to upload the photo(s)." /></Box>
 

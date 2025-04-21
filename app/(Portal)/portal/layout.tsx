@@ -16,9 +16,12 @@ export default async function PortalLayout({ children }: { children: React.React
 
     // const isAdmin = has({ permission:"org:portal:access" }) && orgId == process.env.NEXT_PUBLIC_CLERK_ADMIN_ORG_ID
     
-    const isUser = await isUserSignedIn()
+    let isUser = await isUserSignedIn()
     const role = await userRole()
     const isAdmin = isUser && role === "admin" ? true : false
+
+    isUser = isAdmin ? true : false 
+
 
     console.log(isUser, role, isAdmin)
 
