@@ -28,9 +28,9 @@ import InlineLink from "@/app/(Components)/InlineLink"
 //   return data
 // }
 
-async function fetchVideos(offset: number, limit: number) {
+async function fetchVideos(offset: number, limit: number, videosCount: number) {
   const from = offset * limit
-  const to = from + limit - 1
+  const to = Math.min(from + limit - 1, videosCount) 
 
   const { data } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*)`).order('uploadedOn', { ascending: false }).range(from, to) as any
 
@@ -47,7 +47,7 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
     const videoLimit = 12 as number
     const [loadedVideos, setLoadedVideos] = useState(videos)
     const [page, setPage] = useState(0)
-    const [isLastPage, setIsLastPage] = useState(false)
+    const [isLastPage, setIsLastPage] = useState(videoLimit >= videosCount ? true : false)
 
 
     const [ref, inView] = useInView()
@@ -55,19 +55,17 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
     // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
     async function loadMoreVideos() {
-        // setIsLoading(true)
-        const nextPage = page + 1
-        const newVideos = await fetchVideos(nextPage, videoLimit) as any
-        setIsLastPage(nextPage <= Math.ceil(videosCount / videoLimit) - 1 ? false : true)
-
         if (!isLastPage) {
-        setPage(nextPage)
-        setLoadedVideos((prevVideos: any) => [
-            ...(prevVideos?.length ? prevVideos : []),
-            ...newVideos
-        ])
+            const nextPage = page + 1
+            const newVideos = await fetchVideos(nextPage, videoLimit, videosCount) as any
+            setIsLastPage(nextPage === Math.ceil(videosCount / videoLimit) - 1 || videoLimit === videosCount)
+            setPage(nextPage)
+            setLoadedVideos((prevVideos: any) => {
+                const combinedVideos = [...(prevVideos?.length ? prevVideos : []), ...newVideos]
+                return Array.from(new Set(combinedVideos.map((video: any) => video.id)))
+                    .map((id: any) => combinedVideos.find((video: any) => video.id === id))
+            })
         }
-        // setIsLoading(false)
     }
 
     useEffect(() => {

@@ -17,7 +17,7 @@ export default  function FormTags({ searchValues, ...rest }: any) {
             placeholder="More Tags"
             data={options}
             styles={{
-                pill: {background: "var(--darkPurple)", color: "var(--mantine-color-white)", fontWeight: 500, whiteSpace: "nowrap", wordBreak: "keep-all", borderRadius: "var(--mantine-radius-sm)", fontSize: "1rem"},
+                pill: {background: "var(--primary)", color: "var(--mantine-color-white)", fontWeight: 500, whiteSpace: "nowrap", wordBreak: "keep-all", borderRadius: "var(--mantine-radius-sm)", fontSize: "1rem"},
                 pillsList: {boxShadow: "var(--mantine-shadow-bsBoldSecondary)", padding: "1.5rem", borderRadius: "var(--mantine-radius-md)"},
                 input: {color: "var(--mantine-color-white)"},
                 option: {fontSize: "1.1rem"},

@@ -178,6 +178,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
             styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             radius="lg"
         >
+            <Text>{albumData.id}</Text>
             <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
                 <FormInput inputID="albumName" inputLabel="Album Name" {...form.getInputProps('albumName')} inputDescription="Please provide a name for the album!" icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
                 <FormTextArea inputID="albumDescription" inputLabel="Album Description" textRows={4} {...form.getInputProps('albumDescription')} isRequired />

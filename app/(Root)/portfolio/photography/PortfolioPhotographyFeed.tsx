@@ -28,9 +28,9 @@ import { useDisclosure } from "@mantine/hooks";
 import HugeIcon from "@/app/(Components)/HugeIcon";
 
 
-async function fetchPhotos(nextPage: number, photoLimit: number) {
+async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: number) {
   const from = nextPage * photoLimit
-  const to = from + photoLimit - 1
+  const to = Math.min(from + photoLimit - 1, photosCount)
 
   const { data: data } = await supabase
     .from('Photography')
@@ -48,23 +48,22 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
   const photoLimit = 20 as number
   const [loadedPhotos, setLoadedPhotos] = useState(photos)
   const [page, setPage] = useState(0)
-  const [isLastPage, setIsLastPage] = useState(false)
+  const [isLastPage, setIsLastPage] = useState(photoLimit >= photosCount ? true : false)
 
   const [ref, inView] = useInView()
 
   async function loadMorePhotos() {
+    if (!isLastPage) {
       const nextPage = page + 1
-      const newPhotos = await fetchPhotos(nextPage, photoLimit) as any
-      setIsLastPage(nextPage <= Math.ceil(photosCount / photoLimit) - 1 ? false : true)
-
-      if (!isLastPage) {
-        setPage(nextPage)
-        setLoadedPhotos((prevPhotos: any) => [
-          ...(prevPhotos?.length ? prevPhotos : []),
-          ...newPhotos
-        ])
-      }
-      // setIsLoading(false)
+      const newPhotos = await fetchPhotos(nextPage, photoLimit, photosCount) as any
+      setIsLastPage(nextPage === Math.ceil(photosCount / photoLimit) - 1)
+      setPage(nextPage)
+      setLoadedPhotos((prevPhotos: any) => {
+          const combinedPhotos = [...(prevPhotos?.length ? prevPhotos : []), ...newPhotos]
+          return Array.from(new Set(combinedPhotos.map((photo: any) => photo.id)))
+              .map((id: any) => combinedPhotos.find((photo: any) => photo.id === id))
+      })
+    }
   }
 
   useEffect(() => {

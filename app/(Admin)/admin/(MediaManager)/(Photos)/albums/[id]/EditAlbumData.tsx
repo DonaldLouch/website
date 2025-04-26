@@ -10,38 +10,36 @@ import supabase from "@/lib/supabase";
 import EditAlbumMetadata from "./EditAlbumMetadata";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 
-async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
-  const from = nextPage * photoLimit
-  const to = from + photoLimit - 1
+async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string, photosCount: number) {
+    const from = nextPage * photoLimit + 1
+    const to = Math.min(from + photoLimit - 1, photosCount) 
 
-  const { data } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).range(from, to).order('uploadedOn', { ascending: false }).match({ isPublic: true, isSetup: true, album: albumID })
+    const { data } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).range(from, to).order('capturedOn', { ascending: true }).match({ isPublic: true, isSetup: true, album: albumID })
 
-  return data
+    return data || [] // Ensure an empty array is returned if no data is fetched
 }
 
 export default function EditAlbumData({albumData, locations, photoData, photosCount, tagsData}: any) {
     const { id, albumName } = albumData
-    const photoLimit = 15 as number
+    const photoLimit = 12 as number
     const [loadedPhotos, setLoadedPhotos] = useState(photoData)
     const [page, setPage] = useState(0)
-    const [isLastPage, setIsLastPage] = useState(false)
+    const [isLastPage, setIsLastPage] = useState(photoLimit >= photosCount ? true : false)
 
     const [ref, inView] = useInView()
 
     async function loadMorePhotos() {
-        // setIsLoading(true)
-        const nextPage = page + 1
-        const newPhotos = await fetchPhotos(nextPage, photoLimit, albumData.id) as any
-        setIsLastPage(nextPage <= Math.ceil(photosCount / photoLimit) - 1 ? false : true)
-
         if (!isLastPage) {
+            const nextPage = page + 1
+            const newPhotos = await fetchPhotos(nextPage, photoLimit, albumData.id, photosCount)
+            setIsLastPage(nextPage === Math.ceil(photosCount / photoLimit) - 1)
             setPage(nextPage)
-            setLoadedPhotos((prevPhotos: any) => [
-            ...(prevPhotos?.length ? prevPhotos : []),
-            ...newPhotos
-            ])
+            setLoadedPhotos((prevPhotos: any) => {
+                const combinedPhotos = [...(prevPhotos?.length ? prevPhotos : []), ...newPhotos]
+                return Array.from(new Set(combinedPhotos.map((photo: any) => photo.id)))
+                    .map((id: any) => combinedPhotos.find((photo: any) => photo.id === id))
+            })
         }
-        // setIsLoading(false)
     }
 
     useEffect(() => {

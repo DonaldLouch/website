@@ -30,9 +30,9 @@ import HugeIcon from '@/app/(Components)/HugeIcon'
 import LinkBadge from '@/app/(Components)/LinkBadge'
 import InlineLink from '@/app/(Components)/InlineLink'
 
-async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string) {
+async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: number, albumID: string) {
     const from = nextPage * photoLimit
-    const to = from + photoLimit - 1
+    const to = Math.min(from + photoLimit - 1, photosCount) 
 
     let query = supabase
         .from('Photography')
@@ -43,7 +43,7 @@ async function fetchPhotos(nextPage: number, photoLimit: number, albumID: string
 
     const { data } = await query
 
-    return data
+    return data || [] // Ensure an empty array is returned if no data is fetched
 }
 
 export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, getPhotoCount}: any) => {
@@ -55,23 +55,24 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
     const initialRender = useRef(true)
     const [loadedPhotos, setLoadedPhotos] = useState(photoData)
     const [page, setPage] = useState(0)
-    const [isLastPage, setIsLastPage] = useState(false)
+    const [isLastPage, setIsLastPage] = useState(photoLimit >= getPhotoCount ? true : false)
+    const [isLoaded, setIsLoaded] = useState(true)
 
     const [ref, inView] = useInView()
 
-    // console.log(Math.ceil(getPhotoCount / photoLimit))
+    console.log(isLastPage)
 
     async function loadMorePhotos() {
-        const nextPage = page + 1
-        const newPhotos = await fetchPhotos(nextPage, photoLimit, albumData.id) as any
-        setIsLastPage(nextPage <= Math.ceil(getPhotoCount / photoLimit) - 1 ? false : true)
-
         if (!isLastPage) {
+            const nextPage = page + 1
+            const newPhotos = await fetchPhotos(nextPage, photoLimit, getPhotoCount, albumData.id)
+            setIsLastPage(nextPage === Math.ceil(getPhotoCount / photoLimit) - 1)
             setPage(nextPage)
-            setLoadedPhotos((prevPhotos: any) => [
-                ...(prevPhotos?.length ? prevPhotos : []),
-                ...newPhotos
-            ])
+            setLoadedPhotos((prevPhotos: any) => {
+                const combinedPhotos = [...(prevPhotos?.length ? prevPhotos : []), ...newPhotos]
+                return Array.from(new Set(combinedPhotos.map((photo: any) => photo.id)))
+                    .map((id: any) => combinedPhotos.find((photo: any) => photo.id === id))
+            })
         }
     }
 

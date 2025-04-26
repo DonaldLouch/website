@@ -18,16 +18,16 @@ type Params = Promise<{ id: string }>
 export default async function EditAlbum({ params }: { params: Params }) {
   const { id } = await params
 
-  const postLimit = 15 as number
+  const postLimit = 12 as number
   const { data: albumData } = await supabase.from('PhotographyAlbum').select().match({id: id}).single() as any
 
   const { count: photosCount } = await supabase.from('Photography').select("*", { count: 'exact'}).match({ isPublic: true, isSetup: true, album: albumData.id })
-  const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('photoName', { ascending: true }) as any
+  const { data: photoData } = await supabase.from('Photography').select(`*, fileID (*), album (*)`).match({ isPublic: true, isSetup: true, album: albumData.id }).limit(postLimit).order('capturedOn', { ascending: true }) as any
 
   const mdxSource = await serialize({source: albumData.albumCaption ? albumData.albumCaption : "No caption has been posted yet."})
 
   const { data: locationsData } = await supabase.from('distinct_locations').select() as any
-    const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
+  const { data: tagsData } = await supabase.from('distinct_alltags').select().order('tag', { ascending: true }) as any
 
   let locations = new Array()
   locationsData.forEach((location: any) => {

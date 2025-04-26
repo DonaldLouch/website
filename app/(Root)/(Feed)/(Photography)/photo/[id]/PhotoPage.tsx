@@ -50,8 +50,6 @@ export default function PhotoPage({photoData, mdxSource}: any) {
           </Group>
         }
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">
-          {/* <Text>{photoData.caption}</Text> */}
-          {/* source={photoData.caption} */}
           <MdxContent source={mdxSource} />
         </Box>
         <Group gap="0.5rem">

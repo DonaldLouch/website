@@ -38,9 +38,9 @@ import HugeIcon from "@/app/(Components)/HugeIcon";
 import InlineLink from "@/app/(Components)/InlineLink";
 
 
-async function fetchPhotos(nextPage: number, photoLimit: number, searchType?: string, searchValue?: string) {
+async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: number, searchType?: string, searchValue?: string) {
   const from = nextPage * photoLimit
-  const to = from + photoLimit - 1
+  const to = Math.min(from + photoLimit - 1, photosCount) 
   // console.log(from, to)
   const keyword = searchType === "tag" 
     && searchValue?.includes("HASHTAG") ? searchValue?.replace('HASHTAG', '#') 
@@ -95,7 +95,7 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
   const initialRender = useRef(true)
   const [loadedPhotos, setLoadedPhotos] = useState(photos)
   const [page, setPage] = useState(0)
-  const [isLastPage, setIsLastPage] = useState(false)
+  const [isLastPage, setIsLastPage] = useState(photoLimit >= photosCount ? true : false)
   const router = useRouter()
 
   const [ref, inView] = useInView()
@@ -103,19 +103,15 @@ export default function PhotographyFeed({ photos, photographyAlbum, locationData
   // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
   async function loadMorePhotos() {
-    // setIsLoading(true)
       const nextPage = page + 1
-      const newPhotos = await fetchPhotos(nextPage, photoLimit, searchType, searchValue) as any
-      setIsLastPage(nextPage <= Math.ceil(photosCount / photoLimit) - 1 ? false : true)
-
-      if (!isLastPage) {
-        setPage(nextPage)
-        setLoadedPhotos((prevPhotos: any) => [
-          ...(prevPhotos?.length ? prevPhotos : []),
-          ...newPhotos
-        ])
-      }
-      // setIsLoading(false)
+      const newPhotos = await fetchPhotos(nextPage, photoLimit, photosCount, searchType, searchValue) as any
+      setIsLastPage(nextPage === Math.ceil(photosCount / photoLimit) - 1)
+      setPage(nextPage)
+      setLoadedPhotos((prevPhotos: any) => {
+          const combinedPhotos = [...(prevPhotos?.length ? prevPhotos : []), ...newPhotos]
+          return Array.from(new Set(combinedPhotos.map((photo: any) => photo.id)))
+              .map((id: any) => combinedPhotos.find((photo: any) => photo.id === id))
+      })
   }
 
   useEffect(() => {
