@@ -2,6 +2,7 @@
 
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton"
 import HugeIcon from "@/app/(Components)/HugeIcon"
+import InlineLink from "@/app/(Components)/InlineLink"
 import { Box, Flex, Stack, Title, Text, Grid, Center, Anchor, Image, Group, Alert } from "@mantine/core"
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
@@ -25,21 +26,20 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                 backdropFilter: "blur(20px)",
                 borderRadius: "var(--mantine-radius-lg)"
               }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", md: "1.5rem 3rem 2rem"}} gap="0.5rem">
-                <Alert variant="light" color="var(--secondary)" title="Client Portal Coming Soon!" icon={<HugeIcon name="cone-01" variant="twotone" />}>
-                  <Text c="white">Please note that the Client Portal is very well much not constructed yet and at this time no functions have been created. The Portal is just being setup and will be released at a later time.</Text>
+                <Anchor href="/" underline="never">
+                  <Group align="center">
+                      <Image
+                        src="/titleLogo/titleLogoWhiteColoured.svg"
+                        alt="Donald Louch"
+                        w={{base: "60vw", lg: "30vw !important"}}
+                        height="auto"
+                      />
+                      <Title order={1} fz="2rem" c="var(--blackRGBA)">Client Portal</Title>
+                  </Group>
+                </Anchor>
+                <Alert variant="light" color="red" title="Client Portal Currently disabled!" icon={<HugeIcon name="unavailable" />}>
+                  <Text c="white" component="span">At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01"}} />.</Text>
                 </Alert>
-                  <Anchor href="/" underline="never">
-                    <Group align="center">
-                        <Image
-                          src="/titleLogo/titleLogoWhiteColoured.svg"
-                          alt="Donald Louch"
-                          w={{base: "60vw", lg: "30vw !important"}}
-                          height="auto"
-                        />
-                        <Title order={1} fz="2rem" c="var(--blackRGBA)">Client Portal</Title>
-                    </Group>
-                  </Anchor>
-                <Text>A hub for all updates and communication related to any freelanced projects initiated, completed, inquiring about, or currently active, by Donald Louch, that you may have a stake in.</Text>
               </Stack>
             </Stack>
           </Grid.Col>

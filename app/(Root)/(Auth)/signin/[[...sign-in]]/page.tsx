@@ -7,6 +7,6 @@ export default function Signin() {
   const prams = useSearchParams()
   const reURL = prams.get("reURL") as string
     
-  const redirectURL = reURL ? reURL : "/portal"
+  const redirectURL = reURL ? reURL : "/admin"
   return <SignIn forceRedirectUrl={redirectURL} />
 }

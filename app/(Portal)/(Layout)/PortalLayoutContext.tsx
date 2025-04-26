@@ -85,27 +85,9 @@ export default function PortalLayoutContext({ children, isUser, isAdmin }: { chi
             >
               <Center h="100vh">
               <Stack m="2rem">
-                <Text fz="1.5rem">Please note that the client portal has been currently disabled. At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01"}} />.</Text>
+                <Text fz="1.5rem" component="span">Please note that the client portal has been currently disabled. At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01"}} />.</Text>
                 <Text fz="1.5rem">Sorry for any inconvenience this may cause.</Text>
                 <PrimaryLinkedButton link="/" icon={<HugeIcon name="home-01" />}>Go Home</PrimaryLinkedButton>
-                {/* <Text mb={getOpenID === "newProject" ? "0.5rem" : "2rem"} ta="center" fz="1.5rem">It appears that you're currently not signed in to the Donald Louch Client Portal! You will need to create an account/signin to use any of the Donald Louch Client Portal features!</Text>
-                {getOpenID === "newProject" && <Text mb="2rem" ta="center" fz="1.5rem">If you would like to request a new project you must signin to the FREE Donald Louch Client Portal!</Text>}
-                <Group justify="center"> 
-                  {user.isSignedIn && <Button
-                    onClick={() => signOut(() => router.push("/"))}
-                    leftSection={<HugeIcon name="logout-01" />}
-                    color="black" 
-                    // fullWidth={isFullWidth}
-                    variant="filled" 
-                    size="lg"
-                    classNames={{root: classes.primaryButton}}
-                  >
-                    Sign Out and Go Home!
-                  </Button>}
-                  <PrimaryLinkedButton link="/" icon={<HugeIcon name="home-01" />}>Go Home</PrimaryLinkedButton>
-                  <PrimaryLinkedButton link={`/signin?reURL=${redirectPath}`} icon={<HugeIcon name="login-01" />}>{getOpenID === "newProject" ? "Sign In and Request a Project! (you will be redirected once successfully signed in!)" : "Sign In and Come Back!"}</PrimaryLinkedButton>
-                </Group> */}
-                {/* <UserButton afterSignOutUrl="/"/>  */}
               </Stack>
               </Center>
             </Box>

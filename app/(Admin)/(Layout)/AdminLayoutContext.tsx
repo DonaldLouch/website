@@ -18,6 +18,7 @@ import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
 import Notifications from '@/app/(Components)/Notifications'
 import HugeIcon from '@/app/(Components)/HugeIcon'
+import InlineLink from '@/app/(Components)/InlineLink'
 
 export default function AdminLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
   const path = usePathname()
@@ -50,32 +51,19 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
         >
           {!isAdmin ? (
             <Box
-              px={{base: "1rem", lg: "5rem"}}  
-              style={{overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", background: "var(--darkPurpleRGBA)"}} 
-              mx="auto"
-              mih="100vh"
-            >
-              <Center h="100vh">
-              <Stack m="2rem">
-                <Text mb="2rem" ta="center" fz="1.5rem">It appears that you are not Donald Louch and thus, can't login to the website admin dashboard! Donald may implement a user portal at one point or another?!</Text>
-                <Group justify="center"> 
-                  {user.isSignedIn && <Button
-                    onClick={() => signOut(() => router.push("/"))}
-                    leftSection={<HugeIcon name="logout-01" />} 
-                    color="black" 
-                    // fullWidth={isFullWidth}
-                    variant="filled" 
-                    size="lg"
-                    classNames={{root: classes.primaryButton}}
-                  >
-                    Sign Out and Go Home!
-                  </Button>}
-                  <PrimaryLinkedButton link="/" primNewIcon={{name: "home-01", variant: "duotone"}}>Go Home</PrimaryLinkedButton>
-                </Group>
-                {/* <UserButton afterSignOutUrl="/"/>  */}
-              </Stack>
-              </Center>
-            </Box>
+                          px={{base: "1rem", lg: "5rem"}}  
+                          style={{overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", background: "var(--darkPurpleRGBA)"}} 
+                          mx="auto"
+                          mih="100vh"
+                        >
+                          <Center h="100vh">
+                          <Stack m="2rem">
+                            <Text fz="1.5rem" component="span">Please note that the client portal has been currently disabled. At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01"}} />.</Text>
+                            <Text fz="1.5rem">Sorry for any inconvenience this may cause.</Text>
+                            <PrimaryLinkedButton link="/" icon={<HugeIcon name="home-01" />}>Go Home</PrimaryLinkedButton>
+                          </Stack>
+                          </Center>
+                        </Box>
           ) : (
             <AppShell 
                 header={{ height: 63, collapsed: !pinned, offset: false }}
