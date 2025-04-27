@@ -14,7 +14,7 @@ export const AlbumCard = ({ albumData }: any) => {
     return <Anchor href={`/admin/albums/${id}`} underline="never">
         <Box c="white" className={classes.videoThumbnail} my="2rem" style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="2rem">
             <Text fw="900">{albumName}</Text>
-            <Text c="gray" fz="sm">{albumData.initialSetup ? "Album has been initially setup!" : "Album is not setup!"}</Text>
+            <Text c={albumData.initialSetup ? "green" : "gray"} fz="sm">{albumData.initialSetup ? "Album has been initially setup!" : "Album is not setup!"}</Text>
         </Box>
     </Anchor> 
 }

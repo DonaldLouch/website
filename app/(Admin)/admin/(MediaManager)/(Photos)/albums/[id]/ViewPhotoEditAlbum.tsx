@@ -235,6 +235,9 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
                         <Badge color="var(--primary)" leftSection={<HugeIcon name="grid" />}>
                             {imageData.fileID.fileID}
                         </Badge>
+                        <Badge color="var(--primary)" leftSection={<HugeIcon name="grid" />}>
+                            {imageData.id}
+                        </Badge>
                         <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
                             <DisplayDate source={imageData.fileID.capturedOn} />
                         </Badge>
