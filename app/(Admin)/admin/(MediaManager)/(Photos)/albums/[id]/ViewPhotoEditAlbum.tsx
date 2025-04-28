@@ -7,7 +7,7 @@ import moment from 'moment'
 import { FormSwitch } from '@/app/(Components)/(Form)/FormSwitch'
 import { SectionTitle } from '@/app/(Components)/SectionTitle'
 import { FormSelect } from '@/app/(Components)/(Form)/FormSelect'
-import { ActionIcon, Anchor, AspectRatio, Badge, Box, Flex, Group, Modal, SimpleGrid, Stack, Text, Title } from '@mantine/core'
+import { ActionIcon, Anchor, AspectRatio, Badge, Box, Divider, Flex, Group, Modal, SimpleGrid, Stack, Text, Title } from '@mantine/core'
 import { randomId, useDisclosure } from '@mantine/hooks'
 import { useImageSize } from 'react-image-size'
 import { useEffect, useState } from 'react'
@@ -26,10 +26,12 @@ import FormDatePicker from '@/app/(Components)/(Form)/FormDatePicker'
 import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 import { useForm, yupResolver } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
+import { deleteFileFromS3 } from '@/app/actions/backblaze'
+import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
 
 export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: any) {
-    const {fileID, capturedOn, uploadedOn } = imageData.fileID
-    const { photoName, caption, tags, links, location, id: photoID, isPublic, isPortfolio, isPinned } = imageData as any
+    const {fileID, capturedOn, uploadedOn, fileKey } = imageData.fileID
+    const { photoName, caption, tags, links, location, id: photoID, isPublic, isPortfolio, isPinned, album } = imageData as any
 
     const [linksOption, setLinksOption] = useState(links.length > 0 ? true : false)
     const [isPublicOption, setIsPublicOption] = useState(isPublic ? true : false)
@@ -39,6 +41,59 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
     const router = useRouter()
 
     const [opened, { open, close }] = useDisclosure(false)
+
+    async function removeFromAlbum(values: any) {
+        await supabase.from("PhotographyAlbum").update({ 
+            lastUpdatedOn: moment()
+        }).eq('id', values.albumSelect)
+        
+        const { status: supabaseStatus , error: supabaseError } = await supabase.from("Photography").update({ 
+            album: null,
+            lastUpdatedOn: moment()
+        }).eq('id', photoID)
+        supabaseStatus && notifications.show({ 
+            title: `${supabaseStatus === 204 ? `Photo ${photoName} Removed 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
+            message:`${supabaseStatus === 204 ? `You have successfully removed the selected photos from the album!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
+            color: supabaseStatus === 204 ? "black" : "red",
+            icon: supabaseStatus === 204 ? <HugeIcon name="file-edit" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />
+        })
+        supabaseStatus === 204 && router.refresh()
+    }
+
+    async function deleteMedia() {
+        // const fileDelete = {
+        //     "Bucket": process.env.NEXT_PUBLIC_S3_BUCKET_NAME,
+        //     "Delete": {
+        //         "Objects": [{
+        //             "Key": id
+        //         }],
+        //         "Quiet": false
+        //     }
+        // }
+        // new DeleteObjectsCommand(fileDelete)
+        // const id = fileID.replace("_", "/");
+        // const formData = new FormData()
+        // formData.append("fileKey", fileKey)
+        // formData.append("versionID", fileVersionID)
+
+        const deleteFile = await deleteFileFromS3({
+            bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
+            filePath: fileKey,
+            getFileID: fileID,
+            redirectPath: `/admin/albums/${album}`
+        })
+
+        const isFileDeleted = deleteFile.$metadata.httpStatusCode === 204 ? true : false
+
+        isFileDeleted && notifications.show({ 
+            title: "File Deleted!",
+            message:`You have successfully deleted your file titled "${photoName}"`,
+            color: "red",
+            icon: <HugeIcon name="delete-02" variant="twotone" />
+        })
+        isFileDeleted && router.refresh()
+        // mediaDeleteStatus === 204 && router.refresh()
+    }
 
     const onSubmit =  async (values: any) => {
         const subLinkValue = new Array()
@@ -75,7 +130,8 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
             isPublic: values.isPublic,
             isSetup: values.capturedOn && values.uploadedOn && values.caption && values.tags ? true : false,
             isPortfolio: values.isPortfolio,
-            isPinned: values.isPinned
+            isPinned: values.isPinned,
+            lastUpdatedOn: moment()
         }).eq('id', photoID)
         supabaseStatus && notifications.show({ 
             title: `${supabaseStatus === 204 ? `Photo ${photoName} Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
@@ -321,6 +377,11 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
                     />
                 </SimpleGrid>
                 <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Photo</FormSubmitButton>
+                <Divider label="OR" labelPosition="center" mx="3rem" my="2rem" />
+                <SimpleGrid cols={2} spacing="2.5rem">
+                     <PrimaryButton action={removeFromAlbum} colour="red.4" primNewIcon={{name: "album-not-found-01"}}>Remove Photo From Album</PrimaryButton>
+                     <PrimaryButton action={deleteMedia} colour="red.8" primNewIcon={{name: "delete-02"}}>Delete Photo</PrimaryButton>
+                </SimpleGrid>
             </Box>
         </Modal>
     </>)

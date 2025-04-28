@@ -1,6 +1,6 @@
 {
   "name": "donaldlouch",
-  "version": "30.04.26.02",
+  "version": "30.04.28",
   "packageManager": "yarn@4.6.0",
   "description": "I&#39;m a Canadian digital producer specializing in web development, photography, videography, and more. I hold a Bachelor of Arts in Digital Media Studies and two Graduate Certificates in Digital Communication, and Digital Productions Writing and Design.",
   "private": true,
@@ -72,7 +72,7 @@
   },
   "devDependencies": {
     "@types/mdx": "^2.0.13",
-    "@types/node": "^22.15.2",
+    "@types/node": "^22.15.3",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
