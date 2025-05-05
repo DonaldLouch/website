@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     }) as any
 
     const mailData = {
-      from: `New Contact Form<no-reply@donaldlouch.ca>`,
+      from: `New Contact Form<hello@donaldlouch.ca>`,
       replyTo: `${name}<${email}>`,
       to: "Donald Louch<hello@donaldlouch.ca>",
       subject: `Form On Donald Louch: ${subject}`,
@@ -134,6 +134,6 @@ export async function POST(request: Request) {
     ]
     return NextResponse.json(contactData);
   } catch (error) {
-    // console.log("The error", error)
+    console.log("The error", error)
   }
 }
