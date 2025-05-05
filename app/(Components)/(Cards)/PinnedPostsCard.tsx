@@ -87,8 +87,7 @@ export default function PinnedPostsCard({pinnedPosts}: any) {
           slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
           slideGap={{ base: 0, sm: 'md' }}
           // slidesToScroll={2}
-          loop
-          align="start"
+          emblaOptions={{ loop: true, dragFree: true, align: 'start' }}
           my="2rem"
           key={`pinned${randomId()}`}
       >

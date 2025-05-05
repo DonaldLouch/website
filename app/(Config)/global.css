@@ -29,6 +29,10 @@ html {
     background: var(--mainGradient);
 }
 
+.mantine-TimePicker-field {
+    color: var(--mantine-color-white) !important;
+}
+
 body {
     background: var(--mantine-color-black) !important;
     color: #e7e7e7 !important;

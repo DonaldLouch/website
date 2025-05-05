@@ -64,9 +64,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     />
                 </Anchor>
                 <Group>
-                    <WebsiteAlerts />
-                    {isSignedIn && <Notifications /> }
-                    {!isSignedIn ? <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/signin"><HugeIcon name="login-01" /></Anchor> : <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/portal"><HugeIcon name="dashboard-speed-02" /></Anchor>}
+                    {/* <WebsiteAlerts />
+                    {isSignedIn && <Notifications /> } */}
+                    {isSignedIn && <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/admin"><HugeIcon name="dashboard-speed-02" /></Anchor>}
                     <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                 </Group>
             </Group>

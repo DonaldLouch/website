@@ -14,15 +14,32 @@ export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, 
         c="white"
         settings={{ timezone: 'America/Vancouver' }}
         popoverProps={{
-            withinPortal: true, 
+            withinPortal: true,
             styles: {
                 dropdown: {background: "var(--mantine-color-black)", border: "none", boxShadow: "var(--mantine-shadow-bsSMWhite)", borderRadius: "var(--mantine-radius-md)"}
             }
             // bg: "none"
         }}
-        timeInputProps={{
+        timePickerProps={{
             c: "white",
-            styles: {input: {color: "var(--mantine-color-white)"}}
+            styles: {
+                input: {color: "var(--mantine-color-white)"},
+                dropdown: {
+                    background: "var(--mantine-color-black)",
+                    color: "var(--mantine-color-white)",
+                    outline: "none",
+                    border: "none",
+                    fontSize: "1.1rem", 
+                    boxShadow: "var(--mantine-shadow-bsSMWhite)",
+                    padding: "1rem"
+                },
+            },
+            classNames: {control: classes.dateInput},
+            format: '12h',
+            withDropdown: true,
+            popoverProps: {
+                position: 'top-start'
+            }
         }}
         leftSection={<HugeIcon name="calendar-03" variant="twotone" />}
         leftSectionProps={{
@@ -34,6 +51,7 @@ export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, 
             input: {color: "var(--mantine-color-white)", fontSize: "1.1rem", padding: "1rem 3rem"},
             root: {width: "100%"},
             timeWrapper: {color: "var(--mantine-color-white)"},
+            timeInput: {color: "var(--mantine-color-white) !important"},
             label: {
                 fontSize: "1.5rem",
                 fontFamily: "heading",

@@ -15,6 +15,9 @@
 
 .dateInput {
     color: var(--mantine-color-white) !important;
+    &[data-active], &[data-selected] {
+        background: var(--primary);
+    }
     &:hover {
         background: var(--darkPurple) !important;
     }

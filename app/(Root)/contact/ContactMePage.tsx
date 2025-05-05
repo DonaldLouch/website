@@ -1,5 +1,5 @@
 'use client'
-import { Box, Group, Text } from '@mantine/core'
+import { Alert, Box, Group, Text } from '@mantine/core'
 // import { BsEnvelopeAt, BsEnvelopeExclamation, BsPersonBadge, BsSend, BsSendCheck, BsSendDash } from 'react-icons/bs'
 
 import * as yup from 'yup';
@@ -34,48 +34,51 @@ import HugeIcon from '@/app/(Components)/HugeIcon';
 // }
 
 export default function ContactMePage() {
-    const initialValues = {
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    }
+    // const initialValues = {
+    //     name: '',
+    //     email: '',
+    //     subject: '',
+    //     message: ''
+    // }
 
-    const schema = yup.object().shape({
-        name: yup.string().required('The "First and Last Name" field is required.'),
-        email: yup.string()
-            .email(
-                "It seems that you have entered an incorrect email address or an email address not properly formatted."
-            )
-            .required('The "Email Address" field is required.'),
-        subject: yup.string().required('The "Subject" field is required.'),
-        message: yup.string().required('The "Message" field is required.'),
-    })
+    // const schema = yup.object().shape({
+    //     name: yup.string().required('The "First and Last Name" field is required.'),
+    //     email: yup.string()
+    //         .email(
+    //             "It seems that you have entered an incorrect email address or an email address not properly formatted."
+    //         )
+    //         .required('The "Email Address" field is required.'),
+    //     subject: yup.string().required('The "Subject" field is required.'),
+    //     message: yup.string().required('The "Message" field is required.'),
+    // })
 
-    const form = useForm({
-        mode: 'controlled',
-        initialValues,
-        validate: yupResolver(schema)
-    })
+    // const form = useForm({
+    //     mode: 'controlled',
+    //     initialValues,
+    //     validate: yupResolver(schema)
+    // })
 
-    const onSend = async (values: any) => {
-        const response = await fetch('/api/mail/newContact', {
-            method: 'POST',
-            body: JSON.stringify(values),
-        })
-        notifications.show({ 
-            title: response.ok ? "Sent 🎉" : "An Error Occurred", 
-            message: response.ok ? "You've successfully sent a message to Donald Louch!" : "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.", 
-            color: response.ok ? "black" : "red-6",
-            icon: response.ok ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
-        })
-    }
+    // const onSend = async (values: any) => {
+    //     const response = await fetch('/api/mail/newContact', {
+    //         method: 'POST',
+    //         body: JSON.stringify(values),
+    //     })
+    //     notifications.show({ 
+    //         title: response.ok ? "Sent 🎉" : "An Error Occurred", 
+    //         message: response.ok ? "You've successfully sent a message to Donald Louch!" : "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.", 
+    //         color: response.ok ? "black" : "red-6",
+    //         icon: response.ok ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
+    //     })
+    // }
 
     return (<>
         <SectionCard styleType="primary" id="contactMe">
             <SectionTitle headingTitle="Contact Me" />
-            <Text ta="center" component="div">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01", variant: "twotone"}} body="hello@donaldlouch.ca" /></Text>
-            <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={form.onSubmit(onSend)}>
+            {/* <Text ta="center" component="div">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01", variant: "twotone"}} body="hello@donaldlouch.ca" /></Text> */}
+             <Alert variant="light" color="secondary" title="Contact Form Disabled!" icon={<HugeIcon name="mail-remove-01" variant="duotone" />}>
+                <Text c="white" component="span">Due to a mailing change, I have currently disabled the contact form function. Sorry for any inconvenience. You can reach me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01"}} />.</Text>
+            </Alert>
+            {/* <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={form.onSubmit(onSend)}>
                 <FormInput isRequired inputLabel="First and Last Name" id="name" {...form.getInputProps('name')} icon={<HugeIcon name="passport" />} inputDescription="I ask for your name so that when I reply back in regards to your contact request, I can formally address you." inputType="text" />
                 <FormInput isRequired inputLabel="Email Address" id="email" {...form.getInputProps('email')} icon={<HugeIcon name="mail-at-sign-01" />} inputDescription="Your email address is required so that I can send you a reply back in regards to your contact request." inputType="email" />
                 <FormInput isRequired inputLabel="Subject" id="subject" inputDescription="By providing a subject to the contact request, it'll make it easier to distinguish the unique request from others." icon={<HugeIcon name="mail-edit-01" />} {...form.getInputProps('subject')} inputType="text" />
@@ -83,8 +86,7 @@ export default function ContactMePage() {
                 <Group justify="flex-end" mt="md">
                     <FormSubmitButton>Send Message</FormSubmitButton>
                 </Group>
-            </Box>
-            {/* <Notification icon={<BsSendCheck />} color="green" title="Sent 🎉">You've successfully sent a message to Donald Louch!</Notification> */}
+            </Box> */}
         </SectionCard>
     </>)
 }
