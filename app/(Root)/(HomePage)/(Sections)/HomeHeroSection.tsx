@@ -12,7 +12,7 @@ export default function HomeHeroSection({aboutMe}: any) {
   
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", overflowY: "hidden"}} bg="var(--blurredBackground)">
     {/* <Box bg= {`no-repeat url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M41U25E6mtuU256ls.jpeg) center`}  bgsz="cover" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box> */}
-    <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.4" pos="absolute" style={{zIndex: "110", overflowY: "hidden"}}></Box>
+    <Box bg="var(--prideGradient)" w="100vw" h="100%" opacity="0.4" pos="absolute" style={{zIndex: "110", overflowY: "hidden"}}></Box>
     {/* <Box h="100%" w="100vw" visibleFrom="sm"> */}
     <AspectRatio ratio={16/9} h="100%" w="100vw" visibleFrom="sm" pos="absolute" style={{zIndex: "100", overflowY: "hidden"}} bg="var(--mainGradient)">
       <video src="https://donaldlouch.s3.us-west-004.backblazeb2.com/videography/videography_LV70B8VTthp427b6b.mp4" muted loop autoPlay></video>

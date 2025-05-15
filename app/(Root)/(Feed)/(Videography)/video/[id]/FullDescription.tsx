@@ -4,7 +4,7 @@ import LinkBadge from "@/app/(Components)/LinkBadge";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
 import { useUser } from "@clerk/nextjs";
-import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button, Table } from "@mantine/core";
+import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button } from "@mantine/core";
 
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
@@ -36,7 +36,7 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)", overflow: "scroll"}} p="1rem 2rem" mah="60vh">
             <PostContent mdxSource={mdxSource} />
         </Box>
-        <SingleAccordion customMargin="2rem 0rem" customPadding="1rem" content={[{
+        <SingleAccordion customMargin="2rem 0rem" customPadding="0 1rem 2rem" content={[{
             id: "metadata",
             imageType: "Icon",
             image: <HugeIcon name="database-02" />,

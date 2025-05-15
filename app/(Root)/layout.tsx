@@ -1,18 +1,22 @@
 'use client'
 
-import { Anchor, AppShell, Group, rem, Image, Burger, Text, Tooltip, Modal } from "@mantine/core";
+import { Anchor, AppShell, Group, rem, Image, Burger, Text, Tooltip, Modal, Box, Stack, Flex, NavLink } from "@mantine/core";
 import { useDisclosure, useHeadroom } from "@mantine/hooks";
 import { HeaderNavigationItems } from "@/lib/HeaderNavigationItems";
 import HeaderNavigationItem from "../(Config)/(Layout)/(Header)/HeaderNavigationItem";
 import Footer from "../(Config)/(Layout)/(Footer)";
 import { usePathname } from "next/navigation";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import WebsiteAlerts from "../(Components)/WebsiteAlerts";
 import Notifications from "../(Components)/Notifications";
 import { isUserSignedIn } from "../actions/clerk"
 import { useUser } from "@clerk/nextjs";
 import HugeIcon from "../(Components)/HugeIcon";
+import { HeaderLinkProps, HeaderLinks } from "@/lib/HeaderLinks";
+import HeaderLink from "../(Components)/(Buttons)/HeaderLink";
+
+import classes from '@/app/(Components)/(Buttons)/Buttons.module.css'
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const path = usePathname()
@@ -29,6 +33,11 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     
     const { user } = useUser()
     const isSignedIn = user ? true : false
+
+// {HeaderLinks.map((link: HeaderLinkProps, index: number) => (
+//                         <HeaderLink key={`${link.slug}Header${index}`} {...link} />
+//                     ))}
+
     // const [isSignedIn, setIsSignedIn] = useState(false) as any
     // useEffect(() => {
     //     const userSignedIn = isUserSignedIn()
@@ -39,51 +48,108 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     // const [opened { open, close }] = useDisclosure(false)
 
     return <AppShell 
-        header={{ height: 63, collapsed: !pinned, offset: false }}
-        navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened } }}
-        withBorder={false}
-        disabled={disabled}
-    >
-        <AppShell.Header
-            mx="auto"
-            py="0.8rem"
-            px="1.5rem"
-            w={{base: "calc(100vw - 4%)", lg: "calc(100vw - 8%)"}}
-            top={{ base:"2%", lg: "2%" }}
-            left={{ base:"2%", lg: "2%" }}
-            right={{ base:"2%", lg: "2%" }}
-            styles={{header: {borderRadius: "0 1.5rem", boxShadow: "var(--mantine-shadow-bsBoldPrimary)", border: "none", background:"var(--darkPurpleRGBA)", backdropFilter: "blur(20px)"}}}
-            h="auto"
+            header={{ height: 63, collapsed: !pinned, offset: false }}
+            navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened } }}
+            withBorder={false}
+            disabled={disabled}
         >
-            <Group gap="1rem" mx="auto" justify="space-between" h="auto">
-                <Anchor href="/" m="0" p="0">
-                    <Image
-                        src="/titleLogo/titleLogoWhiteColoured.svg"
-                        alt="Donald Louch"
-                        w={{ base: "30vw", lg: "15vw" }}
+            <AppShell.Header
+                mx="auto"
+                py="0.8rem"
+                px="1.5rem"
+                w={{base: "calc(100vw - 4%)", lg: "calc(100vw - 8%)"}}
+                top={{ base:"2%", lg: "2%" }}
+                left={{ base:"2%", lg: "2%" }}
+                right={{ base:"2%", lg: "2%" }}
+                styles={{header: {borderRadius: "0 1.5rem", boxShadow: "var(--mantine-shadow-bsBoldPrimary)", border: "none", background:"var(--darkPurpleRGBA)", backdropFilter: "blur(20px)"}}}
+                h="auto"
+            >
+                <Flex gap="1rem" mx="auto" justify="space-between" h="auto" wrap="nowrap" align="center">
+                    <Tooltip label="Go Home">
+                        <Anchor href="/" m="0" p="0">
+                            <Image
+                                src="/titleLogo/titleLogoWhiteColoured.svg"
+                                alt="Donald Louch"
+                                w={{ base: "30vw", lg: "15vw" }}
+                            />
+                        </Anchor>
+                    </Tooltip>
+                    <Box p="0">
+                        <Flex visibleFrom="sm">
+                            {HeaderLinks.map((link: HeaderLinkProps, index: number) => (
+                                <HeaderLink key={`${link.slug}Header${index}`} {...link} />
+                            ))}
+                        </Flex>
+                        <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" hiddenFrom="sm" />
+                    </Box>
+                    <NavLink href="/contact"
+                        variant="subtle"
+                        classNames={{
+                            root: classes.headerLink,
+                            label: classes.headerLink_label,
+                        }}
+                        label="Contact Me"
+                        p="1rem"
+                        pl="1.5rem"
+                        fw="500"
+                        rightSection={null}
+                        w="fit-content"
+                        style={{ boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }}
+                        visibleFrom="md"
                     />
-                </Anchor>
-                <Group>
-                    {/* <WebsiteAlerts />
-                    {isSignedIn && <Notifications /> } */}
-                    {isSignedIn && <Anchor unstyled c="white" p="initial" m="initial" mt="0.2rem" href="/admin"><HugeIcon name="dashboard-speed-02" /></Anchor>}
-                    <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
-                </Group>
-            </Group>
-        </AppShell.Header>
-        <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--darkPurple)", backdropFilter: "blur(20px)"}}}>
-            {HeaderNavigationItems.map((link) => (
-                <HeaderNavigationItem key={`nav_${link.name}`} slug={link.slug} isParent={link.isParent} parentID={link.parentID} linkName={link.name} icon={link.icon} />
-            ))}
-            <HeaderNavigationItem key={`nav_portalButton`} slug={!isSignedIn ? './signin' : './portal'} isParent={false} parentID={7} linkName={!isSignedIn ? 'Signin/Signup' : 'Client Portal'} icon={{
-                name: !isSignedIn ? "login-01" : "dashboard-speed-02" 
-            }} />
-        </AppShell.Navbar>
-        <AppShell.Main pt={`calc(${rem(70)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}} styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}}>
-            {children}
-        </AppShell.Main>
-        <AppShell.Footer pos="relative">
-            <Footer />
-        </AppShell.Footer>
-    </AppShell>
+                </Flex>
+            </AppShell.Header>
+            <AppShell.Navbar my={{base: "5rem", sm: "1rem"}} p="2rem 1rem" zIndex="5000000" h="calc(100% - 2rem)" styles={{navbar: {borderRadius: "0 2rem 0 0", boxShadow: opened ? "var(--mantine-shadow-bsBoldPrimary)" : "none", border: "none", background:"var(--darkPurple)", backdropFilter: "blur(20px)", overflowY: "scroll", overflowX: "hidden"}}}>
+                <NavLink href="/"
+                    variant="subtle"
+                    classNames={{
+                        root: classes.headerLink,
+                        label: classes.headerLink_label,
+                        section: classes.headerLink_section
+                    }}
+                    label="Home"
+                    description="My home page where you can find out quick information about me, pinned content, links to my social accounts, and much more."
+                    p="1rem"
+                    leftSection={<HugeIcon name="home-01" size="1.5rem" variant="duotone" />}
+                    rightSection={null}
+                />
+                {HeaderLinks.map((link: HeaderLinkProps, index: number) => (
+                    <HeaderLink key={`${link.slug}HeaderMobile${index}`} {...link} isMobile={true} />
+                ))}
+                <NavLink href="/contact"
+                    variant="subtle"
+                    classNames={{
+                        root: classes.headerLink,
+                        label: classes.headerLink_label,
+                        section: classes.headerLink_section
+                    }}
+                    label="Contact Me"
+                    description="Here is where you are able to contact me if you have any inquiries."
+                    p="1rem"
+                    mt="1rem"
+                    leftSection={<HugeIcon name="chatting-01" size="1.5rem" variant="duotone" />}
+                    rightSection={null}
+                />
+                <NavLink href="/#links"
+                    variant="subtle"
+                    classNames={{
+                        root: classes.headerLink,
+                        label: classes.headerLink_label,
+                        section: classes.headerLink_section
+                    }}
+                    label="Links"
+                    description="Here is the link to all my links to my social accounts, and much more."
+                    p="1rem"
+                    my="1rem"
+                    leftSection={<HugeIcon name="link-04" size="1.5rem" variant="duotone" />}
+                    rightSection={null}
+                />
+            </AppShell.Navbar>
+            <AppShell.Main pt={`calc(${rem(95)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}} styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}}>
+                {children}
+            </AppShell.Main>
+            <AppShell.Footer pos="relative">
+                <Footer />
+            </AppShell.Footer>
+        </AppShell>
 }

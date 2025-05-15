@@ -22,7 +22,7 @@ interface LinkButtonProps {
 
 export const LinkButton = (link: LinkButtonProps) => {
 
-  console.log(link.newIcon)
+  // console.log(link.newIcon)
   return <Anchor
     key={link.id}
     href={link.link ? link.link : "#"}

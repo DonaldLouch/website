@@ -60,7 +60,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
 
     const [ref, inView] = useInView()
 
-    console.log(isLastPage)
+    // console.log(isLastPage)
 
     async function loadMorePhotos() {
         if (!isLastPage) {

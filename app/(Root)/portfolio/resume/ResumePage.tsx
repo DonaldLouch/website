@@ -46,11 +46,13 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
     const iconImage = experience.company === "McDonald's" 
     ? "https://cdn.brandfetch.io/mcdonalds.ca" 
     : experience.company === "Donald Louch Productions" ? "/logo/logo.svg" 
-    : experience.company === "Vancouver Island University" ? "https://cdn.brandfetch.io/viu.ca" 
-    : experience.company === "Royal Roads University" ? "https://cdn.brandfetch.io/royalroads.ca" 
-    : experience.company === "Antica Productions" ? "https://cdn.brandfetch.io/anticaproductions.com" 
-    : experience.company === "Westshore Centre for Learning and Training" ? "https://logo.clearbit.com/sd62.bc.ca" 
+    : experience.company === "Vancouver Island University" ? "https://img.logo.dev/viu.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
+    : experience.company === "Royal Roads University" ? "https://img.logo.dev/royalroads.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
+    : experience.company === "Antica Productions" ? "https://img.logo.dev/anticaproductions.com?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
+    : experience.company === "Westshore Centre for Learning and Training" ? "https://img.logo.dev/sd62.bc.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
     : null
+
+    // Logos provided by Logo.dev
 
     resumeExperienceArray.push({
       id: experience.id,
@@ -81,11 +83,13 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
 
   const educationArray = new Array()
   resumeEducation.forEach((education: any) => {
-    const iconImage = education.school === "Vancouver Island University" ? "https://cdn.brandfetch.io/viu.ca" 
-    : education.school === "Camosun College" ? "https://cdn.brandfetch.io/camosun.ca" 
-    : education.school === "Westshore Centre for Learning and Training" ? "https://logo.clearbit.com/sd62.bc.ca" 
-    : education.school === "Dunsmuir Middle School" ? "https://logo.clearbit.com/sd62.bc.ca" 
+    const iconImage = education.school === "Vancouver Island University" ? "https://img.logo.dev/viu.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
+    : education.school === "Camosun College" ? "https://img.logo.dev/camosun.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
+    : education.school === "Westshore Centre for Learning and Training" ? "https://img.logo.dev/sd62.bc.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
+    : education.school === "Dunsmuir Middle School" ? "https://img.logo.dev/sd62.bc.ca?token=pk_H4gEZdMqTp6aYXA1jzEvzQ" 
     : null
+
+    // Logos provided by Logo.dev
 
     educationArray.push({
       id: education.id,
@@ -287,6 +291,8 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                   {/* <PrimaryLinkedButton link="about#contact" icon={<BsDownload />} isFullWidth={true}>Request a Download Link</PrimaryLinkedButton> */}
               </Box>
               <Text style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem">Last Updated On: <DisplayDate source={resume.lastUpdatedOn} /></Text>
+              {/* @ts-ignore */}
+              <Anchor href="https://logo.dev" alt="pk_H4gEZdMqTp6aYXA1jzEvzQ"  style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem">Logos provided by Logo.dev</Anchor>
           {/* </AspectRatio> */}
         </Paper>
       </Grid.Col>

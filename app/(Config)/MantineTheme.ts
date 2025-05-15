@@ -57,8 +57,8 @@ export const MantineTheme = createTheme({
           },
           panel: {
             background: "none !important",
-            padding: "1rem 1rem 0",
-            borderTop: "solid 0.2px var(--secondary)",
+            padding: "0rem 1rem 0 !important",
+            // borderTop: "solid 0.2px var(--mantine-color-dimmed)",
           },
         },
         classNames: {
@@ -181,17 +181,20 @@ export const MantineTheme = createTheme({
             bg: "none",
             borderRadius: "var(--mantine-radius-md)",
             padding: "1rem 0.5rem",
+            paddingLeft: "1rem",
             margin: "2rem",
             fontFamily: "var(--mantine-font-text)",
             fontWeight: "500",
             opacity: 0.6,
             color: "grey",
             fontSize: "1rem",
+            textAlign: "center",
           },
           list: {
             whiteSpace: "nowrap",
             flexWrap: "nowrap",
             overflowX: "scroll",
+            textAlign: "center",
           },
           panel: {
             padding: "0 2rem 1.5rem",

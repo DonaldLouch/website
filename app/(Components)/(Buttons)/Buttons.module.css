@@ -26,7 +26,7 @@
     font-weight: 300;
     &:hover, &:active {
         background: var(--secondary) !important;
-        color: var(--mantine-color-black);
+        color: var(--mantine-color-black) !important;
         text-decoration: none;
         border: none;
         font-weight: 600 !important;
@@ -38,6 +38,9 @@
 .headerLink_label {
     font-size: 1.3rem !important;
     text-decoration: none;
+}
+.headerLink_section{
+    margin-right: 1.5rem;
 }
 
 .headerLinkSub_label {
@@ -51,8 +54,8 @@
 
 .primaryButton {
     &:hover {
-            background: var(--secondary);;
-            color: var(--mantine-color-black);
+            background: var(--secondary) !important;
+            color: var(--mantine-color-black) !important;
             text-decoration: none;
             border: none !important;
         }

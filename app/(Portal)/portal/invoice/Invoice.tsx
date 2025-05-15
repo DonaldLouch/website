@@ -11,7 +11,7 @@ import DisplayDate from "@/lib/DisplayDate"
 import CurrencyFormat from "@/lib/CurrencyFormat"
 
 export default function Invoice({invoices, isAdmin, clientInfo}: any) {
-  console.log(invoices,clientInfo)
+  // console.log(invoices,clientInfo)
 
   const latestInvoice = invoices[0]
   const count = invoices.length

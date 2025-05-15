@@ -37,7 +37,7 @@ interface LinkCardAdminProps {
 
 export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
 
-  console.log(link)
+  // console.log(link)
   const [opened, { open, close }] = useDisclosure(false)
   const [iconVariantSelected, setIconVariantSelected] = useState(link.newIcon[0] ? link.newIcon[0].iconVariant : null)
  
