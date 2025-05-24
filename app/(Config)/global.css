@@ -73,3 +73,18 @@ body {
     --item-filled-color: none !important;
     background: none !important;
 }
+
+a > .mantine-Badge-root {
+    cursor: pointer;
+    &:hover {
+        color: var(--secondary) !important;
+        background: none !important;
+        box-shadow: var(--mantine-shadow-bsSMSecondary);
+    }
+}
+
+a {
+    &:hover {
+        color: var(--secondary) !important;
+    }
+}

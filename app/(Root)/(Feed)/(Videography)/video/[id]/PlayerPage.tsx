@@ -69,7 +69,6 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
             </Paper> : <>
                 <Stack
                     style={{ 
-                        // backdropBlur: "60px",
                         boxShadow: "var(--mantine-shadow-bsBoldWhite)",
                         overflowX: "hidden", 
                         overflowY: isEmbed ? "hidden" : "auto",
@@ -78,17 +77,27 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                     bg="black"
                     h={isFullscreenMode || isEmbed ? "100vh" : "auto"}
                     w="100vw"
-                    p={
-                        isFullscreenMode || isEmbed ? "0" 
-                        : isVertical ? {base: "0", sm: "0 0 2rem", md: "2rem 0"} 
-                        : "1.5rem 6rem"
+                    // Don't use p and pt together!
+                    // p={
+                    //     isFullscreenMode || isEmbed ? "0" 
+                    //     : isVertical ? {base: "0", sm: "0 0 2rem", md: "2rem 0"} 
+                    //     : "1.5rem 6rem"
+                    // }
+                    px={
+                        isFullscreenMode || isEmbed ? "0"
+                        : isVertical ? { base: "0", sm: "0" , md: "0" }
+                        : "6rem"
                     }
-                    justify="center" align="center"
+                    py={
+                        isFullscreenMode || isEmbed ? "0"
+                        : isVertical ? { base: "0", sm: "2rem", md: "2rem" }
+                        : "1.5rem"
+                    }
+                    justify="center"
+                    align="center"
                     gap="0"
                     pt={isVertical || isEmbed ? "0rem" : "1.5rem"}
-                    // pt={isVertical ? "0rem" : isPage ? "6rem" : "initial"}
                     pos={isFullscreenMode ? "fixed" : "relative"}
-                    // styles={{ zIndex: 90000 }}
                 > 
                     <Stack 
                         justify="center" align="center" 
@@ -98,7 +107,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                     >
                         <AspectRatio 
                             ratio={isVertical ? 9 / 16 : 16 / 9}
-                            w={isVertical ? "auto" : isEmbed ? "100vw" : "90vw"}
+                            w={isVertical ? "auto" : isFullscreenMode || isEmbed ? "100vw" : "90vw"}
                             h={isVertical ? { base: "100vh", sm: "calc(100vmin - 4rem)" } : "auto"}
                             mt={isVertical ? { base: "0", sm: "2rem" } : "0"}
                             style={{

@@ -36,14 +36,14 @@ export default function FullDescription({ mdxSource, video }: { mdxSource: any, 
         <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)", overflow: "scroll"}} p="1rem 2rem" mah="60vh">
             <PostContent mdxSource={mdxSource} />
         </Box>
-        <SingleAccordion customMargin="2rem 0rem" customPadding="0 1rem 2rem" content={[{
+        <SingleAccordion customMargin="2rem 0rem" customPadding="0 1rem" content={[{
             id: "metadata",
             imageType: "Icon",
             image: <HugeIcon name="database-02" />,
             label: "Video Information",
             description: "The video metadata information",
         }]}>
-            <Stack>
+            <Stack mb="2rem" gap="2rem" px="1rem" mt="0">
                 <Title order={3} ta="center" fz="1.8rem" fw="900" c="white" my="1rem" ff="text">Video Information</Title>
 
                 <Title order={4} fz="1.8rem" fw="700" c="white" td="underline" ff="text">Uploaded On</Title>
