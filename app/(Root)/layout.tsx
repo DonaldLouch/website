@@ -1,22 +1,16 @@
 'use client'
 
-import { Anchor, AppShell, Group, rem, Image, Burger, Text, Tooltip, Modal, Box, Stack, Flex, NavLink } from "@mantine/core";
+import { Anchor, AppShell, rem, Image, Burger, Tooltip, Box, Flex, NavLink } from "@mantine/core";
 import { useDisclosure, useHeadroom } from "@mantine/hooks";
-import { HeaderNavigationItems } from "@/lib/HeaderNavigationItems";
-import HeaderNavigationItem from "../(Config)/(Layout)/(Header)/HeaderNavigationItem";
-import Footer from "../(Config)/(Layout)/(Footer)";
 import { usePathname } from "next/navigation";
 
-import { Fragment, useEffect, useState } from "react";
-import WebsiteAlerts from "../(Components)/WebsiteAlerts";
-import Notifications from "../(Components)/Notifications";
-import { isUserSignedIn } from "../actions/clerk"
-import { useUser } from "@clerk/nextjs";
+import { useEffect, useState } from "react";
 import HugeIcon from "../(Components)/HugeIcon";
 import { HeaderLinkProps, HeaderLinks } from "@/lib/HeaderLinks";
 import HeaderLink from "../(Components)/(Buttons)/HeaderLink";
 
 import classes from '@/app/(Components)/(Buttons)/Buttons.module.css'
+import FooterContent from "../(Config)/(Layout)/(Footer)/FooterContent";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const path = usePathname()
@@ -24,28 +18,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const isHero = path.includes("/video") && path != "/feed/videography" || path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
     useEffect(() => {setWindowHeight(window.innerHeight + 60)})
  
-    
-    // const attachedHeaderHeight = !isHero ? 190 : 800 
-    // path.includes("/video") && path != "/feed/videography" ||
     const disabled = path.includes("/embed") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
-    
-    const { user } = useUser()
-    const isSignedIn = user ? true : false
-
-// {HeaderLinks.map((link: HeaderLinkProps, index: number) => (
-//                         <HeaderLink key={`${link.slug}Header${index}`} {...link} />
-//                     ))}
-
-    // const [isSignedIn, setIsSignedIn] = useState(false) as any
-    // useEffect(() => {
-    //     const userSignedIn = isUserSignedIn()
-    //     setIsSignedIn(userSignedIn)
-    // }, [])
-
-    // console.log("Layout is disabled?", disabled)
-    // const [opened { open, close }] = useDisclosure(false)
 
     return <AppShell 
             header={{ height: 63, collapsed: !pinned, offset: false }}
@@ -149,7 +124,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 {children}
             </AppShell.Main>
             <AppShell.Footer pos="relative">
-                <Footer />
+                <FooterContent />
             </AppShell.Footer>
         </AppShell>
 }

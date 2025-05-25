@@ -29,7 +29,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
         leftButtons,
         rightButtons,
         topButtons,
-    } = useVideoPlayer({videoData: video, playerType: playerType})
+    } = useVideoPlayer({ videoData: video })
 
     const [openedShare, { open: openShare, close: closeShare }] = useDisclosure(false);
     const [openedChapter, { open: openChapter, close: closeChapter }] = useDisclosure(false);

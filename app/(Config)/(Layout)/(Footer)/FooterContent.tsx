@@ -78,6 +78,7 @@ export default function FooterContent(){
           <Image
             src="/titleLogo/titleLogoWhiteColoured.svg"
             alt="Donald Louch"
+            w={{ base: "30vw", lg: "12vw" }}
           />
         </Anchor>
         <Text fz="sm" fw="medium" mt="-0.5rem" p="0" lh="auto" ta={{base: "center", sm: "left"}}>&copy; 1994 - {new Date().getFullYear()} Donald Louch.</Text>

@@ -1,9 +1,8 @@
 import HugeIcon from "@/app/(Components)/HugeIcon";
-import { useDisclosure } from "@mantine/hooks";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-export function useVideoPlayer({ videoData, playerType }: {videoData: any, playerType: string}) {
+export function useVideoPlayer({ videoData }: { videoData: any }) {
     const router = useRouter();
 
     const [playing, setPlaying] = useState(false);
@@ -13,15 +12,9 @@ export function useVideoPlayer({ videoData, playerType }: {videoData: any, playe
     const [theVideoElement, setVideoElement] = useState<HTMLVideoElement | null>(null);
     const [timeLeft, setTimeLeft] = useState("0:00");
     const [videoDuration, setVideoDuration] = useState("0:00");
-    // const [videoDurationNUMBER, setVideoDurationNUMBER] = useState(0);
-    const [currentVideoTime, setCurrentVideoTime] = useState("0:00");
     const [hide, setHide] = useState(false);
 
     const isVertical = videoData.videoType === "Vertical"
-
-    const [openedShare, { open: openShare }] = useDisclosure(false);
-    const [openedChapter, { open: openChapter }] = useDisclosure(false);
-    const [openedInfo, { open: openInfo }] = useDisclosure(false);
 
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -46,9 +39,7 @@ export function useVideoPlayer({ videoData, playerType }: {videoData: any, playe
 
             setVideoProgress(Math.floor((currentTime / duration) * 100));
             setTimeLeft(formatTime(duration - currentTime));
-            setCurrentVideoTime(formatTime(currentTime));
             setVideoDuration(formatTime(duration));
-            // setVideoDurationNUMBER(duration);
         };
 
         theVideoElement.addEventListener("timeupdate", handleTimeUpdate);
@@ -184,10 +175,6 @@ export function useVideoPlayer({ videoData, playerType }: {videoData: any, playe
         }
     }
 
-    const shareModal = openShare;
-    const chapterModal = openChapter;
-    const infoModal = openInfo;
-
     const changeChapter = (e: any) => {
         const chapterTimeCode = e.target.value;
         const [hours, minutes, seconds] = chapterTimeCode.split(':').map(Number);
@@ -208,12 +195,9 @@ export function useVideoPlayer({ videoData, playerType }: {videoData: any, playe
     const rightButtons = [
         { buttonIcon: muted ? <HugeIcon name="volume-off" /> : <HugeIcon name="volume-mute-01" />, buttonID: "muteButton", buttonFunction: videoMute },
         { buttonIcon: isFullscreenMode ? <HugeIcon name="arrow-shrink-01" /> : <HugeIcon name="arrow-expand-01" />, buttonID: "fullscreenButton", buttonFunction: isFullscreenMode ? exitFullscreenMode : fullscreenMode, hidden: isVertical },
-        // { buttonIcon: <HugeIcon name="share-05" />, buttonID: "shareButton", buttonFunction: shareModal },
     ]
 
     const topButtons = [
-        // { buttonIcon: <HugeIcon name="bookmark-01" />, buttonID: "chapters", buttonFunction: chapterModal, hidden: !(videoData.chapters && videoData.chapters.length > 0) },
-        // { buttonIcon: <HugeIcon name="information-circle" />, buttonID: "description", buttonFunction: infoModal },
         { buttonIcon: <HugeIcon name="home-01" />, buttonID: "backToFeed", buttonFunction: backToFeed },
     ] as any
 

@@ -82,7 +82,7 @@ export const HeaderLinks: Array<HeaderLinkProps> = [
         name: "Photography",
         slug: "/feed/photography",
         description:
-          "You can review my photography feed. With the ability to view the content by tags, album, search terms, location, and other filtering and sorting options.",
+          "You can review my photography feed. You can filter by tags, album, search terms, location, and more and  sorting options.",
         icon: { name: "album-02", variant: "twotone" },
       },
       {

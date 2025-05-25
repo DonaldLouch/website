@@ -10,11 +10,9 @@ import { SignOutButton, UserButton, useClerk, useUser } from '@clerk/nextjs'
 
 import { shadesOfPurple } from '@clerk/themes';
 import { useDisclosure, useHeadroom } from '@mantine/hooks'
-import Footer from '@/app/(Config)/(Layout)/(Footer)'
 import { AdminNavigationItems } from '@/lib/AdminNavigationItems'
 import PortalNavigationItem from './PortalNavigationItem'
 import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
-import HeaderNavigationItem from '@/app/(Config)/(Layout)/(Header)/HeaderNavigationItem'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
