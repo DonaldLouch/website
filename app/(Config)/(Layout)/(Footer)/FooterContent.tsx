@@ -53,12 +53,12 @@ export default function FooterContent(){
       linkIcon: "github",
       iconVariant: "twotone"
     },
-    {
-      linkURL: !isSignedIn ? "/signin" : "/portal",
-      socialMedia: !isSignedIn ? "Signin/Signup" : "Client Portal",
-      linkIcon: !isSignedIn ? "login-01" : "dashboard-speed-02",
-      iconVariant: "twotone"
-    },
+    // {
+    //   linkURL: !isSignedIn ? "/signin" : "/portal",
+    //   socialMedia: !isSignedIn ? "Signin/Signup" : "Client Portal",
+    //   linkIcon: !isSignedIn ? "login-01" : "dashboard-speed-02",
+    //   iconVariant: "twotone"
+    // },
   ]
   return (
       <Flex
