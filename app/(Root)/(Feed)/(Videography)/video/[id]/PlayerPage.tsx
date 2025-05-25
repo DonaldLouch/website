@@ -284,7 +284,9 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                 >
                     <Stack w="100%" p="2rem 2rem">
                         <Title order={3} ta="center" fz="1.8rem" fw="500" c="white" mb="1rem">Chapters</Title>
-                        {video.chapters && video.chapters.length > 0 && video.chapters.map((chapter:any, index: number) => (<Button 
+                        {video.chapters && video.chapters.length > 0 && [...video.chapters]
+                        .sort((a: any, b: any) => a.timeCode.localeCompare(b.timeCode))
+                        .map((chapter:any, index: number) => (<Button 
                             key={index}
                             onClick={changeChapter}
                             value={chapter.timeCode} 
@@ -297,7 +299,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                             fw="500"
                             ta="left"
                             justify="flex-start"
-                            leftSection={<Text fw="300" fz="1rem"ml="0.5rem">{chapter.timeCode} </Text>}
+                            leftSection={<Text fw="300" fz="1rem"ml="0.5rem">{(chapter.timeCode)} </Text>}
                             rightSection={<Text fw="300" ff="heading" fz="1.2rem">{chapter.title}</Text>}
                         >|</Button> ))}
                     </Stack>
