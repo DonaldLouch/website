@@ -15,23 +15,23 @@ Even though I'm still optimizing and constructing features, I feel as, my websit
 
 ## Tech Stack
 
-- [TypeScript](https://www.typescriptlang.org/): JavaScript Syntax
-- [NextJS App Router](https://nextjs.org/): Website Framework
-- [Vercel](https://vercel.com/): Hosting Platform
-- [Mantine](https://mantine.dev): CSS Framework
-- [Hugeicons](https://hugeicons.com): Icons
-- [Clerk](https://clerk.com/): Auth Provider
-- [Supabase](https://supabase.com/): Postgresql Provider
-- [Backblaze B2](https://www.backblaze.com/): Image Storage
-- [MDX](https://mdxjs.com/): Markdown Blog Posts
-- [yup](https://github.com/jquense/yup): Form Validation
+- **[TypeScript](https://www.typescriptlang.org/)**: JavaScript Syntax
+- **[NextJS App Router](https://nextjs.org/)**: Website Framework
+- **[Vercel](https://vercel.com/)**: Hosting Platform
+- **[Mantine](https://mantine.dev)**: CSS Framework
+- **[Hugeicons](https://hugeicons.com)**: Icons
+- **[Clerk](https://clerk.com/)**: Auth Provider
+- **[Supabase](https://supabase.com/)**: Postgresql Provider
+- **[Backblaze B2](https://www.backblaze.com/)**: Image Storage
+- **[MDX](https://mdxjs.com/)**: Markdown Blog Posts
+- **[yup](https://github.com/jquense/yup)**: Form Validation
 
 ## Support The Production of Donald Louch
 
 If you would like to contribute to the production of the Donald Louch website, please feel free to fork this repository and create a PR. Or submit issues that you have found on the [Issues Page](https://github.com/DonaldLouch/website/issues) or [Discussions Page](https://github.com/DonaldLouch/website/discussions) 😊
 
-## Change Log
-- **[Version 30.06.01](https://github.com/DonaldLouch/website/releases/tag/version300601)**~~: I’m excited to introduce Mega Menu to my header! I’ve also made improvements to the Video Player, including a smoother user interface and internal code. Additionally, I’ve made general improvements to my website, fixed styling bugs, and implemented hover colours on badges with links and other linked items. I have additionally make added in my Pride branding for Pride Month; Happy Pride!~~ Currently Under Alpha; GA Releasing on June 1st, 2025!
+## Major Releases Change Log
+- **[Version 30.06.01](https://github.com/DonaldLouch/website/releases/tag/version300601)**: I’m excited to introduce Mega Menu to my header! I’ve also made improvements to the Video Player, including a smoother user interface and internal code. Additionally, I’ve made general improvements to my website, fixed styling bugs, and implemented hover colours on badges with links and other linked items. I have additionally make added in my Pride branding for Pride Month; Happy Pride!
 - **[Version 30](https://github.com/DonaldLouch/website/releases/tag/version30000)**: As I enter a new decade in life, I have changed my bio, and some other improvements to my website!
 - **[Version 29.11.02](https://github.com/DonaldLouch/website/releases/tag/version291102)**: Bug fixes, general improvements, and a updated loading screen and loading component
 - **[Version 29.07.29](https://github.com/DonaldLouch/website/releases/tag/version290729)**: In this version I have made the initial rebrand changes!
