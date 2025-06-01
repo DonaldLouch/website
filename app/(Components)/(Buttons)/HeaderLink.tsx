@@ -33,7 +33,7 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
             <HoverCard.Dropdown style={{ overflow: "hidden", outline: "none", border: "none", backdropFilter: "blur(20px)" }} bg="var(--darkPurple)">
                 <Flex justify="space-between" p="1rem" align="center">
                     <Flex direction="row" align="center" gap="1rem" c="var(--secondary)">
-                        <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} />
+                        <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : "duotone"} />
                         <Title order={2} lh="0" m="0">{name}</Title>
                     </Flex>
                     <PrimaryLinkedButton link={slug} colour="var(--blackRGBA)" m="0">{ctaText}</PrimaryLinkedButton>
@@ -94,7 +94,7 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                 description={description}
                 p="1rem"
                 mt="2rem"
-                leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} />}
+                leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : "duotone"} />}
                 rightSection={null}
             />
             <Divider label="MORE PAGES" labelPosition="center" mx="3rem" my="0rem" />
@@ -127,7 +127,7 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                 label={name}
                 my="0.5rem"
                 p="1rem"
-                leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} />}
+                leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : "duotone"} />}
                 rightSection={null}
             />
         }

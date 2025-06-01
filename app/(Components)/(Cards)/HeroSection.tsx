@@ -48,7 +48,7 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
                 ta="center"
                 td="underline 0.4rem var(--primary)"
               >
-                {aboutMe.firstName} {aboutMe.middleName} {aboutMe.lastName}
+                {aboutMe.firstName} {aboutMe.lastName}
               </Title>
               <Text fz={{base: "1.1rem", sm: "1.3rem"}} fw="300" m="0" display={{base: "none", sm: "initial"}}>
                 {aboutMe.pronouns}

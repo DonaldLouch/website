@@ -292,7 +292,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               </Box>
               <Text style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem">Last Updated On: <DisplayDate source={resume.lastUpdatedOn} /></Text>
               {/* @ts-ignore */}
-              <Anchor href="https://logo.dev" alt="pk_H4gEZdMqTp6aYXA1jzEvzQ"  style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem">Logos provided by Logo.dev</Anchor>
+              <Anchor href="https://logo.dev" alt="pk_H4gEZdMqTp6aYXA1jzEvzQ"  style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem" target="_blank">Logos provided by Logo.dev</Anchor>
           {/* </AspectRatio> */}
         </Paper>
       </Grid.Col>

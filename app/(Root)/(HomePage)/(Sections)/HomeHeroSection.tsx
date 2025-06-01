@@ -69,7 +69,7 @@ export default function HomeHeroSection({aboutMe}: any) {
                 fw="800"
                 td="underline 0.4rem var(--primary)"
               >
-                {aboutMe.firstName} {aboutMe.middleName} {aboutMe.lastName}
+                {aboutMe.firstName} {aboutMe.lastName}
               </Title>
               <Text fz={{base: "1.1rem", sm: "1.3rem"}} fw="300" m="0" display={{base: "none", sm: "initial"}}>
                 {aboutMe.pronouns}
