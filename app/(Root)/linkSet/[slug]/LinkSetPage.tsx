@@ -7,6 +7,7 @@ import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import classesMarkdown from "@/app/(Components)/Components.module.css"
 import InlineLink from "@/app/(Components)/InlineLink";
 import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxSource: any }) {
   return <>
@@ -61,7 +62,11 @@ export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxS
                                     p={"1.2rem"}
                                     align="center"
                                 >
-                                    <ActionIcon bg="none" style={{boxShadow: "none", padding: "0", margin: 0}}><HugeIcon name={iconName} variant={link.icon.variant ? link.icon.variant : undefined} size="1.5rem" /></ActionIcon>
+                                    <ActionIcon bg="none" style={{boxShadow: "none", padding: "0", margin: 0}}>{
+                                        link.icon.variant.includes("fa")
+                                            ? <FontAwesomeIcon icon={[link.icon.variant || "far", iconName]} size="1x" />
+                                            : <HugeIcon name={iconName} variant={link.icon.variant || undefined} size="1.5rem" />
+                                    }</ActionIcon>
                                     <Stack gap="0" m="0" p="0">
                                         <Text c="white" m="0" fz="1.5rem" p="0" lh="1">{link.name}</Text>
                                         {link.subTitle ? <Text size="sm" c="dimmed" fw={300} m="0.2rem 0" p="0" lh="1">{link.subTitle}</Text> : null}

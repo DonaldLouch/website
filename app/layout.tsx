@@ -20,6 +20,8 @@ import "@/app/(Config)/global.css"
 import MaintenanceModePage from "./(Config)/(Layout)/MaintenanceModePage";
 import Context from "./(Config)/Context"
 
+import { FontAwesomeConfig } from '@/lib/FontAwesome/FontAwesomeConfig';
+
 export const viewport: Viewport = {
   themeColor: '#1d1929',
   // width: 'device-width',
@@ -66,7 +68,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   console.log(isMaintenanceMode)
   return (
     <html lang="en-CA">
-      <head></head>
+      <head>
+        <FontAwesomeConfig />
+      </head>
       <body>
         <ClerkProvider>
           <MantineProvider theme={MantineTheme}>

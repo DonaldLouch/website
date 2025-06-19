@@ -15,8 +15,8 @@ import { SectionCard } from '@/app/(Components)/(Cards)/SectionCard'
 import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButton'
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
-import Notifications from '@/app/(Components)/Notifications'
+// import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
+// import Notifications from '@/app/(Components)/Notifications'
 import HugeIcon from '@/app/(Components)/HugeIcon'
 import InlineLink from '@/app/(Components)/InlineLink'
 
@@ -90,8 +90,8 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                             />
                         </Anchor>
                         <Group>
-                          <WebsiteAlerts />
-                          <Notifications />
+                          {/* <WebsiteAlerts />
+                          <Notifications /> */}
                           <PrimaryLinkedButton link="/portal" primNewIcon={{name: "dashboard-speed-02", variant: "duotone"}}>Client Portal</PrimaryLinkedButton>
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />

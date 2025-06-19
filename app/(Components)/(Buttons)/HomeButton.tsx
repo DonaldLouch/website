@@ -13,6 +13,7 @@ interface propTypes {
 
 import classes from "./Buttons.module.css"
 import HugeIcon from '../HugeIcon'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function HomeButton( props: propTypes ) {
     const {link, icon, helperText} = props
@@ -32,7 +33,7 @@ export default function HomeButton( props: propTypes ) {
         >
             <Anchor href={goToLink} style={{color: "white"}}>
                 <Tooltip label={theHelperText}>
-                    <Box className={classes.homeButton}>{icon ? icon : <HugeIcon name="home-01" size="3rem" />}</Box>
+                    <Box className={classes.homeButton}>{icon ? icon : <FontAwesomeIcon icon={["fadl", "home"]} size="3x" />}</Box>
                 </Tooltip>
             </Anchor>
         </Box>

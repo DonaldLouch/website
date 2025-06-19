@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
 import classes from "./Buttons.module.css"
 import HugeIcon, { IconArray } from "../HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 interface ButtonProps {
@@ -12,7 +13,7 @@ interface ButtonProps {
   colour?: string
   fontColour?: string
   isExternal?: boolean
-  primNewIcon?: IconArray
+  primNewIcon?: any
   [key: string]: any
 }
 
@@ -25,7 +26,10 @@ export default function PrimaryLinkedButton({isHidden, link, icon, isFullWidth, 
     styles={{root: {display: isHidden ? "none" : "block"}}} 
     component="a" 
     href={link} 
-    leftSection={primNewIcon ? <HugeIcon name={primNewIcon.name} variant={primNewIcon.variant ? primNewIcon.variant : undefined} /> : icon} 
+    leftSection={primNewIcon ? primNewIcon.variant?.includes("fa")
+      ? <FontAwesomeIcon icon={[primNewIcon.variant || "far", primNewIcon.name]} size="1x" />
+      : <HugeIcon name={primNewIcon.name} size="1.5rem" variant={primNewIcon.variant || undefined} /> : icon
+    }
     color={colour ? colour : "black"}
     fullWidth={isFullWidth}
     variant="filled" 

@@ -6,6 +6,7 @@ import HugeIcon from '../HugeIcon'
 import type {HeaderLinkProps} from "@/lib/HeaderLinks"
 import PrimaryLinkedButton from './PrimaryLinkedButton'
 import { useMediaQuery } from '@mantine/hooks'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolean } ) {
@@ -26,14 +27,22 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                     label={name}
                     p="1rem"
                     fw="500"
-                    leftSection={!lgDevice ? <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} /> : null}
-                    rightSection={<HugeIcon name="arrow-down-01" size="1.5rem" />}
+                    leftSection={!lgDevice 
+                        ? icon.variant?.includes("fa")
+                            ? <FontAwesomeIcon icon={[icon.variant || "far", icon.name]} size="1x" />
+                            : <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant || undefined} /> 
+                        : null
+                    }
+                    rightSection={<FontAwesomeIcon icon={["far", "chevron-down"]} size="1x" />}
                 />
             </HoverCard.Target>
             <HoverCard.Dropdown style={{ overflow: "hidden", outline: "none", border: "none", backdropFilter: "blur(20px)" }} bg="var(--darkPurple)">
                 <Flex justify="space-between" p="1rem" align="center">
                     <Flex direction="row" align="center" gap="1rem" c="var(--secondary)">
-                        <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : "duotone"} />
+                        {icon.variant?.includes("fa")
+                            ? <FontAwesomeIcon icon={[icon.variant || "fadl", icon.name]} size="1x" />
+                            : <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant || undefined} />
+                        }
                         <Title order={2} lh="0" m="0">{name}</Title>
                     </Flex>
                     <PrimaryLinkedButton link={slug} colour="var(--blackRGBA)" m="0">{ctaText}</PrimaryLinkedButton>
@@ -54,7 +63,11 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                             description={subLink.description}
                             my="0rem"
                             p="1rem"
-                            leftSection={<HugeIcon name={subLink.icon.name} size="1.5rem" variant={subLink.icon.variant ? subLink.icon.variant : undefined} />}
+                            leftSection={
+                                subLink.icon.variant?.includes("fa")
+                                    ? <FontAwesomeIcon icon={[subLink.icon.variant || "far", subLink.icon.name]} size="1x" />
+                                    : <HugeIcon name={subLink.icon.name} size="1.5rem" variant={subLink.icon.variant || undefined} />
+                            }
                             rightSection={null}
                         />
                     ))}
@@ -94,7 +107,10 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                 description={description}
                 p="1rem"
                 mt="2rem"
-                leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : "duotone"} />}
+                leftSection={icon.variant?.includes("fa")
+                    ? <FontAwesomeIcon icon={[icon.variant || "fadl", icon.name]} size="1x" />
+                    : <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant || "duotone"} />
+                }
                 rightSection={null}
             />
             <Divider label="MORE PAGES" labelPosition="center" mx="3rem" my="0rem" />
@@ -112,7 +128,10 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                         my="0rem"
                         p="1rem"
                         ml="1rem"
-                        leftSection={<HugeIcon name={subLink.icon.name} size="1.5rem" variant={subLink.icon.variant ? subLink.icon.variant : undefined} />}
+                        leftSection={subLink.icon.variant?.includes("fa")
+                            ? <FontAwesomeIcon icon={[subLink.icon.variant || "far", subLink.icon.name]} size="1x" />
+                            : <HugeIcon name={subLink.icon.name} size="1.5rem" variant={subLink.icon.variant || undefined} />
+                        }
                         rightSection={null}
                     />
                 ))}
@@ -127,7 +146,10 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                 label={name}
                 my="0.5rem"
                 p="1rem"
-                leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : "duotone"} />}
+                leftSection={icon.variant?.includes("fa")
+                    ? <FontAwesomeIcon icon={[icon.variant || "fadl", icon.name]} size="1x" />
+                    : <HugeIcon name={icon.name} size="1.5rem" variant={icon.variant || undefined} />
+                }
                 rightSection={null}
             />
         }

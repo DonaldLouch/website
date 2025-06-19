@@ -1,12 +1,12 @@
 import type { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
 type Icons = { name: IconName; variant?: IconVariant }
 
-type SubMenuProps = { name: string; slug: string; description?: string; icon?: Icons }
+type SubMenuProps = { name: string; slug: string; description?: string; icon?: any }
 export type HeaderLinkProps = {
     name: string
     slug: any
     description?: string
-    icon: Icons
+    icon: any
     isMega: boolean
     ctaText?: string
     subMenuLinks?: SubMenuProps[]
