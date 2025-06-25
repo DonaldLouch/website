@@ -20,7 +20,7 @@ import "@/app/(Config)/global.css"
 import MaintenanceModePage from "./(Config)/(Layout)/MaintenanceModePage";
 import Context from "./(Config)/Context"
 
-import { FontAwesomeConfig } from '@/lib/FontAwesome/FontAwesomeConfig';
+// import { FontAwesomeConfig } from '@/lib/FontAwesome/FontAwesomeConfig';
 
 export const viewport: Viewport = {
   themeColor: '#1d1929',
@@ -69,7 +69,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en-CA">
       <head>
-        <FontAwesomeConfig />
+        {/* <FontAwesomeConfig /> */}
       </head>
       <body>
         <ClerkProvider>
