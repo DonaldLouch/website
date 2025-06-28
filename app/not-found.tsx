@@ -17,9 +17,12 @@ export default function NotFound() {
                     The page you are trying to open does not exist. You may have mistyped the address, or the page has been moved to another URL. If you think this is an error please contact Donald Louch for further assistance.
                 </Text>
                 <Group align="center" justify="center" gap="1rem" m="0" p="0">
-                    <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "envelope-circle-check", variant: "fadl"}}>Contact Donald Louch</PrimaryLinkedButton>
-                    <PrimaryLinkedButton link="/" primNewIcon={{ name: "house", variant: "fadl" }}>Go Back Home</PrimaryLinkedButton>
-                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "rotate-right", variant: "fal"}}>Reload Page</PrimaryButton>
+                    <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "mail-01", variant: "twotone"}}>Contact Donald Louch</PrimaryLinkedButton>
+                    <PrimaryLinkedButton link="/" primNewIcon={{ name: "home-03", variant: "twotone" }}>Go Back Home</PrimaryLinkedButton>
+                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "reload", variant: "twotone"}}>Reload Page</PrimaryButton>
+                    {/* <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "envelope-circle-check", variant: "fadl"}}>Contact Donald Louch</PrimaryLinkedButton> */}
+                    {/* <PrimaryLinkedButton link="/" primNewIcon={{ name: "house", variant: "fadl" }}>Go Back Home</PrimaryLinkedButton>
+                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "rotate-right", variant: "fal"}}>Reload Page</PrimaryButton> */}
                 </Group>
             </Stack>
         </Paper>
