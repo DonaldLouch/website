@@ -1,6 +1,6 @@
 {
   "name": "donaldlouch",
-  "version": "30.06.19.p8",
+  "version": "30.06.19.p9",
   "packageManager": "yarn@4.6.0",
   "description": "I&#39;m a Canadian digital producer specializing in web development, photography, videography, and more. I hold a Bachelor of Arts in Digital Media Studies and two Graduate Certificates in Digital Communication, and Digital Productions Writing and Design.",
   "private": true,
@@ -19,13 +19,10 @@
     "packages/*"
   ],
   "dependencies": {
-    "@awesome.me/kit-66b6e8c296": "^1.0.33",
     "@aws-sdk/client-rekognition": "^3.839.0",
     "@aws-sdk/client-s3": "3.839.0",
     "@clerk/nextjs": "^6.23.1",
     "@clerk/themes": "^2.2.52",
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
     "@hello-pangea/dnd": "^18.0.1",
     "@hugeicons-pro/core-bulk-rounded": "^1.0.14",
     "@hugeicons-pro/core-duotone-rounded": "^1.0.14",
