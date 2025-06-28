@@ -38,8 +38,8 @@
 
 import { HugeiconsIcon } from '@hugeicons/react'
 import * as StrokeIcons from '@hugeicons-pro/core-stroke-rounded'
-import * as SolidIcons from '@hugeicons-pro/core-solid-rounded'
-import * as BulkIcons from '@hugeicons-pro/core-bulk-rounded'
+// import * as SolidIcons from '@hugeicons-pro/core-solid-rounded'
+// import * as BulkIcons from '@hugeicons-pro/core-bulk-rounded'
 import * as TwotoneIcons from '@hugeicons-pro/core-twotone-rounded'
 import * as DuotoneIcons from '@hugeicons-pro/core-duotone-rounded'
 
@@ -57,8 +57,8 @@ export default function HugeIcon({ name, variant, size, color, weight, clickOpti
 
     const variantMap = {
         stroke: StrokeIcons,
-        solid: SolidIcons,
-        bulk: BulkIcons,
+        // solid: SolidIcons,
+        // bulk: BulkIcons,
         twotone: TwotoneIcons,
         duotone: DuotoneIcons
     }
