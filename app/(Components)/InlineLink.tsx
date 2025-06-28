@@ -2,7 +2,7 @@ import { Anchor, Box, Center, Tooltip } from "@mantine/core"
 
 import classes from "@/app/(Components)/Components.module.css"
 import HugeIcon, { IconName, IconVariant } from "./HugeIcon"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 type Icons = {name: IconName, variant?: IconVariant}
 
@@ -21,7 +21,7 @@ export default function InlineLink({link, leftIcon, rightIcon, body, isInternal}
             // inline
         >
             <Center inline>
-                {leftIcon 
+                {/* {leftIcon 
                     ? leftIcon.variant?.includes("fa")
                         ? <FontAwesomeIcon icon={[leftIcon.variant || "fadt", leftIcon.name]} size="1x" />
                         : <HugeIcon name={leftIcon.name} size="1.3rem" variant={leftIcon.variant || "twotone"} /> 
@@ -34,7 +34,10 @@ export default function InlineLink({link, leftIcon, rightIcon, body, isInternal}
                         : <HugeIcon name={rightIcon.name} size="1.3rem" variant={rightIcon.variant || "twotone"} />
                     )
                     : !leftIcon && !rightIcon && (<FontAwesomeIcon icon={["fadt", isInternal ? "arrow-up-right-from-square" : "arrow-up-right-from-square"]} size="1x" />)
-                }
+                } */}
+                {leftIcon ? <HugeIcon name={leftIcon.name} size="1.3rem" variant={leftIcon.variant ? leftIcon.variant : "twotone"} /> : null}
+                <Box component="span" pl={leftIcon ? "0.2rem" : "0"} pr={rightIcon || !leftIcon && !rightIcon ? "0.2rem" : "0"}>{body}</Box>
+                {rightIcon ? (<HugeIcon name={rightIcon.name} size="1.3rem" variant={rightIcon.variant ? rightIcon.variant : "twotone"} weight={2} />) : !leftIcon && !rightIcon && (<HugeIcon name={isInternal ? "link-square-02" : "arrow-up-right-01"} size="1.3rem" variant="twotone" weight={2} />)}
             </Center>
         </Anchor>
     </Tooltip>

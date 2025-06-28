@@ -1,7 +1,7 @@
 'use client'
 
 import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionIcon, Anchor, Tooltip } from "@mantine/core";
 
 interface FooterProps {
@@ -18,11 +18,12 @@ export const FooterIcon = (props: FooterProps) => {
   return <Anchor href={linkURL} target="_blank">
     <Tooltip label={socialMedia}>
       <ActionIcon style={{padding: iconPadding && iconPadding}}>
-        {
+        {/* {
           iconVariant?.includes("fa")
           ? <FontAwesomeIcon icon={[iconVariant || "far", linkIcon]} size="1x" />
           : <HugeIcon name={linkIcon} size={iconSize || "1.5rem"} variant={iconVariant || undefined} />
-        }
+        } */}
+        <HugeIcon name={linkIcon} size={iconSize || "1.5rem"} variant={iconVariant || undefined} />
       </ActionIcon>
     </Tooltip>
   </Anchor>

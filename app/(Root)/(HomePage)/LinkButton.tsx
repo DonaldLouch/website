@@ -9,7 +9,7 @@ import {
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 
 import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 type Icons = {name: IconName, variant?: IconVariant}
 interface LinkButtonProps {
@@ -35,11 +35,12 @@ export const LinkButton = (link: LinkButtonProps) => {
       p="0.5rem 1.2rem"
     >
       <ActionIcon bg="none" style={{boxShadow: "none", padding: "0.6rem", margin: 0}}>
-        {
+        {/* {
           link.newIcon[0].iconVariant?.includes("fa")
           ? <FontAwesomeIcon icon={[link.newIcon[0].iconVariant || "far", link.newIcon[0].iconName]} size="3x" />
           : <HugeIcon name={link.newIcon[0].iconName!} size="3rem" variant={link.newIcon[0].iconVariant || "twotone"} />
-        }
+        } */}
+        <HugeIcon name={link.newIcon[0].iconName!} size="3rem" variant={link.newIcon[0].iconVariant || "twotone"} />
       </ActionIcon>
       <Stack gap="0">
         <Text c="white" mb="0" fz="1.5rem">{link.title}</Text>

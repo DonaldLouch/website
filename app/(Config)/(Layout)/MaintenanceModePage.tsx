@@ -3,7 +3,7 @@
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 import HugeIcon from "@/app/(Components)/HugeIcon"
 import InlineLink from "@/app/(Components)/InlineLink"
-import { SignInButton, useClerk } from "@clerk/nextjs"
+import { useClerk } from "@clerk/nextjs"
 import { Stack, Title, Text, Box } from "@mantine/core"
 
 export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
@@ -16,8 +16,7 @@ export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
                 }
                 <Box maw="65vw">
                 <Title order={1} ta="center" fz="3rem" fw="900" c="var(--secondary)" visibleFrom="sm"><HugeIcon name="cone-01" variant="duotone" size="2.1rem" /> Website Under Maintenance</Title>
-                {/* <Text>I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.</Text> */}
-                <Text>My website is currently undergoing maintenance for a major upgrade to improve performance and user experience and so much more! Please check back later (June 1st, 2025) for a new and improved Donald Louch Website!</Text>
+                <Text>I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.</Text>
 
                 <Text component="div">If you have any urgent concerns, feel free to reach out to me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{ name: "mail-at-sign-02", variant: "twotone"}} /> or on my social media platforms.</Text>
 
