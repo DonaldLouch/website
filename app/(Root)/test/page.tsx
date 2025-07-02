@@ -11,7 +11,7 @@ import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
 import { HugeIconsNames } from "@/lib/HugeIconsNames"
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import {
 //   FrameworksIcon,
@@ -44,23 +44,23 @@ export default function page() {
 
     const [clicked, setClicked] = useState(false)
 
-    const icons = [{ 
-        name: 'add-invoice', 
-        variant: 'duotone',
-     },
-     { 
-        name: 'house', 
-        variant: 'fadr',
-     },
-     { 
-        name: 'tiktok', 
-        variant: 'duotone',
-     },
-     { 
-        name: 'tiktok', 
-        variant: 'fab',
-     },
-    ]
+    // const icons = [{ 
+    //     name: 'add-invoice', 
+    //     variant: 'duotone',
+    //  },
+    //  { 
+    //     name: 'house', 
+    //     variant: 'fadr',
+    //  },
+    //  { 
+    //     name: 'tiktok', 
+    //     variant: 'duotone',
+    //  },
+    //  { 
+    //     name: 'tiktok', 
+    //     variant: 'fab',
+    //  },
+    // ]
 
     return <Box mt="2rem">
         {/* <HugeiconsIcon icon={AddInvoiceStrokeRounded} /> */}
@@ -72,7 +72,7 @@ export default function page() {
            ? <FontAwesomeIcon key={index} icon={[icon.variant, icon.name]} size="6x" />
            : <HugeIcon key={index} name={icon.name} variant={icon.variant} size="7rem" />
         ))}  */}
-        <FontAwesomeIcon icon={['fas', 'house']} size="6x" />
+        {/* <FontAwesomeIcon icon={['fas', 'house']} size="6x" /> */}
         {/*<HugeIcon name="webflow-ellipse" variant="duotone" size="3rem" />*/}
         <Text>Bacon ipsum dolor amet dolore ea ham occaecat andouille ham hock fatback bresaola officia beef ribs short loin ad in. Officia sausage pork belly short ribs beef ribs. Minim fugiat hamburger andouille, culpa magna swine officia proident landjaeger commodo. Porchetta officia nisi, flank do hamburger labore minim et turkey deserunt in venison.
 
