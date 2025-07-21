@@ -8,11 +8,6 @@ import { useClerk } from "@clerk/nextjs"
 import { Stack, Title, Text, Box, Skeleton } from "@mantine/core"
 import { useEffect, useState } from "react"
 
-async function getMMData() {
-    const { data } = await supabase.from('MaintenanceMode').select().single() as any
-    return data
-}
-
 export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
     const { openSignIn } = useClerk()
 
@@ -34,14 +29,6 @@ export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
       }
       getData()
     }, [])
-
-    console.log("Maintenance Mode Data:", data)
-
-
-
-    // const data = await getMMData()
-
-    // console.log("Maintenance Mode Data:", data)
 
     return (
         <>
