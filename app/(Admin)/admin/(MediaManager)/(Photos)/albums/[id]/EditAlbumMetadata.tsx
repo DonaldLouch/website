@@ -41,7 +41,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
 
         const { status: supabaseStatus , error: supabaseError } = await supabase.from("PhotographyAlbum").update({ 
             albumName: values.albumName,
-            albumCaption: values.albumCaption ? values.albumCaption : albumData.albumCaption,
+            albumCaption: values.albumCaption || albumData.albumCaption,
             links: subLinkValue,
             uploadedOn: new Date(values.uploadedOn),
             lastUpdatedOn: new Date(),
@@ -72,7 +72,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
 
     const initialValues = {
         albumName: albumData.albumName,
-        albumDescription: albumData.albumCaption,
+        albumCaption: albumData.albumCaption,
 
         linksRow: initialLinksValues,
 
@@ -81,7 +81,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
     }
     const schema = yup.object().shape({
         albumName:  yup.string().required('The album name is required.'),
-        albumDescription: yup.string().required('The album description is required.'),
+        albumCaption: yup.string().required('The album description is required.'),
         // linksRow: yup.array().of(
         //     yup.object().shape({
         //         linkType: yup.string().required('Link type is required.'),
@@ -181,7 +181,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
             <Text>{albumData.id}</Text>
             <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
                 <FormInput inputID="albumName" inputLabel="Album Name" {...form.getInputProps('albumName')} inputDescription="Please provide a name for the album!" icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
-                <FormTextArea inputID="albumDescription" inputLabel="Album Description" textRows={4} {...form.getInputProps('albumDescription')} isRequired />
+                <FormTextArea inputID="albumCaption" inputLabel="Album Caption" textRows={4} {...form.getInputProps('albumCaption')} isRequired />
                 <FormSwitch 
                     inputID="isLinks" 
                     helperText="Toggle on if this album has link(s)"

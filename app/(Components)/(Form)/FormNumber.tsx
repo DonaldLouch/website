@@ -1,4 +1,4 @@
-import { Grid, Title, Text, Input, NumberInput } from '@mantine/core'
+import { Grid, Title, Text, Input, NumberInput, useMantineTheme } from '@mantine/core'
 // import { BsAsterisk } from 'react-icons/bs'
 
 // interface FormProps {
@@ -10,6 +10,7 @@ import { Grid, Title, Text, Input, NumberInput } from '@mantine/core'
 
 import classes from "./Forms.module.css"
 import InlineCode from '../(MarkdownCode)/InlineCode'
+import { useMediaQuery } from '@mantine/hooks'
 
 interface NumberProps {
     inputID: string
@@ -23,6 +24,8 @@ interface NumberProps {
 }
 
 export default function FormNumber({ inputID, inputLabel, inputDescription, isRequired, icon, isFieldDisabled, isRow, ...rest}: NumberProps ) {
+    const theme = useMantineTheme();
+    const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
     return <>
         <Grid gutter="1rem">
             <Grid.Col span={3} hidden={!inputDescription || isRow} visibleFrom="sm">
@@ -35,7 +38,9 @@ export default function FormNumber({ inputID, inputLabel, inputDescription, isRe
                     withAsterisk={isRequired}
                     label={inputLabel}
                     labelProps={{
-                        hiddenFrom: !isRow ||inputDescription && "sm",
+                        // hiddenFrom: !isRow || inputDescription && "sm",
+                        hidden: !isRow || inputDescription && mobile ? true : false,
+                        // hiddenFrom: !isRow || inputDescription && "sm",
                     }}
                     mt="0.5rem"
                     // w="100%"

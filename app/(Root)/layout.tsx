@@ -120,7 +120,13 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     rightSection={null}
                 />
             </AppShell.Navbar>
-            <AppShell.Main pt={`calc(${rem(95)} + var(--mantine-spacing-md))`} pb="md" px={{base: "1rem", lg: "5rem"}} styles={{main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}}}>
+            <AppShell.Main 
+                pt={`calc(${rem(95)} + var(--mantine-spacing-md))`} 
+                pb="md" 
+                px={{base: "1rem !important", lg: "5rem !important"}}
+                styles={{
+                    main: {overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", mih: "100vh", background: "var(--blurredBackground)"}
+                }}>
                 {children}
             </AppShell.Main>
             <AppShell.Footer pos="relative">

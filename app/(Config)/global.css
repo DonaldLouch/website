@@ -88,3 +88,9 @@ a {
         color: var(--secondary) !important;
     }
 }
+
+.mantine-Skeleton-root {
+    &::after {
+        background: var(--darkPurpleRGBA) !important;
+    }
+}
