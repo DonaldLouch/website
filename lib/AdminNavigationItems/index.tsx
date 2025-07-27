@@ -1,6 +1,4 @@
-import HugeIcon, { IconName, IconVariant } from "@/app/(Components)/HugeIcon"
-
-type Icons = {name: IconName, variant?: IconVariant}
+import type { Icons } from "@/lib/FontAwesome"
 
 interface AdminNavigationItemsProps {
   name: string;
@@ -17,7 +15,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
    { 
         name: 'Home',
         slug: '',
-        icon: {name: "home-01", variant: "duotone"},
+        icon: {name: "house", pack: "fajdr"},
         isParent: false,
         parentID: 0,
         levelOfAccess: "0"
@@ -25,7 +23,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Admin Portal",
     slug: "admin",
-    icon: {name: "dashboard-browsing"},
+    icon: {name: "chart-line"},
     isParent: false,
     parentID: 1,
     levelOfAccess: "0",
@@ -34,7 +32,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Photo Manger",
     slug: null,
-    icon: {name: "album-02"},
+    icon: {name: "images"},
     isParent: true,
     parentID: 2,
     levelOfAccess: "0",
@@ -43,7 +41,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Video Manger",
     slug: null,
-    icon: {name: "camera-video"},
+    icon: {name: "films"},
     isParent: true,
     parentID: 3,
     levelOfAccess: "0",
@@ -52,7 +50,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Blog Posts",
     slug: null,
-    icon: {name: "news"},
+    icon: {name: "blog"},
     isParent: true,
     parentID: 4,
     levelOfAccess: "0",
@@ -61,7 +59,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Link Sets Manager",
     slug: "admin/linkSets",
-    icon: {name: "link-01"},
+    icon: {name: "link"},
     isParent: false,
     parentID: 5,
     levelOfAccess: "0",
@@ -70,7 +68,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Pages",
     slug: null,
-    icon: {name: "clipboard"},
+    icon: {name: "files"},
     isParent: true,
     parentID: 6,
     levelOfAccess: "0",
@@ -79,7 +77,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Messages",
     slug: "admin/messages",
-    icon: {name: "inbox"},
+    icon: {name: "inboxes"},
     isParent: false,
     parentID: 7,
     levelOfAccess: "0",
@@ -88,7 +86,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Alerts Manager",
     slug: "admin/alerts",
-    icon: {name: "alert-diamond"},
+    icon: {name: "bell"},
     isParent: false,
     parentID: 8,
     levelOfAccess: "0",

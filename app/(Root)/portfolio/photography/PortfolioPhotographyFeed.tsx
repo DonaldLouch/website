@@ -25,7 +25,7 @@ import ViewPhotoFeed from "@/app/(Components)/ViewPhotoFeed";
 
 import { ActionIcon, Paper, Group, Loader, Title, Anchor } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: number) {
@@ -80,9 +80,6 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
    {/* m="4.5rem auto 0" w="95vw" */}
    {/* m={{base: "-4.5rem -1rem -1rem", lg: "-5.8rem -5rem -2rem"}} pt={{base: "0.5rem", lg: "1.5rem"}} */}
     <Box id="feed" pos="relative" w="100%">
-      <Alert icon={<HugeIcon name="camera-01" />} color="indigo">
-          Please note that moving forward, all photos will have completed captions, tags, and accurate metadata for improved organization and searchability.
-      </Alert>
 
       <Tooltip label={`About ${about.firstName} ${about.lastName}`}>
         <ActionIcon variant="filled" aria-label={`About ${about.firstName} ${about.lastName}`} color="black"
@@ -91,7 +88,7 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
           right={{ base: "4%", md: "1.5%" }}
           onClick={open}
         >
-          <HugeIcon name="contact" size="2rem" />
+          <FontAwesomeIcon icon={["fadl", "id-badge"]} size="lg" />
         </ActionIcon>
       </Tooltip>
       <Drawer size="full" opened={opened} onClose={close} title={`About ${about.firstName} ${about.lastName}`} 
@@ -153,8 +150,8 @@ export default function PortfolioPhotographyFeed({ photos, about, photosCount }:
         // p="4.5rem 1rem 1rem"
         // m="4.5rem auto 0" w="95vw" 
         m={{base: "0rem -1rem 2rem", sm: "0 -5rem 2rem"}} 
-        p={{base: "0.5rem", sm: "0 0.5rem"}}
-        // p="1rem 1rem 1rem"
+        // p={{base: "0.5rem", sm: "0 0.5rem"}}
+        p="1rem 1rem 1rem"
         gap="0.5rem"
       >
         {loadedPhotos?.map((image: any, index: number) => (<ViewPhotoFeed imageData={image} key={index} />))}

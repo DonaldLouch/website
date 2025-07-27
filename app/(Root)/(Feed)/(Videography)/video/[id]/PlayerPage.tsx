@@ -7,9 +7,9 @@ import FullDescription from "./FullDescription"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import HugeIcon from "@/app/(Components)/HugeIcon"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
 import { useVideoPlayer } from "@/utils/VideoPlayer"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }: any) {
     const theme = useMantineTheme();
@@ -44,10 +44,10 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
     const chapterModal = openChapter;
     const infoModal = openInfo;
 
-    rightButtons.push({ buttonIcon: <HugeIcon name="share-05" />, buttonID: "shareButton", buttonFunction: shareModal })
+    rightButtons.push({ buttonIcon: <FontAwesomeIcon icon={["fadl", "share-from-square"]} />, buttonID: "shareButton", buttonFunction: shareModal })
     topButtons.push(
-        { buttonIcon: <HugeIcon name="bookmark-01" />, buttonID: "chapters", buttonFunction: chapterModal, hidden: !(video.chapters && video.chapters.length > 0) },
-        { buttonIcon: <HugeIcon name="information-circle" />, buttonID: "description", buttonFunction: infoModal },
+        { buttonIcon: <FontAwesomeIcon icon={["fajdr", "bookmark"]} />, buttonID: "chapters", buttonFunction: chapterModal, hidden: !(video.chapters && video.chapters.length > 0) },
+        { buttonIcon: <FontAwesomeIcon icon={["fal", "info-circle"]} />, buttonID: "description", buttonFunction: infoModal },
     )
 
     return (<>
@@ -59,12 +59,12 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
             {!isPublic && !isAdmin ? <Paper p="10rem 2rem" color="white" bg="none" shadow="bsBoldSecondary" radius="lg">
                 <Stack align="center">
                 <Group gap="2rem" align="center">
-                    <HugeIcon name="alert-02" size="4rem" color="red" />
+                    <FontAwesomeIcon icon={["fadl", "bell-exclamation"]} size="4x" color="red" />
                     <Title order={1} fz={{base: "2rem", md: "3rem"}}>Private Video</Title>
                 </Group>
                 <Text>🚨 This video is listed as a private video and is not viewable
                   to the public. 🚨</Text>
-                  <PrimaryLinkedButton link="/feed/videography" icon={<HugeIcon name="arrow-left-02" />}>Go Back To The Video Feed</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/feed/videography" icon={<FontAwesomeIcon icon={["fadl", "arrow-left"]} />}>Go Back To The Video Feed</PrimaryLinkedButton>
                 </Stack>
             </Paper> : <>
                 <Stack
@@ -261,7 +261,7 @@ export default function PlayerPage({ videoData, mdxSource, playerType, isAdmin }
                         <CopyButton value={`${process.env.NEXT_PUBLIC_SITE_URL}/video/${video.id}`}>
                             {({ copied, copy }) => (
                                 <Group style={{boxShadow: copied ? "var(--mantine-shadow-bsBoldPrimary)" : "var(--mantine-shadow-bsBoldRed)", borderRadius: "var(--mantine-radius-md)"}} p="0.5rem 2rem" onClick={copy}>
-                                    {!copied && <HugeIcon name="copy-01" />}
+                                    {!copied && <FontAwesomeIcon icon={["fadl", "clipboard"]} size="1x" />}
                                     <Text>{copied ? `Link Copied: ${process.env.NEXT_PUBLIC_SITE_URL}/video/${video.id}` :`${process.env.NEXT_PUBLIC_SITE_URL}/video/${video.id}`} </Text>
                                 </Group>
                             )}

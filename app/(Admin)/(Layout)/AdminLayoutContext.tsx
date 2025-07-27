@@ -17,8 +17,8 @@ import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButto
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 // import WebsiteAlerts from '@/app/(Components)/WebsiteAlerts'
 // import Notifications from '@/app/(Components)/Notifications'
-import HugeIcon from '@/app/(Components)/HugeIcon'
 import InlineLink from '@/app/(Components)/InlineLink'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function AdminLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
   const path = usePathname()
@@ -58,9 +58,9 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                         >
                           <Center h="100vh">
                           <Stack m="2rem">
-                            <Text fz="1.5rem" component="span">Please note that the client portal has been currently disabled. At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "mail-at-sign-01"}} />.</Text>
+                            <Text fz="1.5rem" component="span">Please note that the client portal has been currently disabled. At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} />.</Text>
                             <Text fz="1.5rem">Sorry for any inconvenience this may cause.</Text>
-                            <PrimaryLinkedButton link="/" icon={<HugeIcon name="home-01" />}>Go Home</PrimaryLinkedButton>
+                            <PrimaryLinkedButton link="/" primNewIcon={{pack: "fajdr", name: "house"}}>Go Home</PrimaryLinkedButton>
                           </Stack>
                           </Center>
                         </Box>
@@ -92,7 +92,7 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
                         <Group>
                           {/* <WebsiteAlerts />
                           <Notifications /> */}
-                          <PrimaryLinkedButton link="/portal" primNewIcon={{name: "dashboard-speed-02", variant: "duotone"}}>Client Portal</PrimaryLinkedButton>
+                          <PrimaryLinkedButton link="/portal" primNewIcon={{name: "chart-line", pack: "fadl"}}>Client Portal</PrimaryLinkedButton>
                           <UserButton />
                         <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
                         </Group>

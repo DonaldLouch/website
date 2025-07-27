@@ -1,5 +1,6 @@
 'use client'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HugeIcon from "../HugeIcon"
 // import { BsCopy } from 'react-icons/bs'
 
@@ -25,7 +26,7 @@ export default function ClipboardButton( props: propTypes ) {
             {({ copied, copy }: any) => (
                 <Button 
                     onClick={copy} 
-                    leftSection={<HugeIcon name="copy-01" />}
+                    leftSection={<FontAwesomeIcon icon={["fal", "clipboard"]} />}
                     aria-label={!copied ? theCopyText : theCopiedText}
                     color="black" 
                     variant="filled" 

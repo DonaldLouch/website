@@ -20,38 +20,38 @@ export default function FooterContent(){
     {
       linkURL: "https://facebook.com/DonaldLouchProductions",
       socialMedia: "Facebook",
-      linkIcon: "facebook-02",
-      iconVariant: "duotone"
+      linkIcon: "facebook",
+      iconVariant: "fab"
     },
     {
       linkURL: "https://twitter.com/DonaldLouch",
       socialMedia: "X (Twitter)",
-      linkIcon: "new-twitter",
-      iconVariant: "duotone"
+      linkIcon: "x-twitter",
+      iconVariant: "fab"
     },
     {
       linkURL: "https://instagram.com/donaldlouch",
       socialMedia: "Instagram",
       linkIcon: "instagram",
-      iconVariant: "twotone"
+      iconVariant: "fab"
     },
     {
       linkURL: "https://www.tiktok.com/@donaldlouch",
       socialMedia: "TikTok",
       linkIcon: "tiktok",
-      iconVariant: "duotone"
+      iconVariant: "fab"
     },
     {
       linkURL: "https://youtube.donaldlouch.ca",
       socialMedia: "YouTube",
       linkIcon: "youtube",
-      iconVariant: "duotone"
+      iconVariant: "fab"
     },  
     {
       linkURL: "https://github.com/DonaldLouch",
       socialMedia: "GitHub",
       linkIcon: "github",
-      iconVariant: "twotone"
+      iconVariant: "fab"
     },
     // {
     //   linkURL: !isSignedIn ? "/signin" : "/portal",

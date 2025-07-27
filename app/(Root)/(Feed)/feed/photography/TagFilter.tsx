@@ -1,6 +1,7 @@
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
 import HugeIcon from "@/app/(Components)/HugeIcon"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import { BsTags } from "react-icons/bs"
 
 export default function TagFilter( {tagData}: any ) {
@@ -44,7 +45,7 @@ export default function TagFilter( {tagData}: any ) {
                 onClick={() => combobox.openDropdown()}
                 onFocus={() => combobox.openDropdown()}
                 onBlur={() => combobox.closeDropdown()}
-                leftSection={<HugeIcon name="tags" />}
+                leftSection={<FontAwesomeIcon icon={["fadl", "tags"]} />}
             />
         </Combobox.Target>
 

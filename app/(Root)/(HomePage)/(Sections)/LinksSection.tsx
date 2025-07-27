@@ -14,7 +14,7 @@ import InlineLink from '@/app/(Components)/InlineLink'
 export default function LinksSection({about, primaryLinks, links}: any) {
     return <Box component="section" id="links">
         <Title order={2} fz="3rem" fw="300" ta="center" mt="2rem">Links</Title>
-        <Text ta="center" mb="2rem"  component="div">If you have found any additional links and your're unsure if they are my true accounts; or have any issues please do not hesitate to contact me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} />.</Text>
+        <Text ta="center" mb="2rem"  component="div">If you have found any additional links and your're unsure if they are my true accounts; or have any issues please do not hesitate to contact me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} />.</Text>
         
         <Flex
             justify={{base: "flex-start", sm: "center"}}
@@ -30,10 +30,10 @@ export default function LinksSection({about, primaryLinks, links}: any) {
             }}
         >
             {primaryLinks.map((buttonLink: any) => (
-                <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={buttonLink.newIcon[0].iconName} iconPadding="0.6rem" key={buttonLink.title} iconSize="2rem" iconVariant={buttonLink.newIcon[0].iconVariant} />
+                <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={buttonLink.icon[0].name} iconPadding="0.6rem" key={buttonLink.title} iconSize="2rem" iconVariant={buttonLink.icon[0].pack} />
             ))}
-            <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="chatting-01" iconPadding="0.6rem"/>
-            <FooterIcon linkURL={`mailto:${about.email}`} socialMedia="Direct Email Me" linkIcon="mail-at-sign-01" iconPadding="0.6rem" />
+            <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="comment" iconPadding="0.6rem"/>
+            <FooterIcon linkURL={`mailto:${about.email}`} socialMedia="Direct Email Me" linkIcon="envelope" iconPadding="0.6rem" />
         </Flex>
         <Box>
             {links.map((link: any) => (

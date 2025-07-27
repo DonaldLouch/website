@@ -4,7 +4,7 @@ import DisplayDate from '@/lib/DisplayDate'
 import { Badge, Text, Group, Title, Box, Stack, Flex, Anchor } from '@mantine/core'
 
 import classes from "@/app/(Components)/Components.module.css"
-import HugeIcon from '@/app/(Components)/HugeIcon'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function CardPost (post: any) {
     return <Anchor href={`/linkSet/${post.setSlug}`} underline="never" c="white">
@@ -24,15 +24,15 @@ function CardPost (post: any) {
                 </Text>
                 <Stack gap="1rem" m="0" visibleFrom="md" my="0rem">
                     <Group>
-                        <Badge color="grey" leftSection={<HugeIcon name="pin" />}>Pinned</Badge>
-                        <Badge color="primary" leftSection={<HugeIcon name="contact" />}>
+                        <Badge color="grey" leftSection={<FontAwesomeIcon icon={["fal", "thumbtack-angle"]} />}>Pinned</Badge>
+                        <Badge color="primary" leftSection={<FontAwesomeIcon icon={["fal", "user"]} />}>
                             Donald Louch
                         </Badge>
-                        <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+                        <Badge color="red" leftSection={<FontAwesomeIcon icon={["fal", "calendar"]} />}>
                             <DisplayDate source={post.postDate} />
                         </Badge>
                         <Group>
-                            <Badge color="blue" leftSection={<HugeIcon name="folder-01" />} key={post.media[0].type}>
+                            <Badge color="blue" leftSection={<FontAwesomeIcon icon={["fal","file"]} />} key={post.media[0].type}>
                                 {post.media[0].type}
                             </Badge>
                         </Group>

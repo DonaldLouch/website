@@ -1,6 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Accordion, Avatar, Group, Text, Stack, Box } from "@mantine/core"
-import HugeIcon from "../HugeIcon"
-// import { BsChevronDown } from "react-icons/bs"
 
 interface AccordionLabelProps {
   label: string
@@ -36,7 +35,7 @@ export default function SingleAccordion({content, customMargin, children, custom
       </Accordion.Panel>
     </Accordion.Item>
   ));
-  return<Accordion chevron={<HugeIcon name="arrow-down-01" />} m={customMargin ? customMargin : "1rem 0"}>
+  return<Accordion chevron={<FontAwesomeIcon icon={["fas", "chevron-down"]} />} m={customMargin ? customMargin : "1rem 0"}>
       {items}
     </Accordion>
 }

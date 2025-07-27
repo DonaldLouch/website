@@ -22,9 +22,9 @@ import Context from "./(Config)/Context"
 
 // import { FontAwesomeConfig } from '@/lib/FontAwesome/FontAwesomeConfig';
 
-// import { config } from '@fortawesome/fontawesome-svg-core'
-// import '@fortawesome/fontawesome-svg-core/styles.css'
-// config.autoAddCss = false
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 export const viewport: Viewport = {
   themeColor: '#1d1929',
@@ -69,7 +69,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   const isMaintenanceMode = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
 
-  console.log(isMaintenanceMode)
   return (
     <html lang="en-CA">
       <head></head>

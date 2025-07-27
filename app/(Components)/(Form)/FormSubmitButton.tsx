@@ -1,10 +1,10 @@
 import { Button } from "@mantine/core";
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
-import HugeIcon from "../HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function FormSubmitButton({icon, isNotFull, children}: any) {
-    const theIcon = icon ? icon : <HugeIcon name="sent" />
+    const theIcon = icon ? icon : <FontAwesomeIcon icon={["fajdr", "paper-plane"]} />;
   return <Button
     leftSection={theIcon} 
     color="black" 

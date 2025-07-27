@@ -37,8 +37,8 @@ export default function PinnedPhotos({ photos, photosPinnedCount, photosAllCount
       {photos?.map((image: any, index: number) => (<ViewPhotoFeed imageData={image} key={`photo_${index}`} />))}
     </Flex>
     <Group justify="center" m="-1.5rem 0 -1rem">
-      <PrimaryLinkedButton link="/feed/photography?search=view&value=pinned" primNewIcon={{name: "pin"}}>+{photosPinnedCount - 20} More Pinned Photos</PrimaryLinkedButton>
-      <PrimaryLinkedButton link="/feed/photography" primNewIcon={{name: "album-02"}}>All {photosAllCount} Photos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link="/feed/photography?search=view&value=pinned" primNewIcon={{name: "thumbtack-angle", pack: "fadl"}}>+{photosPinnedCount - 20} More Pinned Photos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link="/feed/photography" primNewIcon={{name: "images", pack: "fadl"}}>All {photosAllCount} Photos</PrimaryLinkedButton>
     </Group>
   </Box>
 }

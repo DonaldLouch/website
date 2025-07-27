@@ -17,9 +17,9 @@ export default function loading({loadingTitle, loadingText, loaderStyle}: {loadi
                     {loadingText ? loadingText : "If the content is still not loaded after a minute please contact Donald Louch for further assistance."}
                 </Text>
                 <Group align="center" justify="center" gap="1rem" m="0" p="0">
-                    <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "mail-at-sign-01", variant: "duotone"}}>Contact Donald Louch</PrimaryLinkedButton>
-                    <PrimaryLinkedButton link="/" primNewIcon={{name: "home-01", variant: "duotone"}}>Try Going To The Home Page</PrimaryLinkedButton>
-                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "refresh", variant: "twotone"}}>Reload Page</PrimaryButton>
+                    <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "light-envelope-at", pack: "fak"}}>Contact Donald Louch</PrimaryLinkedButton>
+                    <PrimaryLinkedButton link="/" primNewIcon={{name: "house", pack: "fajdr"}}>Try Going To The Home Page</PrimaryLinkedButton>
+                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "rotate-right"}}>Reload Page</PrimaryButton>
                 </Group>
             </Stack>
         </Paper>

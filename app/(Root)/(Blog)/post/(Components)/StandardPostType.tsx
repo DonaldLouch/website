@@ -24,9 +24,9 @@ import PostContent from '../(Components)/PostContent'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
 import DisplayDate from '@/lib/DisplayDate'
 import { useUser } from '@clerk/nextjs'
-import HugeIcon from '@/app/(Components)/HugeIcon'
 
 import LinkBadge from '@/app/(Components)/LinkBadge'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // const meta = keyframes `
 //     0% {
@@ -53,7 +53,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
             <Box w="100vw" h="100vh">
                 <Image src={post.thumbnail} alt={post.title} w="100vw" h="100vh"/>
             </Box>
-            <Box><HomeButton icon={<HugeIcon name="arrow-left-02" size="3rem" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
+            <Box><HomeButton icon={<FontAwesomeIcon icon={["fadl", "arrow-left"]} size="3x" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
             <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
                 <Box bg="var(--darkPurpleRGBA)" style={{
                     boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -93,19 +93,19 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                             <Stack gap="1rem" m="1rem 0">
                                 <Group>
                                     {isLoggedIn && isAdmin &&
-                                        <Anchor href={`/admin/postEdit/${post.slug}`} m="0"><Badge color="white" leftSection={<HugeIcon name="edit-02" />}>
+                                        <Anchor href={`/admin/postEdit/${post.slug}`} m="0"><Badge color="white" leftSection={<FontAwesomeIcon icon={["fadl", "pen"]} size="lg" />} >
                                             Edit Post
                                         </Badge></Anchor>
                                     }
-                                    <Anchor href="/" m="0"><Badge color="primary" leftSection={<HugeIcon name="contact" />}>
+                                    <Anchor href="/" m="0"><Badge color="primary" leftSection={<FontAwesomeIcon icon={["fadl", "id-badge"]} size="lg" />} >
                                         {post.author}
                                     </Badge></Anchor>
-                                    <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+                                    <Badge color="red" leftSection={<FontAwesomeIcon icon={["fadl", "calendar"]} size="lg" />} >
                                         <DisplayDate source={post.postedOn} />
                                     </Badge>
                                     <Group>
                                         {post.category.map((category: any) => (
-                                            <Anchor key={category} href={`/blog/C/${category}`} m="0"><Badge color="blue" leftSection={<HugeIcon name="folder-01" />}>
+                                            <Anchor key={category} href={`/blog/C/${category}`} m="0"><Badge color="blue" leftSection={<FontAwesomeIcon icon={["fadl", "folder"]} size="lg" />} >
                                                 {category}
                                             </Badge></Anchor>
                                         ))}
@@ -116,9 +116,9 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                         </Flex>
                     </Flex>
                     <Group gap="1rem" m="1rem" mah="20vh" style={{overflow: "scroll"}}>
-                        <HugeIcon name="tags" />
+                        <FontAwesomeIcon icon={["fadl", "tags"]} size="lg" />
                         {post.tags.map((tag: any) => (
-                            <Anchor key={tag} href={`/blog/T/${tag}`} m="0"><Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
+                            <Anchor key={tag} href={`/blog/T/${tag}`} m="0"><Badge color="white" leftSection={<FontAwesomeIcon icon={["fadl", "tag"]} size="lg" />}>
                                 {tag}
                             </Badge></Anchor>
                         ))}

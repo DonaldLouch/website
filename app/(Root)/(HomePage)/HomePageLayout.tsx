@@ -13,10 +13,10 @@ import PinnedAudio from "./(Sections)/PinnedAudio";
 export default function HomePageLayout({aboutMe, primaryLinksData, linksData, photosPinnedCount, photosAllCount, pinnedPhotos, videos, videosAllCount, pinnedPosts, postAllCount, audios}: any) {
   const stats = [
 
-    { title: 'Photos Uploaded', icon:  { name: "album-02" }, value: `${photosAllCount} Photos`},
-    { title: 'Videos Uploaded', icon:  { name: "camera-video" }, value: `${videosAllCount} Videos`},
-    { title: 'Audio/Music Uploads', icon:  { name: "music-note-square-02" }, value: `1 Ambient Audio` },
-    { title: 'Posts', icon:  { name: "news" }, value: `${postAllCount} Posts` }
+    { title: 'Photos Uploaded', icon:  { name: "images" }, value: `${photosAllCount} Photos`},
+    { title: 'Videos Uploaded', icon:  { name: "films" }, value: `${videosAllCount} Videos`},
+    { title: 'Audio/Music Uploads', icon:  { name: "music" }, value: `1 Ambient Audio` },
+    { title: 'Posts', icon:  { name: "blog" }, value: `${postAllCount} Posts` }
   ] as any
   return (<>
       <HomeHeroSection aboutMe={aboutMe} />
@@ -45,7 +45,7 @@ export default function HomePageLayout({aboutMe, primaryLinksData, linksData, ph
             </Tabs.Panel>
             <Tabs.Panel value="posts">
                 <PinnedPostsCard pinnedPosts={pinnedPosts} />
-                <PrimaryLinkedButton link="/blog" primNewIcon={{name: "news"}}>All {postAllCount} Posts</PrimaryLinkedButton>
+                <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog"}}>All {postAllCount} Posts</PrimaryLinkedButton>
             </Tabs.Panel>
           </Tabs>
           <LinksSection about={aboutMe} primaryLinks={primaryLinksData} links={linksData} />

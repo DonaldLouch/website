@@ -11,7 +11,7 @@ import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
 import { HugeIconsNames } from "@/lib/HugeIconsNames"
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { HugeiconsIcon } from "@hugeicons/react"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import {
 //   FrameworksIcon,
@@ -72,8 +72,8 @@ export default function page() {
            ? <FontAwesomeIcon key={index} icon={[icon.variant, icon.name]} size="6x" />
            : <HugeIcon key={index} name={icon.name} variant={icon.variant} size="7rem" />
         ))}  */}
-        {/* <FontAwesomeIcon icon={['fas', 'house']} size="6x" /> */}
-        <HugeIcon size="3rem"  />
+        <FontAwesomeIcon icon={['fadl', 'house']} size="6x" />
+        {/* <HugeIcon size="3rem"  /> */}
         <Text>Bacon ipsum dolor amet dolore ea ham occaecat andouille ham hock fatback bresaola officia beef ribs short loin ad in. Officia sausage pork belly short ribs beef ribs. Minim fugiat hamburger andouille, culpa magna swine officia proident landjaeger commodo. Porchetta officia nisi, flank do hamburger labore minim et turkey deserunt in venison.
 
 Anim short ribs ball tip short loin flank tail ut swine landjaeger incididunt ex. Eiusmod drumstick esse, fugiat laboris commodo buffalo duis leberkas irure flank in mollit. Laborum pork aliquip turkey adipisicing chuck jowl spare ribs. Pancetta consequat duis shankle. Leberkas pig ad meatloaf, tail beef non picanha meatball beef ribs pork belly jowl bresaola.

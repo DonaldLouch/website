@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import classes from "./Components.module.css"
 import { useRouter } from 'next/navigation';
-import HugeIcon from './HugeIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type TableOfContentsProps = {
     // sections: [label: string, link: string|null, order: number]
@@ -47,7 +47,7 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
     ))
     return <Stack className={classes.tableOfContentsRoot}>
         <Group>
-            <HugeIcon name="left-to-right-block-quote" variant="duotone" />
+            <FontAwesomeIcon icon={["fadl", "list-ul"]} />
             <Text>Table of Contents</Text>
         </Group>
         <Stack gap="0">

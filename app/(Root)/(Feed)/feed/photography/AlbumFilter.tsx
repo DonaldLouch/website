@@ -1,4 +1,5 @@
 import HugeIcon from "@/app/(Components)/HugeIcon"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
 // import { BsImages } from "react-icons/bs"
@@ -44,7 +45,7 @@ export default function AlbumFilter( {photographyAlbum}: any ) {
                 onClick={() => combobox.openDropdown()}
                 onFocus={() => combobox.openDropdown()}
                 onBlur={() => combobox.closeDropdown()}
-                leftSection={<HugeIcon name="album-02" />}
+                leftSection={<FontAwesomeIcon icon={["fadl", "images"]} />}
             />
         </Combobox.Target>
 

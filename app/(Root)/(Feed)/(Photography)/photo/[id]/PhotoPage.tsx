@@ -19,8 +19,8 @@ import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import { useUser } from "@clerk/nextjs";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
-import HugeIcon from "@/app/(Components)/HugeIcon";
 import LinkBadge from "@/app/(Components)/LinkBadge";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function PhotoPage({photoData, mdxSource}: any) {
   const {user} = useUser()
@@ -43,8 +43,9 @@ export default function PhotoPage({photoData, mdxSource}: any) {
        {user && isAdmin &&
           <Group gap="0.5rem">
             <ClipboardButton copyValue={photoData.fileID.filePath} copyText="Copy S3 URI" copiedText="Copied Photo URI" />
-            <PrimaryLinkedButton link={`/admin/photography/${photoData.id}`} icon={<HugeIcon name="edit-02" />}>Edit Photo</PrimaryLinkedButton>
-            <Badge color="white" leftSection={<HugeIcon name="grid" />}>
+            {/* @ts-ignore */}
+            <PrimaryLinkedButton link={`/admin/photography/${photoData.id}`} icon={<FontAwesomeIcon icon={["fak", "light-image-pen"]} />}>Edit Photo</PrimaryLinkedButton>
+            <Badge color="white" leftSection={<FontAwesomeIcon icon={["fal", "hashtag"]} />}>
               {photoData.id}
             </Badge> 
           </Group>
@@ -54,17 +55,17 @@ export default function PhotoPage({photoData, mdxSource}: any) {
         </Box>
         <Group gap="0.5rem">
           {photoData.album && <Anchor href={`/album/${albumData.slug}`} style={{color: "currentColor"}}>
-            <Badge color="primary" leftSection={<HugeIcon name="album-02" />}>
+            <Badge color="primary" leftSection={<FontAwesomeIcon icon={["fadl", "images"]} />}>
               {albumData.albumName}
             </Badge>
           </Anchor>} 
           {photoData.location && <Anchor href={`/feed/photography?search=location&value=${photoData.location}`} style={{color: "currentColor"}}>
-            <Badge color='blue' leftSection={<HugeIcon name="pin-location-03" />}>
+            <Badge color='blue' leftSection={<FontAwesomeIcon icon={["fadl", "map-marker-smile"]} />}>
               {photoData.location}
             </Badge>
           </Anchor>}
         </Group>
-        <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+        <Badge color="red" leftSection={<FontAwesomeIcon icon={["fadl", "calendar"]} />}>
           <DisplayDate source={photoData.fileID.capturedOn} />
         </Badge>
         <Group gap="0.5rem">
@@ -73,9 +74,9 @@ export default function PhotoPage({photoData, mdxSource}: any) {
             ))}
         </Group>
         <Group gap="0.5rem">
-          <HugeIcon name="tags" />
+          <FontAwesomeIcon icon={["fadl", "tags"]} />
           {photoData.tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
-            <Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
+            <Badge color="white" leftSection={<FontAwesomeIcon icon={["fadl", "tag"]} />}>
               {tag}
             </Badge>
           </Anchor> ))}

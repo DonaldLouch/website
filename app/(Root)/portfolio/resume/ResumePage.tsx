@@ -23,6 +23,7 @@ import MultiAccordion from "@/app/(Components)/(Accordion)/MultiAccordion";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
 import HomeButton from "@/app/(Components)/(Buttons)/HomeButton";
 import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ResumePage({resume, resumeExperience, resumeWorkExperienceHistory, resumeEducation}: any) {
   const sections = [
@@ -108,7 +109,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
           {/* TO DO: CHANGE IMAGE! */}
           <Image src={resume.avatar} w="100vw" h="100vh"/>
       </Box>
-      <Box><HomeButton icon={<HugeIcon name="briefcase-02" size="3rem" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box>
+      <Box><HomeButton icon={<FontAwesomeIcon icon={["fadl", "briefcase"]} size="3x" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box>
       <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
           <Box bg="var(--darkPurpleRGBA)" style={{
               boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -147,20 +148,20 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                   </Stack>
                   <Stack gap="1rem">
                     <Group>
-                      <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+                      <Badge color="red" leftSection={<FontAwesomeIcon icon={["far", "calendar"]} />}>
                           {resume.currentAge}
                       </Badge>
-                      <Badge color="secondary" leftSection={<HugeIcon name="contact" />}>
+                      <Badge color="secondary" leftSection={<FontAwesomeIcon icon={["far", "user"]} />}>
                           {resume.tagLine}
                       </Badge>
-                      <Badge color="blue" leftSection={<HugeIcon name="pin-location-03" />}>
+                      <Badge color="blue" leftSection={<FontAwesomeIcon icon={["far", "map-marker-alt"]} />}>
                           {resume.address}
                       </Badge>
                     </Group>
                     <Group align="center" my="-1rem">
-                      <FooterIcon linkURL={resume.linkedin} socialMedia="Linkedin" linkIcon="linkedin-02" />
-                      <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="chatting-01" />
-                      <FooterIcon linkURL={`mailto:${resume.email}`} socialMedia="Email Me" linkIcon="mail-at-sign-01" />
+                      <FooterIcon linkURL={resume.linkedin} socialMedia="Linkedin" linkIcon="linkedin" iconVariant="fab" />
+                      <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="comment" />
+                      <FooterIcon linkURL={`mailto:${resume.email}`} socialMedia="Email Me" linkIcon="light-envelope-at" iconVariant="fak" />
                     </Group>
                     </Stack>
                   </Flex>
@@ -280,14 +281,14 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
               <Box component="section" id="portfolio">
                 <Title order={3} fz="3rem" fw="300" ta="center">View My Work</Title>
                 <Group my="1rem" align="center" justify="center">
-                  <PrimaryLinkedButton link="https://github.com/donaldlouch" icon={<HugeIcon name="github" />}>Web Production</PrimaryLinkedButton>
-                  <PrimaryLinkedButton link="/portfolio/photography" icon={<HugeIcon name="album-02" />}>Photography</PrimaryLinkedButton>
-                  <PrimaryLinkedButton link="/video/clv70b4iy00013b6rinrnxiz7" icon={<HugeIcon name="camera-video" />}>Videography</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="https://github.com/donaldlouch" primNewIcon={{name: "github", pack: "fab"}}>Web Production</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/portfolio/photography" primNewIcon={{name: "images"}}>Photography</PrimaryLinkedButton>
+                  <PrimaryLinkedButton link="/video/clv70b4iy00013b6rinrnxiz7" primNewIcon={{name: "films"}}>Videography</PrimaryLinkedButton>
                 </Group>
               </Box>
               <Box component="section" id="download">
                 <Title order={3} fz="3rem" fw="300" ta="center">Download My Resume</Title>
-                  <Text ta="center"><HugeIcon name="message-download-01" /> {" "} The File Will Be Downloadable Upon <Anchor href="/contact" c="primary">Request</Anchor></Text>
+                  <Text ta="center"><FontAwesomeIcon icon={["fadl", "file-arrow-down"]} size="xl" /> {" "} The File Will Be Downloadable Upon <Anchor href="/contact" c="primary">Request</Anchor></Text>
                   {/* <PrimaryLinkedButton link="about#contact" icon={<BsDownload />} isFullWidth={true}>Request a Download Link</PrimaryLinkedButton> */}
               </Box>
               <Text style={{ textShadow: "3px 2px 4px rgb(193 93 79 / 20%)" }} fz="sm" c="grey" mt="2rem">Last Updated On: <DisplayDate source={resume.lastUpdatedOn} /></Text>

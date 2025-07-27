@@ -12,7 +12,7 @@ import { randomId } from '@mantine/hooks'
 import { Carousel } from '@mantine/carousel';
 
 import classes from "../Components.module.css"
-import HugeIcon from '../HugeIcon'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function CardPost (post: any) {
     return <Card
@@ -43,7 +43,7 @@ function CardPost (post: any) {
       <Spoiler hideLabel="Hide all Categories" showLabel="Show all Categories" maxHeight={70}>
       <Group pos="relative" top="0%" right="1%" style={{ zIndex: 1 }}>
           {post.category.map((category: any) => (
-              <Badge color="blue" leftSection={<HugeIcon name="folder-01" />} key={category}>
+              <Badge color="blue" leftSection={<FontAwesomeIcon icon={["fal", "folder"]} />} key={category}>
                   {category}
               </Badge>
           ))}
@@ -66,10 +66,10 @@ function CardPost (post: any) {
                 {post.headingText}
             </Text>
             <Group justify="space-between">
-              <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+              <Badge color="red" leftSection={<FontAwesomeIcon icon={["fal", "calendar"]} />}>
                   <DisplayDate source={post.postedOn} />
               </Badge>
-              <Badge color="white" leftSection={<HugeIcon name="pin" variant="duotone" />}>
+              <Badge color="white" leftSection={<FontAwesomeIcon icon={["fal", "thumbtack-angle"]} />}>
                 Pinned
               </Badge>
             </Group>

@@ -4,7 +4,7 @@ import { Anchor, AspectRatio, Grid, Image, Text, Title, Box, Tooltip } from "@ma
 import classes from "@/app/(Components)/Components.module.css"
 import DisplayDate from "@/lib/DisplayDate";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function PinnedVideos({videos, videosAllCount}: any) {
   return (<>
@@ -39,7 +39,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
                         </Tooltip>
                         <Text fw={200} fz="1rem" lh="0" c="currentColor" mt="0.5rem"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
                     </Box>
-                    <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><HugeIcon name="play" variant="duotone" size="5rem" /></Box>
+                    <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><FontAwesomeIcon icon={["fajdr", "play"]} size="3x" /></Box>
                 </Box>
             </Anchor>
         </Grid.Col>
@@ -47,7 +47,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
     </Grid>
     {/* <Group justify="center"> */}
     <Box mt="1rem">
-      <PrimaryLinkedButton link="/feed/videography" icon={<HugeIcon name="camera-video" />}>All {videosAllCount} Videos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link="/feed/videography" primNewIcon={{name: "films", pack: "fadl"}}>All {videosAllCount} Videos</PrimaryLinkedButton>
     </Box>
     {/* </Group> */}
     {/* </Group> */}

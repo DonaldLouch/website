@@ -1,6 +1,7 @@
 import { Combobox, Input, useCombobox } from "@mantine/core"
 import { useEffect, useState } from "react"
 import HugeIcon from "@/app/(Components)/HugeIcon"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import { BsPinMap } from "react-icons/bs"
 
 export default function LocationFilter( {locationData}: any ) {
@@ -44,7 +45,7 @@ export default function LocationFilter( {locationData}: any ) {
                 onClick={() => combobox.openDropdown()}
                 onFocus={() => combobox.openDropdown()}
                 onBlur={() => combobox.closeDropdown()}
-                leftSection={<HugeIcon name="maps-search" />}
+                leftSection={<FontAwesomeIcon icon={["fadl", "map-marker-smile"]} />}
             />
         </Combobox.Target>
 

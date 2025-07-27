@@ -4,6 +4,7 @@ import { Anchor, Box, Tooltip } from '@mantine/core'
 
 import classes from "@/app/(Components)/Components.module.css"
 import HugeIcon from '@/app/(Components)/HugeIcon'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function ViewPostButton() {
   return (
@@ -22,7 +23,7 @@ export default function ViewPostButton() {
           c="white"
         >
           <Anchor href="/blog#posts" c="currentColor">
-            <HugeIcon name="mouse-01" size="3rem" variant="duotone" />
+            <FontAwesomeIcon icon={["fadl", "computer-mouse-scrollwheel"]} size="3x" />
           </Anchor>
         </Box>
       </Tooltip>

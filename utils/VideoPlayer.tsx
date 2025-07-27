@@ -1,4 +1,4 @@
-import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -187,18 +187,18 @@ export function useVideoPlayer({ videoData }: { videoData: any }) {
     }
 
     const leftButtons = [
-        { buttonIcon: <HugeIcon name="go-backward-10-sec" />, buttonID: "skipBackButton", buttonFunction: skipBack },
-        { buttonIcon: playing ? <HugeIcon name="pause" /> : <HugeIcon name="play" />, buttonID: "playButton", buttonFunction: playClick },
-        { buttonIcon: <HugeIcon name="go-forward-10-sec" />, buttonID: "skipAheadButton", buttonFunction: skipAhead },
+        { buttonIcon: <FontAwesomeIcon icon={["fal", "arrow-rotate-left"]} />, buttonID: "skipBackButton", buttonFunction: skipBack },
+        { buttonIcon: playing ? <FontAwesomeIcon icon={["fajdr", "pause"]} /> : <FontAwesomeIcon icon={["fajdr", "play"]} />, buttonID: "playButton", buttonFunction: playClick },
+        { buttonIcon: <FontAwesomeIcon icon={["fal", "arrow-rotate-right"]} />, buttonID: "skipAheadButton", buttonFunction: skipAhead },
     ]
 
     const rightButtons = [
-        { buttonIcon: muted ? <HugeIcon name="volume-off" /> : <HugeIcon name="volume-mute-01" />, buttonID: "muteButton", buttonFunction: videoMute },
-        { buttonIcon: isFullscreenMode ? <HugeIcon name="arrow-shrink-01" /> : <HugeIcon name="arrow-expand-01" />, buttonID: "fullscreenButton", buttonFunction: isFullscreenMode ? exitFullscreenMode : fullscreenMode, hidden: isVertical },
+        { buttonIcon: muted ? <FontAwesomeIcon icon={["fajdr", "volume-off"]} /> : <FontAwesomeIcon icon={["fajdr", "volume-slash"]} />, buttonID: "muteButton", buttonFunction: videoMute },
+        { buttonIcon: isFullscreenMode ? <FontAwesomeIcon icon={["fadl", "down-left-and-up-right-to-center"]} /> : <FontAwesomeIcon icon={["fadl", "up-right-and-down-left-from-center"]} />, buttonID: "fullscreenButton", buttonFunction: isFullscreenMode ? exitFullscreenMode : fullscreenMode, hidden: isVertical },
     ]
 
     const topButtons = [
-        { buttonIcon: <HugeIcon name="home-01" />, buttonID: "backToFeed", buttonFunction: backToFeed },
+        { buttonIcon: <FontAwesomeIcon icon={["fajdr", "house"]} />, buttonID: "backToFeed", buttonFunction: backToFeed },
     ] as any
 
     return {

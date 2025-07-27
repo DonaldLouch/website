@@ -100,13 +100,13 @@ export default function HomeHeroSection({aboutMe}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        <PrimaryLinkedButton link="/portfolio" primNewIcon={{name: "briefcase-02", variant: "duotone"}}>Portfolio</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/feed" primNewIcon={{name: "dashboard-square-02", variant: "duotone"}}>Feed</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/blog" primNewIcon={{name: "news", variant: "duotone"}}>Blog</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portfolio/resume" primNewIcon={{name: "passport", variant: "duotone"}}>Resume</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="#links" primNewIcon={{name: "link-04", variant: "twotone"}}>Links</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact" primNewIcon={{name: "chatting-01", variant: "twotone"}}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portal/projects?openID=newProject" primNewIcon={{name: "job-search", variant: "duotone"}}>Hire Me!</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portfolio" primNewIcon={{name: "briefcase", pack: "fadl"}}>Portfolio</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/feed" primNewIcon={{name: "rectangle-history", pack: "fadl"}}>Feed</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog", pack: "fadl"}}>Blog</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portfolio/resume" primNewIcon={{name: "id-badge", pack: "fadl"}}>Resume</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="#links" primNewIcon={{name: "link"}}>Links</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/contact" primNewIcon={{name: "comment-arrow-up-right", pack: "fadl"}}>Contact</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portal/projects?openID=newProject" primNewIcon={{name: "building-magnifying-glass", pack: "fadl"}}>Hire Me!</PrimaryLinkedButton>
       </Group>
     </Stack>
   </Box>

@@ -1,5 +1,6 @@
 'use client'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PrimaryLinkedButton from "../(Buttons)/PrimaryLinkedButton"
 import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Anchor, Badge } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks";
@@ -55,7 +56,7 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
               </Text>
             </Stack>
             {cta && <Anchor href={cta[0].ctaLink} style={{color: "currentColor"}}>
-                <Badge color="var(--secondary)" leftSection={cta[0].ctaVector}>
+                <Badge color="var(--secondary)" leftSection={cta[0].ctaVector && <FontAwesomeIcon icon={[cta[0].ctaVector.pack || "fadl", cta[0].ctaVector.name]} size="xl" />}>
                     {cta[0].ctaTitle}
                 </Badge>
             </Anchor>}
@@ -75,7 +76,7 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkUrl} link={link.linkUrl} icon={link.linkIcon ? link.linkIcon : null}>{link.linkTitle}</PrimaryLinkedButton>)}
+        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkUrl} link={link.linkUrl} primNewIcon={link.linkIcon} >{link.linkTitle}</PrimaryLinkedButton>)}
       </Group>
     </Stack>
   </Box>

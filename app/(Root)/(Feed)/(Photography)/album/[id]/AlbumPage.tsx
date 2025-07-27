@@ -26,9 +26,9 @@ import { useInView } from 'react-intersection-observer'
 import ViewPhotoFeed from '@/app/(Components)/ViewPhotoFeed'
 import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/app/(Components)/BreadCrumbsComponentPublic'
-import HugeIcon from '@/app/(Components)/HugeIcon'
 import LinkBadge from '@/app/(Components)/LinkBadge'
 import InlineLink from '@/app/(Components)/InlineLink'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: number, albumID: string) {
     const from = nextPage * photoLimit
@@ -101,7 +101,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     right={{ base: "4%", md: "1.5%" }}
                     onClick={open}
                 >
-                    <HugeIcon name="license" size="2rem" />
+                    <FontAwesomeIcon icon={["fadl", "info-circle"]} size="xl" />
                 </ActionIcon>
             </Tooltip>
             <Drawer size="full" opened={opened} onClose={close} title={albumData.albumName} 
@@ -115,15 +115,15 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                 styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             >      
                 <Group gap="0.8rem" my="1rem">
-                    <Badge color="white" leftSection={<HugeIcon name="calendar-03" />}>
+                    <Badge color="white" leftSection={<FontAwesomeIcon icon={["fadl", "calendar"]} />}>
                         <DisplayDate source={albumData.uploadedOn} />
                     </Badge>
                     {locations.map((location: any) => (
-                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}} key={`location_${location}`}><Badge color="blue" leftSection={<HugeIcon name="pin-location-03" />}>
+                        <Anchor href={`/feed/photography?search=location&value=${location}`} style={{color: "currentColor"}} key={`location_${location}`}><Badge color="blue" leftSection={<FontAwesomeIcon icon={["fadl", "map-marker-smile"]} />}>
                             {location}
                         </Badge></Anchor>
                     ))}
-                    <Badge color="teal" leftSection={<HugeIcon name="grid" />}>
+                    <Badge color="teal" leftSection={<FontAwesomeIcon icon={["fadl", "hashtag"]} />}>
                         Contains {getPhotoCount} Photos
                     </Badge>
                     {albumData.links?.length > 0 && albumData.links.map((link: any, index: number) => (
@@ -135,9 +135,9 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     <MdxContent source={mdxSource} />
                 </Box>
                 <Group gap="0.5rem" m="2rem 1rem 1rem">
-                    <HugeIcon name="tags" />
+                    <FontAwesomeIcon icon={["fadl", "tags"]} />
                     {tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
-                        <Badge color="white" leftSection={<HugeIcon name="tag-01" />}>
+                        <Badge color="white" leftSection={<FontAwesomeIcon icon={["fadl", "tag"]} />}>
                             {tag}
                         </Badge>
                     </Anchor> ))}
@@ -162,7 +162,7 @@ export const AlbumPage = ({albumData, photoData, mdxSource, tags, locations, get
                     <Loader color="white" size="md" type="bars" />
                     <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
                 </Group>
-                <Text component="div">If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{"name": "mail-at-sign-01"}} /> for further assistance.</Text>
+                <Text component="span">If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} /> for further assistance.</Text>
                 </Stack>
             </Paper>
             </Box>
