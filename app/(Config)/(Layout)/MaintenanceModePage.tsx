@@ -35,7 +35,7 @@ export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
         <>
             <Stack w="100vw" h="100vh" bg="var(--darkPurple)" style={{ overflow: "hidden", zIndex: "10" }} pos="absolute" top="0" left="0" justify="center" align="center" px="2rem">
                 {!isUser &&
-                    <PrimaryButton primNewIcon={{name: "right-to-bracket", pack: "fadl" }} opacity="0.09" action={() => openSignIn({ redirectUrl: '/' })}>Developer Login</PrimaryButton>
+                    <PrimaryButton primNewIcon={{name: "person-to-portal", pack: "fadl" }} opacity="0.09" action={() => openSignIn({ redirectUrl: '/' })}>Developer Login</PrimaryButton>
                 }
                 {loading ? <Stack w="75%" gap="var(--text-lh, var(--mantine-line-height-md))">
                     <Skeleton height="var(--text-fz, var(--mantine-font-size-md))" radius="sm" />
@@ -44,7 +44,7 @@ export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
                     <Skeleton height="var(--text-fz, var(--mantine-font-size-md))" radius="sm" />
                     <Skeleton height="var(--text-fz, var(--mantine-font-size-md))" width="70%" radius="sm" />
                 </Stack> : <Box maw="65vw">
-                    <Title order={1} ta="center" fz="3rem" fw="900" c="var(--secondary)" visibleFrom="sm"><FontAwesomeIcon icon={["fadl", "traffic-cone"]} size="lg" />{data.title}</Title>
+                    <Title order={1} ta="center" fz="3rem" fw="900" c="var(--secondary)" visibleFrom="sm"><FontAwesomeIcon icon={["fadl", "traffic-cone"]} />{data.title}</Title>
                     <Text>{data.description}</Text>
 
                     <Text component="div">If you have any urgent concerns, feel free to reach out to me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{ name: "light-envelope-at", pack: "fak" }} /> or on my social media platforms.</Text>

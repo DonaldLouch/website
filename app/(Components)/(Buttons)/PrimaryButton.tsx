@@ -2,8 +2,21 @@ import { Button } from "@mantine/core";
 import classes from "./Buttons.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import type { Icons } from "@/lib/FontAwesome"
 
-export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, fontColour, action, primNewIcon, ...rest}: any) {
+type PrimaryButtonProps = {
+  isHidden?: boolean;
+  icon?: any;
+  isFullWidth?: boolean;
+  children?: React.ReactNode;
+  colour?: string;
+  fontColour?: string;
+  action?: any;
+  primNewIcon?: Icons;
+  [key: string]: any;
+}
+
+export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, fontColour, action, primNewIcon, ...rest}: PrimaryButtonProps) {
   // const { isHidden, icon, isFullWidth, children, colour, action} = props
 
   return <Button
