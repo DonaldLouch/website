@@ -35,7 +35,7 @@ export default function SingleAccordion({content, customMargin, children, custom
       </Accordion.Panel>
     </Accordion.Item>
   ));
-  return<Accordion chevron={<FontAwesomeIcon icon={["fas", "chevron-down"]} />} m={customMargin ? customMargin : "1rem 0"}>
+  return<Accordion chevron={<FontAwesomeIcon icon={["fal", "chevron-down"]} />} m={customMargin ? customMargin : "1rem 0"}>
       {items}
     </Accordion>
 }

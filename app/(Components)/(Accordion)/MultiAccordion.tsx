@@ -37,7 +37,7 @@ export default function MultiAccordion({content}: any) {
       </Accordion.Panel>
     </Accordion.Item>
   ));
-  return<Accordion chevron={<FontAwesomeIcon icon={["fas", "chevron-down"]} />}>
+  return<Accordion chevron={<FontAwesomeIcon icon={["fal", "chevron-down"]} />}>
       {items}
     </Accordion>
 }

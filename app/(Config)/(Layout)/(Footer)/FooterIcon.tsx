@@ -18,7 +18,7 @@ export const FooterIcon = (props: FooterProps) => {
   return <Anchor href={linkURL} target="_blank">
     <Tooltip label={socialMedia}>
       <ActionIcon style={{padding: iconPadding && iconPadding}}>
-        {<FontAwesomeIcon icon={[iconVariant || "far", linkIcon]} size="1x" /> }
+        {<FontAwesomeIcon icon={[iconVariant || "fal", linkIcon]} size="1x" /> }
         {/* <HugeIcon name={linkIcon} size={iconSize || "1.5rem"} variant={iconVariant || undefined} /> */}
       </ActionIcon>
     </Tooltip>

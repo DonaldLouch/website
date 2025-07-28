@@ -53,7 +53,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
             <Box w="100vw" h="100vh">
                 <Image src={post.thumbnail} alt={post.title} w="100vw" h="100vh"/>
             </Box>
-            <Box><HomeButton icon={<FontAwesomeIcon icon={["fadl", "arrow-left"]} size="3x" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
+            <Box><HomeButton icon={<FontAwesomeIcon icon={["fal", "arrow-left"]} size="3x" />} link="/blog" helperText="Go Back to Blog Feed" /></Box> 
             <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
                 <Box bg="var(--darkPurpleRGBA)" style={{
                     boxShadow: "var(--mantine-shadow-bsSMPrimary)",

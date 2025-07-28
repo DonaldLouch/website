@@ -109,7 +109,7 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
           {/* TO DO: CHANGE IMAGE! */}
           <Image src={resume.avatar} w="100vw" h="100vh"/>
       </Box>
-      <Box><HomeButton icon={<FontAwesomeIcon icon={["fadl", "briefcase"]} size="3x" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box>
+      <Box><HomeButton icon={<FontAwesomeIcon icon={["fadl", "briefcase-blank"]} size="3x" />} link="/portfolio" helperText="Go Back to Portfolio Home" /></Box>
       <Stack component="section" pos="absolute" top="0" left="0" h="100vh" mx={{base: "0.5rem", md: "2rem"}} mah={{base: "auto", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" miw="calc(100% - 2rem)">
           <Box bg="var(--darkPurpleRGBA)" style={{
               boxShadow: "var(--mantine-shadow-bsSMPrimary)",
@@ -148,19 +148,19 @@ export default function ResumePage({resume, resumeExperience, resumeWorkExperien
                   </Stack>
                   <Stack gap="1rem">
                     <Group>
-                      <Badge color="red" leftSection={<FontAwesomeIcon icon={["far", "calendar"]} />}>
+                      <Badge color="red" leftSection={<FontAwesomeIcon icon={["fal", "calendar"]} size="lg" />}>
                           {resume.currentAge}
                       </Badge>
-                      <Badge color="secondary" leftSection={<FontAwesomeIcon icon={["far", "user"]} />}>
+                      <Badge color="secondary" leftSection={<FontAwesomeIcon icon={["fal", "user"]} size="lg" />}>
                           {resume.tagLine}
                       </Badge>
-                      <Badge color="blue" leftSection={<FontAwesomeIcon icon={["far", "map-marker-alt"]} />}>
+                      <Badge color="blue" leftSection={<FontAwesomeIcon icon={["fal", "location-pin"]} size="lg"  />}>
                           {resume.address}
                       </Badge>
                     </Group>
                     <Group align="center" my="-1rem">
                       <FooterIcon linkURL={resume.linkedin} socialMedia="Linkedin" linkIcon="linkedin" iconVariant="fab" />
-                      <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="comment" />
+                      <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="message-arrow-up-right" iconVariant="fadl" />
                       <FooterIcon linkURL={`mailto:${resume.email}`} socialMedia="Email Me" linkIcon="light-envelope-at" iconVariant="fak" />
                     </Group>
                     </Stack>

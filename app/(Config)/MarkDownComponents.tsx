@@ -126,7 +126,7 @@ const unorderedList = (props: any) => {
     props.children.forEach((item: any) => {
         item != "\n" && listArray.push(item)
     })
-    return <List withPadding fw="300" type="unordered" icon={<FontAwesomeIcon icon={["fadl", "hand-point-right"]} color="inherit" size="lg" />} styles={{itemWrapper: {alignItems: "flex-start"}, itemIcon: {color: "var(--secondary)"}}} center={false} spacing="0">
+    return <List withPadding fw="300" type="unordered" icon={<FontAwesomeIcon icon={["fadl", "hand-back-point-right"]} color="inherit" size="lg" />} styles={{itemWrapper: {alignItems: "flex-start"}, itemIcon: {color: "var(--secondary)"}}} center={false} spacing="0">
         {listArray.map((item: any, index: number) => {
             return <List.Item key={index} m="1rem">{item.props.children}</List.Item>
         })}
