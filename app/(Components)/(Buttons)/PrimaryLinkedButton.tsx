@@ -25,7 +25,7 @@ export default function PrimaryLinkedButton({isHidden, link, icon, isFullWidth, 
     href={link} 
     leftSection={
       primNewIcon 
-        ? <FontAwesomeIcon icon={[primNewIcon.pack || "far", primNewIcon.name]} size="1x" />
+        ? <FontAwesomeIcon icon={[primNewIcon.pack || "fal", primNewIcon.name]} size="1x" />
         : icon
     }
     color={colour ? colour : "black"}

@@ -12,7 +12,7 @@ type PrimaryButtonProps = {
   colour?: string;
   fontColour?: string;
   action?: any;
-  primNewIcon?: Icons;
+  primNewIcon?: Icons|any;
   [key: string]: any;
 }
 
@@ -23,7 +23,7 @@ export default function PrimaryButton({isHidden, icon, isFullWidth, children, co
     styles={{root: {display: isHidden ? "none" : "block"}}} 
     leftSection={
       primNewIcon
-        ? <FontAwesomeIcon icon={[primNewIcon.pack || "far", primNewIcon.name]} size="1x" />
+        ? <FontAwesomeIcon icon={[primNewIcon.pack || "fal", primNewIcon.name]} size="1x" />
         : icon
     }
     color={colour ? colour : "black"}
