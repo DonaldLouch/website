@@ -33,7 +33,7 @@ export default function HomeButton( props: propTypes ) {
             <Anchor href={goToLink} style={{color: "white"}}>
                 <Tooltip label={theHelperText}>
                     <Box className={classes.homeButton}>{icon || 
-                        <FontAwesomeIcon icon={["fadl", "home"]} size="3x" />
+                        <FontAwesomeIcon icon={["fajr", "house"]} size="3x" />
                     }</Box>
                 </Tooltip>
             </Anchor>
