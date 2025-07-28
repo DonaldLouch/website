@@ -47,7 +47,7 @@ export default function TableOfContents({ sections, activeSection }: TableOfCont
     ))
     return <Stack className={classes.tableOfContentsRoot}>
         <Group>
-            <FontAwesomeIcon icon={["fadl", "list-ul"]} />
+            <FontAwesomeIcon icon={["fal", "list-ul"]} />
             <Text>Table of Contents</Text>
         </Group>
         <Stack gap="0">

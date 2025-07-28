@@ -23,7 +23,7 @@ export const AdminNavigationItems: Array<AdminNavigationItemsProps> = [
   {
     name: "Admin Portal",
     slug: "admin",
-    icon: {name: "chart-line"},
+    icon: {name: "objects-columns"},
     isParent: false,
     parentID: 1,
     levelOfAccess: "0",

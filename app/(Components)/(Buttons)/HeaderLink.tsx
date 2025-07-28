@@ -28,10 +28,10 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                     p="1rem"
                     fw="500"
                     leftSection={!lgDevice 
-                        ? <FontAwesomeIcon icon={[icon.pack || "far", icon.name]} size="lg" />
+                        ? <FontAwesomeIcon icon={[icon.pack || "fal", icon.name]} size="lg" />
                         : null
                     }
-                    rightSection={<FontAwesomeIcon icon={["far", "chevron-down"]} size="lg" />}
+                    rightSection={<FontAwesomeIcon icon={["fal", "chevron-down"]} size="lg" />}
                 />
             </HoverCard.Target>
             <HoverCard.Dropdown style={{ overflow: "hidden", outline: "none", border: "none", backdropFilter: "blur(20px)" }} bg="var(--darkPurple)">
@@ -59,7 +59,7 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                             my="0rem"
                             p="1rem"
                             leftSection={
-                                <FontAwesomeIcon icon={[subLink.icon.pack || "far", subLink.icon.name]} size="lg" />
+                                <FontAwesomeIcon icon={[subLink.icon.pack || "fal", subLink.icon.name]} size="lg" />
                             }
                             rightSection={null}
                         />
@@ -121,7 +121,7 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                         p="1rem"
                         ml="1rem"
                         leftSection={
-                            <FontAwesomeIcon icon={[subLink.icon.pack || "far", subLink.icon.name]} size="lg" />
+                            <FontAwesomeIcon icon={[subLink.icon.pack || "fal", subLink.icon.name]} size="lg" />
                         }
                         rightSection={null}
                     />

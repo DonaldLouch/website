@@ -59,7 +59,7 @@ export default async function Blog(props: {searchParams: SearchParams}) {
     {linkUrl: "/blog/C/life", linkTitle: "Life Updates", linkIcon: {name: "person", pack: "fadl"}},
     {linkUrl: "/blog/C/website", linkTitle: "Website Updates", linkIcon: {name: "globe-pointer", pack: "fadl"}},
     {linkUrl: "/blog/C/travel", linkTitle: "Travel", linkIcon: {name: "location-smile", pack: "fadl"}},
-    {linkUrl: "/blog/C/education", linkTitle: "Education", linkIcon: {name: "chalkboard-user", pack: "fadl"}},
+    {linkUrl: "/blog/C/education", linkTitle: "Education", linkIcon: {name: "graduation-cap", pack: "fadl"}},
     {linkUrl: "/feed/photography", linkTitle: "Photography Feed", linkIcon: {name: "images", pack: "fadl"}},
     {linkUrl: "/feed/videography", linkTitle: "Videography Feed", linkIcon: {name: "films", pack: "fadl"}},
   ];

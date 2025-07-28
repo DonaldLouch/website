@@ -1,6 +1,6 @@
 {
   "name": "donaldlouch",
-  "version": "30.07.28.02",
+  "version": "30.07.28.03",
   "packageManager": "yarn@4.9.2",
   "description": "I&#39;m a Canadian digital producer specializing in web development, photography, videography, and more. I hold a Bachelor of Arts in Digital Media Studies and two Graduate Certificates in Digital Communication, and Digital Productions Writing and Design.",
   "private": true,
@@ -19,9 +19,9 @@
     "packages/*"
   ],
   "dependencies": {
-    "@awesome.me/kit-c3986f6041": "^1.0.114",
-    "@aws-sdk/client-rekognition": "^3.848.0",
-    "@aws-sdk/client-s3": "3.850.0",
+    "@awesome.me/kit-c3986f6041": "^1.0.153",
+    "@aws-sdk/client-rekognition": "^3.855.0",
+    "@aws-sdk/client-s3": "3.855.0",
     "@clerk/nextjs": "^6.27.1",
     "@clerk/themes": "^2.4.2",
     "@fortawesome/fontawesome-svg-core": "^7.0.0",

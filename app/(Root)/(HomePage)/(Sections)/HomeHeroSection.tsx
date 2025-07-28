@@ -100,13 +100,13 @@ export default function HomeHeroSection({aboutMe}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        <PrimaryLinkedButton link="/portfolio" primNewIcon={{name: "briefcase", pack: "fadl"}}>Portfolio</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portfolio" primNewIcon={{name: "briefcase-blank", pack: "fadl"}}>Portfolio</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/feed" primNewIcon={{name: "rectangle-history", pack: "fadl"}}>Feed</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog", pack: "fadl"}}>Blog</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog", pack: "fal"}}>Blog</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/portfolio/resume" primNewIcon={{name: "id-badge", pack: "fadl"}}>Resume</PrimaryLinkedButton>
         <PrimaryLinkedButton link="#links" primNewIcon={{name: "link"}}>Links</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/contact" primNewIcon={{name: "comment-arrow-up-right", pack: "fadl"}}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portal/projects?openID=newProject" primNewIcon={{name: "building-magnifying-glass", pack: "fadl"}}>Hire Me!</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/portal/projects?openID=newProject" primNewIcon={{name: "light-briefcase-blank-magnifying-glass", pack: "fak"}}>Hire Me!</PrimaryLinkedButton>
       </Group>
     </Stack>
   </Box>

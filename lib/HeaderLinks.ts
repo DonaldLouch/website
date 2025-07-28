@@ -39,7 +39,7 @@ export const HeaderLinks: Array<HeaderLinkProps> = [
     slug: "/portfolio",
     description:
       "Here is my portfolio showcasing my productions in web development, photography, and videography. You can also review my resume and contact me if you have any inquiries.",
-    icon: { name: "briefcase" },
+    icon: { name: "briefcase-blank" },
     isMega: true,
     ctaText: "View Portfolio",
     subMenuLinks: [
@@ -129,7 +129,7 @@ export const HeaderLinks: Array<HeaderLinkProps> = [
         slug: "/blog/C/education",
         description:
           "Here are some highlighted assignments that I wrote while in school.",
-        icon: { name: "chalkboard-user", pack: "fadl" },
+        icon: { name: "graduation-cap", pack: "fadl" },
       },
     ],
   },
