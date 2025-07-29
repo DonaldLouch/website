@@ -11,6 +11,7 @@ import HeaderLink from "../(Components)/(Buttons)/HeaderLink";
 
 import classes from '@/app/(Components)/(Buttons)/Buttons.module.css'
 import FooterContent from "../(Config)/(Layout)/(Footer)/FooterContent";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const path = usePathname()
@@ -85,7 +86,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     label="Home"
                     description="My home page where you can find out quick information about me, pinned content, links to my social accounts, and much more."
                     p="1rem"
-                    leftSection={<HugeIcon name="home-01" size="1.5rem" variant="duotone" />}
+                    leftSection={<FontAwesomeIcon icon={["fajdr", "house"]} size="lg" />}
                     rightSection={null}
                 />
                 {HeaderLinks.map((link: HeaderLinkProps, index: number) => (
@@ -102,7 +103,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     description="Here is where you are able to contact me if you have any inquiries."
                     p="1rem"
                     mt="1rem"
-                    leftSection={<HugeIcon name="chatting-01" size="1.5rem" variant="duotone" />}
+                    leftSection={<FontAwesomeIcon icon={["fajr", "envelope"]} size="lg" />}
                     rightSection={null}
                 />
                 <NavLink href="/#links"
@@ -116,7 +117,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     description="Here is the link to all my links to my social accounts, and much more."
                     p="1rem"
                     my="1rem"
-                    leftSection={<HugeIcon name="link-04" size="1.5rem" variant="duotone" />}
+                    leftSection={<FontAwesomeIcon icon={["fajr", "link"]} size="lg" />}
                     rightSection={null}
                 />
             </AppShell.Navbar>
