@@ -1,3 +1,5 @@
+"use client"
+
 import AudioPlayer from "@/app/(Components)/AudioPlayer";
 import { MdxContent } from "@/app/mdx-content";
 import DisplayDate from "@/lib/DisplayDate";
@@ -6,7 +8,7 @@ import { ActionIcon, Anchor, Badge, Box, Group, Stack, Title, Text, Flex, Toolti
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 import classesMarkdown from "@/app/(Components)/Components.module.css"
 import InlineLink from "@/app/(Components)/InlineLink";
-import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxSource: any }) {
@@ -16,10 +18,10 @@ export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxS
             <Box m="1rem 2rem">
                 <Title order={1} fz="3rem" fw="300">{linkSet.setName} - Donald Louch</Title>
                 <Group mb="1rem">
-                    <Badge color ="red" leftSection={<HugeIcon name="calendar-03" />}>
+                    <Badge color ="red" leftSection={<FontAwesomeIcon icon={["fadl", "calendar"]} size="lg" />}>
                         <DisplayDate source={linkSet.postDate} format="MMMM Do YYYY [at] h:mm A" />
                     </Badge>
-                    <Badge color="primary" leftSection={<HugeIcon name="library" />}>
+                    <Badge color="primary" leftSection={<FontAwesomeIcon icon={["fadl", "folder"]} size="lg" />}>
                         {linkSet.media[0].type}
                     </Badge>
                 </Group>
@@ -67,7 +69,7 @@ export default function LinkSetPage({ linkSet, mdxSource }: { linkSet: any, mdxS
                                             ? <FontAwesomeIcon icon={[link.icon.variant || "far", iconName]} size="1x" />
                                             : <HugeIcon name={iconName} variant={link.icon.variant || undefined} size="1.5rem" />
                                     }</ActionIcon> */}
-                                    <ActionIcon bg="none" style={{boxShadow: "none", padding: "0", margin: 0}}><HugeIcon name={iconName} variant={link.icon.variant ? link.icon.variant : undefined} size="1.5rem" /></ActionIcon>
+                                    <ActionIcon bg="none" style={{boxShadow: "none", padding: "0", margin: 0}}><FontAwesomeIcon icon={[link.icon.pack || "far", iconName]} size="lg" /></ActionIcon>
                                     <Stack gap="0" m="0" p="0">
                                         <Text c="white" m="0" fz="1.5rem" p="0" lh="1">{link.name}</Text>
                                         {link.subTitle ? <Text size="sm" c="dimmed" fw={300} m="0.2rem 0" p="0" lh="1">{link.subTitle}</Text> : null}

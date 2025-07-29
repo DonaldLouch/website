@@ -1,8 +1,8 @@
 "use client"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionIcon, Box, Grid, Group, Image, Slider, Stack, Text, Title, Tooltip } from "@mantine/core";
 import { useEffect, useState } from "react"
-import HugeIcon from "./HugeIcon";
 
 export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: string, title: string, thumbnail: string}) {
     const [audioElement, setAudioElement] = useState() as any
@@ -109,27 +109,27 @@ export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: str
 
     const controlButtons = [
         {
-            buttonIcon: <HugeIcon name="arrow-left-03" />,
+            buttonIcon: <FontAwesomeIcon icon={["fajr", "backward-step"]} size="lg" />,
             buttonID: "backToStart",
             buttonFunction: skipStart
         },
         {
-            buttonIcon: <HugeIcon name="go-backward-10-sec" />,
+            buttonIcon: <FontAwesomeIcon icon={["fajr", "backward"]} size="lg" />,
             buttonID: "rewind",
             buttonFunction: skipBack
         },
         {
-            buttonIcon: isPlaying ?  <HugeIcon name="pause" /> : <HugeIcon name="play" />,
+            buttonIcon: isPlaying ?  <FontAwesomeIcon icon={["fajr", "pause"]} size="lg" /> : <FontAwesomeIcon icon={["fajr", "play"]} size="lg" />,
             buttonID: "playPause",
             buttonFunction: () => setIsPlaying((prev) => !prev)
         },
         {
-            buttonIcon: <HugeIcon name="go-forward-10-sec" />,
+            buttonIcon: <FontAwesomeIcon icon={["fajr", "forward"]} size="lg" />,
             buttonID: "fastForward",
             buttonFunction: skipAhead
         },
         {
-            buttonIcon: <HugeIcon name="arrow-right-03" />,
+            buttonIcon: <FontAwesomeIcon icon={["fajr", "forward-step"]} size="lg" />,
             buttonID: "backToEnd",
             buttonFunction: skipEnd
         },

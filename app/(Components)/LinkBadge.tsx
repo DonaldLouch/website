@@ -11,7 +11,7 @@ export default function LinkBadge({linkName, link, linkType, linkIcon}: {linkNam
         : "link"
 
     return <Anchor href={link} key={link} target={linkType === "exLink" ? "_blank" : "_self"} m="0"><Badge color="blue" leftSection={linkIcon 
-        ? <FontAwesomeIcon icon={[linkIcon.variant ? linkIcon.variant : "fadl", iconName]} size="lg" /> 
+        ? <FontAwesomeIcon icon={[linkIcon.pack || "fadl", iconName]} size="lg" /> 
         : <FontAwesomeIcon icon={["fadl", "link"]} size="lg" />
     }>
         {linkName}

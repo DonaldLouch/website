@@ -110,7 +110,7 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
                                             </Badge></Anchor>
                                         ))}
                                     </Group>
-                                    {post.links.length > 0 && post.links.map((link: any, index: number) => (<LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, variant: link.icon.variant}} key={index} />))} 
+                                    {post.links.length > 0 && post.links.map((link: any, index: number) => (<LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, pack: link.icon.pack}} key={index} />))} 
                                 </Group>
                             </Stack>
                         </Flex>
