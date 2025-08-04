@@ -55,7 +55,7 @@ export default function EditAlbumData({albumData, locations, photoData, photosCo
     return (<>
         <BreadCrumb breads={breadCrumbs} />
         <SimpleGrid cols={2} spacing="2rem" mt="2rem">
-            <PrimaryLinkedButton link={`/album/${albumData.slug}`} primNewIcon={{name: "view"}} colour="primary">View Photo Album</PrimaryLinkedButton>
+            <PrimaryLinkedButton link={`/album/${albumData.slug}`} primNewIcon={{name: "eye"}} colour="primary">View Photo Album</PrimaryLinkedButton>
             <EditAlbumMetadata albumData={albumData} /> 
         </SimpleGrid>
 

@@ -17,7 +17,6 @@ import * as yup from 'yup';
 import classes from "@/app/(Components)/Components.module.css"
 import ViewFullPhoto from '@/app/(Components)/ViewFullPhoto'
 import DisplayDate from '@/lib/DisplayDate'
-import HugeIcon from '@/app/(Components)/HugeIcon'
 import FormInput from '@/app/(Components)/(Form)/FormInput'
 import FormTextArea from '@/app/(Components)/(Form)/FormTextArea'
 import FormTags from '@/app/(Components)/(Form)/FormTags'
@@ -28,6 +27,7 @@ import { useForm, yupResolver } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { deleteFileFromS3 } from '@/app/actions/backblaze'
 import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: any) {
     const {fileID, capturedOn, uploadedOn, fileKey } = imageData.fileID
@@ -55,7 +55,7 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
             title: `${supabaseStatus === 204 ? `Photo ${photoName} Removed 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 204 ? `You have successfully removed the selected photos from the album!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red",
-            icon: supabaseStatus === 204 ? <HugeIcon name="file-edit" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />
+            icon: supabaseStatus === 204 ? <FontAwesomeIcon icon={["fadl", "images"]} /> : <FontAwesomeIcon icon={["fadl", "bell-on"]} />
         })
         supabaseStatus === 204 && router.refresh()
     }
@@ -89,7 +89,7 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
             title: "File Deleted!",
             message:`You have successfully deleted your file titled "${photoName}"`,
             color: "red",
-            icon: <HugeIcon name="delete-02" variant="twotone" />
+            icon: <FontAwesomeIcon icon={["fadl", "trash"]} />
         })
         isFileDeleted && router.refresh()
         // mediaDeleteStatus === 204 && router.refresh()
@@ -137,7 +137,7 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
             title: `${supabaseStatus === 204 ? `Photo ${photoName} Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message:`${supabaseStatus === 204 ? `You have successfully edited the selected photos!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red",
-            icon: supabaseStatus === 204 ? <HugeIcon name="file-edit" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />
+            icon: supabaseStatus === 204 ? <FontAwesomeIcon icon={["fadl", "images"]} /> : <FontAwesomeIcon icon={["fadl", "bell-on"]} />
         })
         supabaseStatus === 204 && router.refresh()
     }
@@ -210,7 +210,7 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
                 <FormInput inputID={`linksRow.${index}.link`} inputLabel="Link URL" {...form.getInputProps(`linksRow.${index}.link`)} key={form.key(`links.${index}.link`)} />
                 <FormInput inputID={`linksRow.${index}.name`} inputLabel="Link Title" {...form.getInputProps(`linksRow.${index}.name`)} key={form.key(`links.${index}.name`)} />
                 <ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-                    <HugeIcon name="delete-02" size="1rem" />
+                    <FontAwesomeIcon icon={["fadl", "trash"]} />
                 </ActionIcon>
             </Group>
         ));
@@ -288,17 +288,17 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
                     </Stack>
                     <Stack gap="1rem" my="1rem">
                     <Group>
-                        <Badge color="var(--primary)" leftSection={<HugeIcon name="grid" />}>
+                        <Badge color="var(--primary)" leftSection={<FontAwesomeIcon icon={["fal", "hashtag"]} />}>
                             {imageData.fileID.fileID}
                         </Badge>
-                        <Badge color="var(--primary)" leftSection={<HugeIcon name="grid" />}>
+                        <Badge color="var(--primary)" leftSection={<FontAwesomeIcon icon={["fal", "hashtag"]} />}>
                             {imageData.id}
                         </Badge>
-                        <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+                        <Badge color="red" leftSection={<FontAwesomeIcon icon={["fal", "calendar"]} />}>
                             <DisplayDate source={imageData.fileID.capturedOn} />
                         </Badge>
                         <Anchor href={imageData.fileID.filePath} target="_blank">
-                            <Badge leftSection={<HugeIcon name="link-04" />} color="blue" tt="lowercase">{imageData.fileID.filePath}</Badge>
+                            <Badge leftSection={<FontAwesomeIcon icon={["fal", "link"]} />} color="blue" tt="lowercase">{imageData.fileID.filePath}</Badge>
                         </Anchor>
                     </Group>
                     </Stack>
@@ -327,7 +327,7 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
                             </Group>
                             ) : <Text ta="center">There is Currently No Links! You can add one though!</Text>}
                         {linkFields}
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('linksRow', {
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('linksRow', {
                             key: randomId(),
                             linkType: "exLink", 
                             icon: null, 
@@ -376,11 +376,11 @@ export default function ViewPhotoEditAlbum({ imageData, locations, tagsData }: a
                         checked={isPinnedOption}
                     />
                 </SimpleGrid>
-                <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Photo</FormSubmitButton>
+                <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "pen"]} />}>Edit Photo</FormSubmitButton>
                 <Divider label="OR" labelPosition="center" mx="3rem" my="2rem" />
                 <SimpleGrid cols={2} spacing="2.5rem">
-                     <PrimaryButton action={removeFromAlbum} colour="red.4" primNewIcon={{name: "album-not-found-01"}}>Remove Photo From Album</PrimaryButton>
-                     <PrimaryButton action={deleteMedia} colour="red.8" primNewIcon={{name: "delete-02"}}>Delete Photo</PrimaryButton>
+                     <PrimaryButton action={removeFromAlbum} colour="red.4" primNewIcon={{name: "image-slash"}}>Remove Photo From Album</PrimaryButton>
+                     <PrimaryButton action={deleteMedia} colour="red.8" primNewIcon={{name: "trash"}}>Delete Photo</PrimaryButton>
                 </SimpleGrid>
             </Box>
         </Modal>

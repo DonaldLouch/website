@@ -1,5 +1,6 @@
 'use client'
 
+import type { Icons } from "@/lib/FontAwesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionIcon, Anchor, Tooltip } from "@mantine/core";
@@ -7,19 +8,18 @@ import { ActionIcon, Anchor, Tooltip } from "@mantine/core";
 interface FooterProps {
   linkURL: string
   socialMedia: string
-  linkIcon: any
+  icon?: Icons
   iconPadding?: any
   iconSize?: any
-  iconVariant?: any
 }
 
 export const FooterIcon = (props: FooterProps) => {
-  const { linkURL, socialMedia, linkIcon, iconPadding, iconSize, iconVariant} = props
+  const { linkURL, socialMedia, icon, iconPadding, iconSize } = props
+  console.log(icon)
   return <Anchor href={linkURL} target="_blank">
     <Tooltip label={socialMedia}>
       <ActionIcon style={{padding: iconPadding && iconPadding}}>
-        {<FontAwesomeIcon icon={[iconVariant || "fal", linkIcon]} size="1x" /> }
-        {/* <HugeIcon name={linkIcon} size={iconSize || "1.5rem"} variant={iconVariant || undefined} /> */}
+        {icon && <FontAwesomeIcon icon={[icon.pack || "fal", icon.name]} size={iconSize || "1x"} />}
       </ActionIcon>
     </Tooltip>
   </Anchor>

@@ -4,8 +4,8 @@ import supabase from "@/lib/supabase";
 export default async function HomePageContent() {
   const { data: aboutMe } = await supabase.from('About').select().single()
   const { data: pinnedPostsData } = await supabase.from('BlogPost').select().match({ isPinned: true, postStatus: 'Public' }).order('postedOn', { ascending: false }) as any
-  const { data: primaryLinksData } = await supabase.from('PrimaryLinks').select().order('orderNumber', { ascending: true }) as any
-  const { data: linksData } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
+  const { data: primaryLinksData } = await supabase.from('PrimaryLinks').select().order('order', { ascending: true }) as any
+  const { data: linksData } = await supabase.from('Links').select().order('order', { ascending: true }) as any
   const { data: audios } = await supabase.from('LinkSet').select().order('lastUpdated', { ascending: false }) as any
   // const { data: embedsData } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
   const { data: photos } = await supabase

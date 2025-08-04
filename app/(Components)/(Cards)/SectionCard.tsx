@@ -6,10 +6,11 @@ interface CardProps {
     id: string
     styleType?: string
     children: React.ReactNode
+    [key: string]: any
 }
 
 export const SectionCard = (props: CardProps) => {
-    const { id, styleType, children } = props
+    const { id, styleType, children, ...rest } = props
     return (
         <Box 
             component="section" 
@@ -24,6 +25,7 @@ export const SectionCard = (props: CardProps) => {
             p="2rem" 
             bg="none"
             c="white"
+            {...rest}
         >
             {children}
         </Box>

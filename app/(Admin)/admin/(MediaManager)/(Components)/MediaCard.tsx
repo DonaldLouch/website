@@ -6,7 +6,7 @@ import DisplayDate from '@/lib/DisplayDate'
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
 import { deleteFileFromS3 } from "@/app/actions/backblaze"
 import { notifications } from "@mantine/notifications"
-import HugeIcon from "@/app/(Components)/HugeIcon"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
   
 export const MediaCard = ({ media }: any) => {
     // const toastID = "toastID"
@@ -46,7 +46,7 @@ export const MediaCard = ({ media }: any) => {
             title: "File Deleted!",
             message:`You have successfully deleted your ${fileExtension} file titled "${fileTitle}"`,
             color: "red",
-            icon: <HugeIcon name="delete-02" variant="twotone" />
+            icon: <FontAwesomeIcon icon={["fadl", "trash"]} />,
           })
 
         // const deleteFile = await fetch(`/api/media/delete/${fileID}`, {method: "POST", body: formData}).then(response => response.json())
@@ -80,13 +80,13 @@ export const MediaCard = ({ media }: any) => {
                     <Group justify="space-between" align="center" px="2rem">
                         <Stack m="0" gap="0" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem" align="center">
                             <Group>
-                                <HugeIcon name="calendar-03" variant="twotone" />  <Title order={4} size="1rem" c="grey" tt="uppercase">Uploaded On</Title></Group>
+                                <FontAwesomeIcon icon={["fadl", "calendar"]} />  <Title order={4} size="1rem" c="grey" tt="uppercase">Uploaded On</Title></Group>
                              <Text fw="500" m="0" tt="uppercase" c="secondary" fz="1rem"><DisplayDate source={uploadedOn} format="MM/DD/YYYY" /></Text>
                         </Stack>
                         <Group p="0" m="0">
                             <ClipboardButton copyValue={filePath} />
-                            <Anchor href={`/admin/photography/${id}`} c="var(--secondary)" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><HugeIcon name="edit-02" /></Anchor>
-                            <Anchor onClick={deleteMedia} c="red" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><HugeIcon name="delete-02" /></Anchor>
+                            <Anchor href={`/admin/photography/${id}`} c="var(--secondary)" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><FontAwesomeIcon icon={["fadl", "pen"]} /></Anchor>
+                            <Anchor onClick={deleteMedia} c="red" style={{boxShadow: "var(--mantine-shadow-bsSMSecondary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem"><FontAwesomeIcon icon={["fadl", "trash"]} /></Anchor>
                         </Group>
                     </Group>
                 </Grid.Col>

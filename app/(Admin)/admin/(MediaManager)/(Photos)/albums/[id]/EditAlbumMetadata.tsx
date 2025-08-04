@@ -10,7 +10,6 @@ import FormTextArea from "@/app/(Components)/(Form)/FormTextArea";
 import { FormSelect } from "@/app/(Components)/(Form)/FormSelect";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
-import HugeIcon from "@/app/(Components)/HugeIcon";
 import { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import { FormSwitch } from "@/app/(Components)/(Form)/FormSwitch";
@@ -19,6 +18,7 @@ import FormButton from "@/app/(Components)/(Form)/FormButton";
 import supabase from "@/lib/supabase";
 import { notifications } from "@mantine/notifications";
 import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function EditAlbumMetadata({albumData}: {albumData: any}) {
     const [opened, { open, close }] = useDisclosure(false)
@@ -52,7 +52,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
             title: `${supabaseStatus === 204 ? `The Album ${values.albumName} Was Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`,
             message:`${supabaseStatus === 204 ? `You have successfully edited the selected album!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
             color: supabaseStatus === 204 ? "black" : "red",
-            icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
+            icon: supabaseStatus === 204 ? <FontAwesomeIcon icon={["fal", "pen"]} /> : <FontAwesomeIcon icon={["fal", "bell-on"]} />
         })
         supabaseStatus === 204 && router.refresh()
     }
@@ -128,7 +128,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
             {...provided.draggableProps} {...provided.dragHandleProps}
           >
             <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-              <HugeIcon name="drag-drop" />
+              <FontAwesomeIcon icon={["fal", "grip"]} />
             </Box></Grid.Col>
 
             <Grid.Col span={2.75}>
@@ -145,7 +145,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
             </Grid.Col>
 
             <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-              <HugeIcon name="delete-02" size="2rem" />
+                <FontAwesomeIcon icon={["fal", "trash"]} />
             </ActionIcon></Grid.Col>
           </Grid>
         )}
@@ -168,7 +168,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
     ]
 
     return <>
-        <PrimaryButton onClick={open} primNewIcon={{name: "note-edit"}}>Edit Album Details</PrimaryButton>
+        <PrimaryButton onClick={open} primNewIcon={{name: "pen"}}>Edit Album Details</PrimaryButton>
         <Modal 
             opened={opened} onClose={close} title="Edit Album Metadata" yOffset="2rem" xOffset="2rem" size="100%"
             overlayProps={{
@@ -180,7 +180,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
         >
             <Text>{albumData.id}</Text>
             <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
-                <FormInput inputID="albumName" inputLabel="Album Name" {...form.getInputProps('albumName')} inputDescription="Please provide a name for the album!" icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
+                <FormInput inputID="albumName" inputLabel="Album Name" {...form.getInputProps('albumName')} inputDescription="Please provide a name for the album!" icon={<FontAwesomeIcon icon={["fal", "font-case"]} />} isRequired />
                 <FormTextArea inputID="albumCaption" inputLabel="Album Caption" textRows={4} {...form.getInputProps('albumCaption')} isRequired />
                 <FormSwitch 
                     inputID="isLinks" 
@@ -218,7 +218,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
                             </Droppable>
                         </DragDropContext>
 
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('linksRow', { 
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('linksRow', { 
                             key: randomId(),
                             linkType: "exLink", 
                             icon: null, 
@@ -238,7 +238,7 @@ export default function EditAlbumMetadata({albumData}: {albumData: any}) {
                     />
                     <FormSelect inputID="albumPrivacy" inputLabel="Album Privacy" inputData={albumPrivacyOptions} {...form.getInputProps(`albumPrivacy`)} />
                 </SimpleGrid>
-                <FormSubmitButton icon={<HugeIcon name="sent" variant="twotone" />}>Edit Album Metadata</FormSubmitButton>
+                <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "paper-plane-top"]} />}>Edit Album Metadata</FormSubmitButton>
             </Box>
         </Modal>
     </>

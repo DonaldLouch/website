@@ -1,8 +1,3 @@
-// 'use client';
-// import { use } from "react";
-
-// import HouseIcon from "../../(Components)/(Vectors)/house";
-
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
 //     title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME}'s Portal`,

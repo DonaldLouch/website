@@ -61,8 +61,8 @@ export default function PhotographyManager({mediaData, pagination, photographyAl
     <>
       <BreadCrumb breads={breadCrumbs} />
       <SimpleGrid cols={2} spacing="2rem" mt="2rem">
-        <PrimaryLinkedButton link="/admin/albums" primNewIcon={{name: "album-02", variant: "duotone"}} isFullWidth={false}>Album Manager</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/admin/batchEdit" primNewIcon={{name: "edit-02", variant: "duotone"}} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/admin/albums" primNewIcon={{name: "images", pack: "fal"}} isFullWidth={false}>Album Manager</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/admin/batchEdit" primNewIcon={{name: "light-images-pen", pack: "fak"}} isFullWidth={false}>Batch Edit</PrimaryLinkedButton>
       </SimpleGrid>
       <Box component="main" color="white">
         <Box m="2rem 5rem 0rem"><FileUploader mediaType={"photography"} uploadTitle="Upload Photo(s)" helperText="For the best photography experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the photo file. You can drag and drop or click to upload the photo(s)." /></Box>

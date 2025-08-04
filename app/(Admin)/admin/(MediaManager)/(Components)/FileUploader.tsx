@@ -8,7 +8,7 @@ import { Dropzone, DropzoneProps } from '@mantine/dropzone';
 import { notifications } from "@mantine/notifications";
 
 import axios from "axios"
-import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function FileUploader({ mediaType, helperText, id, uploadTitle, props }: {mediaType: string, helperText?: string, id?: string, uploadTitle?: string, props?: Partial<DropzoneProps> }) {
     const router = useRouter()
@@ -84,14 +84,14 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
                   title: "File Uploaded!",
                   message:`You have successfully uploaded your ${mediaType} file titled "${u.fileName}"`,
                   color: "black",
-                  icon: <HugeIcon name="file-upload" variant="twotone" />
+                  icon: <FontAwesomeIcon icon={["fadl", "cloud-check"]} />
                 })
                 u.fileDatabase != 201 && notifications.show({ 
                   id: `fileUploaded${u.fileName}`,
                   title: `Error #${u.fileDatabaseError?.code} has Occurred`,
                   message:`An error has occurred: ${u.supabaseError?.message}. ${u.supabaseError?.hint && `${u.supabaseError?.hint}.`}`,
                   color: "red",
-                  icon: <HugeIcon name="alert-diamond" variant="twotone" />
+                  icon: <FontAwesomeIcon icon={["fadl", "cloud-exclamation"]} />
                 })
               })
               mediaType != "videography" && mediaType != "thumbnail" && mediaType != "thumbnail/linkSet" && router.refresh()
@@ -128,13 +128,13 @@ export default function FileUploader({ mediaType, helperText, id, uploadTitle, p
       >
         <Group justify="center" gap="2rem" style={{ pointerEvents: 'none' }} py="4rem">
           <Dropzone.Accept>
-            <HugeIcon name="file-upload" variant="twotone" />
+            <FontAwesomeIcon icon={["fadl", "cloud-check"]} size="4x" />
           </Dropzone.Accept>
           <Dropzone.Reject>
-            <HugeIcon name="cancel-circle" variant="twotone" />
+            <FontAwesomeIcon icon={["fadl", "cloud-exclamation"]} size="4x" />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <HugeIcon name="cloud-upload" variant="twotone" size="5rem" />
+            <FontAwesomeIcon icon={["fadl", "cloud-arrow-up"]} size="4x" />
           </Dropzone.Idle>
 
           <Stack gap="0" m="0" p="0">

@@ -30,10 +30,9 @@ export default function LinksSection({about, primaryLinks, links}: any) {
             }}
         >
             {primaryLinks.map((buttonLink: any) => (
-                <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} linkIcon={buttonLink.icon[0].name} iconPadding="0.6rem" key={buttonLink.title} iconSize="2rem" iconVariant={buttonLink.icon[0].pack} />
+                <FooterIcon linkURL={buttonLink.link} socialMedia={`${buttonLink.title} (${buttonLink.subTitle})`} icon={{name: buttonLink.icon[0].name, pack: buttonLink.icon[0].pack}} iconPadding="0.6rem" key={buttonLink.title} iconSize="2rem" />
             ))}
-            <FooterIcon linkURL="/contact" socialMedia="Contact Me" linkIcon="message-dots" iconPadding="0.6rem" iconVariant="fadl" />
-            <FooterIcon linkURL={`mailto:${about.email}`} socialMedia="Direct Email Me" linkIcon="light-envelope-at"  iconPadding="0.6rem" iconVariant="fak" />
+            <FooterIcon linkURL="/contact" socialMedia="Contact Me" icon={{name: "message-dots", pack: "fadl"}} iconPadding="0.6rem" />
         </Flex>
         <Box>
             {links.map((link: any) => (

@@ -1,7 +1,7 @@
 import { DateTimePicker } from '@mantine/dates';
 
 import classes from "./Forms.module.css"
-import HugeIcon from '../HugeIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, isClearable, isJustRead, isRequired, ...rest}: any) {
   return <DateTimePicker
@@ -41,7 +41,7 @@ export default function FormDatePicker({dateFormat, dateLabel, datePlaceholder, 
                 position: 'top-start'
             }
         }}
-        leftSection={<HugeIcon name="calendar-03" variant="twotone" />}
+        leftSection={<FontAwesomeIcon icon={["fadl", "calendar"]} />}
         leftSectionProps={{
             style: {margin: "0 0.5rem"}
         }}

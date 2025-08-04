@@ -8,11 +8,6 @@ import { useRouter } from "next/navigation";
 
 import classes from "@/app/(Components)/(Buttons)/Buttons.module.css"
 
-// import { BsLink45Deg } from "react-icons/bs";
-// import { BsEnvelopeAt, BsTwitterX, BsChat, BsXbox, BsBarChart, BsSpotify, BsVimeo, BsYoutube, BsLink45Deg } from "react-icons/bs";
-// import { IoShirtOutline, IoLogoSoundcloud } from "react-icons/io5";
-// import { SiApplemusic } from "react-icons/si";
-
 import * as yup from 'yup'
 import { yupResolver } from 'mantine-form-yup-resolver';
 import { useDisclosure } from "@mantine/hooks";
@@ -23,24 +18,24 @@ import { useForm } from "@mantine/form";
 import { useState } from "react";
 import { notifications } from "@mantine/notifications";
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton";
-import HugeIcon from "@/app/(Components)/HugeIcon";
+
+import type { Icons } from "@/lib/FontAwesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface LinkCardAdminProps {
   id: string;
   link: string;
   title: string;
-  iconPrefix: any;
-  iconName: any;
   subTitle: string | null | undefined;
-  newIcon?: any
+  icon?: Icons | null | undefined;
 }
 
 export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
 
   // console.log(link)
   const [opened, { open, close }] = useDisclosure(false)
-  const [iconVariantSelected, setIconVariantSelected] = useState(link.newIcon[0] ? link.newIcon[0].iconVariant : null)
- 
+  const [iconPackSelected, setIconPackSelected] = useState(link.icon.pack || null)
+
   const router = useRouter();
 
   const deleteLink = async () => {
@@ -50,20 +45,20 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       title: deleteStatus === 204 ? `${link.title} Deleted  🗑️` : `Error #${deleteError?.code} has Occurred`,
       message: deleteStatus === 204 ? `You have successfully deleted the ${link.title} link!` : `An error has occurred: ${deleteError?.message}. ${deleteError?.hint && `${deleteError?.hint}.`}`,
       color: deleteStatus === 204 ? "green.0" : "red",
-      icon: deleteStatus === 204 ? <HugeIcon name="arrow-up-right-01" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />,
+      icon: deleteStatus === 204 ? <FontAwesomeIcon icon={["fal", "trash"]} /> : <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />,
     })
     deleteStatus === 204 && router.refresh()
   }
 
   const onSubmit =  async (values: any) => {
     const theIcon = new Array({
-      "iconName": values.iconName,
-      "iconVariant": iconVariantSelected ? iconVariantSelected : undefined,
+      "name": values.iconName,
+      "pack": iconPackSelected || undefined,
     })
 
     const { status: supabaseStatus , error: supabaseError  } = await supabase.from("PrimaryLinks").update({ 
       // iconName: values.iconName,
-      newIcon: theIcon,
+      icon: theIcon,
       title: values.title,
       subTitle: values.subTitle,
       link: values.linkForm,
@@ -74,14 +69,14 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       title: `${supabaseStatus === 204 ? "Updated Link 🎉" : `Error #${supabaseError?.code} has Occurred`}`,
       message: `${supabaseStatus === 204 ? `You have successfully updated the ${link.title} link!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`,
       color: supabaseStatus === 204 ? "green.0" : "red",
-      icon: supabaseStatus === 204 ? <HugeIcon name="arrow-up-right-01" variant="twotone" /> : <HugeIcon name="alert-diamond" variant="twotone" />,
+      icon: supabaseStatus === 204 ? <FontAwesomeIcon icon={["fal", "check-circle"]} /> : <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />,
     })
     supabaseStatus === 204 && router.refresh()
   }
 
   const initialValues = {
-    iconName: link.newIcon[0] ? link.newIcon[0].iconName : null,
-    iconVariant: link.newIcon[0] ? link.newIcon[0].iconVariant : null,
+    iconName: link.icon.name || null,
+    iconPack: link.icon.pack || null,
     title: link.title,
     subTitle: link.subTitle,
     linkForm: link.link,
@@ -97,28 +92,15 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
     validate: yupResolver(schema)
   })
 
-  const iconVariantOptions = new Array(
-      {value: "stroke", label: "Default (Stroke)", disabled: true},
-      {value: "twotone", label: "Twotone"},
-      {value: "duotone", label: "Duotone (Filled In)"},
-      {value: "solid", label: "Solid"},
-      {value: "bulk", label: "Bulk"},
+  const iconPackOptions = new Array(
+    {value: "fal", label: "fal (Light; Default)", disabled: true},
+    {value: "fadl", label: "fadl (Duotone)"},
+    {value: "fab", label: "fab (Brands)"},
+    {value: "fajr", label: "fajr (Jelly)"},
+    {value: "fajdr", label: "fajdr (Jelly Duo)"},
+    {value: "fak", label: "fak (Packs)"}
   )
 
-  // const icon = 
-  //   link.iconName === "mail-at-sign-02" ? <MailAtSign02Icon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "new-twitter" ? <NewTwitterIcon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "chatting-01" ? <Chatting01Icon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "game-controller-01" ? <GameController01Icon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "wifi-connect-02" ? <WifiConnected02Icon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "spotify" ? <SpotifyIcon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "vimeo" ? <VimeoIcon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "youtube" ? <YoutubeIcon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "music-note-square-02" ? <MusicNoteSquare02Icon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "shirt-01" ? <Shirt01Icon variant="twotone" size="3rem" /> : 
-  //   link.iconName === "soundcloud" ? <SoundcloudIcon variant="twotone" size="3rem" /> : 
-  //   <Home01Icon /> as any
-  
   return <>
     <Anchor
       key={link.id}
@@ -126,16 +108,19 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       c="currentColor"
       underline="never"
     >
-      <Group wrap="nowrap" className={ classes.linkButton } 
+      <ActionIcon style={{ padding: "0.6rem" }} mx="0.5rem">
+        <FontAwesomeIcon icon={[link.icon.pack || "fal", link.icon.name]} size="lg" />
+      </ActionIcon>
+      {/* <Group wrap="nowrap" className={ classes.linkButton } 
         my="1.5rem"
         p="0.5rem 1.2rem"
-      >
-        <ActionIcon bg="none" style={{boxShadow: "none", padding: "0.6rem", margin: 0}}>{<HugeIcon name={link.newIcon[0].iconName} variant={link.newIcon[0] ? link.newIcon[0].iconVariant : undefined} />}</ActionIcon>
-        <Stack gap="0">
+      > */}
+        {/* <ActionIcon bg="none" style={{boxShadow: "none", padding: "0.6rem", margin: 0}}>{<FontAwesomeIcon icon={[link.icon.pack || "fal", link.icon.name]} />}</ActionIcon> */}
+        {/* <Stack gap="0">
           <Text c="white" mb="0" fz="1.5rem">{link.title}</Text>
           {link.subTitle ? <Text size="sm" c="dimmed" fw={300} mt="0">{link.subTitle}</Text> : null}
-        </Stack>
-      </Group>
+        </Stack> */}
+      {/* </Group> */}
     </Anchor>
     <Modal 
       opened={opened} onClose={close} title={`Edit Link: ${link.id}`} yOffset="2rem" xOffset="2rem" size="100%"
@@ -146,24 +131,24 @@ export const PrimaryLinkManager = (link: LinkCardAdminProps) => {
       styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
       radius="lg"
     >
-      {link.link && <PrimaryLinkedButton primNewIcon={{name: "arrow-up-02", variant: "twotone"}} link={link.link} isExternal my="2rem">Open Link</PrimaryLinkedButton>}
+      {link.link && <PrimaryLinkedButton primNewIcon={{name: "arrow-up-right"}} link={link.link} isExternal my="2rem">Open Link</PrimaryLinkedButton>}
       <Divider label="Edit Link" labelPosition="center" mx="3rem" my="2rem" />
       <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
           <SimpleGrid cols={2} spacing="2rem">
-              <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<HugeIcon name="icon-jar" variant="twotone" />} isRequired />
-              <FormSelect inputID="iconVariant" inputLabel="Icon Variant" inputData={iconVariantOptions} {...form.getInputProps(`iconVariant`)} onChange={setIconVariantSelected} value={iconVariantSelected} clearable />
+              <FormInput inputID="iconName" inputLabel="Icon Name" {...form.getInputProps('iconName')} icon={<FontAwesomeIcon icon={["fal", "icons"]} />} isRequired />
+              <FormSelect inputID="IconPack" inputLabel="Icon Pack" inputData={iconPackOptions} {...form.getInputProps(`IconPack`)} onChange={setIconPackSelected} value={iconPackSelected} clearable />
           </SimpleGrid>
           <Stack align="center" mb="2rem">
-              <Code p="0.5rem" bg="var(--blackRGBA)" c="white" fz="1rem" w="100%">Please provide the icon name. You may visit <Anchor href="https://hugeicons.com/icons">https://hugeicons.com/icons</Anchor> for a list of all icons.</Code>
+              <Code p="0.5rem" bg="var(--blackRGBA)" c="white" fz="1rem" w="100%">Please provide the icon name. You may visit <Anchor href="https://fontawesome.com/icons" target="_blank">https://fontawesome.com/icons</Anchor> for a list of all icons.</Code>
           </Stack>
           <SimpleGrid cols={2} spacing="2rem">
-              <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
-              <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<HugeIcon name="text-font" variant="twotone" />} isRequired />
+              <FormInput inputID="title" inputLabel="Link Title" {...form.getInputProps('title')} inputDescription="Please provide the link title." icon={<FontAwesomeIcon icon={["fal", "font-case"]} />} isRequired />
+              <FormInput inputID="subTitle" inputLabel="Link Sub Title" {...form.getInputProps('subTitle')} inputDescription="Please provide the link sub title." icon={<FontAwesomeIcon icon={["fal", "font-case"]} />} isRequired />
           </SimpleGrid>
-          <FormInput inputID="linkForm" inputLabel="Link" {...form.getInputProps('linkForm')} inputDescription="Please provide the link." icon={<HugeIcon name="arrow-up-right-01" variant="twotone" />} />
+          <FormInput inputID="linkForm" inputLabel="Link" {...form.getInputProps('linkForm')} inputDescription="Please provide the link." icon={<FontAwesomeIcon icon={["fal", "link"]} />} />
           <SimpleGrid cols={2} spacing="2rem" style={{ alignItems: "center" }}>
-            <PrimaryButton action={deleteLink} icon={<HugeIcon name="delete-02" variant="twotone" />} colour="red">Delete {link.id} Link</PrimaryButton>
-            <FormSubmitButton icon={<HugeIcon name="arrow-up-right-01" />}>Edit {link.id} Link</FormSubmitButton>
+            <PrimaryButton action={deleteLink} icon={<FontAwesomeIcon icon={["fal", "trash"]} />} colour="red">Delete {link.id} Link</PrimaryButton>
+            <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "pen"]} />}>Edit {link.id} Link</FormSubmitButton>
           </SimpleGrid>
       </Box>
     </Modal>

@@ -13,8 +13,7 @@ import EditLinksPage from './EditLinksPage'
 // }
 
 export default async function PortalLinksPage() {
-  const { data: links } = await supabase.from('Links').select().order('lastUpdatedOn', { ascending: false }) as any
-  const { data: primaryLinks } = await supabase.from('PrimaryLinks').select().order('orderNumber', { ascending: true }) as any
-  const { data: embeds } = await supabase.from('Embed').select().order('lastUpdatedOn', { ascending: false }) as any
-  return <EditLinksPage links={links} primaryLinks={primaryLinks} embeds={embeds} />
+  const { data: links } = await supabase.from('Links').select().order('order', { ascending: true }) as any
+  const { data: primaryLinks } = await supabase.from('PrimaryLinks').select().order('order', { ascending: true }) as any
+  return <EditLinksPage links={links} primaryLinks={primaryLinks} />
 }

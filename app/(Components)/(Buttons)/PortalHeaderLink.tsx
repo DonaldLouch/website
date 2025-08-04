@@ -2,19 +2,20 @@ import { NavLink } from '@mantine/core'
 
 import classes from './Buttons.module.css'
 
-import HugeIcon from '../HugeIcon'
-// import { Bs123, BsFolder2Open, BsImages, BsLink45Deg, BsPersonBadge, BsSend } from 'react-icons/bs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import type { Icons } from '@/lib/FontAwesome'
 
 interface propTypes {
-    linkName: string
-    href: string
+    name: string
+    slug: string
     children?: React.ReactNode 
-    icon?: any
+    icon?: Icons
 }
 
 
 export default function PortalHeaderLink( props: propTypes ) {
-    const {linkName, href, icon, children} = props
+    const {name, slug, icon, children} = props
 
     // const theIcon = 
     //     icon === "BsSend" ? <BsSend /> :
@@ -23,16 +24,16 @@ export default function PortalHeaderLink( props: propTypes ) {
     //     icon === "BsLink45Deg" ? <BsLink45Deg /> :
     //     <BsLink45Deg />
 
-    return <NavLink href={href}
+    return <NavLink href={slug}
         color="secondary"
         variant="subtle"
         classNames={{
             root: classes.headerLinkPortal,
             label: classes.headerLink_labelPortal,
         }}
-        label={linkName}
+        label={name}
         my="0.5rem"
         p="1rem"
-        leftSection={<HugeIcon name={icon.name} size="1.5rem" variant={icon.variant ? icon.variant : undefined} />}
+        leftSection={<FontAwesomeIcon icon={[icon.pack || 'fadl', icon.name]} size="lg" />}
     >{children}</NavLink>
 }

@@ -16,7 +16,7 @@ interface MetadataProps {
 
 export async function isUserSignedIn(): Promise<any> {
   try{
-      const { userId }: { userId: string | null } = await auth();
+      const { userId }: { userId: string | null } = await auth()
       return userId ? true : false
   } catch (error) {
     console.error("Error checking if user is signed in:", error)

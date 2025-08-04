@@ -5,7 +5,7 @@
     &:hover,
     &:active {
         background: var(--secondary);
-        color: var(--mantine-color-black);
+        color: var(--mantine-color-black) !important;
         text-decoration: none;
         border: none !important;
     }

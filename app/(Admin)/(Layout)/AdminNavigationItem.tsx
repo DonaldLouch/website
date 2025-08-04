@@ -2,32 +2,22 @@
 
 import { NavLink } from "@mantine/core";
 
-import { AdminSubNavigationItems } from "@/lib/AdminNavigationItems/AdminSubNavigationItems";
-
 import classes from '@/app/(Components)/(Buttons)/Buttons.module.css'
 import PortalHeaderLink from "@/app/(Components)/(Buttons)/PortalHeaderLink";
 
-interface HeaderNavigationItemProps {
-  slug: any
-  isParent: boolean
-  parentID: number | null
-  linkName: string
-  icon?: any
+import type { AdminLinkProps } from "@/lib/AdminLinks";
+
+export default function AdminNavigationItem(props: AdminLinkProps ) {
+const { name, slug, icon, subMenuLinks } = props
+
+  return <>
+    {!subMenuLinks ?  <PortalHeaderLink name={name} slug={slug} icon={icon} /> :
+      <PortalHeaderLink name={name} slug={slug} icon={icon}>
+        <NavLink href={slug} label={name} key={slug} classNames={{ root: classes.headerLink, label: classes.headerLinkSub_label }} />
+        {subMenuLinks && subMenuLinks.map((subLink: any) => (
+          <NavLink href={subLink.slug} label={subLink.name} key={subLink.slug} classNames={{ root: classes.headerLink, label: classes.headerLinkSub_label }} />
+        ))}
+      </PortalHeaderLink>
+    }
+  </>
 }
-export default function AdminNavigationItem( { slug, isParent, parentID, linkName, icon }: HeaderNavigationItemProps ) {
-  return (
-    <>
-      {!isParent ? (
-        <PortalHeaderLink linkName={linkName} href={`/${slug}`} icon={icon} />
-      ) : (
-        <>
-          <PortalHeaderLink linkName={linkName} href={`/${slug}`} icon={icon}>
-            {AdminSubNavigationItems.map((subLink: any) =>subLink?.parentMenu == parentID && (
-              <NavLink href={`/${subLink.slug}`} label={subLink.name} key={subLink.slug} classNames={{ root: classes.headerLink, label: classes.headerLinkSub_label }} />
-            ))}
-          </PortalHeaderLink>
-        </>
-      )}
-    </>
-  );
-};
