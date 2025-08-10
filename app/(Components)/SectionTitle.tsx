@@ -4,10 +4,11 @@ import { Title } from '@mantine/core'
 
 interface SectionTitleProps {
     headingTitle: String
+    [key: string]: any
 }
 
 export const SectionTitle = ( props: SectionTitleProps) => { 
-    const {headingTitle} = props
+    const {headingTitle, ...rest} = props
     return (
         <Title 
             order={2}
@@ -16,6 +17,7 @@ export const SectionTitle = ( props: SectionTitleProps) => {
             // textDecorationColor="primary"
             ta="center"
             c="white"
+            {...rest}
             // mb="1rem"
         >{headingTitle}</Title>
     )

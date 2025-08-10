@@ -3,8 +3,8 @@
 import { Box } from '@mantine/core'
 
 interface CardProps {
-    id: string
-    styleType?: string
+    id?: string
+    styleType?: "primaryCard" | "secondaryCard" | null | undefined
     children: React.ReactNode
     [key: string]: any
 }
@@ -16,7 +16,7 @@ export const SectionCard = (props: CardProps) => {
             component="section" 
             id={id} 
             style={{
-                filter: "opacity(80%)",
+                // filter: "opacity(80%)",
                 borderRadius: "var(--mantine-radius-lg)",
                 boxShadow: styleType == "primaryCard" ? "var(--mantine-shadow-bsBoldPrimary)" :  styleType == "secondaryCard" ? "var(--mantine-shadow-bsBoldSecondary)" : "var(--mantine-shadow-bsBoldWhite)"
             }}

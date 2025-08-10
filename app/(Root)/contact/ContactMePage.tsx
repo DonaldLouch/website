@@ -72,7 +72,7 @@ export default function ContactMePage() {
     }
 
     return (<>
-        <SectionCard styleType="primary" id="contactMe">
+        <SectionCard styleType="primaryCard" id="contactMe">
             <SectionTitle headingTitle="Contact Me" />
             <Text ta="center" component="div">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} body="hello@donaldlouch.ca" /></Text>
              {/* <Alert variant="light" color="secondary" title="Contact Form Disabled!" icon={<HugeIcon name="mail-remove-01" variant="duotone" />}>
