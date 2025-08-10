@@ -22,25 +22,25 @@ export default function AdminPageContent() {
       icon: "blog"
     },
     {
-      link: "linkSets",
-      title: "Link Sets Manager",
-      icon: "link",
-      iconVariant: "twotone"
+      link: "about",
+      title: "Update: About Me",
+      icon: "id-badge"
     },
     {
-      link: "pages",
-      title: "Pages Manager",
-      icon: "memo"
+      link: "resume",
+      title: "Update: Resume",
+      icon: "id-badge"
+    },
+    {
+      link: "links",
+      title: "Links Manager",
+      icon: "link",
+      pack: "fal"
     },
     {
       link: "messages",
       title: "Messages",
       icon: "message-smile",
-    },
-    {
-      link: "alerts",
-      title: "Website Alerts",
-      icon: "bell-on"
     },
   ]
   return <>

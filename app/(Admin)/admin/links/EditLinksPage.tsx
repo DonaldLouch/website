@@ -5,9 +5,7 @@ import { LinkCardAdmin } from "./LinkCardAdmin"
 import AddLink from "./AddLink"
 import { PrimaryLinkManager } from "./PrimaryLinkManager"
 import AddPrimaryLink from "./AddPrimaryLink"
-import { EmbedManager } from "./EmbedManager"
-import { AddEmbed } from "./AddEmbed"
-import { ActionIcon, Anchor, Box, Flex, Grid, Group, Tabs, Text } from "@mantine/core"
+import { ActionIcon, Anchor, Box, Flex, Grid, Group, SimpleGrid, Tabs, Text } from "@mantine/core"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
 import { useForm, yupResolver } from "@mantine/form"
 import * as yup from 'yup';
@@ -19,10 +17,10 @@ import supabase from "@/lib/supabase"
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard"
 import { link } from "fs/promises"
 import { Fragment } from "react"
+import DividerInlineText from "@/app/(Components)/DividerInlineText"
 
 export default function EditLinksPage({ links, primaryLinks }: any) {
   const breadCrumbs = [
-    {"pageLink": "/admin/pages", "pageName": "Page Manager"},
     {"pageLink": "/admin/pagesLinks", "pageName": "Links Manager"}
   ]
 
@@ -125,7 +123,11 @@ export default function EditLinksPage({ links, primaryLinks }: any) {
     <>
       <BreadCrumb breads={breadCrumbs} />
       <Box component="main">
-        <PrimaryLinkedButton link="/" primNewIcon={{ name: "arrow-up-right" }}>View Links</PrimaryLinkedButton>
+        <SimpleGrid cols={2} spacing="2rem" my="2rem">
+          <PrimaryLinkedButton link="/" primNewIcon={{ name: "arrow-up-right" }}>View Links</PrimaryLinkedButton>
+          <PrimaryLinkedButton link="/admin/linkSets" primNewIcon={{ name: "link" }}>Link Sets Manager</PrimaryLinkedButton>
+        </SimpleGrid>
+        <DividerInlineText text="Primary Links" />
         <Box p="2rem" component="form" onSubmit={formPrimary.onSubmit(onSubmitPrimary)}>
           <Flex
             justify={{base: "flex-start", sm: "center"}}
@@ -161,6 +163,7 @@ export default function EditLinksPage({ links, primaryLinks }: any) {
           </Flex>
           {/* <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "pen"]} />}>Save Primary Links Order</FormSubmitButton> */}
         </Box>
+        <DividerInlineText text="All Links" />
         <SectionCard id="allLinks" styleType="primaryCard" mx="0" pb="1rem">
           <AddLink />
           <Box component="form" onSubmit={form.onSubmit(onSubmit)}>

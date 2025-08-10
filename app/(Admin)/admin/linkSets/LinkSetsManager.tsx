@@ -7,6 +7,7 @@ import AddNewLinkSet from "./AddNewLinkSet"
 
 export default function LinkSetsManager() {
   const breadCrumbs = [
+    {"pageLink": "/admin/links", "pageName": "Links Manager"},
     {"pageLink": "/admin/linkSets", "pageName": "Link Sets Manager"}
   ]
 

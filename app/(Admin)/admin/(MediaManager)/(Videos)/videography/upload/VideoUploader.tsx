@@ -23,7 +23,7 @@ import EditVideoData from "../[id]/EditVideoData"
 import VideoInformationNew from "./VideoInformationNew"
 import ResumeUpload from "./ResumeUpload"
 import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
-import HugeIcon from "@/app/(Components)/HugeIcon"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function VideoUploader({currentStep, categoryData, tagsData, videoData}: any) {
 // categoryData
@@ -100,30 +100,30 @@ export default function VideoUploader({currentStep, categoryData, tagsData, vide
     ]
 
     const steps = [
-        { title: 'Start', description: 'Start the video upload process', icon: <HugeIcon name="cloud-upload" />, content: <>
+        { title: 'Start', description: 'Start the video upload process', icon: <FontAwesomeIcon icon={["fal", "cloud-upload"]} />, content: <>
             <SectionCard styleType="primaryCard" id="start">
                 <SectionTitle headingTitle="Before you start the video upload process" />
                 <Text>For the best video player experience across all devices and browsers, the file format <InlineCode code=".mp4" /> is highly recommended for the video file; while for the thumbnail a <InlineCode code=".jpg" />/<InlineCode code=".jpeg" /> or <InlineCode code=".png" /> file format is recommended. Once you are ready click the below button to start the process 🎉 you may also resume an upload by clicking the "Resume Upload" button; just as long as you know the ID of the video you are uploading.</Text>
             </SectionCard>
             <Group m="3rem 0 0" gap="2rem" justify="center">
-                <PrimaryButton colour="green.0" icon={<HugeIcon name="cloud-upload" />} action={startUploader} c="black">Start The Upload Process</PrimaryButton>
-                <PrimaryButton colour="red" icon={<HugeIcon name="delete-02" />} action={refreshUploader}>Start Over</PrimaryButton>
+                <PrimaryButton colour="green.0" icon={<FontAwesomeIcon icon={["fal", "cloud-upload"]} />} action={startUploader} c="black">Start The Upload Process</PrimaryButton>
+                <PrimaryButton colour="red" icon={<FontAwesomeIcon icon={["fal", "trash"]} />} action={refreshUploader}>Start Over</PrimaryButton>
                 <ResumeUpload />
             </Group>
         </>},
-        { title: 'Video FIle', description: 'Upload the video file', icon: <HugeIcon name="camera-video" />, content: <>
+        { title: 'Video FIle', description: 'Upload the video file', icon: <FontAwesomeIcon icon={["fal", "film"]} />, content: <>
             <FileUploader mediaType="videography" uploadTitle="Upload Video" helperText="For the best video player experience across all devices and browsers, the file format .mp4 is highly recommended video file." id={videoID!}/>
             <ManualVideo id={videoID!} />
         </>},
-        { title: 'Thumbnail File', description: 'Upload the thumbnail file', icon: <HugeIcon name="image-02" />, content: <>
+        { title: 'Thumbnail File', description: 'Upload the thumbnail file', icon: <FontAwesomeIcon icon={["fal", "image"]} />, content: <>
             <FileUploader mediaType="thumbnail" uploadTitle="Upload Thumbnail" helperText="For the best video player experience across all devices and browsers, the file format .jpg/jpeg or .png is highly recommended for the thumbnail file." id={videoID!} />
         </>},
-        { title: 'Information', description: 'Add the video information', icon: <HugeIcon name="information-circle" />, content: <>
+        { title: 'Information', description: 'Add the video information', icon: <FontAwesomeIcon icon={["fal", "info-circle"]} />, content: <>
             {/* categoryData={categoryData} */}
             <VideoInformationNew videoID={videoID} categoryData={categoryData} tagsData={tagsData} videoData={videoData} />
             {/* <EditVideoData videoData={{ id: videoID }} categoryData={categoryData} tagsData={tagsData} /> */}
         </>},
-        { title: 'Done!', description: 'Your video is uploaded!', icon: <HugeIcon name="cloud-saving-done-01" />, content: <>
+        { title: 'Done!', description: 'Your video is uploaded!', icon: <FontAwesomeIcon icon={["fal", "cloud-check"]} />, content: <>
             <SectionCard styleType="primaryCard" id="start">
                 <SectionTitle headingTitle="Your video is uploaded!" />
                 <Text ta="center">You have successfully uploaded your video!</Text>
@@ -131,7 +131,7 @@ export default function VideoUploader({currentStep, categoryData, tagsData, vide
             <Group m="3rem 0 0" gap="2rem" justify="center">
                 <PrimaryLinkedButton link={`/video/${videoID}`} primNewIcon={{name: "play", variant: "duotone"}} colour="green.0" fontColour="black">Watch Video</PrimaryLinkedButton>
                 <PrimaryLinkedButton link={`/admin/videography/${videoID}`} primNewIcon={{name: "edit-02", variant: "duotone"}} colour="var(--secondary)" fontColour="black">Edit Video</PrimaryLinkedButton>
-                <PrimaryButton colour="red" primNewIcon={{name: "cloud-upload", variant: "duotone"}} action={newUpload}>Start A New Upload</PrimaryButton>
+                <PrimaryButton colour="red" primNewIcon={{ name: "cloud-upload" }} action={newUpload}>Start A New Upload</PrimaryButton>
             </Group>
         </>, isDisabled: false },
     ]
@@ -164,7 +164,7 @@ export default function VideoUploader({currentStep, categoryData, tagsData, vide
 
     return (<>
         <BreadCrumb breads={breadCrumbs} />
-        <Stepper active={active} onStepClick={setActive} color="var(--primary)" m="3rem 1rem 2rem" size="sm" radius="sm" completedIcon={<HugeIcon name="cloud-saving-done-01" variant="twotone" />}>
+        <Stepper active={active} onStepClick={setActive} color="var(--primary)" m="3rem 1rem 2rem" size="sm" radius="sm" completedIcon={<FontAwesomeIcon icon={["fadl", "cloud-check"]} />}>
             {steps.map((step, index) => (
                 <Stepper.Step key={index} label={step.title} description={step.description} icon={step.icon} classNames={{ stepIcon: classes.stepIcon}} styles={{ stepDescription: {fontWeight: 300 } }} disabled={step.isDisabled ? step.isDisabled : false}>
                     <Box mx="3rem">

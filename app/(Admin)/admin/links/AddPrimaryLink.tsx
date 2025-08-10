@@ -77,7 +77,7 @@ export default function AddPrimaryLink({ primaryLength }: any) {
 
     return <>
         <ActionIcon style={{ padding: "0.6rem", background: "var(--primary)" }} mx="0.5rem" onClick={open}>
-            <FontAwesomeIcon icon={["fajdr", "plus"]} size="lg" />
+            <FontAwesomeIcon icon={["fal", "plus"]} size="lg" />
         </ActionIcon>
         <Modal 
             opened={opened} onClose={close} title="Add New Primary Link" yOffset="2rem" xOffset="2rem" size="100%"

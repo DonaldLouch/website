@@ -16,8 +16,8 @@ import classes from "@/app/(Components)/Components.module.css"
 import { useInView } from "react-intersection-observer"
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
-import HugeIcon from "@/app/(Components)/HugeIcon"
 import InlineLink from "@/app/(Components)/InlineLink"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 // async function fetchVideos(offset: number, limit: number) {
 //   const from = offset * limit
@@ -117,7 +117,7 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
 
     return <>
         <BreadCrumb breads={breadCrumbs} />
-        <PrimaryLinkedButton link="/admin/videography/upload" primNewIcon={{name: "cloud-upload", variant: "duotone"}}>Upload New Video</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/admin/videography/upload" primNewIcon={{ name: "cloud-upload" }}>Upload New Video</PrimaryLinkedButton>
           <Box id="feed" pos="relative" w="100%">
                 {/* {loadedVideos?.map((video: any, index: number) => (<Text key={index}>{video.title}</Text>))} */}
                 <Grid gutter="1rem" mt={{base: "1rem", md: "2rem"}} p={{base: "0.5rem", md: "0 0.5rem"}}>
@@ -144,7 +144,7 @@ export default function VideoManager({videoData, videosCount}: {videoData: any, 
                         </Tooltip>
                         <Text fw={200} fz="1rem" lh="0" c="currentColor" mt="0.5rem"><DisplayDate source={video.uploadedOn} format="MMM Do YYYY" /></Text>
                         </Box>
-                        <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><HugeIcon name="play" variant="duotone" size="5rem" /></Box>
+                        <Box pos="absolute" top="calc(50% - 3rem)" left="calc(50% - 3rem)" style={{zIndex: 100}}c="var(--secondary)"><FontAwesomeIcon icon={["fajdr", "play"]} size="5x" /></Box>
                     </Box>
                     </Anchor>
                     </Grid.Col>

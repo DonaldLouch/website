@@ -25,7 +25,7 @@ import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import FormDatePicker from "@/app/(Components)/(Form)/FormDatePicker";
 import FormSubmitButton from "@/app/(Components)/(Form)/FormSubmitButton";
 import { notifications } from "@mantine/notifications";
-import HugeIcon from "@/app/(Components)/HugeIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // import notificationClasses from '@/app/(Config)/Notifications.module.css'
 
@@ -179,8 +179,8 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
             title: `${supabaseStatus === 204 ? `Video "${values.title}" Edited 🎉` : `Error #${supabaseError?.code} has Occurred`}`, 
             message: `${supabaseStatus === 204 ? `You have successfully uploaded your video!` : `An error has occurred: ${supabaseError?.message}. ${supabaseError?.hint && `${supabaseError?.hint}.`}`}`, 
             color: supabaseStatus === 204 ? "black" : "red-6",
-            icon: supabaseStatus === 204 ? <HugeIcon name="pencil-edit-01" /> : <HugeIcon name="alert-diamond" />
-        })
+                    icon: supabaseStatus === 204 ? <FontAwesomeIcon icon={["fal", "pen"]} /> : <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />
+                })
         // actions.setSubmitting(false)
         supabaseStatus === 204 && router.refresh()
     }
@@ -297,12 +297,12 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     {...provided.draggableProps} {...provided.dragHandleProps}
                 >
                     <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-                        <HugeIcon name="drag-drop" />
+                        <FontAwesomeIcon icon={["fal", "grip-dots-vertical"]} />
                     </Box></Grid.Col>
                     <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.title`}  {...form.getInputProps(`chaptersRow.${index}.title`)} key={form.key(`chaptersRow.${index}.title`)} /></Grid.Col>
                     <Grid.Col span={5.25}><FormInput inputID={`chaptersRow.${index}.timeCode`} {...form.getInputProps(`chaptersRow.${index}.timeCode`)} key={form.key(`chaptersRow.${index}.timeCode`)} /></Grid.Col>
                     <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('chaptersRow', index)}>
-                        <HugeIcon name="delete-02" size="1rem" />
+                        <FontAwesomeIcon icon={["fal", "trash"]} />
                     </ActionIcon></Grid.Col>
                 </Grid>
             )}
@@ -320,10 +320,10 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     >
                         <Group>
                             <Box {...provided.dragHandleProps} mt="1rem">
-                                <HugeIcon name="drag-drop" />
+                                <FontAwesomeIcon icon={["fal", "grip-dots-vertical"]} />
                             </Box>
                             <ActionIcon color="red" onClick={() => form.removeListItem('musicCreditsRow', index)}>
-                                <HugeIcon name="delete-02" size="1rem" />
+                                <FontAwesomeIcon icon={["fal", "trash"]} />
                             </ActionIcon> 
                         </Group>
                         <SimpleGrid cols={2}>
@@ -351,12 +351,12 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     {...provided.draggableProps} {...provided.dragHandleProps}
                 >
                     <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-                        <HugeIcon name="drag-drop" />
+                        <FontAwesomeIcon icon={["fal", "grip-dots-vertical"]} />
                     </Box></Grid.Col>
                     <Grid.Col span={5.25}><FormInput inputID={`videoCreditsRow.${index}.title`}  {...form.getInputProps(`videoCreditsRow.${index}.title`)} key={form.key(`videoCreditsRow.${index}.title`)} /></Grid.Col>
                     <Grid.Col span={5.25}><FormInput inputID={`videoCreditsRow.${index}.value`} {...form.getInputProps(`videoCreditsRow.${index}.value`)} key={form.key(`videoCreditsRow.${index}.value`)} /></Grid.Col>
                     <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('videoCreditsRow', index)}>
-                        <HugeIcon name="delete-02" size="1rem" />
+                        <FontAwesomeIcon icon={["fal", "trash"]} />
                     </ActionIcon></Grid.Col>
                 </Grid>
             )}
@@ -373,13 +373,13 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     {...provided.draggableProps} {...provided.dragHandleProps}
                 >
                     <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-                        <HugeIcon name="drag-drop" />
+                        <FontAwesomeIcon icon={["fal", "grip-dots-vertical"]} />
                     </Box></Grid.Col>
                     <Grid.Col span={3.5}><FormInput inputID={`starringCreditsRow.${index}.timeCode`}  {...form.getInputProps(`starringCreditsRow.${index}.timeCode`)} key={form.key(`starringCreditsRow.${index}.timeCode`)} /></Grid.Col>
                     <Grid.Col span={3.5}><FormInput inputID={`starringCreditsRow.${index}.displayName`}  {...form.getInputProps(`starringCreditsRow.${index}.displayName`)} key={form.key(`starringCreditsRow.${index}.displayName`)} /></Grid.Col>
                     <Grid.Col span={3.5}><FormInput inputID={`starringCreditsRow.${index}.link`}  {...form.getInputProps(`starringCreditsRow.${index}.link`)} key={form.key(`starringCreditsRow.${index}.link`)} /></Grid.Col>
                     <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('starringCreditsRow', index)}>
-                        <HugeIcon name="delete-02" size="1rem" />
+                        <FontAwesomeIcon icon={["fal", "trash"]} />
                     </ActionIcon></Grid.Col>
                 </Grid>
             )}
@@ -429,7 +429,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     {...provided.draggableProps} {...provided.dragHandleProps}
                 >
                     <Grid.Col span={0.5}><Box {...provided.dragHandleProps} mt="1rem">
-                        <HugeIcon name="drag-drop" />
+                        <FontAwesomeIcon icon={["fal", "grip-dots-vertical"]} />
                     </Box></Grid.Col>
                     <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.timeCode`}  {...form.getInputProps(`linksRow.${index}.timeCode`)} key={form.key(`linksRow.${index}.timeCode`)} /></Grid.Col>
                     <Grid.Col span={2.1}> <FormSelect inputID={`linksRow.${index}.linkType`} inputData={linkTypeOptions} key={form.key(`linksRow.${index}.linkType`)} {...form.getInputProps(`linksRow.${index}.linkType`)} /></Grid.Col>
@@ -437,7 +437,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.link`}  {...form.getInputProps(`linksRow.${index}.link`)} key={form.key(`linksRow.${index}.link`)} /></Grid.Col>
                     <Grid.Col span={2.1}><FormInput inputID={`linksRow.${index}.name`}  {...form.getInputProps(`linksRow.${index}.name`)} key={form.key(`linksRow.${index}.name`)} /></Grid.Col>
                     <Grid.Col span={0.5}><ActionIcon color="red" onClick={() => form.removeListItem('linksRow', index)}>
-                        <HugeIcon name="delete-02" size="1rem" />
+                        <FontAwesomeIcon icon={["fal", "trash"]} />
                     </ActionIcon></Grid.Col>
                 </Grid>
             )}
@@ -494,14 +494,14 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     </Stack>
                     <Stack gap="1rem" my="1rem">
                         <Group>
-                            <Badge color="var(--primary)" leftSection={<HugeIcon name="grid" />}>
+                            <Badge color="var(--primary)" leftSection={<FontAwesomeIcon icon={["fal", "hashtag"]} />}>
                                 {video.id}
                             </Badge>
-                            <Badge color="red" leftSection={<HugeIcon name="calendar-03" />}>
+                            <Badge color="red" leftSection={<FontAwesomeIcon icon={["fal", "calendar"]} />}>
                                 <DisplayDate source={video.videoFileID.capturedOn} />
                             </Badge>
-                            <Anchor href={videoData.videoFileID.filePath} target="_blank"><Badge leftSection={<HugeIcon name="link-04" />} color="blue" tt="lowercase">{video.videoFileID.filePath}</Badge></Anchor>
-                            <Anchor href={`/video/${video.id}`} target="_blank"><Badge leftSection={<HugeIcon name="play" />} color="var(--secondary)">Watch the Video</Badge></Anchor>
+                            <Anchor href={videoData.videoFileID.filePath} target="_blank"><Badge leftSection={<FontAwesomeIcon icon={["fal", "link"]} />} color="blue" tt="lowercase">{video.videoFileID.filePath}</Badge></Anchor>
+                            <Anchor href={`/video/${video.id}`} target="_blank"><Badge leftSection={<FontAwesomeIcon icon={["fal", "play"]} />} color="var(--secondary)">Watch the Video</Badge></Anchor>
                         </Group>
                     </Stack>
                 </Flex>
@@ -553,7 +553,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                             </Droppable>
                         </DragDropContext>
 
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('chaptersRow', { 
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('chaptersRow', { 
                             key: randomId(),
                             title: null, 
                             timeCode: null, 
@@ -586,7 +586,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                                 )}
                             </Droppable>
                         </DragDropContext>
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('musicCreditsRow', {
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('musicCreditsRow', {
                             key: randomId(),
                             title: null,
                             artist: null,
@@ -630,7 +630,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                             </Droppable>
                         </DragDropContext>
 
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('videoCreditsRow', {
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('videoCreditsRow', {
                             key: randomId(),
                             title: null, 
                             value: null, 
@@ -672,7 +672,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                             </Droppable>
                         </DragDropContext>
 
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('starringCreditsRow', {
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('starringCreditsRow', {
                             key: randomId(),
                             timeCode: null, 
                             displayName: null, 
@@ -717,7 +717,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                             </Droppable>
                         </DragDropContext>
 
-                        <FormButton icon={<HugeIcon name="plus-sign" />} onClick={() => form.insertListItem('linksRow', {
+                        <FormButton icon={<FontAwesomeIcon icon={["fal", "plus"]} />} onClick={() => form.insertListItem('linksRow', {
                             key: randomId(),
                             linkType: "exLink", 
                             icon: null, 
@@ -739,7 +739,7 @@ export default function EditVideoData({videoData, categoryData, tagsData}: any) 
                     onClick={(e: any) => setIsPinnedOption(e.target.checked)} 
                     checked={isPinnedOption}
                 />
-                <FormSubmitButton icon={<HugeIcon name="pencil-edit-01" />}>Edit Video</FormSubmitButton>
+                <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "pen"]} />}>Edit Video</FormSubmitButton>
             </Box>
         </>
     )

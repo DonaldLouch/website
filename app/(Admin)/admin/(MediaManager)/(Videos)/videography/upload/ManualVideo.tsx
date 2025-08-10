@@ -5,9 +5,9 @@ import FormDatePicker from '@/app/(Components)/(Form)/FormDatePicker'
 import FormInput from '@/app/(Components)/(Form)/FormInput'
 import FormSubmitButton from '@/app/(Components)/(Form)/FormSubmitButton'
 import FormTextArea from '@/app/(Components)/(Form)/FormTextArea'
-import HugeIcon from '@/app/(Components)/HugeIcon'
 
 import supabase from '@/lib/supabase'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Box, Group, Modal, SimpleGrid, Stack, Text } from '@mantine/core'
 import { useForm, yupResolver } from '@mantine/form'
 import { useDisclosure } from '@mantine/hooks'
@@ -94,7 +94,7 @@ export default function ManualVideo({id}: {id: string | undefined | null}) {
         close()
     }
     return <>
-        <PrimaryButton onClick={open} primNewIcon={{name: "file-attachment", variant: "duotone"}} isFullWidth m="3rem 0 0">Add a Manual Video</PrimaryButton>
+        <PrimaryButton onClick={open} primNewIcon={{name: "file"}} isFullWidth m="3rem 0 0">Add a Manual Video</PrimaryButton>
         {/* <Button onClick={open} variant="newFormButton">Add a Manual Video</Button> */}
         <Modal opened={opened} onClose={closed} title={`Add a manual video for ${id}`} yOffset="2rem" xOffset="2rem" size="100%"  
             overlayProps={{
@@ -106,15 +106,15 @@ export default function ManualVideo({id}: {id: string | undefined | null}) {
              id={`manualVideo${id}`}
         >
             <Box p="2rem 2rem 0" component="form" onSubmit={form.onSubmit(onSubmit)}>
-                {/* <FormInput inputID="id" inputLabel="Video ID" {...form.getInputProps('id')} inputDescription="DESCRIPTION" icon={<HugeIcon name="grid"  variant="twotone"/>} isRequired /> */}
-                <FormInput inputID="fileName" inputLabel="Original File Name" {...form.getInputProps('fileName')} inputDescription="Please provide the original file name." icon={<HugeIcon name="text-font"  variant="twotone"/>} isRequired />
-                
+                {/* <FormInput inputID="id" inputLabel="Video ID" {...form.getInputProps('id')} inputDescription="DESCRIPTION" icon={<FontAwesomeIcon icon={["fal", "hashtag"]} />} isRequired /> */}
+                <FormInput inputID="fileName" inputLabel="Original File Name" {...form.getInputProps('fileName')} inputDescription="Please provide the original file name." icon={<FontAwesomeIcon icon={["fal", "font-case"]} />} isRequired />
 
-                {/* <FormInput inputID="fileID" inputLabel="File ID" {...form.getInputProps('fileID')} inputDescription="DESCRIPTION" icon={<HugeIcon name="grid"  variant="twotone"/>} isRequired /> */}
+
+                {/* <FormInput inputID="fileID" inputLabel="File ID" {...form.getInputProps('fileID')} inputDescription="DESCRIPTION" icon={<FontAwesomeIcon icon={["fal", "hashtag"]} />} isRequired /> */}
                 
                 <SimpleGrid cols={2} my="2rem">
-                    <FormInput inputID="fileType" inputLabel="File Type" {...form.getInputProps('fileType')} inputDescription="Such as video/mp4" icon={<HugeIcon name="file-unknown"  variant="twotone"/>} isRequired />
-                    <FormInput inputID="fileExtension" inputLabel="File Extension" {...form.getInputProps('fileExtension')} inputDescription="Such as mp4" icon={<HugeIcon name="file-unknown"  variant="twotone"/>} isRequired />
+                    <FormInput inputID="fileType" inputLabel="File Type" {...form.getInputProps('fileType')} inputDescription="Such as video/mp4" icon={<FontAwesomeIcon icon={["fal", "file"]} />} isRequired />
+                    <FormInput inputID="fileExtension" inputLabel="File Extension" {...form.getInputProps('fileExtension')} inputDescription="Such as mp4" icon={<FontAwesomeIcon icon={["fal", "file"]} />} isRequired />
                 </SimpleGrid>
                 <SimpleGrid cols={2} my="2rem">
                     <FormDatePicker dateLabel="Taken On" datePlaceholder="Taken On" {...form.getInputProps('capturedOn')} />
@@ -126,7 +126,7 @@ export default function ManualVideo({id}: {id: string | undefined | null}) {
                 </Stack>
                 {/* <FormSelect inputID="ID" inputLabel="LABEL" inputData={OPTIONS} {...form.getInputProps(`ID`)} onChange={SET} value={VALUES} clearable searchable />
                 <FormInputPhone inputID="id" inputLabel="LABEL" {...form.getInputProps('ID')} inputDescription="LABEL'." icon={<ICON variant="twotone" />} /> */}
-                <FormSubmitButton icon={<HugeIcon name="sent"  variant="duotone"/>}>Manually Add Video</FormSubmitButton>
+                <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "film"]} />}>Manually Add Video</FormSubmitButton>
             </Box>
 
                     {/* <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>

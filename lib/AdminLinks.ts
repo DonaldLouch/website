@@ -86,10 +86,5 @@ export const AdminLinks: Array<AdminLinkProps> = [
     name: "Messages",
     slug: "/admin/messages",
     icon: { name: "message-smile", pack: "fadl" },
-  },
-  {
-    name: "Alerts Manager",
-    slug: "/admin/alerts",
-    icon: { name: "bell-on", pack: "fadl" },
-  },
+  }
 ];
