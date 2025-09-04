@@ -10,7 +10,7 @@ import CodeBlock from "@/app/(Components)/(MarkdownCode)/CodeBlock"
 import InlineCode from "@/app/(Components)/(MarkdownCode)/InlineCode"
 import { HugeIconsNames } from "@/lib/HugeIconsNames"
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton"
-import { HugeiconsIcon } from "@hugeicons/react"
+// import { HugeiconsIcon } from "@hugeicons/react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import {
