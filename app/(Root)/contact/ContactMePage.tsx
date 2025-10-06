@@ -103,11 +103,11 @@ export default function ContactMePage({type}: {type?: "general" | "hire" | "cont
                 <Tabs.Panel value="hire">
                     {/* <Text ta="center">The hiring contact form is being constructed. For hiring inquiries, please email me directly at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} />.</Text> */}
                     <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={formHire.onSubmit(onSendHire)}>
-                        <SimpleGrid cols={2} m="0rem 0 2rem" spacing="2rem">
+                        <SimpleGrid cols={{base: 1, md: 2}} m="0rem 0 2rem" spacing="2rem">
                             <FormInput isRequired inputLabel="First and Last Name" id="name" {...formHire.getInputProps('name')} icon={<FontAwesomeIcon icon={["fal", "id-badge"]} />} inputType="text" />
                             <FormInput inputLabel="Company Name" id="company" {...formHire.getInputProps('company')} icon={<FontAwesomeIcon icon={["fal", "briefcase-blank"]} />} inputType="text" />
                         </SimpleGrid>
-                        <SimpleGrid cols={2} m="2rem 0" spacing="2rem">
+                        <SimpleGrid cols={{base: 1, md: 2}} m="2rem 0" spacing="2rem">
                         {/* @ts-ignore */}
                         <FormInput isRequired inputLabel="Email Address" id="email" {...formHire.getInputProps('email')} icon={<FontAwesomeIcon icon={["fak", "light-envelope-at"]} />} inputType="email" />
                         <FormInput inputLabel="Phone Number" id="phone" {...formHire.getInputProps('phone')} icon={<FontAwesomeIcon icon={["fal", "phone"]} />} inputType="tel" />
