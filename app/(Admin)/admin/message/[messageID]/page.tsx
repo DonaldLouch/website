@@ -1,5 +1,5 @@
 import supabase from '@/lib/supabase';
-import MessageCContent from '../MessageCContent'
+import MessageContent from '../MessageContent'
 
 // import type { Metadata } from 'next'
 // export const metadata: Metadata = {
@@ -13,11 +13,14 @@ import MessageCContent from '../MessageCContent'
 // }
 
 
-type Params = Promise<{ contactID: string }>
+type Params = Promise<{ messageID: string }>
 
 export default async function MessageC({ params }: { params: Params }) {
-  const { contactID } = await params
-  const { data: contactData } = await supabase.from('Contact').select().match({ id: contactID }).single() as any
+  const { messageID } = await params
+  const type = messageID.includes("contact") ? "contact" : messageID.includes("job") ? "job" : undefined
 
-  return <MessageCContent contactData={contactData} />
+  const { data: contactData } = await supabase.from('Contact').select().match({ id: messageID }).single() as any
+  const { data: jobData } = await supabase.from('Job').select().match({ id: messageID }).single() as any
+
+  return <MessageContent contactData={type === "contact" ? contactData : undefined} jobData={type === "job" ? jobData : undefined} type={type} />
 }

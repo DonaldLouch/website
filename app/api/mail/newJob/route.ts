@@ -8,7 +8,7 @@ import supabase from "@/lib/supabase";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
-    const { name, company, email, phone, jobType, description, budget } = (await request.json()) as any
+    const { name, company, email, phone, type, description, budget } = (await request.json()) as any
     // const id = createId()
     const id =
       "newJob" +
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   try {
     const { data: supData, status: supStatus } = (await supabase
       .from("Job")
-      .insert({ id, name, company, email, phone, type: jobType, description, budget })
+      .insert({ id, name, company, email, phone, type: type, description, budget })
       .select()) as any;
     const transporter = nodemailer.createTransport({
       // @ts-ignore
@@ -32,10 +32,10 @@ export async function POST(request: Request) {
     }) as any;
     // // console.log(supData, supStatus);
     const mailData = {
-      from: `New Job Request<no-reply@donaldlouch.ca>`,
+      from: `New Job Request<hello@donaldlouch.ca>`,
       replyTo: `${name}<${email}>`,
       to: "Donald Louch<hello@donaldlouch.ca>",
-      subject: `Job Request: ${jobType}`,
+      subject: `Job Request: ${type}`,
       text:
         " New message from: " +
         name +
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
         description +
         " | Sent from: " +
         email,
-      // html: `<p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">You have a new job request from ${name} ${company && (`from the company, ${company}`)}.</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">This job is for ${jobType} and they are asking for the job to be:</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">${description}</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">Their estimated budget is: ${budget ? (budget) : ("not listed and to be discussed.")}</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">You may contact ${name} by way of email at ${email} or phone at ${phone}.</p>`
+      // html: `<p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">You have a new job request from ${name} ${company && (`from the company, ${company}`)}.</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">This job is for ${type} and they are asking for the job to be:</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">${description}</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">Their estimated budget is: ${budget ? (budget) : ("not listed and to be discussed.")}</p><p style="@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 18px;">You may contact ${name} by way of email at ${email} or phone at ${phone}.</p>`
       // html: html(req)
 
       html: `<body style="@import url('https://fonts.googleapis.com/css2?family=Lato:400,400i,700,700i&family=Playfair+Display:400,400i,700,700i&display=swap');width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
                       <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px"><h1 style="Margin:0;line-height:46px;mso-line-height-rule:exactly;font-family:'playfair display', georgia, 'times new roman', serif;font-size:46px;font-style:normal;font-weight:bold;color:#EDEDED"><strong>New Job Request</strong></h1></td>
                     </tr>
                     <tr>
-                      <td align="center" class="es-m-p0r es-m-p0l" style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:40px;padding-right:40px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#EDEDED;font-size:14px">You’ve received this message because there has been a new <strong>${jobType}</strong> job request from ${name}${
+                      <td align="center" class="es-m-p0r es-m-p0l" style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:40px;padding-right:40px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#EDEDED;font-size:14px">You’ve received this message because there has been a new <strong>${type}</strong> job request from ${name}${
         company != undefined ? ` from the company, ${company}` : ""
       }. This was submitted from the Donald Louch website at <a target="_blank" href="${
         process.env.NEXT_PUBLIC_SITE_URL
@@ -149,6 +149,6 @@ export async function POST(request: Request) {
     ];
     return NextResponse.json(contactData);
   } catch (error) {
-    // console.log("The error", error);
+    console.log("The error", error);
   }
 }

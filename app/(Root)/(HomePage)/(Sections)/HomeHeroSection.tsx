@@ -106,7 +106,7 @@ export default function HomeHeroSection({aboutMe}: any) {
         <PrimaryLinkedButton link="/portfolio/resume" primNewIcon={{name: "id-badge", pack: "fadl"}}>Resume</PrimaryLinkedButton>
         <PrimaryLinkedButton link="#links" primNewIcon={{name: "link"}}>Links</PrimaryLinkedButton>
         <PrimaryLinkedButton link="/contact" primNewIcon={{name: "comment-arrow-up-right", pack: "fadl"}}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portal/projects?openID=newProject" primNewIcon={{name: "light-briefcase-blank-magnifying-glass", pack: "fak"}}>Hire Me!</PrimaryLinkedButton>
+        <PrimaryLinkedButton link="/contact?type=hire" primNewIcon={{name: "light-briefcase-blank-magnifying-glass", pack: "fak"}}>Hire Me!</PrimaryLinkedButton>
       </Group>
     </Stack>
   </Box>

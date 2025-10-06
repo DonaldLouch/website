@@ -2,124 +2,42 @@
 
 import { BreadCrumb } from "@/app/(Components)/BreadCrumbsComponent"
 import { SectionTitle } from "@/app/(Components)/SectionTitle"
+import { Stack, Tabs, Text } from "@mantine/core"
+import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
+import DisplayDate from "@/lib/DisplayDate"
 
 export default function MessagesPage({contactData, jobData}: any) {
   const breadCrumbs = [
     {"pageLink": "/admin/blog", "pageName": "Messages"}
   ]
-  return (
-    <>
-        <BreadCrumb breads={breadCrumbs} />
-        {/* <Box as="main" id="homeWrapper" color="white">
-          <SectionTitle headingTitle="Messages" />
-          <Tabs p="1rem" borderRadius="0 2rem" isFitted>
-            <TabList display="flex" justifyContent="center">
-              <Tab>Contact Form</Tab>
-              <Tab>Job Requests</Tab>
-            </TabList>
-          <TabPanels>
-          <TabPanel>
-          {contactData?.map((contact: any) => (
-          <>
-          <Stack
-            key={contact.index}
-            boxShadow="bsWhite"
-            p="1.5rem"
-            color="white"
-            borderRadius="0 1.5rem"
-            justifyContent="center"
-            align="center"
-            m="1rem 2rem"
-            _hover={{ boxShadow: "bsBoldSecondary" }}
-          >
-          <Text
-            fontWeight={500}
-            fontSize="2rem"
-            fontFamily="heading"
-            m="1rem 1rem 0"
-            alignSelf="start"
-          > From: <strong>{contact.name}</strong></Text>
-          <Stack
-          direction="row"
-          align="center"
-          justify="space-between"
-          w="100%"
-          >
-          <Text fontSize="1.3rem">
-          Subject: <strong>{contact.subject}</strong>
-          </Text>
-          <Text fontSize="1rem" color="grey">
-          On: <strong>{contact.sentOn}</strong>
-          </Text>
+  return <>
+    <BreadCrumb breads={breadCrumbs} />
+    <SectionTitle headingTitle="Messages" />
+    <Tabs defaultValue="contact">
+      <Tabs.List grow justify="center">
+        <Tabs.Tab value="contact">Contact Form</Tabs.Tab>
+        <Tabs.Tab value="jobs">Jobs</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="contact">{contactData.map((contact: any) => (
+        <Stack key={contact.id} p="1.5rem" m="1rem 2rem" style={{boxShadow: "var(--mantine-shadow-bsBoldWhite)", borderRadius: "var(--mantine-radius-md)", borderBottom: "1px solid", borderColor: "gray.200"}} gap="0">
+          <Text fw="500" ff="heading">From: <strong>{contact.name}</strong></Text>
+          <Stack gap="0">
+            <Text><strong>Subject:</strong> {contact.subject}</Text>
+            <Text fz="1rem" c="grey"><strong>Sent On:</strong> <DisplayDate source={contact.sentOn} /></Text>
           </Stack>
-          <Link
-          href={`/admin/messagesC/${contact.id}`}
-          variant="primaryButton"
-          w="100%"
-          >
-          View Message
-          </Link>
+          <PrimaryLinkedButton link={`/admin/message/${contact.id}`} primNewIcon={{name: "envelope"}}>View Message</PrimaryLinkedButton>
+        </Stack>
+      ))}</Tabs.Panel>
+      <Tabs.Panel value="job">{jobData.map((job: any) => (
+        <Stack key={job.id} p="1.5rem" m="1rem 2rem" style={{boxShadow: "var(--mantine-shadow-bsBoldWhite)", borderRadius: "var(--mantine-radius-md)", borderBottom: "1px solid", borderColor: "gray.200"}} gap="0">
+          <Text fw="500" ff="heading">From: <strong>{job.name}</strong></Text>
+          <Stack gap="0">
+            {/* <Text><strong>Subject:</strong> {job.subject}</Text> */}
+            <Text fz="1rem" c="grey"><strong>Sent On:</strong> {job.sentOn}</Text>
           </Stack>
-          </>
-          ))}
-          </TabPanel>
-          <TabPanel>
-          {jobData?.map((contact: any) => (
-          <>
-          <Stack
-            key={contact.index}
-            boxShadow="bsWhite"
-            p="1.5rem"
-            color="white"
-            borderRadius="0 1.5rem"
-            justifyContent="center"
-            align="center"
-            m="1rem 2rem"
-            _hover={{ boxShadow: "bsBoldSecondary" }}
-          >
-          <Text
-          fontWeight={500}
-          fontSize="2rem"
-          fontFamily="heading"
-          m="1rem 1rem 0"
-          alignSelf="start"
-          >
-          From:
-          <strong>
-          {contact.name}
-          {contact.company != null
-          ? ` (${contact.company})`
-          : null}
-          </strong>
-          </Text>
-          <Stack
-          direction="row"
-          align="center"
-          justify="space-between"
-          w="100%"
-          >
-          <Text fontSize="1.3rem">
-          Job Request Type: <strong>{contact.type}</strong>
-          </Text>
-          <Text fontSize="1rem" color="grey">
-          On: <strong>{contact.sentOn}</strong>
-          </Text>
-          </Stack>
-          <Link
-          href={`/admin/messagesJ/${contact.id}`}
-          variant="primaryButton"
-          w="100%"
-          >
-          View Request
-          </Link>
-          </Stack>
-          </>
-          ))}
-          </TabPanel>
-          </TabPanels>
-          </Tabs>
-        </Box> */}
-        <div><h1>Page is being refactored.</h1></div>
-    </>
-  )
+          <PrimaryLinkedButton link={`/admin/messagesC/${job.id}`} primNewIcon={{name: "envelope"}}>View Message</PrimaryLinkedButton>
+        </Stack>
+      ))}</Tabs.Panel>
+    </Tabs>
+  </>
 }

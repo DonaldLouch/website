@@ -15,7 +15,7 @@ interface FooterProps {
 
 export const FooterIcon = (props: FooterProps) => {
   const { linkURL, socialMedia, icon, iconPadding, iconSize } = props
-  console.log(icon)
+
   return <Anchor href={linkURL} target="_blank">
     <Tooltip label={socialMedia}>
       <ActionIcon style={{padding: iconPadding && iconPadding}}>
