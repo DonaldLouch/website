@@ -114,7 +114,7 @@ export default function ContactMePage({type}: {type?: "general" | "hire" | "cont
                         </SimpleGrid>
                         <FormInput isRequired inputLabel="Type" id="type" inputDescription="By providing a project type like 'Web Development' it will make it easier for me to understand your needs." icon={<FontAwesomeIcon icon={["fajr", "font-case"]} />} {...formHire.getInputProps('type')} inputType="text" />
                         <FormTextArea inputID="description" inputLabel="Project Description" {...formHire.getInputProps('description')} isRequired />
-                        <FormNumber inputID="budget" isRequired inputLabel="Budget" inputDescription="Providing a budget helps me understand your project's scope." icon={<FontAwesomeIcon icon={["fal", "dollar-sign"]} />} {...formHire.getInputProps('budget')} />
+                        <FormNumber inputID="budget" inputLabel="Budget" inputDescription="Providing a budget helps me understand your project's scope." icon={<FontAwesomeIcon icon={["fal", "dollar-sign"]} />} {...formHire.getInputProps('budget')} />
                         {/* <Group justify="flex-end" mt="md"> */}
                             <FormSubmitButton>Send Message</FormSubmitButton>
                         {/* </Group> */}
