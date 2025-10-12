@@ -97,7 +97,7 @@ export async function POST(request: Request) {
 			line-height: 0;
 		}
 
-		@media (max-width:675px) {
+		@media (max-width:620px) {
 			.desktop_hide table.icons-inner {
 				display: inline-block !important;
 			}
@@ -162,7 +162,7 @@ export async function POST(request: Request) {
 														<tr>
 															<td class="pad" style="padding-bottom:25px;width:100%;padding-right:0px;padding-left:0px;">
 																<div class="alignment" align="center">
-																	<div class="fullWidth" style="max-width: 557px;"><a href="https://donaldlouch.ca" target="_blank"><img src="https://donaldlouch.ca/titleLogo/titleLogoWhite.svg" style="display: block; height: auto; border: 0; width: 100%;" width="557" alt="Donald Louch Title Logo" title="Donald Louch Title Logo" height="auto"></a></div>
+																	<div class="fullWidth" style="max-width: 450px;"><a href="https://donaldlouch.ca" target="_blank"><img src="https://donaldlouch.ca/titleLogo/titleLogoWhite.svg" style="display: block; height: auto; border: 0; width: 100%;" width="450" alt="Donald Louch Title Logo" title="Donald Louch Title Logo" height="auto"></a></div>
 																</div>
 															</td>
 														</tr>
