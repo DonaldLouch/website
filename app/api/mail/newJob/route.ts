@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // import { createId } from "@paralleldrive/cuid2";
 import supabase from "@/lib/supabase";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
     const { name, company, email, phone, type, description, budget } = (await request.json()) as any
