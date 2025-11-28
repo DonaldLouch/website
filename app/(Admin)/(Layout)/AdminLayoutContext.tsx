@@ -2,10 +2,10 @@
 
 import { Box,  Stack, Text, AppShell, Group, Anchor, Image, Burger, rem, Center } from '@mantine/core'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 import { useEffect, useState } from 'react'
-import { UserButton } from '@clerk/nextjs'
+// import { UserButton } from '@clerk/nextjs'
 
 import { useDisclosure, useHeadroom } from '@mantine/hooks'
 import AdminNavigationItem from './AdminNavigationItem'
@@ -14,15 +14,40 @@ import PrimaryLinkedButton from '@/app/(Components)/(Buttons)/PrimaryLinkedButto
 
 import InlineLink from '@/app/(Components)/InlineLink'
 import { AdminLinks } from '@/lib/AdminLinks'
+import PrimaryButton from '@/app/(Components)/(Buttons)/PrimaryButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { notifications } from '@mantine/notifications'
+import { signOutUser } from '@/app/actions/auth'
 
 export default function AdminLayoutContext({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
   const path = usePathname()
+  const router = useRouter()
   const [windowHeight, setWindowHeight] = useState() as any
   const isHero = path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
   useEffect(() => {setWindowHeight(window.innerHeight + 60)})
 
   const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
   const [opened, { toggle }] = useDisclosure()
+
+  const signOut = async () => {
+      const res = await signOutUser()
+      if (res.code === 200) {
+          notifications.show({ 
+              title: `Signed Out!`,
+              message:"You have been successfully signed out.",
+              color: "black",
+              icon: <FontAwesomeIcon icon={["fal", "badge-check"]} />
+          })
+          router.push("/")
+      } else {
+          notifications.show({ 
+              title: `Error #${res?.code} has Occurred`,
+              message: res?.message,
+              color: "red",
+              icon: <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />
+          })
+      }
+  }
 
   return <>{!isAdmin ? (
     <Box
@@ -65,7 +90,8 @@ export default function AdminLayoutContext({ children, isAdmin }: { children: Re
             />
           </Anchor>
           <Group>
-            <UserButton />
+            {/* <UserButton /> */}
+            <PrimaryButton onClick={() => signOut()} icon={<FontAwesomeIcon icon={["fal", "person-from-portal"]} />}>Sign Out</PrimaryButton>
             <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
           </Group>
         </Group>

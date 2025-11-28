@@ -4,7 +4,7 @@ import PostPage from "./PostPage";
 import { serialize } from "next-mdx-remote-client/serialize"
 
 import { Metadata } from 'next';
-import { auth, currentUser } from "@clerk/nextjs/server";
+// import { auth, currentUser } from "@clerk/nextjs/server";
 
 type Params = Promise<{ slug: string }>
 
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Post({ params }: { params: Params }) {
-    const {userId, sessionId} = await auth()
+    // const {userId, sessionId} = await auth()
 
-    const isLoggedIn = userId && sessionId ? true : false
+    const isLoggedIn = false
 
     const { slug } = await params
     const { data: post } = await supabase.from('BlogPost').select().match({ slug: slug }).single() as any

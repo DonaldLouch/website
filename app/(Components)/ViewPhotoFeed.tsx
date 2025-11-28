@@ -3,7 +3,7 @@
 import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
-import { useUser } from '@clerk/nextjs'
+// import { useUser } from '@clerk/nextjs'
 
 import classes from "./Components.module.css"
 import { useDisclosure } from '@mantine/hooks'
@@ -21,7 +21,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
-    const {user} = useUser() as any
+    // const {user} = useUser() as any
+    const user = null
     
     const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
 

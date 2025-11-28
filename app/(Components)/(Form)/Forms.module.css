@@ -46,3 +46,8 @@
         color: var(--mantine-color-green-0);
     }
 }
+
+.mantine-PasswordInput-section[data-position="right"] {
+    border: none !important;
+    margin: auto 2rem;
+}

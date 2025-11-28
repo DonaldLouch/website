@@ -94,3 +94,8 @@ a {
         background: var(--darkPurpleRGBA) !important;
     }
 }
+
+.mantine-PasswordInput-section[data-position="right"] {
+    border: none !important;
+    margin: auto 1rem;
+}

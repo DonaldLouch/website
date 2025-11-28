@@ -16,10 +16,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const path = usePathname()
     const [windowHeight, setWindowHeight] = useState() as any
-    const isHero = path.includes("/video") && path != "/feed/videography" || path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") ? true : false
+    const isHero = path.includes("/video") && path != "/feed/videography" || path === "/" || path === "/portfolio/resume" || path === "/blog" || path.includes("/post") || path.includes("/auth") ? true : false
     useEffect(() => {setWindowHeight(window.innerHeight + 60)})
  
-    const disabled = path.includes("/embed") ? true : false
+    const disabled = path.includes("/embed") || path.includes("/auth") ? true : false
     const pinned = useHeadroom({ fixedAt: isHero ? windowHeight : 190 })
     const [opened, { toggle }] = useDisclosure()
 

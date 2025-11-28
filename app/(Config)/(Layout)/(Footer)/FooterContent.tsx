@@ -2,15 +2,15 @@
 
 import { FooterIcon } from "./FooterIcon";
 import { Anchor, Group, Stack, Image, Text, Flex } from "@mantine/core";
-import { useUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 import supabase from "@/lib/supabase";
 import { useEffect, useState } from "react";
 
 
 export default function FooterContent(){
   
-  const { user } = useUser()
-  const isSignedIn = user ? true : false
+  // const { user } = useUser()
+  const isSignedIn = false
 
   const [primaryLinksData, setPrimaryLinksData] = useState([])
 

@@ -23,7 +23,7 @@ import { SidebarCard } from '../(Components)/SidebarCard'
 import PostContent from '../(Components)/PostContent'
 import HomeButton from '@/app/(Components)/(Buttons)/HomeButton'
 import DisplayDate from '@/lib/DisplayDate'
-import { useUser } from '@clerk/nextjs'
+// import { useUser } from '@clerk/nextjs'
 
 import LinkBadge from '@/app/(Components)/LinkBadge'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -44,8 +44,8 @@ export const StandardPostType = ({post, mdxSource, isLoggedIn}: any) => {
     // const tagsSplit = post.tags.split(', ')
 
     // TODO: Implement <Spoiler maxHeight={120} showLabel="Show more" hideLabel="Hide">?
-    const { user } = useUser()
-    const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
+    // const { user } = useUser()
+    const isAdmin = false
 
     return (<>
         <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">

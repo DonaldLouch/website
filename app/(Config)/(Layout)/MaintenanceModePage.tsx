@@ -1,16 +1,19 @@
 'use client'
 
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
+import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton"
 import HugeIcon from "@/app/(Components)/HugeIcon"
 import InlineLink from "@/app/(Components)/InlineLink"
 import supabase from "@/lib/supabase"
-import { useClerk } from "@clerk/nextjs"
+// import { useClerk } from "@clerk/nextjs"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Stack, Title, Text, Box, Skeleton } from "@mantine/core"
 import { useEffect, useState } from "react"
 
-export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
-    const { openSignIn } = useClerk()
+import "@/lib/FontAwesome"
+
+export default function MaintenanceModePage() {
+    // const { openSignIn } = useClerk()
 
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
     
@@ -34,9 +37,8 @@ export default function MaintenanceModePage({ isUser }: { isUser: boolean }) {
     return (
         <>
             <Stack w="100vw" h="100vh" bg="var(--darkPurple)" style={{ overflow: "hidden", zIndex: "10" }} pos="absolute" top="0" left="0" justify="center" align="center" px="2rem">
-                {!isUser &&
-                    <PrimaryButton primNewIcon={{name: "person-to-portal", pack: "fadl" }} opacity="0.09" action={() => openSignIn({ redirectUrl: '/' })}>Developer Login</PrimaryButton>
-                }
+                <PrimaryLinkedButton primNewIcon={{name: "person-to-portal" }} opacity="0.09" link="/auth">Developer Login</PrimaryLinkedButton>
+              
                 {loading ? <Stack w="75%" gap="var(--text-lh, var(--mantine-line-height-md))">
                     <Skeleton height="var(--text-fz, var(--mantine-font-size-md))" radius="sm" />
                     <Skeleton height="var(--text-fz, var(--mantine-font-size-md))" radius="sm" />

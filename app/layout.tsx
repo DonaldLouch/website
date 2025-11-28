@@ -1,16 +1,11 @@
-// export const revalidate = 0
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
-import { isUserSignedIn, userRole } from "./actions/clerk";
-import { ClerkProvider } from "@clerk/nextjs";
 
 import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications';
 import { MantineTheme } from "./(Config)/MantineTheme"
 import '@mantine/core/styles.css';
-// import '@mantine/core/styles/baseline.css';
 import '@mantine/dates/styles.css';
 import '@mantine/notifications/styles.css';
 import '@mantine/dropzone/styles.css';
@@ -20,10 +15,12 @@ import "@/app/(Config)/global.css"
 import MaintenanceModePage from "./(Config)/(Layout)/MaintenanceModePage";
 import Context from "./(Config)/Context"
 
-// import { FontAwesomeConfig } from '@/lib/FontAwesome/FontAwesomeConfig';
-
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { Suspense } from 'react';
+import { auth } from '@/lib/auth/auth';
+import { headers } from 'next/headers';
+
 config.autoAddCss = false
 
 export const viewport: Viewport = {
@@ -63,27 +60,29 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const isUser = await isUserSignedIn()
-  const role = await userRole()
-  const isAdmin = isUser && role === "admin" ? true : false
+  // const headersList = await headers();
+  // const pathname = headersList.get('x-pathname') || '';
+  // const isAuthRoute = pathname.includes('/auth');
+  // console.log("Current Pathname:", pathname);
 
-  const isMaintenanceMode = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
+  const session = await auth.api.getSession({ headers: await headers() })
+  const isUser = session?.user ? true : false
+  const isAdmin = session && session.user.role === "admin" ? true : false
+
+
+  const MaintenanceModeEnv = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
+  const isMaintenanceMode = MaintenanceModeEnv === "true" ? true : MaintenanceModeEnv === "false" && false
 
   return (
     <html lang="en-CA">
       <head></head>
       <body>
-        <ClerkProvider>
-          <MantineProvider theme={MantineTheme}>
+        <MantineProvider theme={MantineTheme}>
           <Notifications />
-          {isMaintenanceMode === "false" || (isMaintenanceMode === "true" && isAdmin) ? 
-            <Context>
+            <Context isAdmin={isAdmin} isMaintenanceMode={isMaintenanceMode}>
               {children}
-            </Context> 
-            : <MaintenanceModePage isUser={isUser} />
-          }
-          </MantineProvider> 
-        </ClerkProvider>
+            </Context>
+        </MantineProvider>
         <Analytics />
         <SpeedInsights />
       </body>

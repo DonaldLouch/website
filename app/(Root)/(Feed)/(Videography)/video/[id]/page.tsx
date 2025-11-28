@@ -3,7 +3,7 @@ import { serialize } from "next-mdx-remote-client/serialize"
 import { Metadata } from 'next';
 import supabase from '@/lib/supabase';
 import PlayerPage from './PlayerPage';
-import { userRole } from "@/app/actions/clerk";
+// import { userRole } from "@/app/actions/clerk";
 
 type Params = Promise<{ id: string }>
 
@@ -32,8 +32,8 @@ export default async function Player({ params }: { params: Params }) {
 
     const { data: videoData } = await supabase.from('Videography').select(`*, videoFileID (*), thumbnailFileID (*), category (*), videoPlaylist (*)`).match({ id: id }).single() as any
 
-    const role = await userRole()
-    const isAdmin = role === "admin" ? true : false
+    // const role = await userRole()
+    const isAdmin = false
 
     // const { data: playlist } = await supabase.from('VideographyPlaylist').select().match({ id: videoData.videoPlaylist.id }).single() as any
     const mdxSource = await serialize({source: videoData.description})
