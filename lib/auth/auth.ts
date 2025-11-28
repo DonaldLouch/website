@@ -10,13 +10,13 @@ import { multiSession } from "better-auth/plugins"
 
 export const auth = betterAuth({
   appName: "Donald Louch",
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL!,
+  baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
   trustedOrigins: ["https://localhost:3000", "https://donaldlouch.ca", "https://*.donaldlouch.ca", "https://*.vercel.app"],
   user: {
     changeEmail: {
       enabled: true,
       sendChangeEmailVerification: async ({ user, url, newEmail }) => {
-        await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/api/mail/sendUserEmail`, {
+        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
             method: 'POST',
             body: JSON.stringify({
               user: { ...user, email: newEmail },
@@ -29,7 +29,7 @@ export const auth = betterAuth({
     deleteUser: {
       enabled: true,
       sendDeleteAccountVerification: async ({ user, url }) => {
-        await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/api/mail/sendUserEmail`, {
+        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
             method: 'POST',
             body: JSON.stringify({
               user,
@@ -44,7 +44,7 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: false,
     sendResetPassword: async ({ user, url }) => {
-      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/api/mail/sendUserEmail`, {
+      await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
           method: 'POST',
           body: JSON.stringify({
             user,
@@ -58,7 +58,7 @@ export const auth = betterAuth({
     autoSignInAfterVerification: true,
     sendOnSignUp: true,
     sendVerificationEmail: async ({ user, url }) => {
-      await fetch( `${process.env.NEXT_PUBLIC_BASE_URL!}/api/mail/sendUserEmail`, {
+      await fetch( `${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
           method: 'POST',
           body: JSON.stringify({
             user,

@@ -67,7 +67,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                 icon: <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />
             })
         }
-    }
+    } // TODO: Fix on production/beta
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
     //         name: values.name,
@@ -134,7 +134,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                                 <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={signinForm.onSubmit(signinSubmit)}>
                                     <FormInput inputID="email" inputLabel="Email" {...signinForm.getInputProps('email')}   isRequired icon={<FontAwesomeIcon icon={["fal", "envelope"]} />} autoComplete="email webauthn" />
                                     <FormInputPassword inputID="password" inputLabel="Password" {...signinForm.getInputProps('password')} isRequired icon={<FontAwesomeIcon icon={["fal", "lock"]} />} forgotPasswordOption autoComplete="current-password webauthn" />
-                                    <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "person-to-portal"]} />}>Signin</FormSubmitButton>
+                                    <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "person-to-portal"]} />}>Signin</FormSubmitButton> // TODO: Make more full width
                                 </Box> 
                             </SectionCard>
                             {/* </Tabs.Panel>
@@ -179,7 +179,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                             </Alert>
                         </Stack>
                     </Stack>
-                </Grid.Col>
+                </Grid.Col> // TODO: Maybe make this first on mobile?
             </Grid> 
         </Stack>
     </Box>
