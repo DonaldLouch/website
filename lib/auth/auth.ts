@@ -6,6 +6,7 @@ import { twoFactor } from "better-auth/plugins/two-factor";
 import { passkey } from "@better-auth/passkey";
 import { admin as adminPlugin } from "better-auth/plugins/admin";
 import { ac, admin, user } from "@/utils/auth/permissions";
+import { multiSession } from "better-auth/plugins"
 
 export const auth = betterAuth({
   appName: "Donald Louch",
@@ -77,6 +78,7 @@ export const auth = betterAuth({
     nextCookies(),
     twoFactor(),
     passkey(),
+    multiSession(),
     adminPlugin({
       ac,
         roles: {
