@@ -112,7 +112,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
     // })
 
     const signinForm = useForm({
-        mode: 'controlled',
+        mode: 'uncontrolled',
         validate: zodResolver(signinSchema)
     })
     // const signupForm = useForm({
@@ -128,7 +128,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
         <HomeButton />
         <Stack id="hero" pos="absolute" top="0" left="0" justify="center" h="100%" w="100%" style={{overflow: "hidden"}}>
             <Grid gutter="2rem">
-                <Grid.Col span={{base: 12, md: 4}} h="100%">
+                <Grid.Col span={{base: 12, lg: 4}} h="100%" order={{base: 2, lg: 1}}>
                     <Center>
                         {session == null ? <>
                         {/* <Tabs defaultValue="signin" w="calc(100% - 5rem)" fz="inherit" bg="var(--darkPurpleRGBA)" m="0" p="1rem 0rem 0">
@@ -137,7 +137,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                                 <Tabs.Tab value="signup">Signup</Tabs.Tab>
                             </Tabs.List>
                             <Tabs.Panel value="signin">  */}
-                            <SectionCard styleType="primaryCard" id="authCard" w="calc(100% - 5rem)" fz="inherit" bg="var(--darkPurpleRGBA)" m="0" p="3rem 0.5rem 0">
+                            <SectionCard styleType="primaryCard" id="authCard" w={{base: "calc(100% - 1rem)", lg: "calc(100% - 5rem)"}} fz="inherit" bg="var(--darkPurpleRGBA)" m="0" p={{base: "2rem 1rem 0", lg: "3rem 0.5rem 0"}}>
                                 <Title order={2} fz="2rem" ta="center" ff="text">Signin to Your Account</Title>
                                 <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={signinForm.onSubmit(signinSubmit)}>
                                     <FormInput inputID="email" inputLabel="Email" {...signinForm.getInputProps('email')}   isRequired icon={<FontAwesomeIcon icon={["fal", "envelope"]} />} autoComplete="email webauthn" />
@@ -164,15 +164,15 @@ export default function AuthLoginSignup({session}: {session: any}) {
                         </SectionCard>}
                     </Center>
                 </Grid.Col>
-                <Grid.Col span={8} h="100%" style={{ justifyContent: "center" }} visibleFrom="md">
-                    <Stack component="section" mah={{base: "100%", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center">
+                <Grid.Col span={{base: 12, lg: 8}} h="100%" style={{ justifyContent: "center" }} order={{base: 1, lg: 2}}>
+                    <Stack component="section" mah={{base: "100%", sm: "calc(100vh - 2rem)"}} style={{ overflow: "scroll" }} justify="center" align="center">
                         <Stack bg="var(--darkPurpleRGBA)" style={{
                             boxShadow: "var(--mantine-shadow-bsSMPrimary)",
                             backdropFilter: "blur(20px)",
                             borderRadius: "var(--mantine-radius-lg)"
                         }} w={{base:  "calc(100% - 1rem)",  md: "calc(100% - 2rem)"}} p={{base: "1rem", md: "1.5rem 3rem 2rem"}} gap="0.5rem">
                             <Anchor href="/" underline="never">
-                                <Group align="center">
+                                <Group align="center" justify="center">
                                     <Image
                                         src="/titleLogo/titleLogoWhiteColoured.svg"
                                         alt="Donald Louch"
