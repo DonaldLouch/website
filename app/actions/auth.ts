@@ -36,7 +36,7 @@ export async function signUpUser({name, email, password}: UserSignup): Promise<a
 
 export async function signInUser({email, password}: UserAuthPayload): Promise<any> {  
   try {
-    await auth.api.signInEmail({
+    const res = await auth.api.signInEmail({
       body: {
         email: email,
         password: password,
@@ -45,6 +45,7 @@ export async function signInUser({email, password}: UserAuthPayload): Promise<an
       },
       headers: await headers(),
     })
+    console.log("Login", res)
     return {message: "User Signed In", code: 200}
     } catch (error: any) {
         return {message: error.message, code: error.status || 500}
