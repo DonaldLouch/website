@@ -9,8 +9,8 @@ import { passkeyClient } from "@better-auth/passkey/client"
 import { ac, admin, user } from "@/utils/auth/permissions"
 
 export const authClient = createAuthClient({
-  baseURL: "https://donaldlouch.ca",
-  // baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
+  // baseURL: "https://donaldlouch.ca",
+  baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
   plugins: [
     passkeyClient(),
     multiSessionClient(),
