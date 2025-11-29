@@ -16,6 +16,7 @@ import { notifications } from "@mantine/notifications"
 import PrimaryButton from "@/app/(Components)/(Buttons)/PrimaryButton"
 import FormInputPassword from "@/app/(Components)/(Form)/FormInputPassword"
 import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard"
+import { authClient } from "@/lib/auth/auth-client"
 
 export default function AuthLoginSignup({session}: {session: any}) {
     const params = useSearchParams()
@@ -52,22 +53,28 @@ export default function AuthLoginSignup({session}: {session: any}) {
         }
     }
     const signinSubmit =  async (values: any) => {
-        const res = await signInUser({
+        // const res = await signInUser({
+        //     email: values.email,
+        //     password: values.password
+        // })
+        await authClient.signIn.email({
             email: values.email,
-            password: values.password
-        })
-        console.log("Sign In Response:", res)
-        if (res.code === 200) {
-            router.push("/admin")
-            router.refresh()
-        } else {
+            password: values.password,
+            callbackURL: "/"
+        }, {
+        onError: error => {
             notifications.show({ 
-                title: `Error #${res?.code} has Occurred`,
-                message: res?.message,
+                title: `Error #${error.error.code} has Occurred`,
+                message: error.error.message || "Failed to sign in",
                 color: "red",
                 icon: <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />
             })
-        }
+        },
+        onSuccess: () => {
+          router.push("/admin")
+          router.refresh()
+        },
+      })
     } // TODO: Fix on production/beta
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
