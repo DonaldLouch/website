@@ -134,7 +134,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                                 <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={signinForm.onSubmit(signinSubmit)}>
                                     <FormInput inputID="email" inputLabel="Email" {...signinForm.getInputProps('email')}   isRequired icon={<FontAwesomeIcon icon={["fal", "envelope"]} />} autoComplete="email webauthn" />
                                     <FormInputPassword inputID="password" inputLabel="Password" {...signinForm.getInputProps('password')} isRequired icon={<FontAwesomeIcon icon={["fal", "lock"]} />} forgotPasswordOption autoComplete="current-password webauthn" />
-                                    <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "person-to-portal"]} />} customWidth="calc(100% - 2rem)">Signin</FormSubmitButton> {/* // TODO: Make more full width */}
+                                    <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "person-to-portal"]} />} customWidth="calc(100% - 2rem)">Signin</FormSubmitButton>
                                 </Box> 
                             </SectionCard>
                             {/* </Tabs.Panel>

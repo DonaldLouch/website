@@ -35,6 +35,7 @@ export async function signUpUser({name, email, password}: UserSignup): Promise<a
 }
 
 export async function signInUser({email, password}: UserAuthPayload): Promise<any> {  
+  console.log("Signing in user with email:", email);
     try {
         await auth.api.signInEmail({
             body: {
