@@ -57,7 +57,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
         //     email: values.email,
         //     password: values.password
         // })
-        await authClient.signIn.email({
+        const res = await authClient.signIn.email({
             email: values.email,
             password: values.password,
             callbackURL: "/"
@@ -75,6 +75,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
           router.refresh()
         },
       })
+      console.log("Signin", res)
     } // TODO: Fix on production/beta
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
