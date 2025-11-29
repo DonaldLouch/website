@@ -56,6 +56,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
             email: values.email,
             password: values.password
         })
+        console.log("Sign In Response:", res)
         if (res.code === 200) {
             router.push("/admin")
             router.refresh()
