@@ -60,7 +60,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
         const res = await authClient.signIn.email({
             email: values.email,
             password: values.password,
-            callbackURL: "/"
+            // callbackURL: "/"
         }, {
         onError: error => {
             notifications.show({ 
@@ -71,11 +71,11 @@ export default function AuthLoginSignup({session}: {session: any}) {
             })
         },
         onSuccess: () => {
-          router.push("/admin")
-          router.refresh()
+            router.push("/admin")
+            router.refresh()
         },
-      })
-      console.log("Signin", res)
+        })
+        console.log("Signin", res)
     } // TODO: Fix on production/beta
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
