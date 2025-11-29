@@ -10,7 +10,7 @@ import { multiSession } from "better-auth/plugins"
 
 export const auth = betterAuth({
   appName: "Donald Louch",
-  baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
+  // baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
   trustedOrigins: ["https://localhost:3000", "https://donaldlouch.ca", "https://*.donaldlouch.ca", "https://*.vercel.app"],
   user: {
     changeEmail: {

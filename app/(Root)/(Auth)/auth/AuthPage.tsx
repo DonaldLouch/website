@@ -134,7 +134,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                                 <Box p={{base: "0.5rem", sm: "2rem"}} component="form" onSubmit={signinForm.onSubmit(signinSubmit)}>
                                     <FormInput inputID="email" inputLabel="Email" {...signinForm.getInputProps('email')}   isRequired icon={<FontAwesomeIcon icon={["fal", "envelope"]} />} autoComplete="email webauthn" />
                                     <FormInputPassword inputID="password" inputLabel="Password" {...signinForm.getInputProps('password')} isRequired icon={<FontAwesomeIcon icon={["fal", "lock"]} />} forgotPasswordOption autoComplete="current-password webauthn" />
-                                    <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "person-to-portal"]} />}>Signin</FormSubmitButton> {/* // TODO: Make more full width */}
+                                    <FormSubmitButton icon={<FontAwesomeIcon icon={["fal", "person-to-portal"]} />} customWidth="calc(100% - 2rem)">Signin</FormSubmitButton> {/* // TODO: Make more full width */}
                                 </Box> 
                             </SectionCard>
                             {/* </Tabs.Panel>
@@ -149,11 +149,11 @@ export default function AuthLoginSignup({session}: {session: any}) {
                             </Tabs.Panel>
                         </Tabs>  */}
                         </>
-                        : <>
-                            <Title order={3} fz="2rem">Welcome, {session.user?.name}! You are currently signed into the Donald Louch Website.</Title>
-                            <Text>If you chose too you may signout below.</Text>
-                            <PrimaryButton onClick={() => signOut()} icon={<FontAwesomeIcon icon={["fal", "person-from-portal"]} />}>Sign Out</PrimaryButton>
-                        </>}
+                        : <SectionCard styleType="primaryCard" id="authCard" w="calc(100% - 5rem)" fz="inherit" bg="var(--darkPurpleRGBA)" m="0" ta="center">
+                            <Title order={3} fz="2rem" ta="center">Welcome, {session.user?.name}!</Title>
+                            <Text>You are currently signed into the Donald Louch Website.If you chose too you may signout below.</Text>
+                            <PrimaryButton onClick={() => signOut()} icon={<FontAwesomeIcon icon={["fal", "person-from-portal"]} />} isFullWidth>Sign Out</PrimaryButton>
+                        </SectionCard>}
                     </Center>
                 </Grid.Col>
                 <Grid.Col span={8} h="100%" style={{ justifyContent: "center" }} visibleFrom="md">
