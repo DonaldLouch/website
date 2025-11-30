@@ -90,7 +90,7 @@ export default function FooterContent(){
       <Stack gap="0">
         <Anchor href="/">
           <Image
-            src="/titleLogo/titleLogoWhiteColoured.svg"
+            src="/titleLogo/titleLogoHoliday.svg"
             alt="Donald Louch"
             w={{ base: "30vw", lg: "12vw" }}
           />

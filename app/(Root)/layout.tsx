@@ -44,7 +44,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     <Tooltip label="Go Home">
                         <Anchor href="/" m="0" p="0">
                             <Image
-                                src="/titleLogo/titleLogoWhiteColoured.svg"
+                                src="/titleLogo/titleLogoHoliday.svg"
                                 alt="Donald Louch"
                                 w={{ base: "30vw", lg: "15vw" }}
                             />
