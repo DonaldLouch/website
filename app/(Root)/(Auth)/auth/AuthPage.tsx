@@ -53,35 +53,42 @@ export default function AuthLoginSignup({session}: {session: any}) {
         }
     }
     const signinSubmit =  async (values: any) => {
-        // const res = await signInUser({
-        //     email: values.email,
-        //     password: values.password
-        // })
-        try {
-        const res = await authClient.signIn.email({
+        const res = await signInUser({
             email: values.email,
-            password: values.password,
-            // callbackURL: "/"
-        }, {
-        onError: error => {
-            console.log("Signin Error", error)
-            notifications.show({ 
-                title: `Error #${error.error.code} has Occurred`,
-                message: error.error.message || "Failed to sign in",
-                color: "red",
-                icon: <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />
-            })
-        },
-        onSuccess: () => {
-            router.push("/admin")
-            router.refresh()
-        },
+            password: values.password
         })
         console.log("Signin", res)
-    } catch (error: any) {
-        console.log("Signin Error TC", error)
-    }
+        if (res.code !== 200) {
+            console.log("Signin Error", res)
+            notifications.show({ 
+                title: `${values.name}, Your Account Has Been Created!`,
+                message:"Please check your email to verify your account before signing in.",
+                color: "black",
+                icon: <FontAwesomeIcon icon={["fal", "badge-check"]} />
+            })
+        } else if (res.code === 200) {
+            router.push("/admin")
+            router.refresh()
+        }
+    //     try {
+    //     const res = await authClient.signIn.email({
+    //         email: values.email,
+    //         password: values.password,
+    //         // callbackURL: "/"
+    //     }, {
+    //     onError: error => {
+    //     },
+    //     onSuccess: () => {
+    //         router.push("/admin")
+    //         router.refresh()
+    //     },
+    //     })
+    //     console.log("Signin", res)
+    // } catch (error: any) {
+    //     console.log("Signin Error TC", error)
+    // }
     } // TODO: Fix on production/beta
+
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
     //         name: values.name,

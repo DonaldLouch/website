@@ -41,14 +41,13 @@ export async function signInUser({email, password}: UserAuthPayload): Promise<an
         email: email,
         password: password,
         rememberMe: true,
-        callbackURL: "/",
+        // callbackURL: "/",
       },
       headers: await headers(),
     })
-    console.log("Login", res)
-    return {message: "User Signed In", code: 200}
+    return {message: "User Signed In", code: 200, details: res}
     } catch (error: any) {
-        return {message: error.message, code: error.status || 500}
+      return {message: error.message, code: error.status || 500, details: error}
     }
 }
 
