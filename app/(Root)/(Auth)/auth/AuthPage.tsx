@@ -57,6 +57,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
         //     email: values.email,
         //     password: values.password
         // })
+        try {
         const res = await authClient.signIn.email({
             email: values.email,
             password: values.password,
@@ -76,6 +77,9 @@ export default function AuthLoginSignup({session}: {session: any}) {
         },
         })
         console.log("Signin", res)
+    } catch (error: any) {
+        console.log("Signin Error", error)
+    }
     } // TODO: Fix on production/beta
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
