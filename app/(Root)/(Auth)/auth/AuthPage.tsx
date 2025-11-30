@@ -64,6 +64,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
             // callbackURL: "/"
         }, {
         onError: error => {
+            console.log("Signin Error", error)
             notifications.show({ 
                 title: `Error #${error.error.code} has Occurred`,
                 message: error.error.message || "Failed to sign in",
@@ -78,7 +79,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
         })
         console.log("Signin", res)
     } catch (error: any) {
-        console.log("Signin Error", error)
+        console.log("Signin Error TC", error)
     }
     } // TODO: Fix on production/beta
     // const signupSubmit =  async (values: any) => {
