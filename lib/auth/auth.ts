@@ -10,7 +10,6 @@ import { multiSession } from "better-auth/plugins"
 
 export const auth = betterAuth({
   appName: "Donald Louch",
-  // baseURL: "https://donaldlouch.ca",
   baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
   trustedOrigins: ["https://localhost:3000", "*.donaldlouch.ca", "https://beta.donaldlouch.ca", "https://*.vercel.app"],
   user: {
@@ -88,15 +87,12 @@ export const auth = betterAuth({
         },
     })
   ],
-  advanced: {
-    
-  },
   database: new Pool({
     connectionString: process.env.DATABASE_URL!,
   }),
   // TODO: Fix Hooks
   // hooks: {
-  //   after: createAuthMiddleware(async (ctx) => {
+  //   after: createAuth(async (ctx) => {
   //     if (ctx.path.startsWith("/signup")) {
   //       const user = ctx.context.newSession?.user ?? {
   //         name: ctx.body.name,

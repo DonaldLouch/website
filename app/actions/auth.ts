@@ -41,14 +41,13 @@ export async function signInUser({email, password}: UserAuthPayload): Promise<an
         email: email,
         password: password,
         rememberMe: true,
-        // callbackURL: "/",
       },
       headers: await headers(),
     })
     return {message: "User Signed In", code: 200, details: res}
-    } catch (error: any) {
-      return {message: error.message, code: error.status || 500, details: error}
-    }
+  } catch (error: any) {
+    return {message: error.message, code: error.status || 500, details: error}
+  }
 }
 
 export async function signInUserWithPasskey(): Promise<string> {  
@@ -84,7 +83,7 @@ export async function SessionInformation(): Promise<any> {
 }
 
 export async function AdminAccessOnly(props: AdminAccess): Promise<boolean> {
-    const {redirectDisabled, specialPermission} = props
+    const {redirectDisabled} = props
     const session = await auth.api.getSession({ headers: await headers() })
     if (session == null) redirect("/auth?message=NotLoggedIn") 
     const hasAccess = await auth.api.userHasPermission({

@@ -52,42 +52,24 @@ export default function AuthLoginSignup({session}: {session: any}) {
             })
         }
     }
+
     const signinSubmit =  async (values: any) => {
         const res = await signInUser({
             email: values.email,
             password: values.password
         })
-        console.log("Signin", res)
         if (res.code !== 200) {
-            console.log("Signin Error", res)
             notifications.show({ 
-                title: `${values.name}, Your Account Has Been Created!`,
-                message:"Please check your email to verify your account before signing in.",
-                color: "black",
-                icon: <FontAwesomeIcon icon={["fal", "badge-check"]} />
+                title: `Error #${res?.code} has Occurred`,
+                message: res?.message,
+                color: "red",
+                icon: <FontAwesomeIcon icon={["fal", "seal-exclamation"]} />
             })
         } else if (res.code === 200) {
             router.push("/admin")
             router.refresh()
         }
-    //     try {
-    //     const res = await authClient.signIn.email({
-    //         email: values.email,
-    //         password: values.password,
-    //         // callbackURL: "/"
-    //     }, {
-    //     onError: error => {
-    //     },
-    //     onSuccess: () => {
-    //         router.push("/admin")
-    //         router.refresh()
-    //     },
-    //     })
-    //     console.log("Signin", res)
-    // } catch (error: any) {
-    //     console.log("Signin Error TC", error)
-    // }
-    } // TODO: Fix on production/beta
+    }
 
     // const signupSubmit =  async (values: any) => {
     //      const res = await signUpUser({
@@ -135,7 +117,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
 
     const imageLink = "https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_LWEIJJ2O4srNRK7or.jpeg"
 
-    return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflow: "hidden !Important"}} bg="var(--blurredBackground)">
+    return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{boxShadow: "bsSecondary", overflow: "hidden !Important"}} bg="var(--blurredBackground)">
         <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.7" pos="absolute" bgsz="150% 150%"></Box>
         <Box bg={`no-repeat url(${imageLink ? imageLink : "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/g4os77p6ityhxn0ki74v.jpg"}) #333 40% 40%`} bgsz="cover" h="100%" w="100vw"></Box>
         <HomeButton />
@@ -200,7 +182,7 @@ export default function AuthLoginSignup({session}: {session: any}) {
                             </Alert>
                         </Stack>
                     </Stack>
-                </Grid.Col> {/* // TODO: Maybe make this first on mobile? */}
+                </Grid.Col>
             </Grid> 
         </Stack>
     </Box>
