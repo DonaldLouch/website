@@ -23,6 +23,8 @@ export default function AuthLoginSignup({session}: {session: any}) {
     const message = params.get("message")
 
     const router = useRouter()
+
+    // TODO: 2FA: <PinInput length={6} type="number" oneTimeCode />
     message && notifications.show({ 
         id: "auth-message",
         title: "Note:",

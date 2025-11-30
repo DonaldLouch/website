@@ -6,7 +6,7 @@ import { Box } from "@mantine/core"
 import { notifications } from "@mantine/notifications"
 
 
-export default function ADMINPAGECONTENT() {
+export default function AccountsPage() {
   const breadCrumbs = [
     {"pageLink": "/admin/blog", "pageName": "Blog"}
   ]

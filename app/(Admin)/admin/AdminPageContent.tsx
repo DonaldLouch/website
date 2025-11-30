@@ -42,6 +42,17 @@ export default function AdminPageContent() {
       title: "Messages",
       icon: "message-smile",
     },
+    {
+      link: "profile",
+      title: "Profile",
+      icon: "user-gear",
+    },
+    {
+      link: "accounts",
+      title: "Accounts",
+      icon: "users",
+      pack: "fal"
+    },
   ]
   return <>
     <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0">

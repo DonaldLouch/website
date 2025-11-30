@@ -132,5 +132,5 @@ export const HeaderLinks: Array<HeaderLinkProps> = [
         icon: { name: "graduation-cap", pack: "fadl" },
       },
     ],
-  },
+  }
 ];
