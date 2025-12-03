@@ -20,7 +20,7 @@ Even though I'm still optimizing and constructing features, I feel as, my websit
 - **[Vercel](https://vercel.com/)**: Hosting Platform
 - **[Mantine](https://mantine.dev)**: CSS Framework
 - **[Hugeicons](https://hugeicons.com)**: Icons
-- **[Clerk](https://clerk.com/)**: Auth Provider
+- **[Better-Auth.](https://www.better-auth.com/)**: Auth Provider `NEW in Version 31.0.0`
 - **[Supabase](https://supabase.com/)**: Postgresql Provider
 - **[Backblaze B2](https://www.backblaze.com/)**: Image Storage
 - **[MDX](https://mdxjs.com/)**: Markdown Blog Posts
