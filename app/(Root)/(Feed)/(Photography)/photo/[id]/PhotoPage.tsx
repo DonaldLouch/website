@@ -17,14 +17,13 @@ import {
 // import { BsCalendar2, BsHash, BsImages, BsPencilSquare, BsPinMap, BsTag, BsTags } from "react-icons/bs";
 import ClipboardButton from "@/app/(Components)/(Buttons)/ClipboardButton";
 import PrimaryLinkedButton from "@/app/(Components)/(Buttons)/PrimaryLinkedButton";
-import { useUser } from "@clerk/nextjs";
 import ViewFullPhoto from "@/app/(Components)/ViewFullPhoto";
 import LinkBadge from "@/app/(Components)/LinkBadge";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function PhotoPage({photoData, mdxSource}: any) {
-  const {user} = useUser()
-  const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
+  const user = false
+  const isAdmin = false
 
   const { album: albumData } = photoData
 

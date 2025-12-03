@@ -2,14 +2,13 @@ import SingleAccordion from "@/app/(Components)/(Accordion)/SingleAccording";
 import LinkBadge from "@/app/(Components)/LinkBadge";
 import PostContent from "@/app/(Root)/(Blog)/post/(Components)/PostContent";
 import DisplayDate from "@/lib/DisplayDate";
-import { useUser } from "@clerk/nextjs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Anchor, AspectRatio, Avatar, Badge, Box, Group, SimpleGrid, Stack, Title, Text, Divider, Tooltip, Button } from "@mantine/core";
 
 
 export default function FullDescription({ mdxSource, video }: { mdxSource: any, video: any }) {
-    const {user} = useUser()
-    const isAdmin = user && user.publicMetadata.role === "admin" ? true : false
+    const user = false
+    const isAdmin = false
 
     return <Box m="1rem">
         <Title order={1} fz="3rem" fw="300">{video.title}</Title>
