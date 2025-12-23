@@ -1,21 +1,20 @@
-import { createAuthClient } from "better-auth/react"
+import { createAuthClient } from "better-auth/react";
 
 import {
   twoFactorClient,
   adminClient,
   multiSessionClient,
-} from "better-auth/client/plugins"
-import { passkeyClient } from "@better-auth/passkey/client"
-import { ac, admin, user } from "@/utils/auth/permissions"
+} from "better-auth/client/plugins";
+import { ac, admin, user } from "@/utils/auth/permissions";
 
 export const authClient = createAuthClient({
   baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
   plugins: [
-    passkeyClient(),
+    // passkeyClient(),
     multiSessionClient(),
     twoFactorClient({
       onTwoFactorRedirect: () => {
-        window.location.href = "/auth/2fa"
+        window.location.href = "/auth/2fa";
       },
     }),
     adminClient({
@@ -26,4 +25,4 @@ export const authClient = createAuthClient({
       },
     }),
   ],
-})
+});

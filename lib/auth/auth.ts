@@ -3,40 +3,51 @@ import { Pool } from "pg";
 import { nextCookies } from "better-auth/next-js";
 // import { createAuthMiddleware } from "better-auth/api";
 import { twoFactor } from "better-auth/plugins/two-factor";
-import { passkey } from "@better-auth/passkey";
+// import { passkey } from "@better-auth/passkey";
 import { admin as adminPlugin } from "better-auth/plugins/admin";
 import { ac, admin, user } from "@/utils/auth/permissions";
-import { multiSession } from "better-auth/plugins"
+import { multiSession } from "better-auth/plugins";
 
 export const auth = betterAuth({
   appName: "Donald Louch",
   baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
-  trustedOrigins: ["https://localhost:3000", "*.donaldlouch.ca", "https://beta.donaldlouch.ca", "https://*.vercel.app"],
+  trustedOrigins: [
+    "https://localhost:3000",
+    "*.donaldlouch.ca",
+    "https://beta.donaldlouch.ca",
+    "https://*.vercel.app",
+  ],
   user: {
     changeEmail: {
       enabled: true,
       sendChangeEmailVerification: async ({ user, url, newEmail }) => {
-        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
-            method: 'POST',
+        await fetch(
+          `${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`,
+          {
+            method: "POST",
             body: JSON.stringify({
               user: { ...user, email: newEmail },
               url,
               type: "emailChange",
             }),
-        })
+          },
+        );
       },
     },
     deleteUser: {
       enabled: true,
       sendDeleteAccountVerification: async ({ user, url }) => {
-        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
-            method: 'POST',
+        await fetch(
+          `${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`,
+          {
+            method: "POST",
             body: JSON.stringify({
               user,
               url,
               type: "deleteAccount",
             }),
-        })
+          },
+        );
       },
     },
   },
@@ -44,28 +55,34 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: false,
     sendResetPassword: async ({ user, url }) => {
-      await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
-          method: 'POST',
+      await fetch(
+        `${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`,
+        {
+          method: "POST",
           body: JSON.stringify({
             user,
             url,
             type: "passwordReset",
           }),
-      })
+        },
+      );
     },
   },
   emailVerification: {
     autoSignInAfterVerification: true,
     sendOnSignUp: true,
     sendVerificationEmail: async ({ user, url }) => {
-      await fetch( `${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`, {
-          method: 'POST',
+      await fetch(
+        `${process.env.NEXT_PUBLIC_SITE_URL!}/api/mail/sendUserEmail`,
+        {
+          method: "POST",
           body: JSON.stringify({
             user,
             url,
             type: "emailVerification",
           }),
-      })
+        },
+      );
     },
   },
   session: {
@@ -77,15 +94,15 @@ export const auth = betterAuth({
   plugins: [
     nextCookies(),
     twoFactor(),
-    passkey(),
+    // passkey(),
     multiSession(),
     adminPlugin({
       ac,
-        roles: {
-          admin,
-          user,
-        },
-    })
+      roles: {
+        admin,
+        user,
+      },
+    }),
   ],
   database: new Pool({
     connectionString: process.env.DATABASE_URL!,
@@ -111,4 +128,4 @@ export const auth = betterAuth({
   //     }
   //   }),
   // },
-})
+});
