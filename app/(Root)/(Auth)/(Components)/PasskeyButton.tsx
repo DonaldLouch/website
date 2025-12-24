@@ -26,7 +26,7 @@ export default function PasskeyButton() {
       icon={<FontAwesomeIcon icon={["fal", "user-lock"]} />}
       isFullWidth
     >
-      Login with Passkey
+      Signin with Passkey
     </PrimaryButton>
   );
 }

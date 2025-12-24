@@ -16,6 +16,7 @@ import {
   Anchor,
   Group,
   Image,
+  Spoiler,
 } from "@mantine/core";
 
 import z from "zod/v4";
@@ -30,12 +31,15 @@ import { SectionCard } from "@/app/(Components)/(Cards)/SectionCard";
 import { authClient } from "@/lib/auth/auth-client";
 import DividerInlineText from "@/app/(Components)/DividerInlineText";
 import PasskeyButton from "../(Components)/PasskeyButton";
+import { useState } from "react";
 
 export default function AuthLoginSignup({ session }: { session: any }) {
   const params = useSearchParams();
   const message = params.get("message");
 
   const router = useRouter();
+
+  const [expanded, setExpanded] = useState(false);
 
   // TODO: 2FA: <PinInput length={6} type="number" oneTimeCode />
   message &&
@@ -320,7 +324,12 @@ export default function AuthLoginSignup({ session }: { session: any }) {
                       w={{ base: "60vw", lg: "30vw !important" }}
                       height="auto"
                     />
-                    <Title order={1} fz="2rem" c="var(--blackRGBA)">
+                    <Title
+                      order={1}
+                      fz="2rem"
+                      c="var(--blackRGBA)"
+                      visibleFrom="md"
+                    >
                       Client Portal
                     </Title>
                   </Group>
@@ -332,16 +341,29 @@ export default function AuthLoginSignup({ session }: { session: any }) {
                   icon={<FontAwesomeIcon icon={["fal", "ban"]} />}
                   mx="2rem"
                 >
-                  <Text c="white" component="span">
-                    At this time, Donald Louch has decided to pause the
-                    implementation of the Client Portal and will be
-                    corresponding to client projects via. email with{" "}
-                    <InlineLink
-                      link="mailto:hello@donaldlouch.ca"
-                      body="hello@donaldlouch.ca"
-                      leftIcon={{ name: "light-envelope-at", pack: "fak" }}
-                    />
-                    .
+                  <Text
+                    c="white"
+                    component="span"
+                    mah="1px"
+                    style={{ overflow: "hidden" }}
+                  >
+                    <Spoiler
+                      maxHeight={50}
+                      showLabel="Read Full Alert"
+                      hideLabel="Hide"
+                      expanded={expanded}
+                      onExpandedChange={setExpanded}
+                    >
+                      At this time, Donald Louch has decided to pause the
+                      implementation of the Client Portal and will
+                      becorresponding to client projects via. email with{" "}
+                      <InlineLink
+                        link="mailto:hello@donaldlouch.ca"
+                        body="hello@donaldlouch.ca"
+                        leftIcon={{ name: "light-envelope-at", pack: "fak" }}
+                      />
+                      .
+                    </Spoiler>
                   </Text>
                 </Alert>
               </Stack>
