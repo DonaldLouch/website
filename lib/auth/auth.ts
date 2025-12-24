@@ -3,7 +3,7 @@ import { Pool } from "pg";
 import { nextCookies } from "better-auth/next-js";
 // import { createAuthMiddleware } from "better-auth/api";
 import { twoFactor } from "better-auth/plugins/two-factor";
-// import { passkey } from "@better-auth/passkey";
+import { passkey } from "@better-auth/passkey";
 import { admin as adminPlugin } from "better-auth/plugins/admin";
 import { ac, admin, user } from "@/utils/auth/permissions";
 import { multiSession } from "better-auth/plugins";
@@ -94,7 +94,7 @@ export const auth = betterAuth({
   plugins: [
     nextCookies(),
     twoFactor(),
-    // passkey(),
+    passkey(),
     multiSession(),
     adminPlugin({
       ac,

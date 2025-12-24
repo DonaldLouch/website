@@ -5,12 +5,13 @@ import {
   adminClient,
   multiSessionClient,
 } from "better-auth/client/plugins";
+import { passkeyClient } from "@better-auth/passkey/client";
 import { ac, admin, user } from "@/utils/auth/permissions";
 
 export const authClient = createAuthClient({
   baseURL: process.env.NEXT_PUBLIC_SITE_URL!,
   plugins: [
-    // passkeyClient(),
+    passkeyClient(),
     multiSessionClient(),
     twoFactorClient({
       onTwoFactorRedirect: () => {
