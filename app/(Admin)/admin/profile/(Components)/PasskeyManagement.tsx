@@ -15,21 +15,21 @@ export default function PasskeyManagement({ passkeys }: { passkeys: any }) {
   const router = useRouter();
 
   const handleDeletePasskey = async (passkeyId: string) => {
-    return await authClient.passkey.deletePasskey(
-      { id: passkeyId },
-      {
-        onSuccess: () => {
-          notifications.show({
-            id: `removePasskey${passkeyId}`,
-            title: "Removed Passkey",
-            message: `You have successfully removed a passkey.`,
-            // color: "green",
-            icon: <FontAwesomeIcon icon={["fal", "user-check"]} />,
-          });
-          router.refresh();
-        },
-      },
-    );
+    // return await authClient.passkey.deletePasskey(
+    //   { id: passkeyId },
+    //   {
+    //     onSuccess: () => {
+    //       notifications.show({
+    //         id: `removePasskey${passkeyId}`,
+    //         title: "Removed Passkey",
+    //         message: `You have successfully removed a passkey.`,
+    //         // color: "green",
+    //         icon: <FontAwesomeIcon icon={["fal", "user-check"]} />,
+    //       });
+    //       router.refresh();
+    //     },
+    //   },
+    // );
   };
 
   return (
