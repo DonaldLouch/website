@@ -95,7 +95,7 @@ export default function ProfileEdit({
               user={user}
               session={session}
               passkeys={passkeys}
-              account={accounts}
+              accounts={accounts}
             />
           </Tabs.Panel>
           <Tabs.Panel value="sessions">
