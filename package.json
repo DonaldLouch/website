@@ -15,7 +15,8 @@
     "db:push": "dotenv -e .env.local -- prisma db push",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
     "db:studio": "dotenv -e .env.local -- prisma studio",
-    "db:seed": "dotenv -e .env.local -- prisma db seed"
+    "db:seed": "dotenv -e .env.local -- prisma db seed",
+    "preinstall": "if [ ! -z \"$NETLIFY\" ]; then echo \"//npm.pkg.github.com/:_authToken=${NPM_TOKEN}\" >~/.npmrc; fi || true"
   },
   "keywords": [
     "Donald Louch, Donald, Louch, Portfolio, Website, Blog, Photography, Videography, Web Production, Canada, Canadian, Digital Content, Content Creator"
