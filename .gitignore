@@ -27,7 +27,7 @@ old/
 /.pnp
 .pnp.js
 /.yarn
-yarn.lock
+# yarn.lock
 
 package-lock.json
 npmUpdate.md
