@@ -18,6 +18,10 @@ media.md
 data.sql
 /supabase
 
+old/
+
+/prisma/seed.ts
+
 # dependencies
 /node_modules
 /.pnp
@@ -51,6 +55,7 @@ app/(Components)/HugeIconCopy2.tsx
 # misc
 .DS_Store
 *.pem
+.cache
 
 # debug
 npm-debug.log*
@@ -71,3 +76,19 @@ yarn-error.log*
 
 .next
 .env*.local
+
+/generated/prisma
+
+# Local Netlify folder
+.netlify
+/build/
+/api/
+/server/build
+/public/build# Sentry Config File
+.env.sentry-build-plugin
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+.tanstack
+dist
