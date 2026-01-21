@@ -1205,7 +1205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-fetch/fetch@npm:1.1.21, @better-fetch/fetch@npm:^1.1.4":
+"@better-fetch/fetch@npm:1.1.21, @better-fetch/fetch@npm:^1.1.21, @better-fetch/fetch@npm:^1.1.4":
   version: 1.1.21
   resolution: "@better-fetch/fetch@npm:1.1.21"
   checksum: 10c0/b23355b9eb397a4e6d3b269b027f19c44e3348b42640fa8f133ea4ca9c07e1d289781d2b18477f56883040e7401fcc751c52a6f0b56ea619bdd3132fff3cbb43
@@ -7178,6 +7178,7 @@ __metadata:
     "@better-auth/core": "npm:^1.4.15"
     "@better-auth/passkey": "npm:^1.4.15"
     "@better-auth/utils": "npm:^0.3.0"
+    "@better-fetch/fetch": "npm:^1.1.21"
     "@fontsource-variable/noto-sans": "npm:^5.2.10"
     "@fontsource-variable/noto-sans-mono": "npm:^5.2.10"
     "@fontsource-variable/noto-serif": "npm:^5.2.9"
