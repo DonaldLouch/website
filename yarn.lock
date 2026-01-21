@@ -4599,7 +4599,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.90.19":
+"@tanstack/query-core@npm:5.90.19, @tanstack/query-core@npm:^5.90.19":
   version: 5.90.19
   resolution: "@tanstack/query-core@npm:5.90.19"
   checksum: 10c0/f6974064238d94025cd1fb8e9ba6a1ffb90d137e0d3fb6949252e81032ae446e948073ea999a4d11e1b6000df7eeec15cda92b76a264249f091f7543a192e958
@@ -7200,6 +7200,7 @@ __metadata:
     "@prisma/client": "npm:^7.2.0"
     "@supabase/supabase-js": "npm:^2.90.1"
     "@tanstack/devtools-vite": "npm:^0.4.1"
+    "@tanstack/query-core": "npm:^5.90.19"
     "@tanstack/query-db-collection": "npm:^1.0.18"
     "@tanstack/react-db": "npm:^0.1.65"
     "@tanstack/react-devtools": "npm:^0.9.2"
