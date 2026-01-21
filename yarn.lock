@@ -7177,6 +7177,7 @@ __metadata:
     "@aws-sdk/client-s3": "npm:3.971.0"
     "@better-auth/core": "npm:^1.4.15"
     "@better-auth/passkey": "npm:^1.4.15"
+    "@better-auth/utils": "npm:^0.3.0"
     "@fontsource-variable/noto-sans": "npm:^5.2.10"
     "@fontsource-variable/noto-sans-mono": "npm:^5.2.10"
     "@fontsource-variable/noto-serif": "npm:^5.2.9"
