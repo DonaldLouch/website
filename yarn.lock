@@ -7274,6 +7274,7 @@ __metadata:
     mantine-form-zod-resolver: "npm:^1.3.0"
     moment: "npm:^2.30.1"
     moment-timezone: "npm:^0.6.0"
+    nanostores: "npm:^1.1.0"
     nodemailer: "npm:^7.0.12"
     nookies: "npm:^2.5.2"
     pg: "npm:^8.17.1"
@@ -10511,7 +10512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanostores@npm:^1.0.1":
+"nanostores@npm:^1.0.1, nanostores@npm:^1.1.0":
   version: 1.1.0
   resolution: "nanostores@npm:1.1.0"
   checksum: 10c0/c604a4afd4adc882637e2e44004924208bd40a95af9699ec8672eda1abd510d2a75688a0284cd5fbbf90af3311e59c77973df5d003ac3ffe98feb248777fbef7
