@@ -4,5 +4,6 @@
 
 [functions]
   included_files = [
-    "./node_modules/@better-auth/core"
+    "./node_modules/@better-auth/core",
+    "./node_modules/@prisma/client"
   ]
