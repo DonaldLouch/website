@@ -7,8 +7,8 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "tsr generate && vite build",
-    "preview": "tsr generate && vite preview",
+    "build": "-- prisma generate && tsr generate && vite build",
+    "preview": "-- prisma generate && tsr generate && vite preview",
     "test": "vitest run",
     "update": "yarn upgrade-interactive",
     "db:generate": "dotenv -e .env.local -- prisma generate",
