@@ -1,6 +1,6 @@
 [build]
   command = "yarn build"
-  publish = "dist/client"
+  publish = "dist"
 
 [functions]
   external_node_modules = [
