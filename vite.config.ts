@@ -17,7 +17,7 @@ export default defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tanstackStart({
-      srcDirectory: 'src',
+      srcDirectory: 'src'
     }),
     viteReact(),
   ],
