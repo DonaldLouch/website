@@ -10,7 +10,7 @@
     "build": "prisma generate && tsr generate && vite build",
     "test": "vitest run",
     "update": "yarn upgrade-interactive",
-    "db:generate": "dotenv -e .env.local -- prisma generate",
+    "db:generate": "dotenv -e .env.locxal -- prisma generate",
     "db:push": "dotenv -e .env.local -- prisma db push",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
     "db:studio": "dotenv -e .env.local -- prisma studio",
