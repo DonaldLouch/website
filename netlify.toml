@@ -1,3 +1,8 @@
 [build]
   command = "yarn build"
   publish = "dist/client"
+
+[functions]
+  included_files = [
+    "./node_modules/@better-auth/core"
+  ]
