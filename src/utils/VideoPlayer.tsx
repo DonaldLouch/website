@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export function useVideoPlayer({ videoData }: { videoData: any }) {
-    const router = useRouter();
+    // const router = useRouter();
 
     const [playing, setPlaying] = useState(false);
     const [muted, setMuted] = useState(false);
@@ -183,7 +183,7 @@ export function useVideoPlayer({ videoData }: { videoData: any }) {
     }
 
     const backToFeed = () => {
-        router.push("/feed/videography");
+        // router.push("/feed/videography");
     }
 
     const leftButtons = [

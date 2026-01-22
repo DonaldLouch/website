@@ -1,7 +1,7 @@
-import { Modal, Stack } from '@mantine/core'
+import { Modal, Stack, Image } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import { useEffect, useState } from 'react'
 import { useImageSize } from 'react-image-size'

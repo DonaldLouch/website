@@ -2,7 +2,7 @@
 
 import { Anchor, AppShell, rem, Image, Burger, Tooltip, Box, Flex, NavLink, Text } from "@mantine/core";
 import { useDisclosure, useHeadroom } from "@mantine/hooks";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import { HeaderLinkProps, HeaderLinks } from "@/lib/HeaderLinks";
