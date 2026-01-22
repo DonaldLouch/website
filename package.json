@@ -69,6 +69,7 @@
     "better-call": "1.1.8",
     "crossws": "^0.4.3",
     "dayjs": "^1.11.19",
+    "dotenv": "^17.2.3",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "eslint": "^9.39.2",
