@@ -1,6 +1,6 @@
 import { SessionInformation } from "@/actions/auth.server"
 import { createFileRoute, useLoaderData } from "@tanstack/react-router"
-import AuthLoginSignup from "./-AuthPage"
+import AuthLoginSignup from "./-components/AuthPage"
 
 export const Route = createFileRoute('/auth/')({ 
     loader: () => SessionInformation(),

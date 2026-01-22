@@ -4,24 +4,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
 
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
 export default function PasskeyButton() {
   const { refetch } = authClient.useSession();
    const navigate = useNavigate()
 
-  console.log("PasskeyButton");
-
   useEffect(() => {
-    authClient.signIn.passkey(
-      { autoFill: false },
-      {
-        onSuccess() {
-          refetch();
-          navigate({
-            to: '/admin'
-          })
+    sleep(5000).then(() => 
+      authClient.signIn.passkey(
+        { autoFill: false },
+        {
+          onSuccess() {
+            refetch();
+            navigate({
+              to: '/admin'
+            })
+          },
         },
-      },
-    );
+      )
+    )
   }, [navigate, refetch]);
   return (
     <PrimaryButton
