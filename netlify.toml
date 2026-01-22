@@ -1,3 +1,6 @@
 [build]
-  command = "NODE_OPTIONS='--max-old-space-size=4096' yarn build"
+  command = "yarn build"
   publish = "dist/client"
+
+[build.environment]
+  NODE_OPTIONS = "--max-old-space-size=4096"
