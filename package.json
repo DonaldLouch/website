@@ -46,7 +46,6 @@
     "@neondatabase/vite-plugin-postgres": "^0.6.1",
     "@prisma/adapter-neon": "^7.3.0",
     "@prisma/adapter-pg": "^7.3.0",
-    "@prisma/client": "^7.3.0",
     "@prisma/studio-core": "^0.14.0",
     "@supabase/supabase-js": "^2.91.0",
     "@tanstack/devtools-ui": "^0.4.4",
@@ -98,6 +97,7 @@
   },
   "devDependencies": {
     "@netlify/vite-plugin-tanstack-start": "^1.2.7",
+    "@prisma/client": "^7.3.0",
     "@tanstack/devtools-vite": "^0.4.1",
     "@tanstack/router-cli": "^1.154.7",
     "@tanstack/router-plugin": "^1.154.7",
