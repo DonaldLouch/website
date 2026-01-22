@@ -30,7 +30,7 @@ import FormInputPassword from "@/components/(Form)/FormInputPassword";
 import { SectionCard } from "@/components/(Cards)/SectionCard";
 import { authClient } from "@/lib/auth/auth-client";
 import DividerInlineText from "@/components/DividerInlineText";
-import PasskeyButton from "./(Components)/PasskeyButton";
+import PasskeyButton from "./-(Components)/PasskeyButton";
 import { useState } from "react";
 import { redirect, Router, useNavigate, useParams } from "@tanstack/react-router";
 

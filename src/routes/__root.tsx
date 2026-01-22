@@ -37,13 +37,15 @@ import { NotFound } from '@/components/NotFound'
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { RouteNavigationPanel } from "@/components/(DevTools)";
-import type { QueryClient } from '@tanstack/react-query'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
     
-interface MyRouterContext {
-  queryClient: QueryClient
-}
+// interface MyRouterContext {
+//   queryClient: QueryClient
+// }
 
-export const Route = createRootRouteWithContext<MyRouterContext>()({
+{/* <MyRouterContext></MyRouterContext> */}
+
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       // metadataBase: new URL(process.env.VITE_SITE_URL!),
@@ -118,6 +120,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   shellComponent: RootDocument,
 })
 
+const queryClient = new QueryClient()
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   const isAdmin = Route.useLoaderData();
   // console.log("isAdmin", isAdmin);
@@ -138,16 +142,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <MantineProvider theme={MantineTheme}>
-          <Notifications />
-          <Suspense fallback={<Loading />}>
-            {!isMaintenanceMode || (isMaintenanceMode && isAdmin) || (isMaintenanceMode && pathname.includes('/auth'))
-              ? <MainLayout>{children}</MainLayout>
-              : <MaintenanceModePage />
-            }
-          </Suspense> 
-        </MantineProvider>
-        <TanStackDevtools
+        <QueryClientProvider client={queryClient}>
+          <MantineProvider theme={MantineTheme}>
+            <Notifications />
+            <Suspense fallback={<Loading />}>
+              {!isMaintenanceMode || (isMaintenanceMode && isAdmin) || (isMaintenanceMode && pathname.includes('/auth'))
+                ? <MainLayout>{children}</MainLayout>
+                : <MaintenanceModePage />
+              }
+            </Suspense> 
+          </MantineProvider>
+        </QueryClientProvider>
+        {/* <TanStackDevtools
               config={{
                   position: 'bottom-right',
               }}
@@ -162,7 +168,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                       render: <RouteNavigationPanel />,
                   },
               ]}
-          />
+          /> */}
         <Scripts />
       </body>
     </html>

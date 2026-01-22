@@ -6,11 +6,14 @@ import viteReact from '@vitejs/plugin-react'
 import mkcert from 'vite-plugin-mkcert'
 import { devtools } from '@tanstack/devtools-vite'
 
+import netlify from '@netlify/vite-plugin-tanstack-start'
+
 export default defineConfig({
   server: {
     port: 3000,
   },
   plugins: [
+    netlify(),
     mkcert(),
     devtools(),
     tsConfigPaths({

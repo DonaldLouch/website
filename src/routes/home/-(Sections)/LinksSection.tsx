@@ -1,7 +1,7 @@
 // "use client"
 
 import { Box, Flex, Text } from '@mantine/core'
-import { LinkButton } from '../LinkButton'
+import { LinkButton } from '../-LinkButton'
 import { Title } from '@mantine/core'
 import { FooterIcon } from '@/components/(Layout)/(Footer)/FooterIcon'
 // import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsSend, BsEnvelopeAt } from 'react-icons/bs'

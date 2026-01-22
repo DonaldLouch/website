@@ -5058,6 +5058,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/router-cli@npm:^1.154.7":
+  version: 1.154.7
+  resolution: "@tanstack/router-cli@npm:1.154.7"
+  dependencies:
+    "@tanstack/router-generator": "npm:1.154.7"
+    chokidar: "npm:^3.6.0"
+    yargs: "npm:^17.7.2"
+  bin:
+    tsr: bin/tsr.cjs
+  checksum: 10c0/c4ee64aa629581d42bfd029b49a46efb35946f795fc172dfd2fa474eb7f54944eaf92fc657df9cd7993273a700f7bbec21af980be345f7c028d055b890145250
+  languageName: node
+  linkType: hard
+
 "@tanstack/router-core@npm:1.154.7, @tanstack/router-core@npm:^1.154.7":
   version: 1.154.7
   resolution: "@tanstack/router-core@npm:1.154.7"
@@ -5191,7 +5204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/start-plugin-core@npm:1.154.7":
+"@tanstack/start-plugin-core@npm:1.154.7, @tanstack/start-plugin-core@npm:^1.154.7":
   version: 1.154.7
   resolution: "@tanstack/start-plugin-core@npm:1.154.7"
   dependencies:
@@ -7659,8 +7672,10 @@ __metadata:
     "@tanstack/react-router-devtools": "npm:^1.154.7"
     "@tanstack/react-router-ssr-query": "npm:^1.154.7"
     "@tanstack/react-start": "npm:^1.154.7"
+    "@tanstack/router-cli": "npm:^1.154.7"
     "@tanstack/router-core": "npm:^1.154.7"
     "@tanstack/router-plugin": "npm:^1.154.7"
+    "@tanstack/start-plugin-core": "npm:^1.154.7"
     "@types/jsdom": "npm:^27.0.0"
     "@types/mdx": "npm:^2.0.13"
     "@types/node": "npm:^25.0.10"
@@ -14729,7 +14744,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.0.0, yargs@npm:^17.6.0":
+"yargs@npm:^17.0.0, yargs@npm:^17.6.0, yargs@npm:^17.7.2":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:
