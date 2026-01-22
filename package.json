@@ -69,6 +69,7 @@
     "axios": "^1.13.2",
     "better-auth": "^1.4.15",
     "better-call": "^1.1.8",
+    "crossws": "^0.4.3",
     "dayjs": "^1.11.19",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",

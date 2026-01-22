@@ -6759,6 +6759,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crossws@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "crossws@npm:0.4.3"
+  peerDependencies:
+    srvx: ">=0.7.1"
+  peerDependenciesMeta:
+    srvx:
+      optional: true
+  checksum: 10c0/5fc7378d10de48c0a9f4d21e1b979231afcf7aaad7c3a5f36318d0fb3fc636e921f2eb2515261edf9f17851e116b0e948ddb2fc31bad1a051e0d113073a932b2
+  languageName: node
+  linkType: hard
+
 "css-box-model@npm:^1.2.1":
   version: 1.2.1
   resolution: "css-box-model@npm:1.2.1"
@@ -7248,6 +7260,7 @@ __metadata:
     babel-plugin-react-compiler: "npm:1.0.0"
     better-auth: "npm:^1.4.15"
     better-call: "npm:^1.1.8"
+    crossws: "npm:^0.4.3"
     dayjs: "npm:^1.11.19"
     dotenv-cli: "npm:^11.0.0"
     embla-carousel: "npm:^8.6.0"
