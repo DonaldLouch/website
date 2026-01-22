@@ -7269,6 +7269,7 @@ __metadata:
     eslint-plugin-react-compiler: "npm:19.1.0-rc.2"
     jose: "npm:^6.1.3"
     jsdom: "npm:^27.4.0"
+    kysely: "npm:^0.28.10"
     mantine-form-yup-resolver: "npm:^2.0.0"
     mantine-form-zod-resolver: "npm:^1.3.0"
     moment: "npm:^2.30.1"
@@ -9396,6 +9397,13 @@ __metadata:
   version: 2.0.0
   resolution: "kuler@npm:2.0.0"
   checksum: 10c0/0a4e99d92ca373f8f74d1dc37931909c4d0d82aebc94cf2ba265771160fc12c8df34eaaac80805efbda367e2795cb1f1dd4c3d404b6b1cf38aec94035b503d2d
+  languageName: node
+  linkType: hard
+
+"kysely@npm:^0.28.10":
+  version: 0.28.10
+  resolution: "kysely@npm:0.28.10"
+  checksum: 10c0/46a42f7092035ccc2adbe5f447ff5377431e9aabd1c55ca2c9f79a11595b97cd446a0ffdcc3e14a993a23fbd7e2a7ab7e874f2b7388f42ddd7d76c6aee9a1241
   languageName: node
   linkType: hard
 
