@@ -10,7 +10,7 @@ import "@mantine/dropzone/styles.css";
 import "@mantine/carousel/styles.css";
 import "@/config/styles/global.css";
 
-import MaintenanceModePage from "@/components/(Layout)/MaintenanceModePage";
+import MaintenanceModePage from "@/components/Layout/MaintenanceMode";
 import MainLayout from "@/components/(Layout)/MainLayout";
 import Loading from "@/components/Loading";
 import { Suspense } from "react";
