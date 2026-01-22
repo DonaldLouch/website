@@ -78,7 +78,7 @@ yarn-error.log*
 .next
 .env*.local
 
-/src/generated/prisma
+# /src/generated/prisma
 
 # Local Netlify folder
 .netlify
@@ -93,7 +93,4 @@ yarn-error.log*
 /playwright/.cache/
 .tanstack
 dist
-src/generated/prisma/internal/class.ts
-src/generated/prisma/internal/class.ts
-src/generated/prisma/internal/prismaNamespace.ts
-src/generated/prisma/internal/prismaNamespaceBrowser.ts
+src/generated/
