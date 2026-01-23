@@ -7,10 +7,10 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "CI= prisma generate && tsr generate && vite build",
+    "build": "netlify env:import .env -- prisma generate && tsr generate && vite build",
     "test": "vitest run",
     "update": "yarn upgrade-interactive",
-    "db:generate": "dotenv -e .env.locxal -- prisma generate",
+    "db:generate": "dotenv -e .env.local -- prisma generate",
     "db:push": "dotenv -e .env.local -- prisma db push",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
     "db:studio": "dotenv -e .env.local -- prisma studio",
