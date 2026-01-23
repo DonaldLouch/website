@@ -6,5 +6,6 @@
   node_bundler = "esbuild"
   external_node_modules = [
     "@prisma/client",
-    "zod"
+    "@better-auth/core",
+    "zod",
   ]

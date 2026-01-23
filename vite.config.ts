@@ -24,12 +24,17 @@ export default defineConfig({
     }),
     viteReact(),
   ],
-  optimizeDeps: {
-    exclude: [
-      '@tanstack/start-server-core',
-      '@tanstack/react-start',
-      '@tanstack/react-start/client',
-      '@tanstack/react-start/server',
-    ],
-  }
+  // optimizeDeps: {
+  //   exclude: [
+  //     '@tanstack/start-server-core',
+  //     '@tanstack/react-start',
+  //     '@tanstack/react-start/client',
+  //     '@tanstack/react-start/server',
+  //     '@better-auth/core/utils',
+  //     '@better-auth/core/api',
+  //     'better-call',
+  //     '@better-auth/core/utils',
+  //     '@better-auth/core/api', 
+  //   ],
+  // }
 })
