@@ -24,7 +24,6 @@
   "dependencies": {
     "@awesome.me/kit-c3986f6041": "^1.0.194",
     "@aws-sdk/client-s3": "3.975.0",
-    "@better-auth/core": "^1.4.17",
     "@better-auth/passkey": "^1.4.17",
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@fontsource-variable/noto-sans-mono": "^5.2.10",
