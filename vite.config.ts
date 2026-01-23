@@ -11,6 +11,10 @@ import netlify from '@netlify/vite-plugin-tanstack-start'
 export default defineConfig({
   server: {
     port: 3000,
+    preset: 'netlify',
+  },
+  tsr: {
+    appDirectory: 'src',
   },
   plugins: [
     netlify(),

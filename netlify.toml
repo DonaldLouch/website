@@ -1,11 +1,10 @@
 [build]
   command = "yarn build"
-  publish = "dist/client"
+  publish = "dist"
 
 [functions]
   node_bundler = "esbuild"
   external_node_modules = [
     "@prisma/client",
-    "@better-auth/core",
     "zod",
   ]
