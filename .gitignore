@@ -28,8 +28,8 @@ data.sql
 /node_modules
 /.pnp
 .pnp.js
-# /.yarn
-yarn.lock
+/.yarn
+# yarn.lock
 
 package-lock.json
 npmUpdate.md
