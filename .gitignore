@@ -28,7 +28,7 @@ data.sql
 /node_modules
 /.pnp
 .pnp.js
-/.yarn
+# /.yarn
 # yarn.lock
 
 package-lock.json
