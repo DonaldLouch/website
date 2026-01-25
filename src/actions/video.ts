@@ -1,6 +1,6 @@
 "use server"
 
-import supabase from "@/lib/supabase";
+import supabase from "-old/supabase";
 
 export async function getVideoData(id: string): Promise<any> {
   try {
