@@ -42,7 +42,7 @@ function Test() {
     const {pinnedBlogPostCount} = Route.useLoaderData();
     const data = pinnedBlogPostCount
     return <>
-    <Title>Test Page: page 2</Title>
+    <Title>Test Page: page 3</Title>
     <CodeBlock code={JSON.stringify(data, null, 2)} />
     </>
 }
