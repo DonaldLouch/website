@@ -30,6 +30,7 @@ data.sql
 .pnp.js
 /.yarn
 # yarn.lock
+.yarn/install-state.gz
 
 package-lock.json
 npmUpdate.md
