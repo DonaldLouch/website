@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["views"]
 }
 
 datasource db {
@@ -502,6 +503,14 @@ model verification {
   expiresAt  DateTime @db.Timestamptz(6)
   createdAt  DateTime @db.Timestamptz(6)
   updatedAt  DateTime @db.Timestamptz(6)
+}
+
+view Tags {
+  tags String?
+}
+
+view Locations {
+  locations String?
 }
 
 enum projectStatus {

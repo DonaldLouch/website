@@ -9,6 +9,32 @@ export const GetMaintenanceMode = createServerFn({ method: 'GET' }).handler(() =
 // About Me
 export const GetAboutMe = createServerFn({ method: 'GET' }).handler(() => prisma.about.findFirst())
 
+// Distinct
+// export const GetAllLocationData = createServerFn({ method: 'GET' }).handler(() => prisma.about.findFirst())
+// export const GetAllTagData = createServerFn({ method: 'GET' }).handler(() => prisma.about.findFirst())
+
+export const GetAllLocationData = createServerFn({ method: 'GET' })
+    .handler(async () => {
+        const res = await prisma.locations.findMany({
+            select: {
+                locations: true
+            },
+            orderBy: { locations: 'asc' }
+        })
+        return res.map(r => r.locations)
+    })
+
+export const GetAllTagData = createServerFn({ method: 'GET' })
+    .handler(async () => {
+        const res = await prisma.tags.findMany({
+            select: {
+                tags: true
+            },
+            orderBy: { tags: 'asc' }
+        })
+        return res.map(r => r.tags)
+    })
+
 // Links
 export const GetAllLinks = createServerFn({ method: 'GET' })
     .handler(() => prisma.links.findMany({
@@ -42,10 +68,106 @@ export const GetPinnedPhotography = createServerFn({ method: 'GET' })
         take: 20,
     }))
 
+export const GetFilteredPhotos = createServerFn({ method: 'POST' })
+    .inputValidator((data: { postLimit?: number, searchType?: string, keyword?:string, from?: number, to?: number }) => data)
+    .handler(async (ctx) => {
+        const { postLimit, searchType, keyword, from, to } = ctx.data
+
+        const whereClause: any = {
+            isPublic: true, 
+            isSetup: true,
+        }
+
+        if (searchType === "view" && keyword === "pinned") {
+            whereClause.isPinned = true
+        }
+
+        if (searchType && keyword) {
+            switch (searchType) {
+                case 'keyword':
+                    whereClause.OR = [
+                        { caption: { contains: keyword, mode: 'insensitive' } },
+                        { photoName: { contains: keyword, mode: 'insensitive' } },
+                        { tags: { has: keyword } }
+                    ]
+                    break
+                case 'location':
+                    whereClause.location = { contains: keyword, mode: 'insensitive' }
+                    break
+                case 'tag':
+                    whereClause.tags = { has: keyword }
+                    break
+            }
+        }
+
+        const queryOptions: any = {
+            include: {
+                PhotographyMedia: true,
+                PhotographyAlbum: true
+            },
+            // orderBy: { lastUpdatedOn: searchType == "order" && keyword == "old" ? 'desc' : 'asc' },
+            orderBy: { lastUpdatedOn: searchType == "order" && keyword == "old" ? 'asc' : 'desc' },
+            where: whereClause,
+        }
+
+        if (from !== undefined && to !== undefined) {
+            queryOptions.skip = from
+            queryOptions.take = to
+        } else if (postLimit) {
+            queryOptions.take = postLimit
+        } else {
+            queryOptions.take = 20
+        }
+
+        return await prisma.photography.findMany(queryOptions)
+    })
+
+export const GetAllPhotographyAlbums = createServerFn({ method: 'GET' })
+    .handler(() => prisma.photographyAlbum.findMany({
+        orderBy: { lastUpdatedOn: 'desc' },
+    }))
+
 export const GetAllPublicPhotographyCount = createServerFn({ method: 'GET' })
     .handler(() => prisma.photography.count({
         where: { isPublic: true, isSetup: true },
     }))
+
+export const GetFilteredPhotosCount = createServerFn({ method: 'GET' })
+    .inputValidator((data: { searchType?: string, keyword?:string }) => data)
+    .handler(async (ctx) => {
+        const { searchType, keyword } = ctx.data
+
+        const whereClause: any = {
+            isPublic: true, 
+            isSetup: true,
+        }
+
+        if (searchType === "view" && keyword === "pinned") {
+            whereClause.isPinned = true
+        }
+
+        if (searchType && keyword) {
+            switch (searchType) {
+                case 'keyword':
+                    whereClause.OR = [
+                        { caption: { contains: keyword, mode: 'insensitive' } },
+                        { photoName: { contains: keyword, mode: 'insensitive' } },
+                        { tags: { has: keyword } }
+                    ]
+                    break
+                case 'location':
+                    whereClause.location = { contains: keyword, mode: 'insensitive' }
+                    break
+                case 'tag':
+                    whereClause.tags = { has: keyword }
+                    break
+            }
+        }
+
+        return await prisma.photography.count({
+            where: whereClause,
+        })
+    })
 
 export const GetPinnedPhotographyCount = createServerFn({ method: 'GET' })
     .handler(() => prisma.photography.count({

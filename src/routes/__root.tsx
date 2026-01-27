@@ -38,6 +38,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { RouteNavigationPanel } from "@/components/(DevTools)";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import AdminLayout from "@/components/(Layout)/AdminLayout";
     
 // interface MyRouterContext {
 //   queryClient: QueryClient
@@ -147,7 +148,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <Notifications />
             <Suspense fallback={<Loading />}>
               {!isMaintenanceMode || (isMaintenanceMode && isAdmin) || (isMaintenanceMode && pathname.includes('/auth'))
-                ? <MainLayout>{children}</MainLayout>
+                ? pathname.includes('/admin') 
+                  ? <AdminLayout isAdmin={isAdmin}>{children}</AdminLayout> 
+                  : <MainLayout>{children}</MainLayout>
                 : <MaintenanceModePage />
               }
             </Suspense> 

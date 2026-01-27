@@ -1,11 +1,8 @@
-// "use client"
-
 import { Box, Flex, Group, } from "@mantine/core"
 
 import Masonry from 'react-masonry-css'
-import React from "react";
 
-import ViewPhotoFeed from "@/components/ViewPhotoFeed";
+import ViewPhotoFeed from "@/components/(Feed)/(Photography)/ViewPhotoFeed";
 
 import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton";
 

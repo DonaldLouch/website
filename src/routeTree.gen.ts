@@ -10,14 +10,28 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestRouteImport } from './routes/test'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthedRouteImport } from './routes/_authed'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AuthIndexRouteImport } from './routes/auth/index'
-import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as FeedIndexRouteImport } from './routes/feed/index'
+import { Route as FeedPhotographyRouteImport } from './routes/feed/photography'
+import { Route as AlbumIdRouteImport } from './routes/album.$id'
+import { Route as AuthedAdminIndexRouteImport } from './routes/_authed/admin/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as AuthedAdminTestRouteImport } from './routes/_authed/admin/test'
 
 const TestRoute = TestRouteImport.update({
   id: '/test',
   path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthedRoute = AuthedRouteImport.update({
+  id: '/_authed',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,57 +39,117 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthIndexRoute = AuthIndexRouteImport.update({
-  id: '/auth/',
-  path: '/auth/',
+const FeedIndexRoute = FeedIndexRouteImport.update({
+  id: '/feed/',
+  path: '/feed/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminIndexRoute = AdminIndexRouteImport.update({
+const FeedPhotographyRoute = FeedPhotographyRouteImport.update({
+  id: '/feed/photography',
+  path: '/feed/photography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlbumIdRoute = AlbumIdRouteImport.update({
+  id: '/album/$id',
+  path: '/album/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthedAdminIndexRoute = AuthedAdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AuthedRoute,
 } as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthedAdminTestRoute = AuthedAdminTestRouteImport.update({
+  id: '/admin/test',
+  path: '/admin/test',
+  getParentRoute: () => AuthedRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/test': typeof TestRoute
-  '/admin/': typeof AdminIndexRoute
-  '/auth/': typeof AuthIndexRoute
+  '/album/$id': typeof AlbumIdRoute
+  '/feed/photography': typeof FeedPhotographyRoute
+  '/feed/': typeof FeedIndexRoute
+  '/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/admin/': typeof AuthedAdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/test': typeof TestRoute
-  '/admin': typeof AdminIndexRoute
-  '/auth': typeof AuthIndexRoute
+  '/album/$id': typeof AlbumIdRoute
+  '/feed/photography': typeof FeedPhotographyRoute
+  '/feed': typeof FeedIndexRoute
+  '/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/admin': typeof AuthedAdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authed': typeof AuthedRouteWithChildren
+  '/auth': typeof AuthRoute
   '/test': typeof TestRoute
-  '/admin/': typeof AdminIndexRoute
-  '/auth/': typeof AuthIndexRoute
+  '/album/$id': typeof AlbumIdRoute
+  '/feed/photography': typeof FeedPhotographyRoute
+  '/feed/': typeof FeedIndexRoute
+  '/_authed/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/_authed/admin/': typeof AuthedAdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/test' | '/admin/' | '/auth/' | '/api/auth/$'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/test'
+    | '/album/$id'
+    | '/feed/photography'
+    | '/feed/'
+    | '/admin/test'
+    | '/api/auth/$'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/test' | '/admin' | '/auth' | '/api/auth/$'
-  id: '__root__' | '/' | '/test' | '/admin/' | '/auth/' | '/api/auth/$'
+  to:
+    | '/'
+    | '/auth'
+    | '/test'
+    | '/album/$id'
+    | '/feed/photography'
+    | '/feed'
+    | '/admin/test'
+    | '/api/auth/$'
+    | '/admin'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authed'
+    | '/auth'
+    | '/test'
+    | '/album/$id'
+    | '/feed/photography'
+    | '/feed/'
+    | '/_authed/admin/test'
+    | '/api/auth/$'
+    | '/_authed/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthedRoute: typeof AuthedRouteWithChildren
+  AuthRoute: typeof AuthRoute
   TestRoute: typeof TestRoute
-  AdminIndexRoute: typeof AdminIndexRoute
-  AuthIndexRoute: typeof AuthIndexRoute
+  AlbumIdRoute: typeof AlbumIdRoute
+  FeedPhotographyRoute: typeof FeedPhotographyRoute
+  FeedIndexRoute: typeof FeedIndexRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
@@ -88,6 +162,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authed': {
+      id: '/_authed'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -95,19 +183,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/auth/': {
-      id: '/auth/'
-      path: '/auth'
-      fullPath: '/auth/'
-      preLoaderRoute: typeof AuthIndexRouteImport
+    '/feed/': {
+      id: '/feed/'
+      path: '/feed'
+      fullPath: '/feed/'
+      preLoaderRoute: typeof FeedIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/': {
-      id: '/admin/'
+    '/feed/photography': {
+      id: '/feed/photography'
+      path: '/feed/photography'
+      fullPath: '/feed/photography'
+      preLoaderRoute: typeof FeedPhotographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/album/$id': {
+      id: '/album/$id'
+      path: '/album/$id'
+      fullPath: '/album/$id'
+      preLoaderRoute: typeof AlbumIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authed/admin/': {
+      id: '/_authed/admin/'
       path: '/admin'
       fullPath: '/admin/'
-      preLoaderRoute: typeof AdminIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AuthedAdminIndexRouteImport
+      parentRoute: typeof AuthedRoute
     }
     '/api/auth/$': {
       id: '/api/auth/$'
@@ -116,14 +218,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authed/admin/test': {
+      id: '/_authed/admin/test'
+      path: '/admin/test'
+      fullPath: '/admin/test'
+      preLoaderRoute: typeof AuthedAdminTestRouteImport
+      parentRoute: typeof AuthedRoute
+    }
   }
 }
 
+interface AuthedRouteChildren {
+  AuthedAdminTestRoute: typeof AuthedAdminTestRoute
+  AuthedAdminIndexRoute: typeof AuthedAdminIndexRoute
+}
+
+const AuthedRouteChildren: AuthedRouteChildren = {
+  AuthedAdminTestRoute: AuthedAdminTestRoute,
+  AuthedAdminIndexRoute: AuthedAdminIndexRoute,
+}
+
+const AuthedRouteWithChildren =
+  AuthedRoute._addFileChildren(AuthedRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthedRoute: AuthedRouteWithChildren,
+  AuthRoute: AuthRoute,
   TestRoute: TestRoute,
-  AdminIndexRoute: AdminIndexRoute,
-  AuthIndexRoute: AuthIndexRoute,
+  AlbumIdRoute: AlbumIdRoute,
+  FeedPhotographyRoute: FeedPhotographyRoute,
+  FeedIndexRoute: FeedIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport

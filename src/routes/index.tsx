@@ -8,11 +8,11 @@ import Loading from '@/components/Loading';
 import PrimaryLinkedButton from '@/components/(Buttons)/PrimaryLinkedButton';
 import PinnedPostsCard from '@/components/(Cards)/PinnedPostsCard';
 import StatsGroup from '@/components/(Cards)/StatsGroup';
-import HomeHeroSection from './-home_components/HomeHeroSection';
-import LinksSection from './-home_components/LinksSection';
-import PinnedAudio from './-home_components/PinnedAudio';
-import PinnedPhotos from './-home_components/PinnedPhotos';
-import PinnedVideos from './-home_components/PinnedVideos';
+import HomeHeroSection from '../components/(HomePage)/HomeHeroSection';
+import LinksSection from '../components/(HomePage)/LinksSection';
+import PinnedAudio from '../components/(HomePage)/PinnedAudio';
+import PinnedPhotos from '../components/(HomePage)/PinnedPhotos';
+import PinnedVideos from '../components/(HomePage)/PinnedVideos';
 
 export const Route = createFileRoute('/')({ 
     component: Home, 

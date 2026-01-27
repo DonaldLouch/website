@@ -1,30 +1,18 @@
-// "use client"
-
 import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Image } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
-// import { useUser } from '@clerk/nextjs'
-
-import classes from "./Components.module.css"
+import classes from "../../Components.module.css"
 import { useDisclosure } from '@mantine/hooks'
-import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
-import ClipboardButton from './(Buttons)/ClipboardButton'
+import PrimaryLinkedButton from '../../(Buttons)/PrimaryLinkedButton'
+import ClipboardButton from '../../(Buttons)/ClipboardButton'
 
-// import LazyLoad from 'react-lazyload';
-// import Image from 'next/image'
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState, memo } from 'react'
 import { useImageSize } from 'react-image-size'
-import LinkBadge from './LinkBadge'
+import LinkBadge from '../../LinkBadge'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { checkRole } from '@/lib/roles'
 
-
-export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
-    // const {user} = useUser() as any
+function ViewPhotoFeed({ imageData, hideElement }: {imageData: any,hideElement?: any}) {
     const user = null
-    
-    // const isAdmin = user && user.publicMetadata?.role === "admin" ? true : false
     const isAdmin = false
 
     const [opened, { open, close }] = useDisclosure(false)
@@ -36,15 +24,13 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
     const [photoWidth, setPhotoWidth] = useState(1920)
     const [photoHeight, setPhotoHeight] = useState(1080)
 
-    const [imageQuality, setImageQuality] = useState(50)
-
     useEffect(() => {
-        !loading || error && setImageQuality(100)
-        dimensions && !loading || error && setPhotoWidth(Number(dimensions?.width))
-        dimensions && !loading || error && setPhotoHeight(Number(dimensions?.height))
+        if (dimensions && !loading && !error) {
+            setPhotoWidth(Number(dimensions.width))
+            setPhotoHeight(Number(dimensions.height))
+        }
     }, [imageURL, dimensions, loading, error])
     
-    // className={classes.imageCardView}
     return (<>
         <Box  onClick={open} display="inline-block">
                 {/* <Suspense fallback={<Skeleton />}> */}
@@ -135,4 +121,6 @@ export default function ViewPhotoFeed({ imageData, hideElement }: {imageData: an
         </Modal>
     </>)
 }
+
+export default memo(ViewPhotoFeed)
 
