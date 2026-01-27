@@ -25,11 +25,8 @@ config.autoAddCss = false;
 import {
   createRootRoute,
   HeadContent,
-  Outlet,
   Scripts,
   useLocation,
-  ErrorComponent,
-  createRootRouteWithContext,
 } from "@tanstack/react-router"
 import { seo } from "@/utils/seo";
 import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
@@ -39,17 +36,10 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { RouteNavigationPanel } from "@/components/(DevTools)";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import AdminLayout from "@/components/(Layout)/AdminLayout";
-    
-// interface MyRouterContext {
-//   queryClient: QueryClient
-// }
-
-{/* <MyRouterContext></MyRouterContext> */}
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      // metadataBase: new URL(process.env.VITE_SITE_URL!),
       {
         charSet: 'utf-8',
       },
@@ -86,33 +76,7 @@ export const Route = createRootRoute({
       }),
     ],
     links: [
-      { rel: 'icon', href: '/logo/logo.svg', type: 'image/svg+xml' },
-    //   // { rel: 'stylesheet', href: appCss },
-    //   {
-    //     rel: 'apple-touch-icon',
-    //     sizes: '180x180',
-    //     href: '/apple-touch-icon.png',
-    //   },
-    //   {
-    //     rel: 'icon',
-    //     type: 'image/png',
-    //     sizes: '32x32',
-    //     href: '/favicon-32x32.png',
-    //   },
-    //   {
-    //     rel: 'icon',
-    //     type: 'image/png',
-    //     sizes: '16x16',
-    //     href: '/favicon-16x16.png',
-    //   },
-    //   { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
-    //   { rel: 'icon', href: '/favicon.ico' },
-    // ],
-    // scripts: [
-    //   {
-    //     src: '/customScript.js',
-    //     type: 'text/javascript',
-    //   },
+      { rel: 'icon', href: '/logo/logo.svg', type: 'image/svg+xml' }
     ],
   }),
   loader: () => AdminAccessCheck(),
@@ -125,17 +89,23 @@ const queryClient = new QueryClient()
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const isAdmin = Route.useLoaderData();
-  // console.log("isAdmin", isAdmin);
 
-  const MaintenanceModeEnv = import.meta.env.VITE_MAINTENANCE_MODE;
-  const isMaintenanceMode =
-    MaintenanceModeEnv === "true"
-      ? true
-    : MaintenanceModeEnv === "false" && false;
+  const isMaintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === "true";
 
   const pathname = useLocation({
     select: (location) => location.pathname,
   })
+
+  const layout = {
+    MaintenanceMode: () => <MaintenanceModePage />,
+    AdminPage: () => <AdminLayout isAdmin={isAdmin}>{children}</AdminLayout>,
+    Default: () => <MainLayout>{children}</MainLayout>
+  }
+
+  const layoutType = (isMaintenanceMode && !isAdmin && !pathname.includes('/auth'))
+    ? "MaintenanceMode" 
+    : pathname.includes('/admin') ? "AdminPage" 
+    : "Default"
 
   return (
     <html>
@@ -147,12 +117,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <MantineProvider theme={MantineTheme}>
             <Notifications />
             <Suspense fallback={<Loading />}>
-              {!isMaintenanceMode || (isMaintenanceMode && isAdmin) || (isMaintenanceMode && pathname.includes('/auth'))
-                ? pathname.includes('/admin') 
-                  ? <AdminLayout isAdmin={isAdmin}>{children}</AdminLayout> 
-                  : <MainLayout>{children}</MainLayout>
-                : <MaintenanceModePage />
-              }
+              { layout[layoutType] && layout[layoutType]() }
             </Suspense> 
           </MantineProvider>
         </QueryClientProvider>
