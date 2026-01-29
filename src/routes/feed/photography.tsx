@@ -26,12 +26,13 @@ import Masonry from 'react-masonry-css'
 import { useInView } from 'react-intersection-observer'
 import { useDebouncedValue, useDisclosure } from "@mantine/hooks";
 
-import ViewPhotoFeed from "@/components/(Feed)/(Photography)/ViewPhotoFeed";
-import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton";
+import ViewPhotoFeed from "@/components/feed/photo/ViewPhotoFeed";
+import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton";
 import InlineLink from "@/components/InlineLink";
-import FilterField from "@/components/(Feed)/(Photography)/FilterField";
+import FilterField from "@/components/feed/photo/FilterField";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AdminAccessCheck, UserLoggedInCheck } from "@/actions/auth.server";
 
 export const Route = createFileRoute('/feed/photography')({
   component: RouteComponent,
@@ -40,7 +41,7 @@ export const Route = createFileRoute('/feed/photography')({
         ...seo({
             title: `Photography Feed | ${import.meta.env.VITE_WEBSITE_NAME}`,
             description: "Donald Louch's Photography Feed!",
-            keywords: `${process.env.VITE_KEYWORDS}, feed, photography`,
+            keywords: `${import.meta.env.VITE_KEYWORDS}, feed, photography`,
             image: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpg"
         }),
         ]
@@ -64,7 +65,10 @@ export const Route = createFileRoute('/feed/photography')({
             tagData: await GetAllTagData(),
 
             photos: await GetFilteredPhotos({ data: {postLimit, searchType, keyword}}),
-            photosCount: await GetFilteredPhotosCount({ data: {searchType, keyword}})
+            photosCount: await GetFilteredPhotosCount({ data: {searchType, keyword}}),
+
+            isUser: await UserLoggedInCheck(),
+            isAdmin: await AdminAccessCheck()
       }
     }
 })
@@ -79,7 +83,7 @@ async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: nu
 }
 
 function RouteComponent() {
-    const {photos, photosCount, photographyAlbum, locationData, tagData, postLimit: photoLimit, searchType, keyword, searchValue} = Route.useLoaderData();
+    const {photos, photosCount, photographyAlbum, locationData, tagData, postLimit: photoLimit, searchType, keyword, searchValue, isUser, isAdmin} = Route.useLoaderData();
 
     const [opened, { open, close }] = useDisclosure(false)
 
@@ -182,14 +186,14 @@ function RouteComponent() {
                 </Stack>
 
             <Text>Sort By:</Text>
-                <PrimaryLinkedButton isFullWidth isHidden={searchValue != "old"} link={`/feed/photography`} icon={<FontAwesomeIcon icon={["fal", "arrow-down-1-9"]} />} >New-Old</PrimaryLinkedButton>
-                <PrimaryLinkedButton isFullWidth isHidden={searchType === "order" && searchValue === "old" } link={`/feed/photography?search=order&value=old`} icon={<FontAwesomeIcon icon={["fal", "arrow-down-9-1"]} />} >Old-New</PrimaryLinkedButton>
+                <PrimaryLinkedButton isFullWidth isHidden={searchValue != "old"} link={{ to: "/feed/photography" }} icon={{ name: "arrow-down-1-9", pack: "fal" }} >New-Old</PrimaryLinkedButton>
+                <PrimaryLinkedButton isFullWidth isHidden={searchType === "order" && searchValue === "old" } link={{ to: "/feed/photography", search: { search: "order", value: "old" }}} icon={{ name: "arrow-down-9-1", pack: "fal" }}>Old-New</PrimaryLinkedButton>
 
             <Text>View:</Text>
                 <Stack gap="1rem">
-                    <PrimaryLinkedButton isFullWidth isHidden={searchValue != "pinned"} link={`/feed/photography`} icon={<FontAwesomeIcon icon={["fadl", "images"]} />} >All Photos</PrimaryLinkedButton>
-                    <PrimaryLinkedButton isFullWidth isHidden={searchType === "view" && searchValue === "pinned"} link={`/feed/photography?search=view&value=pinned`} icon={<FontAwesomeIcon icon={["fadl", "thumbtack"]} />} >Pinned Photos</PrimaryLinkedButton>
-                    <PrimaryLinkedButton isFullWidth link={`/portfolio/photography`} icon={<FontAwesomeIcon icon={["fadl", "briefcase-blank"]} />} >Portfolio Photos</PrimaryLinkedButton>
+                    <PrimaryLinkedButton isFullWidth isHidden={searchValue != "pinned"} link={{ to: "/feed/photography" }} icon={{ name: "images", pack: "fadl" }} >All Photos</PrimaryLinkedButton>
+                    <PrimaryLinkedButton isFullWidth isHidden={searchType === "view" && searchValue === "pinned"} link={{ to: "/feed/photography", search: { search: "view", value: "pinned" } }} icon={{ name: "thumbtack", pack: "fadl" }} >Pinned Photos</PrimaryLinkedButton>
+                    <PrimaryLinkedButton isFullWidth link={{ to: "/portfolio/photography" }} icon={{ name: "briefcase-blank", pack: "fadl" }}>Portfolio Photos</PrimaryLinkedButton>
                     {/* TO DO: Make Random Sorting Function*/}
                 </Stack>
         </Drawer>
@@ -209,7 +213,7 @@ function RouteComponent() {
             p="1rem 1rem 1rem"
             gap="0.5rem"
         >
-            {loadedPhotos?.map((image: any, index: number) => (<ViewPhotoFeed imageData={image} key={index} />))}
+            {loadedPhotos?.map((photo: any, index: number) => (<ViewPhotoFeed photo={photo} key={index} />))}
         </Flex>
 
         <Paper ref={ref} p="2rem" color="white" style={{display: isLastPage ? "none" : "block"}} bg="none" shadow="bsBoldSecondary" radius="lg" mb="2rem">

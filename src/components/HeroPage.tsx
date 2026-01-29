@@ -9,7 +9,7 @@ import {
     // keyframes,
     // usePrefersReducedMotion
 } from '@mantine/core'
-import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
+import PrimaryLinkedButton from './buttons/PrimaryLinkedButton'
 
 interface HeroProps {
     name: string

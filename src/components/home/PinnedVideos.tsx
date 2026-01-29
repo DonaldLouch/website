@@ -3,10 +3,11 @@ import { Anchor, AspectRatio, Grid, Image, Text, Title, Box, Tooltip } from "@ma
 
 import classes from "@/components/Components.module.css"
 import DisplayDate from "@/lib/DisplayDate";
-import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton";
+import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function PinnedVideos({videos, videosAllCount}: any) {
+    // const { ThumbnailMedia: thumbnail } = videos
   return (<>
   {/* <Group 
         //   gridTemplateColumns={{base: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)"}} 
@@ -31,7 +32,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
                     className={classes.videoThumbnail}
                 >
                     <AspectRatio ratio={16/9}>
-                        <Image src={video.thumbnailFileID.filePath} alt={video.title} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
+                        <Image src={video.ThumbnailMedia.filePath} alt={video.title} radius="md" style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}} />
                     </AspectRatio>   
                     <Box p="1rem" pos="absolute" w="calc(100% - 1rem)" bg="var(--darkPurpleRGBA)" style={{backdropBlur: "10px", boxShadow: "tsPrimary", zIndex: 100, borderRadius: "0 1rem 0 0"}} top="0.5rem" c="white">
                         <Tooltip label={video.title}>
@@ -47,7 +48,7 @@ export default function PinnedVideos({videos, videosAllCount}: any) {
     </Grid>
     {/* <Group justify="center"> */}
     <Box mt="1rem">
-      <PrimaryLinkedButton link="/feed/videography" primNewIcon={{name: "films", pack: "fadl"}}>All {videosAllCount} Videos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link={{ to: "/feed/videography" }} icon={{ name: "films", pack: "fadl" }}>All {videosAllCount} Videos</PrimaryLinkedButton>
     </Box>
     {/* </Group> */}
     {/* </Group> */}

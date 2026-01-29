@@ -1,6 +1,6 @@
 import { Button } from "@mantine/core";
 
-import classes from "@/components/(Buttons)/Buttons.module.css"
+import classes from "@/components/buttons/Buttons.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function FormSubmitButton({icon, isNotFull, children, customWidth, ...rest}: any) {

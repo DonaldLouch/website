@@ -6,15 +6,15 @@ import { useDisclosure, useHeadroom } from "@mantine/hooks";
 
 import { useEffect, useState } from "react";
 import { HeaderLinkProps, HeaderLinks } from "@/lib/HeaderLinks";
-import HeaderLink from "../(Buttons)/HeaderLink";
+import HeaderLink from "../buttons/HeaderLink";
 
-import classes from '@/components/(Buttons)/Buttons.module.css'
+import classes from '@/components/buttons/Buttons.module.css'
 import FooterContent from "./(Footer)/FooterContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "@tanstack/react-router";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { RouteNavigationPanel } from "../(DevTools)";
+import { RouteNavigationPanel } from "../dev";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     // const path = usePathname()

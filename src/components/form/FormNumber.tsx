@@ -9,7 +9,7 @@ import { Grid, Title, Text, Input, NumberInput, useMantineTheme } from '@mantine
 // }
 
 import classes from "./Forms.module.css"
-import InlineCode from '../(MarkdownCode)/InlineCode'
+import InlineCode from '../markdown/InlineCode'
 import { useMediaQuery } from '@mantine/hooks'
 
 interface NumberProps {

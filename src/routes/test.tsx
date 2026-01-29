@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Text, Title } from '@mantine/core'
 
 import { GetAboutMe, GetAllEmbeds, GetAllLinks, GetAllLinksSets, GetAllPrimaryLinks, GetAllPublicPhotographyCount, GetAllPublicVideographyCount, GetPinnedPhotography, GetPinnedPhotographyCount, GetPinnedBlogPosts, GetPinnedVideography, GetPinnedVideographyCount, GetAllPublicBlogPostCount, GetPinnedBlogPostCount } from "@/actions/database/GetDatabase.server";
-import CodeBlock from '@/components/(MarkdownCode)/CodeBlock';
+import CodeBlock from '@/components/markdown/CodeBlock';
 import { all } from 'axios';
 import { seo } from '@/utils/seo';
 
@@ -12,7 +12,7 @@ export const Route = createFileRoute('/test')({
         meta: [
             ...seo({
                 title: `Test Page | ${import.meta.env.VITE_WEBSITE_NAME}`,
-                description: process.env.VITE_DESCRIPTION,
+                description: import.meta.env.VITE_DESCRIPTION,
             }),
         ]
     }),

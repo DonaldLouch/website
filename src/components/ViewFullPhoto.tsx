@@ -9,7 +9,7 @@ import { useImageSize } from 'react-image-size'
 export default function ViewFullPhoto({photoData}: any) {
     const [opened, { open, close }] = useDisclosure(false)
 
-    const imageURL = photoData.fileID.filePath
+    const imageURL = photoData.PhotographyMedia.filePath
     const [dimensions, { loading, error }] = useImageSize(imageURL)
     
     const [photoWidth, setPhotoWidth] = useState(1920)
@@ -23,7 +23,7 @@ export default function ViewFullPhoto({photoData}: any) {
     
     return (<>
         <Stack w={{base: "100%", lg: "50%"}} onClick={open}>
-            <Image src={photoData.fileID.filePath} alt={`${photoData.fileID.fileID}-${photoData.fileID.fileTitle}`}
+            <Image src={photoData.PhotographyMedia.filePath} alt={`${photoData.PhotographyMedia.fileID}-${photoData.PhotographyMedia.fileTitle}`}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{
                     width: '100%',
@@ -35,7 +35,7 @@ export default function ViewFullPhoto({photoData}: any) {
                 height={photoHeight}
                 // layout={"responsive"}
             />
-            {/* <Image src={photoData.fileID.filePath} alt={`${photoData.fileID.fileID}-${photoData.fileID.fileTitle}`} radius="md" style={{boxShadow: "var(--mantine-shadow-bsWhite)" }} /> */}
+            {/* <Image src={photoData.PhotographyMedia.filePath} alt={`${photoData.PhotographyMedia.fileID}-${photoData.PhotographyMedia.fileTitle}`} radius="md" style={{boxShadow: "var(--mantine-shadow-bsWhite)" }} /> */}
         </Stack>
         <Modal opened={opened} onClose={close} size="100%" yOffset="0" xOffset="0" title={`View: ${photoData.photoName}`}
             overlayProps={{
@@ -45,7 +45,7 @@ export default function ViewFullPhoto({photoData}: any) {
             styles={{header: {background: "var(--blurredBackground)"}, content: { background: "var(--darkPurple)"}}}
             radius="lg"
         >
-            <Image src={photoData.fileID.filePath} alt={`${photoData.fileID.fileID}-${photoData.fileID.fileTitle}`}
+            <Image src={photoData.PhotographyMedia.filePath} alt={`${photoData.PhotographyMedia.fileID}-${photoData.PhotographyMedia.fileTitle}`}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{
                     width: '100%',

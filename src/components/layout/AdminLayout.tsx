@@ -6,13 +6,13 @@ import { useEffect, useState } from 'react'
 // import { UserButton } from '@clerk/nextjs'
 
 import { useDisclosure, useHeadroom } from '@mantine/hooks'
-import AdminNavigationItem from '../(Buttons)/AdminNavigationItem'
-import { SectionCard } from '../(Cards)/SectionCard'
-import PrimaryLinkedButton from '../(Buttons)/PrimaryLinkedButton'
+import AdminNavigationItem from '../buttons/AdminNavigationItem'
+import { SectionCard } from '../cards/SectionCard'
+import PrimaryLinkedButton from '../buttons/PrimaryLinkedButton'
 
 import InlineLink from '../InlineLink'
 import { AdminLinks } from '@/lib/AdminLinks'
-import PrimaryButton from '../(Buttons)/PrimaryButton'
+import PrimaryButton from '../buttons/PrimaryButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { notifications } from '@mantine/notifications'
 import { signOutUser } from '@/actions/auth.server'
@@ -64,7 +64,7 @@ export default function AdminLayout({ children, isAdmin }: { children: React.Rea
         <Stack m="2rem">
           <Text fz="1.5rem" component="span">Please note that the client portal has been currently disabled. At this time, Donald Louch has decided to pause the implementation of the Client Portal and will be corresponding to client projects via. email with <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} />.</Text>
           <Text fz="1.5rem">Sorry for any inconvenience this may cause.</Text>
-          <PrimaryLinkedButton link="/" primNewIcon={{pack: "fajdr", name: "house"}}>Go Home</PrimaryLinkedButton>
+          <PrimaryLinkedButton link={{ to: "/" }} icon={{pack: "fajdr", name: "house"}}>Go Home</PrimaryLinkedButton>
         </Stack>
       </Center>
     </Box>
@@ -95,7 +95,7 @@ export default function AdminLayout({ children, isAdmin }: { children: React.Rea
           </Anchor>
           <Group>
             {/* <UserButton /> */}
-            <PrimaryButton onClick={() => signOut()} icon={<FontAwesomeIcon icon={["fal", "person-from-portal"]} />}>Sign Out</PrimaryButton>
+            <PrimaryButton onClick={() => signOut()} icon={{ name: "person-from-porta", pack: "fal"}}>Sign Out</PrimaryButton>
             <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
           </Group>
         </Group>

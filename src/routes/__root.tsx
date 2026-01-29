@@ -10,8 +10,8 @@ import "@mantine/dropzone/styles.css";
 import "@mantine/carousel/styles.css";
 import "@/config/styles/global.css";
 
-import MaintenanceModePage from "@/components/(Layout)/MaintenanceModePage";
-import MainLayout from "@/components/(Layout)/MainLayout";
+import MaintenanceModePage from "@/components/layout/MaintenanceModePage";
+import MainLayout from "@/components/layout/MainLayout";
 import Loading from "@/components/Loading";
 import { Suspense } from "react";
 
@@ -33,9 +33,9 @@ import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from '@/components/NotFound'
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { RouteNavigationPanel } from "@/components/(DevTools)";
+import { RouteNavigationPanel } from "@/components/dev";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import AdminLayout from "@/components/(Layout)/AdminLayout";
+import AdminLayout from "@/components/layout/AdminLayout";
 
 export const Route = createRootRoute({
   head: () => ({

@@ -67,9 +67,9 @@ export default function HeaderLink( props: HeaderLinkProps & { isMobile?: boolea
                 </Box>
                 <Box bg="var(--blackRGBA)" p="2rem" m="0rem -1rem -1rem">
                     <SimpleGrid cols={3}>
-                        <PrimaryLinkedButton link="/" colour="primary">Home</PrimaryLinkedButton>
-                        <PrimaryLinkedButton link="/contact" colour="primary">Contact Me</PrimaryLinkedButton>
-                        <PrimaryLinkedButton link="/#links" colour="primary">View All Links</PrimaryLinkedButton>
+                        <PrimaryLinkedButton link={{ to: "/" }} colour="primary">Home</PrimaryLinkedButton>
+                        <PrimaryLinkedButton link={{ to: "/contact" }} colour="primary">Contact Me</PrimaryLinkedButton>
+                        <PrimaryLinkedButton link={{ to: "/#links" }} colour="primary">View All Links</PrimaryLinkedButton>
                     </SimpleGrid>
                 </Box>
             </HoverCard.Dropdown>

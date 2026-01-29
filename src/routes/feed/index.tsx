@@ -3,11 +3,11 @@ import { seo } from '@/utils/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Box, Tabs, Image } from "@mantine/core";
-import PinnedPhotos from "@/components/(HomePage)/PinnedPhotos";
-import PinnedVideos from "@/components/(HomePage)/PinnedVideos";
-import PinnedPostsCard from "@/components/(Cards)/PinnedPostsCard";
-import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton";
-import HomeButton from "@/components/(Buttons)/HomeButton";
+import PinnedPhotos from "@/components/home/PinnedPhotos";
+import PinnedVideos from "@/components/home/PinnedVideos";
+import PinnedPostsCard from "@/components/cards/PinnedPostsCard";
+import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton";
+import HomeButton from "@/components/buttons/HomeButton";
 
 
 export const Route = createFileRoute('/feed/')({
@@ -16,7 +16,7 @@ export const Route = createFileRoute('/feed/')({
         meta: [
             ...seo({
                 title: `${import.meta.env.VITE_WEBSITE_NAME}'s Feed's`,
-                keywords: `${process.env.VITE_KEYWORDS}, blog. post, feed, photography, videography, audio, design, general, education`,
+                keywords: `${import.meta.env.VITE_KEYWORDS}, blog. post, feed, photography, videography, audio, design, general, education`,
                 image: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpg"
             }),
         ]
@@ -77,7 +77,7 @@ function RouteComponent() {
             </Tabs.Panel>
             <Tabs.Panel value="posts">
                 <PinnedPostsCard pinnedPosts={pinnedPosts} />
-                <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog", pack: "fadl"}}>All {postAllCount} Posts</PrimaryLinkedButton>
+                <PrimaryLinkedButton link={{ to: "/blog" }} icon={{ name: "blog", pack: "fadl" }}>All {postAllCount} Posts</PrimaryLinkedButton>
             </Tabs.Panel>
         </Tabs>
         </Box>

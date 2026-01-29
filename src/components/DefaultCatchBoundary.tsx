@@ -6,8 +6,8 @@ import {
   useRouter,
 } from '@tanstack/react-router'
 import type { ErrorComponentProps } from '@tanstack/react-router'
-import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
-import PrimaryButton from './(Buttons)/PrimaryButton'
+import PrimaryLinkedButton from './buttons/PrimaryLinkedButton'
+import PrimaryButton from './buttons/PrimaryButton'
 import { MantineTheme } from '@/config/MantineTheme'
 import { is } from 'zod/v4/locales'
 
@@ -35,22 +35,22 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
               <Group align="center" justify="center" gap="1rem" m="0" p="0">
                 <PrimaryButton
                   action={() => router.invalidate()}
-                  primNewIcon={{ name: "rotate-right" }}
+                  icon={{ name: "rotate-right" }}
                 >
                   Try Again
                 </PrimaryButton>
 
                 <PrimaryLinkedButton
-                  link="mailto:hello@donaldlouch.ca"
-                  primNewIcon={{ name: "light-envelope-at", pack: "fak" }}
+                  link={{ to: "mailto:hello@donaldlouch.ca" }}
+                  icon={{ name: "light-envelope-at", pack: "fak" }}
                 >
                   Contact Donald Louch
                 </PrimaryLinkedButton>
 
                 {!isRoot ?
                 <PrimaryLinkedButton
-                  link="/"
-                  primNewIcon={{ name: "house", pack: "fajdr" }}
+                  link={{ to: "/"}}
+                  icon={{ name: "house", pack: "fajdr" }}
                 >
                   Try Going To The Home Page
                 </PrimaryLinkedButton>
@@ -60,7 +60,7 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
                     e.preventDefault()
                     window.history.back()
                   }}
-                  primNewIcon={{ name: "rotate-right" }}
+                  icon={{ name: "rotate-right" }}
                 >
                   Go Back
                 </PrimaryButton> 

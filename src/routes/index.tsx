@@ -3,16 +3,14 @@ import { Box, Space, Tabs, Text, Title } from '@mantine/core'
 
 import { GetAboutMe, GetAllEmbeds, GetAllLinks, GetAllLinksSets, GetAllPrimaryLinks, GetAllPublicBlogPostCount, GetAllPublicPhotographyCount, GetAllPublicVideographyCount, GetPinnedBlogPostCount, GetPinnedBlogPosts, GetPinnedPhotography, GetPinnedPhotographyCount, GetPinnedVideography, GetPinnedVideographyCount } from "@/actions/database/GetDatabase.server";
 
-import Loading from '@/components/Loading';
-
-import PrimaryLinkedButton from '@/components/(Buttons)/PrimaryLinkedButton';
-import PinnedPostsCard from '@/components/(Cards)/PinnedPostsCard';
-import StatsGroup from '@/components/(Cards)/StatsGroup';
-import HomeHeroSection from '../components/(HomePage)/HomeHeroSection';
-import LinksSection from '../components/(HomePage)/LinksSection';
-import PinnedAudio from '../components/(HomePage)/PinnedAudio';
-import PinnedPhotos from '../components/(HomePage)/PinnedPhotos';
-import PinnedVideos from '../components/(HomePage)/PinnedVideos';
+import PrimaryLinkedButton from '@/components/buttons/PrimaryLinkedButton';
+import PinnedPostsCard from '@/components/cards/PinnedPostsCard';
+import StatsGroup from '@/components/cards/StatsGroup';
+import HomeHeroSection from '../components/home/HomeHeroSection';
+import LinksSection from '../components/home/LinksSection';
+import PinnedAudio from '../components/home/PinnedAudio';
+import PinnedPhotos from '../components/home/PinnedPhotos';
+import PinnedVideos from '../components/home/PinnedVideos';
 
 export const Route = createFileRoute('/')({ 
     component: Home, 
@@ -74,7 +72,7 @@ function Home() {
             </Tabs.Panel>
             <Tabs.Panel value="posts">
                 <PinnedPostsCard pinnedPosts={pinnedBlogPosts} />
-                <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog"}}>All {blogPostAllPublicCounts} Posts</PrimaryLinkedButton>
+                <PrimaryLinkedButton link={{ to: "/blog" }} icon={{name: "blog"}}>All {blogPostAllPublicCounts} Posts</PrimaryLinkedButton>
             </Tabs.Panel>
             </Tabs>
             <LinksSection about={aboutMe} primaryLinks={allPrimaryLinks} links={allLinks} />

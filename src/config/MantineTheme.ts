@@ -6,7 +6,7 @@ import { Accordion, ActionIcon, Alert, Anchor, AspectRatio, Badge, Combobox, cre
 // import "@/app/(Config)/global.css";
 
 import classes from "../components/Components.module.css"
-import formStyles from "../components/(Form)/Forms.module.css"
+import formStyles from "../components/form/Forms.module.css"
 import notificationClasses from "../config/styles/Notifications.module.css";
 
 

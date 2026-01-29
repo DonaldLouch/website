@@ -17,7 +17,7 @@ type RedirectLocationProps = {
 const FILTER_CONFIG: Record<string, {icon: any, getRedirectLocation: (value: string) => RedirectLocationProps}> = {
     album: {
         icon: ["fadl", "images"],
-        getRedirectLocation: (value) => ({to: "/album/$id", params: { id: value }})
+        getRedirectLocation: (value) => ({to: "/album/$slug", params: { slug: value }})
     },
     location: {
         icon: ["fadl", "map-marker-smile"],

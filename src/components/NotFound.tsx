@@ -1,7 +1,7 @@
 import { Button, Container, Group, Title, Text, Flex, Center, Paper, Stack } from '@mantine/core'
 
-import PrimaryLinkedButton from './(Buttons)/PrimaryLinkedButton'
-import PrimaryButton from './(Buttons)/PrimaryButton'
+import PrimaryLinkedButton from './buttons/PrimaryLinkedButton'
+import PrimaryButton from './buttons/PrimaryButton'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function NotFound({ children }: { children?: any }) {
@@ -16,12 +16,12 @@ export function NotFound({ children }: { children?: any }) {
                     The page you are trying to open does not exist. You may have mistyped the address, or the page has been moved to another URL. If you think this is an error please contact Donald Louch for further assistance.
                 </Text>
                 <Group align="center" justify="center" gap="1rem" m="0" p="0">
-                    {/* <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "mail-01", variant: "twotone"}}>Contact Donald Louch</PrimaryLinkedButton>
-                    <PrimaryLinkedButton link="/" primNewIcon={{ name: "home-03", variant: "twotone" }}>Go Back Home</PrimaryLinkedButton>
-                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "reload", variant: "twotone"}}>Reload Page</PrimaryButton> */}
-                    <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" primNewIcon={{name: "light-envelope-at", pack: "fak"}}>Contact Donald Louch</PrimaryLinkedButton>
-                    <PrimaryLinkedButton link="/" primNewIcon={{ name: "house", pack: "fajdr" }}>Go Back Home</PrimaryLinkedButton>
-                    <PrimaryButton action={() => window.location.reload()} primNewIcon={{name: "rotate-right", pack: "fal"}}>Reload Page</PrimaryButton>
+                    {/* <PrimaryLinkedButton link="mailto:hello@donaldlouch.ca" icon={{name: "mail-01", variant: "twotone"}}>Contact Donald Louch</PrimaryLinkedButton>
+                    <PrimaryLinkedButton link="/" icon={{ name: "home-03", variant: "twotone" }}>Go Back Home</PrimaryLinkedButton>
+                    <PrimaryButton action={() => window.location.reload()} icon={{name: "reload", variant: "twotone"}}>Reload Page</PrimaryButton> */}
+                    <PrimaryLinkedButton link={{to: "mailto:hello@donaldlouch.ca"}} icon={{name: "light-envelope-at", pack: "fak"}}>Contact Donald Louch</PrimaryLinkedButton>
+                    <PrimaryLinkedButton link={{ to: "/"}} icon={{ name: "house", pack: "fajdr" }}>Go Back Home</PrimaryLinkedButton>
+                    <PrimaryButton action={() => window.location.reload()} icon={{name: "rotate-right", pack: "fal"}}>Reload Page</PrimaryButton>
                 </Group>
             </Stack>
         </Paper>

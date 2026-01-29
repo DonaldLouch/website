@@ -1,7 +1,7 @@
 // "use client"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PrimaryLinkedButton from "../(Buttons)/PrimaryLinkedButton"
+import PrimaryLinkedButton from "../buttons/PrimaryLinkedButton"
 import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Anchor, Badge } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -9,8 +9,6 @@ import { useMediaQuery } from "@mantine/hooks";
 export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-
-  // console.log(cta)
   
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
     <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box>
@@ -76,7 +74,7 @@ export default function HeroSection({aboutMe, links, imageLink, cta}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkUrl} link={link.linkUrl} primNewIcon={link.linkIcon} >{link.linkTitle}</PrimaryLinkedButton>)}
+        {links && links.map((link: any) => <PrimaryLinkedButton key={link.linkUrl} link={link.linkUrl} icon={link.linkIcon} >{link.linkTitle}</PrimaryLinkedButton>)}
       </Group>
     </Stack>
   </Box>

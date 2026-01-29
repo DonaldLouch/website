@@ -6,25 +6,24 @@ import type { Icons } from "@/lib/FontAwesome"
 
 type PrimaryButtonProps = {
   isHidden?: boolean;
-  icon?: any;
   isFullWidth?: boolean;
   children?: React.ReactNode;
   colour?: string;
   fontColour?: string;
   action?: any;
-  primNewIcon?: Icons|any;
+  icon?: Icons|any;
   [key: string]: any;
 }
 
-export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, fontColour, action, primNewIcon, ...rest}: PrimaryButtonProps) {
+export default function PrimaryButton({isHidden, icon, isFullWidth, children, colour, fontColour, action, ...rest}: PrimaryButtonProps) {
   // const { isHidden, icon, isFullWidth, children, colour, action} = props
 
   return <Button
     styles={{root: {display: isHidden ? "none" : "block"}}} 
     leftSection={
-      primNewIcon
-        ? <FontAwesomeIcon icon={[primNewIcon.pack || "fal", primNewIcon.name]} size="1x" />
-        : icon
+      icon
+        ? <FontAwesomeIcon icon={[icon.pack || "fal", icon.name]} size="1x" />
+        : null
     }
     color={colour ? colour : "black"}
     fullWidth={isFullWidth}

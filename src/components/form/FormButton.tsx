@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core";
 // import { BsSend } from "react-icons/bs";
 
-import classes from "@/components/(Buttons)/Buttons.module.css"
+import classes from "@/components/buttons/Buttons.module.css"
 
 export default function FormButton({icon, children, ...rest}: any) {
     const theIcon = icon ? icon : null

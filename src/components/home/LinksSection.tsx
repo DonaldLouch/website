@@ -3,7 +3,7 @@
 import { Box, Flex, Text } from '@mantine/core'
 import { LinkButton } from './LinkButton'
 import { Title } from '@mantine/core'
-import { FooterIcon } from '@/components/(Layout)/(Footer)/FooterIcon'
+import { FooterIcon } from '@/components/layout/(Footer)/FooterIcon'
 // import { BsFacebook, BsTwitterX, BsLinkedin, BsYoutube, BsThreads, BsInstagram, BsTiktok, BsGithub, BsLink45Deg, BsSend, BsEnvelopeAt } from 'react-icons/bs'
 // import { ArrowUpRight01Icon, Chatting01Icon, Facebook02Icon, GithubIcon, InstagramIcon, Linkedin02Icon, MailAtSign01Icon, MailAtSign02Icon, NewTwitterIcon, ThreadsIcon, TiktokIcon, YoutubeIcon } from '@hugeicons/react'
 import InlineLink from '@/components/InlineLink'

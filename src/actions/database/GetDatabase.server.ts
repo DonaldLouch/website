@@ -1,3 +1,4 @@
+import { PhotographyAlbum } from './../../generated/prisma/browser';
 import { createServerFn } from '@tanstack/react-start'
 import { prisma } from '@/utils/db'
 
@@ -57,6 +58,19 @@ export const GetAllEmbeds = createServerFn({ method: 'GET' })
     }))
 
 // Photography
+export const GetPhoto = createServerFn({ method: 'GET' })
+    .inputValidator((data: { id: string }) => data)
+    .handler(async (ctx) => {
+        const { id } = ctx.data
+        console.log("db", id)
+        return prisma.photography.findFirst({
+        where: { id: id },
+        include: {
+            PhotographyMedia: true,
+            PhotographyAlbum: true
+        }
+    })})
+
 export const GetPinnedPhotography = createServerFn({ method: 'GET' })
     .handler(() => prisma.photography.findMany({
         where: { isPublic: true, isSetup: true, isPinned: true },
@@ -122,6 +136,47 @@ export const GetFilteredPhotos = createServerFn({ method: 'POST' })
         return await prisma.photography.findMany(queryOptions)
     })
 
+export const GetAlbum = createServerFn({ method: 'GET' })
+    .inputValidator((data: { slug: string }) => data)
+    .handler(async (ctx) => {
+        const { slug } = ctx.data
+        return prisma.photographyAlbum.findFirst({
+        where: { slug: slug },
+        // include: {
+        //     // PhotographyMedia: true,
+        //     // PhotographyAlbum: true
+        // }
+    })})
+
+export const GetAllAlbumPhotos = createServerFn({ method: 'GET' })
+    .inputValidator((data: { id: string, postLimit?: number,  from?: number, to?: number}) => data)
+    .handler(async (ctx) => {
+        const { id, postLimit, from, to } = ctx.data
+        
+        const queryOptions: any = {
+            where: { 
+                isPublic: true, 
+                isSetup: true,
+                album: id 
+            },
+            include: {
+                PhotographyMedia: true,
+                PhotographyAlbum: true
+            },
+            orderBy: { capturedOn: "asc"  },
+        }
+        if (from !== undefined && to !== undefined) {
+            queryOptions.skip = from
+            queryOptions.take = to
+        } else if (postLimit) {
+            queryOptions.take = postLimit
+        } else {
+            queryOptions.take = 20
+        }
+
+        return prisma.photography.findMany(queryOptions)
+    })
+
 export const GetAllPhotographyAlbums = createServerFn({ method: 'GET' })
     .handler(() => prisma.photographyAlbum.findMany({
         orderBy: { lastUpdatedOn: 'desc' },
@@ -161,6 +216,8 @@ export const GetFilteredPhotosCount = createServerFn({ method: 'GET' })
                 case 'tag':
                     whereClause.tags = { has: keyword }
                     break
+                case 'album':
+                    whereClause.album = { contains: keyword, mode: 'insensitive' }
             }
         }
 
@@ -175,6 +232,50 @@ export const GetPinnedPhotographyCount = createServerFn({ method: 'GET' })
     }))
 
 // Videography
+export const GetVideo = createServerFn({ method: 'GET' })
+    .inputValidator((data: { id: string }) => data)
+    .handler(async (ctx) => {
+        const { id } = ctx.data
+        
+        return prisma.videography.findFirst({
+            where: { id },
+            include: {
+                VideographyMedia: true,
+                ThumbnailMedia: true,
+                VideoCategory: true,
+            },
+        })
+    })
+
+export const GetAllPublicVideos = createServerFn({ method: 'GET' })
+    .inputValidator((data: { postLimit?: number,  from?: number, to?: number}) => data)
+    .handler(async (ctx) => {
+        const { postLimit, from, to } = ctx.data
+        
+        const queryOptions: any = {
+            where: { 
+                videoPrivacy: "Public",
+                isSetup: true,
+            },
+            include: {
+                VideographyMedia: true,
+                ThumbnailMedia: true,
+                VideoCategory: true
+            },
+            orderBy: { uploadedOn: "desc"  },
+        }
+        if (from !== undefined && to !== undefined) {
+            queryOptions.skip = from
+            queryOptions.take = to
+        } else if (postLimit) {
+            queryOptions.take = postLimit
+        } else {
+            queryOptions.take = 20
+        }
+
+        return prisma.videography.findMany(queryOptions)
+    })
+
 export const GetPinnedVideography = createServerFn({ method: 'GET' })
     .handler(() => prisma.videography.findMany({
         where: { videoPrivacy: "Public", isSetup: true, isPinned: true },

@@ -104,16 +104,17 @@ export const SessionInformation = createServerFn({method: "GET"}).handler(async 
 //     if (!adminAccess && !redirectDisabled) redirect("/auth?message=NoAccess")
 //     return adminAccess
 // }
-  export const AdminAccessCheck = createServerFn({method: "POST"}).handler(async () => {
-    // return true
+export const UserLoggedInCheck = createServerFn({method: "POST"}).handler(async () => {
     const headers = getRequestHeaders();
     const session = await auth.api.getSession({ headers })
-    // const hasAccess = await auth.api.userHasPermission({
-    //   headers,
-    //   body: { permission: { user: ["list"] } },
-    // })
-    // console.log("session", hasAccess)
-    // const adminAccess = hasAccess ? false : false
-    const adminAccess =  session?.user.role === "admin" ? true : false
-    return adminAccess
+    const userAccess =  session != null ? true : false
+    return userAccess
 }) 
+
+export const AdminAccessCheck = createServerFn({method: "POST"}).handler(async () => {
+  const headers = getRequestHeaders();
+  const session = await auth.api.getSession({ headers })
+  const adminAccess =  session?.user.role === "admin" ? true : false
+  return adminAccess
+}) 
+  

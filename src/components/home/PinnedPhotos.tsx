@@ -2,9 +2,9 @@ import { Box, Flex, Group, } from "@mantine/core"
 
 import Masonry from 'react-masonry-css'
 
-import ViewPhotoFeed from "@/components/(Feed)/(Photography)/ViewPhotoFeed";
+import ViewPhotoFeed from "@/components/feed/photo/ViewPhotoFeed";
 
-import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton";
+import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton";
 
 export default function PinnedPhotos({ photos, photosPinnedCount, photosAllCount }: {photos: any, photosAllCount: number, photosPinnedCount: number})  {
 
@@ -31,11 +31,11 @@ export default function PinnedPhotos({ photos, photosPinnedCount, photosAllCount
       // p="1rem 1rem 1rem"
       gap="0.5rem"
     >
-      {photos?.map((image: any, index: number) => (<ViewPhotoFeed imageData={image} key={`photo_${index}`} />))}
+      {photos?.map((photo: any, index: number) => (<ViewPhotoFeed photo={photo} key={`photo_${index}`} />))}
     </Flex>
     <Group justify="center" m="-1.5rem 0 -1rem">
-      <PrimaryLinkedButton link="/feed/photography?search=view&value=pinned" primNewIcon={{name: "thumbtack-angle", pack: "fadl"}}>+{photosPinnedCount - 20} More Pinned Photos</PrimaryLinkedButton>
-      <PrimaryLinkedButton link="/feed/photography" primNewIcon={{name: "images", pack: "fadl"}}>All {photosAllCount} Photos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link={{ to: "/feed/photography", search: { search: "view", value: "pinned" } }} icon={{ name: "thumbtack-angle", pack: "fadl" }}>+{photosPinnedCount - 20} More Pinned Photos</PrimaryLinkedButton>
+      <PrimaryLinkedButton link={{ to: "/feed/photography" }} icon={{ name: "images", pack: "fadl" }}>All {photosAllCount} Photos</PrimaryLinkedButton>
     </Group>
   </Box>
 }

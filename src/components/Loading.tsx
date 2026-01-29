@@ -8,8 +8,8 @@ import {
   Anchor,
   Center,
 } from "@mantine/core";
-import PrimaryLinkedButton from "./(Buttons)/PrimaryLinkedButton";
-import PrimaryButton from "./(Buttons)/PrimaryButton";
+import PrimaryLinkedButton from "./buttons/PrimaryLinkedButton";
+import PrimaryButton from "./buttons/PrimaryButton";
 
 export default function Loading({
   loadingTitle,
@@ -59,20 +59,20 @@ export default function Loading({
           </Text>
           <Group align="center" justify="center" gap="1rem" m="0" p="0">
             <PrimaryLinkedButton
-              link="mailto:hello@donaldlouch.ca"
-              primNewIcon={{ name: "light-envelope-at", pack: "fak" }}
+              link={{ to: "mailto:hello@donaldlouch.ca" }}
+              icon={{ name: "light-envelope-at", pack: "fak" }}
             >
               Contact Donald Louch
             </PrimaryLinkedButton>
             <PrimaryLinkedButton
-              link="/"
-              primNewIcon={{ name: "house", pack: "fajdr" }}
+              link={{ to: "/" }}
+              icon={{ name: "house", pack: "fajdr" }}
             >
               Try Going To The Home Page
             </PrimaryLinkedButton>
             <PrimaryButton
               action={() => window.location.reload()}
-              primNewIcon={{ name: "rotate-right" }}
+              icon={{ name: "rotate-right" }}
             >
               Reload Page
             </PrimaryButton>

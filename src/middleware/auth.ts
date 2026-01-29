@@ -6,13 +6,9 @@ import { auth } from "@/lib/auth/auth";
 export const authMiddleware = createMiddleware().server(
     async ({ next, request }) => {
         const headers = getRequestHeaders();
-        const session = await auth.api.getSession({ headers })
         const redirectURL = new URL(request.url).pathname
-        const hasAccess = await auth.api.userHasPermission({
-            headers,
-            body: { permission: { user: ["list"] } },
-        })
-        const adminAccess = session && hasAccess.success ? true : false
+        const session = await auth.api.getSession({ headers })
+        const adminAccess = session && session?.user.role === "admin"? true : false
         if (!adminAccess) {
             throw redirect({ to: "/auth", search: { message: "NoAccess", returnTo: redirectURL } });
         }

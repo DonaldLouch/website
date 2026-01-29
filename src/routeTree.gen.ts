@@ -14,8 +14,12 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthedRouteImport } from './routes/_authed'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FeedIndexRouteImport } from './routes/feed/index'
+import { Route as VideoIdRouteImport } from './routes/video.$id'
+import { Route as PhotoIdRouteImport } from './routes/photo.$id'
+import { Route as FeedVideographyRouteImport } from './routes/feed/videography'
 import { Route as FeedPhotographyRouteImport } from './routes/feed/photography'
-import { Route as AlbumIdRouteImport } from './routes/album.$id'
+import { Route as EmbedIdRouteImport } from './routes/embed.$id'
+import { Route as AlbumSlugRouteImport } from './routes/album.$slug'
 import { Route as AuthedAdminIndexRouteImport } from './routes/_authed/admin/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthedAdminTestRouteImport } from './routes/_authed/admin/test'
@@ -44,14 +48,34 @@ const FeedIndexRoute = FeedIndexRouteImport.update({
   path: '/feed/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VideoIdRoute = VideoIdRouteImport.update({
+  id: '/video/$id',
+  path: '/video/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotoIdRoute = PhotoIdRouteImport.update({
+  id: '/photo/$id',
+  path: '/photo/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedVideographyRoute = FeedVideographyRouteImport.update({
+  id: '/feed/videography',
+  path: '/feed/videography',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeedPhotographyRoute = FeedPhotographyRouteImport.update({
   id: '/feed/photography',
   path: '/feed/photography',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AlbumIdRoute = AlbumIdRouteImport.update({
-  id: '/album/$id',
-  path: '/album/$id',
+const EmbedIdRoute = EmbedIdRouteImport.update({
+  id: '/embed/$id',
+  path: '/embed/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlbumSlugRoute = AlbumSlugRouteImport.update({
+  id: '/album/$slug',
+  path: '/album/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthedAdminIndexRoute = AuthedAdminIndexRouteImport.update({
@@ -74,8 +98,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/test': typeof TestRoute
-  '/album/$id': typeof AlbumIdRoute
+  '/album/$slug': typeof AlbumSlugRoute
+  '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
+  '/feed/videography': typeof FeedVideographyRoute
+  '/photo/$id': typeof PhotoIdRoute
+  '/video/$id': typeof VideoIdRoute
   '/feed/': typeof FeedIndexRoute
   '/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -85,8 +113,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/test': typeof TestRoute
-  '/album/$id': typeof AlbumIdRoute
+  '/album/$slug': typeof AlbumSlugRoute
+  '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
+  '/feed/videography': typeof FeedVideographyRoute
+  '/photo/$id': typeof PhotoIdRoute
+  '/video/$id': typeof VideoIdRoute
   '/feed': typeof FeedIndexRoute
   '/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -98,8 +130,12 @@ export interface FileRoutesById {
   '/_authed': typeof AuthedRouteWithChildren
   '/auth': typeof AuthRoute
   '/test': typeof TestRoute
-  '/album/$id': typeof AlbumIdRoute
+  '/album/$slug': typeof AlbumSlugRoute
+  '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
+  '/feed/videography': typeof FeedVideographyRoute
+  '/photo/$id': typeof PhotoIdRoute
+  '/video/$id': typeof VideoIdRoute
   '/feed/': typeof FeedIndexRoute
   '/_authed/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -111,8 +147,12 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/test'
-    | '/album/$id'
+    | '/album/$slug'
+    | '/embed/$id'
     | '/feed/photography'
+    | '/feed/videography'
+    | '/photo/$id'
+    | '/video/$id'
     | '/feed/'
     | '/admin/test'
     | '/api/auth/$'
@@ -122,8 +162,12 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/test'
-    | '/album/$id'
+    | '/album/$slug'
+    | '/embed/$id'
     | '/feed/photography'
+    | '/feed/videography'
+    | '/photo/$id'
+    | '/video/$id'
     | '/feed'
     | '/admin/test'
     | '/api/auth/$'
@@ -134,8 +178,12 @@ export interface FileRouteTypes {
     | '/_authed'
     | '/auth'
     | '/test'
-    | '/album/$id'
+    | '/album/$slug'
+    | '/embed/$id'
     | '/feed/photography'
+    | '/feed/videography'
+    | '/photo/$id'
+    | '/video/$id'
     | '/feed/'
     | '/_authed/admin/test'
     | '/api/auth/$'
@@ -147,8 +195,12 @@ export interface RootRouteChildren {
   AuthedRoute: typeof AuthedRouteWithChildren
   AuthRoute: typeof AuthRoute
   TestRoute: typeof TestRoute
-  AlbumIdRoute: typeof AlbumIdRoute
+  AlbumSlugRoute: typeof AlbumSlugRoute
+  EmbedIdRoute: typeof EmbedIdRoute
   FeedPhotographyRoute: typeof FeedPhotographyRoute
+  FeedVideographyRoute: typeof FeedVideographyRoute
+  PhotoIdRoute: typeof PhotoIdRoute
+  VideoIdRoute: typeof VideoIdRoute
   FeedIndexRoute: typeof FeedIndexRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
@@ -190,6 +242,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeedIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/video/$id': {
+      id: '/video/$id'
+      path: '/video/$id'
+      fullPath: '/video/$id'
+      preLoaderRoute: typeof VideoIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photo/$id': {
+      id: '/photo/$id'
+      path: '/photo/$id'
+      fullPath: '/photo/$id'
+      preLoaderRoute: typeof PhotoIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feed/videography': {
+      id: '/feed/videography'
+      path: '/feed/videography'
+      fullPath: '/feed/videography'
+      preLoaderRoute: typeof FeedVideographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/feed/photography': {
       id: '/feed/photography'
       path: '/feed/photography'
@@ -197,11 +270,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeedPhotographyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/album/$id': {
-      id: '/album/$id'
-      path: '/album/$id'
-      fullPath: '/album/$id'
-      preLoaderRoute: typeof AlbumIdRouteImport
+    '/embed/$id': {
+      id: '/embed/$id'
+      path: '/embed/$id'
+      fullPath: '/embed/$id'
+      preLoaderRoute: typeof EmbedIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/album/$slug': {
+      id: '/album/$slug'
+      path: '/album/$slug'
+      fullPath: '/album/$slug'
+      preLoaderRoute: typeof AlbumSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authed/admin/': {
@@ -246,8 +326,12 @@ const rootRouteChildren: RootRouteChildren = {
   AuthedRoute: AuthedRouteWithChildren,
   AuthRoute: AuthRoute,
   TestRoute: TestRoute,
-  AlbumIdRoute: AlbumIdRoute,
+  AlbumSlugRoute: AlbumSlugRoute,
+  EmbedIdRoute: EmbedIdRoute,
   FeedPhotographyRoute: FeedPhotographyRoute,
+  FeedVideographyRoute: FeedVideographyRoute,
+  PhotoIdRoute: PhotoIdRoute,
+  VideoIdRoute: VideoIdRoute,
   FeedIndexRoute: FeedIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }

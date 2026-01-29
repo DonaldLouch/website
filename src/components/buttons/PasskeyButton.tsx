@@ -1,4 +1,4 @@
-import PrimaryButton from "@/components/(Buttons)/PrimaryButton";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
 import { authClient } from "@/lib/auth/auth-client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "@tanstack/react-router";
@@ -27,7 +27,7 @@ export default function PasskeyButton() {
   }, [navigate, refetch]);
   return (
     <PrimaryButton
-      icon={<FontAwesomeIcon icon={["fal", "user-lock"]} />}
+      icon={{ name: "user-lock", pack: "fal" }}
       isFullWidth
     >
       Signin with Passkey

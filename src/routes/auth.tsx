@@ -1,9 +1,9 @@
 import { SessionInformation } from "@/actions/auth.server"
 import { createFileRoute, useLoaderData } from "@tanstack/react-router"
 
-import HomeButton from "@/components/(Buttons)/HomeButton";
-import FormInput from "@/components/(Form)/FormInput";
-import FormSubmitButton from "@/components/(Form)/FormSubmitButton";
+import HomeButton from "@/components/buttons/HomeButton";
+import FormInput from "@/components/form/FormInput";
+import FormSubmitButton from "@/components/form/FormSubmitButton";
 import InlineLink from "@/components/InlineLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,12 +25,12 @@ import { zodResolver } from "mantine-form-zod-resolver";
 import { useForm } from "@mantine/form";
 import { signInUser, signOutUser } from "@/actions/auth.server";
 import { notifications } from "@mantine/notifications";
-import PrimaryButton from "@/components/(Buttons)/PrimaryButton";
-import FormInputPassword from "@/components/(Form)/FormInputPassword";
-import { SectionCard } from "@/components/(Cards)/SectionCard";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
+import FormInputPassword from "@/components/form/FormInputPassword";
+import { SectionCard } from "@/components/cards/SectionCard";
 import { authClient } from "@/lib/auth/auth-client";
 import DividerInlineText from "@/components/DividerInlineText";
-import PasskeyButton from "@/components/(Buttons)/PasskeyButton";
+import PasskeyButton from "@/components/buttons/PasskeyButton";
 import { useState } from "react";
 import { redirect, Router, useNavigate, useParams, useSearch } from "@tanstack/react-router";
 
@@ -43,6 +43,7 @@ function Auth() {
    const [expanded, setExpanded] = useState(false);
     const navigate = useNavigate()
     const { message } = useSearch({ strict: false }) as any
+// const session = true
   
   
     // TODO: 2FA: <PinInput length={6} type="number" oneTimeCode />
@@ -290,9 +291,7 @@ function Auth() {
                     </Text>
                     <PrimaryButton
                       onClick={() => signOut()}
-                      icon={
-                        <FontAwesomeIcon icon={["fal", "person-from-portal"]} />
-                      }
+                      icon={{ name: "person-from-portal", pack: "fal" }}
                       isFullWidth
                     >
                       Sign Out

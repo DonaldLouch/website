@@ -1,11 +1,5 @@
-// // "use client"
-
-import PrimaryButton from "@/components/(Buttons)/PrimaryButton"
-import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton"
-import HugeIcon from "@/components/HugeIcon"
+import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton"
 import InlineLink from "@/components/InlineLink"
-import supabase from "-old/supabase"
-// import { useClerk } from "@clerk/nextjs"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Stack, Title, Text, Box, Skeleton } from "@mantine/core"
 import { useEffect, useState } from "react"
@@ -16,8 +10,6 @@ import { useQuery } from "@tanstack/react-query"
 import { GetMaintenanceMode } from "@/actions/database/GetDatabase.server"
 
 export default function MaintenanceModePage() {
-    // const { openSignIn } = useClerk()
-
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
     
     const defaultProps = {
@@ -42,7 +34,7 @@ export default function MaintenanceModePage() {
     return (
         <>
             <Stack w="100vw" h="100vh" bg="var(--darkPurple)" style={{ overflow: "hidden", zIndex: "10" }} pos="absolute" top="0" left="0" justify="center" align="center" px="2rem">
-                <PrimaryLinkedButton primNewIcon={{name: "person-to-portal" }} opacity="0.09" link="/auth">Developer Login</PrimaryLinkedButton>
+                <PrimaryLinkedButton icon={{name: "person-to-portal" }} opacity="0.09" link={{ to: "/auth"}}>Developer Login</PrimaryLinkedButton>
               
                 {loading ? <Stack w="75%" gap="var(--text-lh, var(--mantine-line-height-md))">
                     <Skeleton height="var(--text-fz, var(--mantine-font-size-md))" radius="sm" />

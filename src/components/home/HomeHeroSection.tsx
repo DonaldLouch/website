@@ -1,4 +1,4 @@
-import PrimaryLinkedButton from "@/components/(Buttons)/PrimaryLinkedButton"
+import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton"
 import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Spoiler } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";
@@ -9,7 +9,40 @@ export default function HomeHeroSection({aboutMe}: any) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   const [expanded, setExpanded] = useState(false)
-  
+
+  const quickLinks = [
+    { 
+      link: { to: "/portfolio"},
+      icon: { name: "briefcase-blank", pack: "fadl" },
+      title: "Portfolio"
+    },
+    { 
+      link: { to: "/feed" },
+      icon: { name: "rectangle-history", pack: "fadl" },
+      title: "Feed"
+    },
+    { 
+      link: { to: "/blog" },
+      icon: { name: "blog" },
+      title: "Blog"
+    },
+    { 
+      link: { to: "#links" },
+      icon: { name: "link" },
+      title: "Links"
+    },
+    { 
+      link: { to: "/contact" },
+      icon: { name: "comment-arrow-up-right", pack: "fadl" },
+      title: "Contact"
+    },
+    { 
+      link: { to: "/contact", search: { search: "type", value: "hire" } },
+      icon: { name: "light-briefcase-blank-magnifying-glass", pack: "fak" },
+      title: "Hire Me!"
+    },
+  ]
+
   return <Box component="section" id="homeHero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", overflowY: "hidden"}} bg="var(--blurredBackground)">
     {/* <Box bg= {`no-repeat url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M41U25E6mtuU256ls.jpeg) center`}  bgsz="cover" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box> */}
     <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.4" pos="absolute" style={{zIndex: "110", overflowY: "hidden"}}></Box>
@@ -100,13 +133,9 @@ export default function HomeHeroSection({aboutMe}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        <PrimaryLinkedButton link="/portfolio" primNewIcon={{name: "briefcase-blank", pack: "fadl"}}>Portfolio</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/feed" primNewIcon={{name: "rectangle-history", pack: "fadl"}}>Feed</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/blog" primNewIcon={{name: "blog", pack: "fal"}}>Blog</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/portfolio/resume" primNewIcon={{name: "id-badge", pack: "fadl"}}>Resume</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="#links" primNewIcon={{name: "link"}}>Links</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact" primNewIcon={{name: "comment-arrow-up-right", pack: "fadl"}}>Contact</PrimaryLinkedButton>
-        <PrimaryLinkedButton link="/contact?type=hire" primNewIcon={{name: "light-briefcase-blank-magnifying-glass", pack: "fak"}}>Hire Me!</PrimaryLinkedButton>
+        {quickLinks.map((link, index): any => {
+          <PrimaryLinkedButton key={index} link={link.link} icon={link.icon}>{link.title}</PrimaryLinkedButton>
+        })}
       </Group>
     </Stack>
   </Box>
