@@ -1,7 +1,6 @@
 import { Anchor, Breadcrumbs } from '@mantine/core'
 
 import classes from "./Components.module.css"
-import HugeIcon from './HugeIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface BreadComp {

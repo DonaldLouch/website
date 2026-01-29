@@ -119,10 +119,7 @@ async function ViewPhotoFeed({ photo, hideElement }: { photo: any,hideElement?: 
                             </Badge> 
                         </Group>
                     }
-                    <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">
-                        <Markdown source={caption} />
-                    </Box>
-                    {/* <Text style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "0 2rem", whiteSpace: "break-spaces"}} p="2rem">{photo.caption}</Text> */}
+                    <Markdown source={caption} />
                     <Group gap="0.5rem">
                             {photo.album && hideElement != "album" && <Anchor href={`/album/${album.slug}`} style={{color: "currentColor"}}>
                             <Badge color="primary" leftSection={<FontAwesomeIcon icon={["fadl", "images"]} size="lg" />}>

@@ -36,24 +36,6 @@ export const Route = createFileRoute('/feed/')({
 })
 
 function RouteComponent() {
-    // const pageLinks = [
-    //     {
-    //         linkTitle: "Photography",
-    //         linkUrl: "/feed/photography",
-    //     },
-    //     {
-    //         linkTitle: "Videography",
-    //         linkUrl: "/feed/videography",
-    //     },
-    //     {
-    //         linkTitle: "Blog Posts",
-    //         linkUrl: "/blog",
-    //     },
-    //     {
-    //         linkTitle: "General",
-    //         linkUrl: "/blog/C/general",
-    //     },
-    // ]
     const { pinnedPosts, postAllCount, pinnedPhotos, photosPinnedCount, photosAllCount, videos, pinnedVideoCount, videosAllCount } = Route.useLoaderData();
     return <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
             {/* <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box> */}

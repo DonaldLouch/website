@@ -36,6 +36,7 @@ import InlineLink from '@/components/InlineLink'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Markdown } from '@/components/markdown'
+import FeedLoader from '@/components/feed/FeedLoader'
 
 export const Route = createFileRoute('/album/$slug')({
   component: RouteComponent,
@@ -170,10 +171,7 @@ function RouteComponent() {
         <LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, variant: link.icon.variant}} key={index} />
       ))}
     </Group>
-
-    <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">
-      <Markdown source={albumCaption} />
-    </Box>
+    <Markdown source={albumCaption} />
     <Group gap="0.5rem" m="2rem 1rem 1rem">
       <FontAwesomeIcon icon={["fadl", "tags"]} />
       {tags.map((tag: any) => (<Anchor key={`tag_${tag}`} href={tag.includes("#") ? `/feed/photography?search=tag&value=${tag.replace('#', 'HASHTAG')}` : `/feed/photography?search=tag&value=${tag}`} style={{color: "currentColor"}}>
@@ -192,15 +190,6 @@ function RouteComponent() {
     >
       {loadedPhotos?.map((photo: any, index: number) => (<ViewPhotoFeed photo={photo} key={index} hideElement="album" />))}
     </Flex>
-
-    <Paper ref={ref} p="2rem" color="white" style={{display: isLastPage ? "none" : "block"}} bg="none" shadow="bsBoldSecondary" radius="lg" mb="2rem">
-      <Stack align="center">
-        <Group gap="2rem" align="center">
-          <Loader color="white" size="md" type="bars" />
-          <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
-        </Group>
-        <Text component="span">If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{ name: "light-envelope-at", pack: "fak" }} /> for further assistance.</Text>
-      </Stack>
-    </Paper>
+    <FeedLoader ref={ref} isLastPage={isLastPage} loaderTitle="Loading More Photos" />
   </Box>
 }

@@ -33,6 +33,7 @@ import FilterField from "@/components/feed/photo/FilterField";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AdminAccessCheck, UserLoggedInCheck } from "@/actions/auth.server";
+import FeedLoader from "@/components/feed/FeedLoader";
 
 export const Route = createFileRoute('/feed/photography')({
   component: RouteComponent,
@@ -215,15 +216,6 @@ function RouteComponent() {
         >
             {loadedPhotos?.map((photo: any, index: number) => (<ViewPhotoFeed photo={photo} key={index} />))}
         </Flex>
-
-        <Paper ref={ref} p="2rem" color="white" style={{display: isLastPage ? "none" : "block"}} bg="none" shadow="bsBoldSecondary" radius="lg" mb="2rem">
-            <Stack align="center">
-                <Group gap="2rem" align="center">
-                    <Loader color="white" size="md" type="bars" />
-                    <Title fz={{base: "2rem", md: "3rem"}}>Loading More Photos</Title>
-                </Group>
-                <Text component="span">If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} /> for further assistance.</Text>
-            </Stack>
-        </Paper>
+        <FeedLoader ref={ref} isLastPage={isLastPage} loaderTitle="Loading More Photos" />
     </Box> 
 }

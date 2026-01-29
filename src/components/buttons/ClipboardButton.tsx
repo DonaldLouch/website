@@ -1,8 +1,6 @@
 // "use client"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import HugeIcon from "../HugeIcon"
-// import { BsCopy } from 'react-icons/bs'
 
 import classes from "./Buttons.module.css"
 import { Button, CopyButton } from '@mantine/core'

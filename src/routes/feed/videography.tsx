@@ -15,6 +15,7 @@ import classes from "@/components/Components.module.css"
 import InlineLink from "@/components/InlineLink";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import FeedLoader from "@/components/feed/FeedLoader"
 
 export const Route = createFileRoute('/feed/videography')({
     component: RouteComponent,
@@ -127,14 +128,6 @@ function RouteComponent() {
                 </Grid.Col>
             </>))}
         </Grid>
-        <Paper ref={ref} p="2rem" color="white" style={{display: isLastPage ? "none" : "block"}} bg="none" shadow="bsBoldSecondary" radius="lg" my="2rem">
-            <Stack align="center">
-                <Group gap="2rem" align="center">
-                <Loader color="white" size="md" type="bars" />
-                    <Title fz={{base: "2rem", md: "3rem"}}>Loading More Videos</Title>
-                </Group>
-                <Text component="div">If the content is still not loaded after a minute please contact Donald Louch at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} /> for further assistance.</Text>
-            </Stack>
-        </Paper>
+        <FeedLoader ref={ref} isLastPage={isLastPage} loaderTitle="Loading More Videos" mt="2rem" />
     </Box>
 }

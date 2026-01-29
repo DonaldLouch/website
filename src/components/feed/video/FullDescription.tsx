@@ -33,10 +33,7 @@ export default function FullDescription({ description, video }: { description: a
                 <LinkBadge linkName={link.name} link={link.link} linkType={link.linkType} linkIcon={{name: link.icon.name, variant: link.icon.variant}} key={index} />
             ))}
         </Group>
-
-        <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)", overflow: "scroll"}} p="1rem 2rem" mah="60vh">
-            <Markdown source={description} />
-        </Box>
+        <Markdown source={description} mah="60vh" />
         <SingleAccordion customMargin="2rem 0rem" customPadding="0 1rem" content={[{
             id: "metadata",
             imageType: "Icon",
