@@ -37,7 +37,7 @@ const MdxComponents = {
 
 export function Markdown({ source, ...rest }: {source: any, [key: string]: any }) {
   return <Suspense fallback={ <Loading loaderLocation="inline" /> }>
-    <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem">
+    <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="1rem 2rem" m="0.5rem" {...rest}>
       <MDXRemote {...source} components={MdxComponents}/>
     </Box>
   </Suspense>

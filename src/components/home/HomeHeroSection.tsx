@@ -133,9 +133,9 @@ export default function HomeHeroSection({aboutMe}: any) {
         </Stack>
       </Box>
       <Group justify="center">
-        {quickLinks.map((link, index): any => {
+        {quickLinks.map((link, index): any => (
           <PrimaryLinkedButton key={index} link={link.link} icon={link.icon}>{link.title}</PrimaryLinkedButton>
-        })}
+        ))}
       </Group>
     </Stack>
   </Box>

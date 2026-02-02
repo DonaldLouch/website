@@ -152,6 +152,13 @@ export const GetAllLinksSets = createServerFn({ method: 'GET' })
         orderBy: { lastUpdated: 'desc' }
     }))
 
+export const GetLinkSet = createServerFn({ method: 'GET' })
+    .inputValidator((data: { slug: string }) => data)
+    .handler(async (ctx) => {
+        const { slug } = ctx.data
+        return prisma.linkSet.findFirst({ where: { setSlug: slug } })
+    })    
+
 export const GetAllEmbeds = createServerFn({ method: 'GET' })
     .handler(() => prisma.embed.findMany({
         orderBy: { lastUpdatedOn: 'desc' }
@@ -171,7 +178,7 @@ export const GetPhoto = createServerFn({ method: 'GET' })
     })})
 
 export const GetFilteredPhotography = createServerFn({ method: 'GET' })
-    .inputValidator((data: { action: "data"|"count", type?: "view"|"keyword"|"location"|"tag"|"order"|"pinned"|"portfolio"|"album"|undefined|null|unknown,  keyword?: string, contentLimit?: number,  contentStart?: number }) => data)
+    .inputValidator((data: { action: "data"|"count", type?: "view"|"keyword"|"location"|"tag"|"order"|"pinned"|"portfolio"|"album"|undefined|null|unknown, keyword?: string, contentLimit?: number, contentStart?: number }) => data)
     .handler(async (ctx) => {
         const { action, type, keyword, contentLimit, contentStart } = ctx.data
         const whereClause: any = {

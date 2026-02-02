@@ -22,7 +22,7 @@ export const Route = createFileRoute('/')({
         allLinksSets: await GetAllLinksSets(),
         // allEmbeds: await GetAllEmbeds(),
         
-        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "pinned"} }) as any,
+        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "view", keyword: "pinned" } }) as any,
         photoAllPublicCounts: await GetFilteredPhotography({ data: {action: "count"} }) as any,
         pinnedPhotoCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as any,
         

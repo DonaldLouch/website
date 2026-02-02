@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MmRouteImport } from './routes/mm'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthedRouteImport } from './routes/_authed'
 import { Route as IndexRouteImport } from './routes/index'
@@ -20,6 +22,7 @@ import { Route as PostSlugRouteImport } from './routes/post.$slug'
 import { Route as PortfolioResumeRouteImport } from './routes/portfolio/resume'
 import { Route as PortfolioPhotographyRouteImport } from './routes/portfolio/photography'
 import { Route as PhotoIdRouteImport } from './routes/photo.$id'
+import { Route as LinkSetSlugRouteImport } from './routes/linkSet.$slug'
 import { Route as FeedVideographyRouteImport } from './routes/feed/videography'
 import { Route as FeedPhotographyRouteImport } from './routes/feed/photography'
 import { Route as EmbedIdRouteImport } from './routes/embed.$id'
@@ -29,6 +32,16 @@ import { Route as AuthedAdminIndexRouteImport } from './routes/_authed/admin/ind
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthedAdminTestRouteImport } from './routes/_authed/admin/test'
 
+const MmRoute = MmRouteImport.update({
+  id: '/mm',
+  path: '/mm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -83,6 +96,11 @@ const PhotoIdRoute = PhotoIdRouteImport.update({
   path: '/photo/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LinkSetSlugRoute = LinkSetSlugRouteImport.update({
+  id: '/linkSet/$slug',
+  path: '/linkSet/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeedVideographyRoute = FeedVideographyRouteImport.update({
   id: '/feed/videography',
   path: '/feed/videography',
@@ -127,11 +145,14 @@ const AuthedAdminTestRoute = AuthedAdminTestRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
+  '/mm': typeof MmRoute
   '/album/$slug': typeof AlbumSlugRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
   '/feed/videography': typeof FeedVideographyRoute
+  '/linkSet/$slug': typeof LinkSetSlugRoute
   '/photo/$id': typeof PhotoIdRoute
   '/portfolio/photography': typeof PortfolioPhotographyRoute
   '/portfolio/resume': typeof PortfolioResumeRoute
@@ -147,11 +168,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
+  '/mm': typeof MmRoute
   '/album/$slug': typeof AlbumSlugRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
   '/feed/videography': typeof FeedVideographyRoute
+  '/linkSet/$slug': typeof LinkSetSlugRoute
   '/photo/$id': typeof PhotoIdRoute
   '/portfolio/photography': typeof PortfolioPhotographyRoute
   '/portfolio/resume': typeof PortfolioResumeRoute
@@ -169,11 +193,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authed': typeof AuthedRouteWithChildren
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
+  '/mm': typeof MmRoute
   '/album/$slug': typeof AlbumSlugRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
   '/feed/videography': typeof FeedVideographyRoute
+  '/linkSet/$slug': typeof LinkSetSlugRoute
   '/photo/$id': typeof PhotoIdRoute
   '/portfolio/photography': typeof PortfolioPhotographyRoute
   '/portfolio/resume': typeof PortfolioResumeRoute
@@ -191,11 +218,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/contact'
+    | '/mm'
     | '/album/$slug'
     | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
     | '/feed/videography'
+    | '/linkSet/$slug'
     | '/photo/$id'
     | '/portfolio/photography'
     | '/portfolio/resume'
@@ -211,11 +241,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/contact'
+    | '/mm'
     | '/album/$slug'
     | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
     | '/feed/videography'
+    | '/linkSet/$slug'
     | '/photo/$id'
     | '/portfolio/photography'
     | '/portfolio/resume'
@@ -232,11 +265,14 @@ export interface FileRouteTypes {
     | '/'
     | '/_authed'
     | '/auth'
+    | '/contact'
+    | '/mm'
     | '/album/$slug'
     | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
     | '/feed/videography'
+    | '/linkSet/$slug'
     | '/photo/$id'
     | '/portfolio/photography'
     | '/portfolio/resume'
@@ -254,11 +290,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthedRoute: typeof AuthedRouteWithChildren
   AuthRoute: typeof AuthRoute
+  ContactRoute: typeof ContactRoute
+  MmRoute: typeof MmRoute
   AlbumSlugRoute: typeof AlbumSlugRoute
   BlogSearchRoute: typeof BlogSearchRoute
   EmbedIdRoute: typeof EmbedIdRoute
   FeedPhotographyRoute: typeof FeedPhotographyRoute
   FeedVideographyRoute: typeof FeedVideographyRoute
+  LinkSetSlugRoute: typeof LinkSetSlugRoute
   PhotoIdRoute: typeof PhotoIdRoute
   PortfolioPhotographyRoute: typeof PortfolioPhotographyRoute
   PortfolioResumeRoute: typeof PortfolioResumeRoute
@@ -272,6 +311,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/mm': {
+      id: '/mm'
+      path: '/mm'
+      fullPath: '/mm'
+      preLoaderRoute: typeof MmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -347,6 +400,13 @@ declare module '@tanstack/react-router' {
       path: '/photo/$id'
       fullPath: '/photo/$id'
       preLoaderRoute: typeof PhotoIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/linkSet/$slug': {
+      id: '/linkSet/$slug'
+      path: '/linkSet/$slug'
+      fullPath: '/linkSet/$slug'
+      preLoaderRoute: typeof LinkSetSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/feed/videography': {
@@ -425,11 +485,14 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthedRoute: AuthedRouteWithChildren,
   AuthRoute: AuthRoute,
+  ContactRoute: ContactRoute,
+  MmRoute: MmRoute,
   AlbumSlugRoute: AlbumSlugRoute,
   BlogSearchRoute: BlogSearchRoute,
   EmbedIdRoute: EmbedIdRoute,
   FeedPhotographyRoute: FeedPhotographyRoute,
   FeedVideographyRoute: FeedVideographyRoute,
+  LinkSetSlugRoute: LinkSetSlugRoute,
   PhotoIdRoute: PhotoIdRoute,
   PortfolioPhotographyRoute: PortfolioPhotographyRoute,
   PortfolioResumeRoute: PortfolioResumeRoute,

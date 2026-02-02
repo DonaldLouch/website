@@ -129,7 +129,8 @@ model MaintenanceMode {
   title       String   @default("Website Under Maintenance")
   description String?  @default("I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.")
   lastUpdated DateTime @default(now()) @db.Timestamptz(6)
-  id          Int      @id @unique @default(autoincrement())
+  id          BigInt   @id @unique @default(autoincrement())
+  link        String?
 }
 
 model Media {
@@ -224,7 +225,7 @@ model PrimaryLinks {
   clicks        Int      @default(0)
   newIcon       Json[]
   icon          Json?    @default("[{\"name\": \"ICONNAME\", \"pack\": \"fal\"}]")
-  order         Int?
+  order         BigInt?
 }
 
 model Projects {
@@ -312,16 +313,16 @@ model Tasks {
 }
 
 model ThumbnailMedia {
-  fileID        String        @id @unique
+  fileID        String       @id @unique
   fileTitle     String?
-  fileExtension String?       @db.VarChar
-  filePath      String?       @unique
-  capturedOn    DateTime?     @db.Timestamptz(6)
-  uploadedOn    DateTime?     @db.Timestamptz(6)
+  fileExtension String?      @db.VarChar
+  filePath      String?      @unique
+  capturedOn    DateTime?    @db.Timestamptz(6)
+  uploadedOn    DateTime?    @db.Timestamptz(6)
   fileVersionID String?
   fileKey       String?
   metadata      String?
-  Videography   Videography[]
+  Videography   Videography?
 }
 
 model TicketReplies {
@@ -378,24 +379,24 @@ model Videography {
   starring            Json[]
   videoType           videoType?           @default(Horizontal)
   videoPlaylist       String?
+  VideoCategory       VideoCategory?       @relation(fields: [category], references: [catName], onDelete: NoAction, onUpdate: NoAction)
   ThumbnailMedia      ThumbnailMedia?      @relation(fields: [thumbnailFileID], references: [fileID], onDelete: Cascade, onUpdate: NoAction)
   VideographyMedia    VideographyMedia?    @relation(fields: [videoFileID], references: [fileID], onDelete: Cascade, onUpdate: NoAction)
-  VideoCategory       VideoCategory?       @relation(fields: [category], references: [catName], onDelete: NoAction, onUpdate: NoAction)
   VideographyPlaylist VideographyPlaylist? @relation(fields: [videoPlaylist], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
 
 model VideographyMedia {
-  fileID          String        @id @unique
+  fileID          String       @id @unique
   fileTitle       String?
-  fileExtension   String?       @db.VarChar
-  filePath        String?       @unique
-  capturedOn      DateTime?     @db.Timestamptz(6)
-  uploadedOn      DateTime?     @db.Timestamptz(6)
+  fileExtension   String?      @db.VarChar
+  filePath        String?      @unique
+  capturedOn      DateTime?    @db.Timestamptz(6)
+  uploadedOn      DateTime?    @db.Timestamptz(6)
   fileVersionID   String?
   fileKey         String?
   metadata        String?
   LEGACY_filePath String?
-  Videography     Videography[]
+  Videography     Videography?
 }
 
 model VideographyPlaylist {
@@ -447,7 +448,7 @@ model passkey {
   publicKey    String
   userId       String
   credentialID String
-  counter      Int
+  counter      BigInt
   deviceType   String
   backedUp     Boolean
   transports   String?

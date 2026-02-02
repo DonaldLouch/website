@@ -1,6 +1,6 @@
 {
   "name": "donaldlouch",
-  "version": "31.02.01",
+  "version": "31.02.02",
   "packageManager": "yarn@4.12.0",
   "type": "module",
   "description": "I&#39;m a Canadian digital producer specializing in web development, photography, videography, and more. I hold a Bachelor of Arts in Digital Media Studies and two Graduate Certificates in Digital Communication, and Digital Productions Writing and Design.",
@@ -45,6 +45,7 @@
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@prisma/studio-core": "^0.14.0",
+    "@react-email/components": "^1.0.6",
     "@tanstack/devtools-ui": "^0.4.4",
     "@tanstack/query-core": "^5.90.20",
     "@tanstack/query-db-collection": "^1.0.22",
@@ -84,6 +85,7 @@
     "react-router": "^7.13.0",
     "react-router-devtools": "^6.2.0",
     "remote-mdx": "^0.0.8",
+    "resend": "^6.9.1",
     "use-debounce": "^10.1.0",
     "vite-plugin-db": "^0.6.1",
     "yup": "^1.7.1",

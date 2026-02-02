@@ -48,6 +48,11 @@ export default function MaintenanceModePage() {
 
                     <Text component="div">If you have any urgent concerns, feel free to reach out to me at <InlineLink link="mailto:hello@donaldlouch.ca" body="hello@donaldlouch.ca" leftIcon={{ name: "light-envelope-at", pack: "fak" }} /> or on my social media platforms.</Text>
 
+                    {data?.link && <>
+                        <Text>You can also view the latest updates and read more about the outage on: </Text>
+                        <PrimaryLinkedButton icon={{name: "signal-slash" }} link={{ to: data?.link }}>my Instastatus page</PrimaryLinkedButton>
+                    </>}
+
                     <Text>Thank you for your understanding!</Text>
                 </Box>}
             </Stack>

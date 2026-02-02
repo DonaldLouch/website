@@ -16,7 +16,7 @@ export const Route = createFileRoute('/feed/')({
         meta: [
             ...seo({
                 title: `${import.meta.env.VITE_WEBSITE_NAME}'s Feed's`,
-                keywords: `${import.meta.env.VITE_KEYWORDS}, blog. post, feed, photography, videography, audio, design, general, education`,
+                keywords: `${import.meta.env.VITE_KEYWORDS}, blog, post, feed, photography, videography, audio, design, general, education`,
                 image: "https://donaldlouch.s3.us-west-004.backblazeb2.com/donaldlouch/mob0k3krwkotmw3axkvt.jpg"
             }),
         ]
@@ -25,7 +25,7 @@ export const Route = createFileRoute('/feed/')({
         pinnedPosts: await GetFilteredBlogPosts({ data: { action: "data", type: "pinned" } }),
         postAllCount: await GetFilteredBlogPosts({ data: { action: "count" } }) as any,
 
-        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "pinned"} }) as any,
+        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "view", keyword: "pinned" } }) as any,
         photosPinnedCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as any,
         photosAllCount: await GetFilteredPhotography({ data: {action: "count" } }) as any,
 

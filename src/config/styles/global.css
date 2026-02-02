@@ -16,7 +16,7 @@
     --blackRGBA: rgba(15, 17, 27, 0.7);
     --blackPurple: #1e192a;
 
-    --mainGradient: var(--holidayGradient);
+    /* --mainGradient: var(--holidayGradient); */
 
     --primary: #764688;
     --secondary: #e7c462;
