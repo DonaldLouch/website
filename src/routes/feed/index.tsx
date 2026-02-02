@@ -1,4 +1,4 @@
-import { GetPinnedBlogPosts, GetPinnedPhotography, GetPinnedVideography, GetPinnedPhotographyCount, GetAllPublicPhotographyCount, GetPinnedVideographyCount, GetAllPublicBlogPostCount, GetAllPublicVideographyCount } from '@/actions/database/GetDatabase.server'
+import { GetPinnedVideography, GetPinnedVideographyCount, GetAllPublicVideographyCount, GetFilteredBlogPosts, GetFilteredPhotography } from '@/actions/database/GetDatabase.server'
 import { seo } from '@/utils/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
@@ -22,21 +22,21 @@ export const Route = createFileRoute('/feed/')({
         ]
     }),
     loader: async () => ({
-        pinnedPosts: await GetPinnedBlogPosts(),
-        postAllCount: await GetAllPublicBlogPostCount(),
+        pinnedPosts: await GetFilteredBlogPosts({ data: { action: "data", type: "pinned" } }),
+        postAllCount: await GetFilteredBlogPosts({ data: { action: "count" } }) as any,
 
-        pinnedPhotos: await GetPinnedPhotography(),
-        photosPinnedCount: await GetPinnedPhotographyCount(),
-        photosAllCount: await GetAllPublicPhotographyCount(),
+        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "pinned"} }) as any,
+        photosPinnedCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as any,
+        photosAllCount: await GetFilteredPhotography({ data: {action: "count" } }) as any,
 
         videos: await GetPinnedVideography(),
-        pinnedVideoCount: await GetPinnedVideographyCount(),
+        // pinnedVideoCount: await GetPinnedVideographyCount(),
         videosAllCount: await GetAllPublicVideographyCount(),
     })
 })
 
 function RouteComponent() {
-    const { pinnedPosts, postAllCount, pinnedPhotos, photosPinnedCount, photosAllCount, videos, pinnedVideoCount, videosAllCount } = Route.useLoaderData();
+    const { pinnedPosts, postAllCount, pinnedPhotos, photosPinnedCount, photosAllCount, videos, videosAllCount } = Route.useLoaderData();
     return <Box component="section" id="hero" w="100vw" h="100vh" maw="100vw" mah="100vh" pos="absolute" top="0" left="0" style={{zIndex: "1000", boxShadow: "bsSecondary", overflowY: "hidden"}} bg="var(--blurredBackground)">
             {/* <Box bg="var(--mainGradient)" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box> */}
             {/* <Box bg= {`no-repeat url(https://donaldlouch.s3.us-west-004.backblazeb2.com/photography/photography_M41U25E6mtuU256ls.jpeg) center`}  bgsz="cover" w="100vw" h="100%" opacity="0.5" pos="absolute"></Box> */}

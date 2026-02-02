@@ -1,5 +1,3 @@
-// "use client"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PrimaryLinkedButton from "../buttons/PrimaryLinkedButton"
 import { Stack, Flex, AspectRatio, Title, Group, Box, Image, Text, useMantineTheme, Anchor, Badge } from "@mantine/core"

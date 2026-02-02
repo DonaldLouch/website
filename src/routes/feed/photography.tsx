@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 
-import { GetAllLocationData, GetAllPhotographyAlbums, GetAllTagData, GetFilteredPhotos, GetFilteredPhotosCount } from '@/actions/database/GetDatabase.server'
+import { GetAllLocationData, GetAllPhotographyAlbums, GetAllTagData, GetFilteredPhotography } from '@/actions/database/GetDatabase.server'
 
 import {
   Box,
@@ -28,11 +28,9 @@ import { useDebouncedValue, useDisclosure } from "@mantine/hooks";
 
 import ViewPhotoFeed from "@/components/feed/photo/ViewPhotoFeed";
 import PrimaryLinkedButton from "@/components/buttons/PrimaryLinkedButton";
-import InlineLink from "@/components/InlineLink";
 import FilterField from "@/components/feed/photo/FilterField";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AdminAccessCheck, UserLoggedInCheck } from "@/actions/auth.server";
 import FeedLoader from "@/components/feed/FeedLoader";
 
 export const Route = createFileRoute('/feed/photography')({
@@ -49,7 +47,7 @@ export const Route = createFileRoute('/feed/photography')({
       }),
     loaderDeps: ({ search: { search,  value }}: any) => ({ search,  value }),
     loader:  async ({ deps: { search: searchType,  value: searchValue} }) => {
-      const postLimit = 15
+      const contentLimit = 15
 
       const keyword = searchType === "tag" || searchType === "keyword"
         && searchValue?.includes("HASHTAG") ? searchValue?.replace('HASHTAG', '#') 
@@ -57,7 +55,7 @@ export const Route = createFileRoute('/feed/photography')({
         : searchValue
 
         return {
-            postLimit,
+            contentLimit,
             searchType,
             keyword,
             searchValue,
@@ -65,11 +63,8 @@ export const Route = createFileRoute('/feed/photography')({
             locationData: await GetAllLocationData(),
             tagData: await GetAllTagData(),
 
-            photos: await GetFilteredPhotos({ data: {postLimit, searchType, keyword}}),
-            photosCount: await GetFilteredPhotosCount({ data: {searchType, keyword}}),
-
-            isUser: await UserLoggedInCheck(),
-            isAdmin: await AdminAccessCheck()
+            photos: await GetFilteredPhotography({ data: {action: "data", type: searchType, keyword, contentLimit} }) as any,
+            photosCount: await GetFilteredPhotography({ data: {action: "count", type: searchType, keyword} }) as any,
       }
     }
 })
@@ -78,13 +73,15 @@ async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: nu
     const from = nextPage * photoLimit
     const to = Math.min(from + photoLimit - 1, photosCount) 
     
-    const data = GetFilteredPhotos({data: {from, to, searchType, keyword}}) 
+    const data = GetFilteredPhotography({ data: {action: "data", type: searchType, keyword, contentLimit: to, contentStart: from} })
 
     return data
 }
 
 function RouteComponent() {
-    const {photos, photosCount, photographyAlbum, locationData, tagData, postLimit: photoLimit, searchType, keyword, searchValue, isUser, isAdmin} = Route.useLoaderData();
+    const { photos, photosCount, photographyAlbum, locationData, tagData, contentLimit: photoLimit, searchType, keyword, searchValue } = Route.useLoaderData();
+
+    console.log(photosCount)
 
     const [opened, { open, close }] = useDisclosure(false)
 

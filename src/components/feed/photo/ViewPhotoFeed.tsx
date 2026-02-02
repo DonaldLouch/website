@@ -1,4 +1,4 @@
-import { Modal, Stack, Text, Box, Badge, Group, Flex, Anchor, Image } from '@mantine/core'
+import { Modal, Stack, Box, Badge, Group, Flex, Anchor, Image } from '@mantine/core'
 
 import DisplayDate from '@/lib/DisplayDate'
 import classes from "../../Components.module.css"
@@ -20,7 +20,7 @@ import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server'
 //     return await GetMarkdown({ data: { content: captionData } }) 
 // }
 
-async function ViewPhotoFeed({ photo, hideElement }: { photo: any,hideElement?: any }) {
+export default function ViewPhotoFeed({ photo, hideElement }: { photo: any,hideElement?: any }) {
     const [opened, { open, close }] = useDisclosure(false)
     const { PhotographyAlbum: album, PhotographyMedia: media } = photo
     
@@ -154,5 +154,5 @@ async function ViewPhotoFeed({ photo, hideElement }: { photo: any,hideElement?: 
     </>)
 }
 
-export default memo(ViewPhotoFeed)
+// export default memo(ViewPhotoFeed)
 

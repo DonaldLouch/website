@@ -1,7 +1,8 @@
 import { Combobox, Input, useCombobox } from "@mantine/core"
-import { useEffect, useState, useMemo, useCallback, memo } from "react"
+import { useEffect, useState, useRef } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useNavigate } from "@tanstack/react-router"
+import { useDebouncedValue } from "@mantine/hooks"
 
 type RedirectLocationProps = {
     to: string;
@@ -29,66 +30,93 @@ const FILTER_CONFIG: Record<string, {icon: any, getRedirectLocation: (value: str
     },
 }
 
-function FilterField( {filterType, data}: {filterType: string, data?: any} ) {
-    const combobox = useCombobox()
+export default function FilterField({filterType, data}: {filterType: string, data?: any}) {
     const navigate = useNavigate()
-    const [value, setValue] = useState("")
-    
-    const config = FILTER_CONFIG[filterType] || { icon: ["fal", "search"], getRedirectLocation: (v) => ({to: "/feed/photography", search: {search: filterType, value: v}}) }
+    const config = FILTER_CONFIG[filterType] || { 
+        icon: ["fal", "search"], 
+        getRedirectLocation: (v) => ({to: "/feed/photography", search: {search: filterType, value: v}})
+    }
     const icon = config.icon
-    const redirectLocation = useMemo(() => config.getRedirectLocation(value), [value, config])
+
+    const [value, setValue] = useState<string>("")
+    const [search, setSearch] = useState("")
+    const [focused, setFocused] = useState(false)
+    const [completed, setCompleted] = useState(false)
+    const redirectLocation = config.getRedirectLocation(value)
+
+    const itemFilter = filterType == "album" ? new Array() : data
+    if (filterType == "album") {
+        data.forEach((item: any) => {
+            itemFilter.push(item.slug)
+        })
+    }
+
+    console.log(itemFilter)
+    // console.log(redirectLocation)
 
     useEffect(() => {
-        if (value) {
+        if (focused && completed) {
             navigate(redirectLocation)
         }
-    }, [value, redirectLocation, navigate])
+    }, [value, redirectLocation, navigate, focused, completed])
 
-    const options = useMemo(() => data?.map((item: any) => {
-        const value = filterType === "album" ? item.slug : item
-        const label = filterType === "album" ? item.albumName : item
-        return (
-            <Combobox.Option value={value} key={value}>
-                {label}
-            </Combobox.Option>
-        )
-    }) || [], [data, filterType])
-    
-    const handleOptionSubmit = useCallback((optionValue: string) => {
-        setValue(optionValue)
-        combobox.closeDropdown()
-    }, [combobox])
-    
-    const handleChange = useCallback((event: any) => {
-        setValue(event.currentTarget.value)
-        combobox.openDropdown()
-        combobox.updateSelectedOptionIndex()
-    }, [combobox])
+    const combobox = useCombobox({
+        onDropdownClose: () => combobox.resetSelectedOption(),
+    })
+
+    const shouldFilterOptions = data.every((item: any) => item !== search)
+    const filteredOptions = shouldFilterOptions
+        ? itemFilter.filter((item: any) => item.toLowerCase().includes(search.toLowerCase().trim()))
+        : data
+
+    const options = filteredOptions.map((item: any) => {
+        const albumData = filterType == "album"  ? data.find((option: any) => option.slug === item) : null
+        const optionValue = item
+        const label = filterType == "album" ? albumData?.albumName : item
+
+        return <Combobox.Option value={optionValue} key={value}>
+            {label}
+        </Combobox.Option>
+    })
 
     return <Combobox
-        onOptionSubmit={handleOptionSubmit}
         store={combobox}
         withinPortal={false}
+        onOptionSubmit={(val) => {
+            setValue(val)
+            setSearch(val)
+            combobox.closeDropdown()
+            setCompleted(true)
+        }}
     >
         <Combobox.Target>
             <Input
-                type="text"
-                placeholder={`Filter photos by ${filterType}s`}
-                value={value}
-                onChange={handleChange}
+                rightSection={<Combobox.Chevron />}
+                value={search}
+                onChange={(event) => {
+                    combobox.openDropdown()
+                    combobox.updateSelectedOptionIndex()
+                    setSearch(event.currentTarget.value)
+                }}
                 onClick={() => combobox.openDropdown()}
-                onFocus={() => combobox.openDropdown()}
-                onBlur={() => combobox.closeDropdown()}
+                onFocus={() => {
+                    combobox.openDropdown()
+                    setFocused(true)
+                }}
+                onBlur={() => {
+                    combobox.closeDropdown()
+                    setSearch(value || "")
+                }}
+                placeholder={`Filter photos by ${filterType}s`}
+                rightSectionPointerEvents="none"
                 leftSection={<FontAwesomeIcon icon={icon} />}
             />
         </Combobox.Target>
 
         <Combobox.Dropdown>
             <Combobox.Options>
-                {options.length === 0 ? <Combobox.Empty>No {filterType} found</Combobox.Empty> : options}
+                {options.length === 0 ? <Combobox.Empty>No {filterType}'s found</Combobox.Empty> : options}
             </Combobox.Options>
         </Combobox.Dropdown>
     </Combobox>
 }
-
-export default memo(FilterField)

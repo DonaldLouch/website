@@ -4,7 +4,7 @@ import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 
 import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server'
-import { GetAlbum, GetAllAlbumPhotos, GetFilteredPhotosCount } from '@/actions/database/GetDatabase.server'
+import { GetAlbum, GetFilteredPhotography } from '@/actions/database/GetDatabase.server'
 import { GetMarkdown } from '@/actions/markdown.server'
 
 import { 
@@ -32,7 +32,6 @@ import { useDisclosure } from '@mantine/hooks'
 import { BreadCrumbPublic } from '@/components/BreadCrumbsComponentPublic'
 import ViewPhotoFeed from '@/components/feed/photo/ViewPhotoFeed'
 import LinkBadge from '@/components/LinkBadge'
-import InlineLink from '@/components/InlineLink'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Markdown } from '@/components/markdown'
@@ -41,11 +40,11 @@ import FeedLoader from '@/components/feed/FeedLoader'
 export const Route = createFileRoute('/album/$slug')({
   component: RouteComponent,
   loader:  async ({ params }) => {
-    const postLimit = 20
+    const contentLimit = 20
     const { slug } = params as any
     const album = await GetAlbum({ data: {slug} }) as any
     const albumCaption = await GetMarkdown({ data: { content: album.albumCaption } })
-    const photos = await GetAllAlbumPhotos({ data: { id: album.id, postLimit } }) as any
+    const photos = await GetFilteredPhotography({ data: {action: "data", type: "album", keyword: album.id, contentLimit} }) as any
 
     let locations = new Array()
     let tags = new Array()
@@ -65,8 +64,8 @@ export const Route = createFileRoute('/album/$slug')({
       albumCaption,
       locations,
       tags,
-      photoLimit: postLimit,
-      photosCount: await GetFilteredPhotosCount({ data: { searchType: "album", keyword: album.id } }),
+      photoLimit: contentLimit,
+      photosCount: await GetFilteredPhotography({ data: {action: "count", type: "album", keyword: album.id, contentLimit} }) as any,
       isUser: await UserLoggedInCheck(),
       isAdmin: await AdminAccessCheck()
     }
@@ -88,7 +87,7 @@ async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: nu
     const from = nextPage * photoLimit
     const to = Math.min(from + photoLimit - 1, photosCount) 
     
-    const data = GetAllAlbumPhotos({data: {id, from, to}}) 
+    const data = await GetFilteredPhotography({ data: {action: "data", type: "album", keyword: id, contentLimit: to, contentStart: from } }) as any
 
     return data
 }

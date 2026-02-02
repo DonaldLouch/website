@@ -12,12 +12,18 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthedRouteImport } from './routes/_authed'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
 import { Route as FeedIndexRouteImport } from './routes/feed/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as VideoIdRouteImport } from './routes/video.$id'
+import { Route as PostSlugRouteImport } from './routes/post.$slug'
+import { Route as PortfolioResumeRouteImport } from './routes/portfolio/resume'
+import { Route as PortfolioPhotographyRouteImport } from './routes/portfolio/photography'
 import { Route as PhotoIdRouteImport } from './routes/photo.$id'
 import { Route as FeedVideographyRouteImport } from './routes/feed/videography'
 import { Route as FeedPhotographyRouteImport } from './routes/feed/photography'
 import { Route as EmbedIdRouteImport } from './routes/embed.$id'
+import { Route as BlogSearchRouteImport } from './routes/blog/search'
 import { Route as AlbumSlugRouteImport } from './routes/album.$slug'
 import { Route as AuthedAdminIndexRouteImport } from './routes/_authed/admin/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -37,14 +43,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: '/portfolio/',
+  path: '/portfolio/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeedIndexRoute = FeedIndexRouteImport.update({
   id: '/feed/',
   path: '/feed/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VideoIdRoute = VideoIdRouteImport.update({
   id: '/video/$id',
   path: '/video/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostSlugRoute = PostSlugRouteImport.update({
+  id: '/post/$slug',
+  path: '/post/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioResumeRoute = PortfolioResumeRouteImport.update({
+  id: '/portfolio/resume',
+  path: '/portfolio/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioPhotographyRoute = PortfolioPhotographyRouteImport.update({
+  id: '/portfolio/photography',
+  path: '/portfolio/photography',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhotoIdRoute = PhotoIdRouteImport.update({
@@ -65,6 +96,11 @@ const FeedPhotographyRoute = FeedPhotographyRouteImport.update({
 const EmbedIdRoute = EmbedIdRouteImport.update({
   id: '/embed/$id',
   path: '/embed/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSearchRoute = BlogSearchRouteImport.update({
+  id: '/blog/search',
+  path: '/blog/search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlbumSlugRoute = AlbumSlugRouteImport.update({
@@ -92,12 +128,18 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/album/$slug': typeof AlbumSlugRoute
+  '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
   '/feed/videography': typeof FeedVideographyRoute
   '/photo/$id': typeof PhotoIdRoute
+  '/portfolio/photography': typeof PortfolioPhotographyRoute
+  '/portfolio/resume': typeof PortfolioResumeRoute
+  '/post/$slug': typeof PostSlugRoute
   '/video/$id': typeof VideoIdRoute
+  '/blog/': typeof BlogIndexRoute
   '/feed/': typeof FeedIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
   '/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin/': typeof AuthedAdminIndexRoute
@@ -106,12 +148,18 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/album/$slug': typeof AlbumSlugRoute
+  '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
   '/feed/videography': typeof FeedVideographyRoute
   '/photo/$id': typeof PhotoIdRoute
+  '/portfolio/photography': typeof PortfolioPhotographyRoute
+  '/portfolio/resume': typeof PortfolioResumeRoute
+  '/post/$slug': typeof PostSlugRoute
   '/video/$id': typeof VideoIdRoute
+  '/blog': typeof BlogIndexRoute
   '/feed': typeof FeedIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
   '/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof AuthedAdminIndexRoute
@@ -122,12 +170,18 @@ export interface FileRoutesById {
   '/_authed': typeof AuthedRouteWithChildren
   '/auth': typeof AuthRoute
   '/album/$slug': typeof AlbumSlugRoute
+  '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
   '/feed/videography': typeof FeedVideographyRoute
   '/photo/$id': typeof PhotoIdRoute
+  '/portfolio/photography': typeof PortfolioPhotographyRoute
+  '/portfolio/resume': typeof PortfolioResumeRoute
+  '/post/$slug': typeof PostSlugRoute
   '/video/$id': typeof VideoIdRoute
+  '/blog/': typeof BlogIndexRoute
   '/feed/': typeof FeedIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
   '/_authed/admin/test': typeof AuthedAdminTestRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/_authed/admin/': typeof AuthedAdminIndexRoute
@@ -138,12 +192,18 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/album/$slug'
+    | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
     | '/feed/videography'
     | '/photo/$id'
+    | '/portfolio/photography'
+    | '/portfolio/resume'
+    | '/post/$slug'
     | '/video/$id'
+    | '/blog/'
     | '/feed/'
+    | '/portfolio/'
     | '/admin/test'
     | '/api/auth/$'
     | '/admin/'
@@ -152,12 +212,18 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/album/$slug'
+    | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
     | '/feed/videography'
     | '/photo/$id'
+    | '/portfolio/photography'
+    | '/portfolio/resume'
+    | '/post/$slug'
     | '/video/$id'
+    | '/blog'
     | '/feed'
+    | '/portfolio'
     | '/admin/test'
     | '/api/auth/$'
     | '/admin'
@@ -167,12 +233,18 @@ export interface FileRouteTypes {
     | '/_authed'
     | '/auth'
     | '/album/$slug'
+    | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
     | '/feed/videography'
     | '/photo/$id'
+    | '/portfolio/photography'
+    | '/portfolio/resume'
+    | '/post/$slug'
     | '/video/$id'
+    | '/blog/'
     | '/feed/'
+    | '/portfolio/'
     | '/_authed/admin/test'
     | '/api/auth/$'
     | '/_authed/admin/'
@@ -183,12 +255,18 @@ export interface RootRouteChildren {
   AuthedRoute: typeof AuthedRouteWithChildren
   AuthRoute: typeof AuthRoute
   AlbumSlugRoute: typeof AlbumSlugRoute
+  BlogSearchRoute: typeof BlogSearchRoute
   EmbedIdRoute: typeof EmbedIdRoute
   FeedPhotographyRoute: typeof FeedPhotographyRoute
   FeedVideographyRoute: typeof FeedVideographyRoute
   PhotoIdRoute: typeof PhotoIdRoute
+  PortfolioPhotographyRoute: typeof PortfolioPhotographyRoute
+  PortfolioResumeRoute: typeof PortfolioResumeRoute
+  PostSlugRoute: typeof PostSlugRoute
   VideoIdRoute: typeof VideoIdRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   FeedIndexRoute: typeof FeedIndexRoute
+  PortfolioIndexRoute: typeof PortfolioIndexRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
@@ -215,6 +293,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portfolio/': {
+      id: '/portfolio/'
+      path: '/portfolio'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/feed/': {
       id: '/feed/'
       path: '/feed'
@@ -222,11 +307,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeedIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/video/$id': {
       id: '/video/$id'
       path: '/video/$id'
       fullPath: '/video/$id'
       preLoaderRoute: typeof VideoIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/post/$slug': {
+      id: '/post/$slug'
+      path: '/post/$slug'
+      fullPath: '/post/$slug'
+      preLoaderRoute: typeof PostSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/resume': {
+      id: '/portfolio/resume'
+      path: '/portfolio/resume'
+      fullPath: '/portfolio/resume'
+      preLoaderRoute: typeof PortfolioResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/photography': {
+      id: '/portfolio/photography'
+      path: '/portfolio/photography'
+      fullPath: '/portfolio/photography'
+      preLoaderRoute: typeof PortfolioPhotographyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/photo/$id': {
@@ -255,6 +368,13 @@ declare module '@tanstack/react-router' {
       path: '/embed/$id'
       fullPath: '/embed/$id'
       preLoaderRoute: typeof EmbedIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/search': {
+      id: '/blog/search'
+      path: '/blog/search'
+      fullPath: '/blog/search'
+      preLoaderRoute: typeof BlogSearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/album/$slug': {
@@ -306,12 +426,18 @@ const rootRouteChildren: RootRouteChildren = {
   AuthedRoute: AuthedRouteWithChildren,
   AuthRoute: AuthRoute,
   AlbumSlugRoute: AlbumSlugRoute,
+  BlogSearchRoute: BlogSearchRoute,
   EmbedIdRoute: EmbedIdRoute,
   FeedPhotographyRoute: FeedPhotographyRoute,
   FeedVideographyRoute: FeedVideographyRoute,
   PhotoIdRoute: PhotoIdRoute,
+  PortfolioPhotographyRoute: PortfolioPhotographyRoute,
+  PortfolioResumeRoute: PortfolioResumeRoute,
+  PostSlugRoute: PostSlugRoute,
   VideoIdRoute: VideoIdRoute,
+  BlogIndexRoute: BlogIndexRoute,
   FeedIndexRoute: FeedIndexRoute,
+  PortfolioIndexRoute: PortfolioIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
