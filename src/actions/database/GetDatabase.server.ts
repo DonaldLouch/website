@@ -82,11 +82,6 @@ export const GetResume = createServerFn({ method: 'GET' })
                     month: 'long'
                 } as any
                 
-                const startDate = new Date(education?.startDate)
-                const endDate = new Date(education?.endDate)
-
-                const startDateFormat = new Intl.DateTimeFormat('en-US', options).format(startDate);
-                const endDateFormat = new Intl.DateTimeFormat('en-US', options).format(endDate);
                 
                 resumeEducationArray.push({
                     // id: education.id,
@@ -99,7 +94,7 @@ export const GetResume = createServerFn({ method: 'GET' })
                     id: education.id,
                     imageType: iconImage ? "Avatar" : null,
                     image: iconImage ? iconImage : null,
-                    label: education?.startDate === education?.endDate ? `${startDateFormat}: ${education.school}` : `${startDateFormat} - ${education?.endDate ? endDateFormat : "Present"}: ${education.school}`,
+                    label: education?.startDate === education?.endDate ? `${education?.startDate}: ${education.school}` : `${education?.startDate} - ${education?.endDate ? education?.endDate : "Present"}: ${education.school}`,
                     description: education.degree,
                     school: education,
                 })

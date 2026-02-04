@@ -78,6 +78,9 @@ export const Route = createRootRoute({
     links: [
       { rel: 'icon', href: '/logo/logo.svg', type: 'image/svg+xml' }
     ],
+    scripts: [
+      { src: "https://api.dashboard.instatus.com/widget?host=donaldlouch.instatus.com&code=6390a14d&locale=en" }
+    ]
   }),
   loader: () => AdminAccessCheck(),
   errorComponent: DefaultCatchBoundary,
