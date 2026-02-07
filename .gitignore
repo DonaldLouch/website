@@ -1,73 +1,32 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+-old
 
-data.sql
+node_modules
 
-package.txt
-changes.md
+dist/
+.output/
+.vinxi/
+.vercel/
+.netlify/
+.tanstack/
 
-server.js
-/certificates
-/prisma/migrations
-
-/lib/google.json
-
-media.md
-
-/pscale_dump_donaldlouch_main
-
-data.sql
-/supabase
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-/.yarn
-yarn.lock
-
-package-lock.json
-npmUpdate.md
-npmUpdate.txt
-/pages/admin/postEdit/bodyWork.md
-
-# testing
-/coverage
-
-/lib/HugeIcons.json
-/app/(Components)/import.tsx
-app/(Components)/HugeIconCopy.tsx
-app/(Components)/HugeIconCopy2.tsx
-
-/public/videos
-/public/pictures
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.yarn
+.env.*
+!.env.example
 
-# vercel
-.vercel
+prisma/migrations/
+prisma/seed.ts
+src/generated
 
-.vscode
+.vscode/
 
-.next
-.env*.local
+.DS_Store
+Thumbs.db
+
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+src/routeTree.gen.ts
+gitignoreOLD
+.yarn/install-state.gz

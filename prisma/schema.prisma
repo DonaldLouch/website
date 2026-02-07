@@ -1,0 +1,560 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["views"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model About {
+  id            String   @id
+  birthDate     DateTime
+  currentAge    Int
+  firstName     String
+  middleName    String
+  lastName      String
+  pronouns      String
+  email         String
+  tagLine       String
+  bio           String
+  bioExcerpt    String   @db.VarChar(300)
+  avatar        String
+  city          String
+  country       String
+  province      String
+  lastUpdatedOn DateTime @default(now())
+}
+
+model BlogPost {
+  id            String   @id @unique
+  title         String
+  slug          String   @unique
+  headingText   String?  @db.VarChar(300)
+  body          String
+  excerpt       String   @db.VarChar(300)
+  thumbnail     String
+  isPinned      Boolean? @default(false)
+  author        String?  @default("Donald Louch")
+  postedOn      DateTime @default(now())
+  lastUpdatedOn DateTime @default(now())
+  postStatus    String   @default("Public")
+  tags          String[]
+  toc           Json[]
+  links         Json[]
+  category      String[]
+}
+
+model Contact {
+  id      String   @id @unique @default("")
+  name    String
+  email   String
+  subject String
+  message String
+  sentOn  DateTime @default(now())
+}
+
+model Embed {
+  id            String   @id
+  title         String
+  link          String
+  embedLink     String
+  addedOn       DateTime @default(now())
+  lastUpdatedOn DateTime @default(now())
+  orderNumber   Int?     @unique
+}
+
+model Invoices {
+  id             String    @id
+  invoiceType    String
+  relatedInvoice String?
+  relatedItem    Json?
+  client         String
+  items          Json[]
+  notes          String?
+  subTotal       Float?
+  discounts      Float?
+  total          Float
+  paid           Float?
+  owing          Float
+  createdOn      DateTime  @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  dueOn          DateTime? @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamp(6)
+  paidOn         DateTime? @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  status         String    @default("Sent")
+  lastUpdatedOn  DateTime? @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  versionNumber  Int?      @db.SmallInt
+  invoiceID      String
+}
+
+model Job {
+  id          String   @id
+  name        String
+  company     String?
+  email       String
+  phone       String
+  type        String
+  description String
+  budget      String?
+  sentOn      DateTime @default(now())
+}
+
+model LinkSet {
+  setName     String
+  setSlug     String   @unique
+  description String
+  excerpt     String
+  media       Json?
+  links       Json[]
+  postDate    DateTime @default(now()) @db.Timestamptz(6)
+  lastUpdated DateTime @default(now()) @db.Timestamptz(6)
+  id          String   @id @unique
+  thumbnail   String?
+}
+
+model Links {
+  id            String   @id
+  title         String   @unique
+  subTitle      String
+  link          String?
+  addedOn       DateTime @default(now())
+  lastUpdatedOn DateTime @default(now())
+  clicks        Int      @default(0)
+  newIcon       Json[]
+  icon          Json?
+  order         Int?
+}
+
+model MaintenanceMode {
+  title       String   @default("Website Under Maintenance")
+  description String?  @default("I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.")
+  lastUpdated DateTime @default(now()) @db.Timestamptz(6)
+  id          BigInt   @id @unique @default(autoincrement())
+  link        String?
+}
+
+model Media {
+  mediaID          String   @id
+  mediaPublicID    String
+  mediaSignature   String
+  mediaKind        String
+  mediaTitle       String
+  mediaExtension   String
+  mediaPath        String   @unique
+  mediaSize        Int
+  mediaDimensions  String
+  uploadedOn       DateTime @default(now())
+  postedIn         String?
+  mediaDescription String?
+}
+
+model Notifications {
+  id              String   @id
+  clinetID        String
+  relatedTo       Json
+  title           String
+  message         String
+  sentOn          DateTime @db.Timestamptz(6)
+  isVisibleClient Boolean
+}
+
+model Page {
+  orderNumber   Int      @id @default(autoincrement())
+  id            String   @unique
+  title         String
+  slug          String   @unique
+  lastUpdatedOn DateTime @default(now())
+  pageStatus    String
+  views         Int      @default(0)
+}
+
+model Photography {
+  id               String            @id @unique
+  fileID           String?
+  caption          String?
+  tags             String[]
+  album            String?
+  lastUpdatedOn    DateTime?         @db.Timestamptz(6)
+  location         String?
+  photoName        String?
+  isPublic         Boolean           @default(false)
+  isSetup          Boolean           @default(false)
+  isPortfolio      Boolean           @default(false)
+  isPinned         Boolean?          @default(false)
+  uploadedOn       DateTime?         @db.Timestamptz(6)
+  capturedOn       DateTime?         @db.Timestamptz(6)
+  links            Json[]            @default([])
+  PhotographyAlbum PhotographyAlbum? @relation(fields: [album], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  PhotographyMedia PhotographyMedia? @relation(fields: [fileID], references: [fileID], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model PhotographyAlbum {
+  albumName     String        @unique
+  slug          String        @unique
+  lastUpdatedOn DateTime?     @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  createdOn     DateTime?     @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  id            String        @id @unique(map: "PhotographyAlbum_idNEW_key")
+  albumCaption  String?
+  links         Json[]
+  uploadedOn    DateTime?     @default(now()) @db.Timestamptz(6)
+  initialSetup  Boolean?      @default(false)
+  privacy       videoPrivacy  @default(Public)
+  Photography   Photography[]
+}
+
+model PhotographyMedia {
+  fileID        String        @id @unique
+  fileTitle     String?
+  fileExtension String?       @db.VarChar
+  filePath      String?       @unique
+  capturedOn    DateTime?     @db.Timestamptz(6)
+  uploadedOn    DateTime?     @db.Timestamptz(6)
+  fileVersionID String?
+  fileKey       String?
+  metadata      String?
+  Photography   Photography[]
+}
+
+model PrimaryLinks {
+  id            String   @id
+  title         String
+  subTitle      String
+  link          String
+  addedOn       DateTime @default(now())
+  lastUpdatedOn DateTime @default(now())
+  clicks        Int      @default(0)
+  newIcon       Json[]
+  icon          Json?    @default("[{\"name\": \"ICONNAME\", \"pack\": \"fal\"}]")
+  order         BigInt?
+}
+
+model Projects {
+  id            String        @id
+  name          String
+  description   String
+  startDate     DateTime?     @db.Timestamptz(6)
+  deadline      DateTime?     @db.Timestamptz(6)
+  budget        String?
+  projectKind   projectType
+  lastUpdated   DateTime      @default(now()) @db.Timestamptz(6)
+  status        projectStatus @default(SUBMITTED)
+  createdOn     DateTime?     @db.Timestamptz(6)
+  client        Json?
+  isApproved    Boolean       @default(false)
+  bannerMessage Json[]
+  details       Json[]
+  notes         String?
+  Tasks         Tasks[]
+}
+
+model Resume {
+  id            String   @id
+  firstName     String
+  middleName    String
+  lastName      String
+  pronouns      String
+  currentAge    Int
+  address       String
+  email         String
+  phone         String
+  linkedin      String
+  profile       String
+  skills        String
+  bioExcerpt    String   @db.VarChar(300)
+  avatar        String
+  lastUpdatedOn DateTime @default(now())
+  tagLine       String?
+}
+
+model ResumeEducation {
+  id          String  @id
+  school      String
+  startDate   Int
+  endDate     Int?
+  degree      String
+  description String?
+}
+
+model ResumeWorkExperience {
+  id          String  @id
+  company     String
+  startDate   String
+  endDate     String?
+  position    String
+  description String
+}
+
+model ResumeWorkExperienceHistory {
+  id          String  @id
+  position    String?
+  startDate   String?
+  endDate     String?
+  description String?
+  workID      String?
+}
+
+model Tasks {
+  clientID        String
+  projectID       String
+  title           String
+  createdOn       DateTime       @default(now()) @db.Timestamptz(6)
+  lastUpdated     DateTime       @default(now()) @db.Timestamptz(6)
+  completedOn     DateTime?      @db.Timestamptz(6)
+  isCompleted     Boolean        @default(false)
+  id              String         @id @unique
+  taskOrderNumber Decimal?       @db.Decimal
+  priority        taskPriority   @default(LOW)
+  status          projectStatus? @default(SUBMITTED)
+  deadline        DateTime?      @db.Timestamptz(6)
+  description     Json?
+  startDate       DateTime?      @db.Timestamptz(6)
+  subTasks        Json?
+  Projects        Projects       @relation(fields: [projectID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model ThumbnailMedia {
+  fileID        String       @id @unique
+  fileTitle     String?
+  fileExtension String?      @db.VarChar
+  filePath      String?      @unique
+  capturedOn    DateTime?    @db.Timestamptz(6)
+  uploadedOn    DateTime?    @db.Timestamptz(6)
+  fileVersionID String?
+  fileKey       String?
+  metadata      String?
+  Videography   Videography?
+}
+
+model TicketReplies {
+  id            String   @id
+  from          Json
+  body          String
+  ticketID      String
+  createdOn     DateTime @default(now()) @db.Timestamptz(6)
+  lastUpdatedOn DateTime @default(now()) @db.Timestamptz(6)
+  Tickets       Tickets  @relation(fields: [ticketID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Tickets {
+  id            String          @id
+  subject       String
+  from          Json
+  body          String?
+  status        projectStatus   @default(SUBMITTED)
+  relatedTo     Json?
+  createdOn     DateTime        @default(now()) @db.Timestamptz(6)
+  lastUpdatedOn DateTime        @default(now()) @db.Timestamptz(6)
+  internalONLY  Boolean         @default(false)
+  priority      taskPriority    @default(LOW)
+  TicketReplies TicketReplies[]
+}
+
+model VideoCategory {
+  catSortID   Int           @id @unique
+  catName     String?       @unique
+  catSlug     String?       @unique
+  catIDName   String?       @unique
+  Videography Videography[]
+}
+
+model Videography {
+  id                  String               @id @unique
+  videoFileID         String?              @unique(map: "Videography_fileID_key")
+  tags                String[]
+  links               Json[]
+  lastUpdatedOn       DateTime?            @db.Timestamptz(6)
+  title               String?
+  isSetup             Boolean              @default(false)
+  isPortfolio         Boolean              @default(false)
+  isPinned            Boolean?             @default(false)
+  uploadedOn          DateTime?            @db.Timestamptz(6)
+  thumbnailFileID     String?              @unique
+  category            String?
+  excerpt             String?
+  description         String?
+  videoPrivacy        videoPrivacy         @default(Private)
+  chapters            Json[]
+  musicCredits        Json[]
+  videoCredits        Json[]
+  starring            Json[]
+  videoType           videoType?           @default(Horizontal)
+  videoPlaylist       String?
+  VideoCategory       VideoCategory?       @relation(fields: [category], references: [catName], onDelete: NoAction, onUpdate: NoAction)
+  ThumbnailMedia      ThumbnailMedia?      @relation(fields: [thumbnailFileID], references: [fileID], onDelete: Cascade, onUpdate: NoAction)
+  VideographyMedia    VideographyMedia?    @relation(fields: [videoFileID], references: [fileID], onDelete: Cascade, onUpdate: NoAction)
+  VideographyPlaylist VideographyPlaylist? @relation(fields: [videoPlaylist], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model VideographyMedia {
+  fileID          String       @id @unique
+  fileTitle       String?
+  fileExtension   String?      @db.VarChar
+  filePath        String?      @unique
+  capturedOn      DateTime?    @db.Timestamptz(6)
+  uploadedOn      DateTime?    @db.Timestamptz(6)
+  fileVersionID   String?
+  fileKey         String?
+  metadata        String?
+  LEGACY_filePath String?
+  Videography     Videography?
+}
+
+model VideographyPlaylist {
+  playlistName        String        @unique(map: "VideographyPlaylist_albumName_key")
+  slug                String        @unique
+  lastUpdatedOn       DateTime?     @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  createdOn           DateTime?     @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)")) @db.Timestamptz(6)
+  id                  String        @id @unique(map: "VideographyPlaylist_idNEW_key")
+  playlistDescription String?
+  links               Json[]
+  uploadedOn          DateTime?     @default(now()) @db.Timestamptz(6)
+  videoIDs            Json[]
+  Videography         Videography[]
+}
+
+model WebsiteAlerts {
+  AlertTitle     String
+  AlertColour    String?
+  AlertIcon      String?
+  AlertIconStyle String?
+  AlertMessage   String
+  CreatedOn      DateTime  @default(now()) @db.Timestamptz(6)
+  LastUpdated    DateTime  @default(now()) @db.Timestamptz(6)
+  EndedOn        DateTime? @db.Timestamptz(6)
+  id             String    @id @unique(map: "WebsiteAlerts_theID_key")
+  icon           Json?
+}
+
+model account {
+  id                    String    @id(map: "Account_pkey")
+  userId                String
+  accountId             String
+  providerId            String
+  accessToken           String?
+  refreshToken          String?
+  accessTokenExpiresAt  DateTime? @db.Timestamptz(6)
+  refreshTokenExpiresAt DateTime? @db.Timestamptz(6)
+  scope                 String?
+  idToken               String?
+  password              String?
+  createdAt             DateTime  @db.Timestamptz(6)
+  updatedAt             DateTime  @db.Timestamptz(6)
+  user                  user      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model passkey {
+  id           String    @id
+  name         String?
+  publicKey    String
+  userId       String
+  credentialID String
+  counter      BigInt
+  deviceType   String
+  backedUp     Boolean
+  transports   String?
+  createdAt    DateTime? @db.Timestamptz(6)
+  aaguid       String?
+  user         user      @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model session {
+  id             String   @id(map: "Session_pkey")
+  userId         String
+  token          String
+  expiresAt      DateTime @db.Timestamptz(6)
+  ipAddress      String?
+  userAgent      String?
+  createdAt      DateTime @db.Timestamptz(6)
+  updatedAt      DateTime @db.Timestamptz(6)
+  impersonatedBy String?
+  user           user     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model twoFactor {
+  id          String  @id
+  userId      String
+  secret      String?
+  backupCodes String?
+  user        user    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model user {
+  id               String      @id(map: "User_pkey")
+  name             String
+  email            String
+  emailVerified    Boolean     @default(false)
+  image            String?
+  createdAt        DateTime    @db.Date
+  updatedAt        DateTime    @db.Date
+  role             String      @default("user")
+  banned           Boolean     @default(false)
+  banReason        String?
+  banExpires       DateTime?   @db.Date
+  twoFactorEnabled Boolean     @default(false)
+  account          account[]
+  passkey          passkey[]
+  session          session[]
+  twoFactor        twoFactor[]
+}
+
+model verification {
+  id         String   @id(map: "Verification_pkey")
+  identifier String
+  value      String
+  expiresAt  DateTime @db.Timestamptz(6)
+  createdAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @db.Timestamptz(6)
+}
+
+view Tags {
+  tags String?
+}
+
+view Locations {
+  locations String?
+}
+
+enum projectStatus {
+  SUBMITTED
+  REVIEWING
+  INPROGRESS
+  REVIEWED
+  OPENED
+  COMPLETED
+  APPROVED
+  AWAITINGC
+  AWAITINGA
+  STALLED
+  CLOSED
+  DECLINED
+  OTHER
+}
+
+enum projectType {
+  new
+  upgrade
+  installDL
+  installO
+  help
+  other
+}
+
+enum taskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+  URGENT
+}
+
+enum videoPrivacy {
+  Public
+  Unlisted
+  Private
+  DELETING
+}
+
+enum videoType {
+  Horizontal
+  Vertical
+}
