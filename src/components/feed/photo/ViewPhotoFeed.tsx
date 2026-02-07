@@ -105,7 +105,7 @@ export default function ViewPhotoFeed({ photo, hideElement }: { photo: any,hideE
                             height={photoHeight}
                         />
                     <Group gap="0.5rem">
-                        {/* <ClipboardButton copyValue={`${process.env.BETTER_AUTH_URL}/photo/${photo.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" /> //TODO: Fix */}
+                        {/* <ClipboardButton copyValue={`${process.env.VITE_WEB_URI}/photo/${photo.id}`} copyText="Copy Photo Link" copiedText="Copied Photo Link" /> //TODO: Fix */}
                         <PrimaryLinkedButton link={{ to: "/photo/$id", params: { id: photo.id }}} icon={{name: "eye", variant: "fadl"}}>View Photo</PrimaryLinkedButton>
                     </Group>
                 </Stack>

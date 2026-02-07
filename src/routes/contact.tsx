@@ -1,4 +1,4 @@
-import { SendContact } from '@/actions/email.server'
+import { SendEmail } from '@/actions/email.server'
 import { SectionCard } from '@/components/cards/SectionCard'
 import FormInput from '@/components/form/FormInput'
 import FormNumber from '@/components/form/FormNumber'
@@ -8,7 +8,7 @@ import InlineLink from '@/components/InlineLink'
 import { SectionTitle } from '@/components/SectionTitle'
 import { seo } from '@/utils/seo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Tabs, Box, SimpleGrid, Text, Alert } from '@mantine/core'
+import { Tabs, Box, SimpleGrid, Text } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { createFileRoute } from '@tanstack/react-router'
@@ -57,18 +57,13 @@ function RouteComponent() {
   })
 
   const onSendGeneral = async (values: any) => {
-      const res = await SendContact({ data: { subject: values.subject, body: values.message }})
-      console.log(res)
-      // const response = await fetch('/api/mail/newContact', {
-      //     method: 'POST',
-      //     body: JSON.stringify(values),
-      // })
-      // notifications.show({ 
-      //     title: response.ok ? "Sent 🎉" : "An Error Occurred", 
-      //     message: response.ok ? "You've successfully sent a message to Donald Louch!" : "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.", 
-      //     color: response.ok ? "black" : "red-6",
-      //     icon: response.ok ? <FontAwesomeIcon icon={["fajdr", "paper-plane"]} /> : <FontAwesomeIcon icon={["fadl", "bell-exclamation"]} />,
-      // })
+      const res = await SendEmail({ data: { type: "contact", subject: values.subject, body: values}})
+      notifications.show({ 
+          title: res.success ? "Sent 🎉" : `An Error Occurred${res.statusCode && `: ${res.statusCode}`}`, 
+          message: res.success ? "You've successfully sent a message to Donald Louch!" : `${res.message || `It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.`}`, 
+          color: res.success ? "black" : "red-6",
+          icon: res.success ? <FontAwesomeIcon icon={["fajdr", "paper-plane"]} /> : <FontAwesomeIcon icon={["fadl", "bell-exclamation"]} />,
+      })
   }
 
   const schemaHire = yup.object().shape({})
@@ -80,24 +75,21 @@ function RouteComponent() {
   })
 
   const onSendHire = async (values: any) => {
-      const response = await fetch('/api/mail/newJob', {
-          method: 'POST',
-          body: JSON.stringify(values),
-      })
+    const res = await SendEmail({ data: { type: "job", body: values}})
       notifications.show({ 
-          title: response.ok ? "Sent 🎉" : "An Error Occurred", 
-          message: response.ok ? "You've successfully sent a message to Donald Louch!" : "It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.", 
-          color: response.ok ? "black" : "red-6",
-          icon: response.ok ? <FontAwesomeIcon icon={["fajdr", "paper-plane"]} /> : <FontAwesomeIcon icon={["fadl", "bell-exclamation"]} />,
+          title: res.success ? "Sent 🎉" : `An Error Occurred${res.statusCode && `: ${res.statusCode}`}`, 
+          message: res.success ? "You've successfully sent a message to Donald Louch!" : `${res.message || `It seems like an error occurred while trying to send your contact form to Donald Louch. Please try again.`}`, 
+          color: res.success ? "black" : "red-6",
+          icon: res.success ? <FontAwesomeIcon icon={["fajdr", "paper-plane"]} /> : <FontAwesomeIcon icon={["fadl", "bell-exclamation"]} />,
       })
   }
 
   return <SectionCard styleType="primaryCard" id="contactMe">
       <SectionTitle headingTitle="Contact Me" />
-      {/* <Text ta="center" component="div">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} body="hello@donaldlouch.ca" /></Text> */}
-        <Alert variant="light" color="secondary" title="Contact Form Disabled!" icon={<FontAwesomeIcon icon={["fadl", "envelope-dot"]} />}>
+      <Text ta="center" component="div">You may contact me for any inquires with the below form. You may also email me directly and I'll be happy to help! My email is <InlineLink link="mailto:hello@donaldlouch.ca" leftIcon={{name: "light-envelope-at", pack: "fak"}} body="hello@donaldlouch.ca" /></Text>
+        {/* <Alert variant="light" color="secondary" title="Contact Form Disabled!" icon={<FontAwesomeIcon icon={["fadl", "envelope-dot"]} />}>
           <Text c="white" component="span">Due to a server and backend overhaul, I have disabled the contact form. Sorry for any inconvenience. You can reach me at <InlineLink link="mailto:donaldlouchproductions@gmail.com" body="donaldlouchproductions@gmail.com" leftIcon={{ name: "light-envelope-at", pack: "fak" }} />.</Text>
-      </Alert>
+      </Alert> */}
       <Tabs defaultValue={type || "general"} fz="inherit">
           <Tabs.List grow justify="center">
               <Tabs.Tab value="general">General Inquiries</Tabs.Tab>
@@ -111,7 +103,7 @@ function RouteComponent() {
                   <FormInput isRequired inputLabel="Subject" id="subject" inputDescription="By providing a subject to the contact request, it'll make it easier to distinguish the unique request from others." icon={<FontAwesomeIcon icon={["fajr", "font-case"]} />} {...formGeneral.getInputProps('subject')} inputType="text" />
                   <FormTextArea inputID="message" inputLabel="Message" {...formGeneral.getInputProps('message')} isRequired />
                   {/* <Group justify="flex-end" mt="md"> */}
-                      <FormSubmitButton disabled>Send Message</FormSubmitButton>
+                      <FormSubmitButton>Send Message</FormSubmitButton>
                   {/* </Group> */}
               </Box>
           </Tabs.Panel>
@@ -127,11 +119,11 @@ function RouteComponent() {
                   <FormInput isRequired inputLabel="Email Address" id="email" {...formHire.getInputProps('email')} icon={<FontAwesomeIcon icon={["fak", "light-envelope-at"]} />} inputType="email" />
                   <FormInput inputLabel="Phone Number" id="phone" {...formHire.getInputProps('phone')} icon={<FontAwesomeIcon icon={["fal", "phone"]} />} inputType="tel" />
                   </SimpleGrid>
-                  <FormInput isRequired inputLabel="Type" id="type" inputDescription="By providing a project type like 'Web Development' it will make it easier for me to understand your needs." icon={<FontAwesomeIcon icon={["fajr", "font-case"]} />} {...formHire.getInputProps('type')} inputType="text" />
+                  <FormInput isRequired inputLabel="Job Type" id="jobType" inputDescription="By providing a project type like 'Web Development' it will make it easier for me to understand your needs." icon={<FontAwesomeIcon icon={["fajr", "font-case"]} />} {...formHire.getInputProps('jobType')} inputType="text" />
                   <FormTextArea inputID="description" inputLabel="Project Description" {...formHire.getInputProps('description')} isRequired />
                   <FormNumber inputID="budget" inputLabel="Budget" inputDescription="Providing a budget helps me understand your project's scope." icon={<FontAwesomeIcon icon={["fal", "dollar-sign"]} />} {...formHire.getInputProps('budget')} />
                   {/* <Group justify="flex-end" mt="md"> */}
-                      <FormSubmitButton disabled>Send Message</FormSubmitButton>
+                      <FormSubmitButton>Send Message</FormSubmitButton>
                   {/* </Group> */}
               </Box>
           </Tabs.Panel>

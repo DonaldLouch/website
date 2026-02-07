@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestRouteImport } from './routes/test'
 import { Route as MmRouteImport } from './routes/mm'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AuthRouteImport } from './routes/auth'
@@ -32,6 +33,11 @@ import { Route as AuthedAdminIndexRouteImport } from './routes/_authed/admin/ind
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthedAdminTestRouteImport } from './routes/_authed/admin/test'
 
+const TestRoute = TestRouteImport.update({
+  id: '/test',
+  path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MmRoute = MmRouteImport.update({
   id: '/mm',
   path: '/mm',
@@ -147,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/mm': typeof MmRoute
+  '/test': typeof TestRoute
   '/album/$slug': typeof AlbumSlugRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
@@ -170,6 +177,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/mm': typeof MmRoute
+  '/test': typeof TestRoute
   '/album/$slug': typeof AlbumSlugRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
@@ -195,6 +203,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/mm': typeof MmRoute
+  '/test': typeof TestRoute
   '/album/$slug': typeof AlbumSlugRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
@@ -220,6 +229,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/mm'
+    | '/test'
     | '/album/$slug'
     | '/blog/search'
     | '/embed/$id'
@@ -243,6 +253,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/mm'
+    | '/test'
     | '/album/$slug'
     | '/blog/search'
     | '/embed/$id'
@@ -267,6 +278,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/mm'
+    | '/test'
     | '/album/$slug'
     | '/blog/search'
     | '/embed/$id'
@@ -292,6 +304,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   MmRoute: typeof MmRoute
+  TestRoute: typeof TestRoute
   AlbumSlugRoute: typeof AlbumSlugRoute
   BlogSearchRoute: typeof BlogSearchRoute
   EmbedIdRoute: typeof EmbedIdRoute
@@ -311,6 +324,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/test': {
+      id: '/test'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mm': {
       id: '/mm'
       path: '/mm'
@@ -487,6 +507,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   MmRoute: MmRoute,
+  TestRoute: TestRoute,
   AlbumSlugRoute: AlbumSlugRoute,
   BlogSearchRoute: BlogSearchRoute,
   EmbedIdRoute: EmbedIdRoute,

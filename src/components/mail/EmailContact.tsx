@@ -1,6 +1,6 @@
 import { Head, Heading, Html, Img, Link, Tailwind, Text, Hr, Body } from "@react-email/components";
 
-export default function EmailTemplate({ body }: any) {
+export default function EmailContact({ body }: any) {
 	const { subject, name, email, message } = body
 	const baseURL = process.env.VITE_WEB_URI
 	return <Html lang="en">

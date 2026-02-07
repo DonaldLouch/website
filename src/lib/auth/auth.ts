@@ -8,10 +8,12 @@ import { passkey } from "@better-auth/passkey";
 import { admin as adminPlugin } from "better-auth/plugins/admin";
 import { ac, admin, user } from "@/utils/auth/permissions";
 import { multiSession } from "better-auth/plugins";
+import { SendEmail } from "@/actions/email.server";
+import { createAuthMiddleware } from "@better-auth/core/api";
 
 export const auth = betterAuth({
   appName: "Donald Louch",
-  baseURL: process.env.VITE_SITE_URL!,
+  baseURL: process.env.VITE_WEB_URI!,
   trustedOrigins: [
     "https://localhost:3000",
     "*.donaldlouch.ca",
@@ -22,33 +24,35 @@ export const auth = betterAuth({
     changeEmail: {
       enabled: true,
       sendChangeEmailVerification: async ({ user, url, newEmail }) => {
-        await fetch(
-          `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
-          {
-            method: "POST",
-            body: JSON.stringify({
-              user: { ...user, email: newEmail },
-              url,
-              type: "emailChange",
-            }),
-          },
-        );
+        await SendEmail({ data: { type: "auth", body: {user: { ...user, email: newEmail }, url, authType: "emailChange"} } })
+        // await fetch(
+        //   `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
+        //   {
+        //     method: "POST",
+        //     body: JSON.stringify({
+        //       user: { ...user, email: newEmail },
+        //       url,
+        //       type: "emailChange",
+        //     }),
+        //   },
+        // );
       },
     },
     deleteUser: {
       enabled: true,
       sendDeleteAccountVerification: async ({ user, url }) => {
-        await fetch(
-          `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
-          {
-            method: "POST",
-            body: JSON.stringify({
-              user,
-              url,
-              type: "deleteAccount",
-            }),
-          },
-        );
+        await SendEmail({ data: { type: "auth", body: {user, url, authType: "deleteAccount"} } })
+        // await fetch(
+        //   `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
+        //   {
+        //     method: "POST",
+        //     body: JSON.stringify({
+        //       user,
+        //       url,
+        //       type: "deleteAccount",
+        //     }),
+        //   },
+        // );
       },
     },
   },
@@ -56,34 +60,36 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: false,
     sendResetPassword: async ({ user, url }) => {
-      await fetch(
-        `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            user,
-            url,
-            type: "passwordReset",
-          }),
-        },
-      );
+      await SendEmail({ data: { type: "auth", body: {user, url, authType: "passwordReset"} } })
+      // await fetch(
+      //   `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify({
+      //       user,
+      //       url,
+      //       type: "passwordReset",
+      //     }),
+      //   },
+      // );
     },
   },
   emailVerification: {
     autoSignInAfterVerification: true,
     sendOnSignUp: true,
     sendVerificationEmail: async ({ user, url }) => {
-      await fetch(
-        `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            user,
-            url,
-            type: "emailVerification",
-          }),
-        },
-      );
+      await SendEmail({ data: { type: "auth", body: {user, url, authType: "emailVerification"} } })
+      // await fetch(
+      //   `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify({
+      //       user,
+      //       url,
+      //       type: "emailVerification",
+      //     }),
+      //   },
+      // );
     },
   },
   session: {
@@ -108,25 +114,18 @@ export const auth = betterAuth({
   database: new Pool({
     connectionString: process.env.DATABASE_URL!,
   }),
-  // TODO: Fix Hooks
   // hooks: {
-  //   after: createAuth(async (ctx) => {
-  //     if (ctx.path.startsWith("/signup")) {
+  //   after: createAuthMiddleware(async (ctx) => {
+  //     if (ctx.path.startsWith("/auth?signup")) {
   //       const user = ctx.context.newSession?.user ?? {
   //         name: ctx.body.name,
   //         email: ctx.body.email,
   //       };
 
   //       if (user != null) {
-  //         await fetch('/api/mail/sendUserEmail', {
-  //             method: 'POST',
-  //             body: JSON.stringify({
-  //               user,
-  //               type: "welcomeEmail",
-  //             }),
-  //         })
+  //         await SendEmail({ data: { type: "auth", body: {user, authType: "welcomeEmail"} } })
   //       }
   //     }
-  //   }),
-  // },
+  //   })
+  // }
 });
