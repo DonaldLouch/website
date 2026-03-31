@@ -7,14 +7,8 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000 --host",
-    "build": "dotenv -e .env -- prisma generate && tsr generate && vite build",
-    "test": "vitest run",
-    "update": "yarn upgrade-interactive",
-    "db:generate": "dotenv -e .env.local -- prisma generate",
-    "db:push": "dotenv -e .env.local -- prisma db push",
-    "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
-    "db:studio": "dotenv -e .env.local -- prisma studio",
-    "db:seed": "dotenv -e .env.local -- prisma db seed"
+    "build": "vite build",
+    "update": "yarn upgrade-interactive"
   },
   "keywords": [
     "Donald Louch, Donald, Louch, Portfolio, Website, Blog, Photography, Videography, Web Production, Canada, Canadian, Digital Content, Content Creator"
