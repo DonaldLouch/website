@@ -1,19 +1,5 @@
-import { SectionCard } from "@/components/cards/SectionCard";
-import InlineLink from "@/components/InlineLink";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  Alert,
-  Stack,
-  Title,
-  Text,
-  Box,
-  Grid,
-  Center,
-  Anchor,
-  Group,
-  Image,
-  Spoiler,
-} from "@mantine/core";
+import { SectionCard } from "@/components/SectionCard";
+import { Stack, Title, Text, Box, Center, Image } from "@mantine/core";
 
 export default function Message() {
   return (

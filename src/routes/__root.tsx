@@ -1,42 +1,18 @@
 /// <reference types="vite/client" />
 
 import { MantineProvider } from "@mantine/core";
-import { Notifications } from "@mantine/notifications";
 import { MantineTheme } from "@/config/MantineTheme";
 import "@mantine/core/styles.css";
-import "@mantine/dates/styles.css";
-import "@mantine/notifications/styles.css";
-import "@mantine/dropzone/styles.css";
-import "@mantine/carousel/styles.css";
 import "@/config/styles/global.css";
-
-import MaintenanceModePage from "@/components/layout/MaintenanceModePage";
-import MainLayout from "@/components/layout/MainLayout";
-import Loading from "@/components/Loading";
-import { Suspense } from "react";
-
-import { AdminAccessCheck } from "@/actions/auth.functions";
-
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import "@/lib/FontAwesome"
-config.autoAddCss = false;
 
 import {
   createRootRoute,
   HeadContent,
-  Scripts,
-  useLocation,
+  Scripts
 } from "@tanstack/react-router"
 import { seo } from "@/utils/seo";
-import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from '@/components/NotFound'
-import { TanStackDevtools } from "@tanstack/react-devtools";
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { RouteNavigationPanel } from "@/components/dev";
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import AdminLayout from "@/components/layout/AdminLayout";
-import Message from "./message";
+import Message from "@/components/Message";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -83,69 +59,18 @@ export const Route = createRootRoute({
       { src: "https://api.dashboard.instatus.com/widget?host=donaldlouch.instatus.com&code=6390a14d&locale=en" }
     ]
   }),
-  loader: () => AdminAccessCheck(),
-  errorComponent: DefaultCatchBoundary,
   notFoundComponent: () => <NotFound />,
   shellComponent: RootDocument,
 })
 
-const queryClient = new QueryClient()
-
-function RootDocument({ children }: { children: React.ReactNode }) {
-  const isAdmin = Route.useLoaderData();
-
-  const isMaintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === "true";
-
-  const pathname = useLocation({
-    select: (location) => location.pathname,
-  })
-
-  const layout = {
-    // MaintenanceMode: () => <MaintenanceModePage />,
-    // AdminPage: () => <AdminLayout isAdmin={isAdmin}>{children}</AdminLayout>,
-    // Default: () => <MainLayout>{children}</MainLayout>
-      MaintenanceMode: () => <Message />,
-      AdminPage: () => <Message />,
-      Default: () => <Message />
-  }
-
-  const layoutType = (isMaintenanceMode && !isAdmin && !pathname.includes('/auth'))
-    ? "MaintenanceMode" 
-    : pathname.includes('/admin') ? "AdminPage" 
-    : "Default"
-
-  return (
-    <html>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <QueryClientProvider client={queryClient}>
-          <MantineProvider theme={MantineTheme}>
-            <Notifications />
-            <Suspense fallback={<Loading />}>
-              { layout[layoutType] && layout[layoutType]() }
-            </Suspense> 
-          </MantineProvider>
-        </QueryClientProvider>
-        {/* <TanStackDevtools
-              config={{
-                  position: 'bottom-right',
-              }}
-              plugins={[
-                  {
-                      name: 'Tanstack Router',
-                      render: <TanStackRouterDevtoolsPanel />,
-                  },
-                  {
-                      id: 'route-navigation',
-                      name: 'Route Navigation',
-                      render: <RouteNavigationPanel />,
-                  },
-              ]}
-          /> */}
-        <Scripts />
-      </body>
-    </html>
-  )
+function RootDocument() {
+  return <html>
+    <head><HeadContent /></head>
+    <body>
+      <MantineProvider theme={MantineTheme}>
+        <Message />
+      </MantineProvider>
+      <Scripts />
+    </body>
+  </html>
 }
