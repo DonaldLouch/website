@@ -1,7 +1,7 @@
 import {  createFileRoute } from '@tanstack/react-router'
 import { Box, Space, Tabs, Title } from '@mantine/core'
 
-import { GetAboutMe, GetAllEmbeds, GetAllLinks, GetAllLinksSets, GetAllPrimaryLinks, GetAllPublicVideographyCount, GetFilteredBlogPosts, GetFilteredPhotography, GetPinnedVideography, GetPinnedVideographyCount } from "@/actions/database/GetDatabase.server";
+import { GetAboutMe, GetFilteredBlogPosts, GetFilteredPhotography, GetFilteredVideography, GetLinks } from "@/actions/database/GetDatabase.functions";
 
 import PrimaryLinkedButton from '@/components/buttons/PrimaryLinkedButton';
 import PinnedPostsCard from '@/components/cards/PinnedPostsCard';
@@ -12,26 +12,28 @@ import PinnedAudio from '../components/home/PinnedAudio';
 import PinnedPhotos from '../components/home/PinnedPhotos';
 import PinnedVideos from '../components/home/PinnedVideos';
 
+import type { PhotoData, VideoData } from '@/actions/database/GetDatabase.functions'
+
 export const Route = createFileRoute('/')({ 
     component: Home, 
     loader: async () => ({
         aboutMe: await GetAboutMe(),
         
-        allLinks: await GetAllLinks(),
-        allPrimaryLinks: await GetAllPrimaryLinks(),
-        allLinksSets: await GetAllLinksSets(),
-        // allEmbeds: await GetAllEmbeds(),
+        allLinks: await GetLinks({ data: {type: "links"} }),
+        allPrimaryLinks: await GetLinks({ data: {type: "primary"} }),
+        allLinksSets: await GetLinks({ data: {type: "linkSets"} }),
+        // allEmbeds: await GetLinks({ data: {type: "links"} }),
         
-        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "view", keyword: "pinned" } }) as any,
-        photoAllPublicCounts: await GetFilteredPhotography({ data: {action: "count"} }) as any,
-        pinnedPhotoCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as any,
+        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "pinned"} }) as PhotoData,
+        photoAllPublicCounts: await GetFilteredPhotography({ data: {action: "count"} }) as number,
+        pinnedPhotoCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as number,
         
-        pinnedVideos: await GetPinnedVideography(),
-        videoAllPublicCounts: await GetAllPublicVideographyCount(),
-        // pinnedVideoCount: await GetPinnedVideographyCount(),
+        pinnedVideos: await GetFilteredVideography({ data: { action: "data", type: "pinned" }}) as VideoData,
+        videoAllPublicCounts: await GetFilteredVideography({ data: { action: "count" }}) as number,
+        // pinnedVideoCount: await GetFilteredVideography({ data: { action: "count", type: "pinned" }}) as number
         
         pinnedBlogPosts: await GetFilteredBlogPosts({ data: { action: "data", type: "pinned" } }),
-        blogPostAllPublicCounts: await GetFilteredBlogPosts({ data: { action: "count" } }) as any,
+        blogPostAllPublicCounts: await GetFilteredBlogPosts({ data: { action: "count" } }) as number,
         // pinnedBlogPostCount: GetFilteredBlogPosts({ data: { action: "count", type: "pinned" } }) as any
     }),
 }) 

@@ -11,10 +11,10 @@ import { useImageSize } from 'react-image-size'
 import LinkBadge from '../../LinkBadge'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { GetMarkdown } from '@/actions/markdown.server'
+import { GetMarkdown } from '@/actions/markdown.functions'
 import { useQuery } from '@tanstack/react-query'
 import { Markdown } from '@/components/markdown'
-import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server'
+import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.functions'
 
 // async function GetCaption({ captionData }: any) {
 //     return await GetMarkdown({ data: { content: captionData } }) 

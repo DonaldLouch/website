@@ -1,4 +1,7 @@
 // import { authMiddleware } from '@/middleware/auth'
+import PrimaryLinkedButton from '@/components/buttons/PrimaryLinkedButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Stack, Group, Title, Text } from '@mantine/core'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_authed/admin/')({
@@ -6,5 +9,108 @@ export const Route = createFileRoute('/_authed/admin/')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/admin/"!</div>
+    const quickActions = [
+    {
+      link: "photography",
+      title: "Photography Manager",
+      icon: "images"
+    },
+    {
+      link: "videography",
+      title: "Videography Manager",
+      icon: "films"
+    },
+    {
+      link: "blog",
+      title: "Blog Manager",
+      icon: "blog"
+    },
+    {
+      link: "about",
+      title: "Update: About Me",
+      icon: "id-badge"
+    },
+    {
+      link: "resume",
+      title: "Update: Resume",
+      icon: "id-badge"
+    },
+    {
+      link: "links",
+      title: "Links Manager",
+      icon: "link",
+      pack: "fal"
+    },
+    {
+      link: "messages",
+      title: "Messages",
+      icon: "message-smile",
+    },
+    {
+      link: "profile",
+      title: "Profile",
+      icon: "user-gear",
+    },
+    {
+      link: "accounts",
+      title: "Accounts",
+      icon: "users",
+      pack: "fal"
+    },
+  ]
+  return <>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldPrimary)" }} p="2rem" my="2rem" gap="0">
+      <Group align="center" justify="center" c="var(--primary)">
+        <FontAwesomeIcon icon={["fadl", "hand-heart"]} size="2x" color="currentColor" />
+        <Title ta="center" size="2.5rem" fw="900" order={1}>Welcome!</Title>
+      </Group>
+        <Text ta="center" fz="1.5rem" fw="600" mb="0">Welcome to the Donald Louch Website</Text>
+        <Text ta="center">{process.env.VITE_DESCRIPTION}</Text>
+    </Stack>
+    <Group align="center" justify="center" c="green">
+      <FontAwesomeIcon icon={["fadl", "bolt"]} size="2x" color="currentColor" />
+      <Title ta="center" size="2.5rem" fw="900">Quick Actions</Title>
+    </Group>
+    <Stack style={{ borderRadius: "var(--mantine-radius-md)", boxShadow: "var(--mantine-shadow-bsBoldSecondary)" }} p="2rem 0.5rem" my="2rem" gap="0">
+        <Group justify="center" my="1rem" gap="0.5rem">
+            {quickActions.map((action: any) => (
+              <PrimaryLinkedButton icon={{name: action.icon, pack: action.pack || "fadl"}} link={{to: `/admin/${action.link}`}} key={action.link}>{action.title}</PrimaryLinkedButton>
+            ))}
+          </Group>
+    </Stack>
+
+     {/* <SearchUsers /> */}
+
+      {/* {users.map((user: any) => {
+        return (
+          <div key={user.id}>
+            <div>
+              {user.firstName} {user.lastName}
+            </div>
+            <div>
+              {
+                user.emailAddresses.find(
+                  (email: any) => email.id === user.primaryEmailAddressId
+                )?.emailAddress
+              }
+            </div>
+            <div>{user.publicMetadata.role as string}</div>
+            <div>
+              <form action={setRole}>
+                <input type="hidden" value={user.id} name="id" />
+                <input type="hidden" value="admin" name="role" />
+                <button type="submit">Make Admin</button>
+              </form>
+            </div>
+            <div>
+              <form action={setRole}>
+                <input type="hidden" value={user.id} name="id" />
+                <input type="hidden" value="moderator" name="role" />
+                <button type="submit">Make Moderator</button>
+              </form>
+            </div>
+          </div>
+        );
+      })} */}
+  </>
 }

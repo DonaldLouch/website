@@ -8,7 +8,7 @@ import { passkey } from "@better-auth/passkey";
 import { admin as adminPlugin } from "better-auth/plugins/admin";
 import { ac, admin, user } from "@/utils/auth/permissions";
 import { multiSession } from "better-auth/plugins";
-import { SendEmail } from "@/actions/email.server";
+import { SendEmail } from "@/actions/email.functions";
 import { createAuthMiddleware } from "@better-auth/core/api";
 
 export const auth = betterAuth({
@@ -23,7 +23,7 @@ export const auth = betterAuth({
   user: {
     changeEmail: {
       enabled: true,
-      sendChangeEmailVerification: async ({ user, url, newEmail }) => {
+      sendChangeEmailVerification: async ({ user, url, newEmail }: any) => {
         await SendEmail({ data: { type: "auth", body: {user: { ...user, email: newEmail }, url, authType: "emailChange"} } })
         // await fetch(
         //   `${process.env.VITE_SITE_URL!}/api/mail/sendUserEmail`,

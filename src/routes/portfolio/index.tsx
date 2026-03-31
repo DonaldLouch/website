@@ -1,4 +1,4 @@
-import { GetAboutMe } from '@/actions/database/GetDatabase.server';
+import { GetAboutMe } from '@/actions/database/GetDatabase.functions';
 import HeroSection from '@/components/cards/HeroSection';
 import { seo } from '@/utils/seo';
 import { createFileRoute } from '@tanstack/react-router'

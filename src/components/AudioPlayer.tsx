@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionIcon, Box, Grid, Group, Image, Slider, Stack, Text, Title, Tooltip } from "@mantine/core";
 import { useEffect, useState } from "react"
 
-export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: string, title: string, thumbnail: string}) {
+export default function AudioPlayer({audioSrc, title, thumbnail}: {audioSrc: string, title: string, thumbnail?: string|undefined|null}) {
     const [audioElement, setAudioElement] = useState() as any
 
     const [isReady, setIsReady] = useState<boolean>(false)

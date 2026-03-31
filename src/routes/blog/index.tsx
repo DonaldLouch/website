@@ -1,8 +1,8 @@
 import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 
-import { GetAboutMe, GetFilteredBlogPosts } from '@/actions/database/GetDatabase.server'
-import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server'
+import { BlogData, GetAboutMe, GetFilteredBlogPosts } from '@/actions/database/GetDatabase.functions'
+import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.functions'
 
 import { Anchor, AspectRatio, Box, SimpleGrid, Space, Image, Title, Tooltip, Text } from '@mantine/core'
 
@@ -41,7 +41,7 @@ export const Route = createFileRoute('/blog/')({
     const pagination = new Array()
     pagination.push(numberOfPages, currentPage)
 
-    const posts = await GetFilteredBlogPosts({ data: { action: "data", contentLimit, contentStart } }) as any
+    const posts = await GetFilteredBlogPosts({ data: { action: "data", contentLimit, contentStart } }) as BlogData
     return { 
       posts,
       pinnedPosts: await GetFilteredBlogPosts({ data: { action: "data", type: "pinned" } }),

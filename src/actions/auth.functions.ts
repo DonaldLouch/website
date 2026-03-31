@@ -1,3 +1,4 @@
+import { passkey } from '@better-auth/passkey';
 import { createServerFn } from "@tanstack/react-start"
 import { getRequestHeaders } from "@tanstack/react-start/server";
 
@@ -73,6 +74,41 @@ export const signOutUser = createServerFn({method: "GET"}).handler(async () => {
   }
 })
 
+export const UsersPasskeys = createServerFn({method: "GET"}).handler(async () => {
+  const headers = getRequestHeaders();
+  try {
+    const res = await auth.api.listPasskeys({ headers })
+    return res
+  } catch (error: any) {
+    return {message: error.message, code: error.status || 500}
+  }
+})
+
+export const DeletePasskey = createServerFn({method: "POST"})
+  .inputValidator((data: { id: string }) => data)
+  .handler(async (ctx) => {
+      const { id } = ctx.data
+      const headers = getRequestHeaders();
+      try {
+        await auth.api.deletePasskey({ body: { id }, headers });
+        return { success: true }
+      } catch (error: any) {
+        return { success: false, message: error.message, code: error.status || 500 }
+      }
+  })
+
+
+
+export const UsersAccounts = createServerFn({method: "GET"}).handler(async () => {
+  const headers = getRequestHeaders();
+  try {
+    const res = await auth.api.listUserAccounts({ headers })
+    return res
+  } catch (error: any) {
+    return {message: error.message, code: error.status || 500}
+  }
+})
+
 // export async function sendPasswordResetEmail(email: string): Promise<string> {  
 //   return "Password Reset Email Sent";
 // }
@@ -108,13 +144,13 @@ export const UserLoggedInCheck = createServerFn({method: "POST"}).handler(async 
     const headers = getRequestHeaders();
     const session = await auth.api.getSession({ headers })
     const userAccess =  session != null ? true : false
-    return userAccess
+    return userAccess as boolean
 }) 
 
 export const AdminAccessCheck = createServerFn({method: "POST"}).handler(async () => {
   const headers = getRequestHeaders();
   const session = await auth.api.getSession({ headers })
   const adminAccess =  session?.user.role === "admin" ? true : false
-  return adminAccess
+  return adminAccess as boolean
 }) 
   

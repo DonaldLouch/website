@@ -9,7 +9,10 @@ export const authMiddleware = createMiddleware().server(
         const redirectURL = new URL(request.url).pathname
         const session = await auth.api.getSession({ headers })
         const adminAccess = session && session?.user.role === "admin"? true : false
-        if (!adminAccess) {
+        const url = new URL(request.url)
+        const pathname = url.pathname // This is your path (e.g., "/about")
+        // const adminAccess = session ? true : false
+        if (!adminAccess && !pathname.includes("/admin/profile")) {
             throw redirect({ to: "/auth", search: { message: "NoAccess", returnTo: redirectURL } });
         }
         return await next()

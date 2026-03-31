@@ -15,8 +15,8 @@ import { AdminLinks } from '@/lib/AdminLinks'
 import PrimaryButton from '../buttons/PrimaryButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { notifications } from '@mantine/notifications'
-import { signOutUser } from '@/actions/auth.server'
-import { useNavigate } from '@tanstack/react-router'
+import { signOutUser } from '@/actions/auth.functions'
+import { useLocation, useNavigate } from '@tanstack/react-router'
 
 export default function AdminLayout({ children, isAdmin }: { children: React.ReactNode, isAdmin: any }) {  
 //   const path = usePathname()
@@ -30,6 +30,10 @@ export default function AdminLayout({ children, isAdmin }: { children: React.Rea
   const [opened, { toggle }] = useDisclosure()
 
   const navigate = useNavigate();
+
+  const pathname = useLocation({
+    select: (location) => location.pathname,
+  })
 
   const signOut = async () => {
       const res = await signOutUser()
@@ -53,7 +57,8 @@ export default function AdminLayout({ children, isAdmin }: { children: React.Rea
       }
   }
 
-  return <>{!isAdmin ? (
+  return <>
+  {(!isAdmin && !pathname.includes("/admin/profile")) ? (
     <Box
       px={{base: "1rem", lg: "5rem"}}  
       style={{overflowX:"clip", backdropBlur:"20px", wordBreak: "break-word", background: "var(--darkPurpleRGBA)"}} 
@@ -95,7 +100,7 @@ export default function AdminLayout({ children, isAdmin }: { children: React.Rea
           </Anchor>
           <Group>
             {/* <UserButton /> */}
-            <PrimaryButton onClick={() => signOut()} icon={{ name: "person-from-porta", pack: "fal"}}>Sign Out</PrimaryButton>
+            <PrimaryButton onClick={() => signOut()} icon={{ name: "person-from-portal", pack: "fal"}}>Sign Out</PrimaryButton>
             <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation" color="white" />
           </Group>
         </Group>
@@ -120,5 +125,6 @@ export default function AdminLayout({ children, isAdmin }: { children: React.Rea
         <Footer />
       </AppShell.Footer> */}
     </AppShell>
-  )}</>
+  )}
+  </>
 }

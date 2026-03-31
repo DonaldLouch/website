@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 import "@/lib/FontAwesome"
 import { useServerFn } from "@tanstack/react-start"
 import { useQuery } from "@tanstack/react-query"
-import { GetMaintenanceMode } from "@/actions/database/GetDatabase.server"
+import { GetMaintenanceMode } from "@/actions/database/GetDatabase.functions"
 
 export default function MaintenanceModePage() {
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -22,11 +22,12 @@ export default function MaintenanceModePage() {
     const [loading, setLoading] = useState(true)
     
     const getData = useServerFn(GetMaintenanceMode)
+    // @ts-ignore
     const { data: data, status } = useQuery({
         queryKey: ['getMaintenanceModeData'],
         queryFn: () => getData(),
         initialData: defaultProps,
-    })
+    }) as any
     status === "success" && useEffect(() => {
         sleep(500).then(() => setLoading(false))
     }, [data])

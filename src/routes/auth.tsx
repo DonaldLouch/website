@@ -1,4 +1,4 @@
-import { SessionInformation } from "@/actions/auth.server"
+import { SessionInformation } from "@/actions/auth.functions"
 import { createFileRoute, useLoaderData } from "@tanstack/react-router"
 
 import HomeButton from "@/components/buttons/HomeButton";
@@ -23,7 +23,7 @@ import {
 import z from "zod/v4";
 import { zodResolver } from "mantine-form-zod-resolver";
 import { useForm } from "@mantine/form";
-import { signInUser, signOutUser } from "@/actions/auth.server";
+import { signInUser, signOutUser } from "@/actions/auth.functions";
 import { notifications } from "@mantine/notifications";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
 import FormInputPassword from "@/components/form/FormInputPassword";

@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 import { createFileRoute } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 
-import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server'
-import { GetAllPublicVideographyCount, GetAllPublicVideos } from '@/actions/database/GetDatabase.server'
+import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.functions'
+import { GetFilteredVideography, VideoData } from '@/actions/database/GetDatabase.functions'
 
 import { AspectRatio, Grid, Title, Stack, Text, Image, Anchor, Box, Paper, Group, Loader, Tooltip } from "@mantine/core"
 import DisplayDate from "@/lib/DisplayDate"
@@ -30,8 +30,8 @@ export const Route = createFileRoute('/feed/videography')({
         ]
     }),
     loader:  async () => {
-        const postLimit = 12
-        const videos = await GetAllPublicVideos({ data: { postLimit }})
+        const contentLimit = 12
+        const videos = await GetFilteredVideography({ data: { action: "data", contentLimit }}) as VideoData
 
         let tags = new Array()
         videos.forEach((video: {tags: any}) => {
@@ -44,10 +44,10 @@ export const Route = createFileRoute('/feed/videography')({
         })
 
         return {
-            videoLimit: postLimit,
+            videoLimit: contentLimit,
 
             videos,
-            videosCount: await GetAllPublicVideographyCount(),
+            videosCount: await GetFilteredVideography({ data: { action: "count" }}) as number,
 
             tags: tags.sort(),
 
@@ -61,7 +61,7 @@ async function fetchVideos(offset: number, limit: number, videosCount: number) {
   const from = offset * limit
   const to = Math.min(from + limit - 1, videosCount) 
 
-  const data = await GetAllPublicVideos({ data: { from, to }})
+  const data = await GetFilteredVideography({ data: { action: "data", contentLimit: to, contentStart: from }}) as VideoData
 
   return data
 }

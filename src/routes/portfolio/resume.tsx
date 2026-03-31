@@ -1,4 +1,4 @@
-import { GetAboutMe, GetResume } from '@/actions/database/GetDatabase.server'
+import { GetResume } from '@/actions/database/GetDatabase.functions'
 import MultiAccordion from '@/components/accordions/MultiAccordion'
 import HomeButton from '@/components/buttons/HomeButton'
 import PrimaryLinkedButton from '@/components/buttons/PrimaryLinkedButton'

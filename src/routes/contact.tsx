@@ -1,4 +1,4 @@
-import { SendEmail } from '@/actions/email.server'
+import { SendEmail } from '@/actions/email.functions'
 import { SectionCard } from '@/components/cards/SectionCard'
 import FormInput from '@/components/form/FormInput'
 import FormNumber from '@/components/form/FormNumber'

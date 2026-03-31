@@ -1,6 +1,6 @@
-import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server'
-import { GetLinkSet } from '@/actions/database/GetDatabase.server'
-import { GetMarkdown } from '@/actions/markdown.server'
+import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.functions'
+import { GetLinks, LinkSetData } from '@/actions/database/GetDatabase.functions'
+import { GetMarkdown } from '@/actions/markdown.functions'
 import AudioPlayer from '@/components/AudioPlayer'
 import InlineLink from '@/components/InlineLink'
 import { Markdown } from '@/components/markdown'
@@ -17,8 +17,8 @@ export const Route = createFileRoute('/linkSet/$slug')({
   component: RouteComponent,
   loader:  async ({ params }) => {
         const { slug } = params as any
-        const set = await GetLinkSet({ data: { slug } }) as any
-        const description = await GetMarkdown({ data: { content: set?.description } }) as any
+        const set = await GetLinks({ data: {type: "linkSets", action: "data", slug} }) as LinkSetData
+        const description = await GetMarkdown({ data: { content: set?.description } })
       return { 
         set,
         description,
@@ -32,7 +32,7 @@ export const Route = createFileRoute('/linkSet/$slug')({
       meta: [
         ...seo({
           title: `${loaderData?.set?.setName} | ${import.meta.env.VITE_WEBSITE_NAME}`,
-          description: loaderData?.set?.description,
+          description: loaderData?.set?.description || "Description coming soon!",
           image: loaderData?.set?.thumbnail!
         }),
       ]

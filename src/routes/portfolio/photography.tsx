@@ -1,4 +1,4 @@
-import { GetAboutMe, GetFilteredPhotography } from '@/actions/database/GetDatabase.server'
+import { GetAboutMe, GetFilteredPhotography } from '@/actions/database/GetDatabase.functions'
 import FeedLoader from '@/components/feed/FeedLoader'
 import ViewPhotoFeed from '@/components/feed/photo/ViewPhotoFeed'
 import { seo } from '@/utils/seo'
@@ -9,6 +9,13 @@ import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
 import { useRef, useState, useCallback, useEffect, useMemo } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Masonry from 'react-masonry-css'
+
+import type { PhotoData } from '@/actions/database/GetDatabase.functions'
+type FetchPhotos = {
+    nextPage: number,
+    contentLimit: number,
+    photosCount: number
+}
 
 export const Route = createFileRoute('/portfolio/photography')({
     component: RouteComponent,
@@ -26,19 +33,19 @@ export const Route = createFileRoute('/portfolio/photography')({
         return {
             contentLimit,
 
-            photos: await GetFilteredPhotography({ data: {action: "data", type: "portfolio", contentLimit} }) as any,
-            photosCount: await GetFilteredPhotography({ data: {action: "count", type: "portfolio"} }) as any,
+            photos: await GetFilteredPhotography({ data: {action: "data", type: "portfolio", contentLimit} }) as PhotoData,
+            photosCount: await GetFilteredPhotography({ data: {action: "count", type: "portfolio"} }) as number,
 
-            about: await GetAboutMe() as any
+            about: await GetAboutMe()
         }
     }
 })
-  
-async function fetchPhotos(nextPage: number, contentLimit: number, photosCount: number) {
+
+async function fetchPhotos({nextPage, contentLimit, photosCount}: FetchPhotos) {
     const from = nextPage * contentLimit
     const to = Math.min(from + contentLimit - 1, photosCount) 
 
-    const data = await GetFilteredPhotography({ data: {action: "data", type: "portfolio", contentLimit: to, contentStart: from} }) as any
+    const data = await GetFilteredPhotography({ data: {action: "data", type: "portfolio", contentLimit: to, contentStart: from} }) as PhotoData
 
     return data
 }
@@ -59,11 +66,12 @@ function RouteComponent() {
 
     const loadMorePhotos = useCallback(async () => {
         const nextPage = page + 1
-        const newPhotos = await fetchPhotos(nextPage, contentLimit, photosCount) as any
+        const newPhotos = await fetchPhotos({nextPage, contentLimit, photosCount})
 
         if (newPhotos && newPhotos.length > 0) {
             setIsLastPage(nextPage === Math.ceil(photosCount / contentLimit) - 1)
             setPage(nextPage)
+            // @ts-ignore
             setLoadedPhotos((prevPhotos: any) => {
                 const existingIds = new Set(prevPhotos?.map?.((p: any) => p.id) || [])
                 const uniqueNewPhotos = newPhotos.filter((p: any) => !existingIds.has(p.id))
@@ -100,8 +108,8 @@ function RouteComponent() {
     }), [])
 
     return <Box id="feed" pos="relative" w="100%">
-        <Tooltip label={`About ${about.firstName} ${about.lastName}`}>
-            <ActionIcon variant="filled" aria-label={`About ${about.firstName} ${about.lastName}`} color="black"
+        <Tooltip label={`About ${about?.firstName} ${about?.lastName}`}>
+            <ActionIcon variant="filled" aria-label={`About ${about?.firstName} ${about?.lastName}`} color="black"
                 pos="fixed"
                 bottom={{ base: "1.4%", md: "2%" }}
                 right={{ base: "4%", md: "1.5%" }}
@@ -110,7 +118,7 @@ function RouteComponent() {
                 <FontAwesomeIcon icon={["fadl", "id-badge"]} size="lg" />
             </ActionIcon>
         </Tooltip>
-        <Drawer size="full" opened={opened} onClose={close} title={`About ${about.firstName} ${about.lastName}`} 
+        <Drawer size="full" opened={opened} onClose={close} title={`About ${about?.firstName} ${about?.lastName}`} 
             overlayProps={{
                 backgroundOpacity: 0.5, 
                 blur: 4,
@@ -132,8 +140,8 @@ function RouteComponent() {
                         w={{base: "50%", sm: "25%"}}
                     >
                         <Image
-                            src={about.avatar}
-                            alt={`${about.firstName} ${about.lastName}`}
+                            src={about?.avatar}
+                            alt={`${about?.firstName} ${about?.lastName}`}
                             radius="md"
                             style={{ objectPosition: "top", boxShadow: "var(--mantine-shadow-bsSMPrimary)"}}
                         />
@@ -150,15 +158,15 @@ function RouteComponent() {
                                 textDecorationColor: "primary"
                             } }}
                         >
-                            {about.firstName} {about.middleName} {about.lastName}
+                            {about?.firstName} {about?.middleName} {about?.lastName}
                         </Title>
                         <Text fz="1.5rem" fw="300" m="0">
-                            {about.pronouns}
+                            {about?.pronouns}
                         </Text>
                     </Stack>
                 </Flex>
                 <Box style={{boxShadow: "var(--mantine-shadow-bsBoldPrimary)", borderRadius: "var(--mantine-radius-md)"}} p="0.5rem 1.5rem" my="1rem">
-                    <Text>{about.bio}</Text>
+                    <Text>{about?.bio}</Text>
                 </Box>
             </Box>
         </Drawer>

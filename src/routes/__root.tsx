@@ -15,7 +15,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import Loading from "@/components/Loading";
 import { Suspense } from "react";
 
-import { AdminAccessCheck } from "@/actions/auth.server";
+import { AdminAccessCheck } from "@/actions/auth.functions";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -36,6 +36,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { RouteNavigationPanel } from "@/components/dev";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import AdminLayout from "@/components/layout/AdminLayout";
+import Message from "./message";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -100,9 +101,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   })
 
   const layout = {
-    MaintenanceMode: () => <MaintenanceModePage />,
-    AdminPage: () => <AdminLayout isAdmin={isAdmin}>{children}</AdminLayout>,
-    Default: () => <MainLayout>{children}</MainLayout>
+    // MaintenanceMode: () => <MaintenanceModePage />,
+    // AdminPage: () => <AdminLayout isAdmin={isAdmin}>{children}</AdminLayout>,
+    // Default: () => <MainLayout>{children}</MainLayout>
+      MaintenanceMode: () => <Message />,
+      AdminPage: () => <Message />,
+      Default: () => <Message />
   }
 
   const layoutType = (isMaintenanceMode && !isAdmin && !pathname.includes('/auth'))

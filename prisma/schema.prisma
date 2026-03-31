@@ -126,10 +126,10 @@ model Links {
 }
 
 model MaintenanceMode {
-  title       String   @default("Website Under Maintenance")
-  description String?  @default("I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.")
-  lastUpdated DateTime @default(now()) @db.Timestamptz(6)
-  id          BigInt   @id @unique @default(autoincrement())
+  title       String    @default("Website Under Maintenance")
+  description String?   @default("I'm currently performing some maintenance on the website to ensure you have the best possible experience. Please bear with me during this  downtime as I work hard to improve services for you.")
+  lastUpdated DateTime? @default(now()) @db.Timestamptz(6)
+  id          BigInt    @id @unique @default(autoincrement())
   link        String?
 }
 
@@ -276,21 +276,21 @@ model ResumeEducation {
 }
 
 model ResumeWorkExperience {
-  id          String  @id
+  id          String    @id
   company     String
-  startDate   String
-  endDate     String?
   position    String
   description String
+  startDate   DateTime? @db.Date
+  endDate     DateTime? @db.Date
 }
 
 model ResumeWorkExperienceHistory {
-  id          String  @id
+  id          String    @id
   position    String?
-  startDate   String?
-  endDate     String?
   description String?
   workID      String?
+  startDate   DateTime? @db.Date
+  endDate     DateTime? @db.Date
 }
 
 model Tasks {

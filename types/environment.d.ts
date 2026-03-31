@@ -18,5 +18,7 @@ namespace NodeJS {
     VITE_WEBSITE_NAME: string;
     keywords: string;
     description: string;
+    VITE_BACKBLAZE_KEY_ID: string;
+    VITE_BACKBLAZE_KEY: string;
   }
 }

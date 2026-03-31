@@ -9,6 +9,9 @@ dist/
 .netlify/
 .tanstack/
 
+/template
+b2.json
+
 .env
 .env.yarn
 .env.*

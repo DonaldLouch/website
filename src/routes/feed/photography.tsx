@@ -3,23 +3,23 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 
-import { GetAllLocationData, GetAllPhotographyAlbums, GetAllTagData, GetFilteredPhotography } from '@/actions/database/GetDatabase.server'
+import { GetAllLocationData, GetAllPhotographyAlbums, GetAllTagData, GetFilteredPhotography } from '@/actions/database/GetDatabase.functions'
 
 import {
-  Box,
-  Text,
-  Flex,
-  Drawer,
-  Tooltip,
-  Stack,
-  Input,
-  ActionIcon,
-  Group,
-  Title,
-  Loader,
-  Anchor,
-  Paper,
-  Code,
+    Box,
+    Text,
+    Flex,
+    Drawer,
+    Tooltip,
+    Stack,
+    Input,
+    ActionIcon,
+    Group,
+    Title,
+    Loader,
+    Anchor,
+    Paper,
+    Code,
 } from "@mantine/core";
 
 import Masonry from 'react-masonry-css'
@@ -32,6 +32,15 @@ import FilterField from "@/components/feed/photo/FilterField";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FeedLoader from "@/components/feed/FeedLoader";
+
+import type { PhotoData, PhotographyFilters } from '@/actions/database/GetDatabase.functions'
+type FetchPhotos = {
+    nextPage: number,
+    photoLimit: number,
+    photosCount: number,
+    searchType?: PhotographyFilters['type'],
+    keyword?: string
+}
 
 export const Route = createFileRoute('/feed/photography')({
   component: RouteComponent,
@@ -47,7 +56,7 @@ export const Route = createFileRoute('/feed/photography')({
       }),
     loaderDeps: ({ search: { search,  value }}: any) => ({ search,  value }),
     loader:  async ({ deps: { search: searchType,  value: searchValue} }) => {
-      const contentLimit = 15
+      const contentLimit = 15 as number
 
       const keyword = searchType === "tag" || searchType === "keyword"
         && searchValue?.includes("HASHTAG") ? searchValue?.replace('HASHTAG', '#') 
@@ -63,30 +72,30 @@ export const Route = createFileRoute('/feed/photography')({
             locationData: await GetAllLocationData(),
             tagData: await GetAllTagData(),
 
-            photos: await GetFilteredPhotography({ data: {action: "data", type: searchType, keyword, contentLimit} }) as any,
-            photosCount: await GetFilteredPhotography({ data: {action: "count", type: searchType, keyword} }) as any,
+            photos: await GetFilteredPhotography({ data: {action: "data", type: searchType, keyword, contentLimit} }) as PhotoData,
+            photosCount: await GetFilteredPhotography({ data: {action: "count", type: searchType, keyword} }) as number
       }
     }
 })
 
-async function fetchPhotos(nextPage: number, photoLimit: number, photosCount: number, searchType?: string, keyword?: string) {
+async function fetchPhotos({nextPage, photoLimit, photosCount, searchType, keyword}: FetchPhotos) {
     const from = nextPage * photoLimit
     const to = Math.min(from + photoLimit - 1, photosCount) 
     
-    const data = GetFilteredPhotography({ data: {action: "data", type: searchType, keyword, contentLimit: to, contentStart: from} })
-
+    const data = await GetFilteredPhotography({ data: {action: "data", type: searchType, keyword, contentLimit: to, contentStart: from} }) as PhotoData
+    if (!Array.isArray(data)) {
+        throw new Error('Expected photography data array')
+    }
     return data
 }
 
 function RouteComponent() {
     const { photos, photosCount, photographyAlbum, locationData, tagData, contentLimit: photoLimit, searchType, keyword, searchValue } = Route.useLoaderData();
 
-    console.log(photosCount)
-
     const [opened, { open, close }] = useDisclosure(false)
 
     const initialRender = useRef(true)
-    const [loadedPhotos, setLoadedPhotos] = useState(photos)
+    const [loadedPhotos, setLoadedPhotos] = useState<any>(photos)
     const [page, setPage] = useState(0)
     const [isLastPage, setIsLastPage] = useState(photoLimit >= photosCount ? true : false)
     const navigate  = useNavigate()
@@ -96,7 +105,7 @@ function RouteComponent() {
 
     const loadMorePhotos = useCallback(async () => {
         const nextPage = page + 1
-        const newPhotos = await fetchPhotos(nextPage, photoLimit, photosCount, searchType, keyword) as any
+        const newPhotos = await fetchPhotos({nextPage, photoLimit, photosCount, searchType, keyword})
         
         if (newPhotos && newPhotos.length > 0) {
             setIsLastPage(nextPage === Math.ceil(photosCount / photoLimit) - 1)
@@ -189,8 +198,8 @@ function RouteComponent() {
 
             <Text>View:</Text>
                 <Stack gap="1rem">
-                    <PrimaryLinkedButton isFullWidth isHidden={searchValue != "pinned"} link={{ to: "/feed/photography" }} icon={{ name: "images", pack: "fadl" }} >All Photos</PrimaryLinkedButton>
-                    <PrimaryLinkedButton isFullWidth isHidden={searchType === "view" && searchValue === "pinned"} link={{ to: "/feed/photography", search: { search: "view", value: "pinned" } }} icon={{ name: "thumbtack", pack: "fadl" }} >Pinned Photos</PrimaryLinkedButton>
+                    <PrimaryLinkedButton isFullWidth isHidden={searchType != "pinned"} link={{ to: "/feed/photography" }} icon={{ name: "images", pack: "fadl" }} >All Photos</PrimaryLinkedButton>
+                    <PrimaryLinkedButton isFullWidth isHidden={searchType === "pinned"} link={{ to: "/feed/photography", search: { search: "pinned" } }} icon={{ name: "thumbtack", pack: "fadl" }} >Pinned Photos</PrimaryLinkedButton>
                     <PrimaryLinkedButton isFullWidth link={{ to: "/portfolio/photography" }} icon={{ name: "briefcase-blank", pack: "fadl" }}>Portfolio Photos</PrimaryLinkedButton>
                     {/* TO DO: Make Random Sorting Function*/}
                 </Stack>

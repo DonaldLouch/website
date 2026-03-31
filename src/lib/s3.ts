@@ -1,10 +1,10 @@
-import { S3Client } from "@aws-sdk/client-s3"
+import { S3Client } from '@aws-sdk/client-s3';
 
-export default new S3Client({
-  endpoint: `https://${process.env.VITE_S3_HOST_NAME}`,
-  region: process.env.VITE_S3_REGION,
+export const s3 = new S3Client({
+  region: "us-west-004",
   credentials: {
-    accessKeyId: process.env.VITE_S3_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.VITE_S3_SECRET_ACCESS_KEY!,
-  }
-})
+    accessKeyId: process.env.VITE_BACKBLAZE_APPLICATION_KEY_ID!,
+    secretAccessKey: process.env.VITE_BACKBLAZE_APPLICATION_KEY!,
+  },
+  endpoint: "https://s3.us-west-004.backblazeb2.com",
+});

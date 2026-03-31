@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 
-import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.server';
-import { GetPhoto } from '@/actions/database/GetDatabase.server'
-import { GetMarkdown } from '@/actions/markdown.server';
+import { AdminAccessCheck, UserLoggedInCheck } from '@/actions/auth.functions';
+import { GetPhoto } from '@/actions/database/GetDatabase.functions'
+import { GetMarkdown } from '@/actions/markdown.functions';
 
 import {
   Stack,

@@ -1,4 +1,4 @@
-import { GetFilteredBlogPosts } from '@/actions/database/GetDatabase.server'
+import { BlogData, GetFilteredBlogPosts } from '@/actions/database/GetDatabase.functions'
 import PinnedPostsCard from '@/components/cards/PinnedPostsCard'
 import { SectionCard } from '@/components/cards/SectionCard'
 import BlogPostCard from '@/components/feed/blog/BlogPostCard'
@@ -16,7 +16,7 @@ export const Route = createFileRoute('/blog/search')({
             let currentPage = (((page) - 1) as number) || 0
     
             const contentLimit = 9 as number
-            const postCount =  await GetFilteredBlogPosts({ data: { action: "count", type, keyword } }) as any
+            const postCount =  await GetFilteredBlogPosts({ data: { action: "count", type, keyword } }) as number
     
             const numberOfPages = (Math.floor(postCount / contentLimit) + 1) as number
     
@@ -29,7 +29,7 @@ export const Route = createFileRoute('/blog/search')({
             const pagination = new Array()
             pagination.push(numberOfPages, currentPage)
     
-            const posts = await GetFilteredBlogPosts({ data: { action: "data", type, keyword, contentLimit, contentStart } }) as any
+            const posts = await GetFilteredBlogPosts({ data: { action: "data", type, keyword, contentLimit, contentStart } }) as BlogData
             return { 
                 type,
                 keyword,

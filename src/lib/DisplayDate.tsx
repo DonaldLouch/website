@@ -1,7 +1,7 @@
 import moment from 'moment-timezone';
 
 interface DisplayDateProps {
-    source?: string
+    source?: string|null|undefined|Date
     timeZone?: any
     format?: string
 }

@@ -1,4 +1,4 @@
-import { GetPinnedVideography, GetPinnedVideographyCount, GetAllPublicVideographyCount, GetFilteredBlogPosts, GetFilteredPhotography } from '@/actions/database/GetDatabase.server'
+import { GetFilteredBlogPosts, GetFilteredPhotography, GetFilteredVideography, VideoData, PhotoData } from '@/actions/database/GetDatabase.functions'
 import { seo } from '@/utils/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
@@ -25,13 +25,13 @@ export const Route = createFileRoute('/feed/')({
         pinnedPosts: await GetFilteredBlogPosts({ data: { action: "data", type: "pinned" } }),
         postAllCount: await GetFilteredBlogPosts({ data: { action: "count" } }) as any,
 
-        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "view", keyword: "pinned" } }) as any,
-        photosPinnedCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as any,
-        photosAllCount: await GetFilteredPhotography({ data: {action: "count" } }) as any,
-
-        videos: await GetPinnedVideography(),
-        // pinnedVideoCount: await GetPinnedVideographyCount(),
-        videosAllCount: await GetAllPublicVideographyCount(),
+        pinnedPhotos: await GetFilteredPhotography({ data: {action: "data", type: "pinned"} }) as PhotoData,
+        photosAllCount: await GetFilteredPhotography({ data: {action: "count"} }) as number,
+        photosPinnedCount: await GetFilteredPhotography({ data: {action: "count", type: "pinned"} }) as number,
+        
+        videos: await GetFilteredVideography({ data: { action: "data", type: "pinned" }}) as VideoData,
+        videosAllCount: await GetFilteredVideography({ data: { action: "count" }}) as number,
+        // pinnedVideoCount: await GetFilteredVideography({ data: { action: "count", type: "pinned" }}) as number
     })
 })
 

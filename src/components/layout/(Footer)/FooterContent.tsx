@@ -7,19 +7,19 @@ import { useServerFn } from "@tanstack/react-start";
 // import supabase from "@/lib/supabase";
 import { useEffect, useState } from "react";
 
-import {GetAllPrimaryLinks } from "@/actions/database/GetDatabase.server";
+import {GetLinks, PrimaryLinkData } from "@/actions/database/GetDatabase.functions";
 import { useQuery } from "@tanstack/react-query";
 
 
 export default function FooterContent(){
   
   // const { user } = useUser()
-  const isSignedIn = false
-  const getPrimaryLinks = useServerFn(GetAllPrimaryLinks)
+  // const isSignedIn = false
+  // const getPrimaryLinks = useServerFn(GetLinks({data: {type: "primary"}}))
   const { data: primaryLinksData } = useQuery({
     queryKey: ['primaryLinksData'],
-    queryFn: () => getPrimaryLinks(),
-  })
+    queryFn: () => GetLinks({data: {type: "primary"}}),
+  }) as any
   // const GetAllPrimaryLinks = useServerFn(GetAllPrimaryLinks())
 
   // const [primaryLinksData, setPrimaryLinksData] = useState([])

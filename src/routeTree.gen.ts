@@ -28,10 +28,16 @@ import { Route as FeedVideographyRouteImport } from './routes/feed/videography'
 import { Route as FeedPhotographyRouteImport } from './routes/feed/photography'
 import { Route as EmbedIdRouteImport } from './routes/embed.$id'
 import { Route as BlogSearchRouteImport } from './routes/blog/search'
+import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as AlbumSlugRouteImport } from './routes/album.$slug'
 import { Route as AuthedAdminIndexRouteImport } from './routes/_authed/admin/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
-import { Route as AuthedAdminTestRouteImport } from './routes/_authed/admin/test'
+import { Route as AuthedAdminResumeRouteImport } from './routes/_authed/admin/resume'
+import { Route as AuthedAdminProfileRouteImport } from './routes/_authed/admin/profile'
+import { Route as AuthedAdminPhotographyRouteImport } from './routes/_authed/admin/photography'
+import { Route as AuthedAdminBlogRouteImport } from './routes/_authed/admin/blog'
+import { Route as AuthedAdminAccountsRouteImport } from './routes/_authed/admin/accounts'
+import { Route as AuthedAdminPhotoIdRouteImport } from './routes/_authed/admin/photo.$id'
 
 const TestRoute = TestRouteImport.update({
   id: '/test',
@@ -127,6 +133,11 @@ const BlogSearchRoute = BlogSearchRouteImport.update({
   path: '/blog/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiUploadRoute = ApiUploadRouteImport.update({
+  id: '/api/upload',
+  path: '/api/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AlbumSlugRoute = AlbumSlugRouteImport.update({
   id: '/album/$slug',
   path: '/album/$slug',
@@ -142,9 +153,34 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthedAdminTestRoute = AuthedAdminTestRouteImport.update({
-  id: '/admin/test',
-  path: '/admin/test',
+const AuthedAdminResumeRoute = AuthedAdminResumeRouteImport.update({
+  id: '/admin/resume',
+  path: '/admin/resume',
+  getParentRoute: () => AuthedRoute,
+} as any)
+const AuthedAdminProfileRoute = AuthedAdminProfileRouteImport.update({
+  id: '/admin/profile',
+  path: '/admin/profile',
+  getParentRoute: () => AuthedRoute,
+} as any)
+const AuthedAdminPhotographyRoute = AuthedAdminPhotographyRouteImport.update({
+  id: '/admin/photography',
+  path: '/admin/photography',
+  getParentRoute: () => AuthedRoute,
+} as any)
+const AuthedAdminBlogRoute = AuthedAdminBlogRouteImport.update({
+  id: '/admin/blog',
+  path: '/admin/blog',
+  getParentRoute: () => AuthedRoute,
+} as any)
+const AuthedAdminAccountsRoute = AuthedAdminAccountsRouteImport.update({
+  id: '/admin/accounts',
+  path: '/admin/accounts',
+  getParentRoute: () => AuthedRoute,
+} as any)
+const AuthedAdminPhotoIdRoute = AuthedAdminPhotoIdRouteImport.update({
+  id: '/admin/photo/$id',
+  path: '/admin/photo/$id',
   getParentRoute: () => AuthedRoute,
 } as any)
 
@@ -155,6 +191,7 @@ export interface FileRoutesByFullPath {
   '/mm': typeof MmRoute
   '/test': typeof TestRoute
   '/album/$slug': typeof AlbumSlugRoute
+  '/api/upload': typeof ApiUploadRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
@@ -168,9 +205,14 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/feed/': typeof FeedIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
-  '/admin/test': typeof AuthedAdminTestRoute
+  '/admin/accounts': typeof AuthedAdminAccountsRoute
+  '/admin/blog': typeof AuthedAdminBlogRoute
+  '/admin/photography': typeof AuthedAdminPhotographyRoute
+  '/admin/profile': typeof AuthedAdminProfileRoute
+  '/admin/resume': typeof AuthedAdminResumeRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin/': typeof AuthedAdminIndexRoute
+  '/admin/photo/$id': typeof AuthedAdminPhotoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -179,6 +221,7 @@ export interface FileRoutesByTo {
   '/mm': typeof MmRoute
   '/test': typeof TestRoute
   '/album/$slug': typeof AlbumSlugRoute
+  '/api/upload': typeof ApiUploadRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
@@ -192,9 +235,14 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/feed': typeof FeedIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
-  '/admin/test': typeof AuthedAdminTestRoute
+  '/admin/accounts': typeof AuthedAdminAccountsRoute
+  '/admin/blog': typeof AuthedAdminBlogRoute
+  '/admin/photography': typeof AuthedAdminPhotographyRoute
+  '/admin/profile': typeof AuthedAdminProfileRoute
+  '/admin/resume': typeof AuthedAdminResumeRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof AuthedAdminIndexRoute
+  '/admin/photo/$id': typeof AuthedAdminPhotoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -205,6 +253,7 @@ export interface FileRoutesById {
   '/mm': typeof MmRoute
   '/test': typeof TestRoute
   '/album/$slug': typeof AlbumSlugRoute
+  '/api/upload': typeof ApiUploadRoute
   '/blog/search': typeof BlogSearchRoute
   '/embed/$id': typeof EmbedIdRoute
   '/feed/photography': typeof FeedPhotographyRoute
@@ -218,9 +267,14 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/feed/': typeof FeedIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
-  '/_authed/admin/test': typeof AuthedAdminTestRoute
+  '/_authed/admin/accounts': typeof AuthedAdminAccountsRoute
+  '/_authed/admin/blog': typeof AuthedAdminBlogRoute
+  '/_authed/admin/photography': typeof AuthedAdminPhotographyRoute
+  '/_authed/admin/profile': typeof AuthedAdminProfileRoute
+  '/_authed/admin/resume': typeof AuthedAdminResumeRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/_authed/admin/': typeof AuthedAdminIndexRoute
+  '/_authed/admin/photo/$id': typeof AuthedAdminPhotoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -231,6 +285,7 @@ export interface FileRouteTypes {
     | '/mm'
     | '/test'
     | '/album/$slug'
+    | '/api/upload'
     | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
@@ -244,9 +299,14 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/feed/'
     | '/portfolio/'
-    | '/admin/test'
+    | '/admin/accounts'
+    | '/admin/blog'
+    | '/admin/photography'
+    | '/admin/profile'
+    | '/admin/resume'
     | '/api/auth/$'
     | '/admin/'
+    | '/admin/photo/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -255,6 +315,7 @@ export interface FileRouteTypes {
     | '/mm'
     | '/test'
     | '/album/$slug'
+    | '/api/upload'
     | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
@@ -268,9 +329,14 @@ export interface FileRouteTypes {
     | '/blog'
     | '/feed'
     | '/portfolio'
-    | '/admin/test'
+    | '/admin/accounts'
+    | '/admin/blog'
+    | '/admin/photography'
+    | '/admin/profile'
+    | '/admin/resume'
     | '/api/auth/$'
     | '/admin'
+    | '/admin/photo/$id'
   id:
     | '__root__'
     | '/'
@@ -280,6 +346,7 @@ export interface FileRouteTypes {
     | '/mm'
     | '/test'
     | '/album/$slug'
+    | '/api/upload'
     | '/blog/search'
     | '/embed/$id'
     | '/feed/photography'
@@ -293,9 +360,14 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/feed/'
     | '/portfolio/'
-    | '/_authed/admin/test'
+    | '/_authed/admin/accounts'
+    | '/_authed/admin/blog'
+    | '/_authed/admin/photography'
+    | '/_authed/admin/profile'
+    | '/_authed/admin/resume'
     | '/api/auth/$'
     | '/_authed/admin/'
+    | '/_authed/admin/photo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -306,6 +378,7 @@ export interface RootRouteChildren {
   MmRoute: typeof MmRoute
   TestRoute: typeof TestRoute
   AlbumSlugRoute: typeof AlbumSlugRoute
+  ApiUploadRoute: typeof ApiUploadRoute
   BlogSearchRoute: typeof BlogSearchRoute
   EmbedIdRoute: typeof EmbedIdRoute
   FeedPhotographyRoute: typeof FeedPhotographyRoute
@@ -457,6 +530,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/upload': {
+      id: '/api/upload'
+      path: '/api/upload'
+      fullPath: '/api/upload'
+      preLoaderRoute: typeof ApiUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/album/$slug': {
       id: '/album/$slug'
       path: '/album/$slug'
@@ -478,24 +558,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authed/admin/test': {
-      id: '/_authed/admin/test'
-      path: '/admin/test'
-      fullPath: '/admin/test'
-      preLoaderRoute: typeof AuthedAdminTestRouteImport
+    '/_authed/admin/resume': {
+      id: '/_authed/admin/resume'
+      path: '/admin/resume'
+      fullPath: '/admin/resume'
+      preLoaderRoute: typeof AuthedAdminResumeRouteImport
+      parentRoute: typeof AuthedRoute
+    }
+    '/_authed/admin/profile': {
+      id: '/_authed/admin/profile'
+      path: '/admin/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AuthedAdminProfileRouteImport
+      parentRoute: typeof AuthedRoute
+    }
+    '/_authed/admin/photography': {
+      id: '/_authed/admin/photography'
+      path: '/admin/photography'
+      fullPath: '/admin/photography'
+      preLoaderRoute: typeof AuthedAdminPhotographyRouteImport
+      parentRoute: typeof AuthedRoute
+    }
+    '/_authed/admin/blog': {
+      id: '/_authed/admin/blog'
+      path: '/admin/blog'
+      fullPath: '/admin/blog'
+      preLoaderRoute: typeof AuthedAdminBlogRouteImport
+      parentRoute: typeof AuthedRoute
+    }
+    '/_authed/admin/accounts': {
+      id: '/_authed/admin/accounts'
+      path: '/admin/accounts'
+      fullPath: '/admin/accounts'
+      preLoaderRoute: typeof AuthedAdminAccountsRouteImport
+      parentRoute: typeof AuthedRoute
+    }
+    '/_authed/admin/photo/$id': {
+      id: '/_authed/admin/photo/$id'
+      path: '/admin/photo/$id'
+      fullPath: '/admin/photo/$id'
+      preLoaderRoute: typeof AuthedAdminPhotoIdRouteImport
       parentRoute: typeof AuthedRoute
     }
   }
 }
 
 interface AuthedRouteChildren {
-  AuthedAdminTestRoute: typeof AuthedAdminTestRoute
+  AuthedAdminAccountsRoute: typeof AuthedAdminAccountsRoute
+  AuthedAdminBlogRoute: typeof AuthedAdminBlogRoute
+  AuthedAdminPhotographyRoute: typeof AuthedAdminPhotographyRoute
+  AuthedAdminProfileRoute: typeof AuthedAdminProfileRoute
+  AuthedAdminResumeRoute: typeof AuthedAdminResumeRoute
   AuthedAdminIndexRoute: typeof AuthedAdminIndexRoute
+  AuthedAdminPhotoIdRoute: typeof AuthedAdminPhotoIdRoute
 }
 
 const AuthedRouteChildren: AuthedRouteChildren = {
-  AuthedAdminTestRoute: AuthedAdminTestRoute,
+  AuthedAdminAccountsRoute: AuthedAdminAccountsRoute,
+  AuthedAdminBlogRoute: AuthedAdminBlogRoute,
+  AuthedAdminPhotographyRoute: AuthedAdminPhotographyRoute,
+  AuthedAdminProfileRoute: AuthedAdminProfileRoute,
+  AuthedAdminResumeRoute: AuthedAdminResumeRoute,
   AuthedAdminIndexRoute: AuthedAdminIndexRoute,
+  AuthedAdminPhotoIdRoute: AuthedAdminPhotoIdRoute,
 }
 
 const AuthedRouteWithChildren =
@@ -509,6 +634,7 @@ const rootRouteChildren: RootRouteChildren = {
   MmRoute: MmRoute,
   TestRoute: TestRoute,
   AlbumSlugRoute: AlbumSlugRoute,
+  ApiUploadRoute: ApiUploadRoute,
   BlogSearchRoute: BlogSearchRoute,
   EmbedIdRoute: EmbedIdRoute,
   FeedPhotographyRoute: FeedPhotographyRoute,
